@@ -50,6 +50,10 @@
                   "whatsmark/login",
                   "whatsmark/getting-started"
                 ]
+              },
+              {
+                "group": "Api",
+                "pages": []
               }
             ]
           }
