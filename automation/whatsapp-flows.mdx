@@ -1,0 +1,83 @@
+---
+title: "WhatsApp Flows"
+description: "How to build interactive form-like screens inside WhatsApp using WhatsMark's WhatsApp Flows builder."
+icon: "diagram-project"
+keywords: ["WhatsMark", "WhatsApp Flows", "interactive forms", "flow builder", "submissions", "appointment booking"]
+---
+
+**WhatsApp Flows** are Meta's interactive, form-like screens that open directly inside a WhatsApp conversation — for collecting structured information instead of relying on free text. WhatsMark gives you a visual builder for creating and managing them.
+
+<Warning>
+The number of flows you can have is limited by your plan (`wa_flow_templates`). Free-plan workspaces get 1 flow; Professional plans get 10; Reseller plans are unlimited.
+</Warning>
+
+## Building a flow
+
+<Steps>
+<Step title="Open the Builder">
+  From **WhatsApp Flows**, create a new flow or open an existing one to enter the visual builder — a 3-pane layout with a screens list and field palette on one side, the screen editor in the middle, and a live phone preview on the right.
+</Step>
+
+<Step title="Add screens and fields">
+  Drag fields onto a screen: **text input**, **textarea**, **phone number**, **date picker**, **dropdown**, **radio group**, **checkbox group**, or **opt-in**.
+</Step>
+
+<Step title="Edit raw JSON (optional)">
+  Prefer to work directly in Meta's Flow JSON format? Switch to the raw JSON editor at any point instead of the drag-and-drop view.
+</Step>
+
+<Step title="Publish">
+  Publishing sends the flow to Meta for use. You can also **deprecate** a flow later to retire it without deleting its data.
+</Step>
+</Steps>
+
+<Tip>
+Don't want to start from a blank canvas? Browse the **Flow Library** — pre-built Appointment Booking, Lead Capture, Survey, Support Ticket, Event Registration, and Callback Request flows — and click **Use This** to clone one straight into your workspace.
+</Tip>
+
+Other flow actions: **clone** an existing flow, toggle it **active/inactive**, and **sync** a flow (or a whole channel's flows) to pull the latest state from Meta.
+
+## Sending a flow
+
+A flow can be triggered four ways:
+
+1. Directly from a [Contact](/contacts/managing-contacts#row-actions) row action.
+2. Via a **FLOW button** on a WhatsApp template.
+3. As part of a [Campaign](/messaging/campaigns).
+4. From an [automation flow](/automation/chatbot-flows) node.
+
+## Submissions
+
+Every time a contact completes a flow, their answers land in the **Submissions** tab for that flow:
+
+- Browse and **export** submissions as CSV or XLSX.
+- Open a submission's detail drawer to see every answer.
+- **Map fields** — connect submitted answers to contact fields, [custom fields](/core-setup/contact-configuration#custom-fields), or tags, so flow data flows straight into your contact records.
+
+## Appointment Booking flows
+
+A special flow type generates a live, dynamic booking experience: contacts pick a date and time slot, confirm, and can later reschedule or cancel — all inside WhatsApp.
+
+<Steps>
+<Step title="Set the booking window">
+  Configure slot length, capacity per slot, and how far in advance (lead time) and how far out (horizon) contacts can book, per flow.
+</Step>
+
+<Step title="Set up encryption (one-time)">
+  Appointment flows use Meta's data-exchange endpoint, which requires a one-time RSA key setup per channel.
+</Step>
+</Steps>
+
+Booked appointments then show up in [Appointments](/automation/appointments).
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Appointments" icon="calendar-check" href="/automation/appointments">
+    See where bookings from an Appointment Booking flow end up.
+  </Card>
+
+  <Card title="Automation Flows" icon="robot" href="/automation/chatbot-flows">
+    Trigger a WhatsApp Flow automatically from a chatbot conversation.
+  </Card>
+</CardGroup>

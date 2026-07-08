@@ -1,0 +1,79 @@
+---
+title: "Workspace Settings"
+description: "Configure your WhatsMark workspace's general settings, business hours, and notification preferences."
+icon: "gear"
+keywords: ["WhatsMark", "settings", "general settings", "business hours", "notifications", "workspace"]
+---
+
+Beyond connecting channels and inviting your team, a handful of workspace-wide settings shape how WhatsMark looks and behaves for everyone in your workspace. These live under **Settings**.
+
+## General
+
+Go to **Settings → General** to manage:
+
+- **Workspace name** — shown throughout the dashboard and in emails.
+- **Subdomain** and **custom domain** — read-only here; see [Custom Domain](/settings/custom-domain) to add your own domain.
+- **Timezone** — used across the dashboard, charts, and scheduling.
+- **Locale** — the workspace's display language.
+- **Landing tagline** — a short line shown on your workspace's public-facing pages.
+- **Date format** and **time format** (12-hour / 24-hour) — controls how dates and times are displayed everywhere in the product.
+
+<Note>
+If your workspace is scheduled for deletion (see [Account & Danger Zone](/settings/account-and-danger-zone)), this page also shows the scheduled deletion date.
+</Note>
+
+## Business Hours
+
+Go to **Settings → Business Hours** to define:
+
+- **Weekly hours** — open/close time for each day of the week.
+- **Holidays / closed dates** — specific dates marked as fully closed regardless of the weekly schedule.
+
+<Info>
+Business hours are a shared source of truth used by [Appointments](/automation/appointments) today, and by future features like out-of-hours auto-replies. Set this once and every feature that needs it reads the same schedule.
+</Info>
+
+## Notifications
+
+Go to **Settings → Notifications** to control which workspace events generate an email, and where they're sent:
+
+<Steps>
+<Step title="Set an alert email">
+  Choose the email address that receives workspace-level alerts (separate from any individual user's login email).
+</Step>
+
+<Step title="Choose workspace event notifications">
+  Toggle:
+  - **Notify on new member** — when someone joins your workspace.
+  - **Notify on member removed** — when someone is removed.
+  - **Daily digest** — a daily summary email.
+</Step>
+
+<Step title="Choose email subscription preferences">
+  Toggle individual email types:
+  - **Trial reminders**
+  - **Subscription expiring**
+  - **Plan changed**
+  - **Team invitations**
+</Step>
+</Steps>
+
+<Note>
+Payment-failed emails are always sent and can't be turned off — every other notification type here is optional.
+</Note>
+
+## Appearance
+
+Go to **Settings → Appearance** to switch between **Light**, **Dark**, or **System** theme for your own account.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Contact Configuration" icon="address-book" href="/core-setup/contact-configuration">
+    Set up labels, groups, statuses, sources, and custom fields before you start adding contacts.
+  </Card>
+
+  <Card title="Connecting Channels" icon="plug" href="/core-setup/channels">
+    Connect WhatsApp and Messenger to your workspace.
+  </Card>
+</CardGroup>

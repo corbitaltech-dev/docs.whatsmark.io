@@ -1,0 +1,52 @@
+---
+title: "Webhooks"
+description: "How to forward WhatsMark's incoming Meta webhook events to your own endpoint."
+icon: "webhook"
+keywords: ["WhatsMark", "webhooks", "webhook forwarding", "integration"]
+---
+
+If you're building your own integration and need to react to WhatsApp/Messenger events in real time, **Webhook Forwarding** lets WhatsMark relay them to a URL you control, instead of (or alongside) processing them internally.
+
+<Warning>
+Webhook forwarding is gated by your plan (`webhook_forwarding`). Check with your workspace admin or [Billing](/billing/plans-and-subscription) if you don't see this option.
+</Warning>
+
+## Setting up forwarding
+
+<Steps>
+<Step title="Enable forwarding">
+  Turn on webhook forwarding from **Settings → Webhooks**.
+</Step>
+
+<Step title="Set your endpoint">
+  Enter the URL that should receive events, and the HTTP method to use (defaults to POST).
+</Step>
+
+<Step title="Choose which events to forward">
+  Select from the list of available event types — you don't have to forward everything if you only care about specific events.
+</Step>
+
+<Step title="Save your signing secret">
+  A signing secret is generated so you can verify that incoming requests genuinely came from WhatsMark.
+</Step>
+</Steps>
+
+## Global vs. per-channel
+
+You can configure forwarding **globally** (applies to every connected channel) or override the event selection for a **specific channel** — useful if you only want events from one WhatsApp number forwarded, for example.
+
+<Tip>
+Regenerate your signing secret any time you suspect it's been exposed — existing forwarding configuration keeps working, only the secret used to sign requests changes.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="API Keys" icon="key" href="/settings/api-keys">
+    Combine webhook forwarding with the REST API to build a full two-way integration.
+  </Card>
+
+  <Card title="Settings Overview" icon="list" href="/settings/overview">
+    Back to the full settings index.
+  </Card>
+</CardGroup>

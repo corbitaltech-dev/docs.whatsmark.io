@@ -1,0 +1,45 @@
+---
+title: "Appointments"
+description: "How to view, manage, and configure customer bookings made through WhatsMark's Appointment Booking flows."
+icon: "calendar-check"
+keywords: ["WhatsMark", "appointments", "bookings", "calendar", "business hours", "booking link"]
+---
+
+**Appointments** is where bookings made through an [Appointment Booking flow](/automation/whatsapp-flows#appointment-booking-flows) — or your public booking link — land, and where you configure how booking works.
+
+<Warning>
+Appointments are limited by your plan across three dimensions: **active booking forms** (`appointment_forms`), **concurrent active bookings** (`appointments`), and **new bookings per month** (`appointments_monthly`). Free-plan workspaces get 1 form, 1 concurrent booking, and 30 bookings/month; Professional plans get 10 forms, 10 concurrent bookings, and 500/month; Reseller plans are unlimited across all three.
+</Warning>
+
+## Viewing appointments
+
+Switch between a **List** view and a **Calendar** (month grid) view, and filter by channel, source, status, or date range. Open any appointment to update its status (for example, marking it completed or cancelled).
+
+## Booking settings
+
+Go to **Settings** within Appointments to configure:
+
+- **Weekly business hours** and **holidays** — shared with your workspace-wide [Business Hours](/core-setup/workspace-settings#business-hours) setting, so you only set this once.
+- **Timezone** for displaying and calculating slots.
+- **Services list** — the set of bookable services contacts can choose from.
+- **Confirmation message template** — sent to a contact once their booking is confirmed.
+
+## Public booking link
+
+Each connected channel gets its own public, white-labeled **booking link** — a web page (not inside WhatsApp) where customers can self-book without needing to message you first. Copy this link from the channel's Appointments settings and share it anywhere (your website, email signature, social bio).
+
+<Tip>
+The public booking link runs on your own workspace domain, so it looks and feels like part of your business — not a third-party booking tool.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Flows" icon="diagram-project" href="/automation/whatsapp-flows">
+    See how the Appointment Booking flow itself is built and configured.
+  </Card>
+
+  <Card title="Workspace Settings" icon="gear" href="/core-setup/workspace-settings">
+    Set your business hours once, shared across Appointments and future features.
+  </Card>
+</CardGroup>

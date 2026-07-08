@@ -1,0 +1,80 @@
+---
+title: "Campaigns"
+description: "How to broadcast WhatsApp and Messenger messages to many contacts at once using WhatsMark Campaigns."
+icon: "bullhorn"
+keywords: ["WhatsMark", "campaigns", "broadcast", "message campaign", "template campaign", "audience"]
+---
+
+**Campaigns** let you send a message to many contacts at once, instead of one conversation at a time. WhatsMark supports two campaign types, each suited to a different situation.
+
+## Campaign types
+
+<AccordionGroup>
+<Accordion title="Message Campaigns">
+  Free-form text sent to contacts who have messaged you within the last 24 hours (the same WhatsApp session-window rule that applies in [Live Chat](/messaging/live-chat)). No template approval needed, but the audience is limited to recently active contacts.
+</Accordion>
+
+<Accordion title="Template Campaigns">
+  Uses a Meta-approved [WhatsApp template](/messaging/whatsapp-templates), so you can broadcast to any contact list regardless of when they last messaged you.
+</Accordion>
+</AccordionGroup>
+
+<Warning>
+Each campaign type has its own monthly send quota, tracked independently — sending a lot of Message Campaigns doesn't affect your Template Campaign quota, or vice versa. Free-plan workspaces get 5 campaigns of each type per month; Professional plans get 100 of each; Reseller plans are unlimited.
+</Warning>
+
+## Creating a campaign
+
+Campaigns are built with a 4-step wizard:
+
+<Steps>
+<Step title="Basics">
+  Name your campaign and choose its type (Message or Template).
+</Step>
+
+<Step title="Audience">
+  Choose who receives it — a contact **group**, a **filtered** segment, or a **manual** selection of specific contacts.
+</Step>
+
+<Step title="Content">
+  Compose your message or select a template — header, body, footer, buttons, or carousel cards as applicable — upload any media, and insert **merge fields** (see below) to personalize each message.
+</Step>
+
+<Step title="Schedule">
+  Send immediately, or schedule it for a specific date and time.
+</Step>
+</Steps>
+
+<Info>
+Eligible marketing sends are automatically routed through Meta's **Marketing Messages Lite** endpoint when your connected WABA is enrolled — this happens silently, with an automatic fallback to a standard send if it's not available. You don't need to configure anything.
+</Info>
+
+## Managing a running campaign
+
+From a campaign's detail page you can:
+
+- **Launch**, **pause**, **resume**, or **cancel** it.
+- **Resend to failed recipients only** — retry just the sends that didn't go through.
+- **Clone for replied** — create a new campaign targeting only the contacts who replied to this one.
+- View **delivery analytics** — sent, delivered, read, and failed counts.
+- Browse the paginated **recipients** table for that campaign.
+
+<Tip>
+Use "Clone for replied" to build a simple follow-up sequence — send an initial broadcast, then automatically target only the people who engaged with it.
+</Tip>
+
+## Merge fields
+
+While composing a campaign, use the `@` picker to insert **merge fields** — tokens like the contact's name or a custom field value that get replaced with real data for each recipient at send time. See the full list on the [Merge Fields](/messaging/merge-fields) reference page.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Merge Fields" icon="at" href="/messaging/merge-fields">
+    Browse every available token you can use in campaign content.
+  </Card>
+
+  <Card title="WhatsApp Templates" icon="file-lines" href="/messaging/whatsapp-templates">
+    Get a template approved so you can run a Template Campaign.
+  </Card>
+</CardGroup>

@@ -1,0 +1,82 @@
+---
+title: "Managing Contacts"
+description: "How to browse, create, edit, and act on individual contacts in WhatsMark."
+icon: "address-book"
+keywords: ["WhatsMark", "contacts", "contact list", "contact detail", "notes", "initiate chat"]
+---
+
+The **Contacts** page is where every person who has messaged your business — or that you've added manually — lives. It's the hub you'll come back to most often.
+
+<Tip>
+Before adding contacts in bulk, it's worth setting up [Contact Configuration](/core-setup/contact-configuration) first — labels, groups, statuses, sources, and custom fields — so every contact you create can be organized correctly from the start.
+</Tip>
+
+## Browsing contacts
+
+The Contacts page shows a paginated, searchable table of every contact in your workspace. Filter by:
+
+- **Status** (lifecycle stage)
+- **Source**
+- **Group**
+- **Label**
+- **Assigned to** (team member)
+- **Channel**
+
+<Warning>
+The total number of contacts you can store is limited by your plan (`contacts`). If you're near your limit, the dashboard's Usage panel shows a warning, and you can purchase a **contact-limit add-on** from [Billing](/billing/addons-and-upgrades) instead of upgrading your whole plan.
+</Warning>
+
+## Creating and editing a contact
+
+Click **Add Contact** to open the contact form in a side sheet:
+
+<Steps>
+<Step title="Fill in the basics">
+  Name, phone number, and email.
+</Step>
+
+<Step title="Set organization fields">
+  Assign a lifecycle **status**, **source**, one or more **groups** and **labels**, and optionally assign the contact to a team member.
+</Step>
+
+<Step title="Fill in custom fields">
+  Any [custom fields](/core-setup/contact-configuration#custom-fields) you've defined appear here too.
+</Step>
+
+<Step title="Save">
+  The contact is added immediately and appears in the table.
+</Step>
+</Steps>
+
+Editing an existing contact opens the same form, pre-filled.
+
+## The contact detail view
+
+Click any contact's name to open a read-only detail sheet showing their full activity history, notes, and custom field values.
+
+### Notes
+
+From the detail view, add freeform notes to a contact — useful for logging context that shouldn't go out as a message. Notes can be edited or deleted at any time.
+
+## Row actions
+
+Each contact row has a menu of quick actions:
+
+- **Initiate Chat** — send a one-off WhatsApp template message to this contact, even outside the normal chat flow. See [Live Chat](/messaging/live-chat) for how this fits into the 24-hour messaging window.
+- **Initiate Messenger Chat** — the same, for Messenger.
+- **Send a WhatsApp Flow** — trigger one of your [WhatsApp Flows](/automation/whatsapp-flows) for this contact.
+- **Open in Live Chat** — jump straight to this contact's conversation thread.
+- **Activate / Deactivate** — toggle whether the contact is active without deleting them.
+- **Delete** — permanently remove the contact.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Import & Export" icon="file-import" href="/contacts/import-export">
+    Bring in contacts in bulk from a CSV or spreadsheet.
+  </Card>
+
+  <Card title="Bulk Actions & Merge" icon="layer-group" href="/contacts/bulk-actions-and-merge">
+    Update many contacts at once, or merge duplicates together.
+  </Card>
+</CardGroup>

@@ -1,0 +1,90 @@
+---
+title: "Bulk Actions & Merge"
+description: "How to update many WhatsMark contacts at once, and how to merge duplicate contacts together."
+icon: "layer-group"
+keywords: ["WhatsMark", "contacts", "bulk actions", "merge contacts", "duplicates"]
+---
+
+Once you have contacts in your workspace, you often need to change many of them at once — or clean up duplicates. Both are available directly from the Contacts table.
+
+## Bulk actions
+
+Select one or more contacts (checkboxes on each row), or use **Select all matching** to target every contact matching your current filters — even ones not shown on the current page. Then choose an action:
+
+<AccordionGroup>
+<Accordion title="Change status / change type">
+  Move the selected contacts to a different lifecycle status, or change their contact type.
+</Accordion>
+
+<Accordion title="Assign to a team member">
+  Bulk-assign ownership of the selected contacts.
+</Accordion>
+
+<Accordion title="Add / remove group">
+  Add the selection to a group, or remove them from one.
+</Accordion>
+
+<Accordion title="Add / remove label">
+  Same idea, for labels.
+</Accordion>
+
+<Accordion title="Activate / deactivate">
+  Toggle whether the selected contacts are active.
+</Accordion>
+
+<Accordion title="Link / unlink channel">
+  Associate (or remove the association) between the selection and a specific WhatsApp/Messenger channel.
+</Accordion>
+
+<Accordion title="Delete">
+  Permanently remove the selected contacts. This requires a separate delete permission from other bulk actions, since it's irreversible.
+</Accordion>
+</AccordionGroup>
+
+<Warning>
+Deleting contacts in bulk cannot be undone. Double-check your filters before confirming a bulk delete, especially when using "Select all matching."
+</Warning>
+
+<Note>
+Large bulk actions (or any "select all matching" action, and all deletes) run as a background job rather than immediately. The number of bulk jobs you can run at the same time depends on your plan — Free-plan workspaces can run one at a time, Professional and Reseller plans can run up to three concurrently.
+</Note>
+
+## Merging duplicate contacts
+
+If the same person ends up as two or more contact records (for example, they messaged from two numbers, or were imported twice), you can fold them together.
+
+### Merging a single duplicate
+
+<Steps>
+<Step title="Open the contact you want to keep">
+  This becomes the "winner" — the record that survives.
+</Step>
+
+<Step title="Choose Merge">
+  Pick the duplicate ("loser") contact to fold into it.
+</Step>
+
+<Step title="Confirm">
+  The loser's data is merged into the winner, and the loser record is marked as merged.
+</Step>
+</Steps>
+
+### Bulk merge
+
+You can also select a winner and **multiple** loser contacts at once (2–100), and merge them all into that one winner in a single action. If any contact in the selection fails to merge, the whole operation is rolled back — you'll never end up with a partial merge.
+
+<Tip>
+A contact that has already been merged into another one can't be used again as a winner or a loser — merges are one-directional and final.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Managing Contacts" icon="address-book" href="/contacts/managing-contacts">
+    Back to the main contact list and detail view.
+  </Card>
+
+  <Card title="Live Chat" icon="comments" href="/messaging/live-chat">
+    See merged and organized contacts in the team inbox.
+  </Card>
+</CardGroup>

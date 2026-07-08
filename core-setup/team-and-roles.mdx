@@ -1,0 +1,76 @@
+---
+title: "Team & Roles"
+description: "How to invite teammates to your WhatsMark workspace and control what they can access with custom roles and permissions."
+icon: "users"
+keywords: ["WhatsMark", "team", "invite", "roles", "permissions", "members"]
+---
+
+Every workspace starts with just its owner (the person who registered it). Go to **Settings → Team** to bring in the rest of your team, and **Settings → Roles** if you need more control than the default roles give you.
+
+## Inviting your team
+
+<Steps>
+<Step title="Open Team settings">
+  This page lists everyone with access to your workspace — their role and status — plus any pending invitations.
+</Step>
+
+<Step title="Invite by email">
+  Enter the email address of the person you want to invite and assign them a role.
+</Step>
+
+<Step title="Track the invitation">
+  Pending invitations stay listed until accepted. You can revoke an invitation at any time before it's accepted.
+</Step>
+</Steps>
+
+<Warning>
+The number of team members you can have is limited by your plan (`staff`). Free-plan workspaces are limited to the owner only (1 seat); Professional plans allow up to 5; Reseller plans are unlimited.
+</Warning>
+
+Once someone accepts, you can:
+
+- Open their **member detail page** to review their role and activity.
+- **Remove** them from the workspace.
+- **Change their role** — reassigning roles is restricted to the workspace owner.
+
+<Info>
+Curious what the invited person sees? See [Accepting a Team Invitation](/core-setup/invitation-acceptance) for their side of the flow.
+</Info>
+
+## Roles & Permissions
+
+By default, every workspace has an **Owner** role plus standard **Admin**/**Member**-style roles. If you need finer control, go to **Settings → Roles** to create **custom roles**.
+
+<Steps>
+<Step title="Create a custom role">
+  Give the role a name, then work through the permission matrix.
+</Step>
+
+<Step title="Set permissions per module">
+  Each module (Contacts, Channels, Campaigns, Flows, Chat, Billing, and more) gets its own **View / Create / Edit / Delete** checkboxes, so you can grant exactly the level of access a role needs.
+</Step>
+
+<Step title="Assign it to team members">
+  Once saved, the custom role becomes available in the role dropdown when inviting or editing a team member.
+</Step>
+</Steps>
+
+<Note>
+Granting any capability (Create/Edit/Delete) on a module automatically implies View access for that module — you can't give someone Edit rights without also letting them see the page.
+</Note>
+
+<Tip>
+Only the workspace owner can reassign roles that affect ownership-level privileges — this keeps a single source of truth for who ultimately controls the workspace.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Connecting Channels" icon="plug" href="/core-setup/channels">
+    Connect WhatsApp and Messenger before your team starts messaging.
+  </Card>
+
+  <Card title="Workspace Settings" icon="gear" href="/core-setup/workspace-settings">
+    Configure notifications so your team knows when new members join or leave.
+  </Card>
+</CardGroup>

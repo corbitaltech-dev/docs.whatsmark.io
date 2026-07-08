@@ -1,0 +1,61 @@
+---
+title: "Importing & Exporting"
+description: "How to bulk-import contacts from a CSV or spreadsheet into WhatsMark, track import progress, and export your contact list."
+icon: "file-import"
+keywords: ["WhatsMark", "contacts", "import", "export", "CSV", "XLSX", "bulk import"]
+---
+
+If you're bringing contacts over from another system, you don't need to add them one at a time — use the **Import** wizard from the Contacts page.
+
+## Importing contacts
+
+<Steps>
+<Step title="Upload your file">
+  From Contacts, click **Import**, then upload a **CSV, TXT, or XLSX** file (up to 30 MB).
+</Step>
+
+<Step title="Map your columns">
+  WhatsMark reads your file's headers and suggests a mapping to contact fields automatically. Review and adjust the mapping — including your own [custom fields](/core-setup/contact-configuration#custom-fields) — before continuing.
+</Step>
+
+<Step title="Choose defaults for this import">
+  Optionally set a default **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member** applied to every contact in this file (used when a row doesn't specify its own).
+</Step>
+
+<Step title="Confirm and run">
+  Submitting queues the import as a background job so large files don't block you from continuing to use the app.
+</Step>
+</Steps>
+
+## Tracking an import
+
+Each import you run is listed with its status and progress. Open one to:
+
+- See how many rows succeeded and how many failed.
+- **Download an error report** listing exactly which rows failed and why.
+- **Download the original file** you uploaded.
+- **Delete** a single import record, or **bulk-delete** several at once.
+
+<Note>
+A failed row doesn't stop the rest of the import — WhatsMark processes every row it can and reports failures separately, so one bad phone number won't block hundreds of good ones.
+</Note>
+
+## Exporting contacts
+
+From the Contacts page, apply whatever filters you want (status, source, group, label, and so on), then use **Export** to download exactly that filtered list as a file.
+
+<Tip>
+Export respects your current filters — export a specific group or label if you only need a subset, rather than exporting everything and filtering afterward.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Managing Contacts" icon="address-book" href="/contacts/managing-contacts">
+    Browse, create, and edit contacts individually.
+  </Card>
+
+  <Card title="Bulk Actions & Merge" icon="layer-group" href="/contacts/bulk-actions-and-merge">
+    Clean up and organize contacts after a large import.
+  </Card>
+</CardGroup>

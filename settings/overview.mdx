@@ -1,0 +1,41 @@
+---
+title: "Settings Overview"
+description: "A complete index of every settings page in WhatsMark and what each one does."
+icon: "list"
+keywords: ["WhatsMark", "settings", "index", "reference"]
+---
+
+WhatsMark's settings are split across a lot of individual pages. This is the map — every settings page in one place, with a one-line summary and a link to the full page where one exists.
+
+| Page | What it does |
+|---|---|
+| **Profile** | Name, email, avatar, active sessions (with revoke), WhatsApp number self-service change via OTP. |
+| **Password** | Change your account password. |
+| **Two-Factor Authentication** | Enable, confirm, regenerate recovery codes, or disable TOTP 2FA. See [Login](/log-in#two-factor-authentication-2fa). |
+| **Appearance** | Light / dark / system theme toggle for your own account. |
+| **Verify Phone** | Forced WhatsApp OTP verification gate, shown if your instance requires it. |
+| **General** | Workspace name, subdomain/domain, timezone, locale, date/time format. See [Workspace Settings](/core-setup/workspace-settings#general). |
+| **Business Hours** | Weekly hours and holidays, shared across Appointments and future features. See [Workspace Settings](/core-setup/workspace-settings#business-hours). |
+| **Billing Details** | Company name, billing email, tax ID, and address used on invoices — owner only. |
+| **Custom Domain** | Add and verify your own domain instead of your `*.whatsmark.io` subdomain. See [Custom Domain](/settings/custom-domain). |
+| **Contacts (auto-create defaults)** | Defaults applied to contacts auto-created from inbound messages. See [Contact Configuration](/core-setup/contact-configuration#contact-auto-create-defaults). |
+| **Webhooks** | Forward Meta webhook events to your own endpoint. See [Webhooks](/settings/webhooks). |
+| **AI** | Supply your own AI provider key, if enabled on your instance. See [AI Features](/automation/ai-features#using-your-own-ai-provider-key). |
+| **Google Accounts** | Connect Google to use Sheets/Calendar in automation flows. See [Google Accounts](/settings/google-accounts). |
+| **Inbound Media** | Opt in to archive inbound media (images, documents, etc.) received over WhatsApp. |
+| **WhatsApp Connection** (reseller only) | Reseller-level Meta app credentials so sub-tenants inherit them. |
+| **Account (Danger Zone)** | Request or cancel account closure — owner only. See [Account & Danger Zone](/settings/account-and-danger-zone). |
+| **Notifications** | Alert email, workspace event notifications, and email subscription toggles. See [Workspace Settings](/core-setup/workspace-settings#notifications). |
+| **API Keys** | Create and manage workspace API tokens for the public REST API. See [API Keys](/settings/api-keys). |
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="API Keys" icon="key" href="/settings/api-keys">
+    Generate a token to use the developer REST API.
+  </Card>
+
+  <Card title="Custom Domain" icon="globe" href="/settings/custom-domain">
+    Serve your workspace from your own domain.
+  </Card>
+</CardGroup>

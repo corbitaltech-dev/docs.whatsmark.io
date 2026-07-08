@@ -12,10 +12,7 @@
     "pages": [
       {
         "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
+        "pages": ["index", "quickstart"]
       }
     ],
     "tabs": [
@@ -24,20 +21,81 @@
         "groups": [
           {
             "group": "Getting Started",
+            "pages": ["index", "register", "log-in", "getting-started"]
+          },
+          {
+            "group": "Core Setup",
             "pages": [
-              "index",
-              "register",
-              "log-in",
-              "getting-started"
+              "core-setup/channels",
+              "core-setup/team-and-roles",
+              "core-setup/workspace-settings",
+              "core-setup/contact-configuration",
+              "core-setup/invitation-acceptance"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "pages": [
+              "contacts/managing-contacts",
+              "contacts/import-export",
+              "contacts/bulk-actions-and-merge"
+            ]
+          },
+          {
+            "group": "Messaging",
+            "pages": [
+              "messaging/live-chat",
+              "messaging/whatsapp-templates",
+              "messaging/messenger-templates",
+              "messaging/campaigns",
+              "messaging/merge-fields"
+            ]
+          },
+          {
+            "group": "Automation & AI",
+            "pages": [
+              "automation/whatsapp-flows",
+              "automation/appointments",
+              "automation/chatbot-flows",
+              "automation/ai-features"
+            ]
+          },
+          {
+            "group": "Reporting",
+            "pages": [
+              "reporting/dashboard-and-usage",
+              "reporting/activity-logs",
+              "reporting/notifications"
+            ]
+          },
+          {
+            "group": "Media",
+            "pages": ["media/media-library"]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "billing/plans-and-subscription",
+              "billing/addons-and-upgrades",
+              "billing/payments-and-invoices"
+            ]
+          },
+          {
+            "group": "Settings Reference",
+            "pages": [
+              "settings/overview",
+              "settings/custom-domain",
+              "settings/webhooks",
+              "settings/google-accounts",
+              "settings/api-keys",
+              "settings/account-and-danger-zone"
             ]
           }
         ]
       },
       {
         "tab": "Api",
-        "pages": [
-          "overview"
-        ]
+        "pages": ["overview"]
       }
     ]
   },

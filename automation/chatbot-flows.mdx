@@ -1,0 +1,77 @@
+---
+title: "Automation Flows (Chatbot)"
+description: "How to build visual, drag-and-drop chatbot automation flows in WhatsMark, including AI-generated starting flows."
+icon: "robot"
+keywords: ["WhatsMark", "automation", "chatbot", "flow builder", "AI generate", "flow library"]
+---
+
+**Automations** let you build no-human-needed conversation flows — a chatbot that responds to keywords or events with a visual, drag-and-drop canvas, without writing any code.
+
+<Warning>
+The number of automation flows you can have is limited by your plan (`bot_flow`). Free-plan workspaces get 1 flow; Professional plans get 15; Reseller plans are unlimited.
+</Warning>
+
+## Building a flow
+
+Open the **Builder** to work on a canvas (built on React Flow) where you connect nodes together. A flow is triggered by a **keyword** or an **event**, then branches through whatever nodes you add:
+
+<AccordionGroup>
+<Accordion title="Messaging nodes">
+  Text, button, list, media, location, contact card, WhatsApp template, Messenger template, or a WhatsApp Flow send.
+</Accordion>
+
+<Accordion title="Input-collection nodes">
+  Ask a question, or specifically ask for phone, email, address, location, or media — each waits for the contact's reply before continuing.
+</Accordion>
+
+<Accordion title="Logic nodes">
+  Delay, condition/branch, wait timer, wait-for-reply, and general logic control.
+</Accordion>
+
+<Accordion title="Data & integration nodes">
+  API request, save response, update contact, update custom field, assign tag/label/group, Google Sheets read/write, Google Calendar event creation.
+</Accordion>
+
+<Accordion title="Other nodes">
+  Reaction, AI Assistant, sequence, connect-to-another-flow (chain flows together).
+</Accordion>
+</AccordionGroup>
+
+<Note>
+Google Sheets and Google Calendar nodes require connecting a [Google Account](/settings/google-accounts) first, and are only available on plans with `google_sheet` / `google_calendar` enabled (Professional and Reseller — not available on Free).
+</Note>
+
+## Managing flows
+
+Create, edit, delete, or **duplicate** a flow; toggle it **active/inactive**; set its **priority** (which flow wins if more than one could match); and **export** a flow.
+
+## Generate with AI
+
+Instead of building from an empty canvas, click **Generate with AI** and describe what you want in plain English (for example, "qualify a lead by asking for their budget and timeline, then route to sales"). WhatsMark proposes a starting node graph matching your description, which you can then edit freely.
+
+<Warning>
+AI flow generation is gated by your plan (`ai_flow_generation`) — it's off on Free and available on Professional and Reseller plans, drawing from the same monthly AI token quota used by [AI Chat Assist](/automation/ai-features).
+</Warning>
+
+## Flow Library
+
+Browse 6 pre-built templates and clone one instead of starting from scratch:
+
+- Lead Qualification
+- Appointment Booking
+- Customer Support
+- Sales Pipeline CRM
+- E-commerce Order Flow
+- Recruitment / HR
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="AI Features" icon="sparkles" href="/automation/ai-features">
+    See how AI flow generation fits alongside AI chat assist and custom prompts.
+  </Card>
+
+  <Card title="WhatsApp Flows" icon="diagram-project" href="/automation/whatsapp-flows">
+    Send an interactive form from within an automation flow.
+  </Card>
+</CardGroup>

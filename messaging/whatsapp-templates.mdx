@@ -1,0 +1,75 @@
+---
+title: "WhatsApp Templates"
+description: "How to create, submit, and manage Meta-approved WhatsApp message templates in WhatsMark."
+icon: "file-lines"
+keywords: ["WhatsMark", "WhatsApp templates", "message templates", "Meta approval", "carousel", "authentication template"]
+---
+
+WhatsApp requires any message sent outside the 24-hour customer service window — including every broadcast — to use a pre-approved **template**. WhatsMark's Templates page is where you build, submit, and track them.
+
+## Browsing templates
+
+The Templates table lists every template across your connected accounts, filterable by account, status, category, and language, with a quality-rating badge on each.
+
+## Creating a template
+
+<Steps>
+<Step title="Pick a type">
+  Choose **Header**, **Carousel**, or **Authentication**.
+</Step>
+
+<Step title="Fill in Basic Info">
+  Name, language, and category — these become locked once the template is submitted.
+</Step>
+
+<Step title="Build the Header">
+  Text, or an image/video/document you upload.
+</Step>
+
+<Step title="Write the Body">
+  Variables are detected live as you type `{{1}}`, `{{2}}`, and so on.
+</Step>
+
+<Step title="Add a Footer (optional)">
+  A short line of fixed text under the body.
+</Step>
+
+<Step title="Add Buttons">
+  Quick Reply, URL, or Phone Number buttons.
+</Step>
+</Steps>
+
+For **Carousel** templates, you build 2–10 cards instead, each with its own header media, body, and buttons. For **Authentication** templates, you configure the OTP button type (Copy Code, One-Tap, or Zero-Tap) and code expiry instead of a header/body/buttons flow.
+
+A live, WhatsApp-styled preview updates as you build, so you can see exactly what your contact will see.
+
+<Tip>
+Don't start from scratch — browse the **Template Library** for pre-built starter templates, tabbed by type and favouritable, and use one to pre-fill the form.
+</Tip>
+
+## Submitting for approval
+
+Once you're happy with a template, submit it to Meta for review. Status updates — **Approved**, **Rejected**, **Paused**, or **Disabled** — arrive automatically via webhook, along with an in-app notification so you don't have to keep checking back.
+
+<Warning>
+Once a template is submitted, its **name**, **language**, and **category** can no longer be changed. You can still edit the content and resubmit, or delete it and start over.
+</Warning>
+
+## Managing existing templates
+
+- **Edit** content and resubmit.
+- **Delete** a template.
+- **Sync** — pull the latest status/content from Meta for a single channel or all channels at once, useful if a template was changed directly in Meta Business Manager.
+- **Analytics** — open a template's stats panel to see sent, delivered, read, clicked, and cost figures over a chosen date range.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="bullhorn" href="/messaging/campaigns">
+    Use an approved template to broadcast to a list of contacts.
+  </Card>
+
+  <Card title="Messenger Templates" icon="message" href="/messaging/messenger-templates">
+    See how Messenger's local, non-Meta-approved presets work instead.
+  </Card>
+</CardGroup>

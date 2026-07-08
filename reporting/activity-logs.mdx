@@ -1,0 +1,50 @@
+---
+title: "Activity Logs"
+description: "How to review the general audit trail and the WhatsApp message send log in WhatsMark."
+icon: "clock-rotate-left"
+keywords: ["WhatsMark", "activity log", "audit trail", "WhatsApp activity log", "audit"]
+---
+
+WhatsMark keeps two separate logs: a general **Activity Log** covering everything that happens in your workspace, and a **WhatsApp Activity Log** specifically for every outbound WhatsApp message the platform sends.
+
+## Activity Log
+
+The Activity Log is a filterable audit trail of every meaningful action taken in your workspace — filter by **event type** and by **user** (the person who performed the action).
+
+- **Delete** an individual log entry (unless it's protected from deletion).
+- **Bulk-delete** selected entries.
+- **Clear** the entire log.
+
+<Tip>
+Use the Activity Log when you need to answer "who changed this, and when?" — role changes, deleted contacts, settings updates, and more all show up here.
+</Tip>
+
+## WhatsApp Activity Log
+
+This log is narrower but deeper: every outbound WhatsApp message your platform has sent on your behalf, across **every send source** —
+
+- [Initiate Chat](/contacts/managing-contacts#row-actions)
+- [Campaigns](/messaging/campaigns)
+- [Automation flows](/automation/chatbot-flows) (Bot Flow)
+- Message Bot
+- Inbox replies (from [Live Chat](/messaging/live-chat))
+
+Filter by category, and drill into any row to see the **raw request/response JSON** that was actually sent to and received from Meta — useful when troubleshooting a delivery failure or unexpected message content.
+
+Like the general Activity Log, you can clear the log, bulk-delete entries, or delete a single entry.
+
+<Note>
+The WhatsApp Activity Log is about *what was sent and how Meta responded* — for delivery/read analytics on a specific message, see the sending feature itself (Campaign analytics, Template analytics, etc.).
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
+    See a higher-level summary of activity and plan usage.
+  </Card>
+
+  <Card title="Notifications" icon="bell" href="/reporting/notifications">
+    Get notified in-app about important events instead of digging through the log.
+  </Card>
+</CardGroup>

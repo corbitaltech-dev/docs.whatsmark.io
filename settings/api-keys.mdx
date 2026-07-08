@@ -1,0 +1,64 @@
+---
+title: "API Keys"
+description: "How to create and manage workspace API tokens for the WhatsMark developer REST API."
+icon: "key"
+keywords: ["WhatsMark", "API keys", "API tokens", "developer", "REST API"]
+---
+
+If you want to integrate with WhatsMark programmatically — your own app, an external system, a custom automation — you'll need a workspace **API token**. Manage these under **Settings → API Keys**.
+
+<Warning>
+API access is a **Professional** plan feature (`api_access`) — Free-plan workspaces can't create tokens or reach the API host until they upgrade. Every plan with API access also has a monthly request quota (`api_requests`) that scales with your plan, with Reseller plans unlimited.
+</Warning>
+
+## Creating a token
+
+<Steps>
+<Step title="Click Create Token">
+  Give your token a descriptive name so you remember what it's for later.
+</Step>
+
+<Step title="Choose abilities (scopes)">
+  Select exactly which parts of the API this token can access — contacts, channels, messages, templates, groups, labels, sources, statuses, conversations, OTP, account, and usage are all separately scoped.
+</Step>
+
+<Step title="Set an expiry (optional)">
+  Tokens can be created with or without an expiration date.
+</Step>
+
+<Step title="Copy your token">
+  The full token value is shown **once**, right after creation — copy it immediately, since WhatsMark only stores a hash of it afterward and can't show it to you again.
+</Step>
+</Steps>
+
+<Warning>
+If you lose a token's value, you can't retrieve it — you'll need to **regenerate** it (which invalidates the old value but keeps the same name and abilities) or create a new one.
+</Warning>
+
+## Managing tokens
+
+- See when each token was **last used**, to spot ones that are no longer needed.
+- **Regenerate** a token's secret in place, keeping its name and abilities.
+- **Delete** a token to revoke access immediately.
+
+## Using your token
+
+Every request to the API needs your token as a bearer token:
+
+```text
+Authorization: Bearer YOUR_API_TOKEN
+```
+
+See the full [API Overview](/overview) for the base URL, pagination, and error format.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Webhooks" icon="webhook" href="/settings/webhooks">
+    Combine API access with webhook forwarding for a two-way integration.
+  </Card>
+
+  <Card title="Settings Overview" icon="list" href="/settings/overview">
+    Back to the full settings index.
+  </Card>
+</CardGroup>

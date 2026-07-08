@@ -1,0 +1,89 @@
+---
+title: "Live Chat"
+description: "How to use WhatsMark's unified team inbox to talk to customers over WhatsApp and Messenger in real time."
+icon: "comments"
+keywords: ["WhatsMark", "chat", "live chat", "team inbox", "conversations", "inbox"]
+---
+
+**Chat** is where your team actually talks to customers — a unified inbox for every WhatsApp and Messenger conversation across all your connected channels.
+
+## The inbox layout
+
+Chat is split into four panes:
+
+1. **Sidebar** — filters: **All**, **Mine**, **Unassigned**, per-status, per-channel, and **Team Inboxes**, each with a live unread counter.
+2. **Conversation list** — every conversation matching the current filter, searchable by contact.
+3. **Message thread** — the open conversation, with message search within the thread.
+4. **Contact panel** — the contact's details, media gallery, and notes, without leaving the chat.
+
+Updates appear instantly — new messages, delivery ticks, assignment changes, and counters all update live without needing to refresh the page.
+
+## Sending a message
+
+The composer supports:
+
+- **Text**
+- **Media** — images, video, audio, and documents, with upload progress
+- **Location** pins
+- **Contact cards**
+- **Canned replies** — a searchable picker of pre-written responses
+- **Reply-to** — quote a specific earlier message
+
+<Warning>
+WhatsApp only allows free-form messages within a **24-hour window** after the customer's last message. Once that window closes, the composer shows a **"Send template"** prompt instead — see [Initiate Chat](/contacts/managing-contacts#row-actions) for sending an approved template to restart the conversation. Messenger conversations don't have this restriction.
+</Warning>
+
+## AI-assisted replies
+
+Click the **Sparkles** button in the composer to:
+
+- **Improve**, **Fix Grammar**, **Make Formal**, **Make Casual**, or **Shorten** your drafted message.
+- **Translate** it into any language from your configured list.
+- Apply one of your own **Custom AI Prompts**.
+
+After a rewrite, an **Undo / Regenerate** bar lets you revert or try again, and a token-usage meter shows how much of your monthly AI quota you're using.
+
+<Note>
+AI assist is gated by your plan (`ai_chat_assist` as the master switch, `ai_tokens_monthly` for usage, `ai_prompts` for how many custom prompts you can save). See [AI Features](/automation/ai-features) for the full picture.
+</Note>
+
+## Managing a conversation
+
+- **Assign** a conversation to one or more team members, or to a **Team Inbox**.
+- **Mark as read**, **clear** the message history, or **delete** the conversation entirely.
+- **Delete a single message** — you (or a teammate) can **restore** it within a 2-minute window.
+- **Run an automation flow** manually against the open conversation, or send a **WhatsApp Flow** interactively — see [Automation Flows](/automation/chatbot-flows) and [WhatsApp Flows](/automation/whatsapp-flows).
+
+<Tip>
+Assigning conversations and running automation flows from chat both respect your workspace's [roles and permissions](/core-setup/team-and-roles) — a team member needs the right permission to see these actions.
+</Tip>
+
+## Team Inboxes
+
+Beyond assigning conversations to individuals, you can group team members into **Team Inboxes** (e.g. "Sales", "Support"):
+
+<Steps>
+<Step title="Create a Team Inbox">
+  Give it a name from the Team Inboxes management screen.
+</Step>
+
+<Step title="Add members">
+  Add the team members who should see conversations routed to this inbox.
+</Step>
+
+<Step title="Assign conversations to it">
+  From any conversation, assign it to the Team Inbox instead of (or alongside) an individual — everyone in that inbox sees it in their sidebar.
+</Step>
+</Steps>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Templates" icon="file-lines" href="/messaging/whatsapp-templates">
+    Get messages approved by Meta so you can message contacts outside the 24-hour window.
+  </Card>
+
+  <Card title="Campaigns" icon="bullhorn" href="/messaging/campaigns">
+    Send messages to many contacts at once instead of one conversation at a time.
+  </Card>
+</CardGroup>

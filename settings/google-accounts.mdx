@@ -1,0 +1,48 @@
+---
+title: "Google Accounts"
+description: "How to connect a Google account to WhatsMark to use Google Sheets and Google Calendar in automation flows."
+icon: "google"
+keywords: ["WhatsMark", "Google accounts", "Google Sheets", "Google Calendar", "OAuth"]
+---
+
+If your [automation flows](/automation/chatbot-flows) need to read/write a Google Sheet or create a Google Calendar event, connect a Google account first from **Settings → Google Accounts**.
+
+<Warning>
+This feature requires `google_sheet` and/or `google_calendar` on your plan — both are off on Free and available on Professional and Reseller plans.
+</Warning>
+
+## Connecting an account
+
+<Steps>
+<Step title="Click Connect">
+  Starts a standard Google OAuth flow in a popup.
+</Step>
+
+<Step title="Sign in and grant access">
+  Sign into the Google account you want to use, and approve the requested permissions (Sheets and/or Calendar access).
+</Step>
+
+<Step title="Confirm it's connected">
+  The account appears in your list, ready to select from any Google Sheets or Google Calendar automation node.
+</Step>
+</Steps>
+
+## Using a connected account
+
+Once connected, browse or create **Sheets** and **Calendars** directly from the automation builder when configuring a Google Sheets or Google Calendar node — no need to leave the flow builder to set anything up in Google first.
+
+## Disconnecting
+
+Remove a Google account at any time from the same page. Any automation flow nodes referencing it will need to be pointed at a different account afterward.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Automation Flows" icon="robot" href="/automation/chatbot-flows">
+    Use a connected Google account in a Sheets or Calendar node.
+  </Card>
+
+  <Card title="Settings Overview" icon="list" href="/settings/overview">
+    Back to the full settings index.
+  </Card>
+</CardGroup>

@@ -1,0 +1,68 @@
+---
+title: "AI Features"
+description: "How WhatsMark's AI features work: chat message assist, custom AI prompts, AI flow generation, and using your own AI provider key."
+icon: "sparkles"
+keywords: ["WhatsMark", "AI", "AI chat assist", "custom prompts", "AI flow generation", "AI settings"]
+---
+
+WhatsMark uses AI in three places across the product — the chat composer, custom rewrite prompts, and automation flow generation — all sharing the same plan-level AI switches and token quota.
+
+<Warning>
+All AI features are off by default on the Free plan. Professional plans get AI chat assist, unlimited custom prompts, and 100,000 AI tokens per month; Reseller plans get all of the above unlimited.
+</Warning>
+
+## AI in Chat
+
+In the [Live Chat](/messaging/live-chat) composer, click the **Sparkles** button to:
+
+- **Improve** your drafted message, **Fix Grammar**, **Make Formal**, **Make Casual**, or **Shorten** it.
+- **Translate** it into any language from your workspace's configured list.
+- Apply one of your saved **Custom AI Prompts** (see below).
+
+A token-usage meter shows live usage against your monthly quota, and an **Undo / Regenerate** bar appears after each rewrite so you can revert or try again without losing your original draft.
+
+## Custom AI Prompts
+
+Go to **AI Prompts** to create your own named rewrite presets — for example, "Add a friendly sign-off" or "Convert to bullet points." Each prompt is just a name plus an instruction.
+
+<Steps>
+<Step title="Create a prompt">
+  Give it a name and write the instruction you want the AI to follow.
+</Step>
+
+<Step title="Reorder or toggle">
+  Drag to reorder your prompts, and toggle any of them active/inactive.
+</Step>
+
+<Step title="Use it in chat">
+  Your active prompts appear in the chat composer's Sparkles popover, under "Your prompts."
+</Step>
+</Steps>
+
+<Note>
+The number of custom prompts you can save is limited by your plan (`ai_prompts`) — 0 on Free, unlimited on Professional and Reseller.
+</Note>
+
+## AI Flow Generation
+
+Covered in full on the [Automation Flows](/automation/chatbot-flows#generate-with-ai) page — the **Generate with AI** button in the automation builder turns a plain-English description into a starting flow, drawing from the same monthly token quota as chat AI assist.
+
+## Using your own AI provider key
+
+If your WhatsMark instance allows it, go to **Settings → AI** to supply your own AI provider API key instead of using the platform-shared one, and test that it works before saving.
+
+<Info>
+This option is only visible if your platform administrator has enabled "allow tenant own key." If you don't see this setting, your workspace uses the platform's shared AI provider by default.
+</Info>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Live Chat" icon="comments" href="/messaging/live-chat">
+    Use AI assist directly in the composer while messaging customers.
+  </Card>
+
+  <Card title="Automation Flows" icon="robot" href="/automation/chatbot-flows">
+    Generate a starting chatbot flow with AI instead of building from scratch.
+  </Card>
+</CardGroup>

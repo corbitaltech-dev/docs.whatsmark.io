@@ -1,0 +1,50 @@
+---
+title: "Merge Fields"
+description: "Reference for every merge field token available in WhatsMark campaigns, templates, and automation flows."
+icon: "at"
+keywords: ["WhatsMark", "merge fields", "personalization", "tokens", "variables"]
+---
+
+**Merge fields** are `{{token}}` placeholders that get replaced with real contact data when a message is actually sent — letting one campaign, template, or automation message read as personalized to every recipient.
+
+## Where merge fields work
+
+The same `@`-trigger picker appears anywhere you can compose message content:
+
+- [Campaigns](/messaging/campaigns) content step
+- [WhatsApp Templates](/messaging/whatsapp-templates) body/header text
+- [Automation flow](/automation/chatbot-flows) text nodes
+
+Type `@` to open the picker, or browse the full reference at **Campaigns → Merge Fields**.
+
+## Available fields
+
+<AccordionGroup>
+<Accordion title="Contact Fields">
+  Built-in fields on every contact: name, email, phone, status, source, and assigned team member.
+</Accordion>
+
+<Accordion title="Custom Fields">
+  Every active [custom field](/core-setup/contact-configuration#custom-fields) you've defined for contacts appears here automatically — create a new custom field and it becomes available as a merge token right away.
+</Accordion>
+
+<Accordion title="Team / Workspace Fields">
+  Details about your workspace itself: team name, workspace email, domain, and subdomain — useful for signature-style content that shouldn't change per contact.
+</Accordion>
+</AccordionGroup>
+
+<Note>
+If a contact doesn't have a value for a given field (for example, a custom field left blank), the merge field resolves to an empty string rather than breaking the send.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="bullhorn" href="/messaging/campaigns">
+    Use merge fields to personalize a broadcast.
+  </Card>
+
+  <Card title="Contact Configuration" icon="address-book" href="/core-setup/contact-configuration">
+    Add a custom field so it becomes available as a merge token.
+  </Card>
+</CardGroup>

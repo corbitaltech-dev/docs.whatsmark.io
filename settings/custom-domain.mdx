@@ -1,0 +1,52 @@
+---
+title: "Custom Domain"
+description: "How to serve your WhatsMark workspace from your own domain instead of your *.whatsmark.io subdomain."
+icon: "globe"
+keywords: ["WhatsMark", "custom domain", "DNS", "CNAME", "SSL"]
+---
+
+Every workspace gets a free subdomain like `acme.whatsmark.io`. If you'd rather your team (and customers, for the public booking link) see your own domain, connect one under **Settings → Custom Domain**.
+
+<Warning>
+Custom domains are gated by your plan (`custom_domain`) — check with your workspace admin or [Billing](/billing/plans-and-subscription) if you don't see this option.
+</Warning>
+
+## Connecting a domain
+
+<Steps>
+<Step title="Enter your domain">
+  Type the domain (or subdomain) you want to use, e.g. `app.yourcompany.com`.
+</Step>
+
+<Step title="Point DNS at WhatsMark">
+  Add a **CNAME** record at your DNS provider pointing your domain to the target WhatsMark provides on this page.
+</Step>
+
+<Step title="Verify">
+  Click **Verify** once your DNS record is live. WhatsMark checks it and begins provisioning SSL automatically.
+</Step>
+
+<Step title="Set as primary (optional)">
+  Once verified, you can set the custom domain as your **primary** domain — this is what your workspace's links use by default, in place of your `*.whatsmark.io` subdomain.
+</Step>
+</Steps>
+
+<Note>
+DNS changes can take time to propagate. If verification doesn't succeed immediately, wait a few minutes and try again — SSL provisioning also happens asynchronously, so the page polls for status until it's ready.
+</Note>
+
+## Removing a domain
+
+You can remove a connected custom domain at any time — your workspace falls back to its original `*.whatsmark.io` subdomain automatically.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Settings Overview" icon="list" href="/settings/overview">
+    Back to the full settings index.
+  </Card>
+
+  <Card title="Appointments" icon="calendar-check" href="/automation/appointments">
+    Your custom domain also applies to the public booking link.
+  </Card>
+</CardGroup>
