@@ -45,10 +45,10 @@
               {
                 "group": "WhatsMark",
                 "pages": [
-                  "whatsmark/introduction",
-                  "whatsmark/register",
-                  "whatsmark/login",
-                  "whatsmark/getting-started"
+                  "introduction",
+                  "register",
+                  "login",
+                  "getting-started"
                 ]
               },
               {
@@ -77,17 +77,9 @@
         "label": "llms-full.txt",
         "icon": "link",
         "href": "https://docs.dodopayments.com/llms-full.txt"
-      },
-      {
-        "label": "Community",
-        "icon": "discord",
-        "href": "https://discord.gg/bYqAp4ayYh"
-      },
-      {
-        "icon": "house",
-        "label": "Dashboard",
-        "href": "https://app.dodopayments.com/"
       }
+     
+     
     ]
   },
   "footer": {
