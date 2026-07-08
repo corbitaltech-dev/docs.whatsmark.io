@@ -1,0 +1,111 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Dodo Payments Documentation",
+  "colors": {
+    "primary": "#779812",
+    "light": "#C6FE1E",
+    "dark": "#166534"
+  },
+  "fonts": {
+    "heading": {
+      "family": "ApfelGrotezk",
+      "source": "/fonts/ApfelGrotezk-Regular.woff2",
+      "format": "woff2",
+      "weight": 400
+    },
+    "body": {
+      "family": "Inter",
+      "source": "/fonts/Inter-Variable.woff2",
+      "format": "woff2",
+      "weight": 400
+    }
+  },
+  "favicon": "/favicon.svg",
+  "description": "Documentation for Dodo Payments — the all-in-one payments, billing, and merchant of record platform for SaaS, AI, and digital products.",
+  "seo": {
+    "indexing": "navigable",
+    "metatags": {
+      "og:site_name": "Dodo Payments Documentation",
+      "twitter:card": "summary_large_image"
+    }
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "navigation": {
+    "languages": [
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "WhatsMark",
+            "icon": "message-bot",
+            "groups": [
+              {
+                "group": "WhatsMark",
+                "pages": [
+                  "whatsmark/introduction",
+                  "whatsmark/register",
+                  "whatsmark/login",
+                  "whatsmark/getting-started"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#0D0D0D"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "llms-full.txt",
+        "icon": "link",
+        "href": "https://docs.dodopayments.com/llms-full.txt"
+      },
+      {
+        "label": "Community",
+        "icon": "discord",
+        "href": "https://discord.gg/bYqAp4ayYh"
+      },
+      {
+        "icon": "house",
+        "label": "Dashboard",
+        "href": "https://app.dodopayments.com/"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/dodopayments",
+      "linkedin": "https://linkedin.com/company/dodopayments",
+      "website": "https://dodopayments.com",
+      "discord": "https://discord.gg/bYqAp4ayYh",
+      "github": "https://github.com/dodopayments",
+      "instagram": "https://www.instagram.com/dodo.payments/",
+      "facebook": "https://www.facebook.com/profile.php?id=61565515607280"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "cursor"
+    ]
+  },
+  "redirects": []
+}

@@ -1,0 +1,92 @@
+---
+title: "Login"
+description: "How to find your WhatsMark workspace, sign in, reset your password, and use two-factor authentication."
+icon: "right-to-bracket"
+keywords: ["WhatsMark", "login", "sign in", "forgot password", "two-factor authentication", "2FA"]
+---
+
+Because every WhatsMark customer has their own workspace subdomain (e.g. `acme.whatsmark.io`), logging in has two possible starting points depending on where you begin.
+
+## Finding your workspace
+
+If you go to the main WhatsMark site (rather than your own subdomain) and select **Log in**, you'll see a **"Find your workspace"** page:
+
+<Steps>
+<Step title="Enter your email">
+  Type the email address you registered with.
+</Step>
+<Step title="Continue">
+  Click **Continue**. WhatsMark looks up which workspace that email belongs to and redirects you to that workspace's own login page, with your email pre-filled.
+</Step>
+</Steps>
+
+<Note>
+For privacy, if no account matches the email you entered, you'll see a generic message rather than a "no account found" error — this prevents anyone from using this form to check whether an email is registered.
+</Note>
+
+If you already know your workspace address, you can skip this step and go straight to `yourworkspace.whatsmark.io/login`.
+
+## Logging in
+
+On your workspace's login page, sign in with:
+
+- **Email address**
+- **Password**
+- **Remember me** (optional) — stays signed in across browser sessions
+- A **CAPTCHA** may appear if enabled by your admin
+
+If social login is available, you'll also see **"Or continue with"** buttons for Google, GitHub, or Facebook.
+
+<Tip>
+Don't have an account yet? Use the **"Sign up"** link at the bottom of the login page — it only appears if registration is currently open.
+</Tip>
+
+<Warning>
+For security, login attempts are rate-limited — after too many failed attempts for the same email and IP address within a minute, you'll need to wait before trying again.
+</Warning>
+
+## Two-factor authentication (2FA)
+
+Two-factor authentication is **optional** for regular workspace users (it's only mandatory for platform administrators). You can turn it on yourself from **Settings → Two-Factor Authentication**:
+
+<Steps>
+<Step title="Enable 2FA">
+  Click **Enable** on the Two-Factor Authentication card in your profile settings.
+</Step>
+<Step title="Scan the QR code">
+  Scan the QR code with an authenticator app (Google Authenticator, Authy, 1Password, etc.) and enter the confirmation code shown by the app.
+</Step>
+<Step title="Save your recovery codes">
+  WhatsMark shows a set of one-time recovery codes — store these somewhere safe. You can use one to log in if you ever lose access to your authenticator app.
+</Step>
+</Steps>
+
+Once enabled, every future login will prompt you for a **6-digit authentication code** after your password, with the option to **"login using a recovery code"** instead if you don't have your device on hand.
+
+## Forgot your password
+
+<Steps>
+<Step title="Click 'Forgot your password?'">
+  This link sits next to the password field on the login page.
+</Step>
+<Step title="Enter your email">
+  Submit your email address on the **Forgot Password** page.
+</Step>
+<Step title="Check your inbox">
+  You'll receive a password reset link by email.
+</Step>
+<Step title="Set a new password">
+  Clicking the link opens the **Reset Password** page, where you'll set a new password (following the same strength rules as registration: 8+ characters, with uppercase, lowercase, a number, and a symbol).
+</Step>
+</Steps>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Register" icon="user-plus" href="/whatsmark/register">
+    Don't have a workspace yet? See how to sign up and choose a plan.
+  </Card>
+  <Card title="Getting Started" icon="rocket" href="/whatsmark/getting-started">
+    Learn what's on your dashboard and how to connect WhatsApp and invite your team.
+  </Card>
+</CardGroup>

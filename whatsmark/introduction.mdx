@@ -1,0 +1,48 @@
+---
+title: "Introduction"
+description: "WhatsMark is a multi-tenant WhatsApp Business messaging platform. Learn how workspaces, plans, and the core building blocks fit together before you register."
+icon: "message-bot"
+keywords: ["WhatsMark", "WhatsApp Business", "tenant", "workspace", "onboarding"]
+---
+
+## What is WhatsMark
+
+WhatsMark (`whatsmark.io`) is a multi-tenant SaaS platform built on top of the WhatsApp Business Platform (and Meta Messenger). Each customer gets their own isolated **workspace** — a subdomain such as `acme.whatsmark.io` — with its own contacts, conversations, templates, campaigns, and team members.
+
+This section documents the parts of the product every new customer goes through first:
+
+<CardGroup cols={2}>
+  <Card title="Register" icon="user-plus" href="/whatsmark/register">
+    Choose a plan, create your workspace, and verify your WhatsApp number.
+  </Card>
+  <Card title="Login" icon="right-to-bracket" href="/whatsmark/login">
+    Find your workspace, sign in, reset your password, and set up two-factor authentication.
+  </Card>
+  <Card title="Getting Started" icon="rocket" href="/whatsmark/getting-started">
+    What you'll see on your dashboard, and how to connect WhatsApp, invite your team, and manage billing.
+  </Card>
+</CardGroup>
+
+## Core concepts
+
+<AccordionGroup>
+<Accordion title="Workspace (tenant)">
+A workspace is your isolated account on WhatsMark — its own database, its own subdomain (e.g. `acme.whatsmark.io`), and its own users, contacts, channels, and billing. Everything you do happens inside your workspace.
+</Accordion>
+
+<Accordion title="Channel">
+A Channel is a connected messaging account — most commonly a WhatsApp Business Account (WABA) and phone number, connected either through Meta's Embedded Signup or manually. A workspace can connect more than one channel, including Messenger.
+</Accordion>
+
+<Accordion title="Plans">
+WhatsMark offers a **Free** plan (no payment required, available immediately) and paid **Professional** plans (billed monthly, quarterly, or yearly, priced by contact volume). A separate **Reseller** tier is available by invitation and isn't self-serve.
+</Accordion>
+
+<Accordion title="Roles">
+Every workspace has an owner (the person who registered it) and can invite additional team members with different roles and permissions from the Team settings page.
+</Accordion>
+</AccordionGroup>
+
+<Info>
+New to WhatsMark? Start with [Register](/whatsmark/register) to create your workspace, or jump to [Getting Started](/whatsmark/getting-started) if you already have an account and want to know what to do next.
+</Info>
