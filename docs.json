@@ -26,7 +26,15 @@
           {
             "group": "Core Setup",
             "pages": [
-              "core-setup/channels",
+              {
+                "group": "Channels",
+                "icon": "plug",
+                "pages": [
+                  "core-setup/channels/overview",
+                  "core-setup/channels/whatsapp",
+                  "core-setup/channels/messenger"
+                ]
+              },
               "core-setup/team-and-roles",
               "core-setup/workspace-settings",
               "core-setup/contact-configuration",

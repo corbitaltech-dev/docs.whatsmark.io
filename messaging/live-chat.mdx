@@ -16,7 +16,24 @@ Chat is split into four panes:
 3. **Message thread** — the open conversation, with message search within the thread.
 4. **Contact panel** — the contact's details, media gallery, and notes, without leaving the chat.
 
-Updates appear instantly — new messages, delivery ticks, assignment changes, and counters all update live without needing to refresh the page.
+The contact panel isn't read-only — you can **edit the contact's details directly from here** (name, status, labels, and other fields), the same as editing them from the [Contacts](/contacts/managing-contacts) page, and add or review [notes](/contacts/managing-contacts#notes) without switching pages.
+
+Updates appear instantly — new messages, delivery ticks, assignment changes, and counters all update live without needing to refresh the page. An **online indicator** shows on a contact's avatar when they're currently active.
+
+## Starting a new chat
+
+You don't have to wait for a customer to message first — click **New Chat** to search your existing contacts and open a conversation directly from Chat:
+
+- If the contact already has an open conversation (within the 24-hour window), it opens immediately.
+- If their window is closed, or they're reachable on more than one platform, you'll be guided through a **channel picker** and then the [Initiate Chat](/contacts/managing-contacts#row-actions) template flow instead.
+
+## Browsing message history
+
+Use the **date range picker** above the message thread to jump to an earlier point in a conversation's history.
+
+<Note>
+How far back you can go is limited by your plan's chat history retention (`chat_history_days`). Dates outside your plan's window are disabled in the picker, with a link to [Billing](/billing/plans-and-subscription) if you need to look further back.
+</Note>
 
 ## Sending a message
 
@@ -30,7 +47,7 @@ The composer supports:
 - **Reply-to** — quote a specific earlier message
 
 <Warning>
-WhatsApp only allows free-form messages within a **24-hour window** after the customer's last message. Once that window closes, the composer shows a **"Send template"** prompt instead — see [Initiate Chat](/contacts/managing-contacts#row-actions) for sending an approved template to restart the conversation. Messenger conversations don't have this restriction.
+WhatsApp only allows free-form messages within a **24-hour window** after the customer's last message. A live countdown above the composer shows exactly how much time is left. Once that window closes, the composer shows a **"Send template"** prompt instead — see [Initiate Chat](/contacts/managing-contacts#row-actions) for sending an approved template to restart the conversation. Messenger conversations don't have this restriction, so no countdown appears for them.
 </Warning>
 
 ## AI-assisted replies
@@ -57,6 +74,17 @@ AI assist is gated by your plan (`ai_chat_assist` as the master switch, `ai_toke
 <Tip>
 Assigning conversations and running automation flows from chat both respect your workspace's [roles and permissions](/core-setup/team-and-roles) — a team member needs the right permission to see these actions.
 </Tip>
+
+## Canned Replies
+
+**Canned Replies** are pre-written responses your team can insert into the composer with one click, instead of retyping the same answer over and over. Manage the list from **Setup → Canned Replies**:
+
+- **Create**, **edit**, and **delete** a canned reply.
+- **Drag to reorder** — the order here is the order they appear in the composer's picker.
+
+<Warning>
+The number of canned replies you can save is limited by your plan (`canned_replies`). Free-plan workspaces can't create any; Professional and Reseller plans are unlimited.
+</Warning>
 
 ## Team Inboxes
 

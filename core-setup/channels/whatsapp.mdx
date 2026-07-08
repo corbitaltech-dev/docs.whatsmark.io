@@ -1,0 +1,63 @@
+---
+title: "Connecting WhatsApp"
+description: "How to connect a WhatsApp Business Account to WhatsMark via Embedded Signup or manually, and manage its health and business profile."
+icon: "whatsapp"
+keywords: ["WhatsMark", "WhatsApp", "WABA", "embedded signup", "coexistence", "business profile"]
+---
+
+Connect a WhatsApp Business Account (WABA) so you can send and receive WhatsApp messages through WhatsMark.
+
+## Connecting WhatsApp
+
+<Steps>
+<Step title="Click Connect">
+  From the [Channels page](/core-setup/channels/overview), click **Connect** and choose **WhatsApp** from the platform picker.
+</Step>
+
+<Step title="Pick a connection method">
+  You'll see two tabs:
+
+  - **Embedded (recommended)** — WhatsMark uses Meta's official **Embedded Signup** flow. A Facebook login popup opens; log into your Facebook Business account, choose or create a WhatsApp Business Account and phone number, and confirm. The popup closes automatically once complete.
+  - **Manual** — for advanced setups where you already have WhatsApp Business API credentials. Paste in your existing **WABA ID**, **access token**, **Meta App ID**, and **App Secret** directly.
+</Step>
+
+<Step title="Confirm it's connected">
+  Once connected, the channel appears in your Channels list with a **Connected** status, and a webhook subscription is set up automatically so incoming messages reach your workspace.
+</Step>
+</Steps>
+
+<Note>
+Both connection methods can be individually disabled by your plan (`emb_signup`, `manual_channel`). If a tab is missing, that method isn't available on your current plan.
+</Note>
+
+## Coexistence mode
+
+If enabled on your plan (`coexistence`), you can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Chat history and contacts from the app are imported, and messages stay in sync between the app and WhatsMark.
+
+## WABA health
+
+Open a connected WhatsApp channel to view:
+
+- **Quality rating**, review status, and business verification.
+- **Conversation analytics** for the account.
+- Per-number quality, if you have multiple phone numbers under the same WABA.
+
+## Business Profile
+
+Go to a channel's **Profile** tab to edit the public WhatsApp Business Profile your contacts see: about text, address, description, email, websites, business vertical/category, and profile photo.
+
+## Test message
+
+Use **Send a test message** from the channel to confirm the connection actually works end-to-end before relying on it.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Connecting Messenger" icon="facebook-messenger" href="/core-setup/channels/messenger">
+    Connect a Facebook Page the same way.
+  </Card>
+
+  <Card title="Channels Overview" icon="plug" href="/core-setup/channels/overview">
+    Back to managing all your connected channels in one place.
+  </Card>
+</CardGroup>

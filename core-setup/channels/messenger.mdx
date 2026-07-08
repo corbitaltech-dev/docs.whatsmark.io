@@ -1,0 +1,55 @@
+---
+title: "Connecting Messenger"
+description: "How to connect a Facebook Page to WhatsMark via Embedded Signup or manually, to send and receive Messenger conversations."
+icon: "facebook-messenger"
+keywords: ["WhatsMark", "Messenger", "Facebook Page", "embedded signup", "manual connect"]
+---
+
+Connect a Facebook Page so you can send and receive Messenger conversations through WhatsMark, right alongside your WhatsApp channels.
+
+## Connecting Messenger
+
+<Steps>
+<Step title="Click Connect">
+  From the [Channels page](/core-setup/channels/overview), click **Connect** and choose **Messenger** from the platform picker.
+</Step>
+
+<Step title="Pick a connection method">
+  You'll see two tabs:
+
+  - **Embedded (recommended)** — a one-click Facebook Page login flow. Log into your Facebook account, choose the Page you want to connect, and confirm. The popup closes automatically once complete.
+  - **Manual** — paste in an existing Facebook **Page access token** directly, for advanced setups.
+</Step>
+
+<Step title="Confirm it's connected">
+  Once connected, the Page appears in your Channels list with a **Connected** status, and a webhook subscription is set up automatically so incoming Messenger conversations reach your workspace.
+</Step>
+</Steps>
+
+<Note>
+Both connection methods can be individually disabled by your plan (`messenger_emb_signup`, `messenger_manual`). If a tab is missing, that method isn't available on your current plan.
+</Note>
+
+## Managing a connected Page
+
+Open a connected Messenger channel to:
+
+- **Refresh** its health status and **view webhook subscription status**.
+- **Update missing credentials**, if Meta requires you to re-enter them.
+- **Disconnect** the Page.
+
+<Tip>
+You can connect more than one Facebook Page — manage all of them from the same [Channels page](/core-setup/channels/overview), alongside your WhatsApp channels.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Connecting WhatsApp" icon="whatsapp" href="/core-setup/channels/whatsapp">
+    Connect a WhatsApp Business Account the same way.
+  </Card>
+
+  <Card title="Live Chat" icon="comments" href="/messaging/live-chat">
+    Start replying to Messenger conversations from the unified team inbox.
+  </Card>
+</CardGroup>

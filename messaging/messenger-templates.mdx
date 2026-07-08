@@ -5,31 +5,39 @@ icon: "message"
 keywords: ["WhatsMark", "Messenger templates", "quick replies", "button template", "generic template", "carousel"]
 ---
 
-Unlike WhatsApp, Messenger doesn't require Meta approval for reusable messages. **Messenger Templates** are local presets you create for your own convenience, ready to drop into a conversation or campaign.
+Unlike WhatsApp, Messenger doesn't require Meta approval for reusable messages. **Messenger Templates** are local presets — they never touch Meta at all, so there's no submission step or review wait. Save one and it's ready to use immediately.
+
+## Basic fields
+
+Every template needs a **name** (up to 100 characters) and an optional **category** (up to 30 characters) to help you organize the list. You can also define **example values** for any `{{n}}` variables in your text — these fill in the live preview and are used when the template is picked in a campaign or chat.
 
 ## Template types
 
 <AccordionGroup>
 <Accordion title="Text">
-  Plain text with no special formatting.
+  Plain text, up to 2,000 characters.
 </Accordion>
 
 <Accordion title="Quick Replies">
-  A message with up to 13 tappable reply chips underneath it.
+  Body text (up to 2,000 characters) plus up to **13** tappable reply chips. Each chip's title is limited to 20 characters, with a payload up to 1,000 characters.
 </Accordion>
 
 <Accordion title="Button Template">
-  A message with up to 3 buttons — each a web link, or a postback action.
+  Body text (up to 2,000 characters) plus up to **3** buttons. Each button is either a **web_url** link or a **postback** action — button titles are limited to 20 characters.
 </Accordion>
 
 <Accordion title="Generic / Carousel Template">
-  Up to 10 cards, each with an image, title, subtitle, and a button.
+  1 to **10** cards, each with an image, a title (up to 80 characters), an optional subtitle (up to 80 characters), and up to 3 buttons (same web_url/postback rules as Button Template).
 </Accordion>
 
 <Accordion title="Media">
-  An image, video, audio, or file, referenced by a public HTTPS URL, with an optional caption.
+  An image, video, audio, or file, referenced by a URL, with an optional caption (up to 2,000 characters).
 </Accordion>
 </AccordionGroup>
+
+<Warning>
+Every URL you provide — a button's web link, a card's image, or a media template's file URL — **must be HTTPS**. Messenger rejects plain HTTP links, so make sure whatever you're linking to is served securely.
+</Warning>
 
 ## Creating and managing templates
 

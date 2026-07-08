@@ -19,27 +19,39 @@ The Templates table lists every template across your connected accounts, filtera
 </Step>
 
 <Step title="Fill in Basic Info">
-  Name, language, and category — these become locked once the template is submitted.
+  Name (lowercase letters, numbers, and underscores only), language, and category — these become locked once the template is submitted.
 </Step>
 
 <Step title="Build the Header">
-  Text, or an image/video/document you upload.
+  Text (up to 60 characters), or an image, video, or PDF document you upload.
 </Step>
 
 <Step title="Write the Body">
-  Variables are detected live as you type `{{1}}`, `{{2}}`, and so on.
+  Up to 1,024 characters. Variables are detected live as you type `{{1}}`, `{{2}}`, and so on.
 </Step>
 
 <Step title="Add a Footer (optional)">
-  A short line of fixed text under the body.
+  A short line of fixed text under the body, up to 60 characters.
 </Step>
 
 <Step title="Add Buttons">
-  Quick Reply, URL, or Phone Number buttons.
+  Up to 10 buttons total, each with button text up to 25 characters. Choose from **Quick Reply**, **URL**, **Phone Number**, or **Flow** (opens one of your [WhatsApp Flows](/automation/whatsapp-flows) directly from the message).
 </Step>
 </Steps>
 
-For **Carousel** templates, you build 2–10 cards instead, each with its own header media, body, and buttons. For **Authentication** templates, you configure the OTP button type (Copy Code, One-Tap, or Zero-Tap) and code expiry instead of a header/body/buttons flow.
+<Note>
+Header media uploads (image, video, or document) accept **JPG, PNG, GIF, WEBP, MP4, or PDF**, up to **16 MB**.
+</Note>
+
+For **Carousel** templates, you build 2–10 cards instead, each with an image or video header, body text (up to 160 characters), and 1–2 buttons (Quick Reply or URL). Every card in a carousel must use the same number of buttons with matching types at each position — WhatsMark validates this before submission and tells you exactly which card is inconsistent if not.
+
+For **Authentication** templates, you configure:
+
+- The **OTP button type** — Copy Code, One-Tap, or Zero-Tap.
+- **Code expiration** — 1 to 90 minutes.
+- **Message send TTL** — 10 to 600 seconds, how long WhatsApp will keep trying to deliver the code.
+- An optional **security recommendation** line and **autofill button text** (up to 25 characters).
+- For One-Tap and Zero-Tap specifically, your Android app's **package name** and **signature hash** are required so the code can be autofilled, plus accepting Zero-Tap's terms.
 
 A live, WhatsApp-styled preview updates as you build, so you can see exactly what your contact will see.
 
