@@ -8,30 +8,28 @@ keywords: ["WhatsMark", "register", "sign up", "create workspace", "OTP verifica
 Creating a WhatsMark account means creating a **workspace** — your own isolated instance of the product, reachable at your own subdomain (e.g. `acme.whatsmark.io`). Registration starts with choosing a plan, not with a bare sign-up form.
 
 <Info>
-If registrations are temporarily closed on a particular WhatsMark instance, you'll see a **"Registrations are temporarily closed"** notice instead of the pricing page — in that case, ask your workspace admin to invite you directly.
+  If registrations are temporarily closed on a particular WhatsMark instance, you'll see a **"Registrations are temporarily closed"** notice instead of the pricing page — in that case, ask your workspace admin to invite you directly.
 </Info>
 
 ## Step 1: Choose a plan
 
 <Steps>
-<Step title="Open the Pricing page">
-  Visit the public **Pricing** page. You'll see plan cards for **Free**, **Professional**, and **Reseller**.
-</Step>
+  <Step title="Open the Pricing page">
+    Visit the public **Pricing** page. You'll see plan cards for **Free**, **Professional**, and **Reseller**.
+  </Step>
+  <Step title="Pick Free or Professional">
+    - **Free** — no payment required, activated immediately.
+    - **Professional** — use the contact-volume slider and the **Monthly / Quarterly / Yearly** toggle to pick the tier and billing cycle that fits your contact list size.
 
-<Step title="Pick Free or Professional">
-  - **Free** — no payment required, activated immediately.
-  - **Professional** — use the contact-volume slider and the **Monthly / Quarterly / Yearly** toggle to pick the tier and billing cycle that fits your contact list size.
-
-  Selecting **Reseller** doesn't start registration — it opens a waitlist request dialog instead, since reseller accounts are provisioned directly by a WhatsMark admin.
-</Step>
-
-<Step title="Click Get Started">
-  Your plan, billing cycle, and currency are carried forward automatically — you'll fill out the registration form next.
-</Step>
+    Selecting **Reseller** doesn't start registration — it opens a waitlist request dialog instead, since reseller accounts are provisioned directly by a WhatsMark admin.
+  </Step>
+  <Step title="Click Get Started">
+    Your plan, billing cycle, and currency are carried forward automatically — you'll fill out the registration form next.
+  </Step>
 </Steps>
 
 <Note>
-The plan you pick here determines what happens right after your workspace finishes setting up. See [Free vs. paid plans](#free-vs-paid-plans) below.
+  The plan you pick here determines what happens right after your workspace finishes setting up. See [Free vs. paid plans](#free-vs-paid-plans) below.
 </Note>
 
 ## Step 2: Create your workspace
@@ -41,12 +39,19 @@ The registration form is a two-step wizard titled **"Create your workspace."**
 ### Account details
 
 <Frame>
-<CardGroup cols={2}>
-  <Card title="Full name" icon="user" />
-  <Card title="Email address" icon="envelope" />
-  <Card title="Password & Confirm password" icon="lock" />
-  <Card title="WhatsApp number" icon="phone" />
-</CardGroup>
+  <CardGroup cols={2}>
+    <Card title="Full name" icon="user">
+    </Card>
+
+    <Card title="Email address" icon="envelope">
+    </Card>
+
+    <Card title="Password & Confirm password" icon="lock">
+    </Card>
+
+    <Card title="WhatsApp number" icon="phone">
+    </Card>
+  </CardGroup>
 </Frame>
 
 - **Full name** and **Email address** are required.
@@ -68,7 +73,7 @@ As you type your email and WhatsApp number, WhatsMark checks their availability 
 Click **Create workspace** to continue.
 
 <Tip>
-Already have a workspace? Use the **"Already have a workspace? Log in"** link at the bottom of either step instead of registering again.
+  Already have a workspace? Use the **"Already have a workspace? Log in"** link at the bottom of either step instead of registering again.
 </Tip>
 
 ## Step 3: Verify your WhatsApp number
@@ -76,21 +81,19 @@ Already have a workspace? Use the **"Already have a workspace? Log in"** link at
 If WhatsApp OTP verification is enabled on your WhatsMark instance, you won't be registered immediately after clicking **Create workspace**. Instead:
 
 <Steps>
-<Step title="Receive your code">
-  WhatsMark sends a 6-digit verification code to the WhatsApp number you entered in Step 2, and a **"Verify your WhatsApp number"** dialog opens.
-</Step>
-
-<Step title="Enter the code">
-  Type the 6 digits into the on-screen code boxes. The dialog submits automatically once all 6 digits are entered — there's no separate confirm button to click.
-</Step>
-
-<Step title="Resend if needed">
-  If you don't receive the code, use the **Resend** link. Each resend has a short cooldown (shown as a countdown, e.g. "Resend in 45s") that increases the more times you request a new code, up to a longer lockout if you retry too many times.
-</Step>
+  <Step title="Receive your code">
+    WhatsMark sends a 6-digit verification code to the WhatsApp number you entered in Step 2, and a **"Verify your WhatsApp number"** dialog opens.
+  </Step>
+  <Step title="Enter the code">
+    Type the 6 digits into the on-screen code boxes. The dialog submits automatically once all 6 digits are entered — there's no separate confirm button to click.
+  </Step>
+  <Step title="Resend if needed">
+    If you don't receive the code, use the **Resend** link. Each resend has a short cooldown (shown as a countdown, e.g. "Resend in 45s") that increases the more times you request a new code, up to a longer lockout if you retry too many times.
+  </Step>
 </Steps>
 
 <Note>
-If your WhatsMark instance hasn't configured OTP verification, this step is skipped automatically and your workspace is created as soon as you click **Create workspace**.
+  If your WhatsMark instance hasn't configured OTP verification, this step is skipped automatically and your workspace is created as soon as you click **Create workspace**.
 </Note>
 
 ## Step 4: Workspace provisioning
@@ -105,7 +108,7 @@ Once verification succeeds (or is skipped), you'll land on a **"Setting up your 
 This typically finishes within a few seconds. When it's done, you'll see a short **"Your workspace is ready!"** confirmation before being redirected and automatically logged in — you don't need to log in manually right after registering.
 
 <Warning>
-If setup fails, you'll see a **"Setup failed"** message with a **Try Again** button. If it's simply taking longer than usual, a **"This is taking longer than expected"** notice appears, but the process keeps running in the background.
+  If setup fails, you'll see a **"Setup failed"** message with a **Try Again** button. If it's simply taking longer than usual, a **"This is taking longer than expected"** notice appears, but the process keeps running in the background.
 </Warning>
 
 ## Free vs. paid plans
@@ -120,22 +123,22 @@ What happens right after your workspace is ready depends on the plan you picked 
 If you chose a paid plan, you'll walk through a short checkout flow:
 
 <Steps>
-<Step title="Review your plan">
-  Confirm the plan, contact tier, and billing cycle you selected.
-</Step>
-<Step title="Enter billing details">
-  Provide your company name, billing email, tax ID (e.g. GST), and address.
-</Step>
-<Step title="Choose a payment method">
-  Pick from whichever gateways your WhatsMark instance has enabled — typically **Razorpay**, **Paddle**, or **offline bank transfer**.
-</Step>
-<Step title="Complete payment">
-  Finish checkout through the selected gateway, or, for offline payments, submit your bank transfer proof for admin review.
-</Step>
+  <Step title="Review your plan">
+    Confirm the plan, contact tier, and billing cycle you selected.
+  </Step>
+  <Step title="Enter billing details">
+    Provide your company name, billing email, tax ID (e.g. GST), and address.
+  </Step>
+  <Step title="Choose a payment method">
+    Pick from whichever gateways your WhatsMark instance has enabled — typically **Razorpay**, **Paddle**, or **offline bank transfer**.
+  </Step>
+  <Step title="Complete payment">
+    Finish checkout through the selected gateway, or, for offline payments, submit your bank transfer proof for admin review.
+  </Step>
 </Steps>
 
 <Info>
-If you submit an offline payment, you'll see a **"Payment Proof Submitted"** status card while it's reviewed. Your dashboard stays locked behind this screen until payment is confirmed or approved.
+  If you submit an offline payment, you'll see a **"Payment Proof Submitted"** status card while it's reviewed. Your dashboard stays locked behind this screen until payment is confirmed or approved.
 </Info>
 
 ## Email verification
@@ -148,6 +151,7 @@ If your WhatsMark instance requires email verification, you can still access you
   <Card title="Log in" icon="right-to-bracket" href="/whatsmark/login">
     Already registered? Here's how to sign back in, reset your password, or set up two-factor authentication.
   </Card>
+
   <Card title="Getting Started" icon="rocket" href="/whatsmark/getting-started">
     Learn what's on your dashboard and how to connect WhatsApp, invite teammates, and manage your plan.
   </Card>

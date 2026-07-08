@@ -1,0 +1,86 @@
+---
+title: "overview"
+description: "Overview of the WhatsMark public REST API — authentication, scopes, pagination, and how to get access."
+icon: "eye"
+---
+
+## What is the WhatsMark API
+
+The WhatsMark REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.whatsmark.io`, separate from your tenant subdomain.
+
+<Warning>
+  **The API is not available on the Free plan.** REST API access (`api_access`) is a **Professional** plan feature — Free-plan workspaces can use the full dashboard, but any request to `api.whatsmark.io` will be rejected until you upgrade. Reseller plans also include API access, with a higher (or unlimited) monthly request quota.
+</Warning>
+
+## Getting access
+
+<Steps>
+  <Step title="Upgrade to Professional">
+    If you're on the Free plan, upgrade from **Settings → Billing** first. See [Manage your plan and billing](/whatsmark/getting-started#manage-your-plan-and-billing).
+  </Step>
+  <Step title="Create a workspace API token">
+    Go to **Settings → API Keys** in your tenant dashboard and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
+  </Step>
+  <Step title="Authenticate your requests">
+    Every request must include your token as a bearer token:
+
+    ```text
+    Authorization: Bearer YOUR_API_TOKEN
+    ```
+  </Step>
+  <Step title="Call the API">
+    Send requests to `https://api.whatsmark.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working.
+  </Step>
+</Steps>
+
+## Base URL
+
+```text
+https://api.whatsmark.io/api/v1
+```
+
+## Scopes (abilities)
+
+Each endpoint requires a specific token ability (scope), for example `account:read` or `channels:read`. Create your token with the abilities that match the endpoints you plan to call — a request will be rejected with `403 Forbidden` if your token is missing the required scope.
+
+## Pagination
+
+List endpoints return a consistent envelope:
+
+```json
+{
+  "data": [ ... ],
+  "links": { "next": "...", "prev": "..." },
+  "meta": { ... }
+}
+```
+
+Large or append-only collections (contacts, group members, webhooks) use opaque cursor pagination — keep following `links.next` until it's `null`. `per_page` is clamped between 5 and 100.
+
+## Async sends
+
+Message and OTP send endpoints return `202 Accepted` immediately and are processed on a background queue rather than sent synchronously.
+
+## Errors
+
+Errors use a consistent envelope:
+
+```json
+{
+  "message": "...",
+  "error_code": "...",
+  "status": 4xx
+}
+```
+
+## Modules
+
+The API covers: **Auth & Account** · **Channels** · **Contacts** · **Contact Statuses** · **Contact Sources** · **Contact Groups** · **Contact Labels** · **Templates** · **Messages** · **Conversations** · **OTP**.
+
+<Card title="Download the Postman collection" icon="download">
+  Import the full request collection — every endpoint, example request, and example response — directly into Postman.
+</Card>
+
+<Info>
+  Already have a Professional plan? Head to **Settings → API Keys** in your workspace to create your first token.
+</Info>
