@@ -7,10 +7,7 @@
     "light": "#C6FE1E",
     "dark": "#166534"
   },
-  "favicon": {
-    "light": "/images/favicon.png",
-    "dark": "/favicon.svg"
-  },
+  "favicon": "/favicon.png",
   "navigation": {
     "pages": [
       {
@@ -111,8 +108,8 @@
     ]
   },
   "logo": {
-    "light": "/images/favicon.png",
-    "dark": "/images/favicon.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
