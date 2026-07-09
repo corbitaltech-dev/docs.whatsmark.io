@@ -8,7 +8,7 @@ keywords: ["WhatsMark", "register", "sign up", "create workspace", "OTP verifica
 Creating a WhatsMark account means creating a **workspace** — your own isolated instance of the product, reachable at your own subdomain (e.g. `acme.whatsmark.io`). Registration starts with choosing a plan, not with a bare sign-up form.
 
 <Info>
-  If registrations are temporarily closed on a particular WhatsMark instance, you'll see a **"Registrations are temporarily closed"** notice instead of the pricing page — in that case, ask your workspace admin to invite you directly.
+  If registrations are temporarily closed on a particular WhatsMark instance, you'll see a **"Registrations are temporarily closed"** notice instead of the pricing page.
 </Info>
 
 ## Step 1: Choose a plan
@@ -111,6 +111,26 @@ This typically finishes within a few seconds. When it's done, you'll see a short
   If setup fails, you'll see a **"Setup failed"** message with a **Try Again** button. If it's simply taking longer than usual, a **"This is taking longer than expected"** notice appears, but the process keeps running in the background.
 </Warning>
 
+## Email verification
+
+If your WhatsMark instance requires email verification, you **cannot access your Dashboard, or anything else in your workspace, until you verify your email address.**
+Instead of your Dashboard, you'll see a full-screen **"Check your inbox"** notice telling you to:
+
+<Steps>
+  <Step title="Open the email">
+    Open the verification email WhatsMark sent to the address you registered with.
+  </Step>
+  <Step title="Click the verification link">
+    Click the **Verify Email Address** button inside it.
+  </Step>
+  <Step title="You're redirected back">
+    You land back in WhatsMark and your workspace is now fully accessible.
+  </Step>
+</Steps>
+
+If you don't see the email, use the **Resend verification email** button on this screen — check your spam or junk folder if it still doesn't arrive. A **Sign out** option is also available here.
+
+
 ## Free vs. paid plans
 
 What happens right after your workspace is ready depends on the plan you picked in Step 1:
@@ -130,7 +150,7 @@ If you chose a paid plan, you'll walk through a short checkout flow:
     Provide your company name, billing email, tax ID (e.g. GST), and address.
   </Step>
   <Step title="Choose a payment method">
-    Pick from whichever gateways your WhatsMark instance has enabled — typically **Razorpay**, **Paddle**, or **offline bank transfer**.
+    Pick from whichever gateways your WhatsMark instance has enabled — typically **Razorpay**, **Dodo**, or **offline bank transfer**.
   </Step>
   <Step title="Complete payment">
     Finish checkout through the selected gateway, or, for offline payments, submit your bank transfer proof for admin review.
@@ -141,18 +161,15 @@ If you chose a paid plan, you'll walk through a short checkout flow:
   If you submit an offline payment, you'll see a **"Payment Proof Submitted"** status card while it's reviewed. Your dashboard stays locked behind this screen until payment is confirmed or approved.
 </Info>
 
-## Email verification
-
-If your WhatsMark instance requires email verification, you can still access your Dashboard right away, but you'll see a banner asking you to verify your email address. Every other page will redirect you back to the Dashboard until you click the verification link sent to your inbox. You can request a new email at any time from the **Resend verification email** button.
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Log in" icon="right-to-bracket" href="/whatsmark/login">
+  <Card title="Log in" icon="right-to-bracket" href="/log-in">
     Already registered? Here's how to sign back in, reset your password, or set up two-factor authentication.
   </Card>
 
-  <Card title="Getting Started" icon="rocket" href="/whatsmark/getting-started">
+  <Card title="Getting Started" icon="rocket" href="/getting-started">
     Learn what's on your dashboard and how to connect WhatsApp, invite teammates, and manage your plan.
   </Card>
 </CardGroup>
