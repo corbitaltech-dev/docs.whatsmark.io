@@ -15,15 +15,14 @@ Before adding contacts in bulk, it's worth setting up [Contact Configuration](/c
 
 The Contacts page shows a paginated, searchable table of every contact in your workspace. Filter by:
 
-- **Status** (lifecycle stage)
+- **Type**
+- **Status**
 - **Source**
-- **Group**
-- **Label**
 - **Assigned to** (team member)
 - **Channel**
 
 <Warning>
-The total number of contacts you can store is limited by your plan (`contacts`). If you're near your limit, the dashboard's Usage panel shows a warning, and you can purchase a **contact-limit add-on** from [Billing](/billing/addons-and-upgrades) instead of upgrading your whole plan.
+The total number of contacts you can store is limited by your plan. If you're near your limit, the dashboard's Usage panel shows a warning, and you can purchase a **contact-limit add-on** from [Billing](/billing/addons-and-upgrades) instead of upgrading your whole plan.
 </Warning>
 
 ## Creating and editing a contact
@@ -62,10 +61,9 @@ From the detail view, add freeform notes to a contact — useful for logging con
 
 Each contact row has a menu of quick actions:
 
-- **Initiate Chat** — send a one-off WhatsApp template message to this contact, even outside the normal chat flow. See [Live Chat](/messaging/live-chat) for how this fits into the 24-hour messaging window.
-- **Initiate Messenger Chat** — the same, for Messenger.
-- **Send a WhatsApp Flow** — trigger one of your [WhatsApp Flows](/automation/whatsapp-flows) for this contact.
-- **Open in Live Chat** — jump straight to this contact's conversation thread.
+- **Initiate Chat** (only shown for contacts sourced from WhatsApp) — send a one-off WhatsApp template message to this contact, even outside the normal chat flow. See [Live Chat](/messaging/live-chat) for how this fits into the 24-hour messaging window.
+- **Send a WhatsApp Flow** (only shown for contacts sourced from WhatsApp) — trigger one of your [WhatsApp Flows](/automation/whatsapp-flows) for this contact.
+- **Open in Live Chat** (only shown if this contact already has a conversation thread) — jump straight to this contact's conversation thread.
 - **Activate / Deactivate** — toggle whether the contact is active without deleting them.
 - **Delete** — permanently remove the contact.
 

@@ -18,7 +18,7 @@ Chat is split into four panes:
 
 The contact panel isn't read-only — you can **edit the contact's details directly from here** (name, status, labels, and other fields), the same as editing them from the [Contacts](/contacts/managing-contacts) page, and add or review [notes](/contacts/managing-contacts#notes) without switching pages.
 
-Updates appear instantly — new messages, delivery ticks, assignment changes, and counters all update live without needing to refresh the page. An **online indicator** shows on a contact's avatar when they're currently active.
+Updates appear instantly — new messages, delivery ticks, assignment changes, and counters all update live without needing to refresh the page.
 
 ## Starting a new chat
 
@@ -32,7 +32,7 @@ You don't have to wait for a customer to message first — click **New Chat** to
 Use the **date range picker** above the message thread to jump to an earlier point in a conversation's history.
 
 <Note>
-How far back you can go is limited by your plan's chat history retention (`chat_history_days`). Dates outside your plan's window are disabled in the picker, with a link to [Billing](/billing/plans-and-subscription) if you need to look further back.
+How far back you can go is limited by your plan's chat history retention. Dates outside your plan's window are disabled in the picker, with a link to [Billing](/billing/plans-and-subscription) if you need to look further back.
 </Note>
 
 ## Sending a message
@@ -42,9 +42,11 @@ The composer supports:
 - **Text**
 - **Media** — images, video, audio, and documents, with upload progress
 - **Location** pins
-- **Contact cards**
+- **Contact cards** — share one of your existing contacts, or fill in someone else's details and send them as a card. Details you enter manually this way are only sent in the message and aren't added to your contact list.
 - **Canned replies** — a searchable picker of pre-written responses
 - **Reply-to** — quote a specific earlier message
+- **Run a Flow** — start a bot automation flow directly from the conversation
+- **Send Template** — send an approved template for this contact's channel
 
 <Warning>
 WhatsApp only allows free-form messages within a **24-hour window** after the customer's last message. A live countdown above the composer shows exactly how much time is left. Once that window closes, the composer shows a **"Send template"** prompt instead — see [Initiate Chat](/contacts/managing-contacts#row-actions) for sending an approved template to restart the conversation. Messenger conversations don't have this restriction, so no countdown appears for them.
@@ -61,7 +63,7 @@ Click the **Sparkles** button in the composer to:
 After a rewrite, an **Undo / Regenerate** bar lets you revert or try again, and a token-usage meter shows how much of your monthly AI quota you're using.
 
 <Note>
-AI assist is gated by your plan (`ai_chat_assist` as the master switch, `ai_tokens_monthly` for usage, `ai_prompts` for how many custom prompts you can save). See [AI Features](/automation/ai-features) for the full picture.
+AI assist is gated by your plan. See [AI Features](/automation/ai-features) for the full picture.
 </Note>
 
 ## Managing a conversation
@@ -83,7 +85,7 @@ Assigning conversations and running automation flows from chat both respect your
 - **Drag to reorder** — the order here is the order they appear in the composer's picker.
 
 <Warning>
-The number of canned replies you can save is limited by your plan (`canned_replies`). Free-plan workspaces can't create any; Professional and Reseller plans are unlimited.
+The number of canned replies you can save is limited by your plan. Free-plan workspaces can't create any; Professional and Reseller plans are unlimited.
 </Warning>
 
 ## Team Inboxes
@@ -92,7 +94,7 @@ Beyond assigning conversations to individuals, you can group team members into *
 
 <Steps>
 <Step title="Create a Team Inbox">
-  Give it a name from the Team Inboxes management screen.
+  Give it a name from the Team sheet.
 </Step>
 
 <Step title="Add members">
