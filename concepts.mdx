@@ -1,0 +1,105 @@
+---
+title: "Key Concepts"
+description: "How WhatsApp Business messaging actually works — the 24-hour window, template vs. session messages, template categories, approval and quality rating, and messaging limits — so nothing catches you by surprise."
+icon: "book-open"
+keywords: ["WhatsMark", "WhatsApp Business", "24-hour window", "message templates", "session messages", "template categories", "quality rating", "messaging limits", "opt-in"]
+---
+
+WhatsMark sits on top of the official **WhatsApp Business Platform**, which has a few rules that shape everything you do in the product. Understanding these first will save you a lot of "why can't I send this?" moments later.
+
+<Info>
+  New here? Read this page once, then jump to the [Quickstart](/quickstart) to send your first message.
+</Info>
+
+## Workspace, channel, and WABA
+
+<AccordionGroup>
+  <Accordion title="Workspace (tenant)">
+    Your isolated account on WhatsMark — its own subdomain (e.g. `acme.whatsmark.io`), database, users, contacts, and billing. Everything you do happens inside your workspace.
+  </Accordion>
+
+  <Accordion title="Channel">
+    A connected messaging account. Most commonly a **WhatsApp Business Account (WABA)** and phone number, connected through Meta's Embedded Signup or manually. A workspace can connect several channels, including Facebook **Messenger** Pages. Nothing sends or receives until you connect at least one channel.
+  </Accordion>
+
+  <Accordion title="WABA & phone number">
+    A WhatsApp Business Account is your business identity on Meta's platform; each WABA has one or more phone numbers. Your **quality rating** and **messaging limits** (below) are tracked per phone number.
+  </Accordion>
+</AccordionGroup>
+
+## The 24-hour customer service window
+
+When a customer messages you, a **24-hour window** opens for that conversation. Inside the window you can reply with **free-form (session) messages** — plain text, media, whatever you like. Once 24 hours pass with no new inbound message from the customer, the window closes.
+
+<Warning>
+  Outside the 24-hour window you **cannot** send a free-form message. You can only re-open the conversation with an approved **message template** (below). This is a WhatsApp platform rule, not a WhatsMark limitation.
+</Warning>
+
+This is why the window matters throughout WhatsMark:
+
+- In [Live Chat](/messaging/live-chat), the composer lets you type freely while the window is open; once it closes, you'll be prompted to send a template instead.
+- A **message campaign** (free-form broadcast) can only target contacts who currently have an open window — so it can't be your first outreach to cold contacts.
+
+## Template messages vs. session messages
+
+| | Session message | Template message |
+|---|---|---|
+| **When** | Only inside an open 24-hour window | Any time, including the first message to a contact |
+| **Content** | Free-form (text, media, etc.) | Pre-approved template, with variables filled in |
+| **Approval** | None | Must be **approved by Meta** before use |
+
+Because a template is the *only* way to start a conversation or reach someone outside the window, **getting a template approved is the single most important setup step** before you can broadcast or cold-message anyone.
+
+## Template categories
+
+Every template belongs to a category, which Meta uses to price and rate-limit it:
+
+<AccordionGroup>
+  <Accordion title="Marketing">
+    Promotions, offers, announcements, re-engagement. Subject to per-user marketing limits and the recipient's marketing opt-out.
+  </Accordion>
+
+  <Accordion title="Utility">
+    Transactional updates tied to an existing order or account — order confirmations, shipping updates, appointment reminders.
+  </Accordion>
+
+  <Accordion title="Authentication">
+    One-time passcodes and verification codes.
+  </Accordion>
+</AccordionGroup>
+
+See [WhatsApp Templates](/messaging/whatsapp-templates) to create one, or sync templates you've already had approved in Meta.
+
+## Approval & quality rating
+
+- **Approval** — a new template is submitted to Meta and stays in a pending state until it's **approved** or **rejected** (usually minutes, sometimes longer). You can't send a template until it's approved. WhatsMark notifies you when the status changes.
+- **Quality rating** — Meta scores each phone number (Green / Yellow / Red) based on how recipients react (blocks, reports, reads). A low rating can lower your messaging limits. You can see channel health on the [Channels](/core-setup/channels/whatsapp#waba-health) page.
+
+## Messaging limits & opt-in
+
+- **Messaging limits (tiers)** — WhatsApp caps how many unique customers you can *start* conversations with in a rolling 24 hours (e.g. 250 → 1K → 10K → unlimited). Good quality and volume automatically raise your tier over time.
+- **Opt-in** — you must have permission to message people. Sending to contacts who didn't opt in leads to blocks and reports, which hurt your quality rating and can get your number flagged.
+
+<Note>
+  Separately from WhatsApp's own limits, your **WhatsMark plan** sets quotas (contacts, campaigns, AI tokens, storage, channels). See [Dashboard & Feature Usage](/reporting/dashboard-and-usage) to track them and [Plans & Subscription](/billing/plans-and-subscription) to raise them.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="bolt" href="/quickstart">
+    Put it into practice — send your first message in a few steps.
+  </Card>
+
+  <Card title="WhatsApp Templates" icon="file-lines" href="/messaging/whatsapp-templates">
+    Create or sync an approved template so you can message anyone.
+  </Card>
+
+  <Card title="Connecting WhatsApp" icon="whatsapp" href="/core-setup/channels/whatsapp">
+    Connect a WhatsApp Business Account to your workspace.
+  </Card>
+
+  <Card title="Live Chat" icon="comments" href="/messaging/live-chat">
+    See how the 24-hour window plays out in the team inbox.
+  </Card>
+</CardGroup>
