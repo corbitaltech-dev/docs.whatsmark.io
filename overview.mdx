@@ -1,7 +1,8 @@
 ---
-title: "overview"
+title: "API Overview"
 description: "Overview of the WhatsMark public REST API — authentication, scopes, pagination, and how to get access."
 icon: "eye"
+keywords: ["WhatsMark", "API", "REST API", "developer", "token", "scopes", "pagination"]
 ---
 
 ## What is the WhatsMark API
@@ -9,7 +10,7 @@ icon: "eye"
 The WhatsMark REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.whatsmark.io`, separate from your tenant subdomain.
 
 <Warning>
-  **The API is not available on the Free plan.** REST API access (`api_access`) is a **Professional** plan feature — Free-plan workspaces can use the full dashboard, but any request to `api.whatsmark.io` will be rejected until you upgrade. Reseller plans also include API access, with a higher (or unlimited) monthly request quota.
+  **The API is not available on the Free plan.** REST API access is a **Professional** plan feature — Free-plan workspaces can use the full dashboard, but any request to `api.whatsmark.io` will be rejected until you upgrade. Reseller plans also include API access, with a higher (or unlimited) monthly request quota.
 </Warning>
 
 ## Getting access
@@ -19,7 +20,7 @@ The WhatsMark REST API lets you interact with your workspace programmatically �
     If you're on the Free plan, upgrade from **Billing** in the account menu (click your name at the bottom of the sidebar) first. See [Manage your plan and billing](/getting-started#manage-your-plan-and-billing).
   </Step>
   <Step title="Create a workspace API token">
-    Go to **Settings → API Keys** in your tenant dashboard and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
+    Go to **Setup → API Keys** and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
   </Step>
   <Step title="Authenticate your requests">
     Every request must include your token as a bearer token:

@@ -8,7 +8,7 @@ keywords: ["WhatsMark", "automation", "chatbot", "flow builder", "AI generate", 
 **Automations** let you build no-human-needed conversation flows — a chatbot that responds to keywords or events with a visual, drag-and-drop canvas, without writing any code.
 
 <Warning>
-The number of automation flows you can have is limited by your plan. Free-plan workspaces get 1 flow; Professional plans get 15; Reseller plans are unlimited.
+The number of automation flows you can have is limited by your plan.
 </Warning>
 
 ## Building a flow
@@ -38,12 +38,16 @@ Open the **Builder** to work on a canvas (built on React Flow) where you connect
 </AccordionGroup>
 
 <Note>
-Google Sheets and Google Calendar nodes require connecting a [Google Account](/settings/google-accounts) first, and are only available on plans with `google_sheet` / `google_calendar` enabled (Professional and Reseller — not available on Free).
+Google Sheets and Google Calendar nodes require connecting a [Google Account](/settings/google-accounts) first. it is not available on Free plan.
 </Note>
 
 ## Managing flows
 
-Create, edit, delete, or **duplicate** a flow; toggle it **active/inactive**; set its **priority** (which flow wins if more than one could match); and **export** a flow.
+Create, edit or delete a flow, Toggle it **active/inactive**.
+
+<Note>
+If an incoming message matches the trigger conditions of more than one active flow, all of them run and reply in the chat — not just one.
+</Note>
 
 ## Generate with AI
 
@@ -63,6 +67,8 @@ Browse 6 pre-built templates and clone one instead of starting from scratch:
 - Sales Pipeline CRM
 - E-commerce Order Flow
 - Recruitment / HR
+
+This is WhatsMark's shared **Seeder Library** for automations — flows curated by the platform admin, not user-submitted. Mark any as a **favourite** for quick access, and click **Use** to clone one into your own workspace as a fully editable flow you can rename, rewire, and trigger however you like.
 
 ## What's next
 
