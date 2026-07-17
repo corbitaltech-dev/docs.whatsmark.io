@@ -1,22 +1,24 @@
 ---
 title: "Login"
-description: "How to find your WhatsMark workspace, sign in, reset your password, and use two-factor authentication."
+description: "How to find your WhatsMark.io workspace, sign in, reset your password, and use two-factor authentication."
 icon: "right-to-bracket"
 keywords: ["WhatsMark", "login", "sign in", "forgot password", "two-factor authentication", "2FA"]
 ---
 
-Because every WhatsMark customer has their own workspace subdomain (e.g. `acme.whatsmark.io`), logging in has two possible starting points depending on where you begin.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+Because every WhatsMark.io customer has their own workspace subdomain (e.g. `acme.whatsmark.io`), logging in has two possible starting points depending on where you begin.
 
 ## Finding your workspace
 
-If you go to the main WhatsMark site (rather than your own subdomain) and select **Log in**, you'll see a **"Find your workspace"** page:
+If you go to the main WhatsMark.io site (rather than your own subdomain) and select **Log in**, you'll see a **"Find your workspace"** page:
 
 <Steps>
   <Step title="Enter your email">
     Type the email address you registered with.
   </Step>
   <Step title="Continue">
-    Click **Continue**. WhatsMark looks up which workspace that email belongs to and redirects you to that workspace's own login page, with your email pre-filled.
+    Click **Continue**. WhatsMark.io looks up which workspace that email belongs to and redirects you to that workspace's own login page, with your email pre-filled.
   </Step>
 </Steps>
 
@@ -28,18 +30,19 @@ If you already know your workspace address, you can skip this step and go straig
 
 ## Logging in
 
+<BrowserFrame
+  src="/images/login.png"
+  alt="Workspace login page"
+  caption="Login page for your WhatsMark.io workspace"
+/>
+
 On your workspace's login page, sign in with:
 
 - **Email address**
 - **Password**
 - **Remember me** (optional) — stays signed in across browser sessions
-- A **CAPTCHA** may appear if enabled by your admin
 
-If social login is available, you'll also see **"Or continue with"** buttons for Google, GitHub, or Facebook.
-
-<Tip>
-  Don't have an account yet? Use the **"Sign up"** link at the bottom of the login page — it only appears if registration is currently open.
-</Tip>
+If social login is available, you'll also see **"Or continue with"** buttons for Google or Facebook.
 
 <Warning>
   For security, login attempts are rate-limited — after too many failed attempts for the same email and IP address within a minute, you'll need to wait before trying again.
@@ -57,7 +60,7 @@ You can turn it on yourself from the **Two-Factor Authentication** card on your 
     Scan the QR code with an authenticator app (Google Authenticator, Authy, 1Password, etc.) and enter the confirmation code shown by the app.
   </Step>
   <Step title="Save your recovery codes">
-    WhatsMark shows a set of one-time recovery codes — store these somewhere safe. You can use one to log in if you ever lose access to your authenticator app.
+    WhatsMark.io shows a set of one-time recovery codes — store these somewhere safe. You can use one to log in if you ever lose access to your authenticator app.
   </Step>
 </Steps>
 
