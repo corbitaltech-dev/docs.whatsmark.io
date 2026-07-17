@@ -1,4 +1,4 @@
-export const BrowserFrame = ({ src, url = "app.whatsmark.io", alt = "", caption }) => (
+export const BrowserFrame = ({ src, url = "whatsmark.io", alt = "", caption }) => (
   <div style={{ margin: "1.5rem 0" }}>
     <div
       style={{
