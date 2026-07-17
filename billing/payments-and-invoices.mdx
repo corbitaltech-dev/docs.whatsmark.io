@@ -2,14 +2,29 @@
 title: "Payments & Invoices"
 description: "How to pay for WhatsMark, apply coupons, manage payment methods, and download invoices."
 icon: "file-invoice-dollar"
-keywords: ["WhatsMark", "payments", "invoices", "coupons", "Razorpay", "offline payment", "payment methods"]
+keywords: ["WhatsMark", "payments", "invoices", "coupons", "Razorpay", "Dodo", "offline payment", "payment methods"]
 ---
+
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
 WhatsMark supports online and offline payment, coupon codes at checkout, and a full invoice history — all from **Billing**.
 
 ## Paying online
 
-Online payments are processed through **Payment Gateways**, covering subscribing to a plan, changing plans, renewals, and add-on purchases. Checkout shows a live, tax-inclusive total, updated instantly if you apply a coupon.
+Online payments cover subscribing to a plan, changing plans, renewals, and add-on purchases. The payment gateway you're offered depends on your billing currency:
+
+- **INR** — pay by card, UPI, netbanking, or wallet through **Razorpay**.
+- **USD** — pay through **Dodo Payments**.
+
+Checkout shows a live total that updates instantly when you apply a coupon.
+
+<Note>
+Prices are shown **before tax**. Any tax that applies is added on top and shown as its own line at checkout and on your invoice — so the final amount charged is higher than the plan or add-on price on its own.
+</Note>
+
+<Note>
+Paying in **USD**? Dodo Payments handles tax as merchant of record, so it's calculated when Dodo takes payment rather than previewed beforehand. Your total at Dodo's checkout — and your invoice — show the exact amount charged, tax included.
+</Note>
 
 ## Paying offline
 
@@ -25,25 +40,68 @@ If your workspace has offline payment enabled, you can instead:
 </Step>
 
 <Step title="Wait for review">
-  Your submission shows a **"Payment Proof Submitted"** status while an admin reviews it — access stays locked behind this screen until it's approved.
+  Your request shows as **Pending** while an admin reviews it — access stays locked behind this screen until it's approved. Your workspace shows the turnaround time to expect (typically a couple of days).
 </Step>
 </Steps>
+
+Once reviewed, your request shows as either **Approved** — your plan or add-on activates — or **Rejected**, with the admin's reason shown alongside it so you can correct the problem and submit again.
+
+<BrowserFrame
+  src="/billing/img/offline-payment-pending.png"
+  url="app.whatsmark.io/billing"
+  alt="Billing page with a banner reading that the offline payment is pending admin review and plan changes are disabled, beside a Pending Payment Review card showing the plan, amount, reference, and submitted time"
+  caption="While your payment is under review, a banner explains that plan changes are paused and the review card confirms your proof was received."
+/>
 
 <Note>
 Offline payment is available for plan subscriptions, plan changes, and add-on/contact-limit purchases alike — not just initial signup.
 </Note>
 
+<Warning>
+While an offline payment is **under review**, you can't change your plan. Wait for the decision, and if it's rejected you're free to try again.
+</Warning>
+
 ## Coupons
 
-At checkout — whether subscribing, changing plans, buying an add-on, or checking out a cart — you can apply a coupon code. The total recalculates live, showing the discount against the tax-inclusive total before you confirm payment.
+At checkout — whether subscribing, changing plans, buying an add-on, or checking out a cart — you can apply a coupon code. The total recalculates live so you can see the discount before you confirm payment.
+
+<BrowserFrame
+  src="/billing/img/coupon-checkout.png"
+  url="app.whatsmark.io/billing/payment-selection"
+  alt="Checkout showing the selected payment method, a Coupon code field with an Apply button, and a summary listing the plan and Total payable"
+  caption="Enter a coupon code and choose Apply — the Total payable updates before you continue."
+/>
+
+<Note>
+Coupons apply to your **current purchase only**. They don't carry over to your next renewal, so a future renewal will be charged at full price.
+</Note>
+
+## Payment methods
+
+You can save a payment method for future purchases, set one as your **default**, and remove any you no longer use.
 
 ## Invoices
+
+<BrowserFrame
+  src="/billing/img/invoice-history.png"
+  url="app.whatsmark.io/billing/invoices"
+  alt="Invoice History table listing invoices with invoice number, amount, gateway, reason, Paid status, and date, with a row menu open showing View and Download"
+  caption="Each invoice shows what it was for and how it was paid. Use the row menu to view the full breakdown or download a PDF."
+/>
 
 Every billed transaction generates an invoice under **Invoices**:
 
 - Browse a table of past invoices.
 - **View** an invoice's full breakdown.
 - **Download** it as a PDF for your records.
+
+<Note>
+Team members need permission to see invoices, and downloading is a separate permission from viewing — so someone may be able to open an invoice without being able to save the PDF.
+</Note>
+
+<Warning>
+Only the workspace **owner** can pay, apply coupons, or manage payment methods.
+</Warning>
 
 ## What's next
 

@@ -5,11 +5,20 @@ icon: "puzzle-piece"
 keywords: ["WhatsMark", "add-ons", "contact upgrade", "extra tokens", "cart"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 Sometimes you just need a bit more of one thing — more contacts, more AI tokens — without moving to an entirely different plan tier. That's what **Add-ons** and the **contact-limit upgrade** are for.
 
 ## Add-ons
+Go to **Billing → Plan Add-ons** to browse what's available for your plan (for example, extra AI tokens or additional capacity for other quota-based features).
 
-Go to **Billing → Add-ons** to browse what's available for your plan (for example, extra AI tokens or additional capacity for other quota-based features).
+<BrowserFrame
+  src="/billing/img/plan-addons.png"
+  url="app.whatsmark.io/billing"
+  alt="Plan Add-ons panel with an Active Add-ons row showing Custom Domain and Extra Contacts, and an Available Add-ons row showing Extra Contacts, Extra Team Member, and Extra AI Tokens with quantity steppers and Add buttons"
+  caption="Add-ons you already have appear under Active Add-ons; everything else your plan supports is listed below with per-unit pricing."
+/>
+
 
 <Steps>
 <Step title="Browse available add-ons">
@@ -25,9 +34,18 @@ Go to **Billing → Add-ons** to browse what's available for your plan (for exam
 </Step>
 </Steps>
 
-<Note>
-You can remove an extra add-on from the plan renewal screen only if you're not currently relying on it — for example, if your plan's base limit is 1,000 contacts and you bought a 1,000-contact add-on but are using 1,500 contacts, you can't remove that add-on until you bring your usage back under 1,000 (by deleting contacts) first. The same rule applies to any other add-on you've purchased extra of.
-</Note>
+Add-ons come in two kinds:
+
+- **Recurring** add-ons renew automatically alongside your plan every cycle, until you remove them. You can change how many units you have at any time.
+- **One-time** add-ons are a single purchase. They can't be adjusted — if you need more, buy another.
+
+### Changing or removing an add-on
+
+You can **remove** an add-on whenever you like. Removing it lowers your limit straight away, so make sure you're not still relying on the extra capacity.
+
+<Warning>
+If you **reduce the quantity** of a recurring add-on, your current usage has to fit inside the smaller limit. Say your plan includes 1,000 contacts and an add-on takes you to 2,000 — if you're storing 1,500 contacts, you'll need to delete some to get under 1,000 before you can drop that add-on's quantity.
+</Warning>
 
 
 ## Contact-limit upgrade
