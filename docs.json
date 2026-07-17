@@ -14,14 +14,19 @@
         "tab": "Docs",
         "groups": [
           {
+            "group": "Quickstart",
+            "pages": [
+              "quickstart"
+            ]
+          },
+          {
             "group": "Getting Started",
             "pages": [
               "index",
-              "concepts",
-              "register",
-              "log-in",
-              "getting-started",
-              "quickstart"
+              "getting-started/concepts",
+              "getting-started/register",
+              "getting-started/log-in",
+              "getting-started/overview"
             ]
           },
           {

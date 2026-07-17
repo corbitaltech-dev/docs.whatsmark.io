@@ -5,29 +5,61 @@ icon: "file-import"
 keywords: ["WhatsMark", "contacts", "import", "export", "CSV", "XLSX", "bulk import"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 If you're bringing contacts over from another system, you don't need to add them one at a time — use the **Import** wizard from the Contacts page.
 
 ## Importing contacts
 
 <Steps>
 <Step title="Upload your file">
-  From Contacts, click **Import**, then upload a **CSV or XLSX** file (up to 30 MB).
+  From Contacts, click **Import Contacts**, then **New Import**, and upload a **CSV or XLSX** file (up to 30 MB).
+
+  <BrowserFrame
+    src="/contacts/img/import-upload.png"
+    url="app.whatsmark.io/contacts/import"
+    alt="Upload step of the import wizard with a Before you upload checklist and a drag-and-drop file area accepting CSV or XLSX up to 30 MB"
+    caption="Read the checklist before uploading — you can download a sample CSV to match the expected format."
+  />
+
+  Your file needs a **header row** as the first row, and phone numbers must include the **country code** (for example `+919876543210`). Duplicate phone numbers are **skipped** — existing contacts are never overwritten.
 </Step>
 
 <Step title="Map your columns">
   WhatsMark reads your file's headers and suggests a mapping to contact fields automatically. Review and adjust the mapping — including your own [custom fields](/core-setup/contact-configuration#custom-fields) — before continuing.
+
+  <BrowserFrame
+    src="/contacts/img/import-map-columns.png"
+    url="app.whatsmark.io/contacts/import"
+    alt="Map Columns step showing a preview of the first rows of the uploaded file above dropdowns matching each file column to a contact field, with Phone and First Name marked required"
+    caption="A preview of your file sits above the mapping, so you can check each column lines up. Phone and First Name are required."
+  />
 </Step>
 
-<Step title="Choose defaults for this import">
-  Optionally set a default **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member** applied to every contact in this file (used when a row doesn't specify its own).
-</Step>
+<Step title="Choose defaults and start the import">
+  Set a default **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member** applied to every contact in this file (used when a row doesn't specify its own). Choose **Start Import** to queue it as a background job, so large files don't block you from continuing to use the app.
 
-<Step title="Confirm and run">
-  Submitting queues the import as a background job so large files don't block you from continuing to use the app.
+  <BrowserFrame
+    src="/contacts/img/import-default-values.png"
+    url="app.whatsmark.io/contacts/import"
+    alt="Default Values step showing an import summary of the column mapping, a note confirming how many rows were detected and how many contact slots remain, and default fields for channel, type, status, source, assignee, groups, and labels"
+    caption="Before you start, a summary confirms your mapping and checks the import fits within your remaining contact slots."
+  />
 </Step>
 </Steps>
 
+<Note>
+Some defaults are **required** — the WhatsApp channel, type, status, and source must be set before you can start the import.
+</Note>
+
 ## Tracking an import
+
+<BrowserFrame
+  src="/contacts/img/import-history.png"
+  url="app.whatsmark.io/contacts/import"
+  alt="Import Contacts page listing past imports with the file name, a progress bar showing rows processed with counts of imported and skipped rows, a Completed status, and the date"
+  caption="Each import shows live progress and a breakdown of how many rows were imported versus skipped."
+/>
 
 Each import you run is listed with its status and progress. Open one to:
 

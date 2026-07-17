@@ -5,11 +5,29 @@ icon: "layer-group"
 keywords: ["WhatsMark", "contacts", "bulk actions", "merge contacts", "duplicates"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 Once you have contacts in your workspace, you often need to change many of them at once — or clean up duplicates. Both are available directly from the Contacts table.
 
 ## Bulk actions
 
-Select one or more contacts (checkboxes on each row), or use **Select all matching** to target every contact matching your current filters — even ones not shown on the current page. Then choose an action:
+Select one or more contacts (checkboxes on each row), or use **Select all matching** to target every contact matching your current filters — even ones not shown on the current page. A bar appears above the table with **Merge** and **Bulk Actions**.
+
+<BrowserFrame
+  src="/contacts/img/bulk-selection-bar.png"
+  url="app.whatsmark.io/contacts"
+  alt="Contacts table with rows selected and a bar above it reading 15 selected, with a link to select all contacts matching current filters, plus Merge and Bulk Actions buttons and a Clear option"
+  caption="Selecting contacts reveals the action bar. Use the link beside the count to extend your selection to every contact matching your filters."
+/>
+
+Choosing **Bulk Actions** opens a sheet where you set only the fields you want to change — anything left on **No change** is untouched, and you can combine several changes in one go:
+
+<BrowserFrame
+  src="/contacts/img/bulk-actions-sheet.png"
+  url="app.whatsmark.io/contacts"
+  alt="Bulk Actions sheet for 15 selected contacts with a highlighted Delete selected contacts option, and dropdowns each defaulting to No change for status, type, group, label, assignee, active status, and linking or unlinking a WhatsApp channel"
+  caption="Every dropdown defaults to No change, so you only touch what you choose. Delete stands apart and can't be combined with other changes."
+/>
 
 <AccordionGroup>
 <Accordion title="Change status / change type">
@@ -33,11 +51,11 @@ Select one or more contacts (checkboxes on each row), or use **Select all matchi
 </Accordion>
 
 <Accordion title="Link / unlink channel">
-  Associate (or remove the association) between the selection and a specific WhatsApp/Messenger channel.
+  **Link to WhatsApp channel** adds a channel without removing any the contacts are already linked to. **Unlink from WhatsApp channel** pairs with it to correct a wrong channel — for example, after an import that used the wrong one.
 </Accordion>
 
 <Accordion title="Delete">
-  Permanently remove the selected contacts. This requires a separate delete permission from other bulk actions, since it's irreversible.
+  Permanently remove the selected contacts. Delete **can't be combined with other changes**, and requires a separate delete permission, since it's irreversible.
 </Accordion>
 </AccordionGroup>
 
@@ -53,25 +71,36 @@ If the same person ends up as two or more contact records (for example, they mes
 ### Merging a single duplicate
 
 <Steps>
-<Step title="Open the contact you want to keep">
-  This becomes the "winner" — the record that survives.
+<Step title="Find the duplicate">
+  Use **Merge with...** from a contact's row menu.
 </Step>
 
-<Step title="Choose Merge">
-  Pick the duplicate ("loser") contact to fold into it.
+<Step title="Choose the primary contact">
+  The **primary** is the record that survives — the other folds into it.
 </Step>
 
 <Step title="Confirm">
-  The loser's data is merged into the winner, and the loser record is marked as merged.
+  The duplicate's data is merged into the primary, and the duplicate record is marked as merged.
 </Step>
 </Steps>
 
 ### Bulk merge
 
-You can also select a winner and **multiple** loser contacts at once (2–100), and merge them all into that one winner in a single action. If any contact in the selection fails to merge, the whole operation is rolled back — you'll never end up with a partial merge.
+You can also select **multiple** contacts at once (2–100), choose one as the primary, and fold them all into it in a single action. If any contact in the selection fails to merge, the whole operation is rolled back — you'll never end up with a partial merge.
+
+<BrowserFrame
+  src="/contacts/img/bulk-merge.png"
+  url="app.whatsmark.io/contacts"
+  alt="Merge selected contacts dialog explaining that the other contacts will fold into the primary, with a radio list of the selected contacts and the first marked Primary"
+  caption="Pick which record survives. Identities, notes, and chats from every channel are preserved on the primary."
+/>
+
+<Note>
+Merging fills in the gaps rather than overwriting: blank fields on the primary are filled from the duplicate, and groups and labels from both are combined. A populated field on the primary is never replaced.
+</Note>
 
 <Tip>
-A contact that has already been merged into another one can't be used again as a winner or a loser — merges are one-directional and final.
+A contact that has already been merged into another one can't be merged again — merges are one-directional and final.
 </Tip>
 
 ## What's next
