@@ -36,7 +36,6 @@
                 "group": "Channels",
                 "icon": "plug",
                 "pages": [
-                  "core-setup/channels/overview",
                   "core-setup/channels/whatsapp",
                   "core-setup/channels/messenger"
                 ]
@@ -98,8 +97,7 @@
           },
           {
             "group": "Settings Reference",
-            "pages": [
-              "settings/overview",
+              "pages": [
               "settings/profile",
               "settings/custom-domain",
               "settings/webhooks",

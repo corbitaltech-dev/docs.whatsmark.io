@@ -1,46 +1,83 @@
 ---
 title: "Connecting WhatsApp"
-description: "How to connect a WhatsApp Business Account to WhatsMark via Embedded Signup or manually, and manage its health and business profile."
+description: "How to connect a WhatsApp Business Account to WhatsMark.io via Embedded Signup or manually, and manage its health and business profile."
 icon: "whatsapp"
 keywords: ["WhatsMark", "WhatsApp", "WABA", "embedded signup", "coexistence", "business profile"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Connect a WhatsApp Business Account (WABA) so you can send and receive WhatsApp messages through WhatsMark.
+Connect a WhatsApp Business Account (WABA) so you can send and receive WhatsApp messages through WhatsMark.io.
+
+## Before you connect
+
+<Info>
+Make sure you have the following ready:
+
+- A Facebook account.
+- A **Meta Business account** — Business Verification is not mandatory to connect, but it is strongly recommended; without it your account stays on limited messaging tiers.
+- One mobile number for WhatsApp that must be either:
+  - **not connected to any WhatsApp account**, or
+  - **already connected to the WhatsApp Business App**
+- Your **WABA ID**, **Access Token**, **Meta App ID**, and **App Secret** (for manual connections only).
+</Info>
 
 ## Connecting WhatsApp
 
 <Steps>
-  <Step title="Click Connect">
-    From the [Channels page](/core-setup/channels/overview), click **Connect** and choose **WhatsApp** from the platform picker.
+<Step title="Click Connect">
+  From the **Channels** page, click **Connect** and choose **WhatsApp** from the platform picker.
 
-    <BrowserFrame src="/core-setup/channels/img/channels-connect.png" url="whatsmark.io/channels" alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available" caption="Choose Connect Channel, then pick WhatsApp from the supported channels." />
-  </Step>
-  <Step title="Pick a connection method">
-    You'll see two tabs:
+  <BrowserFrame
+    src="/core-setup/channels/img/channels-connect.png"
+    url="whatsmark.io/channels"
+    alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
+    caption="Choose Connect Channel, then pick WhatsApp from the supported channels."
+  />
+</Step>
 
-    - **Embedded (recommended)** — WhatsMark uses Meta's official **Embedded Signup** flow. A Facebook login popup opens; log into your Facebook Business account, choose or create a WhatsApp Business Account and phone number, and confirm. The popup closes automatically once complete.
-    - **Manual** — for advanced setups where you already have WhatsApp Business API credentials. Paste in your existing **WABA ID**, **access token**, **Meta App ID**, and **App Secret** directly.
-  </Step>
-  <Step title="Confirm it's connected">
-    Once connected, the channel appears in your Channels list with an **Active** status, and a webhook subscription is set up automatically so incoming messages reach your workspace.
-  </Step>
+<Step title="Pick a connection method">
+  You'll see two tabs:
+
+  - **Embedded (recommended)** — WhatsMark uses Meta's official **Embedded Signup** flow. A Facebook login popup opens; log into your Facebook Business account, choose or create a WhatsApp Business Account and phone number, and confirm. The popup closes automatically once complete.
+  - **Manual** — for advanced setups where you already have WhatsApp Business API credentials. Paste in your existing **WABA ID**, **access token**, **Meta App ID**, and **App Secret** directly.
+</Step>
+
+<BrowserFrame
+  src="/core-setup/channels/img/whatsapp-connect-methods.png"
+  url="whatsmark.io/channels"
+  alt="Connect a WhatsApp Account sheet shown twice: the Embedded Signup tab with a Standard Signup Launch button, and the Manual tab with fields for channel name, Business Account ID, access token, Meta App ID, and App Secret"
+  caption="Embedded Signup launches Meta's guided flow; Manual takes your existing API credentials."
+/>
+
+<Step title="Confirm it's connected">
+  Once connected, the channel appears in your Channels list with an **Active** status, and a webhook subscription is set up automatically so incoming messages reach your workspace.
+</Step>
 </Steps>
 
-<BrowserFrame src="/core-setup/channels/img/channels-list-connected.png" url="whatsmark.io/channels" alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected" caption="Connected channels appear here with an Active status. The Method column shows whether the channel was connected via Embedded Signup or Manual." />
+<BrowserFrame
+  src="/core-setup/channels/img/channels-list-connected.png"
+  url="whatsmark.io/channels"
+  alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
+  caption="Connected channels appear here with an Active status. The Method column shows whether the channel was connected via Embedded Signup or Manual."
+/>
 
 <Note>
-  Both connection methods can be individually disabled by your plan. If a tab is missing, that method isn't available on your current plan.
+Both connection methods can be individually disabled by your plan. If a tab is missing or disable, that method isn't available on your current plan.
 </Note>
 
 ## Coexistence mode
 
-If enabled on your plan, you can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Chat history and contacts from the app are imported, and messages stay in sync between the app and WhatsMark.
+If enabled on your plan, you can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Chat history and contacts from the app are imported, and messages stay in sync between the app and WhatsMark.io.
 
 ## WABA health
 
-<BrowserFrame src="/core-setup/channels/img/waba-health.png" url="whatsmark.io/channels" alt="WABA Health panel showing an overall Available status, with Waba, Business, and App each listed as Available alongside their IDs" caption="WABA Health reports the status of your WhatsApp Business Account, business, and app." />
+<BrowserFrame
+  src="/core-setup/channels/img/waba-health.png"
+  url="whatsmark.io/channels"
+  alt="WABA Health panel showing an overall Available status, with Waba, Business, and App each listed as Available alongside their IDs"
+  caption="WABA Health reports the status of your WhatsApp Business Account, business, and "
+/>
 
 Open a connected WhatsApp channel to view:
 
@@ -50,13 +87,23 @@ Open a connected WhatsApp channel to view:
 
 ## Business Profile
 
-<BrowserFrame src="/core-setup/channels/img/business-profile.png" url="whatsmark.io/channels" alt="Phone number card showing the profile photo and number, a GREEN quality badge, messaging throughput and daily limit, and the business name, description, and location" caption="Each number shows its quality rating and messaging limits alongside the profile your contacts see." />
+<BrowserFrame
+  src="/core-setup/channels/img/business-profile.png"
+  url="whatsmark.io/channels"
+  alt="Phone number card showing the profile photo and number, a GREEN quality badge, messaging throughput and daily limit, and the business name, description, and location"
+  caption="Each number shows its quality rating and messaging limits alongside the profile your contacts see."
+/>
 
 Go to a channel's **Profile** tab to edit the public WhatsApp Business Profile your contacts see: about text, address, description, email, websites, business vertical/category, and profile photo.
 
 ## Test message
 
-<BrowserFrame src="/core-setup/channels/img/send-test-message.png" url="whatsmark.io/channels" alt="Send Test Message dialog with a Template picker showing an approved marketing template and a Recipient Phone Number field, opened from the Test button on an active channel" caption="Choose an approved template and a recipient number to confirm the channel works end to end." />
+<BrowserFrame
+  src="/core-setup/channels/img/send-test-message.png"
+  url="whatsmark.io/channels"
+  alt="Send Test Message dialog with a Template picker showing an approved marketing template and a Recipient Phone Number field, opened from the Test button on an active channel"
+  caption="Choose an approved template and a recipient number to confirm the channel works end to end."
+/>
 
 Use the **Test** button on a channel to confirm the connection actually works end-to-end before relying on it. You'll pick an approved **template** and a **recipient number** — so this needs at least one approved template on the account.
 
@@ -65,9 +112,5 @@ Use the **Test** button on a channel to confirm the connection actually works en
 <CardGroup cols={2}>
   <Card title="Connecting Messenger" icon="facebook-messenger" href="/core-setup/channels/messenger">
     Connect a Facebook Page the same way.
-  </Card>
-
-  <Card title="Channels Overview" icon="plug" href="/core-setup/channels/overview">
-    Back to managing all your connected channels in one place.
   </Card>
 </CardGroup>
