@@ -5,11 +5,20 @@ icon: "message"
 keywords: ["WhatsMark", "Messenger templates", "quick replies", "button template", "generic template", "carousel"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 Unlike WhatsApp, Messenger doesn't require Meta approval for reusable messages. **Messenger Templates** are local presets — they never touch Meta at all, so there's no submission step or review wait. Save one and it's ready to use immediately.
 
 ## Basic fields
 
 Every template needs a **name** (up to 100 characters) and an optional **category** (up to 30 characters) to help you organize the list. You can also define **example values** for any `{{n}}` variables in your text — these fill in the live preview and are used when the template is picked in a campaign or chat.
+
+<BrowserFrame
+  src="/messaging/img/messanger/messenger-template-basic-info.png"
+  url="whatsmark.io/messenger-templates/create"
+  alt="Basic Info step of the Messenger template builder with fields for Facebook Page, Name, Category, and Template Type, with the type dropdown open showing Text, Quick Replies, Button Template, Generic Template (Carousel), and Media"
+  caption="Pick the Facebook Page, give the template a name and category, then choose its type."
+/>
 
 ## Template types
 

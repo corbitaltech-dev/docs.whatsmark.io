@@ -14,7 +14,7 @@ export const BrowserFrame = ({ src, url = "whatsmark.io", alt = "", caption }) =
           display: "flex",
           alignItems: "center",
           gap: "12px",
-          padding: "10px 14px",
+          padding: "3px 10px",
           borderBottom: "1px solid rgba(128,128,128,0.2)",
         }}
       >
@@ -28,12 +28,12 @@ export const BrowserFrame = ({ src, url = "whatsmark.io", alt = "", caption }) =
           style={{
             flex: 1,
             textAlign: "center",
-            fontSize: "12px",
+            fontSize: "11px",
             fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
             color: "rgba(128,128,128,1)",
             background: "rgba(128,128,128,0.12)",
             borderRadius: "6px",
-            padding: "4px 12px",
+            padding: "2px 12px",
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
