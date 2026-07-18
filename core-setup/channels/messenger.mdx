@@ -5,6 +5,8 @@ icon: "facebook-messenger"
 keywords: ["WhatsMark", "Messenger", "Facebook Page", "embedded signup", "manual connect"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 Connect a Facebook Page so you can send and receive Messenger conversations through WhatsMark.io, right alongside your WhatsApp channels.
 
 ## Before you connect
@@ -23,19 +25,47 @@ Make sure you have the following ready:
 <Steps>
 <Step title="Click Connect">
   From the **Channels** page, click **Connect** and choose **Messenger** from the platform picker.
+  
+  <BrowserFrame
+    src="/core-setup/channels/img/channels-connect.png"
+    url="whatsmark.io/channels"
+    alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
+    caption="Choose Connect Channel, then pick WhatsApp from the supported channels."
+  />
 </Step>
 
 <Step title="Pick a connection method">
   You'll see two tabs:
 
-  - **Embedded (recommended)** — a one-click Facebook Page login flow. Log into your Facebook account, choose the Page you want to connect, and confirm. The popup closes automatically once complete.
-  - **Manual** — paste in an existing Facebook **Page access token** directly, for advanced setups.
+   <BrowserFrame
+    src="/core-setup/channels/img/messenger-connect-methods.png"
+    url="whatsmark.io/channels"
+    alt="Messenger connect flow showing Embedded Signup and Manual connection options"
+    caption="Embedded Signup uses Meta’s guided login flow; Manual requires existing Page credentials."
+  />
+
+  - **Embedded (recommended)** — connect with Meta's secure Facebook login flow.
+    - Sign in using your Facebook credentials.
+    - Select the Page you want to connect.
+    - Confirm the requested permissions.
+    - The connection completes automatically and the popup closes when done.
+  - **Manual** — use this for advanced setups with existing Meta credentials.
+    - Enter the **Page ID**.
+    - Paste the **Page Access Token**.
+    - Provide the **Meta App ID** and **Meta App Secret**.
 </Step>
 
 <Step title="Confirm it's connected">
   Once connected, the Page appears in your Channels list with a **Connected** status, and a webhook subscription is set up automatically so incoming Messenger conversations reach your workspace.
 </Step>
 </Steps>
+
+<BrowserFrame
+  src="/core-setup/channels/img/channels-list-connected.png"
+  url="whatsmark.io/channels"
+  alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
+  caption="Connected channels appear here with an Active status. The Method column shows whether the channel was connected via Embedded Signup or Manual."
+/>
 
 <Note>
 Both connection methods can be individually disabled by your plan. If a tab is missing or disable, that method isn't available on your current plan.
@@ -45,9 +75,16 @@ Both connection methods can be individually disabled by your plan. If a tab is m
 
 Open a connected Messenger channel to:
 
-- **Refresh** its health status and **view webhook subscription status**.
-- **Update missing credentials**, if Meta requires you to re-enter them.
+- **Review Page information** fetched from Meta, including Page name, Page ID, category, and connection method.
+- **Check** channel health and **view webhook subscription status**.
 - **Disconnect** the Page.
+
+<BrowserFrame
+  src="/core-setup/channels/img/messenger-view.png"
+  url="whatsmark.io/channels"
+  alt="Connected Messenger channel list showing Active status and connection method"
+  caption="Open a connected Messenger channel to review its Page details, connection method, and webhook status."
+/>
 
 <Tip>
 You can connect more than one Facebook Page — manage all of them from the same **Channels** page, alongside your WhatsApp channels.
