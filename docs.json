@@ -12,7 +12,7 @@
     "tabs": [
       {
         "tab": "Docs",
-        "groups": [
+        "pages": [
           {
             "group": "Quickstart",
             "pages": [
@@ -84,7 +84,9 @@
           },
           {
             "group": "Media",
-            "pages": ["media/media-library"]
+            "pages": [
+              "media/media-library"
+            ]
           },
           {
             "group": "Billing",
@@ -106,7 +108,8 @@
               "settings/api-keys",
               "settings/account-and-danger-zone"
             ]
-          }
+          },
+          "untitled-page"
         ]
       },
       {
