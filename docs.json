@@ -117,8 +117,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/image-2.svg",
+    "dark": "/images/image-2.svg"
   },
   "navbar": {
     "links": [
