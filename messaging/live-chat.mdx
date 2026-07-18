@@ -5,6 +5,8 @@ icon: "comments"
 keywords: ["WhatsMark", "chat", "live chat", "team inbox", "conversations", "inbox"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 **Chat** is where your team actually talks to customers — a unified inbox for every WhatsApp and Messenger conversation across all your connected channels.
 
 <Note>
@@ -20,7 +22,36 @@ Chat is split into four panes:
 3. **Message thread** — the open conversation, with message search within the thread.
 4. **Contact panel** — the contact's details, media gallery, and notes, without leaving the chat.
 
+<BrowserFrame
+  src="/messaging/img/chat/chat-message-thread.png"
+  url="whatsmark.io/chat"
+  alt="An open WhatsApp conversation in Chat: the message thread fills the centre with incoming and outgoing bubbles, a live 24-hour window countdown and Unassigned / team dropdowns sit in the header, and the message composer runs along the bottom"
+  caption="The message thread, with the live 24-hour window countdown and assignment controls in the header."
+/>
+
+The **sidebar** filters your inbox, and the **conversation list** shows everything matching the current filter.
+
+<CardGroup cols={2}>
+  <BrowserFrame
+    src="/messaging/img/chat/chat-sidebar.png"
+    alt="The Chat sidebar showing All, Mine, Unassigned, an Incoming Calls item marked Coming Soon, a Not Replied toggle, a Status group, and a Team Inbox group, each with a counter"
+    caption="Sidebar filters, each with a live counter."
+  />
+  <BrowserFrame
+    src="/messaging/img/chat/chat-conversation-list.png"
+    alt="The Chat conversation list with a search box, contact rows showing avatars, channel badges, last-message previews, timestamps, and status labels"
+    caption="The conversation list — searchable, sortable, and channel-filterable."
+  />
+</CardGroup>
+
 The contact panel isn't read-only — you can **edit the contact's details directly from here** (name, status, labels, and other fields), the same as editing them from the [Contacts](/contacts/managing-contacts) page, and add or review [notes](/contacts/managing-contacts#notes) without switching pages.
+
+<BrowserFrame
+  src="/messaging/img/chat/chat-contact-panel.png"
+  url="whatsmark.io/chat"
+  alt="The contact panel on the right of Chat showing Contact details with fields for Name, Phone Number, Email, Source, Contact Type, Assigned to, Labels, and Channel, plus tabs for details, media, and notes and an Edit button"
+  caption="The contact panel — details, media, and notes, editable without leaving the chat."
+/>
 
 Updates appear instantly — new messages, delivery ticks, assignment changes, and counters all update live without needing to refresh the page.
 
@@ -30,6 +61,13 @@ You don't have to wait for a customer to message first — click **New Chat** to
 
 - If the contact already has an open conversation (within the 24-hour window), it opens immediately.
 - If their window is closed, or they're reachable on more than one platform, you'll be guided through a **channel picker** and then the [Initiate Chat](/contacts/managing-contacts#row-actions) template flow instead.
+
+<BrowserFrame
+  src="/messaging/img/chat/chat-new-chat.png"
+  url="whatsmark.io/chat"
+  alt="The New chat sheet with a search box to find a contact by name, phone, or email, and a list of contacts each with a Template badge indicating a template send is required"
+  caption="New chat — search a contact to start or resume a conversation."
+/>
 
 ## Browsing message history
 
@@ -52,6 +90,22 @@ The composer supports:
 - **Run a Flow** — start a bot automation flow directly from the conversation
 - **Send Template** — send an approved template for this contact's channel
 
+<BrowserFrame
+  src="/messaging/img/chat/chat-composer-toolbar.png"
+  url="whatsmark.io/chat"
+  alt="The Chat composer with a formatting toolbar and a row of action icons: emoji, attach, location, contact card, canned replies, run a flow, AI improve, and send template, with a character counter and a send button"
+  caption="The composer toolbar — every send option is one click away."
+/>
+
+The **Canned replies** picker (opened with its button or by typing `/`) searches your saved responses by shortcut, title, or body.
+
+<BrowserFrame
+  src="/messaging/img/chat/chat-canned-reply-picker.png"
+  url="whatsmark.io/chat"
+  alt="The canned replies picker above the composer with a search box and a matching reply showing the /welcome shortcut, a Welcome title, and the reply body"
+  caption="Type / in the composer to search and insert a saved reply."
+/>
+
 <Warning>
 WhatsApp only allows free-form messages within a **[24-hour window](/getting-started/concepts#the-24-hour-customer-service-window)** after the customer's last message. A live countdown above the composer shows exactly how much time is left. Once that window closes, the composer shows a **"Send template"** prompt instead — see [Initiate Chat](/contacts/managing-contacts#row-actions) for sending an approved template to restart the conversation. Messenger conversations don't have this restriction, so no countdown appears for them.
 </Warning>
@@ -66,6 +120,13 @@ Click the **Sparkles** button in the composer to:
 
 After a rewrite, an **Undo / Regenerate** bar lets you revert or try again, and a token-usage meter shows how much of your monthly AI quota you're using.
 
+<BrowserFrame
+  src="/messaging/img/chat/chat-ai-assist.png"
+  url="whatsmark.io/chat"
+  alt="The Improve message popover with Quick Actions (Improve writing, Fix grammar, Make formal, Make casual, Make shorter), a Translate option, a Your Prompts section, a Monthly AI tokens usage meter, and a Manage prompts link"
+  caption="The AI assist popover — quick actions, translate, your custom prompts, and a live token meter."
+/>
+
 <Note>
 AI assist is gated by your plan. See [AI Features](/automation/ai-features) for the full picture.
 </Note>
@@ -76,6 +137,26 @@ AI assist is gated by your plan. See [AI Features](/automation/ai-features) for 
 - **Clear** the message history or **delete** the conversation entirely. (Opening a conversation marks it as read automatically — its unread counter clears the moment you open it.)
 - **Delete a single message** — you (or a teammate) can **restore** it within a 2-minute window.
 - **Run an automation flow** manually against the open conversation, or send a **WhatsApp Flow** interactively — see [Automation Flows](/automation/chatbot-flows) and [WhatsApp Flows](/automation/whatsapp-flows).
+
+<CardGroup cols={2}>
+  <BrowserFrame
+    src="/messaging/img/chat/chat-conversation-menu.png"
+    alt="The conversation overflow menu in the thread header showing Clear chat and Delete conversation options"
+    caption="Conversation menu — clear or delete the whole conversation."
+  />
+  <BrowserFrame
+    src="/messaging/img/chat/chat-message-menu.png"
+    alt="The per-message menu showing Reply, Copy, and Delete options on a message bubble"
+    caption="Per-message menu — reply, copy, or delete a single message."
+  />
+</CardGroup>
+
+<BrowserFrame
+  src="/messaging/img/chat/chat-run-flow.png"
+  url="whatsmark.io/chat"
+  alt="The Run a flow picker above the composer listing the automation flows that can be started against the open conversation"
+  caption="Run a flow — start a bot automation against the open conversation."
+/>
 
 <Tip>
 **Assigning** conversations (to a person or a Team Inbox) is limited to workspace **owners and admins**. Other actions — running flows, sending templates, clearing, and deleting — respect your workspace's [roles and permissions](/core-setup/team-and-roles), so a team member only sees the actions their role allows.
@@ -103,6 +184,13 @@ Beyond assigning conversations to individuals, you can group team members into *
 <Steps>
 <Step title="Create a Team Inbox">
   Give it a name from the Team sheet.
+
+  <BrowserFrame
+    src="/messaging/img/chat/chat-create-team-inbox.png"
+    url="whatsmark.io/chat"
+    alt="The Create Team Inbox sheet with a Team Name field (placeholder e.g. Sales, Support, Billing), a Team Members multi-select, and Cancel and Create Team buttons"
+    caption="Name the inbox and pick who staffs it."
+  />
 </Step>
 
 <Step title="Add members">
