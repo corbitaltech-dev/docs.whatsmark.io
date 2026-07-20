@@ -1,9 +1,11 @@
 ---
 title: "Dashboard & Feature Usage"
-description: "What your WhatsMark Dashboard shows, and how to check your plan's usage against its limits on the Feature Usage page."
+description: "What your WhatsMark.io Dashboard shows, and how to check your plan's usage against its limits on the Feature Usage page."
 icon: "gauge"
 keywords: ["WhatsMark", "dashboard", "feature usage", "charts", "usage limits", "plan usage"]
 ---
+
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
 Your **Dashboard** is the home screen of your workspace, and the **Feature Usage** page is where you check exactly how much of your plan you've used.
 
@@ -13,7 +15,7 @@ The Dashboard basics are already covered in [Getting Started](/getting-started/o
 
 ## Dashboard widgets
 
-- A **greeting card** with your avatar and date.
+- A **greeting card** with your avatar and date, plus **Open Inbox** and **New Campaign** shortcuts.
 - A rotating **banner carousel** — promotional messages your workspace if admin has configured.
 - A collapsible **Usage & Limits** panel — Cards for each plan feature that has a limit or quota, with links to jump straight to that feature.
 - An **Upcoming Campaigns** panel.
@@ -26,7 +28,56 @@ The Dashboard basics are already covered in [Getting Started](/getting-started/o
   - Most-engaged chats
   - Unreplied chats
 
-A global **Refresh** button updates every widget and chart in place, without a full page reload.
+A global **Refresh Data** button updates every widget and chart in place, without a full page reload.
+
+### Greeting and Usage & Limits
+
+The **Usage & Limits** panel summarises your plan at a glance — a **Tracked** count, an **Unlimited** count, a **Highest active usage** callout that names the feature closest to its cap, and a card per feature showing what's used against the limit. **View all** opens the full [Feature Usage](#feature-usage-page) page.
+
+<BrowserFrame
+  src="/reporting/img/dashboard/dashboard-greeting-usage-limits.png"
+  url="whatsmark.io/dashboard"
+  alt="The Dashboard greeting card with Open Inbox, New Campaign, and Refresh Data buttons, above an expanded Usage and Limits panel showing cards for Contacts, Template Broadcasts, Broadcast Campaigns, Custom AI Prompts, AI Usage Tokens, Team Members, and more, each with a used-of-limit figure and a percentage"
+  caption="The greeting card and the Usage & Limits panel, with a Highest active usage callout at the top."
+/>
+
+<Tip>
+Cards marked **Period quota** (like AI Usage Tokens or Broadcast Campaigns) reset each billing period. Cards marked **Plan limit** count your total and don't reset.
+</Tip>
+
+### Messages and contacts charts
+
+The first chart row covers volume and growth: **Messages** sent vs received over time, **Leads & Customers** as a lifecycle breakdown with a conversion percentage, and **New contacts by source**.
+
+<BrowserFrame
+  src="/reporting/img/dashboard/dashboard-messages-contacts-charts.png"
+  alt="Three Dashboard charts side by side: a Messages line chart plotting sent against received over the last 14 days, a Leads and Customers donut showing a converted percentage with customers, leads, and guests counts, and a New contacts by source donut split between whatsapp and Instagram"
+  caption="Messages over time, contact lifecycle, and contact sources — each with its own date-range selector."
+/>
+
+### Channels and message sources
+
+**Channels** breaks messages down per connected channel with inbound and outbound counts, and **Sent messages by source** shows what initiated your outbound traffic — Templates, Direct chat, or Flows.
+
+<BrowserFrame
+  src="/reporting/img/dashboard/dashboard-channels-message-sources.png"
+  alt="Two Dashboard panels: Channels listing a WhatsApp Support Channel and a Messenger channel with inbound and outbound counts on bars, and Sent messages by source listing Templates, Direct chat, and Flows with counts and percentages"
+  caption="Per-channel message volume, and which part of the product initiated each outbound message."
+/>
+
+### Most-engaged and unreplied chats
+
+Two conversation lists sit at the bottom of the Dashboard. **Most-engaged chats** ranks conversations by message count, and **Waiting on reply** lists chats where the contact spoke last. Each row links straight into [Chat](/messaging/live-chat).
+
+<BrowserFrame
+  src="/reporting/img/dashboard/dashboard-engaged-unreplied-chats.png"
+  alt="Two Dashboard panels: Most-engaged chats listing top conversations by message count with a badge showing the count, and Waiting on reply listing chats where the contact spoke last with the message preview and how long ago it arrived"
+  caption="Most-engaged chats and chats still waiting on a reply — click any row to open the conversation."
+/>
+
+<Tip>
+Use **Waiting on reply** as a daily to-do list — it surfaces contacts who messaged you and haven't heard back, before the 24-hour messaging window closes.
+</Tip>
 
 <Note>
 If your email address isn't verified yet, a banner appears reminding you to verify it — some pages redirect back to the Dashboard until you do.
