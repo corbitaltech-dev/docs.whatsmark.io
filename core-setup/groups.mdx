@@ -5,17 +5,36 @@ icon: "people"
 keywords: ["WhatsMark", "groups", "contacts", "segments", "campaigns"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 Groups are named collections of contacts used for manual segmentation and as audience options when creating campaigns or automations.
 
 ## Creating groups
+
+Click **Create Group** to open the group form:
+
+<BrowserFrame
+  src="/core-setup/img/group-form.png"
+  url="whatsmark.io/setup/groups"
+  alt="New Group form showing fields for name, description, and color"
+  caption="Use a clear group name, an optional description, and a badge color."
+/>
 
 <Steps>
 <Step title="Go to Setup → Groups">
   Navigate to the groups section.
 </Step>
 
-<Step title="Click Add Group">
-  Enter a name for your group (e.g. "Newsletter subscribers", "Support requests").
+<Step title="Click Create Group">
+  Open the side sheet to add a new contact group.
+</Step>
+
+<Step title="Fill in the details">
+  Configure the group:
+
+  - **Name** — enter a clear group name, such as **VIP Customers**, **Newsletter Subscribers**, or **Support Requests**.
+  - **Description** — optionally add context about who belongs in this group.
+  - **Color** — choose the badge color used wherever the group appears.
 </Step>
 
 <Step title="Save">
@@ -31,9 +50,13 @@ Groups are named collections of contacts used for manual segmentation and as aud
 
 ## Managing groups
 
-- **Edit** a group name
-- **Delete** a group — contacts remain; they just lose the group assignment
-- **View members**: See all contacts in a group
+- **Edit** a group to update its name, description, or color.
+- **Delete** a group only when it is not being used by contacts or related records.
+- The **Contacts** column on the groups table shows how many contacts are currently in each group.
+
+<Tip>
+You can also create a new group while adding or editing a contact. Click the `+` icon beside the **Groups** field in the contact form.
+</Tip>
 
 ## Using groups in campaigns
 

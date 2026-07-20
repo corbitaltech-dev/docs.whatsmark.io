@@ -5,17 +5,36 @@ icon: "tag"
 keywords: ["WhatsMark", "labels", "tags", "contacts"]
 ---
 
-Labels are freeform tags you can attach to any contact to organize and categorize them. For example, "VIP", "Needs follow-up", "Premium customer", etc.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+Labels are freeform tags you can attach to any contact to organize and categorize them. For example, **VIP**, **Needs follow-up**, or **Premium customer**.
 
 ## Creating labels
+
+Click **Create Label** to open the label form:
+
+<BrowserFrame
+  src="/core-setup/img/label-form.png"
+  url="whatsmark.io/setup/labels"
+  alt="New Label form showing fields for name, color, and sort order"
+  caption="Use clear label names, assign a badge color, and set the display order."
+/>
 
 <Steps>
 <Step title="Go to Setup → Labels">
   Navigate to the labels section.
 </Step>
 
-<Step title="Click Add Label">
-  Enter a name for your label.
+<Step title="Click Create Label">
+  Open the side sheet to add a new contact label.
+</Step>
+
+<Step title="Fill in the details">
+  Configure the label:
+
+  - **Name** — enter a clear tag name, such as **VIP**, **Needs follow-up**, or **Premium customer**.
+  - **Color** — choose the badge color used wherever the label appears.
+  - **Sort order** — set the label position in the table and label lists.
 </Step>
 
 <Step title="Save">
@@ -25,9 +44,9 @@ Labels are freeform tags you can attach to any contact to organize and categoriz
 
 ## Managing labels
 
-- **Edit** a label name anytime
-- **Delete** a label — removing it from all contacts where it's assigned
-- **Reorder** by dragging — the order here is the order they appear throughout the product
+- **Edit** a label to update its name, color, or sort order.
+- **Reorder** labels by dragging rows. The same order is used across contact forms, filters, and label lists.
+- **Delete** a label only when it is not being used by contacts or related records.
 
 ## What's next
 

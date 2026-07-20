@@ -5,33 +5,53 @@ icon: "location"
 keywords: ["WhatsMark", "sources", "contacts", "tracking"]
 ---
 
-Sources track where a contact came from. For example, "Website", "Referral", "Ad Campaign", "Direct message", etc. This helps you understand which channels are most effective.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+Sources track where contacts come from, such as WhatsApp, Messenger, Facebook Ads, website forms, referrals, or manual entry. Use them to understand which channels create the most contacts and to segment audiences later.
 
 ## Creating sources
+
+Click **Create Source** to open the source form:
+
+<BrowserFrame
+  src="/core-setup/img/source-form.png"
+  url="whatsmark.io/setup/sources"
+  alt="New Source form showing a required name field"
+  caption="Create a source with a clear name so your team can identify where each contact came from."
+/>
 
 <Steps>
 <Step title="Go to Setup → Sources">
   Navigate to the sources section.
 </Step>
 
-<Step title="Click Add Source">
-  Enter a name for your source (e.g. "Facebook", "Google Ads", "Organic search").
+<Step title="Click Create Source">
+  Open the side sheet to add a new contact source.
+</Step>
+
+<Step title="Enter the source name">
+  Add a clear name, such as **WhatsApp**, **Messenger**, **Facebook Ads**, **Website**, or **Referral**.
 </Step>
 
 <Step title="Save">
-  Your source is now available.
+  The source becomes available in contact forms, contact filters, imports, exports, and campaign audience filters.
 </Step>
 </Steps>
 
 ## Managing sources
 
-- **Edit** a source name
-- **Delete** a source — contacts keep their source data but can't be assigned this source going forward
-- **Reorder** by dragging — the order here is the order they appear throughout the product
+- **Edit** a source to update its name.
+- **Reorder** sources by dragging rows. The same order is used in the source table and source lists.
+- **Delete** a source when you no longer need it.
+- **System sources** are created by WhatsMark.io and cannot be edited or deleted.
+
+<Tip>
+You can also create a new source while adding or editing a contact. Click the `+` icon beside the **Source** field in the contact form.
+</Tip>
 
 ## Using sources in analytics
 
-Your sources appear in dashboard charts and breakdowns, helping you analyze which channels bring the most contacts and which are most valuable for your business.
+Sources appear in reporting, filters, imports, exports, and campaign audience selection. Keep source names consistent so your team can compare contact origin accurately.
 
 ## What's next
 
