@@ -5,11 +5,22 @@ icon: "list"
 keywords: ["WhatsMark", "WhatsApp", "activity log", "message log", "monitoring"]
 ---
 
-The WhatsApp Activity Log shows every outbound message sent on your behalf through WhatsMark — whether sent manually, via automation, or via campaigns.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+The WhatsApp Activity Log shows every outbound message sent on your behalf through WhatsMark.io — whether sent manually, via automation, or via campaigns. Use it to monitor delivery, troubleshoot failures, and audit your messaging activity.
 
 ## Viewing the log
 
-Navigate to **Setup → WhatsApp Activity Log** to see:
+Navigate to **Setup → WhatsApp Activity Log** to view all messages:
+
+<BrowserFrame
+  src="/core-setup/img/whatsapp-activity-log.png"
+  url="whatsmark.io/setup/whatsapp-activity-log"
+  alt="WhatsApp Activity Log table showing all outbound messages with status and details"
+  caption="Monitor all messages sent through WhatsMark with full delivery and error details."
+/>
+
+**Columns explained:**
 
 - **Category**: Message type (Bot Flow, Initial Chat, Campaign, Canned Reply, etc.)
 - **Name**: Who sent it or what automation triggered it
@@ -28,26 +39,42 @@ Navigate to **Setup → WhatsApp Activity Log** to see:
 ## Understanding message status
 
 - **Read**: Message was delivered and read by the recipient
-- **Delivered**: Message was sent but not yet read
-- **Failed**: Message failed to send — check the error column for details
-- **Pending**: Message is queued to be sent
+- **Delivered**: Message was sent and arrived but not yet read
+- **Failed**: Message failed to send — check the error column for the reason
+- **Pending**: Message is queued and waiting to be sent
 
 ## Troubleshooting failed messages
 
 If you see failed messages:
 
-1. Check the **Error** column for details
-2. Common errors include invalid phone number, contact not found, or template rejection
-3. Review the contact details and resend if the issue was temporary
+1. Check the **Error** column for the specific failure reason
+2. Common errors: invalid phone number, contact not found, template rejected by Meta, network issues
+3. Verify the contact details and try sending again if the issue was temporary
+4. For template errors, review the template for compliance with Meta's policies
+
+## Common use cases
+
+- **Audit compliance**: Review all messages sent for compliance and legal records
+- **Troubleshoot delivery issues**: Identify why messages failed and fix contact data
+- **Monitor campaign performance**: Check delivery rates and errors for active campaigns
+- **Debug automations**: Verify that your bot flows and automations sent messages as expected
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Custom Fields" icon="square" href="/core-setup/custom-fields">
-    Add custom data fields to organize your contacts.
+    Add custom data fields to organize contacts.
   </Card>
 
   <Card title="API Keys" icon="key" href="/core-setup/api-keys">
     Create API tokens for programmatic access.
+  </Card>
+
+  <Card title="Campaigns" icon="send" href="/messaging/campaigns">
+    Create and send bulk messages to audiences.
+  </Card>
+
+  <Card title="Chatbot Flows" icon="zap" href="/automation/chatbot-flows">
+    Build automations that send messages automatically.
   </Card>
 </CardGroup>
