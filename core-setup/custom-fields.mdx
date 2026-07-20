@@ -5,9 +5,20 @@ icon: "square"
 keywords: ["WhatsMark", "custom fields", "contacts", "data"]
 ---
 
-Custom fields let you add your own data to contact records beyond the built-in ones. For example, "Company name", "Contract value", "Preferred language", "Anniversary date", etc.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+Custom fields let you add your own data to contact records beyond the built-in ones. For example, "Company name", "Contract value", "Preferred language", "Anniversary date", or any other data specific to your business.
 
 ## Creating custom fields
+
+Click **Add Field** to open the custom field form:
+
+<BrowserFrame
+  src="/core-setup/img/custom field-form.png"
+  url="whatsmark.io/setup/custom-fields"
+  alt="Custom Field form showing field name, type selector, and field options"
+  caption="Define the field name, choose a type, and configure options like placeholder text, validation rules, and default values."
+/>
 
 <Steps>
 <Step title="Go to Setup → Custom Fields">
@@ -15,54 +26,109 @@ Custom fields let you add your own data to contact records beyond the built-in o
 </Step>
 
 <Step title="Click Add Field">
-  Enter a name for your field.
+  Enter a name for your field (e.g., "Company Name", "Contract Value").
 </Step>
 
-<Step title="Choose a type">
-  Select from: text, dropdown, radio, checkbox, switch, or date.
+<Step title="Choose a field type">
+  Select from 13 field types to match your data (text, number, date, dropdown, email, phone, etc.).
 </Step>
 
-<Step title="Configure options (if applicable)">
-  For dropdown, radio, and checkbox types, add the available choices.
+<Step title="Configure field options">
+  Set placeholder text, mark as required, add validation, define default value, and configure type-specific options (choices for dropdown/radio/checkbox).
+</Step>
+
+<Step title="Choose display settings">
+  Toggle **Show on table** to display this field as a column in the contacts list.
 </Step>
 
 <Step title="Save">
-  Your field is now available.
+  Your field is now available in contact forms and can be used as a merge-field token.
 </Step>
 </Steps>
 
 ## Field types
 
-- **Text**: Single or multi-line text input
-- **Dropdown**: Select one option from a list
-- **Radio**: Select one option (displayed as buttons)
-- **Checkbox**: Select multiple options
-- **Switch**: Toggle on/off
-- **Date**: Pick a date
+Choose the type that matches your data:
+
+**Text-based fields:**
+- **Text** — Single-line text input (e.g., "Company Name")
+- **Textarea** — Multi-line text input (e.g., "Special Notes")
+- **Email** — Email input with validation
+- **URL** — Website URL with validation
+- **Phone** — Phone number field
+- **Number** — Numeric value (e.g., "Contract Value")
+
+**Selection fields:**
+- **Dropdown** — Select one option from a list (e.g., "Status: New/Lead/Customer")
+- **Radio** — Select one option displayed as buttons
+- **Checkbox** — Select multiple options
+
+**Special fields:**
+- **Date** — Pick a calendar date (e.g., "Anniversary", "Contract Renewal")
+- **Time** — Pick a time
+- **Color** — Select a color (e.g., "Brand Color")
+- **Switch** — Toggle on/off (e.g., "VIP Customer: Yes/No")
 
 ## Managing custom fields
 
-- **Edit** field name, type, and options
-- **Delete** a field — the field is removed from forms but stored data is preserved
-- **Deactivate** a field — hide it from forms while keeping the data
-- **Reorder** by dragging — the order here is the order they appear in contact forms
+- **Edit** — Change field name, type, options, placeholder, default value, or validation rules
+- **Deactivate** — Hide a field from forms while keeping stored data intact (useful for archiving old fields)
+- **Delete** — Permanently remove the field from forms. Contact data is preserved in your records.
+- **Show on table** — Toggle to display this field as a column in the contacts list
+
+<Tip>
+Deactivate fields instead of deleting them if you might need them later. Inactive fields stay hidden from forms but preserve historical data.
+</Tip>
+
+## Common custom field examples
+
+- **"Company Name"** (Text) — Organize contacts by company
+- **"Industry"** (Dropdown with options: Tech, Finance, Healthcare, Retail, Other)
+- **"Contract Value"** (Number) — Track deal size
+- **"Annual Renewal Date"** (Date) — Set reminders for contract reviews
+- **"Preferred Language"** (Dropdown: English, Spanish, French, etc.) — For personalized messaging
+- **"VIP Customer"** (Switch) — Quick flag for priority contacts
+- **"Follow-up Notes"** (Textarea) — Add context about the contact
 
 ## Using custom fields
 
-Custom fields you create here automatically become available as:
+Custom fields you create automatically become available in three places:
 
-- **Merge-field tokens** — Use them in templates with `{token}` syntax (see [Merge Fields](/messaging/merge-fields))
-- **Import mapping targets** — Map them when importing contacts
-- **Flow mapping targets** — Map them when integrating with [WhatsApp Flows](/automation/whatsapp-flows)
+**1. Merge-field tokens in templates**
+   - Use them in message templates and campaigns with token syntax (see [Merge Fields](/messaging/merge-fields))
+   - Example: Hi `{contact.firstName}`, your contract renews on `{custom.annual_renewal_date}`
+
+**2. Contact import mapping**
+   - When importing contacts from CSV or Excel, map columns to your custom fields
+
+**3. WhatsApp Flow mapping**
+   - Map form submissions from [WhatsApp Flows](/automation/whatsapp-flows) directly into your custom fields
+   - Example: Map appointment booking data into "Preferred Date" and "Preferred Time" fields
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Contact Configuration" icon="cog" href="/settings/contact-configuration">
-    Configure auto-create defaults for inbound contacts.
+  <Card title="Contact Configuration" icon="cog" href="/core-setup/contact-configuration">
+    Set defaults for auto-created contacts.
   </Card>
 
   <Card title="Sources" icon="location" href="/core-setup/sources">
-    Track where your contacts came from.
+    Track where contacts originated.
+  </Card>
+
+  <Card title="Merge Fields" icon="braces" href="/messaging/merge-fields">
+    Use custom fields as tokens in messages and templates.
+  </Card>
+
+  <Card title="Import & Export" icon="arrow-right-left" href="/contacts/import-export">
+    Map custom fields when importing contacts.
+  </Card>
+
+  <Card title="WhatsApp Flows" icon="zap" href="/automation/whatsapp-flows">
+    Collect form data into custom fields.
+  </Card>
+
+  <Card title="Campaigns" icon="send" href="/messaging/campaigns">
+    Use custom fields to personalize bulk messages.
   </Card>
 </CardGroup>
