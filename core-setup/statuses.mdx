@@ -5,34 +5,54 @@ icon: "circle"
 keywords: ["WhatsMark", "statuses", "lifecycle", "contacts"]
 ---
 
-Statuses represent where a contact is in your lifecycle. For example, "New", "Contacted", "Customer", "Inactive", etc.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+Statuses define where a contact is in your business lifecycle. Use them to track progress across contact records, filters, chat workflows, and campaign audience selection.
 
 ## Creating statuses
+
+Click **Create Status** to open the status form:
+
+<BrowserFrame
+  src="/core-setup/img/status-form.png"
+  url="whatsmark.io/setup/statuses"
+  alt="New Status form showing fields for name, color, sort order, and default status"
+  caption="Use clear status names, assign a badge color, set the display order, and optionally mark one status as the default."
+/>
 
 <Steps>
 <Step title="Go to Setup → Statuses">
   Navigate to the statuses section.
 </Step>
 
-<Step title="Click Add Status">
-  Enter a name for your status (e.g. "Lead", "Opportunity", "Closed").
+<Step title="Click Create Status">
+  Open the side sheet to add a new contact lifecycle status.
 </Step>
 
-<Step title="Mark as default (optional)">
-  If you want this status assigned automatically to newly created contacts, toggle it as default.
+<Step title="Fill in the details">
+  Configure the status:
+
+  - **Name** — enter a clear lifecycle name, such as **New Lead**, **Under Review**, **Customer**, or **Inactive**.
+  - **Color** — choose the badge color used wherever the status appears.
+  - **Sort order** — set the status position in the table and status lists.
+  - **Default status** — turn this on if new contacts should receive this status automatically.
 </Step>
 
 <Step title="Save">
-  Your status is now available.
+  The status becomes available in contact forms, contact filters, chat views, and campaign audience filters.
 </Step>
 </Steps>
 
 ## Managing statuses
 
-- **Edit** a status name
-- **Delete** a status — contacts keep their status data but can't be assigned this status going forward
-- **Reorder** by dragging — the order here is the order they appear throughout the product
-- **Set default**: Only one status can be the default. New contacts are automatically assigned this status.
+- **Edit** a status to update its name, color, sort order, or default setting.
+- **Reorder** statuses by dragging rows. The same order is used across the product.
+- **Set default** by toggling the default switch. Only one status can be the default at a time.
+- **Delete** a status only when it is not being used by contacts or related records.
+
+<Tip>
+You can also create a new status while adding or editing a contact. Click the `+` icon beside the **Status** field in the contact form.
+</Tip>
 
 ## What's next
 
