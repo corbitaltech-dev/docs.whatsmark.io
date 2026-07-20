@@ -1,0 +1,53 @@
+---
+title: "WhatsApp Activity Log"
+description: "View and monitor all outbound messages sent on your behalf."
+icon: "list"
+keywords: ["WhatsMark", "WhatsApp", "activity log", "message log", "monitoring"]
+---
+
+The WhatsApp Activity Log shows every outbound message sent on your behalf through WhatsMark — whether sent manually, via automation, or via campaigns.
+
+## Viewing the log
+
+Navigate to **Setup → WhatsApp Activity Log** to see:
+
+- **Category**: Message type (Bot Flow, Initial Chat, Campaign, Canned Reply, etc.)
+- **Name**: Who sent it or what automation triggered it
+- **Template Name**: Template used (if applicable)
+- **Status**: Delivery status (read, delivered, failed, etc.)
+- **Error**: Any failure reason if status is failed
+- **Relation Type**: Contact, Lead, or other relationship
+- **Created**: Timestamp when the message was sent
+
+## Filtering and searching
+
+- **All/Success/Errors tabs**: Filter by delivery status
+- **Search**: Find messages by contact name, template, or other details
+- **Filters**: Further narrow results by category, status, or date range
+
+## Understanding message status
+
+- **Read**: Message was delivered and read by the recipient
+- **Delivered**: Message was sent but not yet read
+- **Failed**: Message failed to send — check the error column for details
+- **Pending**: Message is queued to be sent
+
+## Troubleshooting failed messages
+
+If you see failed messages:
+
+1. Check the **Error** column for details
+2. Common errors include invalid phone number, contact not found, or template rejection
+3. Review the contact details and resend if the issue was temporary
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Custom Fields" icon="square" href="/core-setup/custom-fields">
+    Add custom data fields to organize your contacts.
+  </Card>
+
+  <Card title="API Keys" icon="key" href="/core-setup/api-keys">
+    Create API tokens for programmatic access.
+  </Card>
+</CardGroup>

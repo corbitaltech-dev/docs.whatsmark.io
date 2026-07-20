@@ -1,0 +1,68 @@
+---
+title: "Custom Fields"
+description: "Add custom data fields to your contact records."
+icon: "square"
+keywords: ["WhatsMark", "custom fields", "contacts", "data"]
+---
+
+Custom fields let you add your own data to contact records beyond the built-in ones. For example, "Company name", "Contract value", "Preferred language", "Anniversary date", etc.
+
+## Creating custom fields
+
+<Steps>
+<Step title="Go to Setup → Custom Fields">
+  Navigate to the custom fields section.
+</Step>
+
+<Step title="Click Add Field">
+  Enter a name for your field.
+</Step>
+
+<Step title="Choose a type">
+  Select from: text, dropdown, radio, checkbox, switch, or date.
+</Step>
+
+<Step title="Configure options (if applicable)">
+  For dropdown, radio, and checkbox types, add the available choices.
+</Step>
+
+<Step title="Save">
+  Your field is now available.
+</Step>
+</Steps>
+
+## Field types
+
+- **Text**: Single or multi-line text input
+- **Dropdown**: Select one option from a list
+- **Radio**: Select one option (displayed as buttons)
+- **Checkbox**: Select multiple options
+- **Switch**: Toggle on/off
+- **Date**: Pick a date
+
+## Managing custom fields
+
+- **Edit** field name, type, and options
+- **Delete** a field — the field is removed from forms but stored data is preserved
+- **Deactivate** a field — hide it from forms while keeping the data
+- **Reorder** by dragging — the order here is the order they appear in contact forms
+
+## Using custom fields
+
+Custom fields you create here automatically become available as:
+
+- **Merge-field tokens** — Use them in templates with `{token}` syntax (see [Merge Fields](/messaging/merge-fields))
+- **Import mapping targets** — Map them when importing contacts
+- **Flow mapping targets** — Map them when integrating with [WhatsApp Flows](/automation/whatsapp-flows)
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Contact Configuration" icon="cog" href="/settings/contact-configuration">
+    Configure auto-create defaults for inbound contacts.
+  </Card>
+
+  <Card title="Sources" icon="location" href="/core-setup/sources">
+    Track where your contacts came from.
+  </Card>
+</CardGroup>

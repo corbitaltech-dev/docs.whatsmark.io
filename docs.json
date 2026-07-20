@@ -29,21 +29,11 @@
               "getting-started/overview"
             ]
           },
-          {
-            "group": "Core Setup",
+           {
+            "group": "Channels",
             "pages": [
-              {
-                "group": "Channels",
-                "icon": "plug",
-                "pages": [
-                  "core-setup/channels/whatsapp",
-                  "core-setup/channels/messenger"
-                ]
-              },
-              "core-setup/team-and-roles",
-              "core-setup/workspace-settings",
-              "core-setup/contact-configuration",
-              "core-setup/invitation-acceptance"
+              "core-setup/channels/whatsapp",
+              "core-setup/channels/messenger"
             ]
           },
           {
@@ -95,19 +85,39 @@
               "billing/payments-and-invoices"
             ]
           },
+            {
+            "group": "Core Setup",
+            "pages": [
+              "core-setup/team-and-roles",
+              "core-setup/statuses",
+              "core-setup/sources",
+              "core-setup/labels",
+              "core-setup/groups",
+              "core-setup/canned-replies",
+              "core-setup/ai-prompts",
+              "core-setup/whatsapp-activity-log",
+              "core-setup/custom-fields",
+              "core-setup/api-keys",
+              "core-setup/invitation-acceptance"
+            ]
+          },
           {
-            "group": "Settings Reference",
+            "group": "Settings",
               "pages": [
               "settings/profile",
+              "settings/general",
+              "settings/business-hours",
+              "settings/billing-details",
+              "settings/contact-configuration",
               "settings/custom-domain",
               "settings/webhooks",
               "settings/google-accounts",
+              "settings/shopify",
+              "settings/woocommerce",
               "settings/inbound-media",
-              "settings/api-keys",
               "settings/account-and-danger-zone"
             ]
-          },
-          "untitled-page"
+          }
         ]
       },
       {

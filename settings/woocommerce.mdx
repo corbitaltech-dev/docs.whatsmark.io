@@ -1,0 +1,64 @@
+---
+title: "WooCommerce"
+description: "Connect your WooCommerce store to automatically message customers on WhatsApp."
+icon: "shopping-cart"
+keywords: ["WhatsMark", "WooCommerce", "integration", "ecommerce", "WordPress"]
+---
+
+Connect your WooCommerce store to WhatsMark to automatically send WhatsApp messages to customers on cart abandoned, order placed, order shipped, and COD confirmed events.
+
+## Before you connect
+
+<Info>
+You'll need a WooCommerce REST API key (Settings → Advanced → REST API in your WordPress admin with Read/Write access). Not every customer can be reached — WooCommerce only shares a phone number when your checkout is configured to collect one.
+</Info>
+
+## Connecting your WooCommerce store
+
+<Steps>
+<Step title="Get your REST API credentials">
+  In your WordPress admin, go to **WooCommerce → Settings → Advanced → REST API**. Create a new key with Read/Write access and copy the Consumer Key and Consumer Secret.
+</Step>
+
+<Step title="Go to Settings → WooCommerce">
+  Navigate to the WooCommerce integration settings.
+</Step>
+
+<Step title="Enter your store URL">
+  Type your WooCommerce store URL (e.g., `https://your-store.com`).
+</Step>
+
+<Step title="Enter your REST API credentials">
+  Paste the Consumer Key and Consumer Secret from step 1.
+</Step>
+
+<Step title="Click Connect WooCommerce">
+  WhatsMark will verify your credentials and establish the connection.
+</Step>
+</Steps>
+
+## Supported events
+
+Once connected, you can create automations for:
+
+- **Cart Abandoned**: When a customer abandons their shopping cart
+- **Order Placed**: When a new order is created
+- **Order Shipped**: When an order ships
+- **COD Confirmed**: When cash-on-delivery payment is confirmed
+
+## Managing your connection
+
+- **Disconnect**: Remove the WooCommerce integration anytime — existing automations won't run but won't be deleted
+- **Re-connect**: If you disconnect, you can reconnect your store again
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Webhooks" icon="webhook" href="/settings/webhooks">
+    Set up custom webhooks for additional integrations.
+  </Card>
+
+  <Card title="Shopify" icon="shopping-cart" href="/settings/shopify">
+    Connect a Shopify store instead or as well.
+  </Card>
+</CardGroup>
