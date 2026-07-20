@@ -1,25 +1,79 @@
 ---
 title: "Team & Roles"
-description: "How to invite teammates to your WhatsMark.io workspace and control what they can access with custom roles and permissions."
+description: "How to create or invite teammates to your WhatsMark.io workspace and control what they can access with custom roles and permissions."
 icon: "users"
 keywords: ["WhatsMark", "team", "invite", "roles", "permissions", "members"]
 ---
 
-Every workspace starts with just its owner (the person who registered it). Go to **Team** to bring in the rest of your team, and **Roles** if you need more control than the default roles give you.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-## Inviting your team
+Every workspace starts with just its owner. Add team members directly or invite them via email, and create custom roles with granular permissions to control their access.
+
+## Adding team members
+
+There are two ways to add team members to your workspace:
+
+### Method 1: Create Member
+
+<BrowserFrame
+  src="./img/create-member.png"
+  alt="Add Member dialog"
+  caption="Create member with details and role assignment"
+/>
+
+Click the **Create Member** button to directly create a team member and assign them a role.
+
 
 <Steps>
-<Step title="Open Team link">
-  This page lists everyone with access to your workspace — their role and status — plus any pending invitations.
+<Step title="Enter member details">
+  Fill in the following information:
+  - **Full name** — The member's complete name
+  - **Email address** — Must be valid as it's used for email verification
+  - **WhatsApp number** — Used for OTP verification
+
+<Warning>
+Each team member must have a unique WhatsApp number. Do not use the same WhatsApp number for multiple team members as it will be used for OTP verification.
+</Warning>
 </Step>
 
-<Step title="Invite by email">
-  Enter the email address of the person you want to invite and assign them a role.
+<Step title="Set a password">
+  Create a password (minimum 8 characters) or click **Generate strong password** to create one automatically.
 </Step>
 
-<Step title="Track the invitation">
-  Pending invitations stay listed until accepted. You can revoke an invitation at any time before it's accepted.
+<Step title="Assign a role">
+  Click **Next** to proceed. Then choose the role for this team member from the Role dropdown.
+</Step>
+
+<Step title="Save the member">
+  Click **Save** to create the member. They will immediately have access to the workspace with the role you assigned.
+</Step>
+</Steps>
+
+### Method 2: Inviting your team
+
+<BrowserFrame
+  src="./img/invite-member.png"
+  alt="Invite Team Member dialog"
+  caption="Send invitation email to add a new team member"
+/>
+
+Send an invitation email to add a new member to your workspace.
+
+<Steps>
+<Step title="Click Invite Member">
+  Click the **Invite Member** button to open the invitation form.
+</Step>
+
+<Step title="Enter email address">
+  Enter the email address of the person you want to invite. The email must be valid and accessible so they can receive the invitation.
+</Step>
+
+<Step title="Assign a role">
+  Select a role from the dropdown menu to assign to this team member. The role controls what features and actions they can access in the workspace.
+</Step>
+
+<Step title="Send the invitation">
+  Click **Send Invite** to send the invitation email. Pending invitations stay listed until accepted. You can revoke an invitation at any time before it's accepted.
 </Step>
 </Steps>
 
@@ -27,41 +81,40 @@ Every workspace starts with just its owner (the person who registered it). Go to
 The number of team members you can have is limited by your plan.
 </Warning>
 
-Once someone accepts, you can:
-
-- Open their **member detail page** to review their role and activity.
-- **Remove** them from the workspace.
-- **Change their role** — reassigning roles is restricted to the workspace owner.
-
 <Info>
-Curious what the invited person sees? See [Accepting a Team Invitation](/core-setup/invitation-acceptance) for their side of the flow.
+See how the invitation looks from the team member's perspective. Check [Accepting a Team Invitation](/core-setup/invitation-acceptance).
 </Info>
 
 ## Roles & Permissions
 
-By default, every workspace has an **Owner** role plus standard **Admin**/**Member**-style roles. If you need finer control, go to **Setup → Roles** to create **custom roles**.
+<BrowserFrame
+  src="./img/roles-create.png"
+  alt="Create Role dialog"
+  caption="Create Role dialog with permission matrix for features like Contacts, Channels, Campaigns, Team, Roles, Automations, and Templates"
+/>
 
 <Steps>
-<Step title="Create a custom role">
-  Give the role a name, then work through the permission matrix.
+<Step title="Click Create Role">
+  Click the **Create Role** button to open the role creation form.
 </Step>
 
-<Step title="Set permissions per module">
-  Each module (Contacts, Channels, Campaigns, Flows, Chat, Billing, and more) gets its own **View / Create / Edit / Delete** checkboxes, so you can grant exactly the level of access a role needs.
+<Step title="Enter role name">
+  Give the role a descriptive name (e.g. "Content Manager", "Sales Agent").
 </Step>
 
-<Step title="Assign it to team members">
-  Once saved, the custom role becomes available in the role dropdown when inviting or editing a team member.
+<Step title="Set permissions per feature">
+  For each feature (Contacts, Channels, Campaigns, Flows, Chat, Billing, Automations, Templates, and more), choose which permissions this role should have:
+  - **View** — access to see the feature
+  - **Create** — ability to create new items
+  - **Edit** — ability to modify existing items
+  - **Delete** — ability to remove items
+  - Additional actions like **Import**, **Connect**, **Disconnect**, **Invite**, **Load**, etc. based on the feature
+</Step>
+
+<Step title="Save the role">
+  Click **Save** to create the custom role. It will immediately be available in the role dropdown when inviting or creating team members.
 </Step>
 </Steps>
-
-<Note>
-Granting any capability (Create/Edit/Delete) on a module automatically implies View access for that module — you can't give someone Edit rights without also letting them see the page.
-</Note>
-
-<Tip>
-Only the workspace owner can reassign roles that affect ownership-level privileges — this keeps a single source of truth for who ultimately controls the workspace.
-</Tip>
 
 ## What's next
 
