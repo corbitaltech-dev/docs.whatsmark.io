@@ -1,31 +1,87 @@
 ---
 title: "Profile & Sessions"
-description: "Manage your own account in WhatsMark — name, email, avatar, active sessions, and changing your WhatsApp number."
+description: "Manage your own account in WhatsMark.io — name, email, avatar, active sessions, and changing your WhatsApp number."
 icon: "user"
 keywords: ["WhatsMark", "profile", "account", "avatar", "sessions", "revoke session", "change phone number"]
 ---
 
-Your **Profile** covers the settings that belong to *you* as a user, separate from workspace-wide settings. Open it from your account menu (click your name at the bottom of the sidebar).
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+Your **Profile** covers the settings that belong to *you* as a user, separate from workspace-wide settings. Open it by clicking your name at the bottom of the sidebar, then **My Profile**.
+
+The page has a **Profile** tab and a **Password** tab, plus an **Active Sessions** card, a **Two-Factor Authentication** card, and a **Recent Activity** card showing your last actions.
 
 ## Editing your profile
 
-- **Name** and **Number** — update the details other team members see.
-- **Avatar** — upload a profile photo, or remove it to fall back to your initials.
+On the **Profile** tab, under **Profile Information**:
+
+<BrowserFrame
+  src="/settings/img/profile-form.png"
+  url="whatsmark.io/settings/profile"
+  alt="Profile page showing the identity card and Profile Information form with name, WhatsApp number, and email fields"
+  caption="Update your name, WhatsApp number, or avatar from the Profile tab. Email is read-only."
+/>
+
+- **Name** — your display name across the account. Required.
+- **WhatsApp number** — your account's WhatsApp number.
+- **Email Address** — shown for reference only. It can't be changed here — contact support if you need it updated.
+- **Avatar** — click the camera icon to pick a photo from your media library or upload a new one (JPEG, PNG, or WebP, up to 5MB), or use **Remove photo** to fall back to your initials.
+
+<Warning>
+If you change the WhatsApp number, WhatsMark.io sends a 6-digit **WhatsApp OTP** to the new number before saving. Enter the code in the verification dialog to confirm the change — the update only applies once you verify it.
+</Warning>
+
+## Changing your password
+
+On the **Password** tab, under **Change Password**:
+
+<BrowserFrame
+  src="/settings/img/password-form.png"
+  url="whatsmark.io/settings/profile"
+  alt="Password tab showing current password, new password, and confirm new password fields"
+  caption="Switch to the Password tab to update your account password."
+/>
+
+- **Current Password** — required, unless you signed up with a social login, in which case this field is skipped.
+- **New Password** and **Confirm New Password** — use **Generate strong password** for a secure suggestion, then **Use this password** to apply it.
+- Click **Update Password** to save.
+
+## Two-factor authentication
+
+The **Two-Factor Authentication** card shows whether 2FA is currently on or off for your account.
+
+<BrowserFrame
+  src="/settings/img/two-factor-card.png"
+  url="whatsmark.io/settings/profile"
+  alt="Two-Factor Authentication card showing 2FA status and a Manage 2FA link"
+  caption="Click Manage 2FA to set up or manage two-factor authentication."
+/>
+
+Click **Manage 2FA** to open the two-factor authentication page. As a security check, you'll be asked to confirm your password first.
+
+1. **Confirm your password**, then click **Confirm password**.
+2. **Scan the QR code** with your authenticator app, or enter the setup key manually, then click **Continue**.
+3. **Enter the 6-digit code** from your authenticator app and click **Confirm**.
+4. **Save your recovery codes** — click **View Recovery Codes** and store them safely. Each code works once, in case you lose access to your authenticator app.
+
+To turn 2FA off, click **Disable two-factor** on the same page.
+
+<Tip>
+Turning on two-factor authentication is one of the fastest ways to protect your account, especially for workspace owners and admins.
+</Tip>
 
 ## Active sessions
 
-WhatsMark lists every device and browser currently signed in to your account, with its approximate location and last-active time.
+The **Active Sessions** card lists every device and browser currently signed in to your account, with its browser/OS, IP address, and last-active time. Your current device is marked **This device**.
 
-- **Revoke a single session** — sign out one specific device (for example, a shared or lost computer).
-- **Revoke all other sessions** — sign out everywhere except the device you're using right now.
+- **Log out** — sign out one specific session (for example, a shared or lost computer). Your current session can't be revoked this way.
+- **Sign out all others** — sign out every session except the one you're using right now. Only shown when other sessions exist.
 
-<Tip>
-If you suspect someone else has access to your account, change your [password](/getting-started/log-in#forgot-your-password) and revoke all other sessions — the two together lock everyone else out immediately.
-</Tip>
+Both actions apply immediately, without a confirmation dialog.
 
-## Changing your WhatsApp number
-
-You can update the WhatsApp number on your account yourself. Because it's used for verification, the change is confirmed with a **WhatsApp OTP**: WhatsMark sends a 6-digit code to the new number and applies the change only once you enter it. If your workspace requires phone verification, you may be prompted to complete this before you can continue using the app.
+<Warning>
+If you suspect someone else has access to your account, change your [password](/getting-started/log-in#forgot-your-password) and click **Sign out all others** — the two together lock everyone else out immediately.
+</Warning>
 
 ## What's next
 
