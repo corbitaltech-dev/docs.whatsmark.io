@@ -179,7 +179,7 @@
     ]
   },
   "logo": {
-    "light": "/images/image-2.svg",
+    "light": "/images/Group6.png",
     "dark": "/images/image-2.svg"
   },
   "navbar": {
@@ -207,5 +207,14 @@
       "x": "https://linkedin.com/company/whatsmarkio",
       "linkedin": "https://linkedin.com/company/whatsmarkio"
     }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "background": {
+    "decoration": "grid"
+  },
+  "fonts": {
+    "family": "Geist"
   }
 }
