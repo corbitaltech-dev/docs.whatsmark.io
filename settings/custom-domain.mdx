@@ -1,43 +1,60 @@
 ---
 title: "Custom Domain"
-description: "How to serve your WhatsMark workspace from your own domain instead of your *.whatsmark.io subdomain."
+description: "How to serve your WhatsMark.io workspace from your own domain instead of your *.whatsmark.io subdomain."
 icon: "globe"
 keywords: ["WhatsMark", "custom domain", "DNS", "CNAME", "SSL"]
 ---
 
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
 Every workspace gets a free subdomain like `acme.whatsmark.io`. If you'd rather your team (and customers, for the public booking link) see your own domain, connect one under **Settings → Custom Domain**.
 
+<BrowserFrame
+  src="/settings/img/custom-domain-form.png"
+  url="whatsmark.io/settings/custom-domain"
+  alt="Custom Domain form with a domain name field and Connect Domain button"
+  caption="Enter your domain (e.g. app.yourcompany.com) and click Connect Domain to begin."
+/>
+
 <Warning>
-Custom domains are gated by your plan — check with your workspace admin or [Billing](/billing/plans-and-subscription) if you don't see this option.
+Custom Domain is an **add-on**. If it's locked, click it to **Buy Add-on** (or **Upgrade Plan** on Free). Only the workspace **owner** can manage it.
 </Warning>
 
 ## Connecting a domain
 
 <Steps>
 <Step title="Enter your domain">
-  Type the domain (or subdomain) you want to use, e.g. `app.yourcompany.com`.
+  Type the domain or subdomain you want to use (e.g. `app.yourcompany.com`), without `http://` or `https://`, and click **Connect Domain**.
 </Step>
 
-<Step title="Point DNS at WhatsMark">
-  Add a **CNAME** record at your DNS provider pointing your domain to the target WhatsMark provides on this page.
+<Step title="Add a CNAME record">
+  At your DNS provider, create a **CNAME** record using the **Name/Host** and **Value/Target** shown under DNS Setup Instructions. Click the copy icon to grab the target exactly.
 </Step>
 
 <Step title="Verify">
-  Click **Verify** once your DNS record is live. WhatsMark checks it and begins provisioning SSL automatically.
+  Click **Verify**. WhatsMark.io checks the DNS record and, once it resolves, begins provisioning an SSL certificate automatically — this typically takes 1–5 minutes.
 </Step>
 
 <Step title="Set as primary (optional)">
-  Once verified, you can set the custom domain as your **primary** domain — this is what your workspace's links use by default, in place of your `*.whatsmark.io` subdomain.
+  Once the domain shows **Verified**, a **Primary domain** choice appears — pick your custom domain or your `*.whatsmark.io` subdomain as the one your workspace's links use by default.
 </Step>
 </Steps>
 
+<Tip>
+Using Cloudflare for DNS? Set the CNAME's proxy status to **DNS only** (grey cloud), not **Proxied** (orange cloud). A proxied CNAME hides the real target from WhatsMark.io, which blocks SSL certificate issuance.
+</Tip>
+
 <Note>
-DNS changes can take time to propagate. If verification doesn't succeed immediately, wait a few minutes and try again — SSL provisioning also happens asynchronously, so the page polls for status until it's ready.
+DNS changes can take a few minutes to propagate. If verification doesn't succeed immediately, wait and click **Retry**.
 </Note>
 
 ## Removing a domain
 
-You can remove a connected custom domain at any time — your workspace falls back to its original `*.whatsmark.io` subdomain automatically.
+Click the trash icon next to your domain to remove it — your workspace falls back to its `*.whatsmark.io` subdomain automatically.
+
+<Note>
+If your custom domain is set as the **primary** domain, switch back to the subdomain first — removal is blocked while the custom domain is primary.
+</Note>
 
 ## What's next
 
