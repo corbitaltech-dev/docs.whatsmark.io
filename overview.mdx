@@ -9,28 +9,7 @@ keywords: ["WhatsMark", "API", "REST API", "developer", "token", "scopes", "pagi
 
 The WhatsMark REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.whatsmark.io`, separate from your tenant subdomain.
 
-This page is the short version — what the API is, how to get a token, and the conventions every endpoint follows. **The complete, endpoint-by-endpoint reference lives at [api.whatsmark.io/docs](https://api.whatsmark.io/docs).**
-
-<Card title="Full API reference — api.whatsmark.io/docs" icon="book-open" href="https://api.whatsmark.io/docs" horizontal>
-  Interactive Swagger UI for the WhatsMark Tenant REST API (v1, OAS 3.1). Browse every endpoint grouped by module, expand one to see its parameters, request body, scopes, and example responses — then click **Authorize**, paste your bearer token, and run real requests straight from the browser.
-</Card>
-
-### What you'll find there
-
-<CardGroup cols={2}>
-  <Card title="Every endpoint, grouped by module" icon="list-tree">
-    Root, Auth & Account, Channels, Contacts, Statuses, Sources, Groups, Labels, Templates, Messages, Conversations, and OTP — with a **Filter by tag** box to jump straight to the group you need.
-  </Card>
-  <Card title="Try it out, live" icon="play">
-    Use the **Authorize** button to add `Authorization: Bearer <token>`, pick the `https://api.whatsmark.io` server, and send real requests against your workspace without leaving the page.
-  </Card>
-  <Card title="OpenAPI spec" icon="file-json">
-    Download the raw OAS 3.1 document from the **OpenAPI Spec** button (`/openapi/whatsmark-api-v1.json`) to generate clients or import it into your own tooling.
-  </Card>
-  <Card title="Postman collection" icon="download">
-    The **Postman Collection** button exports every request, with example payloads and responses, ready to import into Postman.
-  </Card>
-</CardGroup>
+This page is the short version — what the API is, how to get a token, and the conventions every endpoint follows. **Every endpoint is documented in full in this reference**, grouped in the sidebar by module: Auth & Account, Channels, Contacts, Contact Statuses, Contact Sources, Contact Groups, Contact Labels, Templates, Messages, Conversations, and OTP.
 
 <Warning>
   **The API is not available on the Free plan.** REST API access is a **Professional** plan feature — Free-plan workspaces can use the full dashboard, but any request to `api.whatsmark.io` will be rejected until you upgrade. Reseller plans also include API access, with a higher (or unlimited) monthly request quota.
@@ -53,7 +32,7 @@ This page is the short version — what the API is, how to get a token, and the 
     ```
   </Step>
   <Step title="Call the API">
-    Send requests to `https://api.whatsmark.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working.
+    Send requests to `https://api.whatsmark.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working — see the [Ping](/api-reference/auth-account/ping) reference page.
   </Step>
 </Steps>
 
@@ -65,7 +44,7 @@ https://api.whatsmark.io/api/v1
 
 ## Scopes (abilities)
 
-Each endpoint requires a specific token ability (scope), for example `account:read` or `channels:read`. Create your token with the abilities that match the endpoints you plan to call — a request will be rejected with `403 Forbidden` if your token is missing the required scope.
+Each endpoint requires a specific token ability (scope), for example `account:read` or `channels:read`. Create your token with the abilities that match the endpoints you plan to call — a request will be rejected with `403 Forbidden` if your token is missing the required scope. Every endpoint page in this reference states its required scope at the top.
 
 ## Pagination
 
@@ -97,15 +76,35 @@ Errors use a consistent envelope:
 }
 ```
 
+Each endpoint page lists the specific error codes it can return and when they happen.
+
 ## Modules
 
 The API covers: **Auth & Account** · **Channels** · **Contacts** · **Contact Statuses** · **Contact Sources** · **Contact Groups** · **Contact Labels** · **Templates** · **Messages** · **Conversations** · **OTP**.
 
-Each module is documented endpoint by endpoint — parameters, request bodies, required scopes, and example responses — in the reference at [api.whatsmark.io/docs](https://api.whatsmark.io/docs).
+Every module is documented endpoint by endpoint in the sidebar under this Api tab — parameters, request bodies, required scopes, and example requests/responses for each one.
 
-<Card title="Open the API reference" icon="book-open" href="https://api.whatsmark.io/docs" horizontal>
-  Browse all endpoints, try them live, and grab the OpenAPI spec or Postman collection from the buttons at the top of the page.
-</Card>
+## Prefer Swagger, or need an OpenAPI spec / Postman collection?
+
+If you'd rather browse and test everything from a single interactive Swagger page, or need the raw spec to generate a client, the same API is also documented at [api.whatsmark.io/docs](https://api.whatsmark.io/docs).
+
+<CardGroup cols={2}>
+  <Card title="Try it out, live" icon="play" href="https://api.whatsmark.io/docs">
+    Use the **Authorize** button on the Swagger UI to add `Authorization: Bearer <token>` and send real requests against your workspace without leaving the browser.
+  </Card>
+
+  <Card title="OpenAPI spec" icon="file-json" href="https://api.whatsmark.io/openapi/whatsmark-api-v1.json">
+    Download the raw OAS 3.1 document to generate clients or import it into your own tooling.
+  </Card>
+
+  <Card title="Postman collection" icon="download" href="https://api.whatsmark.io/docs">
+    Export every request, with example payloads and responses, ready to import into Postman (button available on the Swagger page).
+  </Card>
+
+  <Card title="Full reference, right here" icon="book-open" href="/api-reference/auth-account/ping">
+    Every endpoint is documented in this sidebar with the same parameters, scopes, and examples — start with Auth & Account.
+  </Card>
+</CardGroup>
 
 <Info>
   Already have a Professional plan? Head to **Settings → API Keys** in your workspace to create your first token.

@@ -1,0 +1,66 @@
+---
+api: "GET /api/v1/ping"
+playground: "simple"
+title: "Ping"
+description: "Validate your API token and see which ability scopes it has."
+---
+
+<Info>
+  **Scope required:** `account:read`
+</Info>
+
+Health / identity probe. Validates the full auth chain (token → workspace → subscription → feature gate → quota). Returns who you are and which abilities your token has. Use this first to confirm your token is working.
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="ok" type="boolean">
+      Whether the auth chain validated successfully.
+    </ResponseField>
+
+    <ResponseField name="workspace" type="string">
+      The workspace slug the token belongs to.
+    </ResponseField>
+
+    <ResponseField name="token" type="string">
+      The name of the API token used to authenticate.
+    </ResponseField>
+
+    <ResponseField name="abilities" type="string[]">
+      The list of scopes granted to this token.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/ping \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "ok": true,
+    "workspace": "tenant1",
+    "token": "My API Token",
+    "abilities": ["account:read", "channels:read"]
+  }
+}
+```
+
+</ResponseExample>
+
+Common error responses:
+
+| Status | error\_code | When it happens |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `forbidden` | This action is unauthorized (token missing the required scope). |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

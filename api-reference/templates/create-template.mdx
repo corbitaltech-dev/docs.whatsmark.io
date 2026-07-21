@@ -1,0 +1,119 @@
+---
+api: "POST /api/v1/templates"
+playground: "simple"
+title: "Create Template"
+description: "Create a standard WhatsApp template and submit it to Meta for approval."
+---
+
+<Info>
+  **Scope required:** `templates:write`
+</Info>
+
+Create a standard WhatsApp template (text/media header optional, required body, optional footer \+ buttons) and submit it to Meta. This is synchronous — it returns `201` with the template in `PENDING`, or `422 meta_rejected` if Meta refuses it (e.g. duplicate name). Poll `GET /templates/{id}` (or `POST /templates/sync`) for the final `APPROVED`/`REJECTED` status, which arrives asynchronously from Meta. `name` must be lowercase letters, digits and underscores. `category` is one of `MARKETING`, `UTILITY`, or `AUTHENTICATION`. Body/header variables use `{{1}}` placeholders. Media (`IMAGE`/`VIDEO`/`DOCUMENT`) headers require a pre-obtained `header.media_handle` (Meta Resumable Upload API). Authentication & carousel template types are not exposed in v1.1.
+
+<ParamField body="channel_id" type="integer" required>
+  Must reference an existing `channels` record.
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  The template name. Must match `^[a-z0-9_]+$`, maximum 512 characters.
+</ParamField>
+
+<ParamField body="language" type="string" required>
+  The template language, maximum 20 characters.
+</ParamField>
+
+<ParamField body="category" type="string" required>
+  One of `MARKETING`, `UTILITY`, `AUTHENTICATION`.
+</ParamField>
+
+<ParamField body="header" type="object">
+  Optional header. Includes `format` and `text`, plus additional properties (e.g. `media_handle` for media headers).
+</ParamField>
+
+<ParamField body="body" type="string" required>
+  The template body text, maximum 1024 characters. Supports `{{1}}`-style placeholders.
+</ParamField>
+
+<ParamField body="footer" type="string">
+  Optional footer text, maximum 60 characters.
+</ParamField>
+
+<ParamField body="buttons" type="object[]">
+  Optional array of buttons, maximum 10 items. Each item includes `type`, `text`, and `url`.
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+             
+
+    <ResponseField name="components" type="object[]">
+      <Expandable title="properties">
+         
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="example_values" type="object">
+      <Expandable title="properties">
+      </Expandable>
+    </ResponseField>
+
+       
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+  --url https://api.whatsmark.io/api/v1/templates \
+  --header "Authorization: Bearer YOUR_API_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "channel_id": 1,
+    "name": "order_confirmation",
+    "language": "en_US",
+    "category": "UTILITY",
+    "header": { "format": "TEXT", "text": "Order update" },
+    "body": "Your order {{1}} has shipped.",
+    "footer": "Thanks for shopping with us",
+    "buttons": [
+      { "type": "QUICK_REPLY", "text": "Track order" },
+      { "type": "URL", "text": "Shop again", "url": "https://example.com" }
+    ]
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 201 Created
+{
+  "data": {
+    "id": 1,
+    "channel_id": 1,
+    "platform": "whatsapp",
+    "platform_template_id": "987654321",
+    "name": "order_confirmation",
+    "language": "en_US",
+    "category": "utility",
+    "sub_type": null,
+    "status": "PENDING",
+    "quality_rating": null,
+    "components": [
+      { "type": "BODY", "text": "Your order {{1}} has shipped." },
+      { "type": "FOOTER", "text": "Thanks for shopping with us" }
+    ],
+    "example_values": { "body": ["#A123"] },
+    "rejected_reason": null,
+    "last_synced_at": "2026-06-27T09:00:00+00:00",
+    "created_at": "2026-06-27T09:00:00+00:00",
+    "updated_at": "2026-06-27T09:00:00+00:00"
+  }
+}
+```
+
+</ResponseExample>
+
+Common error responses: `401` (missing/invalid token), `402` (no valid subscription), `403` (missing `templates:write` scope), `422` (validation failed, or `meta_rejected` when Meta refuses the template, e.g. duplicate name), `429` (monthly API request quota exhausted).

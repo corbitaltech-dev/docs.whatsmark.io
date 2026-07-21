@@ -1,0 +1,97 @@
+---
+api: "PUT /api/v1/groups/{group_id}"
+playground: "simple"
+title: "Update Group"
+description: "Update a contact group's name, color, or description."
+---
+
+<Info>
+  **Scope required:** `groups:write`
+</Info>
+
+Update a contact group.
+
+<ParamField path="group_id" type="string" required>
+  Identifier of the group.
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  Name of the group. Maximum 100 characters. Must be unique within your workspace.
+</ParamField>
+
+<ParamField body="color" type="string">
+  Hex color for the group. Maximum 7 characters.
+</ParamField>
+
+<ParamField body="description" type="string">
+  Description of the group. Maximum 255 characters.
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+      Unique identifier of the group.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Name of the group.
+    </ResponseField>
+
+    <ResponseField name="description" type="string">
+      Description of the group.
+    </ResponseField>
+
+    <ResponseField name="color" type="string">
+      Hex color associated with the group.
+    </ResponseField>
+
+    <ResponseField name="contact_count" type="integer">
+      Number of contacts belonging to the group.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      Timestamp when the group was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request PUT \
+  --url https://api.whatsmark.io/api/v1/groups/1 \
+  --header "Authorization: Bearer YOUR_API_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "name": "Weekly Newsletter",
+    "color": "#2244DD"
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "id": 1,
+    "name": "Newsletter",
+    "description": "Opted-in subscribers",
+    "color": "#3366FF",
+    "contact_count": 240,
+    "created_at": "2026-06-26T10:00:00+00:00"
+  }
+}
+```
+
+</ResponseExample>
+
+### Errors
+
+| Status | error\_code | When |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing, invalid or expired API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `insufficient_scope` | The token lacks the `groups:write` scope, or the account is suspended/on hold. |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

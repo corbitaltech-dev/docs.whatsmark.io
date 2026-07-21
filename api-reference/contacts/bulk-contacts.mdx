@@ -1,0 +1,65 @@
+---
+api: "POST /api/v1/contacts/bulk"
+playground: "simple"
+title: "Bulk Contacts"
+description: "Apply an action to up to 500 contacts by id synchronously."
+---
+
+<Info>
+  **Scope required:** `contacts:write`
+</Info>
+
+Apply an action to up to 500 contacts by id (synchronous). `action` may be `delete`, `change_status` (with `contact_status_id`), `change_type` (with `type`), `activate`, or `deactivate`. Returns the affected count. For bulk label/group changes use the per-contact update or the group membership endpoints.
+
+<ParamField body="ids" type="integer[]" required>
+  1 to 500 contact IDs. Each must reference an existing `contacts` record.
+</ParamField>
+
+<ParamField body="action" type="string" required>
+  One of `delete`, `change_status`, `change_type`, `activate`, `deactivate`.
+</ParamField>
+
+<ParamField body="contact_status_id" type="integer">
+  Required when `action` is `change_status`. Must reference an existing `contact_statuses` record.
+</ParamField>
+
+<ParamField body="type" type="string">
+  Required when `action` is `change_type`. One of `guest`, `lead`, `customer`.
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+     
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+  --url https://api.whatsmark.io/api/v1/contacts/bulk \
+  --header "Authorization: Bearer YOUR_API_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "ids": [1, 2, 3],
+    "action": "change_status",
+    "contact_status_id": 2
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "action": "change_status",
+    "affected": 3
+  }
+}
+```
+
+</ResponseExample>
+
+Errors: `401 unauthenticated` for a missing/invalid token, `402 subscription_required` when the workspace has no valid subscription, `403 insufficient_scope` when the token lacks `contacts:write`, `422 validation_failed` when `action` is invalid, and `429 quota_exhausted` when the monthly request quota is exhausted.

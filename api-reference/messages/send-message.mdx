@@ -1,0 +1,172 @@
+---
+api: "POST /api/v1/messages"
+playground: "simple"
+title: "Send Template Message / Send Text Message"
+description: "Send an approved template message or a free-form text reply to a contact."
+---
+
+<Info>
+  **Scope required:** `messages:send`
+</Info>
+
+Send an approved template message (queued on Horizon, returns `202` immediately) or a free-form text reply. Text replies are only allowed inside an open 24-hour customer-service window; sends are throttled to Meta's per-number rate limit.
+
+<ParamField body="type" type="string" required>
+  The message type. One of `template` or `text`.
+</ParamField>
+
+<ParamField body="contact_id" type="integer" required>
+  Must reference an existing `contacts` record.
+</ParamField>
+
+<ParamField body="channel_id" type="integer" required>
+  Must reference an existing `channels` record.
+</ParamField>
+
+<ParamField body="template_id" type="integer">
+  Identifier of the approved template to send. Used when `type` is `template`.
+</ParamField>
+
+<ParamField body="template_data" type="object">
+  Template variable data.
+
+  <Expandable title="properties">
+    <ParamField body="components" type="object[]">
+      Array of template components used to fill template variables.
+
+      <Expandable title="properties">
+        <ParamField body="type" type="string">
+          The component type, e.g. `body`.
+        </ParamField>
+
+        <ParamField body="parameters" type="object[]">
+          Array of parameter values for the component.
+
+          <Expandable title="properties">
+            <ParamField body="type" type="string">
+              The parameter type, e.g. `text`.
+            </ParamField>
+
+            <ParamField body="text" type="string">
+              The parameter text value.
+            </ParamField>
+          </Expandable>
+        </ParamField>
+      </Expandable>
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="idempotency_key" type="string">
+  Optional idempotency key for the send. Maximum length 64 characters.
+</ParamField>
+
+<ParamField body="body" type="string">
+  The text body to send. Used when `type` is `text`.
+</ParamField>
+
+<ResponseField name="status" type="string">
+  The overall response status, e.g. `queued`.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  The created message.
+
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+      The message identifier.
+    </ResponseField>
+
+    <ResponseField name="conversation_id" type="integer">
+      The conversation this message belongs to.
+    </ResponseField>
+
+    <ResponseField name="contact_id" type="integer">
+      The recipient contact identifier.
+    </ResponseField>
+
+    <ResponseField name="channel_id" type="integer">
+      The channel the message was sent through.
+    </ResponseField>
+
+    <ResponseField name="type" type="string">
+      The message type, `template` or `text`.
+    </ResponseField>
+
+    <ResponseField name="status" type="string">
+      The message delivery status, e.g. `queued`.
+    </ResponseField>
+
+    <ResponseField name="body">
+      The text body, if applicable.
+    </ResponseField>
+
+    <ResponseField name="metadata">
+      Additional message metadata.
+    </ResponseField>
+
+    <ResponseField name="error_message">
+      Error message, if the send failed.
+    </ResponseField>
+
+    <ResponseField name="sent_at">
+      Timestamp the message was sent.
+    </ResponseField>
+
+    <ResponseField name="delivered_at">
+      Timestamp the message was delivered.
+    </ResponseField>
+
+    <ResponseField name="read_at">
+      Timestamp the message was read.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      Timestamp the message record was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+  --url https://api.whatsmark.io/api/v1/messages \
+  --header "Authorization: Bearer YOUR_API_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "type": "text",
+    "contact_id": 1,
+    "channel_id": 2,
+    "body": "Thanks for reaching out!"
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 202 Accepted
+{
+  "status": "queued",
+  "data": {
+    "id": 88,
+    "conversation_id": 12,
+    "contact_id": 1,
+    "channel_id": 2,
+    "type": "text",
+    "status": "queued",
+    "body": "Thanks for reaching out!",
+    "metadata": null,
+    "error_message": null,
+    "sent_at": null,
+    "delivered_at": null,
+    "read_at": null,
+    "created_at": "2026-06-26T10:00:00+00:00"
+  }
+}
+```
+
+</ResponseExample>
+
+Common error responses: `401` when the API token is missing, invalid, or expired; `402` when the workspace has no valid subscription; `403` when the token lacks the `messages:send` scope; `422 invalid_template` when the template is not approved, or `422 window_expired` when replying outside the 24-hour customer-service window; `429 send_rate_limited` when Meta's per-number send rate is exceeded (includes a `Retry-After` header).
