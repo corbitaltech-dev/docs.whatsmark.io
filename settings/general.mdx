@@ -1,22 +1,32 @@
 ---
 title: "General"
-description: "Configure your WhatsMark workspace's general settings like workspace name, timezone, and date/time format."
+description: "Configure your WhatsMark.io workspace's general settings like workspace name, timezone, and date/time format."
 icon: "gear"
 keywords: ["WhatsMark", "general settings", "workspace name", "timezone", "date format"]
 ---
 
-## General
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Go to **Settings → General** to manage:
+Go to **Settings → General** to manage your **Organization Information**:
 
-- **Workspace name** — shown throughout the dashboard and in emails.
-- **Subdomain** and **custom domain** — read-only here; see [Custom Domain](/settings/custom-domain) to add your own domain.
-- **Timezone** — used across the dashboard, charts, and scheduling.
-- **Date format** and **time format** (12-hour / 24-hour) — controls how dates and times are displayed everywhere in the product.
+<BrowserFrame
+  src="/settings/img/general-form.png"
+  url="whatsmark.io/settings/general"
+  alt="Organization Information form showing organization name, subdomain, timezone, date format, and time format fields"
+  caption="Update your organization's name, timezone, and date/time display format."
+/>
 
-<Note>
-If your workspace is scheduled for deletion (see [Account & Danger Zone](/settings/account-and-danger-zone)), this page also shows the scheduled deletion date.
-</Note>
+- **Organization Name** — your organization's display name, shown throughout the dashboard and in emails.
+- **Subdomain** — read-only here. Contact support if you need to change it.
+- **Timezone** — the reference timezone for your workspace. Applies to campaign scheduling, business hours, appointment booking, and every timestamp shown across the system.
+- **Date Format** — `Y-m-d` (2026-02-13), `d/m/Y` (13/02/2026), `m/d/Y` (02/13/2026), or `F j, Y` (February 13, 2026).
+- **Time Format** — `24 Hours` or `12 Hours`.
+
+Both control how dates and times are displayed everywhere in the system: contact, campaign, and appointment tables, chat timestamps, invoices, activity logs, and dashboard charts.
+
+<Info>
+Changes here aren't saved automatically. An unsaved-changes bar appears at the bottom once you edit a field — click **Save** to apply your changes or **Discard** to revert them.
+</Info>
 
 ## What's next
 
