@@ -1,42 +1,52 @@
 ---
 title: "Webhooks"
-description: "How to forward WhatsMark's incoming Meta webhook events to your own endpoint."
+description: "How to forward WhatsMark.io incoming Meta webhook events to your own endpoint."
 icon: "webhook"
 keywords: ["WhatsMark", "webhooks", "webhook forwarding", "integration"]
 ---
 
-If you're building your own integration and need to react to WhatsApp/Messenger events in real time, **Webhook Forwarding** lets WhatsMark relay them to a URL you control, instead of (or alongside) processing them internally.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+**Webhook Forwarding** sends a copy of your incoming WhatsApp events to a URL you control — useful for building your own integrations. WhatsMark.io keeps processing everything as usual; forwarding just adds a second destination.
 
 <Warning>
-Webhook forwarding is gated by your plan. Check with your workspace admin or [Billing](/billing/plans-and-subscription) if you don't see this option.
+Webhook Forwarding is included on the **Professional** plan and above. If it's locked, click **Upgrade Plan**. Only the workspace **owner** can configure it.
 </Warning>
 
-## Setting up forwarding
+<BrowserFrame
+  src="/settings/img/webhooks-form.png"
+  url="whatsmark.io/settings/application/webhooks"
+  alt="Global Webhook Config form showing webhook URL, method, signing secret, events, and a list of channel overrides"
+  caption="Configure a global endpoint, or override it per channel below."
+/>
 
-<Steps>
-<Step title="Enable forwarding">
-  Turn on webhook forwarding from **Settings → Webhooks**.
-</Step>
+## Global Webhook Config
 
-<Step title="Set your endpoint">
-  Enter the URL that should receive events, and the HTTP method to use (defaults to POST).
-</Step>
+Applied to every connected channel unless a channel below has its own override.
 
-<Step title="Choose which events to forward">
-  Select from the list of available event types — you don't have to forward everything if you only care about specific events.
-</Step>
-
-<Step title="Save your signing secret">
-  A signing secret is generated so you can verify that incoming requests genuinely came from WhatsMark.
-</Step>
-</Steps>
-
-## Global vs. per-channel
-
-You can configure forwarding **globally** (applies to every connected channel) or override the event selection for a **specific channel** — useful if you only want events from one WhatsApp number forwarded, for example.
+- Toggle forwarding **on** using the switch in the card header.
+- **Webhook URL** — required once enabled. The endpoint that receives events.
+- **Method** — `POST` or `GET`.
+- **Signing Secret** — auto-generated; click the refresh icon to rotate it at any time.
+- **Events** — required once enabled. A multi-select of Meta's WhatsApp Business event types (Messages, Message Echoes, Message Template Status Update, Phone Number Quality Update, Group Participants Update, and more) — pick only what you need, you don't have to forward everything.
 
 <Tip>
-Regenerate your signing secret any time you suspect it's been exposed — existing forwarding configuration keeps working, only the secret used to sign requests changes.
+Every forwarded request is signed with `sha256=HMAC(body, secret)` in the **X-Webhook-Signature** header. Verify this on your endpoint to confirm a request genuinely came from WhatsMark.io before trusting its payload.
+</Tip>
+
+## Channel overrides
+
+Channels without an override use the global config above. To send a specific WhatsApp channel's events somewhere else:
+
+1. Find the channel under **Channel Overrides** and turn on **Override**.
+2. Turn on **Enable forwarding for this channel**.
+3. Set its own **Webhook URL**, **Method**, **Signing Secret**, and **Events** — independent of the global config.
+4. Click **Save Channel**.
+
+Turning a channel's override off reverts it to the global config; its own saved settings are kept, just unused until you switch it back on.
+
+<Tip>
+Regenerating a secret only changes what's used to sign future requests — your URL and event selection keep working unchanged.
 </Tip>
 
 ## What's next
