@@ -1,20 +1,49 @@
 ---
 title: "Business Hours"
-description: "Define your workspace's operating hours and mark holidays or closed dates."
+description: "Set the weekly hours and holidays that control which time slots customers can book through WhatsApp appointment flows."
 icon: "clock"
 keywords: ["WhatsMark", "business hours", "working hours", "holidays", "closed dates"]
 ---
 
-## Business Hours
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Go to **Settings → Business Hours** to define:
+Go to **Settings → Business Hours** to define when your workspace is open, under **Business Hours & Holidays**.
 
-- **Weekly hours** — open/close time for each day of the week.
-- **Holidays / closed dates** — specific dates marked as fully closed regardless of the weekly schedule.
+<BrowserFrame
+  src="/settings/img/business-hours-form.png"
+  url="whatsmark.io/settings/business-hours"
+  alt="Business Hours & Holidays form showing per-day toggles with open/close times and a closed dates section"
+  caption="Toggle each day on or off and set its hours, then add specific dates to close for holidays."
+/>
 
 <Info>
-Business hours are a shared source of truth used by [Appointments](/automation/appointments) today, and by future features like out-of-hours auto-replies. Set this once and every feature that needs it reads the same schedule.
+This schedule is a single source of truth for the whole workspace. [Appointments](/automation/appointments) already uses it to offer booking slots, and upcoming features like out-of-hours auto-replies will read the same schedule — so you only need to set it once, here.
 </Info>
+
+## Weekly hours
+
+Each day of the week has its own toggle:
+
+- **On** — the day is open. Set an **open time** and **close time** for it.
+- **Off** — the day is marked **Closed**, with no time slots offered.
+
+Times use your workspace timezone, set on the [General](/settings/general) page.
+
+<Tip>
+Business hours don't have to be continuous 9-to-5 — each day is independent, so you can close early on some days, skip weekends, or run a split schedule by adjusting each day individually.
+</Tip>
+
+## Closed dates (holidays)
+
+Use **Closed dates** to block specific calendar dates regardless of the weekly schedule — for example, a public holiday that falls on a normally open day.
+
+- Pick a date and click **Add** to block it.
+- Blocked dates appear as removable tags; click the **×** on a tag to unblock it.
+- On a closed date, no slots are offered and the date is greyed out wherever your business hours are used for scheduling.
+
+<Warning>
+Changes to this page aren't saved automatically. Click **Save** in the bar at the bottom after making changes, or **Discard** to revert them.
+</Warning>
 
 ## What's next
 
