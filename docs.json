@@ -27,17 +27,37 @@
             "pages": [
               "index",
               "getting-started/concepts",
-              "getting-started/register",
               "getting-started/free-vs-paid",
+              "getting-started/register",
               "getting-started/log-in",
-              "getting-started/overview"
+              "getting-started/overview",
+              "core-setup/invitation-acceptance"
             ]
           },
-           {
+          {
+            "group": "Billing",
+            "pages": [
+              "billing/plans-and-subscription",
+              "billing/payments-and-invoices",
+              "billing/addons-and-upgrades"
+            ]
+          },
+          {
             "group": "Channels",
             "pages": [
+              "core-setup/channels/overview",
               "core-setup/channels/whatsapp",
               "core-setup/channels/messenger"
+            ]
+          },
+          {
+            "group": "Messaging",
+            "pages": [
+              "messaging/whatsapp-templates",
+              "messaging/messenger-templates",
+              "messaging/campaigns",
+              "messaging/live-chat",
+              "messaging/merge-fields"
             ]
           },
           {
@@ -46,16 +66,6 @@
               "contacts/managing-contacts",
               "contacts/import-export",
               "contacts/bulk-actions-and-merge"
-            ]
-          },
-          {
-            "group": "Messaging",
-            "pages": [
-              "messaging/live-chat",
-              "messaging/whatsapp-templates",
-              "messaging/messenger-templates",
-              "messaging/campaigns",
-              "messaging/merge-fields"
             ]
           },
           {
@@ -82,15 +92,7 @@
             ]
           },
           {
-            "group": "Billing",
-            "pages": [
-              "billing/plans-and-subscription",
-              "billing/addons-and-upgrades",
-              "billing/payments-and-invoices"
-            ]
-          },
-            {
-            "group": "Core Setup",
+            "group": "Setup",
             "pages": [
               "core-setup/team-and-roles",
               "core-setup/statuses",
@@ -101,25 +103,24 @@
               "core-setup/ai-prompts",
               "core-setup/whatsapp-activity-log",
               "core-setup/custom-fields",
-              "core-setup/api-keys",
-              "core-setup/invitation-acceptance"
+              "core-setup/api-keys"
             ]
           },
           {
             "group": "Settings",
-              "pages": [
-              "settings/profile",
+            "pages": [
               "settings/general",
               "settings/business-hours",
               "settings/billing-details",
-              "settings/contact-configuration",
               "settings/custom-domain",
+              "settings/contact-configuration",
               "settings/webhooks",
               "settings/google-accounts",
+              "settings/inbound-media",
               "settings/shopify",
               "settings/woocommerce",
-              "settings/inbound-media",
-              "settings/account-and-danger-zone"
+              "settings/account-and-danger-zone",
+              "settings/profile"
             ]
           }
         ]
