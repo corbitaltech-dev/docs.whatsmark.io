@@ -1,21 +1,30 @@
 ---
 title: "Inbound Media"
-description: "Choose whether WhatsMark downloads and archives the media customers send you over WhatsApp."
+description: "Choose whether WhatsMark.io downloads and archives the media customers send you over WhatsApp."
 icon: "photo-film"
 keywords: ["WhatsMark", "inbound media", "download media", "attachments", "storage", "WhatsApp media"]
 ---
 
-When a customer sends you an image, video, audio note, or document over WhatsApp, Meta hosts that file only for a limited time. The **Inbound Media** setting decides whether WhatsMark saves a copy so it stays available in your conversation history.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+Meta's WhatsApp media URLs expire about 30 days after delivery. **Inbound Media Archival** decides whether WhatsMark.io downloads a permanent copy of everything customers send you, so it stays viewable in your conversation history after that.
+
+<BrowserFrame
+  src="/settings/img/inbound-media-form.png"
+  url="whatsmark.io/settings/messaging/inbound-media"
+  alt="Archive inbound WhatsApp media card with a Download inbound media toggle"
+  caption="Enable Download inbound media to keep a permanent copy of every inbound image, video, audio, and document."
+/>
 
 ## The setting
 
 Go to **Settings → Inbound Media** and toggle **Download inbound media**:
 
-- **On** — every inbound image, video, audio, and document is downloaded to your workspace and kept with the conversation, so it's still viewable after Meta's link expires.
-- **Off** — inbound media isn't archived; once Meta's temporary link expires, the file may no longer be viewable.
+- **On** — every inbound image, video, audio, and document is downloaded to your tenant storage and kept with the conversation, so it's still viewable after Meta's link expires.
+- **Off** — new inbound media stops being downloaded. Files already archived before you turned it off are kept as-is.
 
 <Warning>
-Downloaded media counts toward your plan's **storage** quota. If you handle a high volume of media, keep an eye on storage usage on the [Dashboard](/reporting/dashboard-and-usage) and in the [Media Library](/media/media-library).
+Each archived file counts toward your plan's **storage** quota. If you handle a high volume of media, keep an eye on storage usage on the [Dashboard](/reporting/dashboard-and-usage) and in the [Media Library](/media/media-library).
 </Warning>
 
 ## What's next
