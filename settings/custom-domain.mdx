@@ -1,13 +1,26 @@
 ---
 title: "Custom Domain"
-description: "How to serve your WhatsMark.io workspace from your own domain instead of your *.whatsmark.io subdomain."
+description: "Access your WhatsMark.io workspace from your own business domain instead of the default workspace domain."
 icon: "globe"
 keywords: ["WhatsMark", "custom domain", "DNS", "CNAME", "SSL"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Every workspace gets a free subdomain like `acme.whatsmark.io`. If you'd rather your team (and customers, for the public booking link) see your own domain, connect one under **Settings → Custom Domain**.
+A **Custom Domain** lets you access your WhatsMark.io workspace using your business domain instead of the default workspace URL, providing a more professional and branded experience.
+
+**Example**
+
+- Default: `workspace.whatsmark.io`
+- Business Domain: `app.yourcompany.com`
+
+Connect your domain under **Settings → Custom Domain**.
+
+<Note>
+Custom Domain is available as an **add-on**. If the feature is locked, click it to purchase the add-on or upgrade your plan. Only the workspace **owner** can connect, manage, or remove custom domains.
+</Note>
+
+## Connecting a domain
 
 <BrowserFrame
   src="/settings/img/custom-domain-form.png"
@@ -15,12 +28,6 @@ Every workspace gets a free subdomain like `acme.whatsmark.io`. If you'd rather 
   alt="Custom Domain form with a domain name field and Connect Domain button"
   caption="Enter your domain (e.g. app.yourcompany.com) and click Connect Domain to begin."
 />
-
-<Warning>
-Custom Domain is an **add-on**. If it's locked, click it to **Buy Add-on** (or **Upgrade Plan** on Free). Only the workspace **owner** can manage it.
-</Warning>
-
-## Connecting a domain
 
 <Steps>
 <Step title="Enter your domain">
@@ -36,7 +43,7 @@ Custom Domain is an **add-on**. If it's locked, click it to **Buy Add-on** (or *
 </Step>
 
 <Step title="Set as primary (optional)">
-  Once the domain shows **Verified**, a **Primary domain** choice appears — pick your custom domain or your `*.whatsmark.io` subdomain as the one your workspace's links use by default.
+  Once the domain shows **Verified**, a **Primary domain** choice appears — pick your custom domain or your original WhatsMark.io subdomain as the one your workspace's links use by default.
 </Step>
 </Steps>
 
@@ -57,7 +64,7 @@ DNS changes can take a few minutes to propagate. If verification doesn't succeed
 
 ## Removing a domain
 
-Click the trash icon next to your domain to remove it — your workspace falls back to its `*.whatsmark.io` subdomain automatically.
+Click the trash icon next to your domain to remove it — your workspace falls back to its original WhatsMark.io subdomain automatically.
 
 <Note>
 If your custom domain is set as the **primary** domain, switch back to the subdomain first — removal is blocked while the custom domain is primary.
