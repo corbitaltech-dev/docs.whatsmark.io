@@ -123,57 +123,57 @@
               "settings/profile"
             ]
           }
-        ],
-        "openapi": "https://api.whatsmark.io/openapi/whatsmark-api-v1.json"
+        ]
       },
       {
         "tab": "Api",
         "openapi": "https://api.whatsmark.io/openapi/whatsmark-api-v1.json",
         "pages": [
           "overview",
+          { "group": "Auth & Account", "pages": ["GET /api/v1/ping", "GET /api/v1/account", "GET /api/v1/usage"] },
+          { "group": "Channels", "pages": ["GET /api/v1/channels", "GET /api/v1/channels/{channel_id}"] },
           {
             "group": "Contacts",
-            "pages": []
-          },
-          {
-            "group": "Auth & Account",
-            "pages": []
-          },
-          {
-            "group": "Channels",
-            "pages": []
+            "pages": [
+              "GET /api/v1/contacts", "POST /api/v1/contacts", "POST /api/v1/contacts/batch",
+              "POST /api/v1/contacts/bulk", "POST /api/v1/contacts/{contact_id}/merge",
+              "GET /api/v1/contacts/{contact_id}", "PUT /api/v1/contacts/{contact_id}",
+              "DELETE /api/v1/contacts/{contact_id}"
+            ]
           },
           {
             "group": "Contact Statuses",
-            "pages": []
+            "pages": ["GET /api/v1/statuses", "POST /api/v1/statuses", "GET /api/v1/statuses/{status_id}", "PUT /api/v1/statuses/{status_id}", "DELETE /api/v1/statuses/{status_id}"]
           },
           {
             "group": "Contact Sources",
-            "pages": []
+            "pages": ["GET /api/v1/sources", "POST /api/v1/sources", "GET /api/v1/sources/{source_id}", "PUT /api/v1/sources/{source_id}", "DELETE /api/v1/sources/{source_id}"]
           },
           {
             "group": "Contact Groups",
-            "pages": []
+            "pages": [
+              "GET /api/v1/groups", "POST /api/v1/groups", "GET /api/v1/groups/{group_id}",
+              "PUT /api/v1/groups/{group_id}", "DELETE /api/v1/groups/{group_id}",
+              "GET /api/v1/groups/{group_id}/contacts", "POST /api/v1/groups/{group_id}/contacts",
+              "DELETE /api/v1/groups/{group_id}/contacts/{contact_id}"
+            ]
           },
           {
             "group": "Contact Labels",
-            "pages": []
+            "pages": ["GET /api/v1/labels", "POST /api/v1/labels", "GET /api/v1/labels/{label_id}", "PUT /api/v1/labels/{label_id}", "DELETE /api/v1/labels/{label_id}"]
           },
           {
             "group": "Templates",
-            "pages": []
+            "pages": ["GET /api/v1/templates", "POST /api/v1/templates", "POST /api/v1/templates/sync", "GET /api/v1/templates/{template_id}"]
           },
           {
             "group": "Messages",
-            "pages": []
+            "pages": ["POST /api/v1/messages", "POST /api/v1/contacts/{contact_id}/messages", "GET /api/v1/messages/{message_id}"]
           },
-          {
-            "group": "Conversations",
-            "pages": []
-          },
+          { "group": "Conversations", "pages": ["GET /api/v1/conversations", "GET /api/v1/conversations/{conversation_id}/messages"] },
           {
             "group": "OTP",
-            "pages": []
+            "pages": ["POST /api/v1/otp", "GET /api/v1/otp/{reference}", "DELETE /api/v1/otp/{reference}", "POST /api/v1/otp/{reference}/verify", "POST /api/v1/otp/{reference}/resend"]
           }
         ]
       }
