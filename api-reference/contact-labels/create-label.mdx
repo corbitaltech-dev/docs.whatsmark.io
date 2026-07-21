@@ -1,0 +1,90 @@
+---
+api: "POST /api/v1/labels"
+playground: "simple"
+title: "Create Label"
+description: "Create a new contact label in the workspace."
+---
+
+<Info>
+  **Scope required:** `labels:write`
+</Info>
+
+Create a new contact label.
+
+<ParamField body="name" type="string" required>
+  Name of the label. Maximum length 100 characters. Must be unique within your workspace.
+</ParamField>
+
+<ParamField body="color" type="string">
+  Hex color code of the label. Maximum length 7 characters.
+</ParamField>
+
+<ParamField body="sort_order" type="integer">
+  Position of the label in the ordered list.
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+      Unique identifier of the label.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Name of the label.
+    </ResponseField>
+
+    <ResponseField name="color" type="string">
+      Hex color code of the label.
+    </ResponseField>
+
+    <ResponseField name="sort_order" type="integer">
+      Position of the label in the ordered list.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      Timestamp when the label was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+  --url https://api.whatsmark.io/api/v1/labels \
+  --header "Authorization: Bearer YOUR_API_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{
+  "name": "Hot Lead",
+  "color": "#FF8800",
+  "sort_order": 1
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 201 Created
+{
+  "data": {
+    "id": 1,
+    "name": "Hot Lead",
+    "color": "#FF8800",
+    "sort_order": 1,
+    "created_at": "2026-06-26T10:00:00+00:00"
+  }
+}
+```
+
+</ResponseExample>
+
+Common error responses:
+
+| Status | error\_code | When it happens |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing, invalid or expired API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `insufficient_scope` | The token lacks the `labels:write` scope, or the account is suspended/on hold. |
+| 422 | `validation_failed` | The request body failed validation, e.g. `name` is missing. |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

@@ -1,0 +1,35 @@
+---
+api: "DELETE /api/v1/sources/{source_id}"
+playground: "simple"
+title: "Delete Source"
+description: "Delete a contact source; system sources cannot be deleted."
+---
+
+<Info>
+  **Scope required:** `sources:write`
+</Info>
+
+Returns `204`. System sources cannot be deleted (`422`).
+
+<ParamField path="source_id" type="string" required>
+  Identifier of the source.
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl --request DELETE \
+  --url https://api.whatsmark.io/api/v1/sources/1 \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 204 No Content
+```
+
+</ResponseExample>
+
+Errors: `401` missing/invalid/expired token, `402` no valid subscription or payment under review, `403` token missing the `sources:write` scope, `429` monthly API request quota exhausted. Attempting to delete a system source returns `422`.

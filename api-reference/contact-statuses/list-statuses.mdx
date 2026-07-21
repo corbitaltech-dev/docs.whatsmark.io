@@ -1,0 +1,71 @@
+---
+api: "GET /api/v1/statuses"
+playground: "simple"
+title: "List Statuses"
+description: "Returns all contact statuses in the workspace, ordered by sort_order."
+---
+
+<Info>
+  **Scope required:** `statuses:read`
+</Info>
+
+All contact statuses, ordered by `sort_order`.
+
+<ResponseField name="data" type="object[]">
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+      Unique identifier of the status.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Name of the status.
+    </ResponseField>
+
+    <ResponseField name="color" type="string">
+      Hex color of the status.
+    </ResponseField>
+
+    <ResponseField name="sort_order" type="integer">
+      Position of the status relative to other statuses.
+    </ResponseField>
+
+    <ResponseField name="is_default" type="boolean">
+      Whether this is the default status.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      Timestamp when the status was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/statuses \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "VIP",
+      "color": "#FF0000",
+      "sort_order": 1,
+      "is_default": false,
+      "created_at": "2026-06-26T10:00:00+00:00"
+    }
+  ]
+}
+```
+
+</ResponseExample>
+
+Errors: `401` (missing/invalid token), `402` (no valid subscription), `403` (missing `statuses:read` scope), `429` (quota exhausted).

@@ -1,0 +1,46 @@
+---
+api: "DELETE /api/v1/groups/{group_id}/contacts/{contact_id}"
+playground: "simple"
+title: "Remove Contact from Group"
+description: "Detach a contact from a group."
+---
+
+<Info>
+  **Scope required:** `groups:write`
+</Info>
+
+Detach a contact from the group. Returns `204`.
+
+<ParamField path="group_id" type="string" required>
+  Identifier of the group.
+</ParamField>
+
+<ParamField path="contact_id" type="string" required>
+  Identifier of the contact.
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl --request DELETE \
+  --url https://api.whatsmark.io/api/v1/groups/1/contacts/1 \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```text 204 No Content
+```
+
+</ResponseExample>
+
+### Errors
+
+| Status | error\_code | When |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing, invalid or expired API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `insufficient_scope` | The token lacks the `groups:write` scope, or the account is suspended/on hold. |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

@@ -1,0 +1,73 @@
+---
+api: "GET /api/v1/sources/{source_id}"
+playground: "simple"
+title: "Get Source"
+description: "Retrieve a single contact source by ID."
+---
+
+<Info>
+  **Scope required:** `sources:read`
+</Info>
+
+Retrieve a single contact source.
+
+<ParamField path="source_id" type="string" required>
+  Identifier of the source.
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+      The source's unique identifier.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      The source's name.
+    </ResponseField>
+
+    <ResponseField name="color" type="string">
+      The source's color.
+    </ResponseField>
+
+    <ResponseField name="sort_order" type="integer">
+      The source's sort order.
+    </ResponseField>
+
+    <ResponseField name="is_system" type="boolean">
+      Whether this is a system-defined source.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      When the source was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/sources/1 \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "id": 1,
+    "name": "Website",
+    "color": "#00AA55",
+    "sort_order": 1,
+    "is_system": false,
+    "created_at": "2026-06-26T10:00:00+00:00"
+  }
+}
+```
+
+</ResponseExample>
+
+Errors: `401` missing/invalid/expired token, `402` no valid subscription or payment under review, `403` token missing the `sources:read` scope, `404` source not found, `429` monthly API request quota exhausted.

@@ -1,0 +1,88 @@
+---
+api: "GET /api/v1/usage"
+playground: "simple"
+title: "Usage"
+description: "Returns current plan limits and consumption for all metered features."
+---
+
+<Info>
+  **Scope required:** `account:read`
+</Info>
+
+Returns current plan limits and consumption for all metered features: contacts, conversations, campaigns, media storage, and API requests. `limit: null` and `unlimited: true` means no cap on that feature.
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="contacts" type="object">
+      <Expandable title="properties">
+           
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="conversations" type="object">
+      <Expandable title="properties">
+           
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="message_campaigns" type="object">
+      <Expandable title="properties">
+           
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="template_campaigns" type="object">
+      <Expandable title="properties">
+           
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="media_library_mb" type="object">
+      <Expandable title="properties">
+           
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="api_requests" type="object">
+      <Expandable title="properties">
+           
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/usage \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "contacts": { "used": 1240, "limit": 5000, "remaining": 3760, "unlimited": false },
+    "conversations": { "used": 320, "limit": null, "remaining": null, "unlimited": true },
+    "message_campaigns": { "used": 4, "limit": 10, "remaining": 6, "unlimited": false },
+    "template_campaigns": { "used": 2, "limit": 10, "remaining": 8, "unlimited": false },
+    "media_library_mb": { "used": 150, "limit": 1024, "remaining": 874, "unlimited": false },
+    "api_requests": { "used": 128, "limit": 50000, "remaining": 49872, "unlimited": false }
+  }
+}
+```
+
+</ResponseExample>
+
+Common error responses:
+
+| Status | error\_code | When it happens |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing, invalid or expired API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `insufficient_scope` | The token lacks the required scope, or the account is suspended/on hold. |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

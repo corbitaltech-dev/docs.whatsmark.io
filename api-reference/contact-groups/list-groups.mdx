@@ -1,0 +1,78 @@
+---
+api: "GET /api/v1/groups"
+playground: "simple"
+title: "List Groups"
+description: "Retrieve all contact groups in your workspace, each with a contact_count."
+---
+
+<Info>
+  **Scope required:** `groups:read`
+</Info>
+
+Returns all contact groups with `contact_count`.
+
+<ResponseField name="data" type="object[]">
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+      Unique identifier of the group.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Name of the group.
+    </ResponseField>
+
+    <ResponseField name="description" type="string">
+      Description of the group.
+    </ResponseField>
+
+    <ResponseField name="color" type="string">
+      Hex color associated with the group.
+    </ResponseField>
+
+    <ResponseField name="contact_count" type="integer">
+      Number of contacts belonging to the group.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      Timestamp when the group was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/groups \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Newsletter",
+      "description": "Opted-in subscribers",
+      "color": "#3366FF",
+      "contact_count": 240,
+      "created_at": "2026-06-26T10:00:00+00:00"
+    }
+  ]
+}
+```
+
+</ResponseExample>
+
+### Errors
+
+| Status | error\_code | When |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing, invalid or expired API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `insufficient_scope` | The token lacks the `groups:read` scope, or the account is suspended/on hold. |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

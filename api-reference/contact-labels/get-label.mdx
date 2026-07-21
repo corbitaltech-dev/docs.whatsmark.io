@@ -1,0 +1,76 @@
+---
+api: "GET /api/v1/labels/{label_id}"
+playground: "simple"
+title: "Get Label"
+description: "Retrieve a single contact label by its identifier."
+---
+
+<Info>
+  **Scope required:** `labels:read`
+</Info>
+
+Retrieve a single contact label.
+
+<ParamField path="label_id" type="string" required>
+  Identifier of the label.
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+      Unique identifier of the label.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Name of the label.
+    </ResponseField>
+
+    <ResponseField name="color" type="string">
+      Hex color code of the label.
+    </ResponseField>
+
+    <ResponseField name="sort_order" type="integer">
+      Position of the label in the ordered list.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      Timestamp when the label was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/labels/1 \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "id": 1,
+    "name": "Hot Lead",
+    "color": "#FF8800",
+    "sort_order": 1,
+    "created_at": "2026-06-26T10:00:00+00:00"
+  }
+}
+```
+
+</ResponseExample>
+
+Common error responses:
+
+| Status | error\_code | When it happens |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing, invalid or expired API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `insufficient_scope` | The token lacks the `labels:read` scope, or the account is suspended/on hold. |
+| 404 | `not_found` | No label exists with the given `label_id`. |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

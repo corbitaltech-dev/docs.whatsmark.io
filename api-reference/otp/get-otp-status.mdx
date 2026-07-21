@@ -1,0 +1,99 @@
+---
+api: "GET /api/v1/otp/{reference}"
+playground: "simple"
+title: "Get OTP Status"
+description: "Returns the OTP's current status and remaining verification attempts."
+---
+
+<Info>
+  **Scope required:** `otp:verify`
+</Info>
+
+Returns the OTP's current `status` (`pending` / `verified` / `expired` / `cancelled`) and `remaining_attempts`.
+
+<ParamField path="reference" type="string" required>
+  Identifier of the reference.
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="reference" type="string">
+      Opaque identifier for this OTP.
+    </ResponseField>
+
+    <ResponseField name="phone" type="string">
+      The recipient's phone number.
+    </ResponseField>
+
+    <ResponseField name="channel_id" type="integer">
+      The channel the OTP was sent from.
+    </ResponseField>
+
+    <ResponseField name="purpose" type="string">
+      The purpose label for this OTP.
+    </ResponseField>
+
+    <ResponseField name="status" type="string">
+      The OTP's current status.
+    </ResponseField>
+
+    <ResponseField name="expires_at" type="string">
+      Timestamp when the OTP expires.
+    </ResponseField>
+
+    <ResponseField name="verified_at" type="string">
+      Timestamp when the OTP was verified, or `null` if not yet verified.
+    </ResponseField>
+
+    <ResponseField name="verification_attempts" type="integer">
+      Number of verification attempts made so far.
+    </ResponseField>
+
+    <ResponseField name="remaining_attempts" type="integer">
+      Number of verification attempts remaining.
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+      Timestamp when the OTP was created.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/otp/9b1f8c2a-4e7d-4a1b-9c3e-2f5a6b7c8d9e \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "reference": "9b1f8c2a-4e7d-4a1b-9c3e-2f5a6b7c8d9e",
+    "phone": "+919876543210",
+    "channel_id": 2,
+    "purpose": "authentication",
+    "status": "pending",
+    "expires_at": "2026-06-26T10:10:00+00:00",
+    "verified_at": null,
+    "verification_attempts": 0,
+    "remaining_attempts": 5,
+    "created_at": "2026-06-26T10:00:00+00:00"
+  }
+}
+```
+
+</ResponseExample>
+
+| error\_code | when |
+| --- | --- |
+| `unauthenticated` (401) | Missing, invalid or expired API token. |
+| `subscription_required` (402) | The workspace has no valid subscription, or a payment is under review. |
+| `insufficient_scope` (403) | The token lacks the `otp:verify` scope, or the account is suspended/on hold. |
+| `not_found` (404) | OTP not found. |
+| `quota_exhausted` (429) | The monthly API request quota for the workspace is exhausted. |

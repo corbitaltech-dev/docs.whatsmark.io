@@ -1,0 +1,135 @@
+---
+api: "GET /api/v1/conversations/{conversation_id}/messages"
+playground: "simple"
+title: "Get Conversation Messages"
+description: "Cursor-paginated message history for a conversation, newest first."
+---
+
+<Info>
+  **Scope required:** `conversations:read`
+</Info>
+
+Cursor-paginated message history for a conversation, newest first. Follow `links.next` until `null` to walk the full thread.
+
+<ParamField path="conversation_id" type="string" required>
+  Identifier of the conversation.
+</ParamField>
+
+<ResponseField name="data" type="object[]">
+  <Expandable title="properties">
+    <ResponseField name="id" type="integer">
+    </ResponseField>
+
+    <ResponseField name="conversation_id" type="integer">
+    </ResponseField>
+
+    <ResponseField name="contact_id" type="integer">
+    </ResponseField>
+
+    <ResponseField name="channel_id" type="integer">
+    </ResponseField>
+
+    <ResponseField name="type" type="string">
+    </ResponseField>
+
+    <ResponseField name="status" type="string">
+    </ResponseField>
+
+    <ResponseField name="body" type="string">
+    </ResponseField>
+
+    <ResponseField name="metadata" type="any">
+    </ResponseField>
+
+    <ResponseField name="error_message" type="any">
+    </ResponseField>
+
+    <ResponseField name="sent_at" type="string">
+    </ResponseField>
+
+    <ResponseField name="delivered_at" type="string">
+    </ResponseField>
+
+    <ResponseField name="read_at" type="string">
+    </ResponseField>
+
+    <ResponseField name="created_at" type="string">
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="links" type="object">
+  <Expandable title="properties">
+    <ResponseField name="next" type="string">
+    </ResponseField>
+
+    <ResponseField name="prev" type="string">
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="meta" type="object">
+  <Expandable title="properties">
+    <ResponseField name="per_page" type="integer">
+    </ResponseField>
+
+    <ResponseField name="next_cursor" type="string">
+    </ResponseField>
+
+    <ResponseField name="prev_cursor" type="string">
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request GET \
+  --url https://api.whatsmark.io/api/v1/conversations/12/messages \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": [
+    {
+      "id": 90,
+      "conversation_id": 12,
+      "contact_id": 1,
+      "channel_id": 2,
+      "type": "text",
+      "status": "read",
+      "body": "Thanks for reaching out!",
+      "metadata": null,
+      "error_message": null,
+      "sent_at": "2026-06-26T10:05:01+00:00",
+      "delivered_at": "2026-06-26T10:05:03+00:00",
+      "read_at": "2026-06-26T10:05:10+00:00",
+      "created_at": "2026-06-26T10:05:00+00:00"
+    }
+  ],
+  "links": {
+    "next": null,
+    "prev": null
+  },
+  "meta": {
+    "per_page": 25,
+    "next_cursor": null,
+    "prev_cursor": null
+  }
+}
+```
+
+</ResponseExample>
+
+| Status | error\_code | When it happens |
+| --- | --- | --- |
+| 401 | `unauthenticated` | Missing, invalid or expired API token. |
+| 402 | `subscription_required` | The workspace has no valid subscription, or a payment is under review. |
+| 403 | `insufficient_scope` | The token lacks the `conversations:read` scope, or the account is suspended/on hold. |
+| 404 | `not_found` | Conversation not found. |
+| 429 | `quota_exhausted` | The monthly API request quota for the workspace is exhausted. |

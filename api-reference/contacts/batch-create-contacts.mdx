@@ -1,0 +1,95 @@
+---
+api: "POST /api/v1/contacts/batch"
+playground: "simple"
+title: "Batch Create Contacts"
+description: "Create up to 100 contacts in one call with per-item partial success reporting."
+---
+
+<Info>
+  **Scope required:** `contacts:write`
+</Info>
+
+Create up to 100 contacts in one call. Each item is validated and created independently, and the response reports `created` and per-index `errors` (partial success).
+
+<ParamField body="contacts" type="object[]">
+  The list of contacts to create.
+
+  <Expandable title="properties">
+      
+  </Expandable>
+</ParamField>
+
+<ResponseField name="data" type="object">
+  <Expandable title="properties">
+    <ResponseField name="created" type="object[]">
+      The contacts that were successfully created.
+
+      <Expandable title="properties">
+                      
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="errors" type="object[]">
+      Per-index errors for items that failed.
+
+      <Expandable title="properties">
+         
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+  --url https://api.whatsmark.io/api/v1/contacts/batch \
+  --header "Authorization: Bearer YOUR_API_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "contacts": [
+      {"first_name": "Jane", "phone": "+919876543210"},
+      {"first_name": "John", "phone": "+919811111111", "email": "john@example.com"}
+    ]
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 200 OK
+{
+  "data": {
+    "created": [
+      {
+        "id": 1,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "display_name": "Jane Doe",
+        "phone": "+919876543210",
+        "email": "jane@example.com",
+        "type": "lead",
+        "is_active": true,
+        "contact_status_id": 1,
+        "contact_source_id": 1,
+        "group_ids": [1],
+        "label_ids": [1],
+        "custom_fields": {"company": "Acme"},
+        "created_at": "2026-06-26T10:00:00+00:00",
+        "updated_at": "2026-06-26T10:00:00+00:00"
+      }
+    ],
+    "errors": [
+      {
+        "index": 1,
+        "errors": {"phone": ["The phone has already been taken."]}
+      }
+    ]
+  }
+}
+```
+
+</ResponseExample>
+
+Errors: `401 unauthenticated` for a missing/invalid token, `402 subscription_required` when the workspace has no valid subscription, `403 insufficient_scope` when the token lacks `contacts:write`, and `429 quota_exhausted` when the monthly request quota is exhausted.

@@ -1,0 +1,43 @@
+---
+api: "POST /api/v1/templates/sync"
+playground: "simple"
+title: "Sync Templates"
+description: "Trigger a background sync of templates from Meta for all or a given connected account."
+---
+
+<Info>
+  **Scope required:** `templates:read`
+</Info>
+
+Triggers a background sync of templates from Meta for all (or a given) connected account. Returns `202` — templates update asynchronously.
+
+<ResponseField name="status" type="string">
+  The sync status, e.g. `queued`.
+</ResponseField>
+
+<ResponseField name="queued" type="integer">
+  The number of sync jobs queued.
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST \
+  --url https://api.whatsmark.io/api/v1/templates/sync \
+  --header "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json 202 Accepted
+{
+  "status": "queued",
+  "queued": 1
+}
+```
+
+</ResponseExample>
+
+Common error responses: `401` (missing/invalid token), `402` (no valid subscription), `403` (missing `templates:read` scope), `422` (`no_account` when there is no connected WhatsApp account to sync), `429` (monthly API request quota exhausted).
