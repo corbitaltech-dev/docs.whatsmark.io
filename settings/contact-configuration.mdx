@@ -5,22 +5,38 @@ icon: "cog"
 keywords: ["WhatsMark", "contacts", "auto-create", "inbound"]
 ---
 
-## Contact auto-create defaults
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-When someone messages your WhatsApp number for the first time and no matching contact exists, WhatsMark can create one automatically. Configure how under **Settings → Contacts**:
+When someone messages your WhatsApp number for the first time and no matching contact exists, WhatsMark.io creates one automatically. Configure the defaults applied to that new contact under **Settings → Contacts**.
 
-<Steps>
-<Step title="Set global defaults">
-  Choose the default **lifecycle stage**, **status**, **source**, **labels**, and **groups** applied to auto-created contacts, plus an **assignment strategy** (e.g. leave unassigned, or assign to a specific team member).
-</Step>
+<BrowserFrame
+  src="/settings/img/contact-configuration-form.png"
+  url="whatsmark.io/settings/contacts"
+  alt="Global Defaults form showing lifecycle, status, source, assign to, WhatsApp channel, labels, and groups fields"
+  caption="These defaults apply to every channel unless a channel-level override is configured below."
+/>
 
-<Step title="Override per WhatsApp channel (optional)">
-  If you have multiple WhatsApp numbers connected, you can override these defaults for a specific channel — for example, giving contacts from a support number a different default status than contacts from a sales number.
-</Step>
-</Steps>
+## Global Defaults
+
+Applied to every channel unless a channel-level override is configured.
+
+- **Lifecycle** — the contact type: Guest, Lead, or Customer.
+- **Status** — required. Falls back to your default status if left unset.
+- **Source** — required. Falls back to a "WhatsApp" source if left unset.
+- **Assign To** — required. Controls who gets assigned to the auto-created contact:
+  - **Unassigned** — the contact isn't assigned to anyone.
+  - **Round Robin** — cycles through every team member, in order, one assignment at a time.
+  - **Online Team Member** — cycles through whichever team members are currently online; if nobody is online, it falls back to Round Robin across everyone.
+  - **Custom Team Member** — always assigns to one specific person, picked from the **Team Member** field that appears once you select this option.
+- **WhatsApp Channel** — required. The channel these defaults apply to when no channel-specific override exists.
+- **Labels** and **Groups** — optional, applied to auto-created contacts.
+
+## Per-channel overrides
+
+If you have multiple WhatsApp numbers connected, expand a channel below the global defaults and turn on its **Override** switch to set different Lifecycle, Status, Source, Assign To, Labels, and Groups values just for that channel.
 
 <Tip>
-Removing a channel-level override falls that channel back to using the global defaults automatically.
+Turning a channel's override off falls that channel back to the global defaults automatically — its own saved values are kept but ignored until you turn it on again.
 </Tip>
 
 ## What's next
