@@ -133,108 +133,47 @@
           "overview",
           {
             "group": "Contacts",
-            "pages": [
-              "api-reference/contacts/list-contacts",
-              "api-reference/contacts/create-contact",
-              "api-reference/contacts/batch-create-contacts",
-              "api-reference/contacts/bulk-contacts",
-              "api-reference/contacts/merge-contact",
-              "api-reference/contacts/get-contact",
-              "api-reference/contacts/update-contact",
-              "api-reference/contacts/delete-contact"
-            ]
+            "pages": []
           },
           {
             "group": "Auth & Account",
-            "pages": [
-              "api-reference/auth-account/ping",
-              "api-reference/auth-account/account",
-              "api-reference/auth-account/usage"
-            ]
+            "pages": []
           },
           {
             "group": "Channels",
-            "pages": [
-              "api-reference/channels/list-channels",
-              "api-reference/channels/get-channel"
-            ]
+            "pages": []
           },
           {
             "group": "Contact Statuses",
-            "pages": [
-              "api-reference/contact-statuses/list-statuses",
-              "api-reference/contact-statuses/create-status",
-              "api-reference/contact-statuses/get-status",
-              "api-reference/contact-statuses/update-status",
-              "api-reference/contact-statuses/delete-status"
-            ]
+            "pages": []
           },
           {
             "group": "Contact Sources",
-            "pages": [
-              "api-reference/contact-sources/list-sources",
-              "api-reference/contact-sources/create-source",
-              "api-reference/contact-sources/get-source",
-              "api-reference/contact-sources/update-source",
-              "api-reference/contact-sources/delete-source"
-            ]
+            "pages": []
           },
           {
             "group": "Contact Groups",
-            "pages": [
-              "api-reference/contact-groups/list-groups",
-              "api-reference/contact-groups/create-group",
-              "api-reference/contact-groups/get-group",
-              "api-reference/contact-groups/update-group",
-              "api-reference/contact-groups/delete-group",
-              "api-reference/contact-groups/list-group-members",
-              "api-reference/contact-groups/add-contact-to-group",
-              "api-reference/contact-groups/remove-contact-from-group"
-            ]
+            "pages": []
           },
           {
             "group": "Contact Labels",
-            "pages": [
-              "api-reference/contact-labels/list-labels",
-              "api-reference/contact-labels/create-label",
-              "api-reference/contact-labels/get-label",
-              "api-reference/contact-labels/update-label",
-              "api-reference/contact-labels/delete-label"
-            ]
+            "pages": []
           },
           {
             "group": "Templates",
-            "pages": [
-              "api-reference/templates/list-templates",
-              "api-reference/templates/create-template",
-              "api-reference/templates/sync-templates",
-              "api-reference/templates/get-template"
-            ]
+            "pages": []
           },
           {
             "group": "Messages",
-            "pages": [
-              "api-reference/messages/send-message",
-              "api-reference/messages/send-template-to-contact",
-              "api-reference/messages/get-message"
-            ]
+            "pages": []
           },
           {
             "group": "Conversations",
-            "pages": [
-              "api-reference/conversations/list-conversations",
-              "api-reference/conversations/get-conversation-messages"
-            ]
+            "pages": []
           },
           {
             "group": "OTP",
-            "pages": [
-              "api-reference/otp/send-otp",
-              "api-reference/otp/get-otp-status",
-              "api-reference/otp/cancel-otp",
-              "api-reference/otp/verify-otp",
-              "api-reference/otp/resend-otp"
-            ]
+            "pages": []
           }
         ]
       }
