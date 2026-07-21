@@ -9,6 +9,29 @@ keywords: ["WhatsMark", "API", "REST API", "developer", "token", "scopes", "pagi
 
 The WhatsMark REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.whatsmark.io`, separate from your tenant subdomain.
 
+This page is the short version — what the API is, how to get a token, and the conventions every endpoint follows. **The complete, endpoint-by-endpoint reference lives at [api.whatsmark.io/docs](https://api.whatsmark.io/docs).**
+
+<Card title="Full API reference — api.whatsmark.io/docs" icon="book-open" href="https://api.whatsmark.io/docs" horizontal>
+  Interactive Swagger UI for the WhatsMark Tenant REST API (v1, OAS 3.1). Browse every endpoint grouped by module, expand one to see its parameters, request body, scopes, and example responses — then click **Authorize**, paste your bearer token, and run real requests straight from the browser.
+</Card>
+
+### What you'll find there
+
+<CardGroup cols={2}>
+  <Card title="Every endpoint, grouped by module" icon="list-tree">
+    Root, Auth & Account, Channels, Contacts, Statuses, Sources, Groups, Labels, Templates, Messages, Conversations, and OTP — with a **Filter by tag** box to jump straight to the group you need.
+  </Card>
+  <Card title="Try it out, live" icon="play">
+    Use the **Authorize** button to add `Authorization: Bearer <token>`, pick the `https://api.whatsmark.io` server, and send real requests against your workspace without leaving the page.
+  </Card>
+  <Card title="OpenAPI spec" icon="file-json">
+    Download the raw OAS 3.1 document from the **OpenAPI Spec** button (`/openapi/whatsmark-api-v1.json`) to generate clients or import it into your own tooling.
+  </Card>
+  <Card title="Postman collection" icon="download">
+    The **Postman Collection** button exports every request, with example payloads and responses, ready to import into Postman.
+  </Card>
+</CardGroup>
+
 <Warning>
   **The API is not available on the Free plan.** REST API access is a **Professional** plan feature — Free-plan workspaces can use the full dashboard, but any request to `api.whatsmark.io` will be rejected until you upgrade. Reseller plans also include API access, with a higher (or unlimited) monthly request quota.
 </Warning>
@@ -78,8 +101,10 @@ Errors use a consistent envelope:
 
 The API covers: **Auth & Account** · **Channels** · **Contacts** · **Contact Statuses** · **Contact Sources** · **Contact Groups** · **Contact Labels** · **Templates** · **Messages** · **Conversations** · **OTP**.
 
-<Card title="Download the Postman collection" icon="download">
-  Import the full request collection — every endpoint, example request, and example response — directly into Postman.
+Each module is documented endpoint by endpoint — parameters, request bodies, required scopes, and example responses — in the reference at [api.whatsmark.io/docs](https://api.whatsmark.io/docs).
+
+<Card title="Open the API reference" icon="book-open" href="https://api.whatsmark.io/docs" horizontal>
+  Browse all endpoints, try them live, and grab the OpenAPI spec or Postman collection from the buttons at the top of the page.
 </Card>
 
 <Info>
