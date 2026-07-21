@@ -1,47 +1,63 @@
 ---
 title: "Account & Danger Zone"
-description: "How to request or cancel closure of your WhatsMark workspace."
+description: "How to request closure of your WhatsMark.io workspace."
 icon: "triangle-exclamation"
 keywords: ["WhatsMark", "account closure", "delete workspace", "danger zone"]
 ---
 
-If you need to shut down your workspace entirely, **Settings → Account** is where that happens — deliberately separate from every other settings page, and restricted to the workspace owner.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+If you need to shut down your workspace entirely, **Settings → Account** is where that happens under **Danger Zone** — deliberately separate from every other settings page, and restricted to the workspace owner.
 
 <Warning>
-Only the workspace **owner** can request or cancel account closure.
+Only the workspace **owner** can request account closure.
 </Warning>
 
 ## Requesting closure
 
+<BrowserFrame
+  src="/settings/img/account-danger-zone-form.png"
+  url="whatsmark.io/settings/account"
+  alt="Danger Zone card listing what account closure deletes, with a subdomain confirmation field, password field, and Close My Account button"
+  caption="Closing your account immediately cancels your subscription and permanently deletes all data — this cannot be undone."
+/>
+
+Closing your account will:
+
+- Immediately cancel your subscription
+- Delete all users and their data
+- Delete all uploaded files and media
+- Delete all settings and configurations
+- Permanently drop your database
+
 <Steps>
-<Step title="Request closure">
-  From the Account page, request closure of your workspace.
+<Step title="Type your subdomain to confirm">
+  Type your workspace's subdomain exactly as shown to confirm you understand the scope of what you're deleting.
 </Step>
 
-<Step title="Subscription is cancelled immediately">
-  If you have an active subscription, it's cancelled right away as part of this request.
+<Step title="Confirm your password">
+  Enter your account password as a final safeguard.
 </Step>
 
-<Step title="Deletion is scheduled">
-  Your workspace isn't deleted instantly — it's scheduled for deletion after a delay, giving you a window to change your mind.
+<Step title="Click Close My Account">
+  Your subscription is cancelled immediately, and your workspace is scheduled for deletion after a delay rather than removed instantly.
 </Step>
 </Steps>
 
-Once requested, your [General settings](/settings/general) page shows the scheduled deletion date.
+<BrowserFrame
+  src="/settings/img/account-closed.png"
+  url="whatsmark.io"
+  alt="Account Closed page showing the scheduled deletion date, a note to contact support, and a Log out button"
+  caption="Anyone who signs in to the workspace after closure sees this page until the scheduled deletion date."
+/>
 
-## Cancelling a pending closure
-
-If you change your mind before the scheduled deletion date, go back to the Account page and cancel the closure request — your workspace and its data are unaffected.
-
-<Note>
-Cancelling a pending closure does **not** automatically restore a cancelled subscription — you'll need to resubscribe from [Plans & Subscription](/billing/plans-and-subscription) if you want to keep using paid features.
-</Note>
+Closing the account logs everyone out immediately. Until the scheduled deletion date, this page replaces the app for all team members, showing the deletion date, a **Contact Support** link, and **Log out**.
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Plans & Subscription" icon="credit-card" href="/billing/plans-and-subscription">
-    Resubscribe after cancelling a pending account closure.
+    Manage your subscription and billing.
   </Card>
 
   <Card title="General Settings" icon="gear" href="/settings/general">
