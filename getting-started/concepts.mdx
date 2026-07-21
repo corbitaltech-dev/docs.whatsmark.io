@@ -29,7 +29,9 @@ WhatsMark.io sits on top of the official **WhatsApp Business Platform**, which h
 
 ## The 24-hour customer service window
 
-When a customer messages you, a **24-hour window** opens for that conversation. Inside the window you can reply with **free-form (session) messages** — plain text, media, whatever you like. Once 24 hours pass with no new inbound message from the customer, the window closes.
+When a customer messages you, a **24-hour window** opens for that conversation. Inside the window you can reply with **free-form (session) messages** — plain text, media, whatever you like.
+
+The timer restarts every time the customer messages you again, so an active back-and-forth keeps the window open. It's only once 24 hours pass with no new message from them that the window closes. This is [WhatsApp's own rule](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages), and it works the same way in every tool built on the WhatsApp Business Platform.
 
 <Warning>
   Outside the 24-hour window you **cannot** send a free-form message. You can only re-open the conversation with an approved **message template** (below). This is a WhatsApp platform rule, not a WhatsMark.io limitation.

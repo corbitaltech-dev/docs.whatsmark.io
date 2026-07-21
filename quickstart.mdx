@@ -1,63 +1,140 @@
 ---
 title: "Quickstart"
-description: "The fastest path from a fresh workspace to your first WhatsApp message — connect a channel, get a template approved, add a contact, and send."
+description: "Send your first WhatsApp message in four steps — connect your number, get a template approved by Meta, add a contact, and send that template to them."
 icon: "bolt"
 keywords: ["WhatsMark", "quickstart", "first message", "connect WhatsApp", "template", "send", "campaign"]
 ---
 
-This is the shortest route from a brand-new workspace to a delivered WhatsApp message. If a term here is unfamiliar, the [Key Concepts](/getting-started/concepts) page explains the WhatsApp rules behind each step.
+Four steps stand between a new workspace and your first delivered WhatsApp message:
+
+**[Connect your number](#step-1-connect-your-whatsapp-number) → [Get a template approved](#step-2-get-a-template-approved) → [Add a contact](#step-3-add-a-contact) → [Send that template to them](#step-4-send-the-template).**
+
+The one thing you can't rush is Meta's review of your first template, which usually comes back within a few minutes but can take longer.
 
 <Info>
-  If you registered for a **paid plan** and haven't paid yet, you'll see a payment screen instead of the app. Clear that first — see [Free vs. paid plans](/getting-started/free-vs-paid). **Free** workspaces skip straight to the dashboard.
+  **On the Free plan?** You'll land straight on your dashboard and can start right away.
+
+  **Signed up for Professional?** You'll see a payment screen instead of the app until you complete checkout. See [Free vs. Paid Plans](/getting-started/free-vs-paid).
 </Info>
 
+## First, one thing to know about WhatsApp
+
+WhatsApp protects its users from spam, so you can't simply type a message and send it to a new customer.
+
+To message someone first, you use a **template**. A template is a message you write in advance and send to Meta for approval. Once approved, you can send it to anyone.
+
+Here's how a typical conversation goes:
+
+1. You send an approved template, such as an order confirmation.
+2. Your customer replies.
+3. That reply opens a **[24-hour window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages)**. For the next 24 hours you can chat normally, typing whatever you like.
+4. Each new message from them restarts the 24 hours. Once 24 hours pass with nothing from them, you need a template again to restart the conversation.
+
+This is why you'll get a template approved before you try to send anything.
+
+<Tip>
+  [Key Concepts](/getting-started/concepts) covers these rules in more detail.
+</Tip>
+
+## Step 1: Connect your WhatsApp number
+
+Nothing sends or receives until you connect a number, so start here.
+
 <Steps>
-  <Step title="Connect a WhatsApp channel">
-    Go to **Channels → Connect Channel**, pick **WhatsApp**, and use **Embedded Signup** (recommended) to log into your Facebook Business account and pick a WhatsApp number. The channel must reach **Connected / Active** before you can send. Full details: [Connecting WhatsApp](/core-setup/channels/whatsapp).
+  <Step title="Open Channels and click Connect Channel">
+    **Channels** is where all your connected numbers live. Click **Connect Channel** in the top right.
   </Step>
 
-  <Step title="Get an approved template">
-    You can't message someone new — or anyone outside the 24-hour window — without an **approved** template.
-
-    - **Create one:** **Templates → Create**, then submit it to Meta. It stays *pending* until Meta **approves** it (usually minutes).
-    - **Already have approved templates in Meta?** Use **Sync** on the Templates page to pull them in instantly — no waiting.
-
-    See [WhatsApp Templates](/messaging/whatsapp-templates).
-
-    <Warning>
-      This is the step most likely to make you wait. A template must show **Approved** before it can be sent. Syncing existing approved templates skips the wait entirely.
-    </Warning>
+  <Step title="Choose WhatsApp">
+    You'll be asked which platform you want to connect. Pick **WhatsApp**.
   </Step>
 
-  <Step title="Add a contact">
-    Go to **Contacts** and add one person (or import a CSV/spreadsheet). See [Managing Contacts](/contacts/managing-contacts) and [Importing & Exporting](/contacts/import-export).
+  <Step title="Stay on Embedded Signup and log in with Facebook">
+    A Facebook window opens. Log in, choose your WhatsApp Business Account and the phone number you want to use, then let the window close on its own.
+
+    You'll also see a **Manual** tab next to it. it's for businesses that already connected to WhatsApp through Meta directly.
   </Step>
 
-  <Step title="Send your first message">
-    Two easy first sends:
-
-    - **To one contact:** from the **Contacts** list, use the row action **Send template** (Initiate Chat) to fire off your approved template to that person.
-    - **To many:** create a **Template Campaign** under [Campaigns](/messaging/campaigns) — it broadcasts an approved template to a group of contacts.
-
-    <Note>
-      A **message campaign** (free-form broadcast) only reaches contacts with an **open 24-hour window**, so it can't be your *first* outreach to cold contacts. Start with a **template** send. See [Key Concepts](/getting-started/concepts#the-24-hour-customer-service-window).
-    </Note>
-  </Step>
-
-  <Step title="Reply and grow">
-    When customers reply, handle the conversation in [Live Chat](/messaging/live-chat), and [invite your team](/core-setup/team-and-roles) to share the inbox.
+  <Step title="Confirm your number is Active">
+    Back on the Channels page, your number now shows **Active** status — it's ready to send and receive messages.
   </Step>
 </Steps>
 
-## Minimum path, at a glance
+Full walkthrough: [Connecting WhatsApp](/core-setup/channels/whatsapp).
 
-**Connect a channel → get an APPROVED template (create or sync) → add a contact → Send template / Template Campaign → reply in Live Chat.**
+## Step 2: Get a template approved
+
+Do this before adding contacts. Once your template is with Meta, the review runs in the background and you can carry on with Step 3.
+
+<Steps>
+  <Step title="Go to Templates → WhatsApp">
+    In the sidebar, open **Templates**, then **WhatsApp**.
+  </Step>
+
+  <Step title="Already have templates approved in Meta?">
+    Click **Sync Templates**. WhatsMark pulls in everything already approved on your WhatsApp Business Account, and you can skip straight to Step 3 — no waiting at all.
+  </Step>
+
+  <Step title="Otherwise, click Create Template">
+    Write your message, then submit it to Meta for review.
+  </Step>
+
+  <Step title="Watch for the status to change">
+    Your template shows **PENDING** while Meta reviews it, then **APPROVED** once it's cleared.
+  </Step>
+</Steps>
+
+<Warning>
+  You can only send a template that shows **APPROVED**. If Meta rejects it, you'll see the reason on the Templates page and can edit and resubmit.
+</Warning>
+
+More detail: [WhatsApp Templates](/messaging/whatsapp-templates).
+
+## Step 3: Add a contact
+
+You only need one person to test with — use your own number if you like.
+
+Go to **Contacts** and click **Create Contact**. If you already have a customer list ready, click **Import Contacts** instead and upload a CSV or spreadsheet.
+
+See [Managing Contacts](/contacts/managing-contacts) and [Importing & Exporting](/contacts/import-export).
+
+## Step 4: Send the template
+
+Your number is connected, your template is approved, and you have someone to message. Now you send that approved template to them — remember, it has to be a template, because this is your first contact with that person.
+
+### To one person
+
+Find the contact in your **Contacts** list, open the row's action menu (the three dots on the right), and choose **Initiate chat**. Pick your approved template and send.
+
+This is the quickest way to confirm everything works end to end.
+
+### To many people at once
+
+Go to **Campaigns** and click **Create Campaign**. On the first step, choose **Template Campaign** — it broadcasts your approved template to a whole group of contacts.
+
+<Note>
+  You'll also see a **Message Campaign** option, which sends free-form messages in your own wording. It only reaches people who messaged you in the last 24 hours, so it can't be your *first* message to a new contact. Start with a Template Campaign.
+</Note>
+
+See [Campaigns](/messaging/campaigns).
+
+## Step 5: Reply when they answer
+
+Once your message lands and someone replies, the conversation appears in **Chat** — your shared team box.
+
+Remember, their reply opens that 24-hour window, so you can now answer in your own words without a template.
+
+If other people will be handling replies too, [invite your team](/core-setup/team-and-roles) so everyone works from the same inbox.
 
 ## What's next
 
 <CardGroup cols={2}>
+  <Card title="Key Concepts" icon="book-open" href="/getting-started/concepts">
+    The WhatsApp rules behind every step above, explained properly.
+  </Card>
+
   <Card title="Getting Started" icon="rocket" href="/getting-started/overview">
-    A fuller tour of the dashboard, team, and billing.
+    A fuller tour of your dashboard, team, and billing.
   </Card>
 
   <Card title="Campaigns" icon="bullhorn" href="/messaging/campaigns">
@@ -65,10 +142,6 @@ This is the shortest route from a brand-new workspace to a delivered WhatsApp me
   </Card>
 
   <Card title="Live Chat" icon="comments" href="/messaging/live-chat">
-    Reply to conversations from the unified team inbox.
-  </Card>
-
-  <Card title="Key Concepts" icon="book-open" href="getting-started/concepts">
-    The WhatsApp rules behind every step above.
+    Reply to conversations from the shared team inbox.
   </Card>
 </CardGroup>
