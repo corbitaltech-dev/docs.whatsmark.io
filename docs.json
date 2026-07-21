@@ -30,8 +30,7 @@
               "getting-started/free-vs-paid",
               "getting-started/register",
               "getting-started/log-in",
-              "getting-started/overview",
-              "core-setup/invitation-acceptance"
+              "getting-started/overview"
             ]
           },
           {
@@ -95,6 +94,7 @@
             "group": "Setup",
             "pages": [
               "core-setup/team-and-roles",
+              "core-setup/invitation-acceptance",
               "core-setup/statuses",
               "core-setup/sources",
               "core-setup/labels",

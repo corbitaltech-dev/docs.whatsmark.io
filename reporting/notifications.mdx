@@ -1,21 +1,40 @@
 ---
 title: "Notifications Center"
-description: "How to view and manage in-app notifications in WhatsMark.io, like template approvals and channel status changes."
+description: "How to view and manage in-app notifications in WhatsMark.io — template approvals, payment and subscription events, account status changes, and completed bulk actions."
 icon: "bell"
 keywords: ["WhatsMark", "notifications", "notification center", "bell", "alerts"]
 ---
 
-The **Notifications** bell keeps you updated on important events without needing to check the Activity Log — things like a [template](/messaging/whatsapp-templates) being approved or rejected, or a channel being suspended.
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+The **Notifications** bell keeps you updated on important events without needing to check the Activity Log — things like a [template](/messaging/whatsapp-templates) being approved or rejected by Meta, a payment succeeding or failing, or a bulk action finishing in the background.
 
 ## Viewing notifications
 
-Click the bell icon anywhere in the dashboard for a quick dropdown of recent notifications, or go to the full **Notifications** page to see everything at once.
+Click the bell icon anywhere in the dashboard for a quick dropdown of recent notifications, or go to the full **Notifications** page to see everything at once. Each row shows the notification **type**, a title and message, whether it's **Unread**, and when it arrived. Sort by any column, or use **Filters** and search to narrow the list.
+
+## What you'll be notified about
+
+Notifications fall into a few groups:
+
+- **Templates** — Template Status Updated (approved or rejected by Meta) and Template Category Changed.
+- **Billing & payments** — Payment Received, Payment Failed, Subscription Updated, Offline Payment Approved / Rejected, and Trial Ending.
+- **Account** — Welcome, Account Activated, Account Suspended, and Account On Hold.
+- **Background jobs** — Bulk Action Completed, so you know when a long-running bulk contact action has finished, and Contact Downgrade Skipped.
+- **Messages from the platform team** — sent by your provider's admin.
 
 ## Managing notifications
 
 - **Mark as read** — a single notification, or all of them at once.
 - **Delete** — a single notification, or all of them at once.
 - **Bulk actions** — select multiple notifications and mark them read or delete them together.
+
+<BrowserFrame
+  src="/reporting/img/notification.png"
+  url="whatsmark.io/notifications"
+  alt="The Notifications page subtitled 'All your notifications — payments, account events, and subscription changes', with a bar reading '15 selected' offering Mark as Read and Delete buttons, above a table listing Template Status Updated notifications titled Template Approved, each with an Unread status badge and a relative created time"
+  caption="Selecting rows reveals Mark as Read and Delete for acting on many notifications at once."
+/>
 
 
 ## What's next
