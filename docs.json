@@ -186,7 +186,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hello@whatsmark.io"
+        "href": "mailto:support@whatsmark.io"
       }
     ]
   },
@@ -204,15 +204,12 @@
   },
   "footer": {
     "socials": {
-      "x": "https://linkedin.com/company/whatsmarkio",
+      "x": "https://x.com/whatsmark_io",
       "linkedin": "https://linkedin.com/company/whatsmarkio"
     }
   },
   "icons": {
     "library": "lucide"
-  },
-  "background": {
-    "decoration": "grid"
   },
   "fonts": {
     "family": "Geist"
