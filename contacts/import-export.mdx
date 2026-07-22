@@ -1,13 +1,13 @@
 ---
 title: "Importing & Exporting"
-description: "How to bulk-import contacts from a CSV or spreadsheet into WhatsMark.io, track import progress, and export your contact list."
+description: "Add many contacts at once from a file, and download your contact list as a file."
 icon: "file-input"
 keywords: ["WhatsMark", "contacts", "import", "export", "CSV", "XLSX", "bulk import"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-If you're bringing contacts over from another system, you don't need to add them one at a time — use the **Import** wizard from the Contacts page.
+Have a contact list in Excel or another app? You don't need to add people one at a time — import the whole file from the Contacts page.
 
 ## Importing contacts
 
@@ -21,6 +21,8 @@ If you're bringing contacts over from another system, you don't need to add them
     alt="Upload step of the import wizard with a Before you upload checklist and a drag-and-drop file area accepting CSV or XLSX up to 30 MB"
     caption="Image shows the upload step with the before-you-upload checklist and file drop area."
   />
+
+  Not sure how your file should look? Click **Download sample CSV** on this step to get a ready-made example.
 
   Your file needs a **header row** as the first row, and phone numbers must include the **country code** (for example `+919876543210`). Duplicate phone numbers are **skipped** — existing contacts are never overwritten.
 </Step>
@@ -36,8 +38,10 @@ If you're bringing contacts over from another system, you don't need to add them
   />
 </Step>
 
-<Step title="Choose defaults and start the import">
-  Set a default **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member** applied to every contact in this file (used when a row doesn't specify its own). Choose **Start Import** to queue it as a background job, so large files don't block you from continuing to use the app.
+<Step title="Set Default Values and start the import">
+  On the **Default Values** step, set the **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member**. These values are applied to **every** contact in this file — they cannot come from the file itself. Then choose **Start Import**. The import runs in the background, so large files don't block you from continuing to use the app.
+
+  If your file has more rows than your plan's remaining contact allowance, WhatsMark.io warns you here and imports only what fits. The extra rows are reported as failed.
 
   <BrowserFrame
     src="/contacts/img/import-default-values.png"
@@ -63,10 +67,14 @@ Some defaults are **required** — the WhatsApp channel, type, status, and sourc
 
 Each import you run is listed with its status and progress. Open one to:
 
-- See how many rows succeeded and how many failed.
-- **Download an error report** listing exactly which rows failed and why.
-- **Download the original file** you uploaded.
+- See how many rows were imported, skipped, and failed.
+- **Download Failed Rows CSV** — a file listing the rows that failed and why.
+- **Download Original File** — the file you uploaded.
 - **Delete** a single import record, or **bulk-delete** several at once. This only removes the import history entry — contacts already created by that import are not deleted.
+
+<Warning>
+Failed row details are kept for **30 days**. Download the Failed Rows CSV before they are removed.
+</Warning>
 
 <Note>
 A failed row doesn't stop the rest of the import — WhatsMark.io processes every row it can and reports failures separately, so one bad phone number won't block hundreds of good ones.
@@ -74,10 +82,12 @@ A failed row doesn't stop the rest of the import — WhatsMark.io processes ever
 
 ## Exporting contacts
 
-From the Contacts page, apply whatever filters you want (status, source, group, label, and so on), then use **Export** to download exactly that filtered list as a file.
+From the Contacts page, apply the filters you want — **type**, **status**, **source**, **active**, **assignee**, or **channel** — or type in the search box, then click **Export** to download exactly that filtered list as a file.
+
+You can also tick specific contacts in the list. When contacts are selected, **Export** downloads only those rows.
 
 <Tip>
-Export respects your current filters — export a specific group or label if you only need a subset, rather than exporting everything and filtering afterward.
+There is no group or label filter in export. To export the contacts in a group or label, tick those contacts in the list first, then click **Export**.
 </Tip>
 
 ## What's next

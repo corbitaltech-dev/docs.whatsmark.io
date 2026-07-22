@@ -1,6 +1,6 @@
 ---
 title: "Bulk Actions & Merge"
-description: "How to update many WhatsMark.io contacts at once, and how to merge duplicate contacts together."
+description: "Update many contacts in one go — change status, groups, labels, or owner — and join duplicate records into one."
 icon: "layers"
 keywords: ["WhatsMark", "contacts", "bulk actions", "merge contacts", "duplicates"]
 ---
@@ -11,7 +11,9 @@ Once you have contacts in your workspace, you often need to change many of them 
 
 ## Bulk actions
 
-Select one or more contacts (checkboxes on each row), or use **Select all matching** to target every contact matching your current filters — even ones not shown on the current page. A bar appears above the table with **Merge** and **Bulk Actions**.
+Select one or more contacts using the checkboxes on each row. A bar appears above the table with **Merge** and **Bulk Actions**.
+
+To go beyond the visible page, click the **Select all `number of contacts` contacts matching current filters** link in the bar — this targets every contact matching your filters, even ones not shown. Untick any row to leave it out; the bar shows how many are excluded.
 
 <BrowserFrame
   src="/contacts/img/bulk-selection-bar.png"
@@ -22,12 +24,9 @@ Select one or more contacts (checkboxes on each row), or use **Select all matchi
 
 Choosing **Bulk Actions** opens a sheet where you set only the fields you want to change — anything left on **No change** is untouched, and you can combine several changes in one go:
 
-<BrowserFrame
-  src="/contacts/img/bulk-actions-sheet.png"
-  url="whatsmark.io/contacts"
-  alt="Bulk Actions sheet for 15 selected contacts with a highlighted Delete selected contacts option, and dropdowns each defaulting to No change for status, type, group, label, assignee, active status, and linking or unlinking a WhatsApp channel"
-  caption="Every dropdown defaults to No change, so you only touch what you choose. Delete stands apart and can't be combined with other changes."
-/>
+![Bulk Actions sheet for 15 selected contacts with a highlighted Delete selected contacts option, and dropdowns each defaulting to No change for status, type, source, group, label, assignee, active status, and linking or unlinking a WhatsApp channel](/contacts/img/bulk-actions-sheet.png)
+
+Every dropdown defaults to **No change**, so you only touch what you choose. Delete stands apart and can't be combined with other changes.
 
 <AccordionGroup>
 <Accordion title="Change status / change type">
@@ -38,12 +37,16 @@ Choosing **Bulk Actions** opens a sheet where you set only the fields you want t
   Bulk-assign ownership of the selected contacts.
 </Accordion>
 
-<Accordion title="Add / remove group">
-  Add the selection to a group, or remove them from one.
+<Accordion title="Change source">
+  Change where the selected contacts are recorded as coming from.
 </Accordion>
 
-<Accordion title="Add / remove label">
-  Same idea, for labels.
+<Accordion title="Add to group">
+  Add the selected contacts to a group. Their existing groups are kept.
+</Accordion>
+
+<Accordion title="Add label">
+  Add a label to the selected contacts. Their existing labels are kept.
 </Accordion>
 
 <Accordion title="Activate / deactivate">
@@ -59,10 +62,13 @@ Choosing **Bulk Actions** opens a sheet where you set only the fields you want t
 </Accordion>
 </AccordionGroup>
 
-<Warning>
-Deleting contacts in bulk cannot be undone. Double-check your filters before confirming a bulk delete, especially when using "Select all matching."
-</Warning>
+<Note>
+When you use "select all matching", or delete contacts in bulk, the work runs in the background. You will see a "Bulk action queued" message, and the table updates once the job finishes — no need to submit again.
+</Note>
 
+<Warning>
+Deleting contacts in bulk cannot be undone. Double-check your filters before confirming a bulk delete, especially when using "select all matching".
+</Warning>
 
 ## Merging duplicate contacts
 
@@ -71,37 +77,36 @@ If the same person ends up as two or more contact records (for example, they mes
 ### Merging a single duplicate
 
 <Steps>
+<Step title="Open Merge with…">
+  Click the menu icon on the contact you want to **keep**, then click **Merge with…**. This contact stays; the duplicate will fold into it.
+</Step>
+
 <Step title="Find the duplicate">
-  Use **Merge with...** from a contact's row menu.
+  Search for the duplicate by name, phone, or email, and pick it from the list.
 </Step>
 
-<Step title="Choose the primary contact">
-  The **primary** is the record that survives — the other folds into it.
-</Step>
-
-<Step title="Confirm">
-  The duplicate's data is merged into the primary, and the duplicate record is marked as merged.
+<Step title="Click Merge">
+  The duplicate's details are copied into the contact you kept, and the duplicate record is marked as merged.
 </Step>
 </Steps>
 
 ### Bulk merge
 
-You can also select **multiple** contacts at once (2–100), choose one as the primary, and fold them all into it in a single action. If any contact in the selection fails to merge, the whole operation is rolled back — you'll never end up with a partial merge.
+You can also tick **multiple** contacts (2–100), click **Merge**, choose one as the primary, and fold them all into it with **Merge Contacts**. If any contact in the selection fails to merge, nothing is changed — you'll never end up with a partial merge.
 
-<BrowserFrame
-  src="/contacts/img/bulk-merge.png"
-  url="whatsmark.io/contacts"
-  alt="Merge selected contacts dialog explaining that the other contacts will fold into the primary, with a radio list of the selected contacts and the first marked Primary"
-  caption="Pick which record survives. Identities, notes, and chats from every channel are preserved on the primary."
-/>
+Merge needs explicitly ticked rows — it does not work with "select all matching", and you need at least 2 contacts selected.
+
+![Merge selected contacts dialog explaining that the other contacts will fold into the primary, with a radio list of the selected contacts and the first marked Primary](/contacts/img/bulk-merge.png)
+
+Pick which record survives. Identities, notes, and chats from every channel are kept on the primary.
 
 <Note>
-Merging fills in the gaps rather than overwriting: blank fields on the primary are filled from the duplicate, and groups and labels from both are combined. A populated field on the primary is never replaced.
+Merging fills in the gaps rather than overwriting: blank fields on the primary are filled from the duplicate, and groups and labels from both are combined. A filled field on the primary is never replaced. Conversations are kept but not combined — each chat thread stays separate on the merged contact.
 </Note>
 
-<Tip>
-A contact that has already been merged into another one can't be merged again — merges are one-directional and final.
-</Tip>
+<Warning>
+A merge cannot be undone. A contact that has been merged into another one can't be merged again.
+</Warning>
 
 ## What's next
 

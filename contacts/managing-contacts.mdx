@@ -1,97 +1,160 @@
 ---
 title: "Managing Contacts"
-description: "How to browse, create, edit, and act on individual contacts in WhatsMark.io."
+description: "Keep your contacts organized and manage their information from a single place."
 icon: "contact"
 keywords: ["WhatsMark", "contacts", "contact list", "contact detail", "notes", "initiate chat"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-The **Contacts** page is where every person who has messaged your business — or that you've added manually — lives. It's the hub you'll come back to most often.
+Manage all your customers and leads in one place. Keeping your contact list organized makes it easier to find people, start conversations, send broadcasts, and use Flows throughout WhatsMark.io.
 
-<Tip>
-Before adding contacts in bulk, it's worth setting up [Contact Configuration](/settings/contact-configuration) first — labels, groups, statuses, sources, and custom fields — so every contact you create can be organized correctly from the start.
-</Tip>
 
-## Browsing contacts
+<Note>
+Before creating contacts, connect at least one WhatsApp or Messenger channel. Without a connected channel, you can't create contacts or send messages. See [Channels](/core-setup/channels/whatsapp) to set up.
+</Note>
 
-<BrowserFrame
-  src="/contacts/img/contacts-list-filters.png"
-  url="whatsmark.io/contacts"
-  alt="Contacts table with the Filters panel open showing Type, Status, Source, Active, Assignee, and Channel dropdowns, above rows listing each contact's type, status, source, assignee, and channel"
-  caption="Image shows the Contacts table with the Filters panel open."
-/>
-
-The Contacts page shows a paginated, searchable table of every contact in your workspace. Filter by:
-
-- **Type**
-- **Status**
-- **Source**
-- **Assigned to** (team member)
-- **Channel**
-
-<Warning>
-The total number of contacts you can store is limited by your plan. If you're near your limit, the dashboard's Usage panel shows a warning, and you can purchase a **contact-limit add-on** from [Billing](/billing/addons-and-upgrades) instead of upgrading your whole plan.
-</Warning>
-
-## Creating and editing a contact
-
-Click **Create Contact** to open the contact form in a side sheet:
-
-![New Contact form with Details and Custom Fields tabs, showing fields for first and last name, phone, email, type, assigned to, status, source, WhatsApp channel, display name, groups, and labels](/contacts/img/contact-form.png)
-
-<Warning>
-You must connect a channel before creating a contact. Set up [WhatsApp](/core-setup/channels/whatsapp) or [Messenger](/core-setup/channels/messenger) first.
-</Warning>
+## Creating a contact
 
 <Steps>
-<Step title="Fill in the basics">
-  Add the contact's core details:
-
-  - **First name & last name** — enter the contact's full name.
-  - **Phone number** — required to identify the contact and link them to the correct messaging channel.
-  - **Email address** — optional, but useful for complete contact records.
-  - **Display name** — optional name shown across WhatsMark.io, such as in contacts, chat, and campaign audience lists. If empty, WhatsMark.io auto-generates it.
+<Step title="Open Contacts">
+  Click **Contacts** in the left menu.
 </Step>
 
-<Step title="Set organization fields">
-  Classify and organize the contact:
+<Step title="Click Create Contact">
+  The button sits at the top right of the page. A form opens on the right side of the screen.
 
-  - **Type** — choose whether the contact is a **lead**, **customer**, or **guest**.
-  - **Assigned to** — optionally assign the contact to a team member.
-  - **Status** — set the contact's current lifecycle stage.
-    Click the `+` icon to create a new status from the form.
-  - **Source** — select where the contact came from.
-    Click the `+` icon to create a new source from the form.
-  - **Link to channel** — select the connected WhatsApp or Messenger channel for this contact.
-  - **Groups & labels** — organize the contact for filtering, segmentation, and follow-up.
-    Click the `+` icon to create a new group or label from the form.
+  ![New Contact form with Details and Custom Fields tabs, showing fields for first and last name, phone, email, type, assigned to, status, source, WhatsApp channel, display name, groups, and labels](/contacts/img/contact-form.png)
+</Step>
+
+<Step title="Enter the name">
+  Fill in **First Name**. This field is required. Add the **Last Name** if you know it.
+</Step>
+
+<Step title="Enter the phone number">
+  Fill in **Phone**. This field is required. Pick the correct country code from the dropdown next to the number.
+</Step>
+
+<Step title="Enter the email">
+  Fill in **Email** if you have it. This is optional.
+</Step>
+
+<Step title="Choose the type">
+  Pick **Lead**, **Customer**, or **Guest** in the **Type** field. This field is required.
+</Step>
+
+<Step title="Assign a team member">
+  Pick a team member in **Assigned To**. Leave it as **Unassigned** if nobody is handling this contact yet.
+</Step>
+
+<Step title="Choose a status">
+  Pick a stage in the **Status** field. This field is required. Click the `+` icon to create a new status without leaving the form.
+</Step>
+
+<Step title="Choose a source">
+  Pick where the contact came from in the **Source** field. This field is required. Click the `+` icon to create a new source without leaving the form.
+</Step>
+
+<Step title="Link a WhatsApp channel">
+  Pick your WhatsApp account in **Link to WhatsApp Channel**. This is required when you create a new contact.
+</Step>
+
+<Step title="Add a display name">
+  Fill in **Display Name** if you want a specific name shown across WhatsMark.io. Leave it empty and WhatsMark.io will fill it in for you.
+</Step>
+
+<Step title="Add groups and labels">
+  Pick one or more **Groups** and **Labels**. Click the `+` icon to create a new group or label without leaving the form.
 </Step>
 
 <Step title="Fill in custom fields">
-  Any [custom fields](/core-setup/custom-fields) you've defined appear here too.
+  If you created [custom fields](/core-setup/custom-fields), open the **Custom Fields** tab at the top of the form and fill them in. A red `*` on the tab means a required field is still empty.
 </Step>
 
 <Step title="Save">
-  The contact is added immediately and appears in the table.
+  Click **Save**. The contact is added and appears in your list right away.
 </Step>
 </Steps>
 
-Editing an existing contact opens the same form, pre-filled.
+## What each field means
 
-## The contact detail view
+**First Name**
 
-Click any contact's name to open a read-only detail sheet showing their full activity history, notes, and custom field values.
+The contact's first name. Required. This is the main name you will see in your contact list and in chat.
+
+**Last Name**
+
+The contact's family name. Optional.
+
+**Phone**
+
+The contact's WhatsApp number. Required. WhatsMark.io uses this number to send messages, so enter it with the correct country code.
+
+**Email**
+
+The contact's email address. Optional. Useful when you want a complete record of the customer.
+
+**Type**
+
+Shows what kind of contact this is: Lead, Customer, or Guest. Use it to separate people who have bought from people who are still deciding.
+
+**Assigned To**
+
+The team member responsible for this contact. Use it so your team knows who follows up.
+
+**Status**
+
+The current stage of the contact, such as New or Contacted. Use it to see how far a person has moved in your process.
+
+**Source**
+
+Where this contact came from, such as a website form or a referral. Use it to see where your customers come from.
+
+**Link to WhatsApp Channel**
+
+The WhatsApp account used to message this contact. Required when creating a contact.
+
+A contact can be linked to more than one WhatsApp channel. Every time you edit the contact and pick a channel here, that channel is added to the contact. The channels already linked stay as they are. This is useful when the same customer reaches you on two different WhatsApp numbers of your business.
+
+**Display Name**
+
+The name shown across WhatsMark.io, including chat and campaign lists. Leave it empty to let WhatsMark.io fill it in.
+
+**Groups**
+
+A way to put similar contacts together, such as "Delhi Customers". Use groups to pick a campaign audience quickly.
+
+**Labels**
+
+Extra tags you can add to a contact, such as "VIP" or "Payment Pending". Use labels to filter your list.
+
+**Custom Fields**
+
+Extra details you decide to store, such as a company name or an order number.
+
+## Editing a contact
+
+Click the menu icon at the end of a contact's row and click **Edit**. The same form opens with the details already filled in. Change what you need and click **Save**.
+
+## Viewing contact details
+
+Click a contact's name to open their details panel. You can view details here but not change them — except notes, which you can add and edit from the **Notes** tab.
 
 ![Contact detail sheet with Contact Details, Custom Fields, and Notes tabs, showing the contact's type and labels, source, assignee, last message and created times, groups, and linked message channels](/contacts/img/contact-detail.png)
 
-### Notes
+The panel has up to three tabs:
 
-Use notes to record internal context about a contact, such as follow-up details, preferences, or conversation history that should not be sent as a message. You can edit or delete notes at any time.
+- **Contact Details** — type, labels, source, assigned team member, groups, message channels, and the last message and created times.
+- **Custom Fields** — the values saved in your custom fields. Shown only when the contact has custom-field values.
+- **Notes** — internal notes about this contact.
 
-## Row actions
+### Using notes
 
-Each contact row has a menu of quick actions:
+Notes are for your team only. The contact never sees them.
+
+Use notes to record follow-up reminders, customer preferences, or what was discussed on a call. Open the **Notes** tab and click **Add Note** to write one. You can edit or delete a note at any time.
+
+## Actions on a single contact
 
 <BrowserFrame
   src="/contacts/img/contact-row-actions.png"
@@ -100,23 +163,60 @@ Each contact row has a menu of quick actions:
   caption="Image shows the row actions menu on a contact in the Contacts table."
 />
 
-- **View** — open the contact's detail sheet.
-- **Edit** — open the contact form, pre-filled.
-- **Open chat** (only shown if this contact already has a conversation thread) — jump straight to this contact's conversation thread.
-- **Initiate chat** (only shown for contacts sourced from WhatsApp) — send a one-off WhatsApp template message to this contact, even outside the normal chat flow. See [Live Chat](/messaging/live-chat) for how this fits into the 24-hour messaging window.
-- **Send flow** (only shown for contacts sourced from WhatsApp) — trigger one of your [WhatsApp Flows](/automation/whatsapp-flows) for this contact.
-- **Merge with** — combine this contact with a duplicate. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
-- **Activate / Deactivate** — toggle whether the contact is active without deleting them.
-- **Delete** — permanently remove the contact.
+Click the menu icon at the end of a contact row to see these actions:
+
+- **View** — open the contact details panel.
+- **Edit** — open the contact form to change details.
+- **Open chat** — go to the existing conversation with this contact. Shown only when the contact has already chatted with you.
+- **Initiate chat** — start a new WhatsApp conversation by sending an approved template message. Shown only when the contact has a phone number and a linked WhatsApp channel. See [Live Chat](/messaging/live-chat) to understand the 24-hour messaging window.
+- **Send flow** — send one of your [WhatsApp Flows](/automation/whatsapp-flows) to this contact. Shown only when the contact has a phone number and a linked WhatsApp channel.
+- **Merge with…** — join this contact with a duplicate record. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
+- **Delete** — remove the contact. This also permanently deletes their conversations and chat media, and cannot be undone.
+
+To turn a contact off without deleting them, use the toggle in the **Active** column of the table. Turn it back on anytime.
+
+## Finding contacts
+
+<BrowserFrame
+  src="/contacts/img/contacts-list-filters.png"
+  url="whatsmark.io/contacts"
+  alt="Contacts table with the Filters panel open showing Type, Status, Source, Active, Assignee, and Channel dropdowns"
+  caption="Image shows the Contacts table with the Filters panel open."
+/>
+
+As your list grows, use these to find the right people quickly:
+
+- **Search** — type a name, phone number, or email in the search box.
+- **Type tabs** — click **All**, **Leads**, **Customers**, or **Guests** at the top to show only that type.
+- **Filters** — click **Filters** to narrow the list by:
+  - **Type** — Lead, Customer, or Guest.
+  - **Status** — the current stage of the contact.
+  - **Source** — where the contact came from.
+  - **Active** — show only active or only inactive contacts.
+  - **Assignee** — the team member handling the contact.
+  - **Channel** — the WhatsApp or Messenger account the contact is linked to.
+
+<Tip>
+Filters also help with bulk work. Filter your list first, then select all matching contacts to update them together. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
+</Tip>
+
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Import & Export" icon="file-input" href="/contacts/import-export">
-    Bring in contacts in bulk from a CSV or spreadsheet.
+  <Card title="Import & Export" icon="input" href="/contacts/import-export">
+    Add many contacts at once from a CSV or Excel file.
   </Card>
 
   <Card title="Bulk Actions & Merge" icon="layers" href="/contacts/bulk-actions-and-merge">
-    Update many contacts at once, or merge duplicates together.
+    Update many contacts together, or join duplicates.
+  </Card>
+
+  <Card title="Custom Fields" icon="sliders" href="/core-setup/custom-fields">
+    Store extra details on every contact.
+  </Card>
+
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    Send a message to a group of contacts.
   </Card>
 </CardGroup>
