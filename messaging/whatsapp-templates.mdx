@@ -1,29 +1,55 @@
 ---
 title: "WhatsApp Templates"
-description: "How to create, submit, and manage Meta-approved WhatsApp message templates in WhatsMark.io."
-icon: "file-lines"
+description: "WhatsApp Templates are pre-approved message formats used to communicate with customers on WhatsApp."
+icon: "file-text"
 keywords: ["WhatsMark", "WhatsApp templates", "message templates", "Meta approval", "carousel", "authentication template"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-WhatsApp requires any message sent outside the 24-hour customer service window — including every broadcast — to use a pre-approved **template**. WhatsMark.io Templates page is where you build, submit, and track them.
+The WhatsApp Templates page lets you create, submit, manage, and track your templates in one place. Once a template is approved by Meta, it's ready to use in campaigns, automations, and other supported messaging features.
 
-## Browsing templates
+<Note>
+Before you can add a template, you need to [connect a WhatsApp channel](/core-setup/channels/whatsapp) to your workspace.
+</Note>
 
-The Templates table lists every template across your connected accounts, filterable by account, status, category, and language, with a quality-rating badge on each.
+## Adding a Template
+
+- **Sync Templates** – If you've already created templates in your **Meta Business account** and that account is connected to your WhatsApp channel, click **Sync Templates** to import them into WhatsMark.io.
+- **Create Template** – Click [**Create Template**](#creating-a-template) to create a new template directly in WhatsMark.io.
+
+<Note>
+If you have more than one connected channel, clicking **Sync Templates** opens a menu where you can choose **Sync all accounts** or select a specific channel to sync.
+</Note>
+
+## Template Library
+
+The Template Library is a collection of pre-built templates for common use cases, organized into **Header**, **Carousel**, and **Authentication** tabs.
+
+- **Use Template** – Opens it as an editable draft. Enter a template name, adjust the content as needed, then submit it for approval.
+- **Favourite** (star icon) – Saves it under the **My Favourites** tab for quick access.
+
+If none fit, click [**Create Template**](#creating-a-template) to build one from scratch.
+
+![Template Library dialog with tabs for My Favourites, Header, Carousel, and Authentication, showing pre-built templates such as Flash Sale Announcement and Order Confirmation, each with a category badge, a star icon, and a Use Template button](/messaging/img/template-library.png)
 
 ## Creating a template
 
+After clicking **Create Template**, choose one of three template types:
+
+- [**Header Template**](#header-template) – For marketing and utility messages like offers, updates, and notifications.
+- [**Carousel Template**](#carousel-template) – For displaying multiple products or a catalog in scrollable cards.
+- [**Authentication**](#authentication) – For sending OTP codes for user verification.
+
+![Create WhatsApp Template dialog listing three choices: Header Template, Carousel Template, and Authentication, each with a short description](/messaging/img/template-pick-type.png)
+
+### Header Template
+
+A Header Template allows you to include an image, video, document, or text header in your WhatsApp message, making it ideal for marketing and utility messages. Follow these steps to build one:
+
 <Steps>
-<Step title="Pick a type">
-  Choose **Header**, **Carousel**, or **Authentication**.
-
-  ![Create WhatsApp Template dialog listing three choices: Header Template, Carousel Template, and Authentication, each with a short description](/messaging/img/template-pick-type.png)
-</Step>
-
 <Step title="Fill in Basic Info">
-  Select channel, Name (lowercase letters, numbers, and underscores only), language, and category — these become locked once the template is submitted.
+  <div id="basic-info" />
 
   <BrowserFrame
     src="/messaging/img/template-basic-info.png"
@@ -31,10 +57,19 @@ The Templates table lists every template across your connected accounts, filtera
     alt="Basic Info step of the template builder with fields for Channels, Template Name, Language, and Category, beside a sidebar tracking the five steps"
     caption="Image shows the Basic Info step of the template builder."
   />
+
+  Enter the basic details for your template:
+
+  - **Channels** – Select the connected WhatsApp account that the template belongs to.
+  - **Template Name** – Enter a unique name using only lowercase letters, numbers, and underscores (for example, `order_confirmation`).
+  - **Language** – Select the language of your template content. Make sure the message is written in the selected language to avoid template rejection during Meta's review.
+  - **Category** – Choose the category that best matches the purpose of your message:
+    - **Marketing** – Promotional messages such as offers, discounts, product launches, and announcements.
+    - **Utility** – Transactional messages such as order updates, appointment reminders, account alerts, and payment confirmations.
+
 </Step>
 
 <Step title="Build the Header">
-  Text (up to 60 characters), or an image, video, or PDF document you upload.
 
   <BrowserFrame
     src="/messaging/img/template-header.png"
@@ -42,21 +77,36 @@ The Templates table lists every template across your connected accounts, filtera
     alt="Header step with an Include Header toggle switched on, a Header Type choice of Text, Image, Video, or Document, and a Header Text field limited to 60 characters"
     caption="Image shows the Header step of the template builder."
   />
+
+  Add an optional header to your message — **Text** (up to 60 characters), **Image**, **Video**, or **Document**.
+
+  A text header should be plain text only. Per Meta's rules, header text can't contain emojis.
+
+  <Note>
+  Supported formats and file size limits are set by Meta. See Meta's [supported media types](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types) for the current limits.
+  </Note>
+
 </Step>
 
 <Step title="Write the Body">
-  Up to 1,024 characters. Variables are detected live as you type `{{1}}`, `{{2}}`, and so on.
+  <div id="body" />
 
-  <BrowserFrame
+<BrowserFrame
     src="/messaging/img/template-body.png"
     url="whatsmark.io/templates/create"
     alt="Body step with a formatting toolbar, a message body containing a variable, and a Detected Variables list below it"
     caption="Image shows the Body step of the template builder."
   />
+
+  The main message content of your template, up to 1,024 characters. Use the toolbar to format text with **bold**, _italic_, strikethrough, or code.
+
+  To insert dynamic values, click **+ Add Variable** to add placeholders like `{{1}}` and `{{2}}`.
+
+  Add an example value for each — used only for Meta's review. The real values are filled in later when you use the template.
+
 </Step>
 
 <Step title="Add a Footer (optional)">
-  A short line of fixed text under the body, up to 60 characters.
 
   <BrowserFrame
     src="/messaging/img/template-footer.png"
@@ -64,10 +114,13 @@ The Templates table lists every template across your connected accounts, filtera
     alt="Footer step with a Footer Text field and a note explaining the footer appears in small text below the message body"
     caption="Image shows the Footer step of the template builder."
   />
+
+  An optional line of fixed text that appears below the message body, up to 60 characters.
+
+  Variables are not allowed in the footer.
 </Step>
 
-<Step title="Add Buttons">
-  Up to 10 buttons total, each with button text up to 25 characters. Choose from **Quick Reply**, **URL**, **Phone Number**, or **Flow** (opens one of your [WhatsApp Flows](/automation/whatsapp-flows) directly from the message).
+<Step title="Add Buttons (optional)">
 
   <BrowserFrame
     src="/messaging/img/template-buttons.png"
@@ -75,42 +128,126 @@ The Templates table lists every template across your connected accounts, filtera
     alt="Buttons step with an Add Button control and a Button Type dropdown open, offering Quick Reply, Website URL, Phone Number, and Flow (interactive form)"
     caption="Image shows the Buttons step of the template builder."
   />
+
+  Add up to 10 buttons to let customers take action. There are three types:
+
+  - **Quick Reply** – A tappable button that lets the customer reply instantly with the button's text, instead of typing.
+  - **URL** – Opens or redirects to a website link.
+  - **Phone Number** – Starts a call to the number you set.
+
+  <Warning>
+  A few limits apply:
+
+  - Up to **2 URL** buttons.
+  - Up to **1 Phone Number** button.
+  - When you mix **Quick Reply** with other button types, you can have a maximum of **3 buttons** in total.
+  </Warning>
 </Step>
 </Steps>
 
-<Note>
-Header media uploads (image, video, or document) accept **JPG, PNG, GIF, WEBP, MP4, or PDF**, up to **16 MB**.
-</Note>
+### Carousel Template
 
-For **Carousel** templates, you build 2–10 cards instead, each with an image or video header, body text (up to 160 characters), and 1–2 buttons (Quick Reply or URL). Every card in a carousel must use the same number of buttons with matching types at each position — WhatsMark validates this before submission and tells you exactly which card is inconsistent if not.
+A Carousel Template lets you showcase multiple products, services, or items using scrollable cards in a single WhatsApp message. Follow these steps to build one:
 
-For **Authentication** templates, you configure:
+<Steps>
+<Step title="Fill in Basic Info">
 
-- The **OTP button type** — Copy Code, One-Tap, or Zero-Tap.
-- **Code expiration** — 1 to 90 minutes.
-- **Message send TTL** — 10 to 600 seconds, how long WhatsApp will keep trying to deliver the code.
-- An optional **security recommendation** line and **autofill button text** (up to 25 characters).
-- For One-Tap and Zero-Tap specifically, your Android app's **package name** and **signature hash** are required so the code can be autofilled, plus accepting Zero-Tap's terms.
+  <BrowserFrame
+    src="/messaging/img/template-carousel-basic-info.png"
+    url="whatsmark.io/templates/create"
+    alt="Basic Info step of the carousel template builder with fields for Channels, Template Name, Language, and Category, a three-step sidebar, and a live carousel preview"
+    caption="Image shows the Basic Info step of the carousel template builder."
+  />
 
-A live, WhatsApp-styled preview updates as you build, so you can see exactly what your contact will see.
+  Enter the channel, name, and language — same as in the [Basic Info step](#basic-info). For carousel templates, the category is fixed to **Marketing**.
+</Step>
 
-<Tip>
-Don't start from scratch — browse the **Template Library** for pre-built starter templates, tabbed by type and favouritable, and use one to pre-fill the form.
-</Tip>
+<Step title="Write the Body">
 
-### Template Library (Seeder Library)
+  <BrowserFrame
+    src="/messaging/img/template-carousel-body.png"
+    url="whatsmark.io/templates/create"
+    alt="Body step of the carousel template builder with a Message Body field, formatting toolbar, and an Add Variable button, beside a live carousel preview"
+    caption="Image shows the Body step of the carousel template builder."
+  />
 
-The Template Library is WhatsMark's shared **Seeder Library** for templates — a set of pre-built, ready-to-submit templates curated by the platform admin. Open it from the **Template Library** button on the Templates page, mark any you like as a **favourite** for quick access later, and click **Use Template** to clone one straight into your workspace as an editable draft (name, content, and buttons pre-filled) — you still review, adjust, and submit it for Meta approval yourself.
+  The main message text that appears above the cards, up to 1,024 characters. Formatting and variables work the same as in the [Body step](#body).
+</Step>
 
-![Template Library dialog with tabs for My Favourites, Header, Carousel, and Authentication, showing pre-built templates such as Flash Sale Announcement and Order Confirmation, each with a category badge, a star icon, and a Use Template button](/messaging/img/template-library.png)
+<Step title="Build the Cards">
+
+  <BrowserFrame
+    src="/messaging/img/template-carousel-cards.png"
+    url="whatsmark.io/templates/create"
+    alt="Cards step of the carousel template builder showing Card 1 with a Header Type choice of Image or Video, an Upload media area, a Body Text field, and Buttons, beside a live carousel preview"
+    caption="Image shows the Cards step of the carousel template builder."
+  />
+
+  Add **2–10 cards**. Each card has:
+
+  - **Header** – An image or video ([formats and size limits](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types) are set by Meta).
+  - **Body text** – Up to 160 characters.
+  - **Buttons** – 1–2 buttons (Quick Reply or URL).
+
+  <Warning>
+  All cards must use the same header format and the same number of buttons with matching types (for example, all Quick Reply or all URL). WhatsMark.io checks this before submission and warns you if the cards don't match.
+  </Warning>
+</Step>
+</Steps>
+
+### Authentication
+
+An Authentication Template lets you send one-time passcodes (OTPs) to verify a user's identity. Follow these steps to build one:
+
+<Steps>
+<Step title="Fill in Basic Info">
+
+  <BrowserFrame
+    src="/messaging/img/template-auth-basic-info.png"
+    url="whatsmark.io/templates/create"
+    alt="Basic Info step of the authentication template builder with fields for Channels, Template Name, Language, and Category, beside a live preview of an OTP message with a Copy Code button"
+    caption="Image shows the Basic Info step of the authentication template builder."
+  />
+
+  Enter the channel, name, and language for your template. For authentication templates, the category is fixed to **Authentication**.
+</Step>
+
+<Step title="Configure the OTP">
+
+  <BrowserFrame
+    src="/messaging/img/template-auth-otp-config.png"
+    url="whatsmark.io/templates/create"
+    alt="OTP Config step of the authentication template builder with an OTP Button Type dropdown, Button Text field, Add Security Recommendation toggle, Code Expiry, and Message TTL fields, beside a live OTP preview"
+    caption="Image shows the OTP Config step of the authentication template builder."
+  />
+
+  Choose how the user receives and enters the code. There are three **OTP button types**:
+
+  - **Copy Code** – The user copies the code and pastes it manually. Works on all devices, including iOS and web.
+  - **One-Tap Autofill** – The user taps a button and the code is filled in automatically. Android app only.
+  - **Zero-Tap** – The code is verified automatically, with no user action. Android app only.
+
+  Then configure the delivery settings:
+
+  - **Button Text** – The label on the OTP button, up to 25 characters.
+  - **Code Expiry** – How long the code stays valid (1–90 minutes).
+  - **Message TTL** – How long WhatsApp retries delivery (10–600 seconds).
+  - **Security recommendation** – Optional toggle that adds a "do not share this code" note.
+</Step>
+</Steps>
+
+  <Warning>
+  Once a template is submitted, its **name**, **language**, and **category** can no longer be changed. You can still edit the content and resubmit, or delete it and start over.
+  </Warning>
+
 
 ## Submitting for approval
 
-Once you're happy with a template, submit it to Meta for review. Status updates — **Approved**, **Rejected**, **Paused**, or **Disabled** — arrive automatically, along with an in-app notification so you don't have to keep checking back.
+Once your template is created, submit it to Meta for review. The template first appears as **Pending** while Meta reviews it. When the review is complete, its status updates automatically to **Approved**, **Rejected**, **Paused**, or **Disabled**.
 
-<Warning>
-Once a template is submitted, its **name**, **language**, and **category** can no longer be changed. You can still edit the content and resubmit, or delete it and start over.
-</Warning>
+<Note>
+Whenever Meta updates your template's status — approved, rejected, paused, or disabled — WhatsMark.io notifies you automatically. An on-screen notification appears and it's added to your notifications so you can review it anytime.
+</Note>
 
 ## Managing existing templates
 
@@ -123,11 +260,13 @@ Once a template is submitted, its **name**, **language**, and **category** can n
 
 Use the row menu on any template to:
 
-- **View Stats** — open the template's analytics panel.
-- **Edit** content and resubmit.
+- **View Stats** — open the template's analytics panel to see sent, delivered, read, clicked, and cost figures over a chosen date range.
+- **Edit** the template's content and resubmit it. Editing an approved template sends it back to Meta for review — its status returns to **Pending** and it must be approved again before you can use the updated version.
 - **Delete** a template.
-- **Sync** — pull the latest status/content from Meta for a single channel or all channels at once, useful if a template was changed directly in Meta Business Manager.
-- **Analytics** — open a template's stats panel to see sent, delivered, read, clicked, and cost figures over a chosen date range.
+
+<Note>
+**View Stats** is available only when analytics is enabled for your WhatsApp Business Account. If analytics is turned off, enable it in **WhatsApp Manager** and try again.
+</Note>
 
 ## What's next
 
