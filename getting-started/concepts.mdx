@@ -1,14 +1,14 @@
 ---
 title: "Key Concepts"
-description: "The words you need to know before setting up WhatsMark.io — workspace, channel, contact, conversation, template, campaign, automation, and the 24-hour window."
+description: "The words and rules you need before setting up WhatsMark.io — workspace, channel, template, the 24-hour window, what WhatsApp charges you, and why a message sometimes doesn't arrive."
 icon: "book-open"
-keywords: ["WhatsMark", "WhatsApp Business", "workspace", "channel", "contact", "conversation", "template", "campaign", "automation", "24-hour window"]
+keywords: ["WhatsMark", "WhatsMark.io", "WhatsApp Business", "workspace", "channel", "contact", "conversation", "template", "campaign", "automation", "24-hour window", "WhatsApp charges", "opt-in", "quality rating", "delivery status"]
 ---
 
 Before you start setting things up, it helps to know a few words that come up again and again in WhatsMark.io. Read this once and the rest of the guides will make sense.
 
 <Info>
-  Already know your way around WhatsApp Business? Skip straight to the [Quickstart](/quickstart).
+  Already know your way around WhatsApp Business? Skip straight to the [Quick start](/).
 </Info>
 
 ## The building blocks
@@ -85,7 +85,7 @@ Everything you do in WhatsMark.io happens inside your workspace.
 
 ## Two WhatsApp rules that shape everything
 
-These rules come from WhatsApp, not from WhatsMark. Every tool built on the WhatsApp Business Platform follows them.
+These rules come from WhatsApp, not from WhatsMark.io. Every tool built on the WhatsApp Business Platform follows them.
 
 <AccordionGroup>
 <Accordion title="You need an approved template to message someone first">
@@ -108,17 +108,178 @@ These rules come from WhatsApp, not from WhatsMark. Every tool built on the What
 | Customer has been quiet over 24 hours | An approved template |
 
 <Tip>
-  This is why your first job in WhatsMark is getting one template approved. Without it, you cannot start a single conversation.
+  This is why your first job in WhatsMark.io is getting one template approved. Without it, you cannot start a single conversation.
 </Tip>
+
+## What WhatsApp charges you
+
+WhatsApp is free as an app on your phone. That part stays true. But once your business messages customers through a platform like WhatsMark.io, Meta charges for some of those messages.
+
+So you have **two separate bills**:
+
+- **Your WhatsMark.io plan** — what you pay us, covering the software.
+- **Meta's message charges** — what WhatsApp charges for messages you send to customers.
+
+### The short version
+
+**Chatting costs you nothing. Starting a conversation costs money, and promotional messages cost the most.**
+
+### What is free
+
+<AccordionGroup>
+<Accordion title="Every message a customer sends you" icon="inbox">
+  Incoming messages are never charged, no matter how many arrive.
+</Accordion>
+
+<Accordion title="Your replies inside the 24-hour window" icon="reply">
+  Once a customer has messaged you, everything you type back in your own words during those 24 hours is free — text, photos, files, voice notes.
+
+  For most small businesses this is the majority of daily messaging.
+</Accordion>
+
+<Accordion title="Order and account updates sent inside the window" icon="package">
+  A template that tells someone their order has shipped is free if you send it while their 24-hour window is still open.
+</Accordion>
+</AccordionGroup>
+
+### What is charged
+
+Every template belongs to a category, and the category decides both the price and whether the 24-hour window helps you.
+
+| Category | What it's for | When you're charged |
+| --- | --- | --- |
+| **Marketing** | Offers, launches, reminders to come back | Always, even inside the window |
+| **Utility** | Order updates, appointment reminders, receipts | Only outside the window |
+| **Authentication** | One-time passcodes and login codes | Only outside the window |
+| **Service** | Your own words, inside the window | Never |
+
+Two other things to know:
+
+- **The price depends on the customer's country.** Messaging a customer in one country can cost several times more than another.
+- **You're charged when a message is *delivered*, not when you press send.** A message that never reaches the phone isn't billed.
+
+<Tip>
+  You can see what each template has actually cost you. Open a template and check its stats — sent, delivered, read, and cost are shown together. See [WhatsApp Templates](/messaging/whatsapp-templates).
+</Tip>
+
+<Note>
+  Meta sets and changes these rates, and they differ by country, so we don't list them here. Meta publishes the current rates and the full list of free cases under [pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
+</Note>
+
+## Your number's reputation
+
+WhatsApp watches how people react to your messages and adjusts what you're allowed to do. Two things move together.
+
+<Tip>
+  Message people who gave you their number — customers, enquiries, anyone who has contacted you before. Bought or scraped lists are the quickest way to get a number blocked.
+</Tip>
+
+<AccordionGroup>
+<Accordion title="Quality rating — green, yellow, or red" icon="gauge">
+  A score Meta gives your number based on how customers respond. Blocks and reports push it down; replies and reads keep it up.
+
+  Green is healthy. Yellow is a warning. Red means your sending is being restricted, and if it stays there the number can be suspended.
+
+  You can see your current rating on the channel's page, and again when you build a campaign.
+</Accordion>
+
+<Accordion title="Messaging limit — how many new chats you can start a day" icon="trending-up">
+  A cap on how many *different* customers you can start a conversation with in a rolling 24 hours. Replying to people who messaged you doesn't count against it.
+
+  New numbers start modest. The limit rises in steps as you send good-quality messages that people actually engage with, and gets there faster once your business is verified with Meta.
+</Accordion>
+</AccordionGroup>
+
+<Tip>
+  These two are why "send to everyone immediately" is a bad first move. Start with customers who know you, keep the quality green, and the limits open up on their own.
+</Tip>
+
+<Note>
+  Meta explains the tiers and how to move up them under [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
+</Note>
+
+## Your business identity
+
+Three different things that are easy to confuse.
+
+<AccordionGroup>
+<Accordion title="Display name — the name customers see" icon="tag">
+  The business name shown at the top of the chat. Meta reviews it, and it has to genuinely relate to your business. Made-up names, words like "Official", and web addresses get rejected.
+
+  A rejected display name stops your setup, so it's worth getting right first time.
+</Accordion>
+
+<Accordion title="Business verification — proving your business is real" icon="badge-check">
+  Meta checks your business documents against a live, public website showing your name, what you sell, and how to contact you.
+
+  It isn't required to start sending. What it gives you is a faster path to higher messaging limits and quicker template approvals.
+</Accordion>
+
+<Accordion title="The verified badge — the tick next to your name" icon="circle-check">
+  The badge shown beside a business name in WhatsApp. It's the thing most people mean when they ask about the "green tick", though Meta now shows it in blue.
+
+  **Being honest: most small businesses will not get it.** Meta grants it based on how well known your brand is — it looks for independent press coverage, not paid placements. It can't be bought, and no platform can obtain it for you. It's also not needed to message customers or to look professional; a clear display name does that job.
+</Accordion>
+</AccordionGroup>
+
+## When a message doesn't arrive
+
+Every message shows a status. Knowing what each one means saves a lot of worry.
+
+| Status | What it means |
+| --- | --- |
+| **Queued** | Waiting its turn to go out. Normal for large campaigns. |
+| **Sent** | It left WhatsMark.io and reached WhatsApp. |
+| **Delivered** | It reached the customer's phone. |
+| **Read** | They opened it. |
+| **Failed** | It couldn't be delivered. |
+
+<AccordionGroup>
+<Accordion title="It says Sent but never Delivered" icon="clock">
+  The customer's phone is off, out of signal, or out of storage. WhatsApp keeps trying for a while and delivers it when they come back online. Nothing is broken and nothing is lost.
+</Accordion>
+
+<Accordion title="It says Delivered but never Read" icon="eye-off">
+  Either they haven't opened it yet, or they've turned read receipts off in their WhatsApp settings.
+
+  **If read receipts are off, "Read" will never appear — even after they've read it.** That's a WhatsApp privacy setting on the customer's phone, and nothing can change it from our side. Judge those conversations by whether people reply, not by read counts.
+</Accordion>
+
+<Accordion title="It says Failed" icon="triangle-alert">
+  Common reasons:
+
+  - The number isn't on WhatsApp, or was typed wrong.
+  - You've hit your daily limit for starting new conversations.
+  - You tried to send outside the 24-hour window without a template.
+  - The template was paused or removed after you scheduled the message.
+  - Too many people recently marked your messages as spam.
+
+  Campaign reports list the reason against each failed contact, and you can retry just those. See [Campaigns](/messaging/campaigns).
+</Accordion>
+</AccordionGroup>
+
+### When a template is rejected
+
+Templates are reviewed before you can use them, and rejection is common on a first attempt. The reason is shown against the template, and you can edit and resubmit as often as you need.
+
+The usual causes are choosing the wrong category — promotional wording submitted as an order update, for example — placeholders left without example text, or wording that reads like spam.
+
+<Warning>
+  Approval isn't permanent. If people repeatedly block or report messages sent with a template, Meta can pause or switch it off later, even after months of use. You'll see the changed status on the Templates page.
+</Warning>
+
+<Note>
+  Meta lists every template status and the rules behind them under [message templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+</Note>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Quickstart" icon="zap" href="/quickstart">
+  <Card title="Quick start" icon="zap" href="/">
     Put these ideas to work and send your first message.
   </Card>
 
-  <Card title="Connecting WhatsApp" icon="whatsapp" href="/core-setup/channels/whatsapp">
+  <Card title="Connecting WhatsApp" icon="message-circle" href="/core-setup/channels/whatsapp">
     Connect your WhatsApp Business number to your workspace.
   </Card>
 
@@ -127,6 +288,6 @@ These rules come from WhatsApp, not from WhatsMark. Every tool built on the What
   </Card>
 
   <Card title="Free vs. Paid Plans" icon="scale" href="/getting-started/free-vs-paid">
-    See what the Free plan includes and what Professional adds.
+    See what the Free Forever plan includes and what Professional adds.
   </Card>
 </CardGroup>
