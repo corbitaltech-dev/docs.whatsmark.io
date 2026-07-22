@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "WhatsMark",
+  "name": "WhatsMark.io",
   "colors": {
     "primary": "#779812",
     "light": "#C6FE1E",
@@ -11,19 +11,19 @@
     "light": "/images/favicon-green.svg",
     "dark": "/favicon.png"
   },
+  "redirects": [
+    {
+      "source": "/quickstart",
+      "destination": "/"
+    }
+  ],
   "navigation": {
     "tabs": [
       {
         "tab": "Docs",
         "pages": [
           {
-            "group": "Quickstart",
-            "pages": [
-              "quickstart"
-            ]
-          },
-          {
-            "group": "Getting Started",
+            "group": "Start here",
             "pages": [
               "index",
               "getting-started/concepts",
