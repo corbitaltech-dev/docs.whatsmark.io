@@ -26,11 +26,11 @@ Choosing **Bulk Actions** opens a sheet where you set only the fields you want t
 
 ![Bulk Actions sheet for 15 selected contacts with a highlighted Delete selected contacts option, and dropdowns each defaulting to No change for status, type, source, group, label, assignee, active status, and linking or unlinking a WhatsApp channel](/contacts/img/bulk-actions-sheet.png)
 
-Every dropdown defaults to **No change**, so you only touch what you choose. Delete stands apart and can't be combined with other changes.
+Every option is set to No change by default, so only the changes you select will be applied. If you choose Delete, you can't make any other changes at the same time.
 
 <AccordionGroup>
 <Accordion title="Change status / change type">
-  Move the selected contacts to a different lifecycle status, or change their contact type.
+  Move the selected contacts to a different status, or change their contact type.
 </Accordion>
 
 <Accordion title="Assign to a team member">
@@ -92,13 +92,11 @@ If the same person ends up as two or more contact records (for example, they mes
 
 ### Bulk merge
 
-You can also tick **multiple** contacts (2–100), click **Merge**, choose one as the primary, and fold them all into it with **Merge Contacts**. If any contact in the selection fails to merge, nothing is changed — you'll never end up with a partial merge.
+You can also select **multiple** contacts, click **Merge**, choose one as the primary, and fold them all into it with **Merge Contacts**.
 
-Merge needs explicitly ticked rows — it does not work with "select all matching", and you need at least 2 contacts selected.
 
 ![Merge selected contacts dialog explaining that the other contacts will fold into the primary, with a radio list of the selected contacts and the first marked Primary](/contacts/img/bulk-merge.png)
 
-Pick which record survives. Identities, notes, and chats from every channel are kept on the primary.
 
 <Note>
 Merging fills in the gaps rather than overwriting: blank fields on the primary are filled from the duplicate, and groups and labels from both are combined. A filled field on the primary is never replaced. Conversations are kept but not combined — each chat thread stays separate on the merged contact.
