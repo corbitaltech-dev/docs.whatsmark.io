@@ -1,110 +1,79 @@
 ---
 title: "AI Prompts"
-description: "Create custom AI-powered response suggestions for your chat composer."
+description: "Save your own instructions that let AI rewrite a message the way you want."
 icon: "sparkles"
-keywords: ["WhatsMark", "AI prompts", "AI responses", "automation", "composer"]
+keywords: ["WhatsMark", "AI prompts", "AI rewrite", "chat composer", "sparkles"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+When you are chatting, you can ask AI to rewrite what you typed. It comes with a few built-in options like fixing grammar or making a message shorter. AI Prompts let you add your own.
 
-AI Prompts are custom rewrite presets to apply to messages from the chat composer's AI menu. For example, convert a reply into friendlier language, convert to sales language, or rewrite for a specific tone.
+A prompt is just an instruction you save once, like *rewrite this in a warm sales tone*. The AI gets the message you typed plus your instruction, and gives you a new version of it.
 
-## Creating AI prompts
+## What you see on the screen
 
-Click **Create AI Prompt** to open the prompt form:
+The page lists every prompt you have saved:
 
-<BrowserFrame
-  src="/core-setup/img/ai-prompt.png"
-  url="whatsmark.io/setup/ai-prompts"
-  alt="New AI Prompt form showing fields for name and prompt instruction"
-  caption="Write clear, specific instructions so the AI rewrites messages exactly how you want."
-/>
+- **Name** — what agents see in the AI menu.
+- **Prompt** — the first part of your instruction.
+- **Active** — a switch that turns the prompt on or off.
+- **Order** — where it sits in the AI menu.
+- **Created** — when it was added.
 
-<Steps>
-<Step title="Go to Setup → AI Prompts">
-  Navigate to the AI prompts section.
-</Step>
+Use the search box to find a prompt by its name or its instruction.
 
-<Step title="Click Create AI Prompt">
-  Enter a descriptive name (e.g., "Make it friendlier", "Convert to sales pitch").
-</Step>
+## Creating a prompt
 
-<Step title="Write the prompt instruction">
-  Describe exactly how the AI should rewrite the message. Be specific about tone, style, length, or any other requirements.
-</Step>
+Click **Create AI prompt**. A form opens on the right with two fields.
 
-<Step title="Choose active status">
-  Toggle to enable or disable the prompt. Inactive prompts won't appear in the AI menu.
-</Step>
+![The new AI prompt form with a name field and a prompt instruction field](/core-setup/img/ai-prompt.png)
 
-<Step title="Save">
-  Your AI prompt is ready to use.
-</Step>
-</Steps>
+- **Name** — what agents see in the AI menu, like *Friendly sales tone*. Up to 100 characters, and it has to be different from your other prompts.
+- **Prompt** — the instruction itself. Describe how the AI should change the message. Up to 4000 characters.
 
-## Using AI prompts in chat
-
-<BrowserFrame
-  src="/core-setup/img/use-ai-prompt.png.png"
-  url="whatsmark.io/chat"
-  alt="AI menu in chat composer showing quick actions and custom prompts"
-  caption="Access AI prompts from the chat composer to rewrite messages instantly."
-/>
-
-<Note>
-Write your message first in the composer, then click the sparkles icon to apply a prompt and rewrite it instantly.
-</Note>
-
-When composing a message:
-
-- Click the **sparkles icon** in the chat composer to start the AI menu
-- Select one of your prompts
-- The AI rewrites the message according to your instruction
-- Edit as needed and send
-
-## Managing AI prompts
-
-- **Edit** prompt instructions to refine the results
-- **Reorder** by dragging — the order here is the order they appear in the AI menu
-- **Deactivate** a prompt without deleting it — just toggle it off
+New prompts are switched on straight away.
 
 <Tip>
-You can also create a new AI prompt on the fly from the chat composer. Click the sparkles icon, then **Manage prompts** to jump to the setup page and create one without leaving the chat.
+Be specific about what you want. *Make it better* gives you random results, but *rewrite this in a warm, friendly tone and keep it under two sentences* gives you the same kind of answer every time.
 </Tip>
 
-## Common AI prompt examples
+### Some prompts to start with
 
-Here are some prompts you can create:
+- **Make it friendlier** — *Rewrite this in a warm, conversational tone. Keep it short.*
+- **Sales tone** — *Rewrite this to be more persuasive and end with a clear next step.*
+- **Explain simply** — *Rewrite this so someone with no technical knowledge can understand it.*
+- **Add emojis** — *Rewrite this with a few relevant emojis so it feels friendly.*
 
-- **"Make it friendlier"** — Rewrite in a warm, conversational tone.
-- **"Convert to sales language"** — Rewrite to be more persuasive and action-oriented.
-- **"Shorten it"** — Rewrite in one sentence with only essential information.
-- **"Add emojis"** — Rewrite with relevant emojis to feel more engaging.
+## Using a prompt in a chat
+
+Type your message first. The AI works on what you have written, so an empty box gives it nothing to do.
+
+Then click the **sparkle** icon under the message box. Your prompts are listed under **Your prompts**, below the built-in options.
+
+![The AI menu in the chat message box showing built-in quick actions and your own saved prompts](/core-setup/img/use-ai-prompt.png.png)
+
+Pick one and your message is replaced with the rewritten version. A small bar appears above the box with two options:
+
+- **Undo** — put your original message back.
+- **Regenerate** — try again for a different version.
+
+Nothing is sent automatically, so you can still edit it before you press Send.
+
+## Turning prompts on and off
+
+The **Active** switch is in the list, on the prompt's row. Turn it off and the prompt disappears from the AI menu in chat, but you keep it here for later.
+
+Drag rows up or down to change their order. That is the order agents see them in the AI menu.
+
+To delete a prompt, use the menu at the end of its row. You are asked to confirm, because agents will no longer see it in chat.
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Canned Replies" icon="message-square-quote" href="/core-setup/canned-replies">
-    Create reusable message templates for quick responses.
+    Save fixed replies you send often and drop them into a chat.
   </Card>
 
   <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
-    Learn how to use AI prompts in conversations.
-  </Card>
-
-  <Card title="Groups" icon="users" href="/core-setup/groups">
-    Organize contacts into named collections for targeting.
-  </Card>
-
-  <Card title="Labels" icon="tag" href="/core-setup/labels">
-    Add freeform tags to organize and categorize contacts.
-  </Card>
-
-  <Card title="Statuses" icon="circle" href="/core-setup/statuses">
-    Define lifecycle stages for contacts.
-  </Card>
-
-  <Card title="Sources" icon="map-pin" href="/core-setup/sources">
-    Track where contacts originate.
+    See how replying to customers works.
   </Card>
 </CardGroup>

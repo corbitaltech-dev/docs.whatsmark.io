@@ -1,85 +1,75 @@
 ---
 title: "Canned Replies"
-description: "Create reusable message templates for quick responses in live chat."
+description: "Save the replies you send often and drop them into a chat with a shortcut."
 icon: "message-square-quote"
-keywords: ["WhatsMark", "canned replies", "templates", "shortcuts", "live chat"]
+keywords: ["WhatsMark", "canned replies", "quick replies", "shortcuts", "live chat"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+Some questions come up again and again. Your prices, your opening hours, how to track an order. Instead of typing the same answer every time, you save it once here and drop it into a chat by typing `/`.
 
-Canned Replies are reusable text and media snippets that agents can drop into chat with a `/` shortcut. Perfect for common responses like greetings, FAQs, or company information.
+## What you see on the screen
 
-## Creating canned replies
+The page lists every reply you have saved, with the newest settings you gave them:
 
-Click **Create canned reply** to open the canned reply form:
+- **Title** — the name you gave the reply.
+- **Shortcut** — what you type after `/` to use it.
+- **Body** — the first part of the reply text.
+- **Media** — the file attached to it, if there is one.
+- **Category** — the group you put it in.
+- **Created** — when it was added.
 
-<BrowserFrame
-  src="/core-setup/img/canned-reply-form.png"
-  url="whatsmark.io/setup/canned-replies"
-  alt="New canned reply form showing fields for title, shortcut, body, attachment, category, sort order, and shared with team"
-  caption="Set a title and shortcut, write the reply body, and optionally attach media, a category, and a sort position."
-/>
+Use the search box to find a reply by its title, shortcut, text or category.
+## Creating a reply
 
-<Steps>
-<Step title="Go to Setup → Canned Replies">
-  Navigate to the canned replies section.
-</Step>
+Click **Create canned reply**. A form opens on the right with these fields.
 
-<Step title="Click Create canned reply">
-  Open the side sheet to add a new canned reply.
-</Step>
+![The new canned reply form with fields for title, shortcut, body, attachment, category, sort order, and shared with team](/core-setup/img/canned-reply-form.png)
 
-<Step title="Fill in the details">
-  Configure the canned reply:
+- **Title** — a name you will recognise later, like *Pricing details*. It has to be different from your other replies.
+- **Shortcut** — what agents type after `/`, like `pricing`. Letters, numbers, hyphens and underscores only. Up to 50 characters, and each shortcut can only be used once.
+- **Body** — the reply itself. You can make text bold, italic or struck through, and add bullet or numbered lists. You can leave this empty only if you attach a file.
+- **Attachment** — one optional file. Clicking the box opens your [Media Library](/media/media-library), so you can upload something new or pick a file you have already used.
+- **Category** — an optional word to group replies, like *Sales* or *Billing*. You type it yourself, so use the same spelling each time.
+- **Sort order** — a number that decides where the reply sits in this list and in the picker agents see.
+- **Shared with team** — on by default. Saved replies are available to everyone on your team.
 
-  - **Title** — enter a clear name for quick reference, such as **Pricing details**.
-  - **Shortcut** — set the `/` shortcut agents type to insert it, such as **pricing**. Letters, numbers, hyphens, and underscores only.
-  - **Body** — write the reply text using the formatting toolbar (bold, italic, strikethrough, lists). Required unless you attach media.
-  - **Attachment** — optionally drag and drop an image, video, audio, or document to send with the reply.
-  - **Category** — optionally group related replies, such as **Sales**, **Support**, or **Billing**.
-  - **Sort order** — set the reply position in the table and shortcut list.
-  - **Shared with team** — turn this off to keep the reply private to you; on by default so the whole team can use it.
-</Step>
+<Note>
+An attachment can be up to 16 MB, and it has to be a file type WhatsApp accepts, such as an image, video, audio file or PDF. You get a message if the file is not supported.
+</Note>
 
-<Step title="Save">
-  Your canned reply is ready to use in live chat.
-</Step>
-</Steps>
+## Using a reply in a chat
 
-## Using canned replies in live chat
+There are two ways to open the picker while you are chatting:
 
-During a live chat conversation, agents can type `/` in the composer to open the canned reply picker:
+- Click the **canned reply** icon under the message box.
+- Type `/` in the message box.
 
-<BrowserFrame
-  src="/core-setup/img/canned-reply-picker1.png"
-  url="whatsmark.io/chat"
-  alt="Canned reply picker in the chat composer showing a search field and a matching reply preview"
-  caption="Type / to search canned replies by title or shortcut, then select one to insert it into the composer."
-/>
+![The canned reply picker open above the chat message box, showing a search field and a matching reply with its shortcut, title, text and attached file](/core-setup/img/canned-reply-picker1.png)
 
-- Type `/` to see all available canned replies
-- Type `/shortcut` to jump straight to a specific reply
-- Search by title or category
-- Select a reply to insert its text and attachment into the composer
+Then type in the search box to find what you want. It looks at the shortcut, the title and the reply text. Use the arrow keys to move through the list and press Enter to pick one, or just click it.
 
-## Managing canned replies
+Picking a reply puts its text into the message box and attaches its file. Nothing is sent yet, so you can edit it first and then press Send.
 
-- **Edit** a reply's title, shortcut, body, attachment, category, sort order, or sharing anytime.
-- **Reorder** replies by dragging rows. The same order is used in the shortcut list.
-- **Delete** a reply to remove it from the shortcut list.
+<Warning>
+Picking a reply **replaces** whatever is already in the message box. Send or clear anything you have typed before you open the picker.
+</Warning>
 
-<Tip>
-Each plan has a canned reply limit. The count and remaining quota are shown on the Canned Replies page, and creation is blocked once you reach your plan's limit.
-</Tip>
+## Editing and deleting
+
+Click a reply's title, or use the menu at the end of its row, to open it again and change anything.
+
+To move a reply up or down the list, edit it and change its **Sort order** number. The list is ordered by that number, lowest first.
+
+The same row menu has **Delete**. You are asked to confirm, because agents will no longer see the reply in their picker.
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="AI Prompts" icon="sparkles" href="/core-setup/ai-prompts">
-    Create AI-powered response suggestions for your team.
+    Save instructions that let AI rewrite what you typed.
   </Card>
 
   <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
-    Learn more about live chat and responding to messages.
+    See how replying to customers works.
   </Card>
 </CardGroup>
