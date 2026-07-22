@@ -1,13 +1,15 @@
 ---
 name: docs-fact-check
-description: How to verify a documentation claim against the real WhatsMark.io product before publishing it — locating the feature in the Laravel/Vue source at /media/corbital/web_data/laravel.local/whatsmark-saas, confirming exact UI button and status labels, checking plan gating and limits, and routing to the right feature specialist agent. Activate when writing any factual claim about how the product behaves, when a page mentions a button/screen/limit, when auditing an existing page for accuracy, or when the user asks whether a documented behaviour is real.
+description: How to verify a documentation claim against the real WhatsMark.io product before publishing it — locating the feature in the Laravel/Vue source at /media/corbital/web_data/laravel.local/whatsmark.io, confirming exact UI button and status labels, checking plan gating and limits, and routing to the right feature specialist agent. Activate when writing any factual claim about how the product behaves, when a page mentions a button/screen/limit, when auditing an existing page for accuracy, or when the user asks whether a documented behaviour is real.
 ---
 
 # Fact-checking a docs claim
 
 Every behavioural claim in the docs must be traceable to the product. A page that describes a button that doesn't exist is worse than a missing page — it burns the trust the docs are there to build.
 
-**Product source:** `/media/corbital/web_data/laravel.local/whatsmark-saas` (Laravel + Vue/Inertia).
+**Product source:** `/media/corbital/web_data/laravel.local/whatsmark.io` — Laravel + Vue/Inertia (`resources/js/pages`, no `app/Livewire`).
+
+⚠️ **Do not use `/media/corbital/web_data/laravel.local/whatsmark-saas`.** That is the older Livewire v1 product and does **not** match what the docs describe. Confirm you have the right repo before grepping: the current one has `resources/js/pages` and an empty `app/Livewire`.
 
 ---
 
@@ -24,7 +26,7 @@ Every behavioural claim in the docs must be traceable to the product. A page tha
 **UI labels** — grep the Vue pages for the visible string:
 
 ```bash
-cd /media/corbital/web_data/laravel.local/whatsmark-saas
+cd /media/corbital/web_data/laravel.local/whatsmark.io
 grep -rn "Sync Templates" resources/js --include="*.vue" | head
 ```
 

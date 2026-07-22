@@ -40,6 +40,10 @@ Two exceptions where a term is unavoidable: **template** and **channel**. Both a
 
 **Explain the why, not just the what.** "You can't send this" is frustrating; "this is a WhatsApp rule, not ours" is reassuring. Whenever a limit comes from Meta rather than from us, say so.
 
+**Don't answer objections the reader doesn't have.** Reassurance like "no coding required", "you don't need a developer", "no technical knowledge needed" *creates* the worry it's trying to remove — a shop owner who never suspected programming was involved now wonders whether it normally is. We don't sell a code-based product, so never raise the subject.
+
+The same trap applies to any "don't worry about X" phrasing. If the reader wouldn't have thought of X unaided, leave it out. Where a genuinely technical capability exists, frame it as something they can *do*, not something they can *avoid*: "Can I connect WhatsMark.io to my own software?" — not "Do I need a developer?"
+
 ---
 
 ## 2. Brand and plan naming — non-negotiable
@@ -54,7 +58,7 @@ Two exceptions where a term is unavoidable: **template** and **channel**. Both a
 - ❌ **Specific limit counts or prices** on any page other than `getting-started/free-vs-paid.mdx`. No "100 contacts", no "2 channels", no "10,000 AI tokens", no "₹799 / $9".
   - Write "connected numbers, contacts, chatbot flows and a monthly allowance of AI usage" and link to Free vs. paid.
   - **Why:** prices and limits change. One stale number on a marketing-facing page destroys trust and nobody remembers to update six pages.
-- ❌ **Total time estimates in a "Before you start" / prerequisites section.** A time estimate in the opening hook is fine and converts well ("in about 15 minutes"); a minute-by-minute breakdown in the prerequisites reads as a chore list.
+- ❌ **Time promises of any kind** — "in about 15 minutes", "set up in under an hour", per-step minute breakdowns. Setup time isn't ours to promise: template approval is Meta's, and it varies. A number here either pressures the reader into a commitment they didn't ask for, or disappoints them when reality runs longer. Describe the *steps*, never the clock.
 
 `getting-started/free-vs-paid.mdx` is the **single source of truth** for every number. Every page that wants to mention a limit links there instead.
 
@@ -165,7 +169,59 @@ keywords: ["WhatsMark", "WhatsMark.io", "…"]
 
 ---
 
-## 6. Working in a shared repo — read before editing
+## 6. Meta rules must cite Meta
+
+Whenever a page states a rule that comes from **Meta/WhatsApp rather than from us** — the 24-hour window, template approval, categories, pricing, messaging limits, quality rating, opt-in, verification, prohibited industries — **link to Meta's own page for it.**
+
+Two reasons. It proves the constraint isn't ours, which is reassuring rather than annoying. And Meta changes these rules often, so the link stays right after our prose goes stale.
+
+Phrase it as a source, not a dump — one link at the end of the section:
+
+```mdx
+<Note>
+  This is a WhatsApp rule, not a WhatsMark.io one. Meta documents it in full under
+  [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
+</Note>
+```
+
+### Verified link set
+
+Checked live in July 2026. Prefer these over anything a search result offers.
+
+| Topic | URL |
+|---|---|
+| Pricing — per-message model, what's free | `https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing` |
+| Pricing — customer-facing version | `https://whatsappbusiness.com/products/platform-pricing/` |
+| Messaging limits and tier scaling | `https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits` |
+| Templates — categories, approval, statuses | `https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview` |
+| Messaging Policy — opt-in, prohibited industries | `https://whatsappbusiness.com/policy/` |
+
+### Use the final URL, never the redirect
+
+- `business.whatsapp.com/…` → redirects to `whatsappbusiness.com/…`
+- `www.whatsapp.com/legal/commerce-policy` → redirects to `whatsappbusiness.com/policy/`
+
+Link the destination directly. Redirect chains break silently when Meta reorganises.
+
+### ⚠️ Verify every Meta link before shipping it — a 200 is not proof
+
+`developers.facebook.com` serves **HTTP 200 with an empty navigation shell** for URLs that don't exist. `curl -I` cannot tell the difference. Two plausible-looking URLs were caught this way and must not be used:
+
+- ❌ `…/whatsapp/conversation-window` — soft-404
+- ❌ `…/whatsapp/coexistence` — soft-404
+
+So never guess a Meta URL from its topic. Fetch the page and confirm it has **real body content** before it goes in a page:
+
+```
+WebFetch <url> "Does this page have real documentation content, or is it an empty
+placeholder / page not found? Summarise what it actually covers."
+```
+
+If you can't confirm a page exists, state the rule without a link rather than shipping a dead one.
+
+---
+
+## 7. Working in a shared repo — read before editing
 
 **Other writers work in this repo at the same time.** Work has already been lost to this. Before any editing session:
 
@@ -185,7 +241,7 @@ Then:
 
 ---
 
-## 7. Verification — every page, every time
+## 8. Verification — every page, every time
 
 ```bash
 mint dev                # preview; note the port, it moves if 3000 is taken
@@ -208,7 +264,7 @@ Then confirm by hand:
 
 ---
 
-## 8. Related skills
+## 9. Related skills
 
 - **`docs-competitor-benchmark`** — before writing an onboarding, landing, or comparison page, check how AiSensy, Wati, respond.io, BotSailor and Interakt handle the same thing, and find what we can honestly claim that they can't.
 - **`docs-fact-check`** — verify a claim against the product source at `/media/corbital/web_data/laravel.local/whatsmark-saas` before publishing it.
