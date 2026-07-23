@@ -1,0 +1,95 @@
+---
+title: "Roles & Permissions"
+description: "Build roles that decide exactly what each person on your team can do."
+icon: "shield-check"
+keywords: ["WhatsMark", "roles", "permissions", "access", "team", "restrict"]
+---
+
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+A role is a named set of permissions, like *Sales agent* or *Support*. You build the role once, then give it to as many members as you like. Change the role later and everyone with it changes too.
+
+## What you see on the screen
+
+The page lists every role you have made:
+
+- **Name** — click it to open and edit the role.
+- **Members** — how many members currently have it.
+- **Created** — when it was made.
+
+Use the search box to find a role by name.
+
+<BrowserFrame
+  src="/core-setup/img/role.png"
+  url="whatsmark.io/roles"
+  alt="The Roles page listing each role with the number of members who have it and when it was created, plus a Create Role button"
+  caption="Image shows the Roles list with how many members hold each role."
+/>
+
+## Creating a role
+
+Click **Create Role**. Give it a **name**, then tick what members with this role should be able to do.
+
+![The Create Role form with a role name field and a grid of features with permission checkboxes](/core-setup/img/roles-create.png)
+
+## How the permission grid works
+
+The grid has one row per part of the product. The checkboxes in that row are what the role can do there.
+
+## What each group controls
+
+Most groups follow the same pattern:
+
+- **View** — see the page and its contents.
+- **Create** — add new items.
+- **Edit** — change existing items.
+- **Delete** — remove items.
+
+The table below lists every group. The last column only mentions permissions that do something beyond those four.
+
+| Group | Anything unusual |
+| --- | --- |
+| **Contacts** | **Import** brings contacts in from a file. **Initiate chat** starts a new conversation from a contact. **View own** lets a member see only the contacts assigned to them. |
+| **Channels** | **Connect** and **Disconnect** instead of create and delete. |
+| **Team** | **Invite** sends an email invitation. Create adds a member directly. |
+| **Templates** | **Load** pulls your approved templates in from Meta. |
+| **WhatsApp Flows** | **Submission view** sees the answers customers filled in. |
+| **Chat** | Works differently — see [Chat](#chat) below. |
+
+### Chat
+
+Chat has no View permission. Instead, a member gets into the inbox if they have **any** chat permission at all, or if a conversation has been assigned to them.
+
+The chat permissions are:
+
+- **Send message** — reply in a conversation. Without it the inbox is read-only.
+- **Send template** — send an approved template.
+- **Run flow** — start an automation or send a form in a chat.
+- **Close** — close the conversation they have open.
+- **Clear** — delete all the messages in a conversation.
+- **Delete** — delete a whole conversation.
+- **Delete message** — delete and restore individual messages.
+
+<Note>
+Assigning conversations to members or teams is not in this list. Only owners and admins can do it.
+</Note>
+
+## Owners and admins ignore roles
+
+Roles apply to ordinary members only. The **owner** and anyone marked as an **admin** can see and do everything.
+
+<Warning>
+A role that members are using cannot be deleted. Move those members to a different role first, then delete it. The **Members** column shows you how many are affected.
+</Warning>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Team" icon="users" href="/core-setup/team-and-roles">
+    Add members and give them the roles you have made.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    See how chat permissions play out in the inbox.
+  </Card>
+</CardGroup>
