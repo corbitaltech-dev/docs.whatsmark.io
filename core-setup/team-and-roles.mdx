@@ -9,36 +9,14 @@ import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
 At first you are the only person in your workspace. Add everyone else who works with you from this page.
 
-## What you see on the screen
-
-The page has two parts.
-
-**Team Members** lists everyone in your workspace:
-
-- **Name** — click it to open their profile.
-- **Email** — the address they sign in with.
-- **System Role** — the role they have been given.
-- **Joined** — when they were added.
-- **Last Seen** — the last time they used the workspace.
-
-**Pending Invitations** only appears when you have invited a team member who has not signed up yet.
-
-In the top corner you also see how many team members you have used, and a **Manage Roles** button that takes you to [Roles & Permissions](/core-setup/roles-and-permissions).
-
-<BrowserFrame
-  src="/core-setup/img/team.png"
-  url="whatsmark.io/team"
-  alt="The Team Members page listing members with their name, email, system role, joined date and last seen, with a usage counter and the Manage Roles, Invite Member and Create Member buttons"
-  caption="Image shows the Team Members list with the seat counter and the add buttons."
-/>
 
 ## Adding a team member
 
-You can add them in two ways.
+Choose one of the following ways to add a team member:
 
-### Create the account yourself
+### Create Member
 
-Click **Create Member**. You fill in their details and pick their role, then they can sign in straight away.
+Create the account yourself by entering the team member's details and assigning a role. They can sign in once the account is created.
 
 ![The Add Member form with fields for name, email, WhatsApp number and password](/core-setup/img/create-member.png)
 
@@ -53,11 +31,12 @@ Then click **Next** to choose what they can do. Either turn on **Is Admin**, or 
 
 ### Invite them by email
 
-Click **Invite Member** instead, and they set up their own account.
+Click **Invite Member**. Enter an **email address** and pick a **role**. You can check permission of that role before you send.
+
 
 ![The Invite Team Member form with an email field and a role picker](/core-setup/img/invite-member.png)
 
-Enter their **email address** and pick the **role** they should have. You can see what that role allows before you send it. They get an email with a link, and they choose their own name, WhatsApp number and password. See [Accepting a Team Invitation](/core-setup/invitation-acceptance) for what that looks like from their side.
+The new member gets an email with a link, and can sets their own name, WhatsApp number and password. See [Accepting a Team Invitation](/core-setup/invitation-acceptance) for details.
 
 <Note>
 The invite link works for **7 days**. After that you need to send a new one.
@@ -71,21 +50,9 @@ Anyone you have invited who has not signed up yet sits in the **Pending Invitati
 
 There is no resend button. If they need another email, revoke the old invitation first and then invite them again.
 
-## Owners, admins and members
-
-There are three levels, and the difference matters.
-
-- **Owner** is the account that created the workspace. There is only one, and it cannot be changed here.
-- **Admin** is anyone with the **Is Admin** switch turned on.
-- **Member** is everyone else, and their role decides what they can do.
-
-<Warning>
-**Owners and admins ignore roles completely.** They can see and do everything. Only make a member an admin if you are happy for them to have full access.
-</Warning>
-
 Only the workspace owner can make a member an admin.
 
-## Extra permissions for one member
+## Additional permissions for one member
 
 Sometimes one member needs a little more than their role gives them, and you do not want a whole new role for it.
 
