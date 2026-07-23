@@ -1,61 +1,78 @@
 ---
 title: "Labels"
-description: "Create and manage freeform tags to organize and categorize your contacts."
+description: "Add colored labels such as VIP, Hot Lead, or Follow Up to make important contacts easy to identify."
 icon: "tag"
-keywords: ["WhatsMark", "labels", "tags", "contacts"]
+keywords: ["WhatsMark", "WhatsMark.io", "labels", "tags", "contacts"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Labels are freeform tags you can attach to any contact to organize and categorize them. For example, **VIP**, **Needs follow-up**, or **Premium customer**.
+A **label** is a colored tag that helps you organize and identify contacts. For example, you can create labels like **VIP**, **Hot Lead**, or **Follow Up**. Unlike a status, a contact can have multiple labels at the same time.
 
-## Creating labels
+WhatsMark.io includes five default labels: **VIP**, **Hot Lead**, **Follow Up**, **Wholesale**, and **Returning Customer**. You can rename them, change their colors, or create your own labels to match your business.
 
-Click **Create Label** to open the label form:
+## Where labels show up
 
-<BrowserFrame
-  src="/core-setup/img/label-form.png"
-  url="whatsmark.io/setup/labels"
-  alt="New Label form showing fields for name, color, and sort order"
-  caption="Use clear label names, assign a badge color, and set the display order."
-/>
+- **Contacts page** — each contact shows their labels as colored badges.
+- **Contact details** — labels appear in the contact's details panel.
+- **Bulk actions** — select many contacts at once and add a label to all of them in one go. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
+- **New contacts from messages** — when a message from a new person creates a contact, you can have labels applied for you. Set them in [Contact Configuration](/settings/contact-configuration).
+
+## Creating a label
+
+![New Label form showing fields for name, color, and sort order](/core-setup/img/label-form.png)
 
 <Steps>
-<Step title="Go to Setup → Labels">
-  Navigate to the labels section.
+<Step title="Open Labels">
+  Click **Setup** in the sidebar, then **Labels**.
 </Step>
 
 <Step title="Click Create Label">
-  Open the side sheet to add a new contact label.
+  The button sits at the top right of the page. A form opens on the right side of the screen.
 </Step>
 
 <Step title="Fill in the details">
-  Configure the label:
-
-  - **Name** — enter a clear tag name, such as **VIP**, **Needs follow-up**, or **Premium customer**.
-  - **Color** — choose the badge color used wherever the label appears.
-  - **Sort order** — set the label position in the table and label lists.
+  - **Name** — a clear tag name, such as **VIP** or **Hot Lead**. Each name can be used only once.
+  - **Color** — the badge color shown wherever the label appears. Click the swatch to pick one, or type a color code. Leave it empty and WhatsMark.io picks a color for you.
+  - **Sort Order** — the position of this label in lists. It's pre-filled with the next spot, so you can usually leave it as is.
 </Step>
 
 <Step title="Save">
-  Your label is now available to assign to contacts.
+  Click **Save**. The label is ready to attach to contacts right away.
 </Step>
 </Steps>
 
+<Tip>
+You can also create a label without leaving the contact form — click the `+` icon beside the **Labels** field while adding or editing a contact.
+</Tip>
+
 ## Managing labels
 
-- **Edit** a label to update its name, color, or sort order.
-- **Reorder** labels by dragging rows. The same order is used across contact forms, filters, and label lists.
-- **Delete** a label only when it is not being used by contacts or related records.
+<BrowserFrame
+  src="/core-setup/img/labels-table.png"
+  url="whatsmark.io/labels"
+  alt="Labels table listing VIP, Hot Lead, Follow Up, Wholesale, and Returning Customer with color dots, order numbers, and a row actions menu"
+  caption="Drag rows to reorder your labels — the same order is used everywhere labels are listed."
+/>
+
+From the Labels page you can:
+
+- **Reorder** — drag rows up or down. The same order is used everywhere labels are listed.
+- **Edit** — click the menu icon at the end of a row and click **Edit** to change the name, color, or order.
+- **Delete** — click the menu icon and click **Delete**.
+
+<Note>
+A label that's still in use can't be deleted. If any contacts have it, or it's chosen as a default in [Contact Configuration](/settings/contact-configuration), WhatsMark.io tells you where it's used — clear it there first, then delete.
+</Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Groups" icon="users" href="/core-setup/groups">
-    Organize contacts into named collections for segmentation.
+    Organize contacts into named collections.
   </Card>
 
   <Card title="Statuses" icon="circle" href="/core-setup/statuses">
-    Define lifecycle stages for your contacts.
+    Track where every contact stands in your sales journey.
   </Card>
 </CardGroup>
