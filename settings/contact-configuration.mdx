@@ -1,52 +1,58 @@
 ---
 title: "Contact Configuration"
-description: "Configure auto-create defaults for contacts that arrive from inbound messages."
+description: "Choose what new contacts get automatically when someone messages you first — status, source, labels, groups, and who handles them."
 icon: "settings"
-keywords: ["WhatsMark", "contacts", "auto-create", "inbound"]
+keywords: ["WhatsMark", "WhatsMark.io", "contacts", "auto-create", "contact defaults", "assignment"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-When someone messages your WhatsApp number for the first time and no matching contact exists, WhatsMark.io creates one automatically. Configure the defaults applied to that new contact under **Settings → Contacts**.
+When a new person messages you on WhatsApp or Messenger, WhatsMark.io saves them as a contact automatically. On this page you decide what that new contact gets — their type, status, source, labels, groups, and which team member handles them. Find it under **Settings → Contacts**.
 
 <BrowserFrame
   src="/settings/img/contact-configuration-form.png"
   url="whatsmark.io/settings/contacts"
-  alt="Global Defaults form showing lifecycle, status, source, assign to, WhatsApp channel, labels, and groups fields"
-  caption="These defaults apply to every channel unless a channel-level override is configured below."
+  alt="Global Defaults form showing Type, status, source, assign to, WhatsApp channel, labels, and groups fields"
+  caption="These defaults apply to new contacts from every connected number, unless you set different values for a specific number below."
 />
 
 ## Global Defaults
 
-Applied to every channel unless a channel-level override is configured.
+These apply to new contacts from all your connected numbers:
 
-- **Lifecycle** — the contact type: Guest, Lead, or Customer.
-- **Status** — required. Falls back to your default status if left unset.
-- **Source** — required. Falls back to a "WhatsApp" source if left unset.
-- **Assign To** — required. Controls who gets assigned to the auto-created contact:
-  - **Unassigned** — the contact isn't assigned to anyone.
-  - **Round Robin** — cycles through every team member, in order, one assignment at a time.
-  - **Online Team Member** — cycles through whichever team members are currently online; if nobody is online, it falls back to Round Robin across everyone.
-  - **Custom Team Member** — always assigns to one specific person, picked from the **Team Member** field that appears once you select this option.
-- **WhatsApp Channel** — required. The channel these defaults apply to when no channel-specific override exists.
-- **Labels** and **Groups** — optional, applied to auto-created contacts.
+- **Type** — The default contact type assigned to new contacts, such as **Guest**, **Lead**, or **Customer**.
+- **Status** — The default status assigned to new contacts. If not set, WhatsMark.io uses your default status from the [Statuses](/core-setup/statuses) page.
+- **Source** — The default source assigned to new contacts. If not set, WhatsMark.io uses the built-in **WhatsApp** source.
+- **Assign To** — Choose how new contacts are assigned:
+  - **Unassigned** — New contacts aren't assigned to anyone. Any team member can take over the conversation.
+  - **Round Robin** — New contacts are assigned to team members one by one in rotation.
+  - **Online Team Member** — New contacts are assigned only to team members who are currently online. If no team members are online, contacts are assigned using all team members.
+  - **Custom Team Member** — Every new contact is assigned to the same team member. Select the team member from the **Team Member** field that appears after choosing this option.
+- **WhatsApp Channel** — Choose the default WhatsApp number assigned to new contacts.
+- **Labels** and **Groups** — optional. assign labels and groups to new contacts automatically.
 
-## Per-channel overrides
+## Different settings per number
 
-If you have multiple WhatsApp numbers connected, expand a channel below the global defaults and turn on its **Override** switch to set different Lifecycle, Status, Source, Assign To, Labels, and Groups values just for that channel.
+If you have more than one number connected, you can give each number its own settings instead of the global ones:
 
-<Tip>
-Turning a channel's override off falls that channel back to the global defaults automatically — its own saved values are kept but ignored until you turn it on again.
-</Tip>
+![Contact Defaults panel for a channel with an Override global defaults switch and fields for lifecycle, status, source, assignment strategy, labels, and groups](/settings/img/channel-contact-defaults.png)
+
+1. Go to your [Channels](/core-setup/channels/whatsapp) page.
+2. Click the menu icon on the channel you want and click **Contact defaults**.
+3. Turn on the **Override global defaults** switch.
+4. Set that channel's own Lifecycle, Status, Source, Assignment Strategy, Labels, and Groups, then save.
+
+From now on, new contacts arriving on that number use these settings — the Global Defaults no longer apply to it. Numbers without an override keep using the Global Defaults.
+
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Custom Fields" icon="sliders" href="/core-setup/custom-fields">
-    Set up labels, groups, statuses, sources, and custom fields to organize your contacts.
+  <Card title="Statuses" icon="circle" href="/core-setup/statuses">
+    Track where every contact stands in your sales journey.
   </Card>
 
   <Card title="Managing Contacts" icon="contact" href="/contacts/managing-contacts">
-    Start adding and organizing contacts using your configured settings.
+    Browse, create, and edit contacts individually.
   </Card>
 </CardGroup>
