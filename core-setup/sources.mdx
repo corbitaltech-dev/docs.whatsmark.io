@@ -1,57 +1,74 @@
 ---
 title: "Sources"
-description: "Track where your contacts originate from."
+description: "Know where every contact came from — WhatsApp, ads, your website, or a referral."
 icon: "map-pin"
-keywords: ["WhatsMark", "sources", "contacts", "tracking"]
+keywords: ["WhatsMark", "WhatsMark.io", "sources", "contact source", "contacts", "tracking"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Sources track where contacts come from, such as WhatsApp, Messenger, Facebook Ads, website forms, referrals, or manual entry. Use them to understand which channels create the most contacts and to segment audiences later.
+A source records where a contact came from, such as **Facebook Ads**, **Website**, or **Referral**. When every contact carries a source, you can see which places bring you the most customers and focus your effort there.
 
-## Creating sources
+WhatsMark.io starts you off with two built-in sources — **WhatsApp** and **Facebook**. When a new person messages you, WhatsMark.io saves them as a contact and sets their source to WhatsApp or Facebook automatically, so you always know they reached out first. These two sources are marked **System** in the table and can't be edited or deleted. Add your own sources for everything else.
 
-Click **Create Source** to open the source form:
+## Where sources show up
 
-<BrowserFrame
-  src="/core-setup/img/source-form.png"
-  url="whatsmark.io/setup/sources"
-  alt="New Source form showing a required name field"
-  caption="Create a source with a clear name so your team can identify where each contact came from."
-/>
+Once set, a source follows the contact everywhere:
+
+- **Contacts page** — filter your list by source to see everyone from one place.
+- **Campaigns** — when picking who receives a [campaign](/messaging/campaigns), you can filter the audience by source.
+- **Imports** — when [importing contacts](/contacts/import-export), pick one source to apply to every contact in the file.
+- **Exports** — filter by source first, then export to download only those contacts.
+- **New contacts from messages** — when a message from a new person creates a contact, the source is set for you. You can change these defaults in [Contact Configuration](/settings/contact-configuration).
+
+## Creating a source
+
+![New Source form showing a required name field](/core-setup/img/source-form.png)
 
 <Steps>
-<Step title="Go to Setup → Sources">
-  Navigate to the sources section.
+<Step title="Open Sources">
+  Click **Setup** in the sidebar, then **Sources**.
 </Step>
 
 <Step title="Click Create Source">
-  Open the side sheet to add a new contact source.
+  The button sits at the top right of the page. A form opens on the right side of the screen.
 </Step>
 
-<Step title="Enter the source name">
-  Add a clear name, such as **WhatsApp**, **Messenger**, **Facebook Ads**, **Website**, or **Referral**.
+<Step title="Enter the name">
+  Add a clear name, such as **Facebook Ads**, **Website**, **Walk-in**, or **Referral**. Each name can be used only once.
 </Step>
 
 <Step title="Save">
-  The source becomes available in contact forms, contact filters, imports, exports, and campaign audience filters.
+  Click **Save**. The source is ready to use right away in contact forms, filters, imports, and campaigns.
 </Step>
 </Steps>
 
-## Managing sources
-
-- **Edit** a source to update its name.
-- **Reorder** sources by dragging rows. The same order is used in the source table and source lists.
-- **Delete** a source when you no longer need it.
-- **System sources** are created by WhatsMark.io and cannot be edited or deleted.
-
 <Tip>
-You can also create a new source while adding or editing a contact. Click the `+` icon beside the **Source** field in the contact form.
+You can also create a source without leaving the contact form — click the `+` icon beside the **Source** field while adding or editing a contact.
 </Tip>
 
-## Using sources in analytics
+## Managing sources
 
-Sources appear in reporting, filters, imports, exports, and campaign audience selection. Keep source names consistent so your team can compare contact origin accurately.
+<BrowserFrame
+  src="/core-setup/img/sources-table.png"
+  url="whatsmark.io/setup/sources"
+  alt="Sources table listing Facebook and WhatsApp, each marked with a System badge, with a Create Source button at the top right"
+  caption="The built-in Facebook and WhatsApp sources carry a System badge — they can't be edited or deleted."
+/>
+
+From the Sources page you can:
+
+- **Reorder** — drag rows up or down. The same order is used everywhere sources are listed.
+- **Edit** — click the menu icon at the end of a row and click **Edit** to change the name.
+- **Delete** — click the menu icon and click **Delete**.
+
+<Note>
+A source that's still in use can't be deleted. If any contacts have it, or it's chosen as a default in [Contact Configuration](/settings/contact-configuration), WhatsMark.io tells you where it's used — clear it there first, then delete. The built-in **System** sources can never be edited or deleted.
+</Note>
+
+<Tip>
+Stick to one name per place — **Facebook Ads**, not a mix of "FB", "Facebook", and "fb ads". When everyone uses the same names, your filters show the full picture instead of splitting one source into three.
+</Tip>
 
 ## What's next
 
@@ -61,6 +78,6 @@ Sources appear in reporting, filters, imports, exports, and campaign audience se
   </Card>
 
   <Card title="Statuses" icon="circle" href="/core-setup/statuses">
-    Define lifecycle stages for your contacts.
+    Track where every contact stands in your sales journey.
   </Card>
 </CardGroup>
