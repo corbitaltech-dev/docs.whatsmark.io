@@ -1,75 +1,83 @@
 ---
 title: "Groups"
-description: "Create named collections of contacts for manual segmentation and campaign targeting."
+description: "Use groups to organize contacts with similar interests or categories. This makes it easier to select the right audience for campaign (broadcasts)."
 icon: "users"
-keywords: ["WhatsMark", "groups", "contacts", "segments", "campaigns"]
+keywords: ["WhatsMark", "WhatsMark.io", "groups", "contacts", "segments", "campaigns"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Groups are named collections of contacts used for manual segmentation and as audience options when creating campaigns or automations.
 
-## Creating groups
+A **group** lets you organize contacts based on your business needs. For example, you can create groups for VIP Customers, Newsletter Subscribers, or Retail Customers. A contact can be added to multiple groups and selected whenever you send a [campaign](/messaging/campaigns).
 
-Click **Create Group** to open the group form:
+## Where groups show up
 
-<BrowserFrame
-  src="/core-setup/img/group-form.png"
-  url="whatsmark.io/groups"
-  alt="New Group form showing fields for name, description, and color"
-  caption="Use a clear group name, an optional description, and a badge color."
-/>
+- **Campaigns** — when creating a campaign, choose a group as your audience and everyone in it receives the message.
+- **Contacts page** — filter your list by group, or select many contacts and add them all to a group in one go. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
+- **Contact details** — a contact's groups appear in their details panel.
+- **New contacts from messages** — when a message from a new person creates a contact, you can have them placed into groups for you. Set them in [Contact Configuration](/settings/contact-configuration).
+
+## Creating a group
+
+![New Group form showing fields for name, description, and color](/core-setup/img/group-form.png)
 
 <Steps>
-<Step title="Go to Setup → Groups">
-  Navigate to the groups section.
+<Step title="Open Groups">
+  Click **Setup** in the sidebar, then **Groups**.
 </Step>
 
 <Step title="Click Create Group">
-  Open the side sheet to add a new contact group.
+  The button sits at the top right of the page. A form opens on the right side of the screen.
 </Step>
 
 <Step title="Fill in the details">
-  Configure the group:
-
-  - **Name** — enter a clear group name, such as **VIP Customers**, **Newsletter Subscribers**, or **Support Requests**.
-  - **Description** — optionally add context about who belongs in this group.
-  - **Color** — choose the badge color used wherever the group appears.
+  - **Name** — a clear group name, such as **VIP Customers** or **Newsletter Subscribers**. Each name can be used only once.
+  - **Description** — optionally note who belongs in this group, so your team adds the right people.
+  - **Color** — the badge color shown wherever the group appears. Click the swatch to pick one, or type a color code.
 </Step>
 
 <Step title="Save">
-  Your group is now created and ready to receive members.
+  Click **Save**. The group is created and ready to receive contacts.
 </Step>
 </Steps>
 
-## Adding members to groups
+<Tip>
+You can also create a group without leaving the contact form — click the `+` icon beside the **Groups** field while adding or editing a contact.
+</Tip>
 
-- **From the Contacts page**: Select contacts and add them to groups in bulk
-- **When creating a contact**: Assign groups during contact creation
-- **Edit contact details**: Add or remove groups anytime
+## Adding contacts to a group
+
+- **When creating or editing a contact** — pick one or more groups in the **Groups** field of the contact form.
+- **In bulk** — on the Contacts page, select multiple contacts and add them all to a group at once. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
+- **Automatically** — have contacts created from incoming messages placed into a group. Set it in [Contact Configuration](/settings/contact-configuration).
 
 ## Managing groups
 
-- **Edit** a group to update its name, description, or color.
-- **Delete** a group only when it is not being used by contacts or related records.
-- The **Contacts** column on the groups table shows how many contacts are currently in each group.
+<BrowserFrame
+  src="/core-setup/img/group-table.png"
+  url="whatsmark.io/groups"
+  alt="Groups table showing a group with its name, description, color dot, contact count, and a row menu with Edit and Delete"
+  caption="The Contacts column shows how many people are in each group, so you can see your audience size at a glance."
+/>
 
-<Tip>
-You can also create a new group while adding or editing a contact. Click the `+` icon beside the **Groups** field in the contact form.
-</Tip>
+From the Groups page you can:
 
-## Using groups in campaigns
+- **See the size** — the **Contacts** column shows how many contacts are in each group.
+- **Edit** — click the menu icon at the end of a row and click **Edit** to change the name, description, or color.
+- **Delete** — click the menu icon and click **Delete**.
 
-When you create a [Campaign](/messaging/campaigns), you can select one or more groups as your audience. This lets you target specific segments without manually selecting individual contacts each time.
+<Note>
+A group that's still in use can't be deleted. If any contacts are in it, or it's chosen as a default in [Contact Configuration](/settings/contact-configuration), WhatsMark.io tells you where it's used — clear it there first, then delete.
+</Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Statuses" icon="circle" href="/core-setup/statuses">
-    Define lifecycle stages for your contacts.
+    Track where every contact stands in your sales journey.
   </Card>
 
   <Card title="Labels" icon="tag" href="/core-setup/labels">
-    Add freeform tags to organize contacts.
+    Add colored labels to make important contacts easy to identify.
   </Card>
 </CardGroup>
