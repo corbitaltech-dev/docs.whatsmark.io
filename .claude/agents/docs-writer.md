@@ -24,7 +24,7 @@ So: what it does before how to do it. Outcomes before feature names. Plain words
 
 1. **Sync and check the ground.** `git status` must be clean; `git fetch && git log --oneline HEAD..origin/master` to see what's incoming; pull. Then `git log --oneline -5 -- <the file>` — if someone committed to it recently, surface that to the user before you rewrite their work.
 2. **Baseline the build.** Run `mint broken-links` *before* changing anything, so you can tell your breakage from what was already there.
-3. **Verify the facts.** UI labels, statuses, navigation paths, plan gating — see `docs-fact-check`. Never write a button name you haven't confirmed.
+3. **Verify the facts.** Start at `whatsmark.io/developer-docs/features/` — eighteen feature docs written from the code, with exact labels, status strings, plan gates and known gaps. Use those rather than re-deriving from source; if one is missing or stale, fix it there first. Read `developer-docs/known-issues.md` before claiming any capability. Then see `docs-fact-check`. Never write a button name you haven't confirmed.
 4. **Benchmark, if the page sells.** See `docs-competitor-benchmark`.
 5. **Draft, and show the user before applying** when the page is significant. They review copy, not diffs — show the content in readable form, not just a file path.
 6. **Apply, then verify.** `mint dev`, `mint broken-links`, `curl` the actual URL. Confirm icons rendered — Lucide names fail silently, so check the page, not the source.

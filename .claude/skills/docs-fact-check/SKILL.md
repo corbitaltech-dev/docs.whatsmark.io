@@ -13,6 +13,40 @@ Every behavioural claim in the docs must be traceable to the product. A page tha
 
 ---
 
+## Check `developer-docs/` first
+
+Before grepping the product source, look in
+`/media/corbital/web_data/laravel.local/whatsmark.io/developer-docs/`. That folder is the
+internal feature-behaviour reference — exact UI labels, status strings, navigation paths,
+plan gates and known gaps — and it exists precisely so customer pages are not written by
+re-deriving those facts from code every time.
+
+Browse it with `cd developer-docs && bun run dev`. Eighteen feature docs cover essentially
+the whole tenant surface:
+
+| Area | Files under `developer-docs/features/` |
+|---|---|
+| Getting started | `signup-and-login`, `plans-and-pricing`, `connect-account` |
+| Messaging | `live-chat`, `campaigns`, `whatsapp-templates`, `messenger-templates` |
+| Contacts | `contacts` |
+| Automation & AI | `chatbot-flows`, `whatsapp-flows`, `appointments`, `ai-and-shortcuts` |
+| Workspace | `workspace`, `settings`, `integrations`, `public-api`, `reseller` |
+
+`developer-docs/known-issues.md` is the fastest way to spot something advertised but not
+implemented — read it before writing any page that claims a capability.
+
+**`plans-and-pricing.md` is the source for every number.** The rule that limits and prices
+live only on `getting-started/free-vs-paid.mdx` still holds; that page should be written
+from this file, not from the seeders directly.
+
+If it has a file for your feature and the `_Last verified:_` date is recent, use it. If the
+file is missing, stale, or contradicts the code, **fix it there first**, then write the
+customer page from it. Do not quietly work around a wrong developer doc — the next writer
+hits the same problem.
+
+Its `## Known gaps` section is the fastest way to spot something advertised but not
+implemented, which is exactly the kind of claim that must never reach a customer page.
+
 ## What must be verified before it ships
 
 - **Every UI label** — button text, menu item, page name, tab, field label.

@@ -60,7 +60,18 @@ The same trap applies to any "don't worry about X" phrasing. If the reader would
   - **Why:** prices and limits change. One stale number on a marketing-facing page destroys trust and nobody remembers to update six pages.
 - ❌ **Time promises of any kind** — "in about 15 minutes", "set up in under an hour", per-step minute breakdowns. Setup time isn't ours to promise: template approval is Meta's, and it varies. A number here either pressures the reader into a commitment they didn't ask for, or disappoints them when reality runs longer. Describe the *steps*, never the clock.
 
-`getting-started/free-vs-paid.mdx` is the **single source of truth** for every number. Every page that wants to mention a limit links there instead.
+`getting-started/free-vs-paid.mdx` is the **single source of truth** for every number. Every page that wants to mention a limit links there instead — and that page itself should be written from `developer-docs/features/plans-and-pricing.md`, not from the seeders.
+
+### Two facts that page currently gets wrong
+
+Verified against code on 2026-07-23; fix when next editing it:
+
+- **Quotas reset on the calendar month, not the billing cycle.** `FeatureService::calculatePeriod()` uses `Carbon::now()->startOf('month')`. Someone who subscribes on the 20th gets a full reset 11 days later. The page says "resets each billing cycle".
+- **Free-plan users cannot see the Billing menu.** `UserMenuContent.vue` hides it behind `v-if="!isFreePlan && …"` — deliberately. The page tells them to "Go to Billing → Plans"; the real path is **My Subscription → Upgrade Plan**. This one costs money: it sends a customer who wants to pay to a dead end.
+
+### The plan is called "Free" inside the app
+
+`PlanSeeder` names it `Free`. "Free Forever" appears only in `resources/js/marketing/` — the SEO title, the hero CTA, the feature-page CTAs. Docs saying **Free Forever** match the marketing site a visitor arrives from, which is why we use it. Be aware the billing screens say **Free**, and don't describe a UI element as saying "Free Forever" when it doesn't.
 
 ---
 
