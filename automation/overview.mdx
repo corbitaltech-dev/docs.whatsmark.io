@@ -1,0 +1,85 @@
+---
+title: "Automation"
+description: "Build a WhatsApp chatbot with a drag-and-drop flow builder — answer questions, qualify leads, and support customers around the clock."
+icon: "bot"
+keywords: ["WhatsMark", "WhatsMark.io", "automation", "chatbot", "flows"]
+---
+
+import { BrowserFrame } from '/snippets/browser-frame.jsx';
+
+**Automations** turn your WhatsApp into a chatbot that works even when you don't — it answers common questions, collects customer details, qualifies leads, and keeps conversations moving day and night. You design each conversation on a drag-and-drop canvas: when a customer sends a keyword or an event happens, your flow takes over and replies for you. Find it under **Automations** in the sidebar.
+
+
+## Creating an automation
+
+<Steps>
+<Step title="Open Automations">
+  Click **Automations** in the sidebar.
+</Step>
+
+<Step title="Click Create Flow">
+  The button sits at the top right of the page. A form opens on the right side of the screen.
+
+  ![New Automation form showing fields for name, channels, and description](/automation/img/automation-form.png)
+</Step>
+
+<Step title="Fill in the details">
+  - **Name** — a clear name, such as **Welcome Flow**.
+  - **Channels** — the WhatsApp or Messenger accounts this automation runs on.
+  - **Description** — optionally note what this flow does, so your team knows at a glance.
+</Step>
+
+<Step title="Save and build">
+  Click **Save**. The flow is created as a **Draft** — open it in the [Flow Builder](/automation/flow-builder) to design the conversation, then **Active** it.
+</Step>
+</Steps>
+
+## Three ways to build your flow
+
+Design the conversation in whichever way suits you:
+
+<CardGroup cols={2}>
+  <Card title="Build it yourself" icon="workflow" href="/automation/flow-builder">
+    Open the **Flow Builder** and design the conversation on the drag-and-drop canvas, node by node.
+  </Card>
+
+  <Card title="Start from the Flow Library" icon="library" href="/automation/flow-library">
+    Click **Flow Library** at the top of the Automations page and clone a ready-made flow, then adjust it.
+  </Card>
+
+  <Card title="Generate with AI" icon="wand-sparkles" href="/automation/generate-with-ai">
+    Inside the Flow Builder, click **Generate with AI** and describe what you want in plain English. *(Needs a paid plan.)*
+  </Card>
+</CardGroup>
+
+## Managing your automations
+
+<BrowserFrame
+  src="/automation/img/automations-table.png"
+  url="whatsmark.io/automations"
+  alt="Automations page with a Flow Library button, a Create Flow button, and the All Automations table showing flows with status badges, on/off switches, and a row menu with Flow Builder, Edit, and Delete"
+  caption="Image shows the Automations page with the All Automations table and the row actions menu open."
+/>
+
+The **All Automations** table lists every flow, with tabs to show **All**, **Draft**, **Active**, or **Inactive** ones.
+
+- **Turn on or off** — flip the switch on a flow's row. Only active flows run.
+- **Flow Builder** — click the menu icon at the end of a row and click **Flow Builder** to open the canvas.
+- **Edit** — click the menu icon and click **Edit** to change the name, channels, or description.
+- **Delete** — click the menu icon and click **Delete**. This cannot be undone.
+
+<Note>
+If an incoming message matches the trigger conditions of more than one active flow, all of them run and reply in the chat — not just one.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Flow Builder" icon="workflow" href="/automation/flow-builder">
+    Learn the canvas, triggers, and every node type.
+  </Card>
+
+  <Card title="WhatsApp Flows" icon="layout-panel-top" href="/ai-and-more/whatsapp-flows">
+    Send an interactive form from within an automation flow.
+  </Card>
+</CardGroup>
