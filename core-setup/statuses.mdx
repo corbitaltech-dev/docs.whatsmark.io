@@ -1,58 +1,72 @@
 ---
 title: "Statuses"
-description: "Define lifecycle stages for your contacts to track their progress."
+description: "Track where every contact stands in your sales journey — from first hello to closed deal."
 icon: "circle"
-keywords: ["WhatsMark", "statuses", "lifecycle", "contacts"]
+keywords: ["WhatsMark", "WhatsMark.io", "statuses", "contact status", "lifecycle", "pipeline", "contacts"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Statuses define where a contact is in your business lifecycle. Use them to track progress across contact records, filters, chat workflows, and campaign audience selection.
+A status shows the current stage of a contact, such as **New Lead**, **Follow Up**, or **Customer**. Using statuses helps you organize contacts, track their progress, and quickly find the people who need your attention.
 
-## Creating statuses
+WhatsMark.io starts you off with five ready-made statuses — **New**, **In Progress**, **Contacted**, **Qualified**, and **Closed** — with **New** set as the default. Rename them, recolor them, or replace them with stages that match how your business actually works.
 
-Click **Create Status** to open the status form:
+## Where statuses show up
+
+Once set, a status follows the contact everywhere:
+
+- **Contacts page** — each contact shows their status as a colored badge, and you can filter the list by status.
+- **Chat** — the sidebar lets you filter conversations by contact status, with a count next to each one.
+- **Campaigns** — when picking who receives a [campaign](/messaging/campaigns), you can filter the audience by status.
+- **Exports** — filter by status before exporting to download just that slice of your list. See [Import & Export](/contacts/import-export).
+- **Auto-created contacts** — when someone messages you first, WhatsMark.io creates the contact automatically and gives them your chosen default status.
+
+## Creating a status
 
 <BrowserFrame
   src="/core-setup/img/status-form.png"
   url="whatsmark.io/setup/statuses"
-  alt="New Status form showing fields for name, color, sort order, and default status"
-  caption="Use clear status names, assign a badge color, set the display order, and optionally mark one status as the default."
+  alt="New Status form showing fields for name, color, sort order, and a default status switch"
+  caption="Give the status a clear name, pick a badge color, set its position, and optionally make it the default for new contacts."
 />
 
 <Steps>
-<Step title="Go to Setup → Statuses">
-  Navigate to the statuses section.
+<Step title="Open Statuses">
+  Click **Setup** in the sidebar, then **Statuses**.
 </Step>
 
 <Step title="Click Create Status">
-  Open the side sheet to add a new contact lifecycle status.
+  The button sits at the top right of the page. A form opens on the right side of the screen.
 </Step>
 
 <Step title="Fill in the details">
-  Configure the status:
-
-  - **Name** — enter a clear lifecycle name, such as **New Lead**, **Under Review**, **Customer**, or **Inactive**.
-  - **Color** — choose the badge color used wherever the status appears.
-  - **Sort order** — set the status position in the table and status lists.
-  - **Default status** — turn this on if new contacts should receive this status automatically.
+  - **Name** — a clear stage name, such as **New Lead**, **Quoted**, or **Won**. Required, and each name can be used only once.
+  - **Color** — the badge color shown wherever the status appears. Click the swatch to pick one, or type a color code. Leave it empty and WhatsMark.io picks a color for you.
+  - **Sort Order** — the position of this status in lists. It's pre-filled with the next spot, so you can usually leave it as is.
+  - **Default status** — turn this on to give this status to every new contact automatically. Only one status can be the default, so turning it on here turns it off on the previous one.
 </Step>
 
 <Step title="Save">
-  The status becomes available in contact forms, contact filters, chat views, and campaign audience filters.
+  Click **Save**. The status is ready to use right away in contact forms, filters, chat, and campaigns.
 </Step>
 </Steps>
 
+<Tip>
+You can also create a status without leaving the contact form — click the `+` icon beside the **Status** field while adding or editing a contact.
+</Tip>
+
 ## Managing statuses
 
-- **Edit** a status to update its name, color, sort order, or default setting.
-- **Reorder** statuses by dragging rows. The same order is used across the product.
-- **Set default** by toggling the default switch. Only one status can be the default at a time.
-- **Delete** a status only when it is not being used by contacts or related records.
+From the Statuses page you can:
 
-<Tip>
-You can also create a new status while adding or editing a contact. Click the `+` icon beside the **Status** field in the contact form.
-</Tip>
+- **Reorder** — drag rows up or down. The same order is used everywhere statuses are listed.
+- **Change the default** — flip the switch in the **Default** column. The previous default is turned off automatically.
+- **Edit** — click the menu icon at the end of a row and click **Edit** to change the name, color, order, or default setting.
+- **Delete** — click the menu icon and click **Delete**.
+
+<Note>
+A status that's still in use can't be deleted. If contacts have it, or it's set as a default for auto-created contacts, WhatsMark.io tells you where it's used — reassign or remove it there first, then delete.
+</Note>
 
 ## What's next
 
