@@ -1,90 +1,96 @@
 ---
 title: "Add-ons & Upgrades"
-description: "How to buy add-ons and contact-limit upgrades in WhatsMark.io without changing your whole plan."
+description: "Raise a single limit — more contacts, team seats, AI, or your own domain — without changing your whole plan."
 icon: "puzzle"
-keywords: ["WhatsMark", "add-ons", "contact upgrade", "extra tokens", "cart"]
+keywords: ["WhatsMark", "add-ons", "extra contacts", "extra team members", "extra AI tokens", "custom domain", "upgrade"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Sometimes you just need a bit more of one thing — more contacts, more AI tokens — without moving to an entirely different plan tier. That's what **Add-ons** and the **contact-limit upgrade** are for.
+Sometimes you need more of just **one** thing — a few more contacts, another teammate, more AI —
+without moving to a different plan. That's what **add-ons** are for: each one raises a single limit
+and leaves everything else exactly as it is.
 
-## Add-ons
-Go to **Billing → Plan Add-ons** to browse what's available for your plan (for example, extra AI tokens or additional capacity for other quota-based features).
+<Note>
+  Add-ons are available on the **Professional plan**. Only the workspace **owner** can buy and
+  manage them, from **Billing**.
+</Note>
+
+Professional is the top plan, so there's no higher one to move up to — **add-ons are how you get
+more** when you need it.
+
+## What you can add
 
 <BrowserFrame
   src="/billing/img/plan-addons.png"
   url="whatsmark.io/billing"
   alt="Plan Add-ons panel with an Active Add-ons row showing Custom Domain and Extra Contacts, and an Available Add-ons row showing Extra Contacts, Extra Team Member, and Extra AI Tokens with quantity steppers and Add buttons"
-  caption="Image shows the Plan Add-ons panel with Active Add-ons and Available Add-ons."
+  caption="The Plan Add-ons panel, with what you've already added and what's available."
 />
 
-<Steps>
-<Step title="Browse available add-ons">
-  See what add-ons your plan supports and their pricing.
-</Step>
+- **Extra Contacts** — room to store more people.
+- **Extra Team Member** — another seat, so one more colleague gets their own login and their own place in the inbox.
+- **Extra AI Tokens** — more monthly headroom for the AI assistant and AI flow generation.
+- **Custom Domain** — run your workspace on your own web address instead of a `whatsmark.io`
+  subdomain. See [Custom domain](/settings/custom-domain).
 
-<Step title="Add to cart">
-  Add one or more add-ons to your cart, adjusting quantity as needed.
+Each one takes effect **immediately** — the moment your payment goes through, the limit goes up.
+
+## Buying an add-on
+
+From **Billing → Plan Add-ons**:
+
+<Steps>
+<Step title="Pick what you need">
+  Choose an add-on and set how many units you want.
 </Step>
 
 <Step title="Check out">
-  Complete payment for the cart — coupons can be applied here too (see [Payments & Invoices](/billing/payments-and-invoices)).
+  Complete payment — you can apply a coupon here too. See
+  [Payments & Invoices](/billing/payments-and-invoices).
+</Step>
+
+<Step title="Use it right away">
+  Your limit goes up as soon as the payment succeeds.
 </Step>
 </Steps>
 
-Add-ons come in two kinds:
+<Tip>
+  **Already have that add-on?** Buying it again simply raises the number you've added — you won't
+  end up with two separate add-ons to keep track of.
+</Tip>
 
-- **Recurring** add-ons renew automatically alongside your plan every cycle, until you remove them. You can change how many units you have at any time.
-- **One-time** add-ons are a single purchase. They can't be adjusted — if you need more, buy another.
+## How add-ons are billed
 
-### Changing or removing an add-on
+Add-ons ride along with your subscription — they renew on the **same cycle** as your plan and
+appear on the **same invoice**. There's nothing separate to manage.
 
-You can **remove** an add-on whenever you like. Removing it lowers your limit straight away, so make sure you're not still relying on the extra capacity.
+## Stopping an add-on
+
+An add-on can't be cancelled partway through — it stays active for the billing period you've
+already paid for. You choose which add-ons to keep when your subscription **renews**: at renewal,
+deselect any you no longer need and they won't carry into the next period. Everything is kept by
+default, so add-ons simply keep running until you drop them.
 
 <Warning>
-If you **reduce the quantity** of a recurring add-on, your current usage has to fit inside the smaller limit. Say your plan includes 1,000 contacts and an add-on takes you to 2,000 — if you're storing 1,500 contacts, you'll need to delete some to get under 1,000 before you can drop that add-on's quantity.
+  You can't drop an add-on you're still relying on. If an Extra Contacts add-on is holding your
+  contact list above your plan's own limit, trim your contacts back under that limit first —
+  until then, that add-on stays required.
 </Warning>
 
-
-## Contact-limit upgrade
-
-If you're approaching your plan's contact limit but don't want to change your whole plan, you can raise it in one of two ways. Which one you use changes **when** the new limit takes effect:
-
-<AccordionGroup>
-<Accordion title="Buy a contact-limit add-on">
-  Purchased from **Billing → Add-ons**, the same way as any other add-on:
-
-  <Steps>
-  <Step title="Preview the upgrade">
-    See the cost of raising your contact limit before committing.
-  </Step>
-
-  <Step title="Pay for the upgrade">
-    Pay via your usual payment method, or submit an offline payment for review.
-  </Step>
-  </Steps>
-
-  This raises your contact limit **immediately**, within your current billing cycle, and the add-on then renews automatically alongside your plan on every future renewal — until you remove it.
-</Accordion>
-
-<Accordion title="Change your contact limit with your billing cycle">
-  You can also raise or lower your contact limit as part of upgrading or downgrading your billing cycle. Unlike buying an add-on, this change only takes effect from your **next billing cycle** — it doesn't apply to the cycle you're currently in. You can cancel a pending change any time before it takes effect.
-</Accordion>
-</AccordionGroup>
-
 <Tip>
-Check the [Feature Usage](/reporting/dashboard-and-usage#feature-usage-page) page to see exactly how close you are to your contact limit before deciding whether an add-on or a full plan upgrade makes more sense.
+  Not sure which limit you're close to? The [Feature Usage](/reporting/dashboard-and-usage) page
+  shows exactly how much of each you've used, so you know which add-on you need.
 </Tip>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Plans & Subscription" icon="credit-card" href="/billing/plans-and-subscription">
-    Compare add-ons against upgrading your whole plan instead.
+  <Card title="Dashboard & usage" icon="chart-line" href="/reporting/dashboard-and-usage">
+    See how close you are to each limit before you buy.
   </Card>
 
-  <Card title="Payments & Invoices" icon="receipt" href="/billing/payments-and-invoices">
-    See how coupons and payment methods work for add-on purchases.
+  <Card title="Custom domain" icon="globe" href="/settings/custom-domain">
+    Set up your own web address once you've added it.
   </Card>
 </CardGroup>

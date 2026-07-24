@@ -1,22 +1,27 @@
 ---
 title: "Payments & Invoices"
-description: "How to pay for WhatsMark.io apply coupons, manage payment methods, and download invoices."
+description: "How to pay for your WhatsMark.io subscription, apply a coupon, and download your invoices."
 icon: "receipt"
-keywords: ["WhatsMark", "payments", "invoices", "coupons", "Razorpay", "Dodo", "offline payment", "payment methods"]
+keywords: ["WhatsMark", "payments", "invoices", "coupons", "Razorpay", "Dodo", "offline payment", "bank transfer"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-WhatsMark supports online and offline payment, coupon codes at checkout, and a full invoice history — all from **Billing**.
+WhatsMark.io supports online and offline payment, coupon codes at checkout, and a full invoice history — all from **Billing**.
 
 ## Paying online
 
-Online payments cover subscribing to a plan, changing plans, renewals, and add-on purchases. The payment gateway you're offered depends on your billing currency:
+Online payments cover subscribing to a plan, changing plans, renewals, and add-on purchases. You don't choose a payment gateway — the right one for your billing currency is picked for you:
 
 - **INR** — pay by card, UPI, netbanking, or wallet through **Razorpay**.
 - **USD** — pay through **Dodo Payments**.
 
-Checkout shows a live total that updates instantly when you apply a coupon.
+Checkout shows a live total that updates instantly when you apply a coupon. **Your plan activates as soon as payment succeeds** — you're taken straight back to your workspace.
+
+<Tip>
+  Paid but don't see it yet? Give it a moment and refresh the page — online payments usually
+  reflect within a minute.
+</Tip>
 
 <Note>
 Prices are shown **before tax**. Any tax that applies is added on top and shown as its own line at checkout and on your invoice — so the final amount charged is higher than the plan or add-on price on its own.
@@ -26,25 +31,29 @@ Prices are shown **before tax**. Any tax that applies is added on top and shown 
 Paying in **USD**? Dodo Payments handles tax as merchant of record, so it's calculated when Dodo takes payment rather than previewed beforehand. Your total at Dodo's checkout — and your invoice — show the exact amount charged, tax included.
 </Note>
 
-## Paying offline
+## Paying by bank transfer
 
-If your workspace has offline payment enabled, you can instead:
+Prefer to pay by bank transfer instead of online? You can. Your payment is safe throughout —
+here's exactly what happens:
 
 <Steps>
-<Step title="View bank details">
-  See the bank account (or UPI ID) to transfer payment to, along with any instructions your workspace admin has provided.
+<Step title="Transfer to the bank details shown">
+  You'll see the bank account (or UPI ID) to pay, along with any instructions shown there.
 </Step>
 
-<Step title="Submit proof">
-  Upload proof of your bank transfer.
+<Step title="Submit your proof">
+  Upload proof of the transfer — a screenshot or receipt — and the reference number.
 </Step>
 
-<Step title="Wait for review">
-  Your request shows as **Pending** while an admin reviews it — access stays locked behind this screen until it's approved. Your workspace shows the turnaround time to expect (typically a couple of days).
+<Step title="We review and activate">
+  Your request shows as **Pending** while an admin checks it against the payment received. Your
+  workspace shows the turnaround time to expect. Once it's confirmed, your plan or add-on activates.
 </Step>
 </Steps>
 
-Once reviewed, your request shows as either **Approved** — your plan or add-on activates — or **Rejected**, with the admin's reason shown alongside it so you can correct the problem and submit again.
+Because a person checks each transfer, this isn't instant like an online payment — it activates
+once the payment is confirmed. If anything's off, the request shows as **Rejected** with the
+reason alongside it, so you can fix it and submit again. Nothing is lost either way.
 
 <BrowserFrame
   src="/billing/img/offline-payment-pending.png"
@@ -65,15 +74,15 @@ While an offline payment is **under review**, you can't change your plan. Wait f
 
 At checkout — whether subscribing, changing plans, buying an add-on, or checking out a cart — you can apply a coupon code. The total recalculates live so you can see the discount before you confirm payment.
 
-![Checkout showing the selected payment method, a Coupon code field with an Apply button, and a summary listing the plan and Total payable](/billing/img/coupon-checkout.png)
-
 <Note>
 Coupons apply to your **current purchase only**. They don't carry over to your next renewal, so a future renewal will be charged at full price.
 </Note>
 
-## Payment methods
-
-You can save a payment method for future purchases, set one as your **default**, and remove any you no longer use.
+<Accordion title="My coupon code didn't work" icon="info">
+  A code is usually turned down because it's **expired**, has **already been used** on your
+  account, or **doesn't match** the plan or billing cycle you're buying. The checkout tells you
+  which — read the message, adjust if you can, and try again.
+</Accordion>
 
 ## Invoices
 
@@ -95,17 +104,17 @@ Team members need permission to see invoices, and downloading is a separate perm
 </Note>
 
 <Warning>
-Only the workspace **owner** can pay, apply coupons, or manage payment methods.
+Only the workspace **owner** can pay or apply coupons.
 </Warning>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Plans & Subscription" icon="credit-card" href="/billing/plans-and-subscription">
-    Manage your plan and billing cycle.
+  <Card title="Add-ons & upgrades" icon="puzzle" href="/billing/addons-and-upgrades">
+    Buy extra capacity — more contacts, team seats or AI — without changing your whole plan.
   </Card>
 
-  <Card title="Add-ons & Upgrades" icon="puzzle" href="/billing/addons-and-upgrades">
-    Buy extra capacity without changing your whole plan.
+  <Card title="Dashboard & usage" icon="chart-line" href="/reporting/dashboard-and-usage">
+    Track how much of each limit you've used.
   </Card>
 </CardGroup>
