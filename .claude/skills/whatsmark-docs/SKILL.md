@@ -46,6 +46,28 @@ The same trap applies to any "don't worry about X" phrasing. If the reader would
 
 ---
 
+## 1a. Write to attract, not just to inform
+
+Most readers arrive while deciding whether to trust and buy. These docs are part of that decision, so they persuade — honestly. The rules below are standing, not per-page. None of them means overclaiming; the honesty rules in §1 and §2 always win. Persuasion here is about *order and framing*, never about saying something untrue.
+
+**Momentum — always point forward.** Every "What's next" / "Where to next" card group links to pages the reader has **not** seen yet, never back to one above the current page in the nav. A card pointing to an already-read page reads as a dead-end and stalls them. On the last page of a flow, point into the next section, not back to the start. (This is why "Free vs. paid" must not appear in a Billing page's What's next — the reader is past it.)
+
+**Reassure before you warn.** When a paragraph carries both good and bad news — cancellation, deletion, a limit — lead with what the reader *keeps*, then state what changes, then the deadline. "You keep full access until the end of the period you've paid for" **before** "after that it's removed." Never open a paragraph with a loss. This is the single highest-impact ordering rule on the site.
+
+**Name the fear, then answer it.** People abandon on unspoken worries. Surface the worry as the reader would phrase it and answer plainly: "Does WhatsApp charge me separately?", "What happens to my data if I downgrade?", "Am I being charged twice?" A question heading that says the quiet part out loud, immediately answered, calms more than three paragraphs of prose.
+
+**Upgrade triggers are symptoms, not features.** When telling someone it's time to pay, describe the *situation they'll recognise in themselves* — "someone else needs to answer messages", "you're pasting the same reply for the tenth time" — not the feature name or the limit number. People act on recognising themselves, not on reading a spec.
+
+**Say what it does before how to do it.** Outcomes before mechanics, benefits before button names. A section that opens with "Two-factor security keeps your account safe even if someone learns your password" earns the steps that follow; one that opens with "Click Enable" does not.
+
+**Loss aversion, used honestly.** "Nothing you've already built is ever deleted" is more reassuring than "your data is retained", because it answers the fear directly. Use it where it's *true* — never imply permanence the product doesn't provide (see the cancellation reality: workspaces do get removed after a grace period, so say so).
+
+**Cut the doubt-planters.** Covered in §1, restated here because it's persuasion: "no coding required", time promises, "it's easy" — anything that raises a worry the reader didn't have, or sets an expectation you can't guarantee, loses more trust than it wins. Delete it.
+
+**What persuasion never licenses:** inventing a benefit, softening a real limit into vagueness, "free forever = never expires" wording, prices or counts outside the plans page, or a comfortable claim you haven't verified. If a reassuring line isn't true, the honest line wins every time — a promise the product breaks costs far more than the friction of stating the truth.
+
+---
+
 ## 2. Brand and plan naming — non-negotiable
 
 - The product is **WhatsMark.io**. Never "WhatsMark" in body prose, headings, descriptions, captions, or `docs.json`'s `name`.
