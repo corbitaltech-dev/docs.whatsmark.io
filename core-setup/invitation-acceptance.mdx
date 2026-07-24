@@ -1,65 +1,71 @@
 ---
-title: "Accepting a Team Invitation"
-description: "What it looks like to accept an invitation to join an existing WhatsMark.io workspace as a team member."
-icon: "user-check"
-keywords: ["WhatsMark", "invitation", "accept invite", "join workspace", "team member"]
+title: "Invite Team Members"
+description: "Invite team member to your workspace by email"
+icon: "user-plus"
+keywords: ["WhatsMark", "invite", "invitation", "team member", "join workspace"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-If someone invites you to their WhatsMark.io workspace, you'll receive an email with a link to an invitation page rather than the normal registration form.
+Send an email invitation to team member. The memeber can create their own account and join your workspace with the assigned role.
 
-## Accepting your invitation
+## Sending an invitation
 
-<BrowserFrame
-  src="/core-setup/img/accept-invitation.png"
-  alt="Accept invitation form"
-  caption="Create your account form to accept the workspace invitation"
-/>
+Click **Invite Member** on the [Team](/core-setup/team-and-roles) page. Enter an **email address** and select a **role**.
+
+![The Invite Team Member form with an email field and a role picker](/core-setup/img/invite-member.png)
+
+<Note>
+The invite link works for **7 days**. After that you need to send a new one.
+</Note>
+
+## Pending invitations
+
+The Pending Invitations list shows members who have not accepted invitation yet, along with their role and the invitation date.
+
+**Revoke** cancels the invitation, and invitation link stops working right away.
+
+![The Pending Invitations list showing an invited email, its role, when it was sent, and a Revoke button](/core-setup/img/pending-invitation.png)
+
+## What the invited member does
+
+Here is what your team member need to do after you send the invitation.
+
 
 <Steps>
-<Step title="Click Accept Invitation">
-  In the invitation email, click the **Accept Invitation** button to open the account creation form.
+<Step title="Open the invitation">
+  They click **Accept Invitation** in the email, which opens an account creation form.
 </Step>
 
-<Step title="Fill in your account details">
-  Complete the form with the following information:
-  - **Full name** — Your complete name
-  - **Email address** — Pre-filled from the invitation
-  - **WhatsApp number** — Enter with the correct country code. Must be a valid WhatsApp number as it will be used for OTP verification.
-  - **Password** — Minimum 8 characters
-  - **Confirm password** — Re-enter your password to confirm
-
-<Warning>
-Use a unique WhatsApp number. Do not use a number that's already assigned to another team member in the workspace, as each number can only be used for OTP verification once.
-</Warning>
+<Step title="Fill in their details">
+  ![The accept invitation form where the invited person creates their account](/core-setup/img/accept-invitation.png)
+  - **Full name** — their name.
+  - **Email address** — already filled in from the invitation.
+  - **WhatsApp number** — their own number, with the country code.
+  - **Password** and **Confirm password** — at least 8 characters.
 </Step>
 
 <Step title="Accept the invitation">
-  Click the **Accept invitation** button to create your account and join the workspace with the assigned role.
+  They click **Accept invitation** to create their account and join with the role you gave them.
 </Step>
 
-<Step title="Verify your WhatsApp number">
-  You will get a 6-digit code on WhatsApp. If you do, enter it to finish.
+<Step title="Verify their WhatsApp number">
+  Enter a 6-digit code sent to their number.
 </Step>
 
-<Step title="Access your workspace">
-  Once verified, you're added to the workspace and taken straight to the Dashboard.
+<Step title="Land on the dashboard">
+  They are redirect to the Dashboard and can start working.
 </Step>
 </Steps>
-
-<Warning>
-An invitation link can be revoked by the workspace owner or an admin at any time before you accept it. If you see an error saying the invitation is no longer valid, ask whoever invited you to send a new one.
-</Warning>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Getting Started" icon="rocket" href="/getting-started/overview">
-    See what to do once you land on the Dashboard for the first time.
+  <Card title="Team" icon="users" href="/core-setup/team-and-roles">
+    Add and manage the people in your workspace.
   </Card>
 
   <Card title="Roles & Permissions" icon="shield-check" href="/core-setup/roles-and-permissions">
-    Understand how roles and permissions work in the workspace you've just joined.
+    Decide what each role can do before you invite.
   </Card>
 </CardGroup>
