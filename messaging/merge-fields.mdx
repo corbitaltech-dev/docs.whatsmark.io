@@ -1,41 +1,61 @@
 ---
 title: "Merge Fields"
-description: "Reference for every merge field token available in WhatsMark.io campaigns, templates, and automation flows."
+description: "Add contact details to your message so each person gets a personalized message."
 icon: "at-sign"
 keywords: ["WhatsMark", "merge fields", "personalization", "tokens", "variables"]
 ---
 
-**Merge fields** are `{{token}}` placeholders that get replaced with real contact data when a message is actually sent — letting one campaign, template, or automation message read as personalized to every recipient.
+A merge field is a placeholder that is replaced with a contact's information when the message is sent. For example, if you use Hi `{{contact.first_name}}`, each person will receive their own name, such as Hi Priya or Hi Sam.
 
-## Where merge fields work
+## How to add one
 
-The same `@`-trigger picker appears anywhere you can compose message content:
+In any text box that supports merge fields, type `@`. A list opens, and you can select a field and it add the `{{token}}` into your text box.
 
-- [Campaigns](/messaging/campaigns) content step
-- [WhatsApp Templates](/messaging/whatsapp-templates) body/header text
-- [Automation flow](/automation/chatbot-flows) text nodes
-- [Initiate Chat](/contacts/managing-contacts#row-actions) — variables in the template you send to a single contact are filled from that contact's data automatically
+You don't need to type it yourself. Just select it from the list.
 
+## Where you can use them
+
+- The [live chat](/messaging/live-chat) composer
+- [Canned replies](/core-setup/canned-replies)
+- [Campaigns](/messaging/campaigns)
+- [WhatsApp template](/messaging/whatsapp-templates) variable values
+- [Sending a template to one contact](/contacts/managing-contacts#actions-on-a-single-contact) from a contact row
+- [Automation flows](/automation/flow-builder)
 
 ## Available fields
 
 <AccordionGroup>
-<Accordion title="Contact Fields">
-  Built-in fields on every contact: name, email, phone, status, source, and assigned team member.
+<Accordion title="Contact fields">
+  Contact ID, First Name, Last Name, Full Name, Email, Phone Number, Display Name, Contact Status, Contact Source, and Assigned To.
 </Accordion>
 
-<Accordion title="Custom Fields">
-  Every active [custom field](/core-setup/custom-fields) you've defined for contacts appears here automatically — create a new custom field and it becomes available as a merge token right away.
+<Accordion title="Custom fields">
+  Every active [custom field](/core-setup/custom-fields) you create shows up.
 </Accordion>
 
-<Accordion title="Team / Workspace Fields">
-  Details about your workspace itself: team name, workspace email, domain, and subdomain — useful for signature-style content that shouldn't change per contact.
+<Accordion title="Team fields">
+  Team Name, Team Email, Team Domain, and Team Subdomain.
+</Accordion>
+
+<Accordion title="Shopify order fields">
+  Available when you have connected a [Shopify](/settings/shopify) store. They use the contact's most recent order or cart: Order Number, Order Date, Order Total, Subtotal, Shipping Price, Total Tax, Currency, Discount Code, Discount Amount, Items Summary, Payment Status, Payment Method, Fulfillment Status, Shipment Status, Tracking Number, Tracking URL, Cart Recovery Link, Shipping City, Shipping Address, and Order Note.
+</Accordion>
+
+<Accordion title="WooCommerce order fields">
+  Available when you have connected a [WooCommerce](/settings/woocommerce) store. They use the contact's most recent order or cart: Order Number, Order Date, Order Total, Order Status, Currency, Currency Symbol, Payment Method, Items Summary, Tracking Number, Tracking URL, and Cart Recovery Link.
 </Accordion>
 </AccordionGroup>
 
-<Note>
-If a contact doesn't have a value for a given field (for example, a custom field left blank), the merge field resolves to an empty string rather than breaking the send.
-</Note>
+## Appointment and flow fields
+
+Two places add their own fields to the picker:
+
+- **[Appointments](/ai-and-more/appointments)** — reminder and confirmation messages get appointment fields like the date, time and service.
+- **[Automation flows](/automation/flow-builder)** — a flow can use answers the customer gave earlier in the chat.
+
+## When a field is empty
+
+If a contact doesn't have a value for a merge field, that part is stays blank. The message is still sent. You cannot set a default value.
 
 ## What's next
 
@@ -44,7 +64,7 @@ If a contact doesn't have a value for a given field (for example, a custom field
     Use merge fields to personalize a broadcast.
   </Card>
 
-  <Card title="Contact Configuration" icon="contact" href="/settings/contact-configuration">
-    Add a custom field so it becomes available as a merge token.
+  <Card title="Custom Fields" icon="list" href="/core-setup/custom-fields">
+    Add your own fields so they become merge fields too.
   </Card>
 </CardGroup>

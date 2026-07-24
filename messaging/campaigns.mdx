@@ -1,122 +1,155 @@
 ---
 title: "Campaigns"
-description: "How to broadcast WhatsApp and Messenger messages to many contacts at once using WhatsMark.io Campaigns."
+description: "Send a WhatsApp or Messenger message to many contacts at once."
 icon: "megaphone"
 keywords: ["WhatsMark", "campaigns", "broadcast", "message campaign", "template campaign", "audience"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-**Campaigns** let you send a message to many contacts at once, instead of one conversation at a time. WhatsMark supports two campaign types, each suited to a different situation.
-
-## Campaign types
-
-<AccordionGroup>
-<Accordion title="Message Campaigns">
-  Free-form text sent to contacts who have messaged you within the last 24 hours (the same [24-hour window](/getting-started/concepts#two-whatsapp-rules-that-shape-everything) rule that applies in [Live Chat](/messaging/live-chat)). No template approval needed, but the audience is limited to recently active contacts.
-</Accordion>
-
-<Accordion title="Template Campaigns">
-  Uses a Meta-approved [WhatsApp template](/messaging/whatsapp-templates), so you can broadcast to any contact list regardless of when they last messaged you.
-</Accordion>
-</AccordionGroup>
+A campaign sends the same message to many contacts at once. Use it for an offer, an announcement, or a follow-up to a group of people.
 
 <Note>
-  Before you can create a campaign you need an **Active channel**, and a **Template Campaign** additionally needs at least one **Approved** template. If you don't have one yet, create or sync one first — see [WhatsApp Templates](/messaging/whatsapp-templates).
+Before you start, you need a **[connected channel](/core-setup/channels/whatsapp)** to send from and **[contacts](/contacts/managing-contacts)** to send to.
 </Note>
 
-<Warning>
-Each campaign type has its own monthly send quota, tracked independently — sending a lot of Message Campaigns doesn't affect your Template Campaign quota, or vice versa.
-</Warning>
+## Campaign statuses
+
+The status shows the current stage of the campaign.
+
+| Status |  It means |
+| --- | --- |
+| **Draft** | Made but not sent yet. You can still edit it, and you send it. |
+| **Queued** | Scheduled and waiting for its send time. |
+| **Preparing** | Getting the list of recipients ready. This lasts a moment. |
+| **Sending** | Messages are going out right now. |
+| **Paused** | Sending is on hold. Resume it to carry on. |
+| **Completed** | Every recipient has been handled. |
+| **Failed** | The campaign could not run, often because no one was eligible to receive it. |
+| **Cancelled** | You stopped it. Anyone not yet sent to will not be sent to. |
+
+## The two campaign types
+
+You pick one of two types when you create a campaign.
+
+### Message campaign
+
+A message you create yourself using text, images, videos, or buttons. You can send it only to people who have messaged you in the [last 24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything). No approved template is needed.
+### Template campaign
+
+Sends a **Meta-approved [template](/messaging/whatsapp-templates)**. It can reach **any** contact on the channel. You need an approved template first. Use it for offers, announcements, and reminders.
 
 ## Creating a campaign
 
-Campaigns are built with a 4-step wizard:
+Campaigns are built in four steps. A live preview of your message shows on the right as you go.
 
 <Steps>
 <Step title="Basics">
-  Name your campaign, choose its type (Message or Template), pick a **channel type** — WhatsApp or Messenger — and select the channel to send from. If you choose a Template Campaign, also select the template you want to send.
-
   <BrowserFrame
     src="/messaging/img/campaign/campaign-basics.png"
     url="whatsmark.io/campaigns/create"
-    alt="Campaign basics step with a campaign name field, a choice between Template Campaign and Message Campaign, a WhatsApp or Messenger channel type toggle, and channel and template pickers"
-    caption="Image shows the campaign basics step of the wizard."
+    alt="The campaign basics step with a name field, a choice between Template and Message campaign, a channel picker, and a template picker"
+    caption="Image shows the basics step of the wizard."
   />
+
+  - **Campaign name** — a name only you see, like *Diwali sale 2026*.
+  - **Campaign type** — Select type of campaign.
+  - **Channel** — which of your channel to send from.
+  - **Template** — for a template campaign, select the approved template to send.
 </Step>
 
 <Step title="Audience">
-  Choose who receives it — a contact **group**, a **filtered** segment, or a **manual** selection of specific contacts.
+  Select the exact contacts who should receive the campaign.
 
   <BrowserFrame
     src="/messaging/img/campaign/campaign-audience.png"
     url="whatsmark.io/campaigns/create"
-    alt="Audience step with filters for status, source, group, and type above a searchable contact list with checkboxes and a Select all filtered option"
+    alt="The audience step with filters for status, source, group and type, a search box, and a contact list with checkboxes and a Select all filtered option"
     caption="Image shows the audience step of the wizard."
   />
+
+  Filter the list with the **status**, **source**, **group** and **type** filters, or search by name or phone. Select the contacts you want, or use **Select all filtered** to tick everyone in the current filtered list. You need at least one contact to continue.
 </Step>
 
 <Step title="Content">
-  Compose your message or select a template — header, body, footer, buttons, or carousel cards as applicable — upload any media, and insert **merge fields** (see below) to personalize each message.
+  Write what you want to send.
 
   <BrowserFrame
     src="/messaging/img/campaign/campaign-content.png"
     url="whatsmark.io/campaigns/create"
-    alt="Content step for a template campaign showing a header image upload area and a field for filling in the template's body variable"
+    alt="The content step showing a message body field with merge field support and options to add buttons or media"
     caption="Image shows the content step of the wizard."
   />
+
+  - **Template campaign** — fill in the template's variables. If the template has a media header, upload the image or file here.
+  - **Message campaign** — write a **header** (optional), a **body**, and a **footer** (optional). You can also add up to three reply **buttons**, a single **call-to-action** link, or attach an image, video or document.
+
+  Type `@` in any text field to add a **merge field** like the contact's name. See [Merge Fields](/messaging/merge-fields).
 </Step>
 
 <Step title="Schedule">
-  Send immediately, or schedule it for a specific date and time.
+  Choose when to send it.
 
   <BrowserFrame
     src="/messaging/img/campaign/campaign-schedule.png"
     url="whatsmark.io/campaigns/create"
-    alt="Schedule step with a choice between Send now and Schedule for later, with a date and time picker open beside a summary of the campaign"
+    alt="The schedule step with a choice between Send now and Schedule for later, a date and time picker, and a summary of the campaign"
     caption="Image shows the schedule step of the wizard."
   />
+
+  - **Send now** — the campaign is sent as soon as you create it.
+  - **Schedule for later** — select a date and time. Confirm your [timezone](/settings/general) first, so it sends at the right time.
+
+  <Warning>
+  Once a campaign start sending you cannot edit it. Check the summary before you send.
+  </Warning>
 </Step>
 </Steps>
 
-<Info>
-Eligible marketing sends are automatically routed through Meta's **Marketing Messages Lite** endpoint when your connected WABA is enrolled — this happens silently, with an automatic fallback to a standard send if it's not available. You don't need to configure anything.
-</Info>
+## Messenger campaigns
 
-## Managing a running campaign
+If you have a Messenger channel connected, you can pick it as the channel type in [step 1](#creating-a-campaign).
+
+Messenger has one important difference: **both** message and template campaigns can only reach contacts who messaged your Page in the **last 7 days**.
+
+## Campaign reports
+
+Open any campaign to see its report.
 
 <BrowserFrame
   src="/messaging/img/campaign/campaign-detail.png"
   url="whatsmark.io/campaigns"
-  alt="Campaign detail page with a Completed status, cards for total sent, delivered, not received, read, and failed, an engagement breakdown chart covering delivered, read, replied, clicks, and failed, and a preview of the message as recipients see it"
-  caption="Image shows the campaign detail page tracking delivery and engagement."
+  alt="A campaign report with cards for total sent, delivered, not received, read and failed, an engagement breakdown chart, and a preview of the message"
+  caption="Image shows a campaign report with its delivery figures."
 />
 
-From a campaign's detail page you can:
+The report shows how the campaign is doing:
 
-- **Launch**, **pause**, **resume**, or **cancel** it.
-- **Resend to failed recipients only** — retry just the sends that didn't go through.
-- **Clone for replied** — create a new campaign targeting only the contacts who replied to this one.
-- View **delivery analytics** — sent, delivered, not received, read, and failed counts, plus an engagement breakdown covering replies and clicks.
-- Preview your message exactly as recipients see it.
-- Browse the paginated **recipients** table for that campaign.
+- **Sent**, **Delivered**, **Not received**, **Read** and **Failed** counts, each with a percentage.
+- An **engagement breakdown** for delivered, read, replied and button clicks.
+- A preview of the message exactly as people receive it.
 
-<Tip>
-Use "Clone for replied" to build a simple follow-up sequence — send an initial broadcast, then automatically target only the people who engaged with it.
-</Tip>
+Depending on its status, you can **Pause**, **Resume** or **Cancel** a campaign, or **Delete** it once it is finished.
 
-## Merge fields
+Two more actions:
 
-While composing a campaign, use the `@` picker to insert **merge fields** — tokens like the contact's name or a custom field value that get replaced with real data for each recipient at send time. See the full list on the [Merge Fields](/messaging/merge-fields) reference page.
+- **Resend Failed** — send again only to the contacts whose message failed.
+- **New Campaign for Replied** — start a fresh campaign for the contacts who replied. It opens as a draft for you to edit.
+
+Click **Recipients** to see every contact in the campaign, filter them by status (pending, sent, delivered, read, replied, failed), and read the error on any that failed.
+
+## Campaign limits
+
+Your plan includes a number of **message campaigns** and **template campaigns** each month, counted separately.
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Merge Fields" icon="at-sign" href="/messaging/merge-fields">
-    Browse every available token you can use in campaign content.
+  <Card title="WhatsApp Templates" icon="file-text" href="/messaging/whatsapp-templates">
+    Get a template approved so you can run a template campaign.
   </Card>
 
-  <Card title="WhatsApp Templates" icon="file-text" href="/messaging/whatsapp-templates">
-    Get a template approved so you can run a Template Campaign.
+  <Card title="Merge Fields" icon="at-sign" href="/messaging/merge-fields">
+    Browse every token you can drop into a campaign.
   </Card>
 </CardGroup>
