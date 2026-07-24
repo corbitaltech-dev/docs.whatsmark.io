@@ -1,68 +1,103 @@
 ---
 title: "Roles & Permissions"
-description: "Control what each team member can see and do in WhatsMark.io."
+description: "Choose what each team member can do in WhatsMark.io."
 icon: "shield-check"
 keywords: ["WhatsMark", "roles", "permissions", "access", "team", "restrict"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-A role is a set of permissions that you assign to team members. For example, you can create roles like Sales Agent, Support Agent, or Manager. Once a role is created, you can assign it to multiple team members. Any changes you make to the role are automatically applied to everyone using it.
+A role is a set of permissions that you assign to team members. Create roles like **Sales Agent**, **Support Agent**, or **Manager**, then assign them to one or more team members. Updating a role automatically updates permissions for everyone using it.
+
+Find it under **Setup → Roles** in the sidebar, or click **Manage Roles** on the Team page.
+
+<BrowserFrame
+  src="/core-setup/img/role.png"
+  url="whatsmark.io/roles"
+  alt="The Roles page listing roles with Name, Members and Created columns, a Create Role button, and a row menu"
+  caption="Image shows the Roles page with every role in your workspace."
+/>
+
+The table shows each role's **Name**, how many **Members** hold it, and when it was **Created**.
 
 ## Create a role
 
-Click **Create Role**. Give it a **name**, then select what members with this role should be able to do.
+<Steps>
+<Step title="Click Create Role">
+  The button sits at the top right. A form opens on the right side of the screen.
+</Step>
 
-![The Create Role form with a role name field and a grid of features with permission checkboxes](/core-setup/img/roles-create.png)
+<Step title="Name the role">
+  Use the name of the job, such as **Support Agent** — this is what you will pick from later when adding a team member.
+</Step>
 
-## How the permission grid works
+<Step title="Check what this role can do">
+  Below the name is the permission list. Each row is one part of the product, and the boxes in that row are what the role can do there.
 
-The grid has one row per part of the product. The checkboxes in that row are what the role can do there.
+  ![The Create Role form with a role name field and a list of features with permission checkboxes](/core-setup/img/roles-create.png)
+</Step>
 
-## What each group controls
+<Step title="Click Save">
+  The role is ready to assign. Head to [Team](/core-setup/team-and-roles) to give it to someone.
+</Step>
+</Steps>
 
-Most groups follow the same pattern:
+## How the permissions work
 
-- **View** — see the page and its contents.
+Most rows offer the same four boxes:
+
+- **View** — see the page and what is on it.
 - **Create** — add new items.
 - **Edit** — change existing items.
 - **Delete** — remove items.
 
-The table below lists every group. The last column only mentions permissions that do something beyond those four.
+<Note>
+Selecting any permission automatically selects **View**. This ensures team members can only **create**, **edit**, or manage items they can **view**. If you clear all other permissions, View becomes available to change again.
+</Note>
 
-| Group | Anything unusual |
+Click the feature name on the left to check or uncheck that whole row at once.
+
+### Rows that work differently
+
+Most rows need no explanation. These few have extra boxes worth knowing about:
+
+| Row | What the extra boxes do |
 | --- | --- |
-| **Contacts** | **Import** brings contacts in from a file. **Initiate chat** starts a new conversation from a contact. **View own** lets a member see only the contacts assigned to them. |
-| **Channels** | **Connect** and **Disconnect** instead of create and delete. |
-| **Team** | **Invite** sends an email invitation. Create adds a member directly. |
+| **Contacts** | **Import** brings contacts in from a file. **Initiate Chat** starts a new conversation from a contact. **View Own** is a narrower View — the member sees only the contacts assigned to them. |
+| **Channels** | **Connect** and **Disconnect** replace Create and Delete. |
+| **Team** | **Invite** sends an email invitation. **Create** adds a member directly, with a password you set. |
 | **Templates** | **Load** pulls your approved templates in from Meta. |
-| **WhatsApp Flows** | **Submission view** sees the answers customers filled in. |
-| **Chat** | Works differently — see [Chat](#chat) below. |
+| **WhatsApp Flows** | **Submission View** sees the answers customers filled in on a form. |
+| **Invoices** | **Download** saves an invoice as a PDF. |
+| **Subscription**, **Billing** | View only. Changing a plan, cancelling, or buying an add-on is always the owner's job. |
+| **Chat** | Has no View box — see below. |
 
 ### Chat
 
-Chat has no View permission. Instead, a member gets into the inbox if they have **any** chat permission at all, or if a conversation has been assigned to them.
+Chat has no **View** box. A member reaches the inbox if they hold **any** chat permission at all, or if a conversation has been assigned to them.
 
-The chat permissions are:
-
-- **Send message** — reply in a conversation. Without it the inbox is read-only.
-- **Send template** — send an approved template.
-- **Run flow** — start an automation or send a form in a chat.
+- **Send Message** — reply in a conversation. Without it, the inbox is read-only.
+- **Send Template** — send an approved template.
+- **Run Flow** — start an automation or send a form inside a chat.
 - **Close** — close the conversation they have open.
-- **Clear** — delete all the messages in a conversation.
+- **Clear** — delete every message in a conversation.
 - **Delete** — delete a whole conversation.
-- **Delete message** — delete and restore individual messages.
+- **Delete Message** — delete and restore individual messages.
 
 <Note>
-Assigning conversations to members or teams is not in this list. Only owners and admins can do it.
+Assigning conversations to members or teams is not on this list. Only the admins can do it.
 </Note>
 
-## Owners and admins ignore roles
+## Admins always have full access
 
-Roles apply to ordinary members only. The **owner** and anyone marked as an **admin** can see and do everything.
+Roles apply only to team members. Team members marked as **Is Admin** always have full access, regardless of the role assigned to them.
+
+## Edit or delete a role
+
+Click a role's name to reopen it, or use the row menu for **Edit** and **Delete**. Edits reach everyone holding the role the moment you save.
 
 <Warning>
-A role that members are using cannot be deleted. Move those members to a different role first, then delete it. The **Members** column shows you how many are affected.
+A role still assigned to someone cannot be deleted. Check the **Members** column, move those people to another role first, then delete it.
 </Warning>
 
 ## What's next
