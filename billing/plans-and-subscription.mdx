@@ -1,79 +1,137 @@
 ---
 title: "Plans & Subscription"
-description: "How to view, upgrade, downgrade, or cancel your WhatsMark.io subscription, and how billing cycles work."
+description: "Manage your WhatsMark.io subscription — upgrade, change your billing cycle, renew, turn auto-renewal on or off, and cancel or resume."
 icon: "credit-card"
-keywords: ["WhatsMark", "billing", "subscription", "plan", "upgrade", "downgrade", "billing cycle"]
+keywords: ["WhatsMark", "WhatsMark.io", "subscription", "billing cycle", "upgrade", "downgrade", "renew", "auto-renewal", "cancel subscription"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-**Billing** is where you manage your workspace's plan and subscription — always reachable, even if a payment issue is blocking the rest of the product, so you can fix it yourself.
+This page is about looking after a subscription you already have — changing it, renewing it, or
+cancelling it. To compare what each plan includes, see [Free vs. paid plans](/getting-started/free-vs-paid).
 
-## Viewing your subscription
+<Info>
+  Only the workspace **owner** can change, cancel, resume, or renew a subscription, or manage
+  payment methods. Other team members can be given permission to **view** billing and invoices,
+  but not to make changes.
+</Info>
 
-Go to **Your account menu**(click your name at the bottom of the sidebar) **→ Billing** to see your current plan, usage, and billing cycle at a glance, or open **My Subscription** for the full detail: status, renewal date, and billing cycle.
+## Where to manage it
 
-![Account menu expanded from the sidebar, showing My Subscription, Billing, and Invoices options](/billing/img/account-menu-billing.png)
+Click your name at the bottom of the sidebar to open the account menu:
 
-## Changing your plan
+- **My Subscription** — your plan, billing cycle, status, and renewal date at a glance.
+- **Billing** — where you change your plan, cycle, contacts and add-ons.
+- **Invoices** — your payment history.
 
-<Steps>
-<Step title="Open plan options">
-  From Billing, choose to upgrade or otherwise change your plan. Moving from **Free to Professional** is a one-way upgrade — you can't downgrade back from Professional to Free. Once you're on Professional, you're free to upgrade or downgrade your **billing cycle**.
-</Step>
-
-<Step title="Preview the change">
-  WhatsMark shows a **proration preview** — what you'll be charged or credited for switching mid-cycle — before you confirm anything.
-</Step>
-
-<Step title="Choose a billing cycle">
-  Plans are available **Monthly**, **Quarterly**, or **Yearly** — you can switch cycles independently of switching plans. A billing cycle change only takes effect from your **next renewal**, not immediately.
-</Step>
-
-<Step title="Confirm">
-  Complete the change through your chosen payment method.
-</Step>
-</Steps>
-
-![Current Subscription panel showing plan, billing cycle, and renewal date, with Monthly, Quarterly, and Yearly options and a contact limit slider previewing the new price](/billing/img/subscription-cycle.png)
+![The account menu open from the sidebar showing My Subscription, Billing and Invoices](/billing/img/account-menu-billing.png)
 
 <Note>
-Your **contact limit doesn't reset when you renew**. It's the total number of contacts you can store — not a monthly allowance. If you're storing 1,000 contacts on a 2,000-contact plan, you'll still have 1,000 slots left after renewal. To free up space, delete contacts you no longer need.
+  On the **Free Forever** plan there's nothing to bill, so the **Billing** and **Invoices** menu
+  items are hidden. You'll find the upgrade button on **My Subscription** instead.
 </Note>
 
-## Cancelling a scheduled change
+## Move from Free to Professional
 
-Changes that take effect at your **next renewal** — a new billing cycle, a plan downgrade, or a lower contact limit — stay pending until then. You can **cancel a pending change** any time before it takes effect, and you'll simply carry on with your current plan.
+The one plan change you make is moving from **Free Forever** up to **Professional**. On
+**My Subscription**, use **Upgrade Plan**, pick your billing cycle, and confirm.
 
-## Understanding your Billing Summary
+Because the Free plan costs nothing, there's nothing to carry over from it — you simply pay for
+Professional for the billing cycle you chose, and it's active as soon as payment goes through.
 
-![Billing Summary panel showing Base Plan, Plan Add-ons, and Total per year, with Paid this cycle and the next renewal date below](/billing/img/billing-summary.png)
+<Tip>
+  Everything you've already built carries over untouched — your contacts, chats, templates and
+  flows are all still there on Professional.
+</Tip>
 
-The **Billing Summary** panel breaks down your price — your base plan, your contact limit, and any add-ons — adding up to the **Total** you pay each cycle. Two lines below the total tell you where you stand:
+<Note>
+  **Already on Professional?** Professional is the paid plan, so there's no higher plan to move up
+  to. What you *can* change is your **billing cycle** (below) and your **contacts and add-ons** —
+  raise those whenever you need more room.
+</Note>
 
-- **Paid this cycle** — what you actually paid for the cycle you're in.
-- **Renews** — your next renewal date, and how many days away it is.
+## Adjust your contacts
 
-## Cancelling or resuming
+Your contact allowance is set by the slider on **Billing**. Moving it up or down takes effect at
+your **next renewal** — you keep your current room until then, and it changes over when the plan
+renews. The slider won't drop below the number of contacts you're actually storing, so nothing
+you've saved is ever at risk.
 
-You can **cancel** your subscription (it typically stays active until the end of the current billing period) or **resume** a cancelled subscription before it lapses. You can also **disable auto-renewal** if you'd rather manage renewals manually.
+<Tip>
+  Need more room **right now**, before your next renewal? Buy the **Extra Contacts** add-on — it
+  adds capacity straight away. See [Add-ons & upgrades](/billing/addons-and-upgrades).
+</Tip>
 
-## Renewing an expired or expiring subscription
+## Change your billing cycle
 
-If your subscription has expired or is about to, the **Renew** page runs a renewal calculator so you can see exactly what you'll pay before confirming.
+You can pay **Monthly**, **Quarterly**, or **Yearly**, and switch between them whenever you like —
+this is separate from changing your plan. On **Billing**, use **Change Billing Cycle** and pick the
+one you want.
+
+![The Current Subscription panel with Monthly, Quarterly and Yearly options and a contact slider](/billing/img/subscription-cycle.png)
+
+A cycle change is **never charged straight away**. It's saved as a pending change and takes effect
+at your **next renewal** — until then you carry on exactly as you are, and a small **"Changing
+to…"** note shows next to your cycle so you can see it's queued.
+
+<Note>
+  Changed your mind? Any pending change — a new cycle, or a reduced contact count — can be
+  cancelled before it takes effect. You'll simply carry on with what you have now.
+</Note>
+
+## Renewing
+
+Your subscription renews on the date shown on **My Subscription**. There are two ways that happens.
+
+- **Automatic renewal (default)** keeps your workspace running without you doing anything — it
+  renews on the date and your saved payment method is charged.
+- **Manual renewal** — if auto-renewal is off, you renew yourself from the **Renew Subscription**
+  page before the date. A **Renew** button also appears on Billing as the date gets close.
+
+### Turning auto-renewal off
+
+On **My Subscription**, next to **Auto-Renewal**, use **Turn Off**. Your subscription won't renew
+on its own — you'll need to renew it yourself before it expires to keep your workspace active.
 
 <Warning>
-Only the workspace **owner** can change plans, cancel, resume, or manage payment methods. Other team members can be given permission to **view** billing, the subscription, and invoices — but not to make changes.
+  Turning auto-renewal back **on** may mean re-confirming your payment method — depending on your
+  payment provider, you may only be able to do that at your next renewal.
 </Warning>
+
+## Cancel your subscription
+
+On **Billing**, use **Cancel Subscription**. You'll be asked to confirm.
+
+**You keep full access until the end of the period you've already paid for** — nothing is switched
+off today, and you can change your mind and **Resume** any time before that date. On My Subscription
+the **"Renews on"** date changes to **"Access until"**, so you can always see when it ends.
+
+<Warning>
+  Cancelling always takes effect at the **end of your current billing period** — there's no
+  part-way cancellation or refund for unused days. After that date, if you haven't renewed or
+  resumed, your workspace becomes **inactive**: you won't be able to send or receive, and after a
+  grace period it's eventually removed. Renew or resume before then and everything is exactly as
+  you left it.
+</Warning>
+
+## Resume a cancelled subscription
+
+Changed your mind? While your subscription is still within its paid period (or its grace period
+after), open **Billing** and choose **Resume Subscription**. Your plan carries straight on, with
+everything intact — no need to set anything up again.
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Add-ons & Upgrades" icon="puzzle" href="/billing/addons-and-upgrades">
-    Buy extra capacity — like more contacts or AI tokens — without changing your whole plan.
+  <Card title="Payments & invoices" icon="receipt" href="/billing/payments-and-invoices">
+    How to pay, apply a coupon, and download your invoices.
   </Card>
 
-  <Card title="Payments & Invoices" icon="receipt" href="/billing/payments-and-invoices">
-    See how to pay, apply a coupon, and download invoices.
+  <Card title="Add-ons & upgrades" icon="puzzle" href="/billing/addons-and-upgrades">
+    Raise a single limit — more contacts, team seats or AI — without changing plans.
+  </Card>
+
+  <Card title="Dashboard & usage" icon="chart-line" href="/reporting/dashboard-and-usage">
+    Track how much of each limit you've used.
   </Card>
 </CardGroup>
