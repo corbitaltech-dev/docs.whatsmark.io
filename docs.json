@@ -26,7 +26,11 @@
     },
     {
       "source": "/automation/ai-features",
-      "destination": "/ai-and-more/ai-features"
+      "destination": "/core-setup/ai-prompts"
+    },
+    {
+      "source": "/ai-and-more/ai-features",
+      "destination": "/core-setup/ai-prompts"
     },
     {
       "source": "/automation/appointments",
@@ -97,7 +101,6 @@
           {
             "group": "AI & More",
             "pages": [
-              "ai-and-more/ai-features",
               "ai-and-more/appointments",
               "ai-and-more/whatsapp-flows"
             ]
