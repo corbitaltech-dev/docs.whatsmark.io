@@ -28,49 +28,41 @@ The table shows each role's **Name**, how many **Members** hold it, and when it 
 </Step>
 
 <Step title="Name the role">
-  Use the name of the job, such as **Support Agent** — this is what you will pick from later when adding a team member.
+  Enter a role name, such as **Support Agent**.
 </Step>
 
 <Step title="Check what this role can do">
-  Below the name is the permission list. Each row is one part of the product, and the boxes in that row are what the role can do there.
+  Select the permissions for the role.
 
   ![The Create Role form with a role name field and a list of features with permission checkboxes](/core-setup/img/roles-create.png)
 </Step>
 
 <Step title="Click Save">
-  The role is ready to assign. Head to [Team](/core-setup/team-and-roles) to give it to someone.
+  The role is ready to assign.
 </Step>
 </Steps>
 
 ## How the permissions work
 
-Most rows offer the same four boxes:
+Most feature offer the same four permission:
 
 - **View** — see the page and what is on it.
-- **Create** — add new items.
-- **Edit** — change existing items.
-- **Delete** — remove items.
+- **Create** — add new record.
+- **Edit** — change existing record.
+- **Delete** — remove record.
 
-<Note>
-Selecting any permission automatically selects **View**. This ensures team members can only **create**, **edit**, or manage items they can **view**. If you clear all other permissions, View becomes available to change again.
-</Note>
+### Permissions that work differently
 
-Click the feature name on the left to check or uncheck that whole row at once.
+The table below explains the extra permissions available for each feature.
 
-### Rows that work differently
-
-Most rows need no explanation. These few have extra boxes worth knowing about:
-
-| Row | What the extra boxes do |
+| Feature | Extra permission |
 | --- | --- |
-| **Contacts** | **Import** brings contacts in from a file. **Initiate Chat** starts a new conversation from a contact. **View Own** is a narrower View — the member sees only the contacts assigned to them. |
-| **Channels** | **Connect** and **Disconnect** replace Create and Delete. |
-| **Team** | **Invite** sends an email invitation. **Create** adds a member directly, with a password you set. |
-| **Templates** | **Load** pulls your approved templates in from Meta. |
-| **WhatsApp Flows** | **Submission View** sees the answers customers filled in on a form. |
-| **Invoices** | **Download** saves an invoice as a PDF. |
-| **Subscription**, **Billing** | View only. Changing a plan, cancelling, or buying an add-on is always the owner's job. |
-| **Chat** | Has no View box — see below. |
+| **Contacts** | [**Import:**](/contacts/import-export#importing-contacts) imports contacts from a file. [**Initiate chat:**](/contacts/managing-contacts#actions-on-a-single-contact) starts a new chat with a contact. **View own:** members see only the contacts assigned to them. 
+| **Channels** | [**Connect**](/core-setup/channels/whatsapp#connecting-whatsapp) and [**Disconnect**](/core-setup/channels/messenger#managing-a-connected-page) the channels. |
+| **Team** | [**Invite:**](/core-setup/team-and-roles#invite-them-by-email) sends an email invitation. |
+| **Templates** | [**Load:**](/messaging/whatsapp-templates#adding-a-template) pulls your approved templates in from Meta. |
+| **WhatsApp Flows** | [**Submission view:**](/ai-and-more/whatsapp-flows#submissions) members can see customer responses. |
+| **Chat** | Works differently — see [Chat](#chat) below. |
 
 ### Chat
 
@@ -84,20 +76,12 @@ Chat has no **View** box. A member reaches the inbox if they hold **any** chat p
 - **Delete** — delete a whole conversation.
 - **Delete Message** — delete and restore individual messages.
 
-<Note>
-Assigning conversations to members or teams is not on this list. Only the admins can do it.
-</Note>
-
 ## Admins always have full access
 
 Roles apply only to team members. Team members marked as **Is Admin** always have full access, regardless of the role assigned to them.
 
-## Edit or delete a role
-
-Click a role's name to reopen it, or use the row menu for **Edit** and **Delete**. Edits reach everyone holding the role the moment you save.
-
 <Warning>
-A role still assigned to someone cannot be deleted. Check the **Members** column, move those people to another role first, then delete it.
+A role that members are using cannot be deleted. Move those members to a different role first, then delete it. The **Members** column shows you how many are affected.
 </Warning>
 
 ## What's next
