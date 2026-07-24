@@ -17,6 +17,10 @@
       "destination": "/"
     },
     {
+      "source": "/getting-started/overview",
+      "destination": "/"
+    },
+    {
       "source": "/automation/chatbot-flows",
       "destination": "/automation/overview"
     },
@@ -45,8 +49,7 @@
               "getting-started/concepts",
               "getting-started/free-vs-paid",
               "getting-started/register",
-              "getting-started/log-in",
-              "getting-started/overview"
+              "getting-started/log-in"
             ]
           },
           {

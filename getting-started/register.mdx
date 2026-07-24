@@ -1,212 +1,210 @@
 ---
-title: "Register"
-description: "How to choose a plan and create a new WhatsMark.io workspace, including WhatsApp OTP verification and workspace provisioning."
+title: "Create your account"
+description: "Sign up for WhatsMark.io, verify your WhatsApp number, and get your own workspace ready to send — in a couple of minutes, no card needed to start."
 icon: "user-plus"
-keywords: ["WhatsMark", "register", "sign up", "create workspace", "OTP verification", "plans"]
+keywords: ["WhatsMark", "WhatsMark.io", "register", "sign up", "create account", "create workspace", "OTP verification", "getting started"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Creating a WhatsMark.io account means creating a **workspace** — your own isolated instance of the product, reachable at your own subdomain (e.g. `acme.whatsmark.io`). Registration starts with choosing a plan, not with a bare sign-up form.
+Creating your account is the first step to sending WhatsApp messages from WhatsMark.io. It sets
+up your login and your own **workspace** — your private space in the product, at your own web
+address like `acme.whatsmark.io`. It takes a couple of minutes, and you can start without a card.
 
-## Step 1: Choose a plan
+<Info>
+  You pick a plan *before* you fill in the sign-up form, so that's where we begin. Choosing
+  **Free Forever** costs nothing and needs no payment — you can move to a paid plan whenever you
+  outgrow it.
+</Info>
+
+## Step 1: Pick a plan
 
 <BrowserFrame
   src="/images/step1-pricing-plans.png"
   url="whatsmark.io/pricing"
-  alt="Pricing page"
-  caption="Image shows the Pricing page with Free, Professional, and Reseller plans."
+  alt="The pricing page showing Free, Professional and Reseller plan cards"
+  caption="Start on the pricing page and choose how you want to begin."
 />
 
-<Steps>
-  <Step title="Open the Pricing page">
-    Visit the public **Pricing** page. You'll see plan cards for **Free**, **Professional**, and **Reseller**.
-  </Step>
-  <Step title="Pick Free or Professional">
-    - **Free** — no payment required, activated immediately.
-    - **Professional** — use the contact-volume slider and the **Monthly / Quarterly / Yearly** toggle to pick the tier and billing cycle that fits your contact list size.
-    - **Reseller** — coming soon. You can [join the waitlist](https://whatsmark.io/reseller).
-  </Step>
-  <Step title="Click Get Started">
-    Your plan, billing cycle, and currency are carried forward automatically — you'll fill out the registration form next.
-  </Step>
-</Steps>
+Open the [pricing page](https://whatsmark.io/pricing) and choose how you'd like to start:
+
+- **Free Forever** — no payment, no card, your workspace opens straight away.
+- **Professional** — pick your options and you'll pay after the sign-up form.
+- **Reseller** — for agencies, and not self-serve yet. You can [join the waitlist](https://whatsmark.io/reseller).
+
+Click **Get Started** on your chosen plan. Your choice is carried forward automatically — the
+sign-up form comes next.
 
 <Tip>
-  Not sure which to pick? [Free vs. Paid Plans](/getting-started/free-vs-paid) compares every limit, quota, integration, and add-on side by side.
+  Not sure? Start on **Free Forever** — nothing is locked away, and upgrading later keeps
+  everything you've built. [Free vs. paid plans](/getting-started/free-vs-paid) shows what each
+  one includes.
 </Tip>
 
 ## Step 2: Create your workspace
 
-The registration form is a two-step wizard titled **"Create your workspace."**
+The sign-up form is a short two-part wizard titled **"Create your workspace."**
 
 <BrowserFrame
   src="/images/step2-account-details.png"
   url="whatsmark.io/register"
-  alt="Registration form"
-  caption="Image shows the account details form."
+  alt="The account details form: full name, email, password, WhatsApp number and currency"
+  caption="Your account details."
 />
 
-### Account details
+### Your details
 
-- **Full name** and **Email address** are required.
-- **Email address** must be valid and accessible. WhatsMark.io sends verification, so use one you can open immediately.
-- **Password** must be at least 8 characters and include an uppercase letter, a lowercase letter, a number, and a symbol. You'll confirm it in a second field.
-- **WhatsApp number** — enter it with the correct country code. This number is used for OTP verification (see below), so use a number you have access to.
-- **Currency** — choose **INR** or **USD**. This is used for billing and pricing.
+- **Full name** and **Email address** — use an email you can open now; we may send a link to it.
+- **Password** — at least 8 characters, with an uppercase letter, a lowercase letter, a number
+  and a symbol. You'll type it twice.
+- **WhatsApp number** — pick your country, then enter the number. We send a short code to it in
+  the next step to confirm it's really yours, so use a number you have on you.
+- **Currency** — **INR** or **USD**, for billing.
 
 <Warning>
-  Once you choose a currency, you **cannot change it later**. If you select **INR**, you will always pay in INR and cannot switch to USD. Similarly, if you choose **USD**, you cannot switch to INR. Choose carefully as this decision is permanent for your workspace.
+  **Your currency is permanent.** Whichever you pick is the one you'll always be billed in — it
+  can't be switched later. Choose the one you actually want to pay in.
 </Warning>
 
-If social login (Google or Facebook) is available, you'll see **"Sign up with"** buttons above the form. Using one of these pre-fills your name and email and skips the password fields entirely.
+<Tip>
+  In a hurry? Use **Sign up with Google** or **Facebook** above the form — one tap fills in your
+  name and email and skips the password fields.
+</Tip>
 
-### Workspace details
+### Your workspace
 
 <BrowserFrame
   src="/images/workspace details.png"
   url="whatsmark.io/register"
-  alt="Workspace details form"
-  caption="Image shows the workspace details and subdomain setup form."
+  alt="The workspace details form with a live subdomain preview"
+  caption="Name your workspace and claim its web address."
 />
 
-- **Workspace name** — e.g. "Acme Corp." As you type, a subdomain is suggested automatically.
-- **Subdomain** — shown as a live preview of your workspace URL (e.g. `https://acme.whatsmark.io`), with a real-time availability check.
-  - Your subdomain must comply with our [Fair Use & Acceptable Use Policy](https://cijagani.in/policies/fair-use-acceptable-use-policy).
-  - If your subdomain violates this policy or infringes on the rights of others, your subdomain or workspace may be suspended or permanently deleted.
-- **Terms of Service** and **Privacy Policy** — you must check this box before you can continue.
-  - By registering, you agree that your subdomain and workspace content must follow the Fair Use & Acceptable Use Policy.
+- **Workspace name** — your business name, e.g. "Acme Corp". As you type, we suggest a web
+  address from it.
+- **Subdomain** — your workspace's web address, previewed live (e.g. `acme.whatsmark.io`) with an
+  instant check that it's free. Lowercase letters, numbers and hyphens only.
 
-Click **Create workspace** to continue.
+  <Note>
+    Pick this one thoughtfully — changing your subdomain later means contacting support, so it's
+    best to get it right now. Your currency choice above is the same.
+  </Note>
+- Tick to agree to the **Terms of Service**, **Privacy Policy** and
+  [Fair Use & Acceptable Use Policy](https://whatsmark.io/policies/fair-use-acceptable-use-policy).
+  You can't continue until this is ticked.
+
+Click **Create workspace**.
 
 <Tip>
-  Already have a workspace? Use the **"Already have a workspace? Log in"** link at the bottom of either step instead of registering again.
+  Already have a workspace? Use the **"Already have a workspace? Log in"** link at the bottom of
+  the form instead.
 </Tip>
 
-## Step 3: Verify your WhatsApp number
+## Step 3: Confirm your WhatsApp number
 
 <BrowserFrame
   src="/images/step3-otp-verification.png"
   url="whatsmark.io/register"
-  alt="OTP verification dialog"
-  caption="Image shows the WhatsApp OTP verification dialog."
+  alt="The 6-digit WhatsApp code verification dialog"
+  caption="Enter the code we send to your WhatsApp."
 />
 
-Complete the following WhatsApp verification steps to finish creating your workspace.
+To confirm the number is really yours, we send a **6-digit code to your WhatsApp** and a
+**"Verify your WhatsApp number"** box opens.
 
 <Steps>
-  <Step title="Receive your code">
-    WhatsMark.io sends a 6-digit verification code to your WhatsApp number, and a **"Verify your WhatsApp number"** dialog opens.
+  <Step title="Wait for the code">
+    It usually arrives on WhatsApp within a few seconds.
   </Step>
-  <Step title="Enter the code">
-    Type the 6 digits into the on-screen code boxes. The dialog submits automatically once all 6 digits are entered — there's no separate confirm button to click.
+  <Step title="Type it in">
+    Enter the six digits. The box submits on its own once the last digit is in — there's no
+    separate button to press.
   </Step>
-  <Step title="Resend if needed">
-    If the code does not arrive, wait about one minute and then tap **Resend**. Repeated resends can trigger a longer cooldown or temporary hold, so use the link only when the countdown has finished.
+  <Step title="Didn't arrive? Resend">
+    Wait about a minute, then tap **Resend**. Only use it once the countdown finishes — repeated
+    taps trigger a longer wait.
+  </Step>
+</Steps>
+
+## Step 4: Your workspace is built
+
+<Steps>
+  <Step title="Setting up">
+    You'll see a **"Setting up your workspace"** screen tick through a short checklist — creating
+    the workspace, setting up its storage, creating your account, finishing touches. It usually
+    takes a few seconds.
+  </Step>
+  <Step title="You're in">
+    When it's done, you land in your workspace **already logged in** — no need to sign in
+    separately the first time.
   </Step>
 </Steps>
 
 <Note>
-  If the verification code doesn't arrive immediately, wait about one minute before tapping **Resend**.
+  If it's taking a while, you'll see a "this is taking longer than expected" notice — it keeps
+  working in the background. If it stops, a **Try Again** button appears.
 </Note>
 
-## Step 4: Workspace provisioning
+### If you're asked to confirm your email
 
-Once verification succeeds, you'll land on a **"Setting up your workspace"** screen with a live progress checklist:
+Some workspaces also ask you to confirm your email before you reach your dashboard. If yours
+does, you'll see a **"Check your inbox"** screen: open the email we sent, click
+**Verify Email Address**, and you'll land back in your workspace. No email? Use **Resend
+verification email**, and check your spam folder.
 
-1. Creating your workspace
-2. Setting up your database
-3. Creating your account
-4. Finishing touches
-
-This typically finishes within a few seconds. When it's done, you'll see a short **"Your workspace is ready!"** confirmation before being redirected and automatically logged in — you don't need to log in manually right after registering.
-
-<Warning>
-  If setup fails, you'll see a **"Setup failed"** message with a **Try Again** button. If it's simply taking longer than usual, a **"This is taking longer than expected"** notice appears, but the process keeps running in the background.
-</Warning>
-
-## Email verification
-
-<BrowserFrame
-  src="/images/email-verfication.png"
-  url="whatsmark.io/register"
-  alt="Email verification screen"
-  caption="Image shows the email verification screen."
-/>
-
-You cannot access your Dashboard or anything else in your workspace until you verify your email address.
-Instead of your Dashboard, you'll see a full-screen **"Check your inbox"** notice telling you to:
-
-<Steps>
-  <Step title="Open the email">
-    Open the verification email WhatsMark.io sent to the address you registered with.
-  </Step>
-  <Step title="Click the verification link">
-    Click the **Verify Email Address** button inside it.
-  </Step>
-  <Step title="You're redirected back">
-    You land back in WhatsMark.io and your workspace is now fully accessible.
-  </Step>
-</Steps>
-
-If you don't see the email, use the **Resend verification email** button on this screen — check your spam or junk folder if it still doesn't arrive. A **Sign out** option is also available here.
-
-
-## Free plan
-
-If you choose the **Free** plan, your workspace is activated immediately and you land straight on your **Dashboard** — no payment step.
-
-## Paid plan
+### If you chose a paid plan
 
 <BrowserFrame
   src="/images/paid-plan.png"
   url="whatsmark.io/register"
-  alt="Paid plan checkout screen"
-  caption="Image shows the paid plan registration and payment screen."
+  alt="The paid-plan checkout screen"
+  caption="Paid plans go through a short checkout before the workspace opens."
 />
 
-If you choose the **Professional** plan, your workspace is created, but you'll be shown a **payment screen** before you can access anything else.
-
-If you chose a paid plan, you'll walk through a short checkout flow:
+**Free Forever** workspaces open straight to the dashboard. If you picked **Professional**,
+there's a short checkout first:
 
 <Steps>
   <Step title="Review your plan">
-    Confirm the plan, contact tier, and billing cycle you selected. If you change your mind, click **Change my mind** to choose a different contact tier before continuing.
+    Confirm the plan and options you chose. You can still change them here before paying.
   </Step>
   <Step title="Enter billing details">
-    Provide your company name, billing email, tax ID (e.g. GST), country, state, postal code, and company address.
-    <Info>
-      These details appear in the invoice **Bill To** section and can be updated later. If you change them after an invoice is created, the change will appear only on the next invoice — not on the previous one.
-    </Info>
+    Company name, billing email, tax ID, and address — these appear on your invoices and can be
+    updated later.
   </Step>
-  <Step title="Choose a payment method">
-    Pick a payment gateway:
-    - **Razorpay** — pay by cards, UPI, net banking, wallets, and other supported methods.
-
-      You can enable **Automatic Renewal** to automatically renew your subscription using **Card AutoPay** or **UPI AutoPay**, and you can disable it later.
-    - **Offline bank transfer** — pay by bank transfer instead of using the online gateway.
-    - **Dodo** — if you select **USD** as your currency, Dodo will be available as the payment gateway, and the Offline Bank Transfer option will be used.
-  </Step>
-  <Step title="Complete payment">
-    If you pay with Razorpay, your workspace is activated immediately and you are redirected to your dashboard once payment succeeds.
-
-    If you pay by offline transfer, submit the payment reference and proof once the transfer is complete. You will then be redirected to a pending approval screen until WhatsMark.io approves your payment.
+  <Step title="Pay">
+    Pay online (by card, UPI, net banking and more) and your workspace opens as soon as payment
+    succeeds. Or choose **bank transfer**, upload your payment proof, and you'll wait on a short
+    approval screen while our team confirms it.
   </Step>
 </Steps>
 
 <Info>
-  WhatsMark.io team will review your payment and activate your subscription shortly. Once approved, you'll have full access to all features.
+  For how the plans differ and how billing works, see
+  [Plans & subscription](/billing/plans-and-subscription).
 </Info>
-
 
 ## What's next
 
+<Card title="Connect your WhatsApp number" icon="message-circle" href="/core-setup/channels/whatsapp" horizontal>
+  Your account is ready — now connect a number so you can actually send and receive. This is the
+  one thing to do next.
+</Card>
+
 <CardGroup cols={2}>
-  <Card title="Log in" icon="log-in" href="/getting-started/log-in">
-    Already registered? Here's how to sign back in, reset your password, or set up two-factor authentication.
+  <Card title="Quick start" icon="zap" href="/">
+    The shortest path from here to your first sent message.
   </Card>
 
-  <Card title="Getting Started" icon="rocket" href="/getting-started/overview">
-    Learn what's on your dashboard and how to connect WhatsApp, invite teammates, and manage your plan.
+  <Card title="How WhatsApp works" icon="book-open" href="/getting-started/concepts">
+    The few WhatsApp rules worth knowing before you send.
+  </Card>
+
+  <Card title="Log in" icon="log-in" href="/getting-started/log-in">
+    Signing back in, resetting your password, two-factor security.
+  </Card>
+
+  <Card title="Dashboard & usage" icon="chart-line" href="/reporting/dashboard-and-usage">
+    What your dashboard shows, and how to track what you've used.
   </Card>
 </CardGroup>
