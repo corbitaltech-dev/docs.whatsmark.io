@@ -7,11 +7,19 @@ keywords: ["WhatsMark", "Messenger templates", "quick replies", "button template
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Messenger Templates are ready-made messages you can save once and reuse anytime on Facebook Messenger. Unlike WhatsApp Templates, Meta approval is not required — you can start using a template immediately after saving it.
+Messenger Templates are ready-made messages you can save once and reuse anytime on Facebook Messenger. Unlike [WhatsApp Templates](/messaging/whatsapp-templates), Meta approval is not required — you can start using a template immediately after saving it.
 
 <Note>
 Before you can create a template, you need to [connect a Facebook Page](/core-setup/channels/messenger) to your workspace.
 </Note>
+
+## Where you can use them
+
+Once saved, a Messenger template can be used in:
+
+- [**Campaigns**](/messaging/campaigns) – Send the template to many contacts at once as a Messenger broadcast.
+- [**Automations**](/automation/chatbot-flows) – Send the template automatically as part of a chatbot flow — for example, a welcome message when a customer messages your Page.
+- [**Live Chat**](/messaging/live-chat) – Send the template yourself during a conversation, straight from the chat.
 
 ## Creating a template
 
@@ -43,11 +51,11 @@ The template type can't be changed after the template is created.
 
 There are five template types, each suited to a different kind of message:
 
-- [**Text**](#text) – A simple text message.
-- [**Quick Replies**](#quick-replies) – A message with tappable reply buttons.
-- [**Button Template**](#button-template) – A message with action buttons.
-- [**Generic Template (Carousel)**](#generic-template-carousel) – Scrollable cards for products or options.
-- [**Media**](#media) – An image, video, audio, or file.
+- [**Text**](#text) – A simple text message, like a welcome greeting or an order update.
+- [**Quick Replies**](#quick-replies) – A message with reply buttons, like asking "How can we help?" with options to click.
+- [**Button Template**](#button-template) – A message with action buttons, like "Visit Website" or "Call Us".
+- [**Generic Template (Carousel)**](#generic-template-carousel) – Scrollable cards, like showing several products with images and buttons.
+- [**Media**](#media) – A single image, video, audio, or file, like a product photo, a promo video, or a PDF catalog.
 
 ### Text
 
@@ -58,11 +66,13 @@ There are five template types, each suited to a different kind of message:
   caption="Image shows the Message step of the Messenger template builder."
 />
 
-A plain text message, up to 2,000 characters. Use the toolbar to format text with **bold**, _italic_, or strikethrough.
+Enter your message (up to 2,000 characters).
 
-To personalize the message, click **+ Add Variable** to add placeholders like `{{1}}` and `{{2}}` (up to 10).
+To insert a dynamic value, add a variable such as `{{1}}`. For example, `Hello {{1}}` becomes `Hello John` when the message is sent.
 
-Each variable appears in a list below the body where you type an example value — this only fills the preview. The real values are added when you send the template.
+Click **+ Add Variable** to insert a variable (up to 10). Enter a sample value to preview the message — the sample value is only for preview.
+
+When you send the template, each variable is replaced with real data, such as a [merge field](/messaging/merge-fields) (the contact's name) or a fixed value.
 
 ### Quick Replies
 
@@ -73,12 +83,12 @@ Each variable appears in a list below the body where you type an example value �
   caption="Image shows the Quick Replies step of the Messenger template builder."
 />
 
-A text message with up to **13** reply buttons — the customer taps one to reply instead of typing.
+Create a message with up to **13** reply buttons. Customers can reply by clicking a button instead of typing a message. You can also use variables in the message text, just like in a [Text template](#text).
 
-Each reply button has:
+Each reply button includes:
 
-- **Button Label** – The text the customer sees and sends, up to 20 characters.
-- **Payload** – Optional. A hidden value your automations can use to know which button was tapped.
+- **Button Label** – The text shown on the button (up to 20 characters). This text is also sent as the customer's reply when they click the button.
+- **Payload** – A unique value used to identify which button the customer selected.
 
 ### Button Template
 
@@ -89,10 +99,12 @@ Each reply button has:
   caption="Image shows the Buttons step of the Messenger template builder."
 />
 
-A text message with up to **3** action buttons. Each button is one of:
+A text message with up to **3** action buttons. The message body works the same as a [Text template](#text), including variables.
 
-- **URL** – Opens a website link.
-- **Postback** – Sends an automatic reply in the chat when the customer taps it.
+Each button is one of:
+
+- **URL** – Opens a website when clicked, like your shop or a product page.
+- **Postback** – Keeps the conversation in Messenger. When the customer clicks the button, the button text is sent as their reply, and any matching automation can respond automatically.
 
 Button titles are limited to 20 characters.
 
@@ -137,22 +149,14 @@ Every link in a template — button links, card images, and media files — must
   caption="Image shows the Messenger Templates table with a row menu open."
 />
 
-The Messenger Templates table lists all your templates with their type, category, and Page. Use the row menu on any template to:
+The Messenger Templates table lists all your templates with their type, category, Page, and created date. Use the row menu on any template to:
 
 - **Edit** the template's content. Changes apply to future sends only.
-- **Delete** a template.
+- **Delete** a template. Campaigns and flows already using it aren't affected — but new ones won't be able to pick it.
 
 <Note>
 Messenger Templates don't go through any approval process. Every template is ready to use as soon as you save it.
 </Note>
-
-## Where you can use them
-
-Once saved, a Messenger template can be used in:
-
-- [**Campaigns**](/messaging/campaigns) – As the content for a Messenger broadcast.
-- [**Automations**](/automation/chatbot-flows) – In a flow, using the Messenger Template step.
-- [**Live Chat**](/messaging/live-chat) – When starting a new Messenger conversation.
 
 ## What's next
 
