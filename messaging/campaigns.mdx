@@ -10,7 +10,7 @@ import { BrowserFrame } from '/snippets/browser-frame.jsx';
 A campaign sends the same message to many contacts at once. Use it for an offer, an announcement, or a follow-up to a group of people.
 
 <Note>
-Before you start, you need a **[connected channel](/core-setup/channels/whatsapp)** to send from and **[contacts](/contacts/managing-contacts)** to send to.
+Before you start, you need a **[connected channel](/core-setup/channels/whatsapp)** to send from and **[contacts](/contacts/managing-contacts)** to send to. For a template campaign, you also need an approved **[template](/messaging/whatsapp-templates)**.
 </Note>
 
 
@@ -18,7 +18,7 @@ You Select one of two types when you create a campaign.
 
 ### Template campaign
 
-Sends a **Meta-approved [template](/messaging/whatsapp-templates)**. It can reach **any** contact on the channel. You need an approved template first. Use it for offers, announcements, and reminders.
+Sends a Meta-approved **[template](/messaging/whatsapp-templates)**. It can reach **any** contact on the channel. You need an approved template first. Use it for offers, announcements, and reminders.
 
 ### Message campaign
 
@@ -39,8 +39,8 @@ Campaigns are built in four steps. A live preview of your message shows on the r
 
   - **Campaign name** — a name only you see, like *Diwali sale 2026*.
   - **Campaign type** — choose **Template** or **Message** (see the two types above).
-  - **Channel** — which of your channels to send from.
-  - **Template** — for a template campaign, select the approved template to send.
+  - **Channel** — which of your [channels](/core-setup/channels/whatsapp) to send from.
+  - **Template** — for a template campaign, select the approved [template](/messaging/whatsapp-templates) to send.
 </Step>
 
 <Step title="Audience">
@@ -53,7 +53,7 @@ Campaigns are built in four steps. A live preview of your message shows on the r
     caption="Image shows the audience step of the wizard."
   />
 
-  Filter the list with the **status**, **source**, **group** and **type** filters, or search by name or phone. Select the contacts you want, or use **Select all filtered** to tick everyone in the current filtered list. You need at least one contact to continue.
+  Filter the list with the **[status](/core-setup/statuses)**, **[source](/core-setup/sources)**, **[group](/core-setup/groups)** and **type** filters, or search by name or phone. Select the contacts you want, or use **Select all filtered** to tick everyone in the current filtered list. You need at least one contact to continue.
 </Step>
 
 <Step title="Content">
@@ -66,10 +66,10 @@ Campaigns are built in four steps. A live preview of your message shows on the r
     caption="Image shows the content step of the wizard."
   />
 
-  - **Template campaign** — fill in the template's variables. If the template has a media header, upload the image or file here.
+  - **Template campaign** — fill in the [template](/messaging/whatsapp-templates)'s variables. If the template has a media header, upload the image or file here.
   - **Message campaign** — write a **header** (optional), a **body**, and a **footer** (optional). You can also add up to three reply **buttons**, a single **call-to-action** link, or attach an image, video or document.
 
-  Type `@` in any text field to add a **merge field** like the contact's name. See [Merge Fields](/messaging/merge-fields).
+  Type `@` in any text field to add a [Merge Fields](/messaging/merge-fields) like the contact's name.
 </Step>
 
 <Step title="Schedule">
@@ -95,13 +95,13 @@ Campaigns are built in four steps. A live preview of your message shows on the r
 
 If you have a Messenger channel connected, you can pick it as the channel type in [step 1](#creating-a-campaign).
 
-Messenger has one important difference: **both** message and template campaigns can only reach contacts who messaged your Page in the **last 7 days**.
+Messenger has one important difference: **both** message and template campaigns can only reach contacts who messaged your facebook page in the **last 7 days**.
 
 <BrowserFrame
   src="/messaging/img/campaign/campaign.png"
   url="whatsmark.io/campaigns"
   alt="The Campaigns list with monthly usage chips for message and template campaigns, All / Template / Message tabs, and a table of campaigns showing name, type, status, channel and progress"
-  caption="Image shows the Campaigns list with the usage chips and campaign table."
+  caption="Image shows the Campaigns list."
 />
 
 ## Campaign statuses
@@ -130,26 +130,30 @@ Open any campaign to see its report.
   caption="Image shows a campaign report with its delivery figures."
 />
 
-The report shows how the campaign is doing:
+At the top you see the campaign **name**, its **status**, and its **type**. On the right, **Recipients** opens the list of customer in the campaign, and **Delete** removes it.
 
-- **Sent**, **Delivered**, **Not received**, **Read** and **Failed** counts, each with a percentage.
-- An **engagement breakdown** for delivered, read, replied and button clicks.
-- A preview of the message exactly as people receive it.
+Below, you can see how many messages were sent, delivered, not received, read, and failed. You can also see a chart of these results and a preview of your message.
 
-Depending on its status, you can **Pause**, **Resume** or **Cancel** a campaign, or **Delete** it once it is finished.
-
-Two more actions:
-
-- **Resend Failed** — send again only to the contacts whose message failed.
-- **New Campaign for Replied** — start a fresh campaign for the contacts who replied. It opens as a draft for you to edit.
-
-Click **Recipients** to see every contact in the campaign, filter them by status (pending, sending, sent, delivered, read, replied, failed, or skipped), and read the error on any that failed. **Skipped** means the contact opted out of marketing, so they weren't sent to.
+While a campaign is running, you can **Pause**, **Resume**, or **Cancel** it. After it finishes, **Resend Failed** sends the message again only to contacts who did not receive it.
 
 <Note>
-Campaign messages don't show up in [Chat](/messaging/live-chat) — they only appear once a contact replies.
+Campaign messages don't show up in [Chat](/messaging/live-chat).
 </Note>
 
-## Why some messages fail
+## Recipients
+
+Click **Recipients** to see everyone in the campaign. You can filter the list by message status (All, Pending, Sent, Delivered, Read, Replied, or Failed) and see the reason if a message failed.
+
+<BrowserFrame
+  src="/messaging/img/campaign/recipients.png"
+  url="whatsmark.io/campaigns"
+  alt="The campaign recipients page with cards for sent, delivered, read, replied, pending and failed, status filter tabs, and a table of contacts with their status and timestamps"
+  caption="Image shows the recipients list with the status filter tabs."
+/>
+
+Open the **Replied** tab to see all contacts who replied to your campaign. Click **New Campaign for Replied** to create a new campaign for only those contacts.
+
+## Common Reasons for Failed Messages
 
 If a message fails, open the campaign's Recipients list to see why it failed for each contact.
 
@@ -160,6 +164,10 @@ If a message fails, open the campaign's Recipients list to see why it failed for
 | **24-hour window closed** | The contact last messaged you more than 24 hours ago, so a message campaign cannot reach them. Use a template campaign instead. |
 | **Recipient not in allowed list** | Your number is still in test mode. Finish verifying your WhatsApp account to message anyone. |
 | **Country not allowed** | WhatsApp does not allow messages to that contact's country. There is nothing you can change here. |
+
+<Note>
+The table above covers the common reasones. For more details, see [Meta's error codes](https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes/).
+</Note>
 
 ## Campaign limits
 
