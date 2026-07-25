@@ -13,31 +13,23 @@ A campaign sends the same message to many contacts at once. Use it for an offer,
 Before you start, you need a **[connected channel](/core-setup/channels/whatsapp)** to send from and **[contacts](/contacts/managing-contacts)** to send to.
 </Note>
 
-## Campaign statuses
+<BrowserFrame
+  src="/messaging/img/campaign/campaign.png"
+  url="whatsmark.io/campaigns"
+  alt="The Campaigns list with monthly usage chips for message and template campaigns, All / Template / Message tabs, and a table of campaigns showing name, type, status, channel and progress"
+  caption="Image shows the Campaigns list with the usage chips and campaign table."
+/>
 
-The status shows the current stage of the campaign.
 
-| Status |  It means |
-| --- | --- |
-| **Draft** | Made but not sent yet. You can still edit it, and send it when you're ready. |
-| **Queued** | Scheduled and waiting for its send time. |
-| **Preparing** | Getting the list of recipients ready. This lasts a moment. |
-| **Sending** | Messages are going out right now. |
-| **Paused** | Sending is on hold. Resume it to carry on. |
-| **Completed** | Every recipient has been handled. |
-| **Failed** | The campaign could not run, often because no one was eligible to receive it. |
-| **Cancelled** | You stopped it. Anyone not yet sent to will not be sent to. |
+You Select one of two types when you create a campaign.
 
-## The two campaign types
+### Template campaign
 
-You pick one of two types when you create a campaign.
+Sends a **Meta-approved [template](/messaging/whatsapp-templates)**. It can reach **any** contact on the channel. You need an approved template first. Use it for offers, announcements, and reminders.
 
 ### Message campaign
 
 A message you create yourself using text, images, videos, or buttons. You can send it only to people who have messaged you in the [last 24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything). No approved template is needed.
-### Template campaign
-
-Sends a **Meta-approved [template](/messaging/whatsapp-templates)**. It can reach **any** contact on the channel. You need an approved template first. Use it for offers, announcements, and reminders.
 
 ## Creating a campaign
 
@@ -111,6 +103,21 @@ Campaigns are built in four steps. A live preview of your message shows on the r
 If you have a Messenger channel connected, you can pick it as the channel type in [step 1](#creating-a-campaign).
 
 Messenger has one important difference: **both** message and template campaigns can only reach contacts who messaged your Page in the **last 7 days**.
+
+## Campaign statuses
+
+The status shows the current stage of the campaign.
+
+| Status |  It means |
+| --- | --- |
+| **Draft** | Made but not sent yet. You can still edit it, and send it when you're ready. |
+| **Queued** | Scheduled and waiting for its send time. |
+| **Preparing** | Getting the list of recipients ready. This lasts a moment. |
+| **Sending** | Messages are going out right now. |
+| **Paused** | Sending is on hold. Resume it to carry on. |
+| **Completed** | Every recipient has been handled. |
+| **Failed** | The campaign could not run, often because no one was eligible to receive it. |
+| **Cancelled** | You stopped it. Anyone not yet sent to will not be sent to. |
 
 ## Campaign reports
 
