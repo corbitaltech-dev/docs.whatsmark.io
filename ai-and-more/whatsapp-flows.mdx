@@ -49,7 +49,7 @@ Drag a field to a form page to add it.
 Each field includes:
 
   - **Label** — The name shown to the customer, such as *Your name*.
-  - **Name (answer key)** — A unique name used to identify the answer. You can see it later in [submissions](#submissions) and [contact mapping](#save-answers-to-contacts).
+  - **Name (answer key)** — A unique name used to identify the answer. You can see it later in [submissions](#submissions) and [field mapping](#field-mapping).
   - **Required** — Turn it on to make the field mandatory.
 
   Each form page has a button at the bottom. Continue opens the next page, and Submit finishes the form.
@@ -62,9 +62,9 @@ Each field includes:
 
 ## Start from a ready-made flow
 
-You do not have to build from scratch. Click **Flow Library** to see ready-made flows you can copy:
+You do not have to build from scratch. Click **Flow Collection** to see ready-made flows you can copy:
 
-![Flow Library](/ai-and-more/img/whatsapp-flows/flow-library.png)
+![Flow Collection](/ai-and-more/img/whatsapp-flows/flow-library.png)
 
 Select one and **Use This** copies it into your workspace as a draft you can change and publish.
 
@@ -75,7 +75,7 @@ The WhatsApp Flows page shows all your flows. Each flow shows its **name**, **ch
 <BrowserFrame
   src="/ai-and-more/img/whatsapp-flows/flow.png"
   url="whatsmark.io/wa-flows"
-  alt="The WhatsApp Flows list with columns for name, channel, status, categories and an active toggle, plus Create Flow, Flow Library and Sync buttons"
+  alt="The WhatsApp Flows list with columns for name, channel, status, categories and an active toggle, plus Create Flow, Flow Collection and Sync buttons"
   caption="Image shows the WhatsApp Flows list."
 />
 
@@ -85,7 +85,7 @@ The WhatsApp Flows page shows all your flows. Each flow shows its **name**, **ch
 | **Flow Builder** | Open the builder to edit the flow.|
 | **View** | View the flow details. |
 | **Edit details** | Change the name, account, or categories. |
-| **Mapping** | Save answers into contact records. See [Save answers to contacts](#save-answers-to-contacts). |
+| **Mapping** | Save answers into contact records. See [Field mapping](#field-mapping). |
 | **Submissions** | See who [submitted](#submissions) the flow. |
 | **Publish** | Publish the draft flow. |
 | **Deprecate** | Deprecate a published flow. |
@@ -106,39 +106,48 @@ Every flow shows a status so you know if it is ready to send.
 | **Blocked** | Meta has blocked the flow. |
 | **Throttled** | Meta is temporarily limiting the flow because of too many errors. |
 
-## Sending a flow
+## Field mapping
 
-Once a flow is published, there are two ways to send it to a customer.
-
-- From a contact's row, choose **Send flow**.
-- In [live chat](/messaging/live-chat), use the **Send form** button under the message box.
-
-## Submissions
-
-When a customer fills in a flow and submits it, their answers are saved, and their reply also shows up as a card in the [chat](/messaging/live-chat).
-
-Open a flow's **Submissions** to see everyone who filled it in — their name, phone number, status, and the date. Click a row to read all of their answers, or use **Export** to download the list as a CSV or Excel file.
-
-## Save answers to contacts
-
-The answers people give in a flow can go straight into your contact records. Open a flow's **Mapping** to set this up.
+The answers people give in a flow can go straight into your contact records. From the flow table `⋮` menu, choose **Mapping** to set it up.
 
 For each field in the flow, choose what to do with its answer:
 
 - **Skip** — do not save it.
 - **Contact field** — save it to a built-in contact field, like name or email.
 - **Custom field** — save it to one of your [custom fields](/core-setup/custom-fields).
-- **Tag** — add a label to the contact.
+- **Label** — add a label to the contact.
 
-Once set, this happens automatically every time someone submits the flow.
+<Warning>
+Set up mapping before you send the flow. Answers only save to contacts once mapping is done — anything submitted before that is not added automatically.
+</Warning>
+
+## Sending a flow
+
+Once a flow is published, there are two ways to send it to a customer.
+
+- From a [contact's](/contacts/managing-contacts#actions-on-a-single-contact) row, choose **Send flow**.
+- In [live chat](/messaging/live-chat), use the **Send form** button under the message box.
+
+## Submissions
+
+When a customer fill form and submits it, their answers are saved, and a card in the [chat](/messaging/live-chat).
+
+From the flow table `⋮` menu, choose **Submissions** to see everyone who filled it in — their name, phone number, status, and the date. Click a row to read all of their answers, or use **Export** to download the list as a CSV file.
+
+<BrowserFrame
+  src="/ai-and-more/img/whatsapp-flows/submission.png"
+  url="whatsmark.io/wa-flows"
+  alt="The flow submissions list showing each person's name, phone number, status and date, with an Export button"
+  caption="Image shows a flow's submissions list."
+/>
 
 ## Appointment booking flows
 
-Turn on **Enable Live Booking** to create an appointment booking form. Customers can see available dates and times, book an appointment, reschedule, or cancel it directly in WhatsApp.
+Turn on **Enable Live Booking** when you [create a flow](#building-a-flow) to make an appointment booking form. Customers can see available dates and times, book an appointment, reschedule, or cancel it directly in WhatsApp.
 
-You can configure the booking form using these two options:
+From a booking flow's `⋮` menu, you can use these two options:
 
-- **Customize form** — Change the text shown to customers, such as the date and time labels.
+- **Customize form** — Change the text customers see. This covers the **booking screen** (like the date and time labels) and the **confirmation screen** shown after they book (its title and message).
 - **Booking settings** — Set the appointment duration, the number of bookings allowed per time slot, and how far in advance customers can book.
 
 <BrowserFrame
