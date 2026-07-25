@@ -104,9 +104,8 @@ A text message with up to **3** action buttons. The message body works the same 
 Each button is one of:
 
 - **URL** – Opens a website when clicked, like your shop or a product page.
-- **Postback** – Keeps the conversation in Messenger. When the customer clicks the button, the button text is sent as their reply, and any matching automation can respond automatically.
+- **Postback** – When the customer clicks the button, the button text is sent as their reply. If that reply matches a keyword in your [automation](/automation/chatbot-flows), it starts automatically.
 
-Button titles are limited to 20 characters.
 
 ### Generic Template (Carousel)
 
@@ -121,7 +120,7 @@ A set of 1–10 scrollable cards — ideal for showing products, services, or op
 
 - **Title** – Up to 80 characters.
 - **Subtitle** – Optional, up to 80 characters.
-- **Image** – Optional. Pick from the [Media Library](/media/media-library) or paste an image link (a wide, landscape image works best).
+- **Image** – Optional. Pick from the [Media Library](/media/media-library) or paste an image link.
 - **Default Tap URL** – Optional link that opens when the customer taps anywhere on the card.
 - **Buttons** – Up to 3 per card (same URL/Postback rules as the [Button Template](#button-template)).
 
@@ -152,7 +151,7 @@ Every link in a template — button links, card images, and media files — must
 The Messenger Templates table lists all your templates with their type, category, Page, and created date. Use the row menu on any template to:
 
 - **Edit** the template's content. Changes apply to future sends only.
-- **Delete** a template. Campaigns and flows already using it aren't affected — but new ones won't be able to pick it.
+- **Delete** a template. Existing messages and automations using the template are not affected, but it can't be selected for new messages or automations.
 
 <Note>
 Messenger Templates don't go through any approval process. Every template is ready to use as soon as you save it.
