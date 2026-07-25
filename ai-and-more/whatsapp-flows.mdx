@@ -9,59 +9,50 @@ import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
 A WhatsApp Flow is a form that opens inside a WhatsApp chat. Customers can fill in details, choose options, and submit the form without leaving WhatsApp.
 
-
-## Flow statuses
-
-Every flow shows a status so you know if it is ready to send.
-
-| Status | It means |
-| --- | --- |
-| **Draft** | Created but not published yet. You can still edit it before publishing. |
-| **Published** | Live and ready to send to customers. |
-| **Deprecated** | Disabled. The data is still saved, but you can't send it. |
-| **Blocked** | Meta has blocked it. |
-| **Throttled** | Meta is limiting it because of high error rates. |
-
 ## Building a flow
 
-Click **Create Flow**, enter details.
+<Steps>
+<Step title="Create the flow">
+  Click **Create Flow** and fill in the details.
 
-- **Name** — for your own reference.
-- **WhatsApp Account** — Choose the channel for this flow.
-- **Enable live booking** — Enable this for [appointment booking](#appointment-booking-flows). Leave it off for a normal form.
-- **Categories** — what the flow is for, like Lead Generation or Survey.
+  - **Name** — for your own reference.
+  - **WhatsApp Account** — choose the channel for this flow.
+  - **Enable live booking** — turn this on for [appointment booking](#appointment-booking-flows). Leave it off for a normal form.
+  - **Categories** — Select a flow category, such as Lead Generation or Survey. You cannot create a new category.
 
-![The New WhatsApp Flow form with fields for name, WhatsApp account, an Enable live booking toggle, and categories](/ai-and-more/img/whatsapp-flows/flow-form.png)
+  ![The New WhatsApp Flow form with fields for name, WhatsApp account, an Enable live booking toggle, and categories](/ai-and-more/img/whatsapp-flows/flow-form.png)
+</Step>
 
-A flow is made up of one or more form pages. Customers fill in one page, tap Next, and then move to the next page.
+<Step title="Design its screens">
+  Click a flow name to open the builder.
 
-The builder has three sections: the list of form pages on the left, the page you are editing in the middle, and a phone preview on the right.
+  The builder has three sections: the list of **form pages** on the left, the **page editor** in the middle, and a **phone preview** on the right.
 
-<BrowserFrame
-  src="/ai-and-more/img/whatsapp-flows/form-creation.png"
-  url="whatsmark.io/wa-flows"
-  alt="The WhatsApp Flow builder with a screens list and field palette on the left, the screen being edited in the middle, and a phone preview on the right"
-  caption="Image shows the flow builder."
-/>
+  <BrowserFrame
+    src="/ai-and-more/img/whatsapp-flows/form-creation.png"
+    url="whatsmark.io/wa-flows"
+    alt="The WhatsApp Flow builder with a screens list and field palette on the left, the screen being edited in the middle, and a phone preview on the right"
+    caption="Image shows the flow builder."
+  />
 
-Drag a field onto a screen to add it. The field types are:
+Drag a field to a form page to add it.
 
-- **Text** — a single line.
-- **Text Area** — a longer, multi-line answer.
-- **Phone** — a phone number.
-- **Date** — a date picker.
-- **Dropdown** — select one from a list.
-- **Radio** — select one from a few options.
-- **Checkboxes** — select more than one.
-- **Opt-in** — a check box for consent.
+  - **Text** — A single-line text field.
+  - **Text Area** — A multi-line text field.
+  - **Phone** — A phone number field.
+  - **Date** — A date picker.
+  - **Dropdown** — Select one option from a list.
+  - **Radio** — Select one option from a few options.
+  - **Checkboxes** — Select one or more option.
+  - **Opt-in** — A checkbox for customer consent.
 
-Each screen has a button at the bottom — **Continue** to move to the next screen, or **Submit** on the last screen to finish.
+  Each form page has a button at the bottom. Continue opens the next page, and Submit finishes the form.
+</Step>
 
-When your flow is ready, click Publish to send it to Meta for approval. If Meta finds any issues, the flow stays as a draft so you can fix them and publish it again.
-
-<Note>
-If you no longer want to use a published flow, Deprecate it. You can only Delete a flow that has never been published. Published flows can only be deprecated.
-</Note>
+<Step title="Publish">
+  Click Publish to send the flow to Meta for approval. If Meta returns any issues, the flow will remain in Draft status. Click the flow name to view the errors, fix the issues, and publish the flow again.
+</Step>
+</Steps>
 
 ## Start from a ready-made flow
 
@@ -71,22 +62,73 @@ You do not have to build from scratch. Click **Flow Library** to see ready-made 
 
 Select one and **Use This** copies it into your workspace as a draft you can change and publish.
 
+## The flows list
+
+The WhatsApp Flows page shows all your flows. Each flow shows its **name**, **channel**, **status**, **category**, and an **Active** switch to turn it on or off.
+
+<BrowserFrame
+  src="/ai-and-more/img/whatsapp-flows/flow.png"
+  url="whatsmark.io/wa-flows"
+  alt="The WhatsApp Flows list with columns for name, channel, status, categories and an active toggle, plus Create Flow, Flow Library and Sync buttons"
+  caption="Image shows the WhatsApp Flows list."
+/>
+
+
+| Action | What it does |
+| --- | --- |
+| **Flow Builder** | Open the builder to edit the flow.|
+| **View** | View the flow details. |
+| **Edit details** | Change the name, account, or categories. |
+| **Mapping** | Save answers into contact records. See [Save answers to contacts](#save-answers-to-contacts). |
+| **Submissions** | See who [submitted](#submissions) the flow. |
+| **Publish** | Publish the draft flow. |
+| **Deprecate** | Deprecate a published flow. |
+| **Duplicate** | Make a copy of the flow. |
+| **Delete** | Remove a draft flow. |
+
+Appointment booking flows have a few extra actions. See [Appointment booking flows](#appointment-booking-flows).
+
+## Flow statuses
+
+Every flow shows a status so you know if it is ready to send.
+
+| Status | It means |
+| --- | --- |
+| **Draft** | The flow is not published yet. You can still edit it. |
+| **Published** | The flow is ready to use. |
+| **Deprecated** | The flow is no longer active, but its data is still available. |
+| **Blocked** | Meta has blocked the flow. |
+| **Throttled** | Meta is temporarily limiting the flow because of too many errors. |
+
 ## Sending a flow
 
-Once a flow is published, there are five ways to send it to a customer.
+Once a flow is published, there are two ways to send it to a customer.
 
 - From a contact's row, choose **Send flow**.
 - In [live chat](/messaging/live-chat), use the **Send form** button under the message box.
 
 ## Submissions
 
-When a customer fills in a flow and submits it, their answers are saved.
+When a customer fills in a flow and submits it, their answers are saved, and their reply also shows up as a card in the [chat](/messaging/live-chat).
 
-Open **Submissions** to see everyone who submitted the flow. You can view their name, phone number, status, and submission date. Click on name to see all the answers, or export the list as a CSV or Excel file.
+Open a flow's **Submissions** to see everyone who filled it in — their name, phone number, status, and the date. Click a row to read all of their answers, or use **Export** to download the list as a CSV or Excel file.
+
+## Save answers to contacts
+
+The answers people give in a flow can go straight into your contact records. Open a flow's **Mapping** to set this up.
+
+For each field in the flow, choose what to do with its answer:
+
+- **Skip** — do not save it.
+- **Contact field** — save it to a built-in contact field, like name or email.
+- **Custom field** — save it to one of your [custom fields](/core-setup/custom-fields).
+- **Tag** — add a label to the contact.
+
+Once set, this happens automatically every time someone submits the flow.
 
 ## Appointment booking flows
 
-Turn on Enable Live Booking to create an appointment booking form. Customers can see available dates and times, book an appointment, reschedule, or cancel it directly in WhatsApp.
+Turn on **Enable Live Booking** to create an appointment booking form. Customers can see available dates and times, book an appointment, reschedule, or cancel it directly in WhatsApp.
 
 You can configure the booking form using these two options:
 
