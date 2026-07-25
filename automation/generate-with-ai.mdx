@@ -1,15 +1,58 @@
 ---
 title: "Generate with AI"
-description: "Describe the chatbot you want in plain English and get a ready-to-edit flow in seconds."
+description: "Describe the chatbot you want in plain English and get a ready-to-edit flow you can change however you like."
 icon: "wand-sparkles"
 keywords: ["WhatsMark", "WhatsMark.io", "AI", "generate flow", "automation", "chatbot"]
 ---
 
-Instead of building from an empty canvas, click **Generate with AI** and describe what you want in plain English — for example, "qualify a lead by asking for their budget and timeline, then route to sales." WhatsMark.io proposes a starting flow matching your description, which you can then edit freely in the [Flow Builder](/automation/flow-builder).
+Describing a conversation is far quicker than drawing one. Tell WhatsMark.io what you want the chatbot to do — "a lead capture bot that asks for name, phone number, and preferred call time" — and it builds the whole conversation for you, ready to edit in the [Flow Builder](/automation/flow-builder).
+
+## Generating a flow
+
+<Steps>
+<Step title="Open a flow in the Flow Builder">
+  Create a flow from the Automations page, then open it on the canvas.
+</Step>
+
+<Step title="Click Generate with AI">
+  The **Generate Flow with AI** panel opens on the right.
+
+  ![Generate Flow with AI panel with a Flow type dropdown set to Auto-detect, a Describe your flow text box, suggestion chips under Try one of these, an AI Tokens this month meter, and Cancel and Generate Flow buttons](/automation/img/generateai-form.png)
+</Step>
+
+<Step title="Pick a flow type">
+  Leave it on **Auto-detect** and the description alone decides the shape of the conversation. Or choose one to steer it:
+
+  - **Lead Capture** — welcome, collect contact details, save them, thank you.
+  - **Info Bot** — welcome, share photos, videos or a location, then a button menu.
+  - **Booking** — welcome, ask for a date and time, create the booking, confirm.
+  - **Support** — welcome, ask what the problem is, collect contact details, escalate to your team.
+  - **FAQ** — welcome, list your common questions, answer each one.
+  - **Other (custom hint)** — adds a second box where you describe the style yourself, such as a formal tone or replying in two languages.
+</Step>
+
+<Step title="Describe what you want">
+  Write it in **Describe your flow** the way you'd explain it to a new colleague. The more specific you are about what to ask and what to do with the answers, the closer the result. Not sure where to start? Click one of the suggestions under **Try one of these** to fill the box, then edit it.
+</Step>
+
+<Step title="Click Generate Flow">
+  The conversation is built and appears on the canvas, saved as a draft. From there it's an ordinary flow — rename nodes, rewire branches, change the wording, and add or delete steps.
+</Step>
+</Steps>
 
 <Warning>
-AI flow generation needs a paid plan, and it draws from the same monthly AI usage allowance as [AI Chat Assist](/messaging/live-chat#ai-assist). See [Free vs. paid](/getting-started/free-vs-paid).
+Generating replaces whatever is already on the canvas. On a flow you've built or edited, generate first and adjust afterwards, rather than the other way round.
 </Warning>
+
+## What it costs you
+
+Generating uses your monthly AI allowance, which is shared with [AI Chat Assist](/messaging/live-chat#ai-assist) and your saved AI prompts — it isn't a separate budget. The **AI Tokens this month** meter in the panel shows what you've used and what's left, and warns you as you get close.
+
+Every plan can generate flows, including the Free Forever plan. What differs is the size of the monthly allowance — see [Free vs. paid](/getting-started/free-vs-paid). If you run out, generating stops until the allowance resets at the start of the next calendar month, or you can top it up with an add-on.
+
+<Tip>
+A short, vague description gives you a generic flow. Naming the questions to ask, the choices to offer, and what happens with each answer gets you something much closer to ready.
+</Tip>
 
 ## What's next
 
@@ -18,7 +61,7 @@ AI flow generation needs a paid plan, and it draws from the same monthly AI usag
     Edit your generated flow — learn the canvas and every node type.
   </Card>
 
-  <Card title="Flow Library" icon="library" href="/automation/flow-library">
-    Or start from a ready-made flow instead.
+  <Card title="WhatsApp Flows" icon="layout-panel-top" href="/ai-and-more/whatsapp-flows">
+    Send an interactive form from inside a flow.
   </Card>
 </CardGroup>

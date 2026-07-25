@@ -25,6 +25,10 @@
       "destination": "/automation/overview"
     },
     {
+      "source": "/automation/flow-library",
+      "destination": "/automation/overview#flow-library"
+    },
+    {
       "source": "/automation/ai-features",
       "destination": "/core-setup/ai-prompts"
     },
@@ -93,7 +97,6 @@
             "group": "Automation",
             "pages": [
               "automation/overview",
-              "automation/flow-library",
               "automation/generate-with-ai",
               "automation/flow-builder"
             ]
