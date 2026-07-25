@@ -1,19 +1,19 @@
 ---
 title: "Media Library"
-description: "Upload a file once and reuse it anywhere in WhatsMark.io."
+description: "Upload a file once and reuse it anywhere in WhatsMark.io  ."
 icon: "image"
 keywords: ["WhatsMark", "media library", "file upload", "folders", "storage"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-The Media Library is where your workspace's files live. Upload a photo, video, audio clip or document once, and you can reuse it anywhere WhatsMark asks for a file — instead of uploading the same thing again every time.
+The Media Library stores all your files in one place. Upload a photo, video, audio file, or document once, then use it anywhere in WhatsMark.io without uploading it again.
 
 ## Uploading files
 
-Click **Upload**, then drag your files in or browse for them. Each file shows its own progress as it goes up.
+Click Upload, then drag and drop your files or choose them from your computer.
 
-You can send up to **10 files at a time**, each up to **16 MB**. Images, video, audio and documents are all accepted. For safety, image formats like SVG and program files are not allowed.
+You can upload up to **10 files at a time**, with a maximum size of **16 MB per file**. You can upload images, videos, audio files, and documents. Some file types, such as SVG and program files, are not supported.
 
 <BrowserFrame
   src="/media/img/upload-media.png"
@@ -23,10 +23,9 @@ You can send up to **10 files at a time**, each up to **16 MB**. Images, video, 
 
 ## Organizing with folders
 
-Use folders to keep things tidy.
+Use folders to organize your files.
 
-- Click **New Folder** to make one, and folders can sit inside other folders.
-- Move a file into a folder from its details, or select several files and move them together.
+Click **New Folder** to create a folder. You can also create folders inside other folders. Move files into a folder one by one, or select multiple files and move them together.
 
 <Warning>
 Deleting a folder deletes every file inside it. Move out anything you want to keep first.
@@ -35,6 +34,12 @@ Deleting a folder deletes every file inside it. Move out anything you want to ke
 ## Finding a file
 
 Search by name, or use the **type** filter to show only images, PDFs, video or audio. Switch between a grid and a list view, whichever you prefer. Files are shown newest first.
+
+<BrowserFrame
+  src="/media/img/library-list.png"
+  alt="The upload dialog with a drop area for files"
+  caption="Image shows the media library in list."
+/>
 
 ## File details and actions
 
@@ -45,32 +50,34 @@ Click a file to open its details on the right. You see its name, type, size, whe
 - Move it to a folder.
 - Delete it.
 
-## Deleting files
+## Use the same file again
 
-<Warning>
-There is no "in use" check. If you delete a file that a template, campaign or flow still uses, it will break there with no warning. Reusing a file is free, so only delete files that nothing needs anymore.
-</Warning>
-
-## Reusing a file elsewhere
-
-Anywhere you attach a file — the [chat](/messaging/live-chat) composer, [templates](/messaging/whatsapp-templates), campaigns, flows, your profile photo, and more — a **Media Library** window opens with two tabs:
+Wherever you need to attach a file in WhatsMark.io, the Media Library opens with two tabs:
 
 - **My Library** — pick a file you have already uploaded.
 - **Upload New** — add a new one.
 
-Picking a file you already have means you do not upload it again, and it does not use any extra storage.
+![The Media Library picker with My Library and Upload New tabs, a search box, folders, and recent files](/media/img/media-picker.png)
+
+You will see this window in many places, such as:
+
+- **[Live chat](/messaging/live-chat)** 
+- **[Canned replies](/core-setup/canned-replies)**
+- **[Campaigns](/messaging/campaigns)** 
+- **[WhatsApp templates](/messaging/whatsapp-templates)**
+- **[Messenger templates](/messaging/messenger-templates)**
+- **[WhatsApp Flows](/ai-and-more/whatsapp-flows)**
+- **[Your profile photo](/settings/profile)**
 
 ## Storage space
 
-Your plan gives you a set amount of storage, measured in MB. The bar in the Media Library shows how much you have used, and it also appears on your [Dashboard](/reporting/dashboard-and-usage).
+Your plan includes a storage limit. The Media Library shows how much storage you have used, and you can also see it on the Dashboard.
 
 <BrowserFrame
   src="/media/img/storage-use.png"
   alt="The storage usage bar showing used space out of the plan's total"
   caption="Image shows storage usage in the Media Library."
 />
-
-Everything you store counts towards this: your library files, files shared in chat, profile photos, and received media if you have turned on saving it. When you run out, uploads stop until you delete some files, add more storage, or upgrade your plan.
 
 ## What's next
 
