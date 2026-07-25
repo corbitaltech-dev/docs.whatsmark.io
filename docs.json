@@ -99,10 +99,10 @@
             ]
           },
           {
-            "group": "AI & More",
+            "group": "Appointments & Flows",
             "pages": [
-              "ai-and-more/appointments",
-              "ai-and-more/whatsapp-flows"
+              "ai-and-more/whatsapp-flows",
+              "ai-and-more/appointments"
             ]
           },
           {

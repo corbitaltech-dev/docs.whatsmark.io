@@ -1,45 +1,69 @@
 ---
 title: "Appointments"
-description: "How to view, manage, and configure customer bookings made through WhatsMark.io Appointment Booking flows."
+description: "View and manage appointments booked through your WhatsApp booking form."
 icon: "calendar-check"
-keywords: ["WhatsMark", "appointments", "bookings", "calendar", "business hours", "booking link"]
+keywords: ["WhatsMark", "appointments", "bookings", "calendar", "business hours"]
 ---
 
-**Appointments** is where bookings made through an [Appointment Booking flow](/ai-and-more/whatsapp-flows#appointment-booking-flows) — or your public booking link — land, and where you configure how booking works.
+When a customer books an appointment through your [WhatsApp booking form](/ai-and-more/whatsapp-flows#appointment-booking-flows), it appears here. You can view and manage all appointments from this page.
 
-<Warning>
-Appointments are limited by your plan across three dimensions: **active booking forms** (`appointment_forms`), **concurrent active bookings** (`appointments`), and **new bookings per month** (`appointments_monthly`). Free-plan workspaces get 1 form, 1 concurrent booking, and 30 bookings/month; Professional plans get 10 forms, 10 concurrent bookings, and 500/month; Reseller plans are unlimited across all three.
-</Warning>
+## Appointment statuses
 
-## Viewing appointments
+| Status | It means |
+| --- | --- |
+| **Scheduled** | The appointment is booked. |
+| **Confirmed** | You have confirmed the appointment. |
+| **Completed** | The appointment is finished. |
+| **Cancelled** | The appointment was cancelled. The time slot becomes available again. |
+| **No Show** | The customer did not attend the appointment. |
 
-Switch between a **List** view and a **Calendar** (month grid) view, and filter by channel, source, status, or date range. Open any appointment to update its status (for example, marking it completed or cancelled).
+## Appointment details
 
-## Booking settings
+Click an appointment to view its details. You can see the appointment date and time, the channel, the booking form, and any notes. If the customer filled in extra fields in the booking form, their answers are also shown here.
 
-Go to **Settings** within Appointments to configure:
+![An appointment's details showing the contact, status, when it starts and ends, its source, notes, and the details the customer submitted](/ai-and-more/img/appointment/appointment-details.png)
 
-- **Weekly business hours** and **holidays** — shared with your workspace-wide [Business Hours](/settings/business-hours) setting, so you only set this once.
-- **Timezone** for displaying and calculating slots.
-- **Services list** — the set of bookable services contacts can choose from.
-- **Confirmation message template** — sent to a contact once their booking is confirmed.
+## Updating an appointment
 
-## Public booking link
+Use the booking's Actions menu to change its status to Scheduled, Confirmed, Completed, Cancelled, or No Show.
 
-Each connected channel gets its own public, white-labeled **booking link** — a web page (not inside WhatsApp) where customers can self-book without needing to message you first. Copy this link from the channel's Appointments settings and share it anywhere (your website, email signature, social bio).
+<Note>
+You can only change the booking status here. You cannot change the appointment time, edit the booking details, or create a new booking. Customers can reschedule their appointments through WhatsApp.
+</Note>
 
-<Tip>
-The public booking link runs on your own workspace domain, so it looks and feels like part of your business — not a third-party booking tool.
-</Tip>
+## Setting your available times
+
+The times a customer can pick come from two settings working together.
+
+- **Business hours** — Set your business opening and closing times, and add any closed dates. This is a workspace [Settings](/settings/business-hours) and only needs to be set once.
+- **Booking settings** — Set the appointment duration, the number of bookings allowed per time slot, and how far in advance customers can book. These settings are configured separately for each booking form.
+
+![The booking settings with fields for slot length, capacity per slot, and the earliest and latest a customer can book](/ai-and-more/img/appointment/booking-setting.png)
+
+## Confirmation message
+
+In Appointment Settings, you can choose an approved template to send when a customer books an appointment. Select None if you don't want to send a confirmation message.
+
+![The Appointment Settings with dropdowns for a confirmation template and a reminder template](/ai-and-more/img/appointment/appointment-setting.png)
+
+## Reminders and rescheduling
+
+You can also choose a reminder template in Settings. Customers can use the reminder message to reschedule or cancel their appointment directly in WhatsApp.
+
+A customer can have only one upcoming appointment for each booking form. To book another one, they must first cancel or reschedule the current appointment. Past dates and times cannot be booked.
+
+## Limits
+
+Your plan limits the number of **booking forms**, **upcoming bookings**, and **monthly bookings** you can have. This page shows how much of each limit you have used.
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="WhatsApp Flows" icon="workflow" href="/ai-and-more/whatsapp-flows">
-    See how the Appointment Booking flow itself is built and configured.
+    Build the booking form that feeds this page.
   </Card>
 
   <Card title="Business Hours" icon="clock" href="/settings/business-hours">
-    Set your business hours once, shared across Appointments and future features.
+    Set the hours your slots are offered in.
   </Card>
 </CardGroup>
