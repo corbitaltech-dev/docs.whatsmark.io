@@ -1,105 +1,93 @@
 ---
 title: "API Tokens"
-description: "How to create and manage workspace API tokens for the WhatsMark.io developer REST API."
+description: "Create API tokens so other apps can connect to your workspace."
 icon: "key"
 keywords: ["WhatsMark", "API tokens", "developer", "REST API"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-If you want to integrate with WhatsMark.io programmatically — your own app, an external system, a custom automation — you'll need workspace **API tokens**.
+An API token lets another app connect to your workspace. After you create a token, that app can use it to access your data and perform actions based on the permissions you allow.
 
-<BrowserFrame
-  src="/core-setup/img/api-tokens.png"
-  url="whatsmark.io/api-tokens"
-  alt="API Tokens dashboard showing token list with name, scopes, last used, and expiry columns"
-  caption="Create and manage API tokens with granular scopes for secure programmatic access to your workspace."
-/>
+Find it under **Setup → API Tokens**.
 
-<Warning>
-API access is a **Professional** plan feature — Free-plan workspaces can't create tokens or reach the API host until they upgrade. Every plan with API access also has a monthly request quota that scales with your plan.
-</Warning>
+<Note>
+The API is only available on a paid plan.
+</Note>
 
 ## Creating a token
 
 <Steps>
 <Step title="Click Create Token">
-  Give your token a descriptive name so you remember what it's for later (e.g., "Mobile App", "Zapier Integration", "Scheduled Backup").
+  Enter a name so you can identify the token later, such as Website or Zapier.
 </Step>
 
-<Step title="Choose abilities (scopes)">
-  Select exactly which parts of the API this token can access — account, channels, contacts, groups, labels, sources, statuses, messages, templates, conversations, OTP, and usage are all separately scoped. Grant only the minimum permissions your integration needs.
+<Step title="Choose what it can do">
+  Select what the token is allowed to do. Only choose the permissions the app needs.
+
+  ![The Create API Token form with a name field and grouped scope checkboxes for account, contacts and messaging](/core-setup/img/api-token-form.png)
 </Step>
 
-<Step title="Set an expiry (optional)">
-  Tokens can be created with or without an expiration date. Expiring tokens add an extra security layer by forcing periodic rotation.
+<Step title="Set an expiry date (optional)">
+  Choose when the token should expire, or leave it empty so it never expires.
 </Step>
 
-<Step title="Copy your token">
-  The full token value is shown **once**, right after creation — copy it immediately and store it securely. WhatsMark.io only stores a hash of it afterward and can't show it to you again.
+<Step title="Copy the token">
+  The token is shown only once after it is created. Copy it and save it in a safe place because you cannot view it again.
 </Step>
 </Steps>
 
+## Your tokens
+
+The list shows each token's **name**, **permissions**, **last used date**, **expiry date**, and **created date**. If a token never expires, it shows Never. You can also search by token name.
+
+<BrowserFrame
+  src="/core-setup/img/api-token.png"
+  url="whatsmark.io/api-keys"
+  alt="The API Tokens page listing tokens with their name, scopes, last used, expiry and created date, plus API Docs, Postman Collection and Create Token buttons"
+  caption="Image shows the API Tokens page."
+/>
+
+At the top of the page, you'll find two helpful buttons:
+
+- **API Docs** — View the complete API documentation.
+- **Postman Collection** — Download ready-to-use API requests for Postman.
+
+## Regenerate or revoke
+
+Open a token's `⋮` menu for its two actions:
+
+- **Regenerate** — Create a new secret for the same token, Update the new token in your app because the old one stops working.
+- **Revoke** — Permanently deletes the token. Any app using it will stop working immediately.
+
 <Warning>
-If you lose a token's value, you can't retrieve it — you'll need to **regenerate** it (which invalidates the old value but keeps the same name and abilities) or create a new one.
+You cannot change a token's name or permissions after creating it. If you need different permissions, create a new token and revoke the old one.
 </Warning>
-
-## Managing tokens
-
-**View token details:**
-- See when each token was **last used** to spot ones that are no longer active
-- Check which **scopes** (abilities) each token has
-- View the token's **creation date** and **expiry date** (if set)
-
-**Token actions:**
-- **Regenerate** a token's secret in place, keeping its name and abilities intact (the old token is invalidated immediately)
-- **Delete** a token to revoke access immediately
-- **Extend expiry** (if the token is set to expire)
-
-<Tip>
-Regularly review your tokens and delete any that are no longer in use. For integrations that need frequent rotation, set an expiry date and regenerate before expiration.
-</Tip>
 
 ## Using your token
 
-Every request to the API needs your token as a bearer token in the Authorization header:
+Send the token with every request, in the `Authorization` header:
 
 ```text
 Authorization: Bearer YOUR_API_TOKEN
 ```
 
-**Example curl request:**
+For example:
+
 ```bash
 curl -H "Authorization: Bearer YOUR_API_TOKEN" \
   https://api.whatsmark.io/api/v1/contacts
 ```
 
-See the full [API Overview](/overview) for the base URL, pagination, endpoint reference, and error handling.
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="API Overview" icon="book" href="/overview">
-    Learn the base URL, pagination, and all available endpoints.
+    The base URL, pagination, and every available endpoint.
   </Card>
 
   <Card title="Webhooks" icon="webhook" href="/settings/webhooks">
-    Combine API access with webhook forwarding for a two-way integration.
-  </Card>
-
-  <Card title="Contacts API" icon="users" href="#">
-    Read and manage contacts programmatically.
-  </Card>
-
-  <Card title="Templates API" icon="message-square" href="#">
-    Create and send message templates via the API.
-  </Card>
-
-  <Card title="Campaigns API" icon="megaphone" href="#">
-    Build and launch campaigns programmatically.
-  </Card>
-
-  <Card title="Roles & Permissions" icon="shield" href="/core-setup/roles-and-permissions">
-    Configure team member access and permissions.
+    Get events sent to your own system as they happen.
   </Card>
 </CardGroup>
