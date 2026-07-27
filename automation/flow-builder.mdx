@@ -76,7 +76,7 @@ We recommend creating one **First Message from Lead/Customer** flow to greet new
 
 ### Shopify
 
-The flow starts when an order changes in your connected Shopify store — no message needed. WhatsMark.io matches the shopper to a contact by phone number.
+This flow runs automatically when an order changes in your connected Shopify store. Customers don't need to send a message. WhatsMark.io uses the customer's phone number to find the correct contact and start the flow.
 
 Pick one **Shopify Event**:
 
@@ -91,12 +91,12 @@ Pick one **Shopify Event**:
 | **Order delivered** | The order reached the customer. |
 | **Order cancelled** | The order was cancelled. |
 
-**What it's for.** Recovering lost carts, and cutting "where's my order?" messages by telling people before they ask.
+**What it's for.** Keep customers updated throughout their order journey. Use it to recover abandoned carts, send order notifications, and reduce support questions like "Where's my order?"
 
-**Example.** Trigger on **Cart abandoned**, add a **Wait Timer** of 1 hour, then send a template with a discount code.
+**Example.** When a customer abandons their **cart**, wait **1 hour** before sending a **WhatsApp template** with a discount code to encourage them to return and complete their order.
 
 <Note>
-**Order out for delivery** and **Order delivered** rely on your shipping carrier sending tracking updates back to Shopify. They won't fire for orders you fulfil manually.
+The Order **Out for Delivery** and **Order Delivered** triggers work only if your shipping carrier sends tracking updates to Shopify. If you mark orders as fulfilled manually, these triggers won't run.
 </Note>
 
 ### WooCommerce
@@ -111,7 +111,7 @@ Works exactly like Shopify, for a connected WooCommerce store. It offers four ev
 | **Cart abandoned** | Someone leaves without completing checkout. |
 
 <Warning>
-Shopify and WooCommerce flows are started by your store, not by the customer, so WhatsApp's 24-hour rule applies. If the customer hasn't messaged you in the last 24 hours, an ordinary message won't be delivered — begin those flows with a **WhatsApp Template** so they reach people either way.
+Shopify and WooCommerce flows start automatically when an event occurs in your store, not when a customer sends you a message. If the customer hasn't messaged you in the last [24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything), start the flow with a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template). This ensures the first message is delivered successfully.
 </Warning>
 
 <Note>
@@ -120,7 +120,7 @@ Shopify and WooCommerce triggers are paid features and need a connected store. S
 
 ## The five categories
 
-Flow steps are grouped into five tabs. Each page below explains every step in that group, what it does, and when to use it.
+Flow steps are organized into five categories. Each page explains every flow step in that category, what it does, and when to use it.
 
 <CardGroup cols={2}>
   <Card title="Basic" icon="message-square" href="/automation/flow-steps/basic">
@@ -128,10 +128,10 @@ Flow steps are grouped into five tabs. Each page below explains every step in th
   </Card>
 
   <Card title="Interactive" icon="mouse-pointer-click" href="/automation/flow-steps/interactive">
-    Menus, images, videos, documents, map pins, contact cards, and emoji reactions.
+    Lists, images, videos, documents, map pins, contact cards, and emoji reactions.
   </Card>
 
-  <Card title="Ask" icon="circle-help" href="/automation/flow-steps/ask">
+  <Card title="Ask" icon="circle-question-mark" href="/automation/flow-steps/ask">
     Ask a question and save the answer — name, phone, email, address, location, or a file.
   </Card>
 
@@ -146,15 +146,17 @@ Flow steps are grouped into five tabs. Each page below explains every step in th
 
 ## Builder tools
 
-The toolbar at the top right of the tray has a few helpers:
+The toolbar at the top right of the page has a few helpers:
 
 - **Undo** and **Redo** — step back or forward through your changes.
 - **Snap to grid** — keeps cards neatly aligned as you drag them.
-- **Auto-arrange layout** — tidies the whole flow into a clean left-to-right layout.
+- **Auto-arrange layout** — Automatically arranges the entire flow into a clean, left-to-right layout.
 - **Save Flow** — saves your work. It's disabled while any card has an error.
 
 <Note>
-Some flow steps only work on one platform. On a Messenger flow, WhatsApp-only steps such as **List Message**, **Call To Action**, **Contact Card**, **Reaction**, **WhatsApp Template** and **Ask Location** are hidden. On a WhatsApp flow, **Messenger Template** is hidden.
+Some flow steps are available only on the platform that supports them. If you're building a Messenger flow, WhatsApp-only steps are hidden. If you're building a WhatsApp flow, **Messenger Template** is hidden.
+
+The WhatsApp-only steps are [**List Message**](/automation/flow-steps/interactive#list-message), [**Call To Action**](/automation/flow-steps/basic#call-to-action), [**Contact Card**](/automation/flow-steps/interactive#contact-card), [**Reaction**](/automation/flow-steps/interactive#reaction), [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template), and [**Ask Location**](/automation/flow-steps/ask#ask-location).
 </Note>
 
 ## What's next
