@@ -189,7 +189,7 @@
       },
       {
         "tab": "Api",
-        "openapi": "https://api.whatsmark.io/openapi/whatsmark-api-v1.json",
+        "openapi": "/api-collection/whatsmark-api-v1.json",
         "pages": [
           "overview",
           {
