@@ -20,6 +20,8 @@ These steps go beyond plain text — a scrollable menu, a file, a map pin. Open 
 3. Add one or more **Sections**, give each a **Section title**, and add items with a title and an optional description.
 4. In the builder, drag a line from each item's dot to whatever should happen next.
 
+The Message and Button Text fields are required, and you need at least one section with a title and one item. The Message supports up to 1,024 characters, Button Text up to 20 characters, and the optional Header and Footer up to 60 characters each. You can add up to 10 sections with up to 10 items each. Section and item titles are limited to 24 characters, and item descriptions to 72 characters.
+
 **Example**
 
 A salon lists its services:
@@ -45,6 +47,8 @@ List Message is a WhatsApp-only step. It's hidden on Messenger flows.
 
 **How to set it up.** Choose the media type, upload the file or pick one from your [Media Library](/media/media-library), and add a **Caption** if you want. For documents you can set the **file name** the customer sees, such as `brochure.pdf`.
 
+You must upload a file before the flow can be saved. The optional Caption supports up to 1,024 characters.
+
 **Example**
 
 > **Type:** Document
@@ -65,6 +69,8 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 
 **How to set it up.** Use **Search Location** to find the place, or drop a pin on the map, or type the **Latitude** and **Longitude** directly. Then fill in the **Location Name** and **Address**.
 
+The Latitude and Longitude fields are required. Location Name supports up to 100 characters and Address up to 200 characters.
+
 **Example**
 
 > **Location Name:** Sunrise Cafe
@@ -79,6 +85,8 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 **When to use it.** Sharing a salesperson's number, your support line, or the details of a branch.
 
 **How to set it up.** Fill in **First Name**, **Last Name**, **Phone**, and optionally **Email**, **Company** and **Title**.
+
+The First Name, Last Name, Company, and Title fields each support up to 100 characters, and Email up to 320 characters. You can send up to 3 contact cards in one step.
 
 **Example**
 
@@ -96,7 +104,7 @@ Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
 
 **When to use it.** A light touch that shows the message landed — a 👍 after someone confirms a booking, a ❤️ after a thank-you.
 
-**How to set it up.** Pick the emoji, and set the **Message ID** — usually the merge field for the customer's last message.
+**How to set it up.** Pick the emoji, and set the **Message ID** — usually the [merge field](/messaging/merge-fields) for the customer's last message.
 
 **Example**
 
@@ -118,6 +126,16 @@ A furniture shop answers a product enquiry:
 4. A **Button Message** — `Visit the showroom` / `Talk to sales`.
 5. From `Visit the showroom`, a **Location** with the shop address.
 6. From `Talk to sales`, a **Contact Card** for the sales manager.
+
+## Show Typing Indicator
+
+**Show Typing Indicator** — Available on every flow step in this category except **Reaction**. When enabled, the customer sees a "typing..." indicator before the message is sent, making the conversation feel more natural.
+
+The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation.
+
+<Note>
+This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan.
+</Note>
 
 ## What's next
 

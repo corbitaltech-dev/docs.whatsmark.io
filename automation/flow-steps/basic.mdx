@@ -1,11 +1,13 @@
 ---
 title: "Basic Flow Steps"
-description: "The everyday replies your chatbot sends — plain text, quick-reply buttons, a link button, and approved WhatsApp or Messenger templates."
+description: "Everything you need to send messages to your customers, from simple text messages to interactive buttons and approved WhatsApp or Messenger templates."
 icon: "message-square"
 keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "text message", "button message", "call to action", "WhatsApp template", "Messenger template"]
 ---
 
-These are the flow steps you'll reach for most — the ones that actually send something to your customer. Open the **Basic** tab in the Flow Builder tray to find them.
+The **Basic** category includes the flow steps you'll use most often to send messages to your customers.
+
+![Flow Builder with the Basic tab selected, showing the Text Message, Button Message, Call To Action, and WhatsApp Template tiles, and a flow connecting a Start Trigger to a Button Message whose three buttons lead to a Call To Action, an Ask Question, a Media Message, and a Text Message](/automation/img/basic/basic-flow-steps.png)
 
 ## Text Message
 
@@ -13,69 +15,78 @@ These are the flow steps you'll reach for most — the ones that actually send s
 
 **When to use it.** Greetings, confirmations, opening hours, an address, a thank-you at the end of a flow.
 
-**How to set it up.** Click the card and type your message in the **Message** box. Type **@** anywhere to insert a merge field.
+**How to set it up.** Click the card and type your message in the **Message Text** box. Type **@** anywhere to insert a [merge field](/messaging/merge-fields).
+
+The **Message Text** field is required. It supports up to **4,096 characters** on WhatsApp and **2,000 characters** on Messenger. A character counter below the field shows how many characters you've used.
+
+![Text Message settings on a WhatsApp flow, with a Message Text box containing a greeting that uses the contact first name merge field and a character counter reading 118 of 4096](/automation/img/basic/text-message-settings-whatsapp.png)
+
 
 **Example**
 
-> Hi {'{{contact.first_name}}'}, thanks for reaching out to Sunrise Cafe! We're open 8am–10pm every day. How can we help?
+> Hi {'{{contact.first_name}}'}, thanks for reaching out to Sunrise Cafe! We're open 8am to 10pm every day. How can we help?
 
-<Tip>
-Keep it to two or three short lines. Long paragraphs get skimmed on a phone.
-</Tip>
-
+![A Start Trigger set to exact match on the keyword menu, connected to a Text Message step containing a greeting that uses the contact first name merge field](/automation/img/basic/text-message.png)
 ---
 
 ## Button Message
 
-**What it does.** Sends a message with up to three tappable quick-reply buttons. Each button becomes its own path in the builder, so what happens next depends on which one the customer taps.
+**What it does.** Sends a message with up to three clickable buttons. The customer chooses an option by clicking a button, and the chatbot continues with the next flow step for that option.
 
-**When to use it.** Any time you want to offer choices instead of hoping the customer types the right thing. A main menu, a yes/no question, or "which service do you need?".
+**When to use it.** Use button messages when you want customers to choose from a list of options instead of typing a reply. They're ideal for main menus, yes/no questions, or letting customers select a service.
 
 **How to set it up.**
 
 1. Type the message in the **Message** box.
 2. Under **Buttons**, add each button and fill in its **Button Text** — for example, `Yes, continue`.
 3. **Value (payload)** is optional; leave it blank and it defaults to the button text.
-4. Back in the builder, each button has its own dot on the right. Drag a line from each one to whatever should happen next.
+4. Back in the Flow Builder, each button has its own connection point on the right. You must connect each button to the flow step you want the chatbot to run when that button is selected.
+
+The **Message Text** field is required and supports up to **1,024 characters**. You can add up to **3 buttons**, and each Button Text is required and limited to **20 characters**.
+
+![Button Message settings with a Message Text box, a Buttons counter reading 3 of 3, and three buttons each with its Button Text and Value payload filled in](/automation/img/basic/button-message-settings.png)
 
 **Example**
 
 > **Message:** What would you like to do today?
 > **Buttons:** `Book a table` · `See the menu` · `Talk to us`
 
-Connect `Book a table` to an **Ask Question** asking for the date, `See the menu` to a **Media Message** with your PDF menu, and `Talk to us` to a **Text Message** saying someone will reply shortly.
+Connect `Book a table` to an [**Ask Question**](/automation/flow-steps/ask#ask-question) asking for the date, `See the menu` to a [**Media Message**](/automation/flow-steps/interactive#media-message) with your PDF menu, and `Talk to us` to a [**Text Message**](#text-message) saying someone will reply shortly.
+
+![A Button Message with the buttons Book a table, See the menu, and Talk to us, each connected to a different next step — an Ask Question, a Media Message, and a Text Message](/automation/img/basic/button-message.png)
 
 ---
 
 ## Call To Action
 
-**What it does.** Sends a message with a button that opens a web link. Unlike quick-reply buttons, this one takes the customer out to your website.
+**What it does.** Sends a message with a button that opens a website or web page. When the customer clicks the button, they're taken directly to the link you've provided.
 
 **When to use it.** Sending someone to a product page, a payment link, a booking page, or a form.
 
-**How to set it up.** Fill in the **Message**, the **Button Text** (such as `Learn More`), and the **URL**. You can also add an optional **Header** above and **Footer** below.
+**How to set it up.** Enter the **Message**, the **Button Text** (for example, `Learn More`), and the **URL** you want the button to open. You can also add an optional **Header** and **Footer**.
+
+The Message Text, Button Text, and URL fields are all required. The Message supports up to **1,024 characters**, Button Text up to **20 characters**, and the optional Header and Footer up to **60 characters** each.
 
 **Example**
 
-> **Header:** Autumn Sale
+> **Header:** Summer Sale
 > **Message:** Everything in store is 20% off until Sunday. Tap below to browse.
 > **Button Text:** Shop now
 > **URL:** `https://example.com/sale`
 > **Footer:** Free delivery over ₹999
 
-<Note>
-Call To Action is a WhatsApp-only step. It's hidden on Messenger flows.
-</Note>
 
 ---
 
 ## WhatsApp Template
 
-**What it does.** Sends one of your approved WhatsApp templates.
+**What it does.** Sends one of your approved [WhatsApp templates](/messaging/whatsapp-templates).
 
-**When to use it.** Whenever you need to message someone *outside* the 24-hour window — after an order is placed, a delivery update, an abandoned cart reminder. WhatsApp only allows approved templates in that situation, so a plain **Text Message** would not be delivered.
+**When to use it.** Use a WhatsApp Template whenever you need to message a customer who hasn't contacted you in the last [24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything). For example, to send order confirmations, delivery updates, or abandoned cart reminders. Regular text messages can't be sent outside the 24-hour messaging window, so you must use an approved WhatsApp template.
 
-**How to set it up.** Click the card, search for your template by name, pick it, then fill in any variables it contains. Type **@** in a variable box to insert a merge field such as the contact's name or order number.
+**How to set it up.** Click the flow step, search for your template by name, and select it. If the template contains variables, fill in each one. Type **@** in a variable field to insert a [merge field](/messaging/merge-fields), such as the contact's name, order number, or any other available data.
+
+You must select a template before the flow can be saved. Length limits come from the template itself, which Meta has already approved.
 
 **Example**
 
@@ -95,12 +106,26 @@ You need at least one approved template first. See [WhatsApp Templates](/messagi
 
 **What it does.** Sends a Messenger template on a Facebook Messenger flow.
 
-**When to use it.** The Messenger equivalent of the step above, for flows running on a connected Messenger account.
+**When to use it.** Use it to send approved template messages through your connected Messenger account. On Messenger you have [7 days](/messaging/live-chat#on-messenger-7-days) from the customer's last message, and a template can't reopen that window once it closes.
 
-**How to set it up.** Search for and select the template, then fill in its variables.
+**How to set it up.** Search for and select the Messenger template you want to use, then fill in any variables required by the template.
+
+You must select a template before the flow can be saved.
 
 <Note>
 This step only appears on Messenger flows and is hidden on WhatsApp flows. See [Messenger Templates](/messaging/messenger-templates).
+</Note>
+
+---
+
+## Show Typing Indicator
+
+**Show Typing Indicator** — Enable this option to show a **"typing..."** indicator before the message is sent. This helps conversations feel more natural. It's available on all flow steps in this category except **Messenger Template**.
+
+The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation.
+
+<Note>
+This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan.
 </Note>
 
 ---
@@ -109,12 +134,14 @@ This step only appears on Messenger flows and is hidden on WhatsApp flows. See [
 
 A small clinic wants a flow that greets new patients and routes them:
 
-1. **Start Trigger** — First message from lead/customer.
-2. **Text Message** — "Hi {'{{contact.first_name}}'}, welcome to Green Valley Clinic."
-3. **Button Message** — "How can we help?" with `Book an appointment`, `Opening hours`, `Speak to reception`.
+1. [**Start Trigger**](/automation/flow-builder#the-start-trigger) — First message from lead/customer.
+2. [**Text Message**](#text-message) — "Hi {'{{contact.first_name}}'}, welcome to Green Valley Clinic."
+3. [**Button Message**](#button-message) — "How can we help?" with `Book an appointment`, `Opening hours`, `Speak to reception`.
 4. From `Opening hours`, a **Text Message** with the timings.
 5. From `Speak to reception`, a **Text Message** saying a team member will reply.
 6. From `Book an appointment`, continue into the [Ask](/automation/flow-steps/ask) steps to collect the details.
+
+
 
 ## What's next
 
@@ -123,7 +150,7 @@ A small clinic wants a flow that greets new patients and routes them:
     Menus, images, videos, map pins, and contact cards.
   </Card>
 
-  <Card title="Ask" icon="circle-help" href="/automation/flow-steps/ask">
+  <Card title="Ask" icon="circle-question-mark" href="/automation/flow-steps/ask">
     Collect answers and save them against the contact.
   </Card>
 </CardGroup>

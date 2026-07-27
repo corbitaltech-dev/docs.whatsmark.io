@@ -13,7 +13,7 @@ They all work the same way, so once you've set up one, the rest are familiar.
 
 <Steps>
 <Step title="Write the question">
-  Type it into the **Message** box. Type **@** to insert a merge field, such as the contact's first name.
+  Type it into the **Message** box. Type **@** to insert a [merge field](/messaging/merge-fields), such as the contact's first name.
 </Step>
 
 <Step title="Choose where to save the answer">
@@ -30,6 +30,8 @@ They all work the same way, so once you've set up one, the rest are familiar.
 </Steps>
 
 Use the saved answer later by typing **@** in any message box and picking it.
+
+The question and a Save Response To name are required. Number of Attempts can be set from 0 to 5, and if you set it above 0, a Validation Error Message is required as well — click **Use default message** to fill it in with one click. The question, Validation Error Message, and Attempts Over Message each support up to 1,024 characters.
 
 ---
 
@@ -147,6 +149,16 @@ A restaurant collects a booking:
 6. **Text Message** — "Thanks {'{{contact.first_name}}'}! We've noted a table for {'{{vars.party_size}}'} on {'{{vars.booking_date}}'} under {'{{vars.booking_name}}'}. We'll confirm shortly."
 
 Add a **Google Sheets** step at the end and every booking lands in a spreadsheet automatically.
+
+## Show Typing Indicator
+
+**Show Typing Indicator** — Available on every flow step in this category. When enabled, the customer sees a "typing..." indicator before your question is sent, making the conversation feel more natural.
+
+The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation.
+
+<Note>
+This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan.
+</Note>
 
 ## What's next
 
