@@ -1,0 +1,132 @@
+---
+title: "Interactive Flow Steps"
+description: "Scrollable menus, images and documents, map locations, contact cards, and emoji reactions — the flow steps that give customers something to tap or open."
+icon: "mouse-pointer-click"
+keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "list message", "media message", "location", "contact card", "reaction"]
+---
+
+These steps go beyond plain text — a scrollable menu, a file, a map pin. Open the **Interactive** tab in the Flow Builder tray to find them.
+
+## List Message
+
+**What it does.** Sends a message with a button that opens a scrollable menu. Options are grouped into sections, and each option becomes its own path in the builder.
+
+**When to use it.** When you have more than three choices. **Button Message** caps out at three buttons — a list can hold many more, neatly grouped.
+
+**How to set it up.**
+
+1. Fill in the **Message**, and optionally a **Header** and **Footer**.
+2. Set the **Button Text** — the words on the button that opens the menu, such as `View options`.
+3. Add one or more **Sections**, give each a **Section title**, and add items with a title and an optional description.
+4. In the builder, drag a line from each item's dot to whatever should happen next.
+
+**Example**
+
+A salon lists its services:
+
+> **Message:** Which service would you like to book?
+> **Button Text:** View services
+> **Section — Hair:** Haircut · Colour · Blow dry
+> **Section — Nails:** Manicure · Pedicure · Gel extensions
+
+Each item leads to an **Ask Question** asking for a preferred date.
+
+<Note>
+List Message is a WhatsApp-only step. It's hidden on Messenger flows.
+</Note>
+
+---
+
+## Media Message
+
+**What it does.** Sends an image, video, audio clip or document, with an optional caption.
+
+**When to use it.** Your menu as a PDF, a product photo, a how-to video, a price list, a brochure.
+
+**How to set it up.** Choose the media type, upload the file or pick one from your [Media Library](/media/media-library), and add a **Caption** if you want. For documents you can set the **file name** the customer sees, such as `brochure.pdf`.
+
+**Example**
+
+> **Type:** Document
+> **File name:** Sunrise-Cafe-Menu.pdf
+> **Caption:** Here's our full menu. Reply **book** whenever you're ready to reserve a table.
+
+<Tip>
+Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy than `file_8823.pdf`.
+</Tip>
+
+---
+
+## Location
+
+**What it does.** Sends a map pin, so the customer can tap it and open directions.
+
+**When to use it.** Sharing your shop, clinic or office address, or a pickup point.
+
+**How to set it up.** Use **Search Location** to find the place, or drop a pin on the map, or type the **Latitude** and **Longitude** directly. Then fill in the **Location Name** and **Address**.
+
+**Example**
+
+> **Location Name:** Sunrise Cafe
+> **Address:** 12 Park Road, Mumbai 400001
+
+---
+
+## Contact Card
+
+**What it does.** Sends a contact card the customer can save straight to their phone.
+
+**When to use it.** Sharing a salesperson's number, your support line, or the details of a branch.
+
+**How to set it up.** Fill in **First Name**, **Last Name**, **Phone**, and optionally **Email**, **Company** and **Title**.
+
+**Example**
+
+> Priya Sharma · Sales Manager · Sunrise Cafe · +91 98765 43210
+
+<Note>
+Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
+</Note>
+
+---
+
+## Reaction
+
+**What it does.** Adds an emoji reaction to a message in the chat, rather than sending a new message.
+
+**When to use it.** A light touch that shows the message landed — a 👍 after someone confirms a booking, a ❤️ after a thank-you.
+
+**How to set it up.** Pick the emoji, and set the **Message ID** — usually the merge field for the customer's last message.
+
+**Example**
+
+After the customer taps `Confirm booking`, add a Reaction with 👍 so they immediately see it registered, then send the confirmation text.
+
+<Note>
+Reaction is a WhatsApp-only step. It's hidden on Messenger flows.
+</Note>
+
+---
+
+## A worked example
+
+A furniture shop answers a product enquiry:
+
+1. **Start Trigger** — When message contains `sofa`, `couch`.
+2. **List Message** — "Which style are you after?" with sections for Fabric, Leather and Recliner.
+3. From each item, a **Media Message** with photos of that range.
+4. A **Button Message** — `Visit the showroom` / `Talk to sales`.
+5. From `Visit the showroom`, a **Location** with the shop address.
+6. From `Talk to sales`, a **Contact Card** for the sales manager.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Ask" icon="circle-help" href="/automation/flow-steps/ask">
+    Collect names, numbers, emails and files from your customers.
+  </Card>
+
+  <Card title="Advanced" icon="sliders-horizontal" href="/automation/flow-steps/advanced">
+    Add waiting, branching, tagging and API calls.
+  </Card>
+</CardGroup>

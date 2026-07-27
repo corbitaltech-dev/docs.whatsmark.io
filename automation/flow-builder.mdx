@@ -1,45 +1,167 @@
 ---
 title: "Flow Builder"
-description: "Connect nodes on a drag-and-drop canvas to decide exactly how your chatbot talks to customers."
+description: "Build your chatbot by adding flow steps, connecting them together, and defining how each conversation should progress."
 icon: "workflow"
-keywords: ["WhatsMark", "WhatsMark.io", "flow builder", "automation", "nodes", "triggers"]
+keywords: ["WhatsMark", "WhatsMark.io", "flow builder", "automation", "flow steps", "triggers", "chatbot"]
 ---
 
-The **Builder** is a canvas where you connect nodes together to shape a conversation. A flow starts from a trigger — a **keyword** or an **event** — then branches through whatever nodes you add.
+The **Flow Builder** is where you create your chatbot conversation. Choose from different flow steps such as [**Text Message**](/automation/flow-steps/basic#text-message), [**Button Message**](/automation/flow-steps/basic#button-message), [**Ask Question**](/automation/flow-steps/ask#ask-question), [**Condition**](/automation/flow-steps/advanced#condition), or [**API Request**](/automation/flow-steps/advanced#api-request) then connect them to control what happens next. Every flow begins with a [**Start Trigger**](#the-start-trigger), which determines when the conversation starts. After that, each flow step runs in the order you've connected them.
 
-## Node types
+Think of it like drawing a conversation on paper:
 
-<AccordionGroup>
-<Accordion title="Messaging nodes">
-  Text, button, list, media, location, contact card, WhatsApp template, Messenger template, or a WhatsApp Flow send.
-</Accordion>
+When someone says **"hi" → send them a welcome message. Then → show three buttons → If they tap "Book a table"**, ask for their preferred date.
 
-<Accordion title="Input-collection nodes">
-  Ask a question, or specifically ask for phone, email, address, location, or media — each waits for the contact's reply before continuing.
-</Accordion>
+## How the builder works
 
-<Accordion title="Logic nodes">
-  Delay, condition/branch, wait timer, wait-for-reply, and general logic control.
-</Accordion>
+<Steps>
+<Step title="Open the builder">
+  Go to **Automations** in the sidebar, click the menu icon at the end of a flow's row, and click **Flow Builder**.
+</Step>
 
-<Accordion title="Data & integration nodes">
-  API request, save response, update contact, update custom field, assign tag/label/group, Google Sheets read/write, Google Calendar event creation.
-</Accordion>
+<Step title="Set the Start Trigger">
+Every flow starts with a [**Start Trigger**](#the-start-trigger). Click it to choose who can start the flow and what should start it. For example, you can trigger the flow when someone sends a keyword or when an event occurs in your [Shopify](#shopify) or [WooCommerce](#woocommerce) store.
+</Step>
 
-<Accordion title="Other nodes">
-  Reaction, AI Assistant, sequence, connect-to-another-flow (chain flows together).
-</Accordion>
-</AccordionGroup>
+<Step title="Add flow steps">
+  Pick a category tab at the top — **Basic**, **Interactive**, **Ask**, **Advanced** or **Integrations** — then click a tile, or drag it into the builder.
+</Step>
+
+<Step title="Join them up">
+Connect each flow step in the order you want the conversation to happen. The chatbot follows these connections from one step to the next.
+</Step>
+
+<Step title="Fill in each flow step">
+Click a flow step card to open its settings on the right. Then fill in the details required for that step, such as the message, buttons, questions, or other options.
+</Step>
+
+<Step title="Save">
+  Click **Save Flow** at the top right. If any required fields are missing, the affected flow steps are highlighted in red, and the Save button stays disabled until you fix it.
+</Step>
+</Steps>
+
+<Tip>
+Type **@** in almost any text box to drop in a merge field, such as the contact's first name. See [Merge Fields](/messaging/merge-fields).
+</Tip>
+
+## The Start Trigger
+Every flow begins here. The Start Trigger decides when your chatbot starts. Open the **Start Trigger** settings, then choose one of the three Trigger Sources.
+
+- **Message** — someone sends you a WhatsApp message.
+- **Shopify** — something happens to an order in your Shopify store.
+- **WooCommerce** — something happens to an order in your WooCommerce store.
+
+The rest of the card changes depending on which one you choose, The following sections explain each option.
+
+### Message
+
+The most common choice. The flow starts when someone messages you.
+
+**Contact Type** — Choose which contacts can start this flow. You can select one or more contact types, such as **Lead**, **Customer**, or **Guest**.
+
+**Trigger Type** — Choose how an incoming message is matched. There are four options:
+
+| Option | What it means |
+| --- | --- |
+| **On exact match** | The customer's message must exactly match one of your keywords. For example, if your keyword is **menu**, only **menu** will trigger the flow. Messages like "send me the menu" or "show me the menu" won't.|
+| **When message contains** | The flow starts if your keyword appears anywhere in the customer's message. For example, if your keyword is **menu**, messages like **send me the menu** or **show the menu** will also trigger the flow.|
+| **First message from lead/customer** | Starts the flow when a lead or customer contacts you for the first time. After that, this trigger won't run again for the same contact. |
+| **No keyword matches (fallback)** | Use this as your default flow. If no other keyword triggers match, this flow runs automatically to make sure every customer receives a response. |
+
+**Keywords** — Available only **when On Exact Match** or **When Message Contains** is selected. Enter a keyword and press Enter to add it. Add multiple keywords or common variations so customers can trigger the flow using different words.
+
+**Example.** If you choose When Message Contains and add the keywords **book**, **table**, and **reservation**, messages like **"Can I book a table for 4?"** or **"I'd like to make a reservation"** will automatically start the booking flow.
+<Tip>
+We recommend creating one **First Message from Lead/Customer** flow to greet new **contacts** and one **No Keyword Matches (Fallback)** flow to handle messages that don't match any keywords. This way, every customer receives a response.
+</Tip>
+
+### Shopify
+
+The flow starts when an order changes in your connected Shopify store — no message needed. WhatsMark.io matches the shopper to a contact by phone number.
+
+Pick one **Shopify Event**:
+
+| Event | Fires when |
+| --- | --- |
+| **Cart abandoned** | Someone adds to cart and leaves without paying. |
+| **Order placed** | An order is successfully placed. |
+| **COD order confirmed** | A cash-on-delivery order is confirmed. |
+| **Order partially shipped** | Part of the order has shipped. |
+| **Order shipped** | The order has shipped. |
+| **Order out for delivery** | The courier is delivering it today. |
+| **Order delivered** | The order reached the customer. |
+| **Order cancelled** | The order was cancelled. |
+
+**What it's for.** Recovering lost carts, and cutting "where's my order?" messages by telling people before they ask.
+
+**Example.** Trigger on **Cart abandoned**, add a **Wait Timer** of 1 hour, then send a template with a discount code.
 
 <Note>
-Google Sheets and Google Calendar nodes require connecting a [Google Account](/settings/google-accounts) first, and aren't available on the Free Forever plan.
+**Order out for delivery** and **Order delivered** rely on your shipping carrier sending tracking updates back to Shopify. They won't fire for orders you fulfil manually.
+</Note>
+
+### WooCommerce
+
+Works exactly like Shopify, for a connected WooCommerce store. It offers four events:
+
+| Event | Fires when |
+| --- | --- |
+| **Order placed** | An order is successfully placed. |
+| **Order shipped** | The order has shipped. |
+| **COD order confirmed** | A cash-on-delivery order is confirmed. |
+| **Cart abandoned** | Someone leaves without completing checkout. |
+
+<Warning>
+Shopify and WooCommerce flows are started by your store, not by the customer, so WhatsApp's 24-hour rule applies. If the customer hasn't messaged you in the last 24 hours, an ordinary message won't be delivered — begin those flows with a **WhatsApp Template** so they reach people either way.
+</Warning>
+
+<Note>
+Shopify and WooCommerce triggers are paid features and need a connected store. See [Shopify](/settings/shopify) and [WooCommerce](/settings/woocommerce).
+</Note>
+
+## The five categories
+
+Flow steps are grouped into five tabs. Each page below explains every step in that group, what it does, and when to use it.
+
+<CardGroup cols={2}>
+  <Card title="Basic" icon="message-square" href="/automation/flow-steps/basic">
+    The everyday replies — plain text, buttons, links, and approved templates.
+  </Card>
+
+  <Card title="Interactive" icon="mouse-pointer-click" href="/automation/flow-steps/interactive">
+    Menus, images, videos, documents, map pins, contact cards, and emoji reactions.
+  </Card>
+
+  <Card title="Ask" icon="circle-help" href="/automation/flow-steps/ask">
+    Ask a question and save the answer — name, phone, email, address, location, or a file.
+  </Card>
+
+  <Card title="Advanced" icon="sliders-horizontal" href="/automation/flow-steps/advanced">
+    Waiting, branching, tagging, updating the contact, and calling other systems.
+  </Card>
+
+  <Card title="Integrations" icon="cloud" href="/automation/flow-steps/integrations">
+    Write a row to Google Sheets or create a Google Calendar event.
+  </Card>
+</CardGroup>
+
+## Builder tools
+
+The toolbar at the top right of the tray has a few helpers:
+
+- **Undo** and **Redo** — step back or forward through your changes.
+- **Snap to grid** — keeps cards neatly aligned as you drag them.
+- **Auto-arrange layout** — tidies the whole flow into a clean left-to-right layout.
+- **Save Flow** — saves your work. It's disabled while any card has an error.
+
+<Note>
+Some flow steps only work on one platform. On a Messenger flow, WhatsApp-only steps such as **List Message**, **Call To Action**, **Contact Card**, **Reaction**, **WhatsApp Template** and **Ask Location** are hidden. On a WhatsApp flow, **Messenger Template** is hidden.
 </Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Flow Collection" icon="library" href="/automation/overview#flow-collection">
-    Start from a ready-made flow instead of an empty canvas.
+    Start from a ready-made flow instead of an empty builder.
   </Card>
 
   <Card title="Generate with AI" icon="wand-sparkles" href="/automation/generate-with-ai">

@@ -1,0 +1,124 @@
+---
+title: "Integration Flow Steps"
+description: "Send what your chatbot collects straight into Google Sheets, or turn a booking into a Google Calendar event."
+icon: "cloud"
+keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "google sheets", "google calendar", "integrations", "automation"]
+---
+
+The **Integrations** tab connects your chatbot to your Google account, so the details you collect on WhatsApp end up where your team already works. Neither of these steps sends anything to the customer — they work quietly in the background.
+
+<Note>
+Both steps need a connected Google account. Set one up first in [Google Accounts](/settings/google-accounts). They're also paid features — on the Free Forever plan the tiles appear with a padlock, and clicking one opens an upgrade prompt.
+</Note>
+
+## Google Sheets
+
+**What it does.** Writes a new row to one of your Google Sheets every time the flow reaches this point.
+
+**When to use it.** Keeping a running log of leads, bookings, orders or survey answers that your whole team can see and sort — without anyone copying anything by hand.
+
+**How to set it up.**
+
+<Steps>
+<Step title="Choose the Google Account">
+  Pick a connected account, or click **Connect another account** to add one.
+</Step>
+
+<Step title="Pick the Spreadsheet">
+  Your spreadsheets load automatically. Choose the one you want to write into.
+</Step>
+
+<Step title="Set the Sheet / Tab Name">
+  The tab within that spreadsheet. Defaults to `Sheet1`.
+</Step>
+
+<Step title="Map your columns">
+  Click **Add Column** for each one. Give it a header, then set the value — type **@** to insert a merge field such as the contact's name or an answer you collected earlier.
+</Step>
+</Steps>
+
+**Example**
+
+A restaurant logs every booking taken by the chatbot:
+
+| Column header | Value |
+| --- | --- |
+| Name | {'{{contact.first_name}}'} {'{{contact.last_name}}'} |
+| Phone | {'{{contact.phone}}'} |
+| Date | {'{{vars.booking_date}}'} |
+| Party size | {'{{vars.party_size}}'} |
+
+Every completed booking becomes a new row, so the front desk can open one sheet each morning and see the day's tables.
+
+<Tip>
+Put this step at the very end of your flow, after every question has been answered. If you place it earlier, the later answers won't exist yet and those cells will be blank.
+</Tip>
+
+---
+
+## Calendar Event
+
+**What it does.** Creates an event in your Google Calendar using details the customer gave you.
+
+**When to use it.** Appointments, site visits, consultations, demos — anything where a booking on WhatsApp should also appear in your calendar.
+
+**How to set it up.**
+
+<Steps>
+<Step title="Choose the Google Account and Calendar">
+  Pick the connected account, then which of its calendars the event should go into.
+</Step>
+
+<Step title="Write the event title">
+  For example, `Appointment with {'{{contact.first_name}}'}`.
+</Step>
+
+<Step title="Set the date and time">
+  Fill in **Start Date**, **Start Time**, **End Date** and **End Time**. You can type a fixed date, or press **@** to use an answer the customer gave earlier — it's converted into a proper date and time for you.
+</Step>
+
+<Step title="Add the extra details">
+  **Location**, **Attendee Email** and **Description** are all optional. Use **@** in any of them.
+</Step>
+</Steps>
+
+**Example**
+
+A clinic turns a WhatsApp booking into a calendar entry:
+
+> **Title:** Consultation — {'{{contact.first_name}}'} {'{{contact.last_name}}'}
+> **Start Date:** {'{{vars.booking_date}}'}
+> **Start Time:** {'{{vars.booking_time}}'}
+> **Location:** Green Valley Clinic, Room 3
+> **Attendee Email:** {'{{contact.email}}'}
+> **Description:** Booked through WhatsApp. Phone: {'{{contact.phone}}'}
+
+The doctor sees it in their calendar, and the patient gets a Google invite by email.
+
+---
+
+## A worked example
+
+A consultancy books discovery calls end to end:
+
+1. **Start Trigger** — When message contains `book`, `call`, `consultation`.
+2. **Ask Question** (Text) — "What's your full name?" → `client_name`
+3. **Ask Email** — "What's your email?" → `email`
+4. **Ask Question** (Date) — "Which day suits you?" → `booking_date`
+5. **Ask Question** (Text) — "And what time?" → `booking_time`
+6. **Update Contact** — save the name and email onto the contact record.
+7. **Calendar Event** — create the event from those answers.
+8. **Google Sheets** — log the same details as a row for the sales team.
+9. **Text Message** — "You're booked in for {'{{vars.booking_date}}'} at {'{{vars.booking_time}}'}. A calendar invite is on its way to {'{{vars.email}}'}."
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Google Accounts" icon="link" href="/settings/google-accounts">
+    Connect the Google account these steps use.
+  </Card>
+
+  <Card title="Appointments" icon="calendar-check" href="/ai-and-more/appointments">
+    A dedicated booking experience with real availability slots.
+  </Card>
+</CardGroup>

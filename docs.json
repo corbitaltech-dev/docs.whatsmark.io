@@ -43,6 +43,26 @@
     {
       "source": "/automation/whatsapp-flows",
       "destination": "/ai-and-more/whatsapp-flows"
+    },
+    {
+      "source": "/automation/message-types/basic",
+      "destination": "/automation/flow-steps/basic"
+    },
+    {
+      "source": "/automation/message-types/interactive",
+      "destination": "/automation/flow-steps/interactive"
+    },
+    {
+      "source": "/automation/message-types/ask",
+      "destination": "/automation/flow-steps/ask"
+    },
+    {
+      "source": "/automation/message-types/advanced",
+      "destination": "/automation/flow-steps/advanced"
+    },
+    {
+      "source": "/automation/message-types/integrations",
+      "destination": "/automation/flow-steps/integrations"
     }
   ],
   "navigation": {
@@ -98,7 +118,18 @@
             "pages": [
               "automation/overview",
               "automation/generate-with-ai",
-              "automation/flow-builder"
+              "automation/flow-builder",
+              {
+                "group": "Flow Steps",
+                "icon": "shapes",
+                "pages": [
+                  "automation/flow-steps/basic",
+                  "automation/flow-steps/interactive",
+                  "automation/flow-steps/ask",
+                  "automation/flow-steps/advanced",
+                  "automation/flow-steps/integrations"
+                ]
+              }
             ]
           },
           {

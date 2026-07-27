@@ -1,0 +1,161 @@
+---
+title: "Ask Flow Steps"
+description: "Ask your customer a question, check the answer is valid, and save it against their contact record — names, phone numbers, emails, addresses, locations and files."
+icon: "circle-question-mark"
+keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "ask question", "ask phone", "ask email", "ask address", "ask location", "ask media", "get input"]
+---
+
+The **Ask** steps are how your chatbot collects information. Each one sends a question, waits for the customer to reply, checks the answer looks right, and saves it so you can use it later in the flow or on the contact's record.
+
+They all work the same way, so once you've set up one, the rest are familiar.
+
+## How every Ask step works
+
+<Steps>
+<Step title="Write the question">
+  Type it into the **Message** box. Type **@** to insert a merge field, such as the contact's first name.
+</Step>
+
+<Step title="Choose where to save the answer">
+  Set the **Save Response To** field. This is the name you'll use later — for example `preferred_date`. You can save into one of your [custom fields](/core-setup/custom-fields), or into a flow variable used just for this conversation.
+</Step>
+
+<Step title="Set the retries">
+  **Number of Attempts** is how many times to ask again if the reply doesn't look right. Set it to `0` to accept whatever they send first time.
+</Step>
+
+<Step title="Write the retry messages">
+  **Validation Error Message** is sent just before re-asking. There's a sensible default you can use with one click. **Attempts Over Message** is sent once if they run out of attempts — the flow then carries on.
+</Step>
+</Steps>
+
+Use the saved answer later by typing **@** in any message box and picking it.
+
+---
+
+## Ask Question
+
+**What it does.** Asks for anything and checks the answer against a format you choose: **Text**, **Any**, **Number**, **Email**, **Phone**, **URL**, **Date**, or a **Regular expression** pattern.
+
+**When to use it.** The all-rounder. Names, order numbers, party size, preferred date, a review.
+
+**Example**
+
+> **Message:** Great! What date would you like to book?
+> **Format:** Date
+> **Save Response To:** `booking_date`
+> **Attempts:** 2
+> **Validation Error Message:** That doesn't look like a date. Please send it as DD/MM/YYYY.
+
+---
+
+## Ask Phone
+
+**What it does.** Asks for a phone number and checks it's a valid one.
+
+**When to use it.** When you need a callback number, or a different number from the one they're messaging on.
+
+**Example**
+
+> **Message:** What's the best number to call you on?
+> **Save Response To:** `callback_number`
+
+---
+
+## Ask Email
+
+**What it does.** Asks for an email address and checks it's properly formed.
+
+**When to use it.** Sending an invoice, a booking confirmation, a brochure, or adding someone to your mailing list.
+
+**Example**
+
+> **Message:** Where should we email your invoice?
+> **Save Response To:** `email`
+
+---
+
+## Ask Address
+
+**What it does.** Asks for a street address as text.
+
+**When to use it.** Delivery addresses, a site visit, an on-location service.
+
+**How to set it up.** As well as **Save Response To**, there's a **Formatted Response Attribute** if you want the tidied-up version saved separately.
+
+**Example**
+
+> **Message:** What's the full delivery address, including the pincode?
+> **Save Response To:** `delivery_address`
+
+---
+
+## Ask Location
+
+**What it does.** Asks the customer to share their actual GPS location using WhatsApp's location button.
+
+**When to use it.** Field service, cab pickup, delivery to somewhere hard to describe in words.
+
+**Example**
+
+> **Message:** Please share your location so the driver can find you.
+> **Save Response To:** `pickup_location`
+
+<Note>
+Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
+</Note>
+
+---
+
+## Ask Media
+
+**What it does.** Asks the customer to send a file, and you choose what's allowed: **Any**, **Image**, **Video**, **Audio**, **Document** or **Sticker**.
+
+**When to use it.** A photo of a damaged item, a prescription, an ID document, a screenshot of an error.
+
+**Example**
+
+> **Message:** Please send a photo of the damaged item so we can process your return.
+> **Media Type:** Image
+> **Save Response To:** `damage_photo`
+
+---
+
+## Get Input
+
+**What it does.** Collects a free-form reply with a lighter set of options than **Ask Question** — you choose the **Attribute Format**: **Text**, **Any**, **Number**, **Email**, **Phone**, **URL** or **Date**.
+
+**When to use it.** Quick, simple capture where you don't need the fuller question setup.
+
+**Example**
+
+> **Message:** How many people is the booking for?
+> **Attribute Format:** Number
+> **Save Response To:** `party_size`
+
+---
+
+## A worked example
+
+A restaurant collects a booking:
+
+1. **Button Message** — "How can we help?" with `Book a table`.
+2. **Ask Question** (Text) — "What name should we put the booking under?" → `booking_name`
+3. **Get Input** (Number) — "How many people?" → `party_size`
+4. **Ask Question** (Date) — "Which date?" → `booking_date`
+5. **Ask Phone** — "What number can we call if anything changes?" → `callback_number`
+6. **Text Message** — "Thanks {'{{contact.first_name}}'}! We've noted a table for {'{{vars.party_size}}'} on {'{{vars.booking_date}}'} under {'{{vars.booking_name}}'}. We'll confirm shortly."
+
+Add a **Google Sheets** step at the end and every booking lands in a spreadsheet automatically.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Advanced" icon="sliders-horizontal" href="/automation/flow-steps/advanced">
+    Branch on the answers you just collected.
+  </Card>
+
+  <Card title="Integrations" icon="cloud" href="/automation/flow-steps/integrations">
+    Send the answers to Google Sheets or Google Calendar.
+  </Card>
+</CardGroup>

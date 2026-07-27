@@ -1,0 +1,189 @@
+---
+title: "Advanced Flow Steps"
+description: "Pause, branch, tag, update the contact, call another system, and chain flows together — the flow steps that give your chatbot logic."
+icon: "sliders-horizontal"
+keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow"]
+---
+
+The **Advanced** tab holds everything that isn't a message to the customer — waiting, deciding, organising, and talking to other systems. Most of these send nothing at all; they work quietly between your messages.
+
+## Waiting
+
+### Delay
+
+**What it does.** Pauses the flow for a set time before continuing. You set **Hours**, **Minutes** and **Seconds**.
+
+**When to use it.** To stop three messages arriving in the same second. A short one or two second delay between messages feels far more human.
+
+**Example.** Send the welcome text, **Delay** 2 seconds, then send the button menu.
+
+### Wait Timer
+
+**What it does.** Pauses the flow for a longer stretch before the next step.
+
+**When to use it.** Follow-ups. Wait a day after a quote and check in, or wait an hour after an abandoned cart before the reminder.
+
+**Example.** A **Wait Timer** of 24 hours, then a **Text Message**: "Just checking in — did you have any questions about the quote?"
+
+### Wait for Reply
+
+**What it does.** Pauses until the customer sends their next message, saves that message, and continues. Unlike **Delay** and **Wait Timer**, which wait a fixed amount of time, this one waits for the person.
+
+**When to use it.** When you want to capture whatever they say next without sending a prompt or checking the format. If you also want to ask a question and validate the answer, use **Ask Question** instead.
+
+**How to set it up.** Set **Store Reply In** to a variable name, such as `user_provided_id`.
+
+---
+
+## Branching
+
+### Condition
+
+**What it does.** Splits the flow into two paths — **YES** and **NO** — based on a single check.
+
+**When to use it.** A simple fork. "Did they say yes?" "Is this a returning customer?"
+
+**How to set it up.** Choose the **Operator** — **Contains**, **Equals**, **Starts with**, **Ends with** or **Regex** — and type the **Value** to check against. In the builder, the green dot on the top right is the **YES** path and the red dot on the bottom right is the **NO** path.
+
+**Example**
+
+> **Operator:** Contains
+> **Value:** yes
+
+Connect the green **YES** dot to the booking steps, and the red **NO** dot to a polite "No problem, we're here whenever you need us."
+
+### Logic Control
+
+**What it does.** The bigger sibling of **Condition**. Routes down several different paths based on rules, instead of just two.
+
+**When to use it.** When one value can lead to more than two outcomes.
+
+**How to set it up.** Pick what to check — the **last message**, a **flow variable** you captured earlier, a **contact custom field**, or an **API response value** — then add rules using operators including **Contains**, **Equals**, **Starts with**, **Ends with**, **Regex**, **Is empty**, **Is not empty**, and the number comparisons **&gt;**, **&lt;**, **≥** and **≤**.
+
+**Example**
+
+Check the flow variable `party_size`:
+
+- **≤** 4 → send the standard table confirmation.
+- **&gt;** 4 → send "For larger groups we'll call you to confirm" and tag the contact for follow-up.
+
+---
+
+## Updating the contact
+
+### Update Contact
+
+**What it does.** Writes to the contact's main record — **First Name**, **Last Name**, **Display Name**, **Email**, **Phone**, **Relation Type**, **Status** and **Source**.
+
+**When to use it.** Right after you've asked for something. Ask for their name, then save it properly so every future message can greet them by it.
+
+**Example.** After an **Ask Email**, use Update Contact to set **Email** to `{'{{vars.email}}'}`.
+
+### Update Custom Field
+
+**What it does.** Sets one of your own [custom fields](/core-setup/custom-fields) on the contact.
+
+**When to use it.** Storing anything specific to your business — a membership number, a preferred branch, a plan type.
+
+**How to set it up.** Choose the **Custom Field** from the list, then type the **Value**, using **@** to insert a merge field.
+
+### Assign Label
+
+**What it does.** Adds a [label](/core-setup/labels) to the contact. You can also create a new label right from the card.
+
+**When to use it.** Segmenting people by what they did. Label everyone who asked about pricing as `Hot lead`, then use that label to target a campaign later.
+
+### Assign Group
+
+**What it does.** Adds the contact to a [group](/core-setup/groups). You can create a new group from the card too.
+
+**When to use it.** Building an audience as people come through your chatbot — a `Newsletter` group, or `Diwali Offer Interested`.
+
+---
+
+## Talking to other systems
+
+### API Request
+
+**What it does.** Calls an external service and keeps the response for the rest of this run. Nothing is sent to the customer.
+
+**When to use it.** Looking up an order status in your own system, checking stock, pulling a delivery ETA.
+
+**How to set it up.** Fill in the **URL**, the **Method**, and the **Format** (**JSON** or **Form**). Add **Body Params** and headers as needed. Type **@** in any field to insert a merge field — for example, put the contact's phone number straight into the URL.
+
+**Example**
+
+> **URL:** `https://api.example.com/orders/{'{{vars.order_number}}'}`
+> **Method:** GET
+> **Format:** JSON
+
+### Save Response
+
+**What it does.** Pulls values out of an **API Request** response and turns them into merge fields you can use in later messages.
+
+**When to use it.** Always right after an **API Request** — on its own, the response isn't usable in a message until you've mapped it.
+
+**How to set it up.**
+
+1. In the **Source API Request Node** box, pick the API Request step you added earlier in the flow.
+2. Add a mapping: the **Source Path** is the dot-path into the response, such as `data.status`, and the **Variable Name** is what you'll call it later.
+3. In a later message, type **@** and pick your variable.
+
+**Example**
+
+Map `data.tracking_url` to the variable `tracking_url`, then send:
+
+> Your order is on its way! Track it here: {'{{vars.tracking_url}}'}
+
+---
+
+## Connecting flows
+
+### Connect Flow
+
+**What it does.** Hands the conversation over to a different automation flow.
+
+**When to use it.** Reuse. Build one "Book an appointment" flow and call it from your sales flow, your support flow and your website flow, instead of rebuilding it three times.
+
+**How to set it up.** Pick the **Target Flow**, then set **On Completion** to either **Resume parent flow** (come back and carry on here) or **End parent flow** (stop here once the other flow finishes).
+
+### Sequence
+
+**What it does.** Sends a series of follow-up messages spaced out over time, each with its own gap set in **Minutes**, **Hours**, **Days** or **Weeks**.
+
+**When to use it.** Nurture and reminder journeys. A three-message onboarding series over a week, or a reminder sequence after someone abandons a cart.
+
+**How to set it up.** Give the sequence a name, then add each message with its delay and choose how to send it.
+
+**Example**
+
+> **Message 1** — after 1 hour: "Still thinking it over? Here's a 10% code: WELCOME10."
+> **Message 2** — after 1 day: "Your cart is still saved. Need a hand choosing?"
+> **Message 3** — after 3 days: "Last reminder — your code expires tonight."
+
+---
+
+## A worked example
+
+An online shop handles "where is my order?":
+
+1. **Start Trigger** — When message contains `order`, `track`, `where is my`.
+2. **Ask Question** (Text) — "Sure! What's your order number?" → `order_number`
+3. **API Request** — GET your order API with `{'{{vars.order_number}}'}` in the URL.
+4. **Save Response** — map `data.status` to `order_status` and `data.tracking_url` to `tracking_url`.
+5. **Logic Control** — check `order_status`:
+   - **Equals** `shipped` → **Text Message** with the tracking link.
+   - **Equals** `processing` → **Text Message** saying it ships within 24 hours.
+   - **Is empty** → **Assign Label** `Needs human help`, then a message saying the team will reply.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="cloud" href="/automation/flow-steps/integrations">
+    Write to Google Sheets or create Google Calendar events.
+  </Card>
+
+  <Card title="Merge Fields" icon="braces" href="/messaging/merge-fields">
+    Everything you can insert with the @ key.
+  </Card>
+</CardGroup>
