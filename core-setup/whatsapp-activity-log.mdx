@@ -1,77 +1,63 @@
 ---
 title: "WhatsApp Activity Log"
-description: "View and monitor all outbound messages sent on your behalf."
+description: "See all sent messages and any delivery errors."
 icon: "list"
-keywords: ["WhatsMark", "WhatsApp", "activity log", "message log", "monitoring"]
+keywords: ["WhatsMark", "WhatsApp", "activity log", "message log", "delivery", "errors"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-The WhatsApp Activity Log shows every outbound message sent on your behalf through WhatsMark.io — whether sent manually, via automation, or via campaigns. Use it to monitor delivery, troubleshoot failures, and audit your messaging activity.
+This page shows all WhatsApp messages sent from your workspace, whether they were sent from a **[campaign](/messaging/campaigns)**, **[automation](/automation/overview)**, or **[chat](/messaging/live-chat)**. You can use it to check sent messages and see why any message failed.
 
-## Viewing the log
+Find it under **Setup → WhatsApp Activity Log**.
 
-Navigate to **Setup → WhatsApp Activity Log** to view all messages:
+
+## WhatsApp activity log list
 
 <BrowserFrame
   src="/core-setup/img/whatsapp-activity-log.png"
-  url="whatsmark.io/setup/whatsapp-activity-log"
-  alt="WhatsApp Activity Log table showing all outbound messages with status and details"
-  caption="Monitor all messages sent through WhatsMark with full delivery and error details."
+  url="whatsmark.io/whatsapp-activity-log"
+  alt="The WhatsApp Activity Log with All, Success and Errors tabs and a table of sent messages showing category, name, template, status, error, relation type and created date"
+  caption="Image shows the WhatsApp Activity Log."
 />
 
-**Columns explained:**
+| Column | What it shows |
+| --- | --- |
+| **Category** | Where the message was sent from, such as a campaign, automation, or chat. |
+| **Name** | The campaign, automation, or contact name. |
+| **Template Name** | The template used, if any. |
+| **Status** | The current message status. |
+| **Error** | The reason the message failed, if any. |
+| **Contact Type** | The recipient type, such as Guest, Lead, or Customer. |
+| **Created** | When the message was sent. |
 
-- **Category**: Message type (Bot Flow, Initial Chat, Campaign, Canned Reply, etc.)
-- **Name**: Who sent it or what automation triggered it
-- **Template Name**: Template used (if applicable)
-- **Status**: Delivery status (read, delivered, failed, etc.)
-- **Error**: Any failure reason if status is failed
-- **Relation Type**: Contact, Lead, or other relationship
-- **Created**: Timestamp when the message was sent
+## Message statuses
 
-## Filtering and searching
+| Status | What it means |
+| --- | --- |
+| **pending** | The message is waiting to be sent. |
+| **accepted** | WhatsApp has accepted the message. |
+| **sent** | The message has been sent. |
+| **delivered** | The message reached the recipient. |
+| **read** | The recipient has opened the message. |
+| **failed** | The message was not sent. Check the Error column to see why. |
 
-- **All/Success/Errors tabs**: Filter by delivery status
-- **Search**: Find messages by contact name, template, or other details
-- **Filters**: Further narrow results by category, status, or date range
+## View message details
 
-## Understanding message status
+Open the `⋮` menu and choose **View** to see more information about the message:
 
-- **Read**: Message was delivered and read by the recipient
-- **Delivered**: Message was sent and arrived but not yet read
-- **Failed**: Message failed to send — check the error column for the reason
-- **Pending**: Message is queued and waiting to be sent
+- **Response** — Shows the message status, delivery time, and any error returned by WhatsApp.
+- **Raw Content** — Shows the message details, including the message type and phone numbers.
 
-## Troubleshooting failed messages
-
-If you see failed messages:
-
-1. Check the **Error** column for the specific failure reason
-2. Common errors: invalid phone number, contact not found, template rejected by Meta, network issues
-3. Verify the contact details and try sending again if the issue was temporary
-4. For template errors, review the template for compliance with Meta's policies
-
-## Common use cases
-
-- **Audit compliance**: Review all messages sent for compliance and legal records
-- **Troubleshoot delivery issues**: Identify why messages failed and fix contact data
-- **Monitor campaign performance**: Check delivery rates and errors for active campaigns
-- **Debug automations**: Verify that your bot flows and automations sent messages as expected
+<Note>
+Deleting a campaign or an automation also removes its messages from this log.
+</Note>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Custom Fields" icon="square" href="/core-setup/custom-fields">
-    Add custom data fields to organize contacts.
-  </Card>
-
-  <Card title="API Keys" icon="key" href="/core-setup/api-keys">
-    Create API tokens for programmatic access.
-  </Card>
-
-  <Card title="Campaigns" icon="send" href="/messaging/campaigns">
-    Create and send bulk messages to audiences.
+  <Card title="Activity Log" icon="history" href="/reporting/activity-logs">
+    See every action taken in your workspace.
   </Card>
 
   <Card title="Chatbot Flows" icon="zap" href="/automation/overview">

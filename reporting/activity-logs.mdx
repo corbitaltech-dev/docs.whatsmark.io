@@ -1,70 +1,57 @@
 ---
-title: "Activity Logs"
-description: "How to review the general audit trail and the WhatsApp message send log in WhatsMark.io."
+title: "Activity Log"
+description: "See all activity in your workspace and who did it."
 icon: "history"
-keywords: ["WhatsMark", "activity log", "audit trail", "WhatsApp activity log", "audit"]
+keywords: ["WhatsMark", "activity log", "audit trail", "history", "audit"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-WhatsMark.io keeps two separate logs: a general **Activity Log** covering everything that happens in your workspace, and a **WhatsApp Activity Log** specifically for every outbound WhatsApp message the platform sends.
+The Activity Log shows what happened in your workspace, who did it, and when it happened. Use it to track changes and team member activity.
 
-## Activity Log
+## Activity log list
 
-The Activity Log is a filterable audit trail of every meaningful action taken in your workspace — filter by **event type**, **date range** and by **user** (the person who performed the action).
+Each entry has:
 
 <BrowserFrame
   src="/reporting/img/activity-log.png"
   url="whatsmark.io/activity-log"
-  alt="The Activity Log page headed 'Every action taken in your workspace', with Refresh and Clear Logs buttons, an All / Created / Updated / Deleted tab row, a blue bar reading '2 entries selected' with a Delete button, and a table of entries showing description, event badge, who performed it, subject, and when"
-  caption="Switch between All, Created, Updated, and Deleted, then select entries to bulk-delete."
+  alt="The Activity Log page with All, Created, Updated and Deleted tabs, a Refresh and Clear Logs button, and a table of entries showing description, event, who performed it, subject and when"
+  caption="Image shows the Activity Log."
 />
 
-Quick tabs across the top narrow the list to **All**, **Created**, **Updated**, or **Deleted** without opening the filter panel.
+- **Description** — what happened.
+- **Event** — The type of action, such as **Member Added**.
+- **Performed By** — The user who did it. Automatic actions show **System**.
+- **Subject** — The item that was changed, such as a contact or campaign.
+- **When** — When the action happened.
 
-You can also:
+## Activities that are logged
 
-- **Delete** an individual log entry (unless it's protected from deletion).
-- **Bulk-delete** selected entries.
-- **Clear** the entire log.
+You will find entries for things like:
 
-<Tip>
-Use the Activity Log when you need to answer "who changed this, and when?" — role changes, deleted contacts, settings updates, and more all show up here.
-</Tip>
-
-## WhatsApp Activity Log
-
-This log is narrower but deeper: every outbound WhatsApp message your platform has sent on your behalf, across **every send source** —
-
-- [Initiate Chat](/contacts/managing-contacts#row-actions)
-- [Campaigns](/messaging/campaigns)
-- [Automation flows](/automation/overview) (Bot Flow)
-- Message Bot
-- Inbox replies (from [Live Chat](/messaging/live-chat))
-
-<BrowserFrame
-  src="/reporting/img/whatsapp-activity-log.png"
-  url="whatsmark.io/whatsapp-activity-log"
-  alt="The WhatsApp Activity Log page headed 'Every outbound message sent on your behalf', with an All / Success / Errors tab row and a table of sent messages showing a category badge such as Initiate Chat or Campaign, the recipient name, the template name, a delivery status badge, any error, relation type, and the created timestamp"
-  caption="The Category column shows which send source produced each message — Initiate Chat, Campaign, and so on."
-/>
-
-Filter by category, or use the **All / Success / Errors** tabs to jump straight to anything that failed. Open any row to see the full technical detail of what was sent to WhatsApp and what came back. If a message didn't arrive, or arrived looking wrong, this is where you'll find out why — and it's the detail our support team will ask for if you need a hand.
-
-Like the general Activity Log, you can clear the log, bulk-delete entries, or delete a single entry.
+- [Signing in](/getting-started/log-in) and out, and [password or two-factor](/settings/profile) changes.
+- [Team members](/core-setup/team-and-roles) added, edited or removed, and [role](/core-setup/roles-and-permissions) changes.
+- [Contacts](/contacts/managing-contacts) created, edited, deleted or [merged](/contacts/bulk-actions-and-merge).
+- [Campaigns](/messaging/campaigns), [templates](/messaging/whatsapp-templates) and [channel](/core-setup/channels/whatsapp) changes.
+- [API tokens](/core-setup/api-keys) created, regenerated or revoked.
+- Billing changes, like a new [plan](/billing/plans-and-subscription), an [addon](/billing/addons-and-upgrades), or a paid [invoice](/billing/payments-and-invoices).
+- Someone trying to open a page their role does not allow.
 
 <Note>
-The WhatsApp Activity Log is about *what was sent and how Meta responded* — for delivery/read analytics on a specific message, see the sending feature itself (Campaign analytics, Template analytics, etc.).
+Some entries are protected and cannot be deleted — they show a shield instead of a checkbox. Protected entries stay even when you clear the log.
 </Note>
+
+Logs stay here until you delete them. They are not removed automatically.
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
-    See a higher-level summary of activity and plan usage.
+  <Card title="WhatsApp Activity Log" icon="list" href="/core-setup/whatsapp-activity-log">
+    See every message sent out on your behalf.
   </Card>
 
   <Card title="Notifications" icon="bell" href="/reporting/notifications">
-    Get notified in-app about important events instead of digging through the log.
+    Get told about important events as they happen.
   </Card>
 </CardGroup>
