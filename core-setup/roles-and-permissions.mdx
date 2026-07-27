@@ -5,15 +5,14 @@ icon: "shield-check"
 keywords: ["WhatsMark", "roles", "permissions", "access", "team", "restrict"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 A role is a set of permissions that you assign to team members. Create roles like **Sales Agent**, **Support Agent**, or **Manager**, then assign them to one or more team members. Updating a role automatically updates permissions for everyone using it.
 
 Find it under **Setup → Roles** in the sidebar, or click **Manage Roles** on the Team page.
 
-<BrowserFrame
+<Figure
   src="/core-setup/img/role.png"
-  url="whatsmark.io/roles"
   alt="The Roles page listing roles with Name, Members and Created columns, a Create Role button, and a row menu"
   caption="Image shows the Roles page with every role in your workspace."
 />
@@ -34,7 +33,11 @@ The table shows each role's **Name**, how many **Members** hold it, and when it 
 <Step title="Check what this role can do">
   Select the permissions for the role.
 
-  ![The Create Role form with a role name field and a list of features with permission checkboxes](/core-setup/img/roles-create.png)
+  <Figure
+    src="/core-setup/img/roles-create.png"
+    alt="The Create Role form with a role name field and a list of features with permission checkboxes"
+    caption="Image shows the Create Role form."
+  />
 </Step>
 
 <Step title="Click Save">

@@ -5,7 +5,7 @@ icon: "circle"
 keywords: ["WhatsMark", "WhatsMark.io", "statuses", "contact status", "lifecycle", "pipeline", "contacts"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 
 WhatsMark.io starts you off with five ready-made statuses — **New**, **In Progress**, **Contacted**, **Qualified**, and **Closed** — with **New** set as the default. Rename them, recolor them, or replace them with stages that match how your business actually works.
@@ -22,7 +22,11 @@ Once set, a status follows the contact everywhere:
 
 ## Creating a status
 
-![New Status form showing fields for name, color, sort order, and a default status switch](/core-setup/img/status-form.png)
+<Figure
+  src="/core-setup/img/status-form.png"
+  alt="New Status form showing fields for name, color, sort order, and a default status switch"
+  caption="Image shows the New Status form."
+/>
 
 <Steps>
 <Step title="Open Statuses">
@@ -51,9 +55,8 @@ You can also create a status without leaving the contact form — click the `+` 
 
 ## Managing statuses
 
-<BrowserFrame
+<Figure
   src="/core-setup/img/statuses-table.png"
-  url="whatsmark.io/statuses"
   alt="Statuses table listing New, In Progress, Contacted, Qualified, and Closed with color dots, order numbers, a default switch on New, and a row actions menu"
   caption="Image shows the Statuses table."
 />

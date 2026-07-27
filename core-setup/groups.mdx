@@ -5,7 +5,7 @@ icon: "users"
 keywords: ["WhatsMark", "WhatsMark.io", "groups", "contacts", "segments", "campaigns"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 
 A **group** lets you organize contacts based on your business needs. For example, you can create groups for VIP Customers, Newsletter Subscribers, or Retail Customers. A contact can be added to multiple groups and selected whenever you send a [campaign](/messaging/campaigns).
@@ -19,7 +19,11 @@ A **group** lets you organize contacts based on your business needs. For example
 
 ## Creating a group
 
-![New Group form showing fields for name, description, and color](/core-setup/img/group-form.png)
+<Figure
+  src="/core-setup/img/group-form.png"
+  alt="New Group form showing fields for name, description, and color"
+  caption="Image shows the New Group form."
+/>
 
 <Steps>
 <Step title="Open Groups">
@@ -53,9 +57,8 @@ You can also create a group without leaving the contact form — click the `+` i
 
 ## Managing groups
 
-<BrowserFrame
+<Figure
   src="/core-setup/img/group-table.png"
-  url="whatsmark.io/groups"
   alt="Groups table showing a group with its name, description, color dot, contact count, and a row menu with Edit and Delete"
   caption="Image shows the Groups table with a row menu open."
 />

@@ -5,7 +5,7 @@ icon: "gauge"
 keywords: ["WhatsMark", "dashboard", "feature usage", "charts", "usage limits", "plan usage"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 Your **Dashboard** is the home screen of your workspace, and the **Feature Usage** page is where you check exactly how much of your plan you've used.
 
@@ -34,11 +34,10 @@ A global **Refresh Data** button updates every widget and chart in place, withou
 
 The **Usage & Limits** panel summarises your plan at a glance — a **Tracked** count, an **Unlimited** count, a **Highest active usage** callout that names the feature closest to its cap, and a card per feature showing what's used against the limit. **View all** opens the full [Feature Usage](#feature-usage-page) page.
 
-<BrowserFrame
+<Figure
   src="/reporting/img/dashboard/dashboard-greeting-usage-limits.png"
-  url="whatsmark.io/dashboard"
   alt="The Dashboard greeting card with Open Inbox, New Campaign, and Refresh Data buttons, above an expanded Usage and Limits panel showing cards for Contacts, Template Broadcasts, Broadcast Campaigns, Custom AI Prompts, AI Usage Tokens, Team Members, and more, each with a used-of-limit figure and a percentage"
-  caption="The greeting card and the Usage & Limits panel, with a Highest active usage callout at the top."
+  caption="Image shows the greeting card and the Usage & Limits panel."
 />
 
 <Tip>
@@ -49,30 +48,30 @@ Cards marked **Period quota** (like AI Usage Tokens or Broadcast Campaigns) rese
 
 The first chart row covers volume and growth: **Messages** sent vs received over time, **Leads & Customers** as a lifecycle breakdown with a conversion percentage, and **New contacts by source**.
 
-<BrowserFrame
+<Figure
   src="/reporting/img/dashboard/dashboard-messages-contacts-charts.png"
   alt="Three Dashboard charts side by side: a Messages line chart plotting sent against received over the last 14 days, a Leads and Customers donut showing a converted percentage with customers, leads, and guests counts, and a New contacts by source donut split between whatsapp and Instagram"
-  caption="Messages over time, contact lifecycle, and contact sources — each with its own date-range selector."
+  caption="Image shows the messages, contact lifecycle, and contact source charts."
 />
 
 ### Channels and message sources
 
 **Channels** breaks messages down per connected channel with inbound and outbound counts, and **Sent messages by source** shows what initiated your outbound traffic — Templates, Direct chat, or Flows.
 
-<BrowserFrame
+<Figure
   src="/reporting/img/dashboard/dashboard-channels-message-sources.png"
   alt="Two Dashboard panels: Channels listing a WhatsApp Support Channel and a Messenger channel with inbound and outbound counts on bars, and Sent messages by source listing Templates, Direct chat, and Flows with counts and percentages"
-  caption="Per-channel message volume, and which part of the product initiated each outbound message."
+  caption="Image shows the per-channel message volume and message sources."
 />
 
 ### Most-engaged and unreplied chats
 
 Two conversation lists sit at the bottom of the Dashboard. **Most-engaged chats** ranks conversations by message count, and **Waiting on reply** lists chats where the contact spoke last. Each row links straight into [Chat](/messaging/live-chat).
 
-<BrowserFrame
+<Figure
   src="/reporting/img/dashboard/dashboard-engaged-unreplied-chats.png"
   alt="Two Dashboard panels: Most-engaged chats listing top conversations by message count with a badge showing the count, and Waiting on reply listing chats where the contact spoke last with the message preview and how long ago it arrived"
-  caption="Most-engaged chats and chats still waiting on a reply — click any row to open the conversation."
+  caption="Image shows the most-engaged chats and chats waiting on a reply."
 />
 
 <Tip>

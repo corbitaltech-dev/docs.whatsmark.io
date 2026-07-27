@@ -5,7 +5,7 @@ icon: "map-pin"
 keywords: ["WhatsMark", "WhatsMark.io", "sources", "contact source", "contacts", "tracking"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 A source shows where a contact came from, such as Facebook Ads, Website, or Referral. This helps you understand which channels bring in the most contacts.
 
@@ -22,7 +22,11 @@ Once set, a source follows the contact everywhere:
 
 ## Creating a source
 
-![New Source form showing a required name field](/core-setup/img/source-form.png)
+<Figure
+  src="/core-setup/img/source-form.png"
+  alt="New Source form showing a required name field"
+  caption="Image shows the New Source form."
+/>
 
 <Steps>
 <Step title="Open Sources">
@@ -48,9 +52,8 @@ You can also create a source without leaving the contact form — click the `+` 
 
 ## Managing sources
 
-<BrowserFrame
+<Figure
   src="/core-setup/img/sources-table.png"
-  url="whatsmark.io/sources"
   alt="Sources table listing Facebook and WhatsApp, each marked with a System badge, with a Create Source button at the top right"
   caption="Image shows the Sources table."
 />

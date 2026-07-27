@@ -5,7 +5,7 @@ icon: "user-plus"
 keywords: ["WhatsMark", "invite", "invitation", "team member", "join workspace"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 Send an email invitation to team member. The memeber can create their own account and join your workspace with the assigned role.
 
@@ -13,7 +13,11 @@ Send an email invitation to team member. The memeber can create their own accoun
 
 Click **Invite Member** on the [Team](/core-setup/team-and-roles) page. Enter an **email address** and select a **role**.
 
-![The Invite Team Member form with an email field and a role picker](/core-setup/img/invite-member.png)
+<Figure
+  src="/core-setup/img/invite-member.png"
+  alt="The Invite Team Member form with an email field and a role picker"
+  caption="Image shows the Invite Team Member form."
+/>
 
 <Note>
 The invite link works for **7 days**. After that you need to send a new one.
@@ -25,7 +29,11 @@ The Pending Invitations list shows members who have not accepted invitation yet,
 
 **Revoke** cancels the invitation, and invitation link stops working right away.
 
-![The Pending Invitations list showing an invited email, its role, when it was sent, and a Revoke button](/core-setup/img/pending-invitation.png)
+<Figure
+  src="/core-setup/img/pending-invitation.png"
+  alt="The Pending Invitations list showing an invited email, its role, when it was sent, and a Revoke button"
+  caption="Image shows the Pending Invitations list."
+/>
 
 ## What the invited member does
 
@@ -38,7 +46,11 @@ Here is what your team member need to do after you send the invitation.
 </Step>
 
 <Step title="Fill in their details">
-  ![The accept invitation form where the invited person creates their account](/core-setup/img/accept-invitation.png)
+  <Figure
+    src="/core-setup/img/accept-invitation.png"
+    alt="The accept invitation form where the invited person creates their account"
+    caption="Image shows the accept invitation form."
+  />
   - **Full name** — their name.
   - **Email address** — already filled in from the invitation.
   - **WhatsApp number** — their own number, with the country code.
