@@ -11,22 +11,16 @@
 - Configuration lives in `docs.json`
 - Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
 
-## Terminology
+## Terminology, style, and content boundaries
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+The real rules — banned words (e.g. "workspace" not "tenant"), brand and plan naming
+("WhatsMark.io", "Free Forever"), voice, page structure, Meta-citation requirements,
+and what belongs on a customer page versus the API reference — live in
+**`.claude/skills/whatsmark-docs/SKILL.md`**. Read that file before writing or
+editing any page; it is the single source of truth, not this file.
 
-## Style preferences
-
-{/* Add any project-specific style rules below */}
-
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
-
-## Content boundaries
-
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+Related skills for specific tasks: `docs-fact-check` (verify a claim against the
+product), `docs-competitor-benchmark` (benchmark against AiSensy/Wati/respond.io/
+BotSailor/Interakt), `docs-from-notes` (draft a page from bullets + screenshots),
+`docs-consistency-lint` / `docs-grammar-style` / `docs-link-integrity` / `docs-audit`
+(QA sweeps), and the `docs-manager` agent (runs the sweeps and routes fixes).

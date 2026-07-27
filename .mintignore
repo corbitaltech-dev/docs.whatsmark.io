@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Internal planning/notes — not a nav page, but excluded explicitly rather than
+# relying only on it staying out of docs.json navigation
+scratchpad/
