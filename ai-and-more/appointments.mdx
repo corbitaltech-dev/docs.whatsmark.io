@@ -5,7 +5,7 @@ icon: "calendar-check"
 keywords: ["WhatsMark", "appointments", "bookings", "calendar", "business hours"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 When a customer books an appointment through your [WhatsApp booking form](/ai-and-more/whatsapp-flows#appointment-booking-flows), it appears here. You can view and manage all appointments from this page.
 
@@ -13,9 +13,8 @@ When a customer books an appointment through your [WhatsApp booking form](/ai-an
 
 In appointment page, you can see your Upcoming, Today, and Completed bookings. You can switch between List and Calendar view, and use the tabs and Filters to find the bookings you need.
 
-<BrowserFrame
+<Figure
   src="/ai-and-more/img/appointment/appointment.png"
-  url="whatsmark.io/bookings"
   alt="The Appointments page with Upcoming, Today and Completed summary cards, usage chips, All / Scheduled / Completed tabs, List and Calendar views, and a table of bookings"
   caption="Image shows the Appointments page with the summary cards and bookings table."
 />
@@ -34,7 +33,11 @@ In appointment page, you can see your Upcoming, Today, and Completed bookings. Y
 
 Click an appointment to view its details. You can see the appointment date and time, the channel, the booking form, and any notes. If the customer filled in extra fields in the booking form, their answers are also shown here.
 
-![An appointment's details showing the contact, status, when it starts and ends, its source, notes, and the details the customer submitted](/ai-and-more/img/appointment/appointment-details.png)
+<Figure
+  src="/ai-and-more/img/appointment/appointment-details.png"
+  alt="An appointment's details showing the contact, status, when it starts and ends, its source, notes, and the details the customer submitted"
+  caption="Image shows an appointment's details."
+/>
 
 ## Updating an appointment
 
@@ -51,13 +54,21 @@ The times a customer can pick come from two settings working together.
 - **Business hours** — Set your business opening and closing times, and add any closed dates. This is a workspace [Settings](/settings/business-hours) and only needs to be set once.
 - **Booking settings** — Set the appointment duration, the number of bookings allowed per time slot, and how far in advance customers can book. These settings are configured separately for each booking form.
 
-![The booking settings with fields for slot length, capacity per slot, and the earliest and latest a customer can book](/ai-and-more/img/appointment/booking-setting.png)
+<Figure
+  src="/ai-and-more/img/appointment/booking-setting.png"
+  alt="The booking settings with fields for slot length, capacity per slot, and the earliest and latest a customer can book"
+  caption="Image shows the booking settings."
+/>
 
 ## Confirmation message
 
 In Appointment Settings, you can choose an approved template to send when a customer books an appointment. Select None if you don't want to send a confirmation message.
 
-![The Appointment Settings with dropdowns for a confirmation template and a reminder template](/ai-and-more/img/appointment/appointment-setting.png)
+<Figure
+  src="/ai-and-more/img/appointment/appointment-setting.png"
+  alt="The Appointment Settings with dropdowns for a confirmation template and a reminder template"
+  caption="Image shows the Appointment Settings."
+/>
 
 ## Reminders and rescheduling
 

@@ -5,7 +5,7 @@ icon: "contact"
 keywords: ["WhatsMark", "contacts", "contact list", "contact detail", "notes", "initiate chat"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 Manage all your customers and leads in one place. Keeping your contact list organized makes it easier to find people, start conversations, send broadcasts, and use Flows throughout WhatsMark.io.
 
@@ -24,7 +24,11 @@ Before creating contacts, connect at least one WhatsApp or Messenger channel. Wi
 <Step title="Click Create Contact">
   The button sits at the top right of the page. A form opens on the right side of the screen.
 
-  ![New Contact form with Details and Custom Fields tabs, showing fields for first and last name, phone, email, type, assigned to, status, source, WhatsApp channel, display name, groups, and labels](/contacts/img/contact-form.png)
+  <Figure
+    src="/contacts/img/contact-form.png"
+    alt="New Contact form with Details and Custom Fields tabs, showing fields for first and last name, phone, email, type, assigned to, status, source, WhatsApp channel, display name, groups, and labels"
+    caption="Image shows the New Contact form."
+  />
 
   Fields marked with a red `*` are required: **First Name**, **Phone**, **Type**, **Status**, **Source**, and **Link to WhatsApp Channel**. The rest are optional.
 </Step>
@@ -106,7 +110,11 @@ Click the menu icon at the end of a contact's row and click **Edit**. The same f
 
 Click a contact's name to open their details panel. You can view details here but not change them — except notes, which you can add and edit from the **Notes** tab.
 
-![Contact detail sheet with Contact Details, Custom Fields, and Notes tabs, showing the contact's type and labels, source, assignee, last message and created times, groups, and linked message channels](/contacts/img/contact-detail.png)
+<Figure
+  src="/contacts/img/contact-detail.png"
+  alt="Contact detail sheet with Contact Details, Custom Fields, and Notes tabs, showing the contact's type and labels, source, assignee, last message and created times, groups, and linked message channels"
+  caption="Image shows the contact detail panel."
+/>
 
 The panel has up to three tabs:
 
@@ -118,15 +126,18 @@ The panel has up to three tabs:
 
 Notes are for your team only. The contact never sees them.
 
-![Notes tab in the contact details panel with a text box to add a note, an Add Note button, and an existing note with edit and delete icons](/contacts/img/contact-notes.png)
+<Figure
+  src="/contacts/img/contact-notes.png"
+  alt="Notes tab in the contact details panel with a text box to add a note, an Add Note button, and an existing note with edit and delete icons"
+  caption="Image shows the Notes tab in the contact panel."
+/>
 
 Use notes to record follow-up reminders, customer preferences, or what was discussed on a call. Open the **Notes** tab and click **Add Note** to write one. You can edit or delete a note at any time.
 
 ## Actions on a single contact
 
-<BrowserFrame
+<Figure
   src="/contacts/img/contact-row-actions.png"
-  url="whatsmark.io/contacts"
   alt="Contacts table with a row menu open listing View, Edit, Open chat, Initiate chat, Send flow, Merge with, and Delete"
   caption="Image shows the row actions menu on a contact in the Contacts table."
 />
@@ -145,9 +156,8 @@ To turn a contact off without deleting them, use the toggle in the **Active** co
 
 ## Finding contacts
 
-<BrowserFrame
+<Figure
   src="/contacts/img/contacts-list-filters.png"
-  url="whatsmark.io/contacts"
   alt="Contacts table with the Filters panel open showing Type, Status, Source, Active, Assignee, and Channel dropdowns"
   caption="Image shows the Contacts table with the Filters panel open."
 />

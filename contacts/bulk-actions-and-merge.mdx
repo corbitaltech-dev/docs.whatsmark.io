@@ -5,7 +5,7 @@ icon: "layers"
 keywords: ["WhatsMark", "contacts", "bulk actions", "merge contacts", "duplicates"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { BrowserFrame, Figure } from '/snippets/browser-frame.jsx';
 
 Once you have contacts in your workspace, you often need to change many of them at once — or clean up duplicates. Both are available directly from the Contacts table.
 
@@ -15,16 +15,19 @@ Select one or more contacts using the checkboxes on each row. A bar appears abov
 
 To go beyond the visible page, click the **Select all `number of contacts` contacts matching current filters** link in the bar — this targets every contact matching your filters, even ones not shown. Untick any row to leave it out; the bar shows how many are excluded.
 
-<BrowserFrame
+<Figure
   src="/contacts/img/bulk-selection-bar.png"
-  url="whatsmark.io/contacts"
   alt="Contacts table with rows selected and a bar above it reading 15 selected, with a link to select all contacts matching current filters, plus Merge and Bulk Actions buttons and a Clear option"
   caption="Image shows the Contacts table with rows selected and the action bar above it."
 />
 
 Choosing **Bulk Actions** opens a sheet where you set only the fields you want to change — anything left on **No change** is untouched, and you can combine several changes in one go:
 
-![Bulk Actions sheet for 15 selected contacts with a highlighted Delete selected contacts option, and dropdowns each defaulting to No change for status, type, source, group, label, assignee, active status, and linking or unlinking a WhatsApp channel](/contacts/img/bulk-actions-sheet.png)
+<Figure
+  src="/contacts/img/bulk-actions-sheet.png"
+  alt="Bulk Actions sheet for 15 selected contacts with a highlighted Delete selected contacts option, and dropdowns each defaulting to No change for status, type, source, group, label, assignee, active status, and linking or unlinking a WhatsApp channel"
+  caption="Image shows the Bulk Actions sheet with each field set to No change."
+/>
 
 Every option is set to No change by default, so only the changes you select will be applied. If you choose Delete, you can't make any other changes at the same time.
 
@@ -95,8 +98,11 @@ If the same person ends up as two or more contact records (for example, they mes
 You can also select **multiple** contacts, click **Merge**, choose one as the primary, and fold them all into it with **Merge Contacts**.
 
 
-![Merge selected contacts dialog explaining that the other contacts will fold into the primary, with a radio list of the selected contacts and the first marked Primary](/contacts/img/bulk-merge.png)
-
+<Figure
+  src="/contacts/img/bulk-merge.png"
+  alt="Merge selected contacts dialog explaining that the other contacts will fold into the primary, with a radio list of the selected contacts and the first marked Primary"
+  caption="Image shows the Merge dialog with the primary contact selected."
+/>
 
 <Note>
 Merging fills in the gaps rather than overwriting: blank fields on the primary are filled from the duplicate, and groups and labels from both are combined. A filled field on the primary is never replaced. Conversations are kept but not combined — each chat thread stays separate on the merged contact.

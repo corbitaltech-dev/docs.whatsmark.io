@@ -1,12 +1,23 @@
-export const BrowserFrame = ({ src, url = "whatsmark.io", alt = "", caption }) => (
+export const Figure = ({ src, alt = "", caption }) => (
+  <div style={{ margin: "1.5rem 0" }}>
+    <img src={src} alt={alt} style={{ display: "block", maxWidth: "100%", height: "auto", margin: 0 }} />
+    {caption && (
+      <p style={{ textAlign: "left", fontSize: "14px", color: "rgba(128,128,128,1)", marginTop: "0.75rem" }}>
+        {caption}
+      </p>
+    )}
+  </div>
+);
+
+export const BrowserFrame = ({ src, alt = "", caption, maxWidth }) => (
   <div style={{ margin: "1.5rem 0" }}>
     <div
       style={{
         borderRadius: "12px",
         overflow: "hidden",
         border: "1px solid rgba(128,128,128,0.25)",
-        boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
         background: "rgba(128,128,128,0.06)",
+        maxWidth,
       }}
     >
       <div
@@ -14,7 +25,7 @@ export const BrowserFrame = ({ src, url = "whatsmark.io", alt = "", caption }) =
           display: "flex",
           alignItems: "center",
           gap: "12px",
-          padding: "3px 10px",
+          padding: "8px 10px",
           borderBottom: "1px solid rgba(128,128,128,0.2)",
         }}
       >
@@ -24,34 +35,17 @@ export const BrowserFrame = ({ src, url = "whatsmark.io", alt = "", caption }) =
           <span style={{ width: "11px", height: "11px", borderRadius: "50%", background: "#28C840" }} />
         </div>
 
-        <div
-          style={{
-            flex: 1,
-            textAlign: "center",
-            fontSize: "11px",
-            fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
-            color: "rgba(128,128,128,1)",
-            background: "rgba(128,128,128,0.12)",
-            borderRadius: "6px",
-            padding: "2px 12px",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          {url}
-        </div>
-
         <div style={{ width: "45px", flexShrink: 0 }} />
       </div>
 
       <img src={src} alt={alt} style={{ display: "block", width: "100%", margin: 0 }} />
     </div>
 
-    {caption && (
+      {caption && (
       <p style={{ textAlign: "center", fontSize: "14px", color: "rgba(128,128,128,1)", marginTop: "0.75rem" }}>
         {caption}
       </p>
     )}
+
   </div>
 );

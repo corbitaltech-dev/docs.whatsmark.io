@@ -5,7 +5,7 @@ icon: "message-circle"
 keywords: ["WhatsMark", "Messenger", "Facebook Page", "embedded signup", "manual connect"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 Connect a Facebook Page so you can send and receive Messenger conversations through WhatsMark.io, right alongside your WhatsApp channels.
 
@@ -26,9 +26,8 @@ Make sure you have the following ready:
 <Step title="Click Connect">
   From the **Channels** page, click **Connect** and choose **Messenger** from the platform picker.
   
-  <BrowserFrame
+  <Figure
     src="/core-setup/channels/img/channels-connect.png"
-    url="whatsmark.io/channels"
     alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
     caption="Image shows the Channels page with the Connect Channel button."
   />
@@ -37,7 +36,11 @@ Make sure you have the following ready:
 <Step title="Pick a connection method">
   You'll see two tabs:
 
-  ![Messenger connect flow showing Embedded Signup and Manual connection options](/core-setup/channels/img/messenger-connect-methods.png)
+  <Figure
+    src="/core-setup/channels/img/messenger-connect-methods.png"
+    alt="Messenger connect flow showing Embedded Signup and Manual connection options"
+    caption="Image shows the Messenger connect flow with its Embedded Signup and Manual tabs."
+  />
 
   - **Embedded Signup** — connect with Meta's secure Facebook login flow.
     - Sign in using your Facebook credentials.
@@ -55,9 +58,8 @@ Make sure you have the following ready:
 </Step>
 </Steps>
 
-<BrowserFrame
+<Figure
   src="/core-setup/channels/img/channels-list-connected.png"
-  url="whatsmark.io/channels"
   alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
   caption="Image shows the Channels list with connected channels and their Active status."
 />
@@ -74,9 +76,8 @@ Open a connected Messenger channel to:
 - **Check** channel health and **view webhook subscription status**.
 - **Disconnect** the Page.
 
-<BrowserFrame
+<Figure
   src="/core-setup/channels/img/messenger-view.png"
-  url="whatsmark.io/channels"
   alt="Connected Messenger channel list showing Active status and connection method"
   caption="Image shows a connected Messenger channel's Page information and webhook status."
 />

@@ -5,7 +5,7 @@ icon: "receipt"
 keywords: ["WhatsMark", "payments", "invoices", "coupons", "Razorpay", "Dodo", "offline payment", "bank transfer"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { BrowserFrame, Figure } from '/snippets/browser-frame.jsx';
 
 WhatsMark.io supports online and offline payment, coupon codes at checkout, and a full invoice history — all from **Billing**.
 
@@ -55,9 +55,8 @@ Because a person checks each transfer, this isn't instant like an online payment
 once the payment is confirmed. If anything's off, the request shows as **Rejected** with the
 reason alongside it, so you can fix it and submit again. Nothing is lost either way.
 
-<BrowserFrame
+<Figure
   src="/billing/img/offline-payment-pending.png"
-  url="whatsmark.io/billing"
   alt="Billing page with a banner reading that the offline payment is pending admin review and plan changes are disabled, beside a Pending Payment Review card showing the plan, amount, reference, and submitted time"
   caption="Image shows the billing page while a payment is under review."
 />
@@ -86,9 +85,8 @@ Coupons apply to your **current purchase only**. They don't carry over to your n
 
 ## Invoices
 
-<BrowserFrame
+<Figure
   src="/billing/img/invoice-history.png"
-  url="whatsmark.io/billing/invoices"
   alt="Invoice History table listing invoices with invoice number, amount, gateway, reason, Paid status, and date, with a row menu open showing View and Download"
   caption="Image shows the Invoice History table with a row menu open for viewing or downloading an invoice."
 />

@@ -5,7 +5,7 @@ icon: "whatsapp"
 keywords: ["WhatsMark", "WhatsApp", "WABA", "embedded signup", "coexistence", "business profile"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 Connect a WhatsApp Business Account (WABA) so you can send and receive WhatsApp messages through WhatsMark.io.
 
@@ -28,9 +28,8 @@ Make sure you have the following ready:
 <Step title="Click Connect">
   From the **Channels** page, click **Connect Channel** and choose **WhatsApp** from the platform picker.
 
-  <BrowserFrame
+  <Figure
     src="/core-setup/channels/img/channels-connect.png"
-    url="whatsmark.io/channels"
     alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
     caption="Image shows the Channels page with the Connect Channel button."
   />
@@ -39,7 +38,11 @@ Make sure you have the following ready:
 <Step title="Pick a connection method">
   You'll see two tabs:
 
-  ![Connect a WhatsApp Account sheet shown twice: the Embedded Signup tab with a Standard Signup Launch button, and the Manual tab with fields for channel name, Business Account ID, access token, Meta App ID, and App Secret](/core-setup/channels/img/whatsapp-connect-methods.png)
+  <Figure
+    src="/core-setup/channels/img/whatsapp-connect-methods.png"
+    alt="Connect a WhatsApp Account sheet shown twice: the Embedded Signup tab with a Standard Signup Launch button, and the Manual tab with fields for channel name, Business Account ID, access token, Meta App ID, and App Secret"
+    caption="Image shows the Connect a WhatsApp Account sheet with its Embedded Signup and Manual tabs."
+  />
 
   - **Embedded Signup** — connect using Meta's secure Embedded Signup flow.
     - Sign in with your Facebook Business account.
@@ -57,9 +60,8 @@ Make sure you have the following ready:
 </Step>
 </Steps>
 
-<BrowserFrame
+<Figure
   src="/core-setup/channels/img/channels-list-connected.png"
-  url="whatsmark.io/channels"
   alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
   caption="Image shows the Channels list with connected channels and their Active status."
 />
@@ -74,7 +76,11 @@ If enabled on your plan, you can connect a WhatsApp number in **coexistence mode
 
 ## WABA health
 
-![WABA Health panel showing an overall Available status, with Waba, Business, and App each listed as Available alongside their IDs](/core-setup/channels/img/waba-health.png)
+<Figure
+  src="/core-setup/channels/img/waba-health.png"
+  alt="WABA Health panel showing an overall Available status, with Waba, Business, and App each listed as Available alongside their IDs"
+  caption="Image shows the WABA Health panel."
+/>
 
 Open a connected WhatsApp channel to view:
 
@@ -84,15 +90,18 @@ Open a connected WhatsApp channel to view:
 
 ## Business Profile
 
-![Phone number card showing the profile photo and number, a GREEN quality badge, messaging throughput and daily limit, and the business name, description, and location](/core-setup/channels/img/business-profile.png)
+<Figure
+  src="/core-setup/channels/img/business-profile.png"
+  alt="Phone number card showing the profile photo and number, a GREEN quality badge, messaging throughput and daily limit, and the business name, description, and location"
+  caption="Image shows the phone number and business profile card."
+/>
 
 Go to a channel's **Profile** tab to edit the public WhatsApp Business Profile your contacts see: about text, address, description, email, websites, business vertical/category, and profile photo.
 
 ## Test message
 
-<BrowserFrame
+<Figure
   src="/core-setup/channels/img/send-test-message.png"
-  url="whatsmark.io/channels"
   alt="Send Test Message dialog with a Template picker showing an approved marketing template and a Recipient Phone Number field, opened from the Test button on an active channel"
   caption="Image shows the Send Test Message dialog with a template picker and recipient number field."
 />

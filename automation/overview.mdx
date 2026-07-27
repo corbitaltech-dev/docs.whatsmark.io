@@ -5,7 +5,7 @@ icon: "bot"
 keywords: ["WhatsMark", "WhatsMark.io", "automation", "chatbot", "flows"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 You can't reply to every WhatsApp message the moment it arrives, but customers still expect a quick response. Automations reply instantly on your behalf, answer common questions, capture leads, and keep flow moving while you're busy or away. Build each flow once using a simple drag-and-drop flow builder, and it runs automatically whenever the selected keyword or event is triggered.
 
@@ -31,7 +31,11 @@ Design the flow in whichever way suits you:
 
 <Step title="Click Create Flow">
   The button sits at the top right of the page. A form opens on the right side of the screen.
-  ![New Automation form showing fields for name, channels, and description](/automation/img/automation-form.png)
+  <Figure
+    src="/automation/img/automation-form.png"
+    alt="New Automation form showing fields for name, channels, and description"
+    caption="Image shows the New Automation form."
+  />
   
 </Step>
 
@@ -50,7 +54,11 @@ Design the flow in whichever way suits you:
 
 ## Flow Collection
 
-![Flow Collection dialog with My Favourites and All tabs, category filters such as General, Healthcare, and Education, and flow cards each showing a description, an Automation label, a favourite star, and a Use This button](/automation/img/flow-library.png)
+<Figure
+  src="/automation/img/flow-collection.png"
+  alt="Flow Collection dialog with My Favourites and All tabs, category filters such as General, Healthcare, and Education, and flow cards each showing a description, an Automation label, a favourite star, and a Use This button"
+  caption="Image shows the Flow Collection dialog."
+/>
 
 The **Flow Collection** is a set of ready-made flows built by WhatsMark.io. Instead of building from an empty builder, clone one and adjust it to your business. Click **Flow Collection** at the top of the Automations page to open it.
 
@@ -73,9 +81,8 @@ To use a flow, click **Use This**. You'll be asked which connected channel or ch
 
 ## Managing your automations
 
-<BrowserFrame
+<Figure
   src="/automation/img/automations-table.png"
-  url="whatsmark.io/automations"
   alt="Automations page with a Flow Collection button, a Create Flow button, and the All Automations table showing flows with status badges, on/off switches, and a row menu with Flow Builder, Edit, and Delete"
   caption="Image shows the Automations page with the All Automations table and the row actions menu open."
 />
