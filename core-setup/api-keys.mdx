@@ -1,6 +1,6 @@
 ---
 title: "API Tokens"
-description: "Create API tokens so other apps can connect to your workspace."
+description: "Create API tokens to securely connect other applications to your workspace."
 icon: "key"
 keywords: ["WhatsMark", "API tokens", "developer", "REST API"]
 ---
@@ -9,21 +9,18 @@ import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
 An API token lets another app connect to your workspace. After you create a token, that app can use it to access your data and perform actions based on the permissions you allow.
 
-Find it under **Setup → API Tokens**.
 
 <Note>
-The API is only available on a paid plan.
+API tokens work only on a paid plan. If you're on the Free plan, you'll need to upgrade before you can create one — see [Free vs. Paid Plans](/getting-started/free-vs-paid) for what each plan includes.
 </Note>
+
+Find it under **Setup → API Tokens**.
 
 ## Creating a token
 
 <Steps>
-<Step title="Click Create Token">
-  Enter a name so you can identify the token later, such as Website or Zapier.
-</Step>
-
-<Step title="Choose what it can do">
-  Select what the token is allowed to do. Only choose the permissions the app needs.
+<Step title="Name it and set permissions">
+  Enter a name so you can identify the token later, such as Website or Zapier, then choose only the permissions the app needs.
 
   ![The Create API Token form with a name field and grouped scope checkboxes for account, contacts and messaging](/core-setup/img/api-token-form.png)
 </Step>
@@ -33,7 +30,7 @@ The API is only available on a paid plan.
 </Step>
 
 <Step title="Copy the token">
-  The token is shown only once after it is created. Copy it and save it in a safe place because you cannot view it again.
+  After you create the token, copy it and save it somewhere safe — it's shown only once and can't be viewed again.
 </Step>
 </Steps>
 
@@ -57,7 +54,7 @@ At the top of the page, you'll find two helpful buttons:
 
 Open a token's `⋮` menu for its two actions:
 
-- **Regenerate** — Create a new secret for the same token, Update the new token in your app because the old one stops working.
+- **Regenerate** — Generates a new token to replace the current one. The old token stops working right away, so update your app with the new one.
 - **Revoke** — Permanently deletes the token. Any app using it will stop working immediately.
 
 <Warning>
