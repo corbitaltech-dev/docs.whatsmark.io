@@ -5,7 +5,7 @@ icon: "key"
 keywords: ["WhatsMark", "API tokens", "developer", "REST API"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 An API token lets another app connect to your workspace. After you create a token, that app can use it to access your data and perform actions based on the permissions you allow.
 
@@ -22,7 +22,11 @@ Find it under **Setup → API Tokens**.
 <Step title="Name it and set permissions">
   Enter a name so you can identify the token later, such as Website or Zapier, then choose only the permissions the app needs.
 
-  ![The Create API Token form with a name field and grouped scope checkboxes for account, contacts and messaging](/core-setup/img/api-token-form.png)
+  <Figure
+    src="/core-setup/img/api-token-form.png"
+    alt="The Create API Token form with a name field and grouped scope checkboxes for account, contacts and messaging"
+    caption="Image shows the Create API Token form."
+  />
 </Step>
 
 <Step title="Set an expiry date (optional)">
@@ -38,9 +42,8 @@ Find it under **Setup → API Tokens**.
 
 The list shows each token's **name**, **permissions**, **last used date**, **expiry date**, and **created date**. If a token never expires, it shows Never. You can also search by token name.
 
-<BrowserFrame
+<Figure
   src="/core-setup/img/api-token.png"
-  url="whatsmark.io/api-keys"
   alt="The API Tokens page listing tokens with their name, scopes, last used, expiry and created date, plus API Docs, Postman Collection and Create Token buttons"
   caption="Image shows the API Tokens page."
 />
