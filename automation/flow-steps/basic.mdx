@@ -86,9 +86,9 @@ The Body Text, Button Text, and Button Link fields are all required. The Body Te
 
 **What it does.** Sends one of your approved [WhatsApp templates](/messaging/whatsapp-templates).
 
-**When to use it.** Use a WhatsApp Template whenever you need to message a customer who hasn't contacted you in the last [24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything). For example, to send order confirmations, delivery updates, or abandoned cart reminders. Regular text messages can't be sent outside the 24-hour messaging window, so you must use an approved WhatsApp template.
+**When to use it.** Use this step to send a ready-made, approved message from your flow — such as an order confirmation, a delivery update, or an appointment reminder.
 
-**How to set it up.** Click the flow step, search for your template by name, and select it. If the template contains variables, a **Body variable** field appears for each one — fill them in top to bottom. Type **@** in a variable field to insert a [merge field](/messaging/merge-fields), such as the contact's name, order number, or any other available data.
+**How to set it up.** Click the step and select your template. If it has [variables](/getting-started/concepts#the-building-blocks), fill in each **Body variable** field — type **@** to insert a [merge field](/messaging/merge-fields) like the contact's name. If the template has a media header, upload the image, video, or document here too.
 
 You must select a template before the flow can be saved. Length limits come from the template itself, which Meta has already approved.
 
@@ -112,17 +112,23 @@ You need at least one approved template first. See [WhatsApp Templates](/messagi
 
 ## Messenger Template
 
-**What it does.** Sends a Messenger template on a Facebook Messenger flow.
+**What it does.** Sends one of your [Messenger templates](/messaging/messenger-templates).
 
-**When to use it.** Use it to send approved template messages through your connected Messenger account. On Messenger you have [7 days](/messaging/live-chat#on-messenger-7-days) from the customer's last message, and a template can't reopen that window once it closes.
+**When to use it.** Use this step to send a ready-made template from a Messenger flow — such as a welcome message or a quick reply menu.
 
-**How to set it up.** Search for and select the Messenger template you want to use, then fill in any variables required by the template. A **Preview** below the fields shows how the message will look, including any buttons the template carries.
+**How to set it up.** Select your Messenger template. If it has [variables](/getting-started/concepts#the-building-blocks), fill in each **Body variable** field — type **@** to insert a [merge field](/messaging/merge-fields) like the contact's name. A **Preview** below shows how the message will look, including any buttons.
 
 You must select a template before the flow can be saved.
 
 ![Messenger Template settings with the welcome_message button template selected, one body variable set to the contact first name merge field, and a preview showing the greeting with Know More and Click Here buttons](/automation/img/basic/messenger-template-settings.png)
 
 **Example**
+
+A flow triggered by the keywords `hi` or `hello` starts with a `welcome_message` template:
+
+> Hi {'{{1}}'}, welcome to our store! How can we help you today?
+
+Map `{'{{1}}'}` to the contact's first name. The template's **Know More** and **Click Here** buttons are shown in the preview.
 
 ![A Start Trigger set to exact match on the keywords hi and hello, connected to a Messenger Template step previewing a greeting with Know More and Click Here buttons](/automation/img/basic/messenger-template.png)
 
@@ -134,14 +140,13 @@ This step only appears on Messenger flows and is hidden on WhatsApp flows. See [
 
 ## Show Typing Indicator
 
-**Show typing indicator** — Turn this on to briefly show a **"typing..."** bubble before the message is sent. This helps conversations feel more natural. It's available on all flow steps in this category except **Messenger Template**.
+Turn this on to show a **"typing..."** bubble for a moment before your message arrives, so the chat feels more natural. It's available on every step in this category except **Messenger Template**.
 
-The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation — the option's own helper text notes that it requires an inbound trigger.
 
 ![The Show typing indicator switch turned on, with helper text explaining it briefly shows the WhatsApp typing bubble before the message sends and requires an inbound trigger](/automation/img/basic/show-typing-indicator.png)
 
 <Note>
-This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan.
+This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan. See [Free vs. Paid Plans](/getting-started/free-vs-paid).
 </Note>
 
 ---
