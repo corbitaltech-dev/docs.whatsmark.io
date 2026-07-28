@@ -179,6 +179,7 @@
               "settings/webhooks",
               "settings/google-accounts",
               "settings/inbound-media",
+              "settings/opt-out",
               "settings/shopify",
               "settings/woocommerce",
               "settings/account-and-danger-zone",

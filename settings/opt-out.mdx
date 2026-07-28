@@ -1,0 +1,73 @@
+---
+title: "Opt-out"
+description: "Let customers stop your marketing messages with a keyword you choose."
+icon: "ban"
+keywords: ["WhatsMark", "opt-out", "unsubscribe", "STOP", "marketing consent", "opt-in"]
+---
+
+Customers must be able to stop receiving your marketing messages.
+
+In **Settings → Opt-out**, enter the words customers can use to unsubscribe. When a customer sends one of these words, they are automatically unsubscribed from your marketing messages.
+
+WhatsMark.io includes **STOP, UNSUBSCRIBE, OPT OUT, and OPTOUT** by default. You can edit them or add your own keywords.
+
+<Warning>
+If you ignore customer's opt-out, they may report your messages as spam. This can lower your WhatsApp quality rating, reduce your messaging limit, or even cause Meta to suspend your phone number.
+</Warning>
+
+## What stops, and what does not
+
+Only marketing messages stop. Important messages are still sent.
+
+| Still sent | Stopped |
+| --- | --- |
+| Order and delivery updates | Marketing [campaigns](/messaging/campaigns) |
+| Appointment reminders | Any marketing template |
+| One-time passcodes | Plain text campaigns sent to a list |
+| Your team replying in [chat](/messaging/live-chat) | |
+
+<Note>
+Opting out applies to your whole workspace. If someone unsubscribes from one of your WhatsApp numbers, they will stop receiving marketing messages from all your WhatsApp numbers and Messenger.
+</Note>
+
+## Unsubscribe words
+
+Enter the words customers can use to unsubscribe, separated by commas. You can keep the default words, edit them, or add your own.
+
+How the matching works:
+
+- **Capital letters do not matter.** `stop`, `Stop` and `STOP` all work.
+- **The message must contain only the keyword**. For example, **stop sending me the wrong size** is treated as a normal message, not an unsubscribe.
+- **Only text messages work.** Buttons, images, or captions containing the keyword do not unsubscribe the customer.
+
+## Resubscribe words
+
+The words that start your marketing again. The defaults are **START**, **SUBSCRIBE**, **UNSTOP**, **OPT IN** and **OPTIN**.
+
+## The automatic reply
+
+By default, WhatsMark.io sends a confirmation message when someone unsubscribes or subscribes again.
+
+- **Send a confirmation** — Turn this off if you don't want to send a confirmation message.
+- **Unsubscribe confirmation** — The message sent when a customer unsubscribes.
+- **Resubscribe confirmation** — The message sent when a customer subscribes again.
+
+## Seeing who has opted out
+
+Only customers can unsubscribe or subscribe again by sending the keyword. You can't change their status manually.
+
+- **Contact Details** – Shows an Opted Out of Marketing badge.
+- **Chat Header** – Shows whether the contact has opted out.
+- **Campaign Audience** – Shows how many contacts were excluded because they opted out.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    See who your campaign will reach, and who is left out.
+  </Card>
+
+  <Card title="WhatsApp Templates" icon="layout-template" href="/messaging/whatsapp-templates">
+    Marketing, utility and authentication templates.
+  </Card>
+</CardGroup>
