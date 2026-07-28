@@ -1,11 +1,11 @@
 ---
 title: "Inbound Media"
-description: "Keep your own copy of the photos and files customers send you."
+description: "Automatically save your own copy of the photos and files customers send you on WhatsApp."
 icon: "image"
 keywords: ["WhatsMark", "inbound media", "download media", "attachments", "storage", "WhatsApp media"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 When a customer sends you a photo, a voice note or a PDF on WhatsApp, the file itself stays on Meta's servers. WhatsMark.io only holds a link to it.
 
@@ -13,9 +13,8 @@ Meta deletes those files about **30 days** later. After that the link stops work
 
 Turn this setting on and WhatsMark.io saves its own copy of every file as it arrives, so it is still there months later. Find it under **Settings → Inbound Media**.
 
-<BrowserFrame
+<Figure
   src="/settings/img/inbound-media-form.png"
-  url="whatsmark.io/settings/messaging/inbound-media"
   alt="Archive inbound WhatsApp media card with a Download inbound media toggle"
   caption="Image shows the Inbound Media Archival page."
 />
@@ -32,14 +31,12 @@ Switch it off and new files stop being saved. Anything already saved stays as it
 This covers WhatsApp only. Files sent to you on Messenger are not saved.
 </Note>
 
-## What it costs you in storage
+## Storage usage
 
-Every saved file uses part of the storage on your plan.
-
-Check how much you have left on the [Dashboard](/reporting/dashboard-and-usage).
+Every saved file uses part of your plan's storage. You can check how much you have left on the [Dashboard](/reporting/dashboard-and-usage).
 
 <Warning>
-If your storage is full, new files are quietly skipped. Nothing warns you, and the message keeps only the Meta link — which still stops working after 30 days. Keep an eye on your storage if you receive a lot of files.
+If your storage is full, new files are skipped without any warning. The message then keeps only Meta's link, which stops working after 30 days. If you receive a lot of files, check your storage regularly or upgrade your plan for more space.
 </Warning>
 
 ## What's next
