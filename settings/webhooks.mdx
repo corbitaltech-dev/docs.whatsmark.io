@@ -1,62 +1,97 @@
 ---
 title: "Webhooks"
-description: "How to forward WhatsMark.io incoming Meta webhook events to your own endpoint."
+description: "Webhook forwarding sends a copy of your WhatsApp events to your own server or app."
 icon: "webhook"
 keywords: ["WhatsMark", "webhooks", "webhook forwarding", "integration"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-**Webhook Forwarding** sends a copy of your incoming WhatsApp events to a URL you control — useful for building your own integrations. WhatsMark.io keeps processing everything as usual; forwarding just adds a second destination.
+When something happens on your WhatsApp number such as receiving a message, a template being approved, or a delivery update, WhatsMark.io receives the event and can forward a copy to your server, CRM, or automation tools like n8n or Zapier.
 
-<Warning>
-Webhook Forwarding is included on the **Professional** plan and above. If it's locked, click **Upgrade Plan**. Only the workspace **owner** can configure it.
-</Warning>
+Find it under **Settings → Webhooks**.
 
 <BrowserFrame
   src="/settings/img/webhooks-form.png"
   url="whatsmark.io/settings/application/webhooks"
   alt="Global Webhook Config form showing webhook URL, method, signing secret, events, and a list of channel overrides"
-  caption="Configure a global endpoint, or override it per channel below."
+  caption="Image shows the Webhooks page, with the global settings on top and channel overrides below."
 />
 
-## Global Webhook Config
+## Turning it on
 
-Applied to every connected channel unless a channel below has its own override.
+<Steps>
+<Step title="Switch on Global Webhook Config">
+  Use the switch at the top right of the card. The fields below unlock.
+</Step>
 
-- Toggle forwarding **on** using the switch in the card header.
-- **Webhook URL** — required once enabled. The endpoint that receives events.
-- **Method** — `POST` or `GET`.
-- **Signing Secret** — auto-generated; click the refresh icon to rotate it at any time.
-- **Events** — required once enabled. A multi-select of Meta's WhatsApp Business event types (Messages, Message Echoes, Message Template Status Update, Phone Number Quality Update, Group Participants Update, and more) — pick only what you need, you don't have to forward everything.
+<Step title="Enter your Webhook URL">
+  The web address where events are sent, such as `https://your-server.com/webhook`.
 
-<Tip>
-Every forwarded request is signed with `sha256=HMAC(body, secret)` in the **X-Webhook-Signature** header. Verify this on your endpoint to confirm a request genuinely came from WhatsMark.io before trusting its payload.
-</Tip>
+  <Warning>
+  The address has to be reachable from the internet. A local address such as `localhost`, `127.0.0.1` or an address inside your own network is refused when you save, for security reasons.
+  </Warning>
+</Step>
 
-## Channel overrides
+<Step title="Choose a Method">
+  You can use POST or GET. POST is recommended. In both cases, the event data is sent as JSON in the request body.
+</Step>
 
-Channels without an override use the global config above. To send a specific WhatsApp channel's events somewhere else:
+<Step title="Add a Signing Secret">
+  Click the refresh icon to make one. It lets your server check that a request really came from us — see [Checking a request is really from us](#checking-a-request-is-really-from-us).
 
-1. Find the channel under **Channel Overrides** and turn on **Override**.
-2. Turn on **Enable forwarding for this channel**.
-3. Set its own **Webhook URL**, **Method**, **Signing Secret**, and **Events** — independent of the global config.
-4. Click **Save Channel**.
+  <Note>
+  The refresh icon only puts a new secret in the box. It is not in use until you save.
+  </Note>
+</Step>
 
-Turning a channel's override off reverts it to the global config; its own saved settings are kept, just unused until you switch it back on.
+<Step title="Pick your Events">
+  Choose which events to forward to your server. There are 30 event types to choose from, including Messages, Message Echoes, Template Status Updates, and Phone Number Quality Updates. Only the events you select will be sent.
+</Step>
 
-<Tip>
-Regenerating a secret only changes what's used to sign future requests — your URL and event selection keep working unchanged.
-</Tip>
+<Step title="Save">
+  Click **Save**.
+</Step>
+</Steps>
+
+<Note>
+Once forwarding is switched on, the Webhook URL and at least one event are required. You cannot save without them.
+</Note>
+
+## A different address for one channel
+
+By default every channel sends to the same address. If you want one channel to go somewhere else, give it its own settings.
+
+<Steps>
+<Step title="Find the channel">
+  Scroll to **Channel Overrides**. Only connected, active channels are listed.
+</Step>
+
+<Step title="Turn on Override">
+  The channel's own fields open up.
+</Step>
+
+<Step title="Turn on Enable forwarding for this channel">
+  Then fill in its own **Webhook URL**, **Method**, **Signing Secret** and **Events**. These are separate from the global ones.
+</Step>
+
+<Step title="Click Save Channel">
+  That channel now sends to its own address. Every other channel carries on using the global settings.
+</Step>
+</Steps>
+
+<Warning>
+Turning **Override** back off removes that channel's settings. They are not kept for later — switch the override on again and you start with empty fields.
+</Warning>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="API Keys" icon="key" href="/core-setup/api-keys">
-    Combine webhook forwarding with the REST API to build a full two-way integration.
+    Read and send data with the REST API for a full two-way integration.
   </Card>
 
-  <Card title="General Settings" icon="settings" href="/settings/general">
-    Workspace name, timezone, and date/time format.
+  <Card title="WhatsApp Activity Log" icon="scroll-text" href="/core-setup/whatsapp-activity-log">
+    See every message that went out from your workspace.
   </Card>
 </CardGroup>

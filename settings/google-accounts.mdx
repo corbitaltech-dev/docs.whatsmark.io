@@ -1,53 +1,75 @@
 ---
 title: "Google Accounts"
-description: "How to connect a Google account to WhatsMark.io to use Google Sheets and Google Calendar in automation flows."
+description: "Connect a Google account so your flows can use Google Sheets and Google Calendar."
 icon: "chrome"
 keywords: ["WhatsMark", "Google accounts", "Google Sheets", "Google Calendar", "OAuth"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-If your [automation flows](/automation/overview) need to write to a Google Sheet, connect a Google account first from **Settings → Google Accounts**.
+Connect your Google account once here, and WhatsMark.io can then work with your Google for you:
+
+- **Google Sheets** — An [automation flow](/automation/overview) can add a new row to a Google Sheet, for example when someone submits a form or answers a question.
+- **Google Calendar** — [Appointments](/ai-and-more/appointments) can automatically add a customer's booking to your Google Calendar.
+
+One connection covers both. Find it under **Settings → Google Accounts**.
 
 <BrowserFrame
   src="/settings/img/google-accounts-form.png"
   url="whatsmark.io/settings/google-accounts"
   alt="Connected Google Accounts page listing connected accounts with their name, email, and connection date"
-  caption="Each connected account shows its name, email, and connection date, with a Disconnect action."
+  caption="Image shows the Google Accounts page with one account connected."
 />
 
-<Warning>
-Google integrations require the `google_sheet` or `google_calendar` feature on your plan — both are off on Free and available on Professional and Reseller plans. If your plan doesn't include either, this page shows an **Upgrade Plan** prompt instead of the connect flow.
-</Warning>
+<Note>
+Google is a paid feature. If your plan does not include it, this page shows **Google integrations are not in your current plan** with an **Upgrade Plan** button instead.
+</Note>
 
 ## Connecting an account
 
 <Steps>
 <Step title="Click Connect Google Account">
-  Starts a standard Google OAuth flow.
+  You are taken to Google's own sign-in page.
 </Step>
 
-<Step title="Sign in and grant access">
-  Sign into the Google account you want to use and approve the requested permissions.
+<Step title="Sign in and allow access">
+  Choose the Google account you want to use and allow the access it asks for. This covers your spreadsheets and your calendars.
 </Step>
 
-<Step title="Confirm it's connected">
-  The account appears in your list with its name, email, and connection date, ready to select from a Google Sheets automation node.
+<Step title="Check it worked">
+  You come back to this page and the account is listed with its name, email address and the date you connected it.
 </Step>
 </Steps>
 
+You can connect more than one Google account. You pick which one to use when you build a flow or set up appointments.
+
+<Note>
+If you see **Google connection unavailable**, the platform's own Google setup is not ready. Contact support — there is nothing to fix on your side.
+</Note>
+
+## Using a connected account
+
+Nothing else happens on this page. The account is used in two other places:
+
+- In the [flow builder](/automation/flow-builder), a Google Sheets step lets you choose a connected account, then pick one of your sheets or make a new one.
+- In [Appointments](/ai-and-more/appointments), you choose the account and the calendar that bookings go into.
+
 ## Disconnecting
 
-Click **Disconnect** next to an account to remove it. Any flow nodes using that account will stop writing to Google Sheets until you point them at a different connected account.
+Click **Disconnect** next to an account. You are asked to confirm first, because anything using it stops working.
+
+<Warning>
+Disconnecting does not fix the flows and appointments that were using the account. They keep failing until you point them at another connected account.
+</Warning>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Automation Flows" icon="bot" href="/automation/overview">
-    Use a connected Google account in a Google Sheets automation node.
+    Add a row to a Google Sheet from a flow.
   </Card>
 
-  <Card title="General Settings" icon="settings" href="/settings/general">
-    Workspace name, timezone, and date/time format.
+  <Card title="Appointments" icon="calendar-check" href="/ai-and-more/appointments">
+    Send bookings into your Google Calendar.
   </Card>
 </CardGroup>

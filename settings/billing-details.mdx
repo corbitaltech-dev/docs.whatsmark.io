@@ -1,43 +1,44 @@
 ---
 title: "Billing Details"
-description: "Manage the company information that appears in the Bill To section of your invoices."
+description: "Set the company details that appear on your invoices."
 icon: "credit-card"
-keywords: ["WhatsMark", "billing details", "company information", "invoice", "GST", "tax ID"]
+keywords: ["WhatsMark", "billing details", "company information", "invoice", "GST", "tax"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Go to **Settings → Billing Details** to manage the company information used in the **Bill To** section of your invoices:
+Go to **Settings → Billing Details** to set the company information that appears in the **Bill To** section of your invoices.
 
 <BrowserFrame
   src="/settings/img/billing-details-form.png"
-  url="whatsmark.io/settings/billing-details"
-  alt="Billing Details form showing company name, email, GST number, country, state, zip code, and address fields"
-  caption="This information appears on every invoice generated after you save it."
+  alt="The Billing Details form with fields for company name, email, GST number, country, state, ZIP code and address"
+  caption="Image shows the Billing Details page."
 />
 
-- **Company Name** and **Company Email**
-- **GST Number** — your tax identification number, if applicable.
-- **Country** — required, and used to calculate GST on your invoices.
-- **State / Province** and **ZIP / Postal Code**
-- **Company Address**
+- **Company Name** — The name shown on your invoices.
+- **Company Email** — The email address shown on your invoices.
+- **GST Number** — Your tax number (optional).
+- **Country** — Select your country.
+- **State / Province** – Your state or province.
+- **ZIP / Postal Code** – Your ZIP or postal code.
+- **Company Address** – Your business address.
 
-<Warning>
-These details apply to **upcoming invoices only**. Invoices already generated are not updated retroactively — update this page before your next billing cycle if anything has changed.
-</Warning>
+## Your country and tax
+
+Your country decides the tax on your invoices. **GST is added for customers in India.** If you are elsewhere, no GST is charged.
 
 <Note>
-Only the workspace **owner** can update Billing Details.
+Only the workspace owner can change these details. Everyone else sees them, but the fields are greyed out.
 </Note>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="General Settings" icon="settings" href="/settings/general">
-    Configure workspace name, timezone, and date/time format.
+  <Card title="Payments & Invoices" icon="receipt" href="/billing/payments-and-invoices">
+    See and download your invoices.
   </Card>
 
-  <Card title="Business Hours" icon="clock" href="/settings/business-hours">
-    Define your workspace's operating hours and holidays.
+  <Card title="General Settings" icon="settings" href="/settings/general">
+    Your workspace name, timezone and date format.
   </Card>
 </CardGroup>

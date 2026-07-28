@@ -1,83 +1,93 @@
 ---
 title: "Custom Domain"
-description: "Access your WhatsMark.io workspace from your own business domain instead of the default workspace domain."
+description: "Use your own domain for your workspace instead of the default address."
 icon: "globe"
 keywords: ["WhatsMark", "custom domain", "DNS", "CNAME", "SSL"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-A **Custom Domain** lets you access your WhatsMark.io workspace using your business domain instead of the default workspace URL, providing a more professional and branded experience.
-
-**Example**
+A custom domain lets you open your workspace at your own address instead of the default one.
 
 - Default: `workspace.whatsmark.io`
-- Business Domain: `app.yourcompany.com`
+- Your domain: `app.yourcompany.com`
 
-Connect your domain under **Settings → Custom Domain**.
+Set it up under **Settings → Custom Domain**.
 
 <Note>
-Custom Domain is available as an **add-on**. If the feature is locked, click it to purchase the add-on or upgrade your plan. Only the workspace **owner** can connect, manage, or remove custom domains.
+Custom Domain is a paid feature. If it is locked, you can buy it as an add-on. Only the workspace owner can set it up.
 </Note>
 
-## Connecting a domain
+## Connecting your domain
 
 <BrowserFrame
   src="/settings/img/custom-domain-form.png"
-  url="whatsmark.io/settings/custom-domain"
-  alt="Custom Domain form with a domain name field and Connect Domain button"
-  caption="Enter your domain (e.g. app.yourcompany.com) and click Connect Domain to begin."
+  alt="The Custom Domain page with a domain name field and a Connect Domain button"
+  caption="Image shows the Custom Domain page."
 />
 
 <Steps>
 <Step title="Enter your domain">
-  Type the domain or subdomain you want to use (e.g. `app.yourcompany.com`), without `http://` or `https://`, and click **Connect Domain**.
+  Type the domain you want to use, like `app.yourcompany.com`, without `http://` or `https://`. Then click **Connect Domain**.
 </Step>
 
 <Step title="Add a CNAME record">
-  At your DNS provider, create a **CNAME** record using the **Name/Host** and **Value/Target** shown under DNS Setup Instructions. Click the copy icon to grab the target exactly.
+  Go to your DNS provider and add a **CNAME** record using the name and target shown on the page. Click the copy icon to copy the target exactly.
+
+  <Warning>
+  If you use Cloudflare, set the record to **DNS only** (grey cloud), not **Proxied** (orange cloud). A proxied record stops the security certificate from being issued.
+  </Warning>
 </Step>
 
-<Step title="Verify">
-  Click **Verify**. WhatsMark.io checks the DNS record and, once it resolves, begins provisioning an SSL certificate automatically — this typically takes 1–5 minutes.
-</Step>
+<Step title="Click Verify">
+  Your domain is checked, and a security certificate is set up for you. This usually takes 1 to 5 minutes.
 
-<Step title="Set as primary (optional)">
-  Once the domain shows **Verified**, a **Primary domain** choice appears — pick your custom domain or your original WhatsMark.io subdomain as the one your workspace's links use by default.
+  DNS changes can take a while to spread. If it does not work first time, wait 5 to 10 minutes and click **Retry**.
 </Step>
 </Steps>
 
+
+## Domain status
+
+| Status | What it means |
+| --- | --- |
+| **Not verified** | Add the CNAME record, then click Verify. |
+| **Pending** | Your certificate is being set up. This usually takes 1 to 5 minutes. |
+| **Verified** | Your domain is live and working. |
+| **Failed** | Something is wrong with the DNS record. Check it and try again. |
+
+## After it is live
+
 <BrowserFrame
   src="/settings/img/custom-domain-verified.png"
-  url="whatsmark.io/settings/custom-domain"
-  alt="Custom Domain page showing a verified domain and a Primary domain selector"
-  caption="Once verified, choose which domain — your custom domain or your whatsmark.io subdomain — is the primary one."
+  alt="The Custom Domain page showing a verified domain and a primary domain selector"
+  caption="Image shows a verified domain with the primary domain choice."
 />
 
-<Tip>
-Using Cloudflare for DNS? Set the CNAME's proxy status to **DNS only** (grey cloud), not **Proxied** (orange cloud). A proxied CNAME hides the real target from WhatsMark.io, which blocks SSL certificate issuance.
-</Tip>
+Once verified, your custom domain becomes your workspace address straight away. Your old address still works — it sends people to your new one.
+
+Use **Primary domain** to switch back to your original address if you ever need to.
+
+<Warning>
+If you have shared any booking links, copy them again after switching. Links copied before the change may stop working.
+</Warning>
+
+## Changing or removing your domain
+
+Click the trash icon next to your domain to remove it. Your workspace goes back to its original address.
 
 <Note>
-DNS changes can take a few minutes to propagate. If verification doesn't succeed immediately, wait and click **Retry**.
-</Note>
-
-## Removing a domain
-
-Click the trash icon next to your domain to remove it — your workspace falls back to its original WhatsMark.io subdomain automatically.
-
-<Note>
-If your custom domain is set as the **primary** domain, switch back to the subdomain first — removal is blocked while the custom domain is primary.
+You cannot edit a domain. To use a different one, remove this one first and then add the new one. If your custom domain is set as primary, switch back to your original address before removing it.
 </Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="General Settings" icon="settings" href="/settings/general">
-    Workspace name, timezone, and date/time format.
+    Your workspace name, timezone and date format.
   </Card>
 
-  <Card title="Appointments" icon="calendar-check" href="/ai-and-more/appointments">
-    Your custom domain also applies to the public booking link.
+  <Card title="Addons & Upgrades" icon="package-plus" href="/billing/addons-and-upgrades">
+    Buy the custom domain add-on.
   </Card>
 </CardGroup>

@@ -1,41 +1,45 @@
 ---
 title: "General"
-description: "Configure your WhatsMark.io workspace's general settings like workspace name, timezone, and date/time format."
+description: "Set your workspace name, timezone, and date and time format."
 icon: "settings"
-keywords: ["WhatsMark", "general settings", "workspace name", "timezone", "date format"]
+keywords: ["WhatsMark", "general settings", "organization name", "timezone", "date format"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Go to **Settings → General** to manage your **Organization Information**:
+Go to **Settings → General** to update your **Organization Information**.
 
 <BrowserFrame
   src="/settings/img/general-form.png"
   url="whatsmark.io/settings/general"
-  alt="Organization Information form showing organization name, subdomain, timezone, date format, and time format fields"
-  caption="Update your organization's name, timezone, and date/time display format."
+  alt="The Organization Information form with fields for organization name, subdomain, timezone, date format and time format"
+  caption="Image shows the General settings page."
 />
 
-- **Organization Name** — your organization's display name, shown throughout the dashboard and in emails.
-- **Subdomain** — read-only here. Contact support if you need to change it.
-- **Timezone** — the reference timezone for your workspace. Applies to campaign scheduling, business hours, appointment booking, and every timestamp shown across the system.
-- **Date Format** — `Y-m-d` (2026-02-13), `d/m/Y` (13/02/2026), `m/d/Y` (02/13/2026), or `F j, Y` (February 13, 2026).
-- **Time Format** — `24 Hours` or `12 Hours`.
+- **Organization Name** — your organization's name, shown around the dashboard and in emails.
+- **Subdomain** — your workspace address. You cannot change it here; contact support if you need it changed.
+- **Timezone** — the timezone your workspace uses.
+- **Date Format** — choose from `2026-02-13`, `13/02/2026`, `02/13/2026`, or `February 13, 2026`.
+- **Time Format** — **24 Hours** or **12 Hours**.
 
-Both control how dates and times are displayed everywhere in the system: contact, campaign, and appointment tables, chat timestamps, invoices, activity logs, and dashboard charts.
+## Where it's used
 
-<Warning>
-Changes here aren't saved automatically. An unsaved-changes bar appears at the bottom once you edit a field — click **Save** to apply your changes or **Discard** to revert them.
-</Warning>
+Your **timezone** is used throughout the workspace. Scheduled campaigns, business hours, and appointment times all use this timezone.
+
+The date and time formats control how dates and times are displayed across workspace, including contacts, campaigns, chats, invoices, and reports.
+
+<Note>
+Only the workspace owner can save changes here. Other team members can open the page and see the settings.
+</Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Business Hours" icon="clock" href="/settings/business-hours">
-    Define your workspace's operating hours and holidays.
+    Set the hours you are open, and your closed dates.
   </Card>
 
   <Card title="Billing Details" icon="credit-card" href="/settings/billing-details">
-    Manage your company information for invoices.
+    Your company details for invoices.
   </Card>
 </CardGroup>

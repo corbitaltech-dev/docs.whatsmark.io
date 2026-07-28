@@ -1,40 +1,55 @@
 ---
 title: "Inbound Media"
-description: "Choose whether WhatsMark.io downloads and archives the media customers send you over WhatsApp."
+description: "Keep your own copy of the photos and files customers send you."
 icon: "image"
 keywords: ["WhatsMark", "inbound media", "download media", "attachments", "storage", "WhatsApp media"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Meta's WhatsApp media URLs expire about 30 days after delivery. **Inbound Media Archival** decides whether WhatsMark.io downloads a permanent copy of everything customers send you, so it stays viewable in your conversation history after that.
+When a customer sends you a photo, a voice note or a PDF on WhatsApp, the file itself stays on Meta's servers. WhatsMark.io only holds a link to it.
+
+Meta deletes those files about **30 days** later. After that the link stops working, and the message in your chat shows nothing.
+
+Turn this setting on and WhatsMark.io saves its own copy of every file as it arrives, so it is still there months later. Find it under **Settings → Inbound Media**.
 
 <BrowserFrame
   src="/settings/img/inbound-media-form.png"
   url="whatsmark.io/settings/messaging/inbound-media"
   alt="Archive inbound WhatsApp media card with a Download inbound media toggle"
-  caption="Enable Download inbound media to keep a permanent copy of every inbound image, video, audio, and document."
+  caption="Image shows the Inbound Media Archival page."
 />
 
-## The setting
+## Turning it on
 
-Go to **Settings → Inbound Media** and toggle **Download inbound media**:
+Switch on **Download inbound media**, then click **Save**.
 
-- **On** — every inbound image, video, audio, and document is downloaded to your tenant storage and kept with the conversation, so it's still viewable after Meta's link expires.
-- **Off** — new inbound media stops being downloaded. Files already archived before you turned it off are kept as-is.
+From then on, every photo, video, voice note, document and sticker a customer sends is saved as it arrives.
+
+Switch it off and new files stop being saved. Anything already saved stays as it is.
+
+<Note>
+This covers WhatsApp only. Files sent to you on Messenger are not saved.
+</Note>
+
+## What it costs you in storage
+
+Every saved file uses part of the storage on your plan.
+
+Check how much you have left on the [Dashboard](/reporting/dashboard-and-usage).
 
 <Warning>
-Each archived file counts toward your plan's **storage** quota. If you handle a high volume of media, keep an eye on storage usage on the [Dashboard](/reporting/dashboard-and-usage) and in the [Media Library](/media/media-library).
+If your storage is full, new files are quietly skipped. Nothing warns you, and the message keeps only the Meta link — which still stops working after 30 days. Keep an eye on your storage if you receive a lot of files.
 </Warning>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Media Library" icon="folder-open" href="/media/media-library">
-    Browse, organize, and track the files stored in your workspace.
+  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
+    See how much of your storage you have used.
   </Card>
 
-  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
-    See how much of your storage quota you're using.
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    Where the files customers send you show up.
   </Card>
 </CardGroup>

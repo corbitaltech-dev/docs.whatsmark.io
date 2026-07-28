@@ -1,96 +1,112 @@
 ---
 title: "Profile & Sessions"
-description: "Manage your own account in WhatsMark.io — name, email, avatar, active sessions, and changing your WhatsApp number."
+description: "Manage your name, profile photo, password, and signed-in devices."
 icon: "user"
 keywords: ["WhatsMark", "profile", "account", "avatar", "sessions", "revoke session", "change phone number"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Your **Profile** covers the settings that belong to *you* as a user, separate from workspace-wide settings. Open it by clicking your name at the bottom of the sidebar, then **My Profile**.
+These settings apply only to your account. They do not affect anyone else in your workspace.
 
-The page has a **Profile** tab and a **Password** tab, plus an **Active Sessions** card, a **Two-Factor Authentication** card, and a **Recent Activity** card showing your last actions.
+Open them by clicking your name at the bottom of the sidebar, then My Profile.
 
-## Editing your profile
+The page includes Profile and Password tabs, along with Two-Factor Authentication, Active Sessions, and Recent Activity.
 
-On the **Profile** tab, under **Profile Information**:
+## Your details
 
 <BrowserFrame
   src="/settings/img/profile-form.png"
   url="whatsmark.io/settings/profile"
   alt="Profile page showing the identity card and Profile Information form with name, WhatsApp number, and email fields"
-  caption="Update your name, WhatsApp number, or avatar from the Profile tab. Email is read-only."
+  caption="Image shows the Profile tab."
 />
 
-- **Name** — your display name across the account. Required.
-- **WhatsApp number** — your account's WhatsApp number.
-- **Email Address** — shown for reference only. It can't be changed here — contact support if you need it updated.
-- **Avatar** — click the camera icon to pick a photo from your media library or upload a new one (JPEG, PNG, or WebP, up to 5MB), or use **Remove photo** to fall back to your initials.
+On the **Profile** tab:
+
+- **Name** — Your display name. Required.
+- **WhatsApp number** — your own number.
+- **Email Address** — Your email address. You can't change it yourself.
+- **Photo** – Click the **camera** icon to upload a new photo or choose one from the **Media Library**. Supports **JPEG**, **PNG**, and **WebP** files up to **5 MB**. Click **Remove Photo** to show your initials again.
+
+<Note>
+Your photo uses a little of your workspace storage, and it also shows up in your Media Library.
+</Note>
 
 <Warning>
-If you change the WhatsApp number, WhatsMark.io sends a 6-digit **WhatsApp OTP** to the new number before saving. Enter the code in the verification dialog to confirm the change — the update only applies once you verify it.
+If you change your WhatsApp number, a 6-digit code is sent to the new number first. Type it in to confirm. Your number only changes once you enter the code.
 </Warning>
 
 ## Changing your password
-
-On the **Password** tab, under **Change Password**:
 
 <BrowserFrame
   src="/settings/img/password-form.png"
   url="whatsmark.io/settings/profile"
   alt="Password tab showing current password, new password, and confirm new password fields"
-  caption="Switch to the Password tab to update your account password."
+  caption="Image shows the Password tab."
 />
 
-- **Current Password** — required, unless you signed up with a social login, in which case this field is skipped.
-- **New Password** and **Confirm New Password** — use **Generate strong password** for a secure suggestion, then **Use this password** to apply it.
-- Click **Update Password** to save.
+On the **Password** tab:
+
+- **Current Password** — Enter your current password. This field is not shown if you signed in with Google, because you don't have a password.
+- **New Password** and **Confirm New Password** — Enter the same password in both fields. You can also click Generate Strong Password, then Use This Password to fill both fields automatically.
+- Click **Update Password**.
 
 ## Two-factor authentication
 
-The **Two-Factor Authentication** card shows whether 2FA is currently on or off for your account.
-
+It adds an extra layer of security. After entering your password, you'll also need to enter a code from your phone, so your account stays protected even if someone knows your password.
 <BrowserFrame
   src="/settings/img/two-factor-card.png"
   url="whatsmark.io/settings/profile"
   alt="Two-Factor Authentication card showing 2FA status and a Manage 2FA link"
-  caption="Click Manage 2FA to set up or manage two-factor authentication."
+  caption="Image shows the Two-Factor Authentication card."
 />
 
-Click **Manage 2FA** to open the two-factor authentication page. As a security check, you'll be asked to confirm your password first.
+The card tells you whether it is on or off. Click **Manage 2FA** to change it.
 
-1. **Confirm your password**, then click **Confirm password**.
-2. **Scan the QR code** with your authenticator app, or enter the setup key manually, then click **Continue**.
-3. **Enter the 6-digit code** from your authenticator app and click **Confirm**.
-4. **Save your recovery codes** — click **View Recovery Codes** and store them safely. Each code works once, in case you lose access to your authenticator app.
+<Steps>
+<Step title="Confirm your password">
+  A safety check before you can change anything.
+</Step>
 
-To turn 2FA off, click **Disable two-factor** on the same page.
+<Step title="Scan the QR code">
+  Open an authenticator app, such as **Google Authenticator**, and scan the QR code. If you can't scan it, enter the setup key instead. Then click Continue.
+</Step>
+
+<Step title="Enter the 6-digit code">
+  Read it from the app and click **Confirm**.
+</Step>
+
+<Step title="Save your recovery codes">
+  Click **View Recovery Codes** and save them somewhere safe. If you lose your phone, you can use these codes to sign in. Each recovery code can only be used once.
+</Step>
+</Steps>
+
+To turn it off again, click **Disable two-factor** on the same page.
 
 <Tip>
-Turning on two-factor authentication is one of the fastest ways to protect your account, especially for workspace owners and admins.
+Turn this on if you are the workspace owner or an admin. It is the quickest way to make your account much harder to break into.
 </Tip>
 
 ## Active sessions
 
-The **Active Sessions** card lists every device and browser currently signed in to your account, with its browser/OS, IP address, and last-active time. Your current device is marked **This device**.
+All the devices you're signed in on are listed here. For each one, you can see the **browser, operating system, IP address, and last active time**. Your current device is marked as **This device**.
 
-- **Log out** — sign out one specific session (for example, a shared or lost computer). Your current session can't be revoked this way.
-- **Sign out all others** — sign out every session except the one you're using right now. Only shown when other sessions exist.
+- Click **Log Out** to sign out a specific device. You can't sign out the device you're currently using.
+- Click **Sign Out All Others** to sign out every other device. This option only appears if you're signed in on more than one device.
 
-Both actions apply immediately, without a confirmation dialog.
+## Recent activity
 
-<Warning>
-If you suspect someone else has access to your account, change your [password](/getting-started/log-in#forgot-your-password) and click **Sign out all others** — the two together lock everyone else out immediately.
-</Warning>
+The last 5 things you did in the workspace. To see everything, and what your team has been doing, open the [Activity Log](/reporting/activity-logs).
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Login & Security" icon="log-in" href="/getting-started/log-in">
-    Passwords, two-factor authentication, and account recovery.
+    Signing in, and what to do if you forget your password.
   </Card>
 
   <Card title="Team" icon="users" href="/core-setup/team-and-roles">
-    Manage who else has access to your workspace.
+    Manage who else can get into your workspace.
   </Card>
 </CardGroup>

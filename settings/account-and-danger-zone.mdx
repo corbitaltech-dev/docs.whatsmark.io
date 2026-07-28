@@ -1,66 +1,78 @@
 ---
 title: "Account & Danger Zone"
-description: "How to request closure of your WhatsMark.io workspace."
+description: "Permanently close your workspace."
 icon: "triangle-alert"
 keywords: ["WhatsMark", "account closure", "delete workspace", "danger zone"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-If you need to shut down your workspace entirely, **Settings → Account** is where that happens under **Danger Zone** — deliberately separate from every other settings page, and restricted to the workspace owner.
+If you no longer need your WhatsMark workspace, you can permanently close it here. Find this option in Settings → Account, under the Danger Zone section.
 
 <Warning>
-Only the workspace **owner** can request account closure.
+Only the workspace **owner** can close the account. Nobody else sees this option.
 </Warning>
 
-## Requesting closure
+## Before you start
+
+Closing your account will:
+
+- Cancel your subscription immediately.
+- Remove all team members.
+- Delete all uploaded files.
+- Delete all workspace settings.
+- Delete all contacts, chats, and everything else in your workspace.
+
+## Closing the account
 
 <BrowserFrame
   src="/settings/img/account-danger-zone-form.png"
   url="whatsmark.io/settings/account"
   alt="Danger Zone card listing what account closure deletes, with a subdomain confirmation field, password field, and Close My Account button"
-  caption="Closing your account immediately cancels your subscription and permanently deletes all data — this cannot be undone."
+  caption="Image shows the Danger Zone card on the Account page."
 />
 
-Closing your account will:
-
-- Immediately cancel your subscription
-- Delete all users and their data
-- Delete all uploaded files and media
-- Delete all settings and configurations
-- Permanently drop your database
-
 <Steps>
-<Step title="Type your subdomain to confirm">
-  Type your workspace's subdomain exactly as shown to confirm you understand the scope of what you're deleting.
+<Step title="Type your subdomain">
+  Type it exactly as it is shown above the box. The **Close My Account** button stays greyed out until it matches.
 </Step>
 
-<Step title="Confirm your password">
-  Enter your account password as a final safeguard.
+<Step title="Enter your password">
+  Your own account password, as a last check that it is really you.
 </Step>
 
 <Step title="Click Close My Account">
-  Your subscription is cancelled immediately, and your workspace is scheduled for deletion after a delay rather than removed instantly.
+  Your subscription is cancelled immediately, and your workspace is scheduled for deletion.
 </Step>
 </Steps>
+
+## What happens next
+
+You are signed out immediately, and so is everyone else on your team.
 
 <BrowserFrame
   src="/settings/img/account-closed.png"
   url="whatsmark.io"
   alt="Account Closed page showing the scheduled deletion date, a note to contact support, and a Log out button"
-  caption="Anyone who signs in to the workspace after closure sees this page until the scheduled deletion date."
+  caption="Image shows the page your team sees after the account is closed."
 />
 
-Closing the account logs everyone out immediately. Until the scheduled deletion date, this page replaces the app for all team members, showing the deletion date, a **Contact Support** link, and **Log out**.
+Anyone who tries to sign in sees this page instead of the app. It shows the date your workspace will be deleted, a **Contact Support** button and **Log out**.
+
+Your data is still there until that date, but nobody can get into the workspace.
+
+<Warning>
+Changed your mind? You cannot undo this yourself, because you can no longer sign in. Contact support before the deletion date and ask them to stop it.
+</Warning>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Plans & Subscription" icon="credit-card" href="/billing/plans-and-subscription">
-    Manage your subscription and billing.
+    Change or cancel your plan without closing the account.
   </Card>
 
-  <Card title="General Settings" icon="settings" href="/settings/general">
-    Workspace name, timezone, and date/time format.
+  <Card title="Contacts" icon="contact" href="/contacts/import-export">
+    Export your contacts before you close.
   </Card>
 </CardGroup>

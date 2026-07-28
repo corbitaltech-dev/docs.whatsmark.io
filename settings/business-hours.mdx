@@ -1,58 +1,46 @@
 ---
 title: "Business Hours"
-description: "Set the weekly hours and holidays that control which time slots customers can book through WhatsApp appointment flows."
+description: "Set your business hours and closed dates."
 icon: "clock"
 keywords: ["WhatsMark", "business hours", "working hours", "holidays", "closed dates"]
 ---
 
 import { BrowserFrame } from '/snippets/browser-frame.jsx';
 
-Go to **Settings → Business Hours** to define when your workspace is open, under **Business Hours & Holidays**.
+Go to **Settings → Business Hours** to set when you are open. Customers can only book [appointment](/ai-and-more/appointments) during these hours.
 
 <BrowserFrame
   src="/settings/img/business-hours-form.png"
-  url="whatsmark.io/settings/business-hours"
-  alt="Business Hours & Holidays form showing per-day toggles with open/close times and a closed dates section"
-  caption="Toggle each day on or off and set its hours, then add specific dates to close for holidays."
+  alt="The Business Hours and Holidays form with a switch and open and close times for each day, and a section for adding closed dates"
+  caption="Image shows the Business Hours page."
 />
 
-<Info>
-This schedule is a single source of truth for the whole workspace. [Appointments](/ai-and-more/appointments) already uses it to offer booking slots, and upcoming features like out-of-hours auto-replies will read the same schedule — so you only need to set it once, here.
-</Info>
+<Note>
+Business hours are used for appointment booking. They do not change anything else, such as when campaigns send or when your team can reply in chat.
+</Note>
 
 ## Weekly hours
 
-Each day of the week has its own toggle:
+Each day has an On/Off switch. Turn it on to set your opening and closing times. Turn it off to mark the day as Closed, so customers cannot book appointments on that day.
 
-- **On** — the day is open. Set an **open time** and **close time** for it.
-- **Off** — the day is marked **Closed**, with no time slots offered.
+New workspaces are open Monday to Friday, 9:00 to 17:00, with Saturday and Sunday closed by default.
 
-Times use your workspace timezone, set on the [General](/settings/general) page.
+All business hours use your workspace timezone, which you can change in [General](/settings/general).
 
-<Tip>
-Business hours don't have to be continuous 9-to-5 — each day is independent, so you can close early on some days, skip weekends, or run a split schedule by adjusting each day individually.
-</Tip>
+## Closed dates
 
-## Closed dates (holidays)
+Use **Closed Dates** to block specific dates, such as public holidays or special closures.
 
-Use **Closed dates** to block specific calendar dates regardless of the weekly schedule — for example, a public holiday that falls on a normally open day.
-
-- Pick a date and click **Add** to block it.
-- Blocked dates appear as removable tags; click the **×** on a tag to unblock it.
-- On a closed date, no slots are offered and the date is greyed out wherever your business hours are used for scheduling.
-
-<Warning>
-Changes to this page aren't saved automatically. Click **Save** in the bar at the bottom after making changes, or **Discard** to revert them.
-</Warning>
+Select a date and click **Add**. To remove a date, click the × next to it. Customers cannot book appointments on closed dates.
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="General Settings" icon="settings" href="/settings/general">
-    Configure workspace name, timezone, and date/time format.
+  <Card title="Appointments" icon="calendar-check" href="/ai-and-more/appointments">
+    See the bookings these hours make possible.
   </Card>
 
-  <Card title="Billing Details" icon="credit-card" href="/settings/billing-details">
-    Manage your company information for invoices.
+  <Card title="General Settings" icon="settings" href="/settings/general">
+    Set your workspace timezone and date format.
   </Card>
 </CardGroup>
