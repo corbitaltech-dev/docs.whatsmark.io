@@ -1,30 +1,23 @@
 ---
 title: "Opt-out"
-description: "Let customers stop your marketing messages with a keyword you choose."
+description: "Let customers unsubscribe from your marketing messages by replying with a word like STOP."
 icon: "ban"
 keywords: ["WhatsMark", "opt-out", "unsubscribe", "STOP", "marketing consent", "opt-in"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
-Customers must be able to stop receiving your marketing messages.
+Customers can stop receiving your marketing messages by replying with a keyword, like `STOP` or `UNSUBSCRIBE`. When they send one of these words, they're unsubscribed automatically.
 
-In **Settings → Opt-out**, enter the words customers can use to unsubscribe. When a customer sends one of these words, they are automatically unsubscribed from your marketing messages.
+In **Settings → Opt-out**, you choose which keywords count. WhatsMark.io comes with **STOP**, **UNSUBSCRIBE**, **OPT OUT**, and **OPTOUT** ready to use — you can edit these or add your own.
 
-WhatsMark.io includes **STOP, UNSUBSCRIBE, OPT OUT, and OPTOUT** by default. You can edit them or add your own keywords.
-
-<BrowserFrame
-  src="/settings/img/opt-out.png"
-  url="whatsmark.io/settings/opt-out"
-  alt="opt-out setting"
-  caption="Image shows opt-out setting "
+<Figure
+  src="/settings/img/opt-out-keywords.png"
+  alt="Opt-out keywords settings showing an Unsubscribe words field with STOP, UNSUBSCRIBE, OPT OUT, OPTOUT, and a Resubscribe words field with START, SUBSCRIBE, UNSTOP, OPT IN, OPTIN"
+  caption="Image shows the Opt-out keywords settings."
 />
 
-<Warning>
-If you ignore customer's opt-out, they may report your messages as spam. This can lower your WhatsApp quality rating, reduce your messaging limit, or even cause Meta to suspend your phone number.
-</Warning>
-
-## What stops, and what does not
+## Which messages are stopped
 
 Only marketing messages stop. Important messages are still sent.
 
@@ -36,7 +29,7 @@ Only marketing messages stop. Important messages are still sent.
 | Your team replying in [chat](/messaging/live-chat) | |
 
 <Note>
-Opting out applies to your whole workspace. If someone unsubscribes from one of your WhatsApp numbers, they will stop receiving marketing messages from all your WhatsApp numbers and Messenger.
+When a customer unsubscribes, it applies across your whole workspace — they stop getting marketing from all your WhatsApp numbers and Messenger.
 </Note>
 
 ## Unsubscribe words
@@ -47,7 +40,7 @@ How the matching works:
 
 - **Capital letters do not matter.** `stop`, `Stop` and `STOP` all work.
 - **The message must contain only the keyword**. For example, **stop sending me the wrong size** is treated as a normal message, not an unsubscribe.
-- **Only text messages work.** Buttons, images, or captions containing the keyword do not unsubscribe the customer.
+- **Only typed text works.** The keyword must be sent as a text message — clicking a button or sending it in an image caption won't unsubscribe the customer.
 
 ## Resubscribe words
 
@@ -55,19 +48,17 @@ The words that start your marketing again. The defaults are **START**, **SUBSCRI
 
 ## The automatic reply
 
+<Figure
+  src="/settings/img/opt-out-automatic-reply.png"
+  alt="Automatic reply settings with a Send a confirmation toggle turned on, and Unsubscribe confirmation and Resubscribe confirmation message fields"
+  caption="Image shows the automatic reply settings."
+/>
+
 By default, WhatsMark.io sends a confirmation message when someone unsubscribes or subscribes again.
 
 - **Send a confirmation** — Turn this off if you don't want to send a confirmation message.
 - **Unsubscribe confirmation** — The message sent when a customer unsubscribes.
 - **Resubscribe confirmation** — The message sent when a customer subscribes again.
-
-## Seeing who has opted out
-
-Only customers can unsubscribe or subscribe again by sending the keyword. You can't change their status manually.
-
-- **Contact Details** – Shows an Opted Out of Marketing badge.
-- **Chat Header** – Shows whether the contact has opted out.
-- **Campaign Audience** – Shows how many contacts were excluded because they opted out.
 
 ## What's next
 
