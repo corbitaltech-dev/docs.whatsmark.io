@@ -1,37 +1,38 @@
 ---
 title: "Ask Flow Steps"
-description: "Ask your customer a question, check the answer is valid, and save it against their contact record — names, phone numbers, emails, addresses, locations and files."
+description: "Collect customer information by asking questions and automatically saving their answers."
 icon: "circle-question-mark"
 keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "ask question", "ask phone", "ask email", "ask address", "ask location", "ask media", "get input"]
 ---
 
-The **Ask** steps are how your chatbot collects information. Each one sends a question, waits for the customer to reply, checks the answer looks right, and saves it so you can use it later in the flow or on the contact's record.
-
-They all work the same way, so once you've set up one, the rest are familiar.
+**Ask** steps let you collect information from **customers**, such as their **name**, **phone number**, **email address**, **location**, or **files**. Each step asks a question, validates the response, and saves the answer to the contact record for later use.
 
 ## How every Ask step works
 
 <Steps>
 <Step title="Write the question">
-  Type it into the **Message** box. Type **@** to insert a [merge field](/messaging/merge-fields), such as the contact's first name.
+Enter your question in the Question field. Depending on the step, this field may be called Question, Question Message, or Media Question. Type **@** to insert a [merge field](/messaging/merge-fields), such as the contact's first name.
+  
 </Step>
 
 <Step title="Choose where to save the answer">
-  Set the **Save Response To** field. This is the name you'll use later — for example `preferred_date`. You can save into one of your [custom fields](/core-setup/custom-fields), or into a flow variable used just for this conversation.
+  Set the **Capture Attribute** field. This is where the customer's answer will be saved. Give it a meaningful name, such as `preferred_date`. You can save the answer to a [custom fields](/core-setup/custom-fields), or to a flow variable that's only available during the current conversation.
 </Step>
 
 <Step title="Set the retries">
-  **Number of Attempts** is how many times to ask again if the reply doesn't look right. Set it to `0` to accept whatever they send first time.
+  **Number of Attempts** determines how many times the chatbot asks the question again if the customer's answer isn't valid. Set it to `0` to accept the first answer without asking again.
 </Step>
 
 <Step title="Write the retry messages">
-  **Validation Error Message** is sent just before re-asking. There's a sensible default you can use with one click. **Attempts Over Message** is sent once if they run out of attempts — the flow then carries on.
+  **Validation Error Message** s shown when the customer's answer isn't valid. You can use the default message or write your own. The same question is then asked again.
 </Step>
 </Steps>
 
-Use the saved answer later by typing **@** in any message box and picking it.
+In later message steps, type **@** in any message field to insert the saved answer as a [merge field](/messaging/merge-fields).
 
-The question and a Save Response To name are required. Number of Attempts can be set from 0 to 5, and if you set it above 0, a Validation Error Message is required as well — click **Use default message** to fill it in with one click. The question, Validation Error Message, and Attempts Over Message each support up to 1,024 characters.
+<Note>
+**Ask Address** and **Ask Location** don't have the retry fields — they save whatever the customer sends.
+</Note>
 
 ---
 
@@ -39,56 +40,74 @@ The question and a Save Response To name are required. Number of Attempts can be
 
 **What it does.** Asks for anything and checks the answer against a format you choose: **Text**, **Any**, **Number**, **Email**, **Phone**, **URL**, **Date**, or a **Regular expression** pattern.
 
-**When to use it.** The all-rounder. Names, order numbers, party size, preferred date, a review.
+**When to use it.** Use it to collect any text information, such as a customer's name, order number, party size, preferred date, or review.
+
+**Required fields**
+
+- **Question** and **Capture Attribute** are required.
+- **Attribute Format** sets what a valid answer looks like. It defaults to **Any**, which accepts whatever customer send.
+- **Pattern** is required, but only if you set the Attribute Format to **Regular expression**.
 
 **Example**
 
-> **Message:** Great! What date would you like to book?
-> **Format:** Date
-> **Save Response To:** `booking_date`
-> **Attempts:** 2
+> **Question:** Great! What date would you like to book?
+> **Attribute Format:** Date
+> **Capture Attribute:** `booking_date`
+> **Number of Attempts:** 2
 > **Validation Error Message:** That doesn't look like a date. Please send it as DD/MM/YYYY.
 
 ---
 
 ## Ask Phone
 
-**What it does.** Asks for a phone number and checks it's a valid one.
+**What it does.** Asks the customer for a phone number and checks that it's valid.
 
-**When to use it.** When you need a callback number, or a different number from the one they're messaging on.
+**When to use it.** Use it when you need to collect a phone number, such as for a callback or an alternate contact number.
+
+**Required fields**
+
+- **Question** and **Capture Attribute** are required. The format is already set to Phone for you.
 
 **Example**
 
-> **Message:** What's the best number to call you on?
-> **Save Response To:** `callback_number`
+> **Question:** What's the best number to call you on?
+> **Capture Attribute:** `callback_number`
 
 ---
 
 ## Ask Email
 
-**What it does.** Asks for an email address and checks it's properly formed.
+**What it does.** Asks the customer for an email address and checks that it's valid.
 
-**When to use it.** Sending an invoice, a booking confirmation, a brochure, or adding someone to your mailing list.
+**When to use it.** SUse it when you need the customer's email address, such as for sending invoices, booking confirmations, brochures, or newsletters.
+
+**Required fields**
+
+- **Question** and **Capture Attribute** are required. The format is already set to Email for you.
 
 **Example**
 
-> **Message:** Where should we email your invoice?
-> **Save Response To:** `email`
+> **Question:** Where should we email your invoice?
+> **Capture Attribute:** `email`
 
 ---
 
 ## Ask Address
 
-**What it does.** Asks for a street address as text.
+**What it does.** Asks the customer for their address.
 
-**When to use it.** Delivery addresses, a site visit, an on-location service.
+**When to use it.** Use it to collect a delivery address, service address, or any other location where you need to visit or deliver.
 
-**How to set it up.** As well as **Save Response To**, there's a **Formatted Response Attribute** if you want the tidied-up version saved separately.
+**Required fields**
+
+- **Question Message** and **Capture Attribute** are required.
+- **Formatted Response Attribute** is optional. Use it if you want to save the formatted address in a separate field.
+- There are no validation or retry options for this step. The customer's response is saved as it is.
 
 **Example**
 
-> **Message:** What's the full delivery address, including the pincode?
-> **Save Response To:** `delivery_address`
+> **Question Message:** What's the full delivery address, including the pincode?
+> **Capture Attribute:** `delivery_address`
 
 ---
 
@@ -96,12 +115,17 @@ The question and a Save Response To name are required. Number of Attempts can be
 
 **What it does.** Asks the customer to share their actual GPS location using WhatsApp's location button.
 
-**When to use it.** Field service, cab pickup, delivery to somewhere hard to describe in words.
+**When to use it.** Use it when you need the customer's exact location, such as for deliveries, pickups, or on-site services.
+
+**Required fields**
+
+- **Question Message** and **Capture Attribute** are required.
+- There are no validation or retry options for this step. The customer’s response is saved as it is.
 
 **Example**
 
-> **Message:** Please share your location so the driver can find you.
-> **Save Response To:** `pickup_location`
+> **Question Message:** Please share your location so the driver can find you.
+> **Capture Attribute:** `pickup_location`
 
 <Note>
 Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
@@ -111,29 +135,39 @@ Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
 
 ## Ask Media
 
-**What it does.** Asks the customer to send a file, and you choose what's allowed: **Any**, **Image**, **Video**, **Audio**, **Document** or **Sticker**.
+**What it does.** Asks the customer to upload a file. You can choose which file types are allowed, such as  **Image**, **Video**, **Audio**, **Document** or **Sticker** or **Any file**,.
 
-**When to use it.** A photo of a damaged item, a prescription, an ID document, a screenshot of an error.
+**When to use it.** Use it when you need customers to send files, **such as photos of damaged items**, **ID documents**, **prescriptions**, **screenshots**, or other **supporting documents**.
+
+**Required fields**
+
+- **Media Question** and **Capture Attribute** are required.
+- **Media Type** defaults to **Any**, which accepts any file the customer sends.
 
 **Example**
 
-> **Message:** Please send a photo of the damaged item so we can process your return.
+> **Media Question:** Please send a photo of the damaged item so we can process your return.
 > **Media Type:** Image
-> **Save Response To:** `damage_photo`
+> **Capture Attribute:** `damage_photo`
 
 ---
 
 ## Get Input
 
-**What it does.** Collects a free-form reply with a lighter set of options than **Ask Question** — you choose the **Attribute Format**: **Text**, **Any**, **Number**, **Email**, **Phone**, **URL** or **Date**.
+**What it does.** Collects a customer's response and saves it. You can choose the type of answer to accept, such as **text**, **number**, **email**, **phone number**, **URL**, **date**, or **any value**.
 
-**When to use it.** Quick, simple capture where you don't need the fuller question setup.
+**When to use it.** Use it when you need to collect a simple answer without additional validation or settings.
+
+**Required fields**
+
+- **Question** and **Capture Attribute** are required.
+- **Attribute Format** defaults to **Any**, which accepts whatever they send.
 
 **Example**
 
-> **Message:** How many people is the booking for?
+> **Question:** How many people is the booking for?
 > **Attribute Format:** Number
-> **Save Response To:** `party_size`
+> **Capture Attribute:** `party_size`
 
 ---
 

@@ -26,7 +26,7 @@ The **interactive** category flow steps let you send more than plain text. Share
 - You can add up to 10 sections, but no more than **10 items in total** across all of them.
 - Section and item titles are limited to 24 characters, and item descriptions to 72 characters.
 
-These limits come from WhatsApp, not from WhatsMark.io. See Meta's [Interactive list messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-list-messages) documentation.
+Most of these limits come from WhatsApp, not from WhatsMark.io. See Meta's [Interactive list messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-list-messages) documentation.
 
 **Example**
 
@@ -55,14 +55,14 @@ List Message is a WhatsApp-only step. It's hidden on Messenger flows.
 
 - A **file** is required — upload one, or pick one from the Media Library, before the flow can be saved.
 - **Caption** is optional, and supports up to 1,024 characters.
-- **Filename** is optional. Leave it blank and the customer sees the name of the file you uploaded.
+- **Filename** applies to documents only, and is optional. Leave it blank and the customer sees the name of the file you uploaded.
 - **Image** — JPG or PNG, up to 5 MB.
 - **Video** — MP4 or 3GP, up to 16 MB.
 - **Audio** — AAC, MP3, MP4, AMR, or OGG, up to 16 MB.
 - **Document** — PDF, Word, Excel, PowerPoint, or plain text, up to 100 MB.
 - **Sticker** — WebP, up to 100 KB still or 500 KB animated.
 
-These file types and size limits come from WhatsApp, not from WhatsMark.io. See Meta's [Media](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media) documentation.
+These file types and size limits come from WhatsApp, not from WhatsMark.io. See Meta's [Media](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/media) documentation.
 
 **Example**
 
@@ -80,7 +80,7 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 
 **What it does.** Sends a location that customers can open for directions.
 
-**When to use it.** Use it to share your **shop**, **office**, **clinic**, **restaurant**, **pickup point**, or any other **location**.
+**When to use it.** Use it to share your shop, office, clinic, restaurant, pickup point, or anywhere else a customer needs to find you.
 
 **How to set it up.** Use **Search Location** to find a place, drop a pin on the **Map**, or type the **Coordinates** in manually. Then enter the **Location Name** and **Address**.
 
@@ -125,14 +125,14 @@ Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
 
 **When to use it.** Use it to quickly acknowledge a customer's message without sending a reply.
 
-**How to set it up.** Choose the emoji. The reaction is automatically added to the customer's most recent message.
+**How to set it up.** Pick an emoji from the list. The reaction is automatically added to the customer's most recent message.
 
-- The **emoji** is required, and must be a single emoji.
+- An **emoji** is required. Pick one from the list shown — you can't type your own.
 - **Message ID** is optional. Leave it blank to react to the customer's latest message, or enter a [merge field](/messaging/merge-fields) to react to a specific message.
 
 **Example**
 
-After the customer click `Confirm booking`, add a Reaction with 👍 so they immediately see it registered, then send the confirmation text.
+After the customer taps `Confirm booking`, add a Reaction with 👍 so they can see it registered straight away, then send the confirmation text.
 
 <Note>
 Reaction is a WhatsApp-only step. It's hidden on Messenger flows.
@@ -164,7 +164,7 @@ This is a paid feature. The **Show Typing Indicator** option isn't available on 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Ask" icon="circle-help" href="/automation/flow-steps/ask">
+  <Card title="Ask" icon="circle-question-mark" href="/automation/flow-steps/ask">
     Collect names, numbers, emails and files from your customers.
   </Card>
 
