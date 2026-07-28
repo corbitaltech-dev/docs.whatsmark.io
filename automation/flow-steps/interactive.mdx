@@ -1,32 +1,38 @@
 ---
 title: "Interactive Flow Steps"
-description: "Scrollable menus, images and documents, map locations, contact cards, and emoji reactions — the flow steps that give customers something to tap or open."
+description: "Make your conversations more interactive with messages that customers can click, open, or view directly in WhatsApp."
 icon: "mouse-pointer-click"
 keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "list message", "media message", "location", "contact card", "reaction"]
 ---
 
-These steps go beyond plain text — a scrollable menu, a file, a map pin. Open the **Interactive** tab in the Flow Builder tray to find them.
+The **interactive** category flow steps let you send more than plain text. Share lists, images, videos, audio, documents, locations, contact cards, and emoji reactions to make conversations easier and more engaging.
 
 ## List Message
 
-**What it does.** Sends a message with a button that opens a scrollable menu. Options are grouped into sections, and each option becomes its own path in the builder.
+**What it does.** Sends a message with a button that opens a list of options. Each option can lead to a different step in your flow.
 
-**When to use it.** When you have more than three choices. **Button Message** caps out at three buttons — a list can hold many more, neatly grouped.
+**When to use it.** Use a **List Message** when you want customers to choose from several options. It's a better choice than **Button Messages** when you have more than three options.
 
 **How to set it up.**
 
-1. Fill in the **Message**, and optionally a **Header** and **Footer**.
+1. Fill in the **Body Text**, and optionally a **Header** and **Footer**.
 2. Set the **Button Text** — the words on the button that opens the menu, such as `View options`.
-3. Add one or more **Sections**, give each a **Section title**, and add items with a title and an optional description.
-4. In the builder, drag a line from each item's dot to whatever should happen next.
+3. Create one or more sections and add your list items. Then connect each item to the next step in your flow.
 
-The Message and Button Text fields are required, and you need at least one section with a title and one item. The Message supports up to 1,024 characters, Button Text up to 20 characters, and the optional Header and Footer up to 60 characters each. You can add up to 10 sections with up to 10 items each. Section and item titles are limited to 24 characters, and item descriptions to 72 characters.
+- **Body Text** is required, and supports up to 1,024 characters.
+- **Button Text** is required, and supports up to 20 characters.
+- **Header** and **Footer** are optional, up to 60 characters each.
+- You need at least **one Section**, with a title and at least **one item**.
+- You can add up to 10 sections, but no more than **10 items in total** across all of them.
+- Section and item titles are limited to 24 characters, and item descriptions to 72 characters.
+
+These limits come from WhatsApp, not from WhatsMark.io. See Meta's [Interactive list messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-list-messages) documentation.
 
 **Example**
 
 A salon lists its services:
 
-> **Message:** Which service would you like to book?
+> **Body Text:** Which service would you like to book?
 > **Button Text:** View services
 > **Section — Hair:** Haircut · Colour · Blow dry
 > **Section — Nails:** Manicure · Pedicure · Gel extensions
@@ -41,13 +47,22 @@ List Message is a WhatsApp-only step. It's hidden on Messenger flows.
 
 ## Media Message
 
-**What it does.** Sends an image, video, audio clip or document, with an optional caption.
+**What it does.** Sends an image, video, audio file, document, or sticker. You can also add an optional caption.
 
-**When to use it.** Your menu as a PDF, a product photo, a how-to video, a price list, a brochure.
+**When to use it.** Use it to share product photos, brochures, price lists, menus, user guides, or videos with your customers.
 
-**How to set it up.** Choose the media type, upload the file or pick one from your [Media Library](/media/media-library), and add a **Caption** if you want. For documents you can set the **file name** the customer sees, such as `brochure.pdf`.
+**How to set it up.** Choose the media type, upload a file or select one from the [Media Library](/media/media-library), and add a **Caption** if needed. For documents, you can set the **Filename** the customer sees.
 
-You must upload a file before the flow can be saved. The optional Caption supports up to 1,024 characters.
+- A **file** is required — upload one, or pick one from the Media Library, before the flow can be saved.
+- **Caption** is optional, and supports up to 1,024 characters.
+- **Filename** is optional. Leave it blank and the customer sees the name of the file you uploaded.
+- **Image** — JPG or PNG, up to 5 MB.
+- **Video** — MP4 or 3GP, up to 16 MB.
+- **Audio** — AAC, MP3, MP4, AMR, or OGG, up to 16 MB.
+- **Document** — PDF, Word, Excel, PowerPoint, or plain text, up to 100 MB.
+- **Sticker** — WebP, up to 100 KB still or 500 KB animated.
+
+These file types and size limits come from WhatsApp, not from WhatsMark.io. See Meta's [Media](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media) documentation.
 
 **Example**
 
@@ -63,13 +78,15 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 
 ## Location
 
-**What it does.** Sends a map pin, so the customer can tap it and open directions.
+**What it does.** Sends a location that customers can open for directions.
 
-**When to use it.** Sharing your shop, clinic or office address, or a pickup point.
+**When to use it.** Use it to share your **shop**, **office**, **clinic**, **restaurant**, **pickup point**, or any other **location**.
 
-**How to set it up.** Use **Search Location** to find the place, or drop a pin on the map, or type the **Latitude** and **Longitude** directly. Then fill in the **Location Name** and **Address**.
+**How to set it up.** Use **Search Location** to find a place, drop a pin on the **Map**, or type the **Coordinates** in manually. Then enter the **Location Name** and **Address**.
 
-The Latitude and Longitude fields are required. Location Name supports up to 100 characters and Address up to 200 characters.
+- **Coordinates** are required — a latitude between -90 and 90, and a longitude between -180 and 180. Searching for a location or dropping a pin fills them in automatically.
+- **Location Name** supports up to 100 characters.
+- **Address** supports up to 200 characters.
 
 **Example**
 
@@ -80,13 +97,17 @@ The Latitude and Longitude fields are required. Location Name supports up to 100
 
 ## Contact Card
 
-**What it does.** Sends a contact card the customer can save straight to their phone.
+**What it does.** Sends a contact card that customers can save to their phone.
 
-**When to use it.** Sharing a salesperson's number, your support line, or the details of a branch.
+**When to use it.** Use it to share a salesperson's contact, your support number, or another business contact.
 
-**How to set it up.** Fill in **First Name**, **Last Name**, **Phone**, and optionally **Email**, **Company** and **Title**.
+**How to set it up.** Enter the contact's **First Name**, **Last Name**, and **Phone**. You can also add an **Email**, **Company**, and **Title**.
 
-The First Name, Last Name, Company, and Title fields each support up to 100 characters, and Email up to 320 characters. You can send up to 3 contact cards in one step.
+- **First Name**, **Last Name**, and **Phone** are all required.
+- **Email**, **Company**, and **Title** are optional.
+- **First Name**, **Last Name**, **Company**, and **Title** each support up to 100 characters.
+- **Email** supports up to 320 characters.
+- You can send up to 20 contact cards in one step.
 
 **Example**
 
@@ -100,15 +121,18 @@ Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
 
 ## Reaction
 
-**What it does.** Adds an emoji reaction to a message in the chat, rather than sending a new message.
+**What it does.** Adds an emoji reaction to a customer's message instead of sending a new message.
 
-**When to use it.** A light touch that shows the message landed — a 👍 after someone confirms a booking, a ❤️ after a thank-you.
+**When to use it.** Use it to quickly acknowledge a customer's message without sending a reply.
 
-**How to set it up.** Pick the emoji, and set the **Message ID** — usually the [merge field](/messaging/merge-fields) for the customer's last message.
+**How to set it up.** Choose the emoji. The reaction is automatically added to the customer's most recent message.
+
+- The **emoji** is required, and must be a single emoji.
+- **Message ID** is optional. Leave it blank to react to the customer's latest message, or enter a [merge field](/messaging/merge-fields) to react to a specific message.
 
 **Example**
 
-After the customer taps `Confirm booking`, add a Reaction with 👍 so they immediately see it registered, then send the confirmation text.
+After the customer click `Confirm booking`, add a Reaction with 👍 so they immediately see it registered, then send the confirmation text.
 
 <Note>
 Reaction is a WhatsApp-only step. It's hidden on Messenger flows.
