@@ -5,19 +5,16 @@ icon: "user"
 keywords: ["WhatsMark", "profile", "account", "avatar", "sessions", "revoke session", "change phone number"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
-These settings apply only to your account. They do not affect anyone else in your workspace.
+Your profile settings apply only to your account and don't affect anyone else in your workspace. To open them, click your name at the bottom of the sidebar, then **My Profile**.
 
-Open them by clicking your name at the bottom of the sidebar, then My Profile.
-
-The page includes Profile and Password tabs, along with Two-Factor Authentication, Active Sessions, and Recent Activity.
+Here you'll find **Profile** and **Password** tabs, plus **Two-Factor Authentication**, **Active Sessions**, and **Recent Activity**.
 
 ## Your details
 
-<BrowserFrame
+<Figure
   src="/settings/img/profile-form.png"
-  url="whatsmark.io/settings/profile"
   alt="Profile page showing the identity card and Profile Information form with name, WhatsApp number, and email fields"
   caption="Image shows the Profile tab."
 />
@@ -25,48 +22,42 @@ The page includes Profile and Password tabs, along with Two-Factor Authenticatio
 On the **Profile** tab:
 
 - **Name** — Your display name. Required.
-- **WhatsApp number** — your own number.
+- **WhatsApp number** — your own whatsapp number.
 - **Email Address** — Your email address. You can't change it yourself.
-- **Photo** – Click the **camera** icon to upload a new photo or choose one from the **Media Library**. Supports **JPEG**, **PNG**, and **WebP** files up to **5 MB**. Click **Remove Photo** to show your initials again.
-
-<Note>
-Your photo uses a little of your workspace storage, and it also shows up in your Media Library.
-</Note>
+- **Photo** – Click the **camera** icon to upload a photo or pick one from the [Media Library](/media/media-library). Use a JPEG, PNG, or WebP file up to **5 MB**. Click **Remove Photo** to go back to your initials.
 
 <Warning>
-If you change your WhatsApp number, a 6-digit code is sent to the new number first. Type it in to confirm. Your number only changes once you enter the code.
+If you change your WhatsApp number, we send a 6-digit code to the new number. Your number only updates once you enter that code to confirm it.
 </Warning>
 
 ## Changing your password
 
-<BrowserFrame
+<Figure
   src="/settings/img/password-form.png"
-  url="whatsmark.io/settings/profile"
   alt="Password tab showing current password, new password, and confirm new password fields"
   caption="Image shows the Password tab."
 />
 
 On the **Password** tab:
 
-- **Current Password** — Enter your current password. This field is not shown if you signed in with Google, because you don't have a password.
-- **New Password** and **Confirm New Password** — Enter the same password in both fields. You can also click Generate Strong Password, then Use This Password to fill both fields automatically.
-- Click **Update Password**.
+- **Current Password** — Enter your current password. This field is hidden if you signed in with Google, since you don't have one.
+- **New Password** and **Confirm New Password** — Enter your new password in both fields. Or click **Generate Strong Password**, then **Use This Password** to fill them for you.
+- Click **Update Password** to save.
 
 ## Two-factor authentication
 
-It adds an extra layer of security. After entering your password, you'll also need to enter a code from your phone, so your account stays protected even if someone knows your password.
-<BrowserFrame
+Two-factor authentication adds an extra layer of security. After your password, you also enter a code from your phone — so your account stays safe even if someone knows your password.
+<Figure
   src="/settings/img/two-factor-card.png"
-  url="whatsmark.io/settings/profile"
   alt="Two-Factor Authentication card showing 2FA status and a Manage 2FA link"
   caption="Image shows the Two-Factor Authentication card."
 />
 
-The card tells you whether it is on or off. Click **Manage 2FA** to change it.
+Click **Manage 2FA** to turn it on or off.
 
 <Steps>
 <Step title="Confirm your password">
-  A safety check before you can change anything.
+  Enter your password to confirm it's you before making changes.
 </Step>
 
 <Step title="Scan the QR code">
@@ -74,21 +65,21 @@ The card tells you whether it is on or off. Click **Manage 2FA** to change it.
 </Step>
 
 <Step title="Enter the 6-digit code">
-  Read it from the app and click **Confirm**.
+  Your authenticator app shows a 6-digit code. Type it in and click **Confirm**.
 </Step>
 
 <Step title="Save your recovery codes">
-  Click **View Recovery Codes** and save them somewhere safe. If you lose your phone, you can use these codes to sign in. Each recovery code can only be used once.
+  Click **View Recovery Codes** and save them somewhere safe. If you ever lose your phone, these codes let you sign in — each one works only once.
 </Step>
 </Steps>
 
-To turn it off again, click **Disable two-factor** on the same page.
-
-<Tip>
-Turn this on if you are the workspace owner or an admin. It is the quickest way to make your account much harder to break into.
-</Tip>
-
 ## Active sessions
+
+<Figure
+  src="/settings/img/active-sessions-card.png"
+  alt="Active Sessions card listing a signed-in device — Google Chrome on Linux, active 1 hour ago — with a Log out button and a Sign out all others button"
+  caption="Image shows the Active Sessions card."
+/>
 
 All the devices you're signed in on are listed here. For each one, you can see the **browser, operating system, IP address, and last active time**. Your current device is marked as **This device**.
 
@@ -97,7 +88,13 @@ All the devices you're signed in on are listed here. For each one, you can see t
 
 ## Recent activity
 
-The last 5 things you did in the workspace. To see everything, and what your team has been doing, open the [Activity Log](/reporting/activity-logs).
+<Figure
+  src="/settings/img/recent-activity-card.png"
+  alt="Recent Activity card showing the last 5 actions with event badges — a sign-in, deleted campaigns, a deleted contact, and a channel disconnection — each with a timestamp"
+  caption="Image shows the Recent Activity card."
+/>
+
+This shows the last 5 actions you took in the workspace. To see your full history and what your team has been doing, open the [Activity Log](/reporting/activity-logs).
 
 ## What's next
 
