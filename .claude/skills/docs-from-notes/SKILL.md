@@ -1,6 +1,6 @@
 ---
 name: "docs-from-notes"
-description: "Turns a short, point-by-point feature description plus screenshots into a complete, on-brand docs.whatsmark.io page. Reads the images to see the real UI (labels, buttons, states), reads the author's terse bullets and instructions, then expands them into a full MDX page that follows the house voice and the proven page structure — hook, what you get, before you start, steps, check, keep going, common questions, where next — with each screenshot placed as a BrowserFrame with written alt and caption, paid features marked, Meta rules cited, and every fact flagged for verification. Expansion means wording, flow, and structure only: it never invents a label, limit, or behaviour that isn't in the notes, the image, or the verified product. Activate when the user provides feature notes and/or screenshots and wants them written up, says 'draft a page from these bullets', or hands over a filled intake template."
+description: "Turns a short, point-by-point feature description plus screenshots into a complete, on-brand docs.whatsmark.io page. Reads the images to see the real UI (labels, buttons, states), reads the author's terse bullets and instructions, then expands them into a full MDX page that follows the house voice and the proven page structure — hook, what you get, before you start, steps, check, keep going, common questions, where next — with each screenshot placed as a plain markdown image with descriptive alt text, paid features marked, Meta rules cited, and every fact flagged for verification. Expansion means wording, flow, and structure only: it never invents a label, limit, or behaviour that isn't in the notes, the image, or the verified product. Activate when the user provides feature notes and/or screenshots and wants them written up, says 'draft a page from these bullets', or hands over a filled intake template."
 ---
 
 # Docs from notes + screenshots
@@ -62,18 +62,12 @@ Expand each bullet into plain, short sentences. Outcomes before mechanics; benef
 ## Step 5 — Place the screenshots
 
 - Copy each image into the **section-local `img/` folder** (`settings/img/`, `messaging/img/`, `core-setup/channels/img/`), with a descriptive name (`canned-reply-form.png`, not `image3.png`).
-- Wrap every screenshot in `<BrowserFrame>` — never a bare `![]()`:
+- Place every screenshot as a plain markdown image — **not** `<BrowserFrame>`, which is retired:
   ```mdx
-  import { BrowserFrame } from '/snippets/browser-frame.jsx';
-
-  <BrowserFrame
-    src="/core-setup/img/canned-reply-form.png"
-    url="whatsmark.io/canned-replies"
-    alt="Describe exactly what is on screen"
-    caption="One sentence on what the reader should notice."
-  />
+  ![Describe exactly what is on screen](/core-setup/img/canned-reply-form.png)
   ```
-- `alt` = what's visible; `caption` = why it matters. One image per meaningful step. Don't front-load images at the top (looks like an ad); interleave them beside the step they illustrate.
+- The `alt` carries the full description on its own, so write it properly: the fields, their values, the state of any toggle — what a reader who can't see the image would need. Don't settle for the feature name.
+- One image per meaningful step. Don't front-load images at the top (looks like an ad); interleave them beside the step they illustrate. Leave a blank line before and after each one.
 
 ## Step 6 — Frontmatter
 
@@ -112,8 +106,6 @@ icon: "message-square-quote"
 keywords: ["WhatsMark", "WhatsMark.io", "canned replies", "quick replies", "shortcuts", "live chat"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
-
 Save the replies you type again and again, and drop them into any chat in one click. *(Canned replies need a paid plan.)*
 
 ## Add a canned reply
@@ -123,14 +115,9 @@ Save the replies you type again and again, and drop them into any chat in one cl
     Go to **Settings → Canned Replies** and click **Add Canned Reply**.
   </Step>
   <Step title="Write it">
-    Give it a **Title** you'll recognise and the **Message** you want to send.
+    Give it a **Title** you'll recognise and the **Message** you want to send. The Title is only for you; the Message is what the customer receives.
 
-    <BrowserFrame
-      src="/core-setup/img/canned-reply-form.png"
-      url="whatsmark.io/canned-replies"
-      alt="The Add Canned Reply form with a Title field and a Message field"
-      caption="The Title is only for you; the Message is what the customer receives."
-    />
+    ![The Add Canned Reply form, with a Title field reading Delivery times and a Message field containing the reply that gets sent to the customer](/core-setup/img/canned-reply-form.png)
   </Step>
   <Step title="Use it in a chat">
     In any conversation, type `/` and pick the reply to drop it into the message box.

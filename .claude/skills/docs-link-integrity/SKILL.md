@@ -43,7 +43,7 @@ grep -rn --include="*.mdx" "!\[" .
 grep -rn --include="*.mdx" "src=\"" .
 ```
 
-For each `src`, confirm the file exists on disk at that path — a `<BrowserFrame src="...">` with a typo'd path fails just as silently as a bad Lucide icon name; `mint broken-links` may not flag component props the same way it flags `href`. Check visually in `mint dev` when in doubt.
+For each `src`, confirm the file exists on disk at that path — a typo'd image path fails just as silently as a bad Lucide icon name, and `mint broken-links` doesn't check image sources the way it checks `href`. Check visually in `mint dev` when in doubt. (This applies to bare `![](...)` images, the house standard, and to the `<BrowserFrame src="...">` blocks still present on older pages.)
 
 ## §4 — Duplicate assets
 

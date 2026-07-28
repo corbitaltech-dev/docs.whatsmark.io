@@ -66,7 +66,7 @@ Every monitoring agent has `Bash`, so the grep / `mint broken-links` / `curl` / 
 | "tenant", bare "WhatsMark", "Free plan" | `docs-consistency-lint` §1–3 |
 | Jargon page (`whatsapp.mdx`: WABA, Embedded Signup, webhook) | `docs-consistency-lint` §3 → escalate to `docs-writer` |
 | Grammar errors (E1–E7) | `docs-grammar-style` |
-| Bare images vs `<BrowserFrame>`; Title vs sentence case; UI-label casing | `docs-consistency-lint` §4, §6–8 |
+| Image alt text; Title vs sentence case; UI-label casing | `docs-consistency-lint` §4, §6–8 |
 | Setup-time promise in `register.mdx` | `docs-consistency-lint` §5 |
 | `ai-and-more/` taxonomy; activity-log duplication | `docs-audit` §5 (information architecture — still needs your decision) |
 | Unverified Meta error-codes link | `docs-link-integrity` §6 |

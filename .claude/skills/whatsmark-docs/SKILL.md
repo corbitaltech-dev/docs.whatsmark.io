@@ -1,6 +1,6 @@
 ---
 name: whatsmark-docs
-description: Authoritative rules for writing and editing any page in the docs.whatsmark.io Mintlify site — plain-language voice, the WhatsMark.io brand and plan-naming rules, the banned-claims list, honest plan gating, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), image/BrowserFrame conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
+description: Authoritative rules for writing and editing any page in the docs.whatsmark.io Mintlify site — plain-language voice, the WhatsMark.io brand and plan-naming rules, the banned-claims list, honest plan gating, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), screenshot and image alt-text conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
 ---
 
 # WhatsMark.io Documentation
@@ -174,20 +174,17 @@ Lucide has **no WhatsApp brand icon** — use `message-circle`.
 
 ### Screenshots
 
-Use the shared `BrowserFrame` snippet, never a bare image:
+Use a plain markdown image. The screenshots are already framed by the capture tool, so no wrapper is needed:
 
 ```mdx
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
-
-<BrowserFrame
-  src="/core-setup/channels/img/channels-connect.png"
-  url="whatsmark.io/channels"
-  alt="Describe what is actually visible in the screenshot"
-  caption="One sentence on what the user should notice."
-/>
+![Describe what is actually visible in the screenshot](/automation/img/basic/text-message-settings-whatsapp.png)
 ```
 
-Images live in a section-local `img/` folder (`settings/img/`, `messaging/img/`, `core-setup/channels/img/`). `alt` describes what is on screen; `caption` says why it matters.
+Images live in a section-local `img/` folder (`settings/img/`, `messaging/img/`, `automation/img/basic/`). Write a real, descriptive `alt` — it carries the whole burden of describing the screenshot, so say what is actually on screen rather than naming the feature. Leave a blank line before and after the image.
+
+<Note>
+**`BrowserFrame` is retired.** Don't add new `<BrowserFrame>` blocks and don't convert bare images into them. Pages written before this change still use it, and that's fine — leave them alone unless you're already rewriting the page for another reason. The `snippets/browser-frame.jsx` snippet stays in the repo so those pages keep building.
+</Note>
 
 ### Frontmatter
 

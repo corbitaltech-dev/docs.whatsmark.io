@@ -66,5 +66,5 @@ _(the agent will flag these to verify against the product rather than guess)_
 - Brand is **WhatsMark.io** everywhere; the free plan is **Free Forever**.
 - **No prices or specific limits** on the page — those live only on Free vs. paid; the agent links there.
 - **No setup-time promises** ("in a couple of minutes").
-- Screenshots become **BrowserFrame** blocks with written alt + caption.
+- Screenshots become plain markdown images with descriptive alt text written for you.
 - Every label you give gets **verified against the product** before it ships.

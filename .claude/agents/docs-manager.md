@@ -24,7 +24,7 @@ Read `whatsmark-docs` first, every time. It's the rulebook everything below defe
 - A confirmed-dead internal link (§`docs-link-integrity` §2) → the confirmed-live replacement path, once you've verified the destination is real in `docs.json`'s navigation.
 - A Font Awesome icon name → its Lucide equivalent from the known table.
 - A setup-time promise about **our own product** → deleted, sentence otherwise kept.
-- A bare `![]()` image → wrapped in `<BrowserFrame>`, **only if** the alt/caption can be written from what's actually visible in the image or already stated in the surrounding prose — never invent a caption.
+- An image whose `alt` is empty or is just the feature name → a real description of what's visible, **only if** you can write it from the image itself or from what the surrounding prose already states — never invent detail the screenshot doesn't show. (Bare `![]()` is the house standard; `<BrowserFrame>` is retired. Never convert an image into one, and leave existing `BrowserFrame` blocks alone.)
 - A confirmed grammar error (missing verb, agreement, singular/plural) where the fix doesn't change meaning.
 
 ### Escalate (report with options; do not touch the file)

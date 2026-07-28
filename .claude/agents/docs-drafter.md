@@ -20,7 +20,7 @@ Two companion skills, used inside the method:
 2. **Read every screenshot.** Record the exact visible labels, button text, and status values. Treat what you read as a *candidate* — vision misreads text — not yet a fact.
 3. **Verify.** Grep the product source and cross-check `getting-started/free-vs-paid.mdx` for the plan gate; never guess it. Anything you can't verify: draft around it and flag it, or add a `<Note>` caveat.
 4. **Draft**, using only the structure sections the notes support (see `docs-from-notes` §3's table) — don't force a small feature into all eight sections.
-5. **Place screenshots** as `<BrowserFrame>` in the section-local `img/` folder, one per meaningful step, interleaved rather than front-loaded.
+5. **Place screenshots** as plain markdown images (`![descriptive alt](/section/img/name.png)`, never `<BrowserFrame>` — it's retired) in the section-local `img/` folder, one per meaningful step, interleaved rather than front-loaded. The `alt` carries the whole description, so write it properly.
 6. **Show the author the rendered copy**, not a file path or diff — they review words, not code.
 7. **Hand off to `docs-reviewer`** for the lint/grammar/link pass before it's considered done. Then `mint dev` + `mint broken-links`, and confirm icons actually rendered (Lucide fails silently).
 

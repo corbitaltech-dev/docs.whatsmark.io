@@ -1,6 +1,6 @@
 ---
 name: "docs-consistency-lint"
-description: "Site-wide sweep for brand, banned-word, plan-naming, formatting, and time-promise drift on docs.whatsmark.io — bare 'WhatsMark' outside keywords, 'tenant' instead of 'workspace', 'Free plan' instead of 'Free Forever', developer jargon (WABA, webhook, embedded signup) on customer pages, bare markdown images that should be <BrowserFrame>, Lucide icon typos, Title Case vs sentence case drift, inconsistent UI-label casing, and setup-time promises. Grounded in the July 2026 site audit, where every check here caught a real, repeated instance. Activate for a pre-launch sweep, a scheduled docs-manager run, or 'lint this page/section for brand and formatting issues'."
+description: "Site-wide sweep for brand, banned-word, plan-naming, formatting, and time-promise drift on docs.whatsmark.io — bare 'WhatsMark' outside keywords, 'tenant' instead of 'workspace', 'Free plan' instead of 'Free Forever', developer jargon (WABA, webhook, embedded signup) on customer pages, thin or missing image alt text, Lucide icon typos, Title Case vs sentence case drift, inconsistent UI-label casing, and setup-time promises. Grounded in the July 2026 site audit, where every check here caught a real, repeated instance. Activate for a pre-launch sweep, a scheduled docs-manager run, or 'lint this page/section for brand and formatting issues'."
 ---
 
 # Consistency lint: brand, banned words, formatting, time promises
@@ -78,13 +78,20 @@ Triage each hit:
 - **Meta's approval time** ("approval usually takes a few minutes") → soften to the house hedge, verbatim: *"Usually a few minutes. Occasionally longer."* Don't invent a different hedge per page — match existing wording site-wide.
 - **A factual, non-promise duration** ("DNS changes can take a few minutes to propagate") → leave as-is; this isn't a promise about our product.
 
-## §6 — Bare images instead of `<BrowserFrame>`
+## §6 — Image alt text
+
+Bare markdown images are the house standard (`whatsmark-docs` §5, Screenshots). **`<BrowserFrame>` is retired** — do not flag a bare `![]()` as a defect, and do not convert one into a `BrowserFrame`.
+
+What to check instead is the `alt` text, which now carries the entire description on its own:
 
 ```bash
-grep -rn --include="*.mdx" "!\[" .
+# images whose alt text is missing or too thin to describe anything
+grep -rn --include="*.mdx" -E '!\[.{0,25}\]\(' .
 ```
 
-Every hit should be wrapped in the shared snippet (`whatsmark-docs` §5, Screenshots). Converting one is mechanical *if* the file already has enough context to write `alt`/`caption` — describe what's visible (`alt`) and why it matters (`caption`); don't invent detail the screenshot doesn't show. If you can't tell what the image shows, escalate rather than writing a vague caption.
+Flag an image whose `alt` is empty, or is just the feature name (`![Text Message](...)`) rather than a description of what's on screen. A good `alt` says what is actually visible — the fields, their values, the state of any toggle.
+
+Existing `<BrowserFrame>` blocks on older pages are **not** a finding. Leave them; they still build. Only replace one if the page is already being rewritten for another reason.
 
 ## §7 — UI-label casing consistency
 
