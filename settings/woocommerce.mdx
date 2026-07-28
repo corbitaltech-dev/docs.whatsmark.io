@@ -1,30 +1,26 @@
 ---
 title: "WooCommerce"
-description: "Connect your WooCommerce store to send WhatsApp messages automatically."
+description: "Connect your WooCommerce store to automatically send WhatsApp messages to your customers."
 icon: "shopping-cart"
 keywords: ["WhatsMark", "WooCommerce", "integration", "ecommerce", "WordPress", "abandoned cart"]
 ---
 
 import { BrowserFrame, Figure } from '/snippets/browser-frame.jsx';
 
-Connect your store and WhatsMark.io to automatically sends WhatsApp messages when customers place an order, their order ships, or they leave without completing a purchase
+Connect your **WooCommerce** store with WhatsMark.io to automatically sends WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
 
 Find it under **Settings → WooCommerce**.
 
 <Note>
 **Before you start**
 
-- You must be an administrator on your WordPress site.
-- Your checkout must collect the customer's phone number. Without it, WhatsMark can't send messages. See [Make sure you can reach customers](#make-sure-you-can-reach-customers).
+- Configure your checkout to collect the customer's phone number before connecting WooCommerce. See [Make sure you can reach customers](#make-sure-you-can-reach-customers).
 </Note>
 
 ## Step 1 — Create a REST API key
-
-Complete this step in WordPress, not in WhatsMark.
-
 <Steps>
 <Step title="Open the REST API page">
-  In your WordPress admin, go to **WooCommerce → Settings → Advanced → REST API**.
+  In your WordPress admin pannel, go to **WooCommerce → Settings → Advanced → REST API Keys**.
 
   <Figure
     src="/settings/img/woo-rest-api-page.png"
@@ -58,13 +54,9 @@ Complete this step in WordPress, not in WhatsMark.
 </Step>
 </Steps>
 
-<Warning>
-WooCommerce shows the key and secret **once**.
-</Warning>
-
 ## Step 2 — Connect your store
 
-Now in WhatsMark.io, go to **Settings → WooCommerce** and fill in the three fields:
+Now in WhatsMark.io, go to **Settings → WooCommerce** and fill in the fields:
 
 - **Store URL** — your shop's web address, like `https://your-store.com`.
 - **Consumer Key** — starts with `ck_`.
@@ -88,10 +80,10 @@ If you see **Could not verify these credentials against your store,** the error 
 
 <Steps>
 <Step title="Download it">
-  On the WhatsMark.io WooCommerce page, click **Download plugin**. You get a `.zip` file — do not unzip it.
+  On the WhatsMark.io WooCommerce page, click **Download plugin**. You get a `.zip` file.
 
   <Figure
-    src="/settings/img/woo-webhook-details.png"
+    src="/settings/img/woo-plugin-download.png"
     alt="The connected WooCommerce store card with the Download plugin button"
     caption="Image shows the Download plugin button on the connected store."
   />
@@ -99,7 +91,7 @@ If you see **Could not verify these credentials against your store,** the error 
 </Step>
 
 <Step title="Upload it to WordPress">
-  In your WordPress admin, go to **Plugins → Add Plugin → Upload Plugin**, choose the zip file, and click **Install Now**.
+  In your WordPress admin, go to **Plugins → Add Plugin → Upload Plugin**, choose the zip file that you downaload, and click **Install Now**.
 
   <Figure
     src="/settings/img/woo-upload-plugin.png"
@@ -115,15 +107,13 @@ If you see **Could not verify these credentials against your store,** the error 
 
 ## Step 4 — Point the plugin at your workspace
 
-Once the plugin is active, a **WhatsMark.io** item appears in your WordPress sidebar. Click it.
+Once the plugin is active, a **WhatsMark.io** link appears in your WordPress sidebar. Click it.
 
 <Figure
   src="/settings/img/woo-plugin-menu.png"
-  alt="The WordPress admin sidebar with a WhatsMark.io menu item"
-  caption="Image shows the WhatsMark.io item in the WordPress sidebar."
+  alt="The WordPress admin sidebar with a WhatsMark.io menu link"
+  caption="Image shows the WhatsMark.io link in the WordPress sidebar."
 />
-
-You will see three fields to fill in.
 
 <Steps>
 <Step title="Webhook URL">
@@ -155,11 +145,9 @@ The plugin checks in with WhatsMark.io **once a day**, so your WooCommerce page 
 
 ## Make sure you can reach customers
 
-Everything depends on the **customer's phone number**.
+Your WooCommerce checkout must collect the customer's phone number. This allows WhatsMark to create a contact and send abandoned cart, order, and shipping messages to the right customer.
 
-Your WooCommerce checkout must collect a phone number. Without it, WhatsMark.io can't create a contact or send WhatsApp messages for **abandoned carts, orders, or shipping updates**.
-
-The easiest way to make sure every customer provides a phone number is to require an account at checkout:
+The simplest way to do that is to require an account at checkout:
 
 <Steps>
 <Step title="Open Accounts & Privacy">
@@ -167,7 +155,7 @@ The easiest way to make sure every customer provides a phone number is to requir
 </Step>
 
 <Step title="Turn off guest checkout">
-  Untick **Allow customers to place orders without an account**.
+  Uncheck **Enable guest checkout**.
 
   <Figure
     src="/settings/img/woo-guest-checkout.png"
@@ -181,40 +169,38 @@ The easiest way to make sure every customer provides a phone number is to requir
 </Step>
 </Steps>
 
-<Note>
-Guest checkout works fine with WhatsMark.io if your checkout already makes the billing phone field required. Turning it off is just the easiest way to guarantee it.
-</Note>
+## Bringing in your existing customers
+
+Click **Sync contacts** to import the customers already in your store into [Contacts](/contacts/managing-contacts).
+
+Only customers **with a phone number** are imported. The rest are skipped.
+
+
+## Your first message must be a template
+
+Every WooCommerce flow starts when something happens in your store, not when a customer messages you. For events like **abandoned carts, new orders, and shipping updates,** the customer usually hasn't contacted you yet, so you can't send a regular WhatsApp message.
+
+Start every WooCommerce flow with a [**Template Message**](/automation/flow-steps/basic#whatsapp-template). Once the customer replies, you can continue the conversation with normal text messages within [**the 24-hour messaging window**](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
 
 ## How abandoned carts work
 
-An abandoned cart is when a customer adds items to their cart but leaves without completing the purchase. A WhatsApp reminder can encourage them to come back and finish their order. You can send this reminder using an automation flow.
+An abandoned cart is when a customer adds items to their cart but leaves without completing the purchase. A WhatsApp reminder can encourage them to come back and finish their order. You can send them reminder using an automation flow.
 
 How it works:
 
 - The cart is saved as soon as the customer adds an item.
 - WhatsMark.io can only send a message after the customer enters their **phone number** during checkout.
-- If the customer stops for the time you set, the cart is marked as **abandoned** and the automation runs.
+- If the customer don't checkout for the time you set, the cart is marked as **abandoned** and the automation runs.
 - Only one reminder is sent for each abandoned cart.
-- If the customer completes the order before the reminder is sent, no message is sent.
-
-<Warning>
-Emptying the cart does **not** cancel it. If a customer removes everything and leaves, the last thing they had in the basket is still treated as abandoned.
-</Warning>
-
-<Note>
-WhatsMark checks for abandoned carts every 5 minutes, but only while your store has visitors. If your store is quiet, reminders may be sent later than the delay you set.
-</Note>
-
-The reminder can include a link to the customer's cart. The link opens their cart on the same device and browser they were using. It does not restore the cart on a different device or browser.
 
 ## Order status mapping
 
 Some WooCommerce automations need to know which order statuses your store uses.
 
-Fill these in on the WhatsMark.io WooCommerce page:
+Fill these in on the WhatsMark.io WooCommerce setting:
 
-- **Shipped status** — Select the status used when an order has been shipped, such as `Completed`.
-- **COD confirmed status** — Select the status used when a Cash on Delivery (COD) order is confirmed, such as `cod-confirmed`.
+- **Shipped status** — Enter the status used when an order has been shipped, such as `Completed`.
+- **COD confirmed status** — Enter the status used when a Cash on Delivery (COD) order is confirmed, such as `cod-confirmed`.
 
   <Figure
     src="/settings/img/woo-status-mapping.png"
@@ -222,7 +208,7 @@ Fill these in on the WhatsMark.io WooCommerce page:
     caption="Image shows the Order status mapping card."
   />
 
-Type the status exactly as WooCommerce stores it: all lowercase, hyphens instead of spaces, and no `wc-` at the front.
+Type the status exactly as WooCommerce stores it: all lowercase, hyphens instead of spaces.
 
 <Warning>
 If you leave a status blank, that automation won't run. For example, if Shipped Status is empty, no shipping messages will be sent.
@@ -230,55 +216,13 @@ If you leave a status blank, that automation won't run. For example, if Shipped 
 
 Click **Save mapping** when done.
 
-## What you can build
-
-Once connected, this things on your store can start a [flow](/automation/overview):
-
-| Event | When it happens |
-| --- | --- |
-| **Order placed** | Sent whenever a new order is created, regardless of its status. |
-| **Order shipped** | The order reaches your **Shipped status** |
-| **COD order confirmed** | A cash-on-delivery order reaches your **COD confirmed status** |
-| **Cart abandoned** | A customer leaves without paying |
-
-Build these in the [flow builder](/automation/flow-builder) by choosing WooCommerce as the trigger.
-
 ## Order details in your messages
 
 You can include **order details** in your message. Type `@` and choose a [merge fields](/messaging/merge-fields) from the WooCommerce Order group.
 
-| What you get | Token |
-| --- | --- |
-| Order total | `wc_order.total` |
-| Currency and currency symbol | `wc_order.currency`, `wc_order.currency_symbol` |
-| Order number | `wc_order.order_number` |
-| Order status | `wc_order.status` |
-| Order date | `wc_order.date_created` |
-| Payment method | `wc_order.payment_method` |
-| What they bought | `wc_order.items_summary` |
-| Cart recovery link | `wc_order.recovery_url` |
-| Tracking number and link | `wc_order.tracking_number`, `wc_order.tracking_url` |
-
-<Note>
-These fields always show the **customer's latest order or cart**. If the customer places another order before the message is sent, the new order details are used.
-
-- Recovery Link is only available for abandoned cart messages.
-- Order Number, Order Status, Order Date, and Payment Method are only available for order messages.
-</Note>
-
-## Bringing in your existing customers
-
-Click **Sync contacts** to import the customers already in your store into [Contacts](/contacts/managing-contacts).
-
-Only customers **with a phone number** are imported. The rest are skipped.
-
 ## Disconnecting
 
-Click **Disconnect** and confirm.
-
-Your flows stop firing, and WhatsMark.io tries to remove its webhooks from your store. If it cannot, you are told to remove them yourself in **WooCommerce → Settings → Advanced → Webhooks**, and to deactivate the plugin.
-
-Nothing is deleted. Your store address, your status mapping, and every contact and order already imported all stay. Reconnect later and you carry on where you left off.
+Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
 
 <Note>
 Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WhatsMark.io plugin in wordpress. The Webhook URL stays the same.
