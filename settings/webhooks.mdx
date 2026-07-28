@@ -1,19 +1,18 @@
 ---
 title: "Webhooks"
-description: "Webhook forwarding sends a copy of your WhatsApp events to your own server or app."
+description: "Webhook forwarding sends a copy of the WhatsApp event to your own server or app."
 icon: "webhook"
 keywords: ["WhatsMark", "webhooks", "webhook forwarding", "integration"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
-When something happens on your WhatsApp number such as receiving a message, a template being approved, or a delivery update, WhatsMark.io receives the event and can forward a copy to your server, CRM, or automation tools like n8n or Zapier.
+Whenever there is activity on your WhatsApp account — like an incoming message, a template approval, or a delivery update — WhatsMark.io can send the details of that event to your own server, CRM, or automation tools.
 
 Find it under **Settings → Webhooks**.
 
-<BrowserFrame
+<Figure
   src="/settings/img/webhooks-form.png"
-  url="whatsmark.io/settings/application/webhooks"
   alt="Global Webhook Config form showing webhook URL, method, signing secret, events, and a list of channel overrides"
   caption="Image shows the Webhooks page, with the global settings on top and channel overrides below."
 />
@@ -38,29 +37,27 @@ Find it under **Settings → Webhooks**.
 </Step>
 
 <Step title="Add a Signing Secret">
-  Click the refresh icon to make one. It lets your server check that a request really came from us — see [Checking a request is really from us](#checking-a-request-is-really-from-us).
-
-  <Note>
-  The refresh icon only puts a new secret in the box. It is not in use until you save.
-  </Note>
+  Click the refresh icon to generate a secret key. Your server uses this key to confirm that a webhook truly came from WhatsMark.io and wasn't sent by someone else.
 </Step>
 
 <Step title="Pick your Events">
-  Choose which events to forward to your server. There are 30 event types to choose from, including Messages, Message Echoes, Template Status Updates, and Phone Number Quality Updates. Only the events you select will be sent.
+  Choose which events to forward to your server — from 30 types like Messages, Template Status Updates, and Phone Number Quality Updates. Only the events you select are sent.
 </Step>
 
 <Step title="Save">
-  Click **Save**.
+  Click **Save** to turn on forwarding. From now on, every event you selected is sent to your webhook URL as it happens.
 </Step>
 </Steps>
 
-<Note>
-Once forwarding is switched on, the Webhook URL and at least one event are required. You cannot save without them.
-</Note>
+## Per-channel webhook settings
 
-## A different address for one channel
+By default, all your channels forward their events to the same webhook URL. If you want a specific channel to send its events somewhere else instead, you can give that channel its own webhook settings.
 
-By default every channel sends to the same address. If you want one channel to go somewhere else, give it its own settings.
+<Figure
+  src="/settings/img/webhooks-channel-override.png"
+  alt="The Channel Overrides section with a channel expanded, showing an Override toggle, Enable forwarding switch, and its own Webhook URL, Method, Signing Secret, and Events fields, with a Save Channel button"
+  caption="Image shows the Channel Overrides section with a channel's own settings."
+/>
 
 <Steps>
 <Step title="Find the channel">
@@ -76,13 +73,9 @@ By default every channel sends to the same address. If you want one channel to g
 </Step>
 
 <Step title="Click Save Channel">
-  That channel now sends to its own address. Every other channel carries on using the global settings.
+  That channel now uses its own webhook settings. All your other channels keep using the default settings.
 </Step>
 </Steps>
-
-<Warning>
-Turning **Override** back off removes that channel's settings. They are not kept for later — switch the override on again and you start with empty fields.
-</Warning>
 
 ## What's next
 

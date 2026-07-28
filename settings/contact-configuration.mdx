@@ -1,19 +1,16 @@
 ---
 title: "Contact Defaults"
-description: "Choose what happens when a new contact messages you for the first time."
+description: "Set the default details applied to new contacts that are created automatically when someone messages you."
 icon: "user-cog"
 keywords: ["WhatsMark", "WhatsMark.io", "contacts", "auto-create", "contact defaults", "assignment"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
-When someone messages you for the first time, WhatsMark.io automatically creates a contact for them.
+In **Settings → Contacts**, you decide the default type, status, source, labels, groups, and assignee given to each new contact that's created automatically.
 
-In **Settings → Contacts**, you can choose the default type, status, source, labels, groups, and assignee for every new contact
-
-<BrowserFrame
+<Figure
   src="/settings/img/contact-configuration-form.png"
-  url="whatsmark.io/settings/contacts"
   alt="Global Defaults form showing Type, status, source, assign to, WhatsApp channel, labels, and groups fields"
   caption="Image shows the Global Defaults form on the Settings → Contacts page."
 />
@@ -37,7 +34,7 @@ Type, Status, Source, Assign To and WhatsApp Channel are all required. You canno
 ### Ways to assign
 
 - **Unassigned** — No one is assigned. Any team member can reply to the contact.
-- **Round Robin** — – New contacts are assigned to team members one by one.
+- **Round Robin** — New contacts are assigned to team members one by one.
 - **Online Team Member** — Assigns the contact to a team member who is currently online. If no one is online, it assigns the contact to any team member.
 - **Custom Team Member** — Assigns every new contact to the selected team member. Choose the team member from the list.
 
@@ -48,10 +45,6 @@ A contact is created with these settings whenever a new person reaches you, and 
 - A message on [WhatsApp](/core-setup/channels/whatsapp) or [Messenger](/core-setup/channels/messenger).
 - An order from [Shopify](/settings/shopify) or [WooCommerce](/settings/woocommerce).
 - A booking made through [Appointments](/ai-and-more/appointments).
-
-## A status or label you are using cannot be deleted
-
-If a status, source, label or group is picked here, you cannot delete it. You get a message telling you where it is still used. Change the default to something else first, then delete it.
 
 ## What's next
 

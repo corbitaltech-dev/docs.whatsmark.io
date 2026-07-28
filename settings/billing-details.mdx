@@ -5,11 +5,11 @@ icon: "credit-card"
 keywords: ["WhatsMark", "billing details", "company information", "invoice", "GST", "tax"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 Go to **Settings → Billing Details** to set the company information that appears in the **Bill To** section of your invoices.
 
-<BrowserFrame
+<Figure
   src="/settings/img/billing-details-form.png"
   alt="The Billing Details form with fields for company name, email, GST number, country, state, ZIP code and address"
   caption="Image shows the Billing Details page."
@@ -23,13 +23,17 @@ Go to **Settings → Billing Details** to set the company information that appea
 - **ZIP / Postal Code** – Your ZIP or postal code.
 - **Company Address** – Your business address.
 
+<Note>
+These billing details appear on all upcoming invoices only. Invoices already generated are not updated.
+</Note>
+
 ## Your country and tax
 
-Your country decides the tax on your invoices. **GST is added for customers in India.** If you are elsewhere, no GST is charged.
+The **Country** you set here decides the tax on your invoices.
 
-<Note>
-Only the workspace owner can change these details. Everyone else sees them, but the fields are greyed out.
-</Note>
+- If your billing country is **India**, GST is added to your invoices and the total you pay.
+- If your billing country is **outside India**, no GST is charged.
+
 
 ## What's next
 
