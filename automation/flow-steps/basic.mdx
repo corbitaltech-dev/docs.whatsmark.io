@@ -63,17 +63,21 @@ Connect `Book a table` to an [**Ask Question**](/automation/flow-steps/ask#ask-q
 
 **When to use it.** Sending someone to a product page, a payment link, a booking page, or a form.
 
-**How to set it up.** Enter the **Message**, the **Button Text** (for example, `Learn More`), and the **URL** you want the button to open. You can also add an optional **Header** and **Footer**.
+**How to set it up.** Enter the **Body Text**, the **Button Text** (for example, `Learn More`), and the **Button Link** you want the button to open. You can also add an optional **Header** and **Footer**.
 
-The Message Text, Button Text, and URL fields are all required. The Message supports up to **1,024 characters**, Button Text up to **20 characters**, and the optional Header and Footer up to **60 characters** each.
+The Body Text, Button Text, and Button Link fields are all required. The Body Text supports up to **1,024 characters**, Button Text up to **20 characters**, and the optional Header and Footer up to **60 characters** each.
+
+![Call To Action settings with a Summer Sale header, a Body Text box, a Button Text of Shop now, a Button Link, a footer, and the Show typing indicator switch turned on](/automation/img/basic/call-to-action-settings.png)
 
 **Example**
 
 > **Header:** Summer Sale
-> **Message:** Everything in store is 20% off until Sunday. Tap below to browse.
+> **Body Text:** Everything in store is 20% off until Sunday. Tap below to browse.
 > **Button Text:** Shop now
-> **URL:** `https://example.com/sale`
+> **Button Link:** `https://example.com/sale`
 > **Footer:** Free delivery over ₹999
+
+![A Start Trigger set to exact match on the keyword sale, connected to a Call To Action step showing the Summer Sale message with a Shop now button](/automation/img/basic/call-to-action.png)
 
 
 ---
@@ -84,9 +88,11 @@ The Message Text, Button Text, and URL fields are all required. The Message supp
 
 **When to use it.** Use a WhatsApp Template whenever you need to message a customer who hasn't contacted you in the last [24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything). For example, to send order confirmations, delivery updates, or abandoned cart reminders. Regular text messages can't be sent outside the 24-hour messaging window, so you must use an approved WhatsApp template.
 
-**How to set it up.** Click the flow step, search for your template by name, and select it. If the template contains variables, fill in each one. Type **@** in a variable field to insert a [merge field](/messaging/merge-fields), such as the contact's name, order number, or any other available data.
+**How to set it up.** Click the flow step, search for your template by name, and select it. If the template contains variables, a **Body variable** field appears for each one — fill them in top to bottom. Type **@** in a variable field to insert a [merge field](/messaging/merge-fields), such as the contact's name, order number, or any other available data.
 
 You must select a template before the flow can be saved. Length limits come from the template itself, which Meta has already approved.
+
+![WhatsApp Template settings with the order_shipped marketing template selected and two body variable fields filled with the contact first name and order number merge fields](/automation/img/basic/whatsapp-template-settings.png)
 
 **Example**
 
@@ -95,6 +101,8 @@ A Shopify-triggered flow starts with the `order_shipped` template:
 > Hi {'{{1}}'}, your order {'{{2}}'} has shipped and should arrive in 2–3 days.
 
 Map `{'{{1}}'}` to the contact's first name and `{'{{2}}'}` to the order number.
+
+![A Start Trigger set to the Shopify Order shipped event, connected to a WhatsApp Template step previewing the shipping confirmation message with the contact first name and order number merge fields](/automation/img/basic/whatsapp-template.png)
 
 <Note>
 You need at least one approved template first. See [WhatsApp Templates](/messaging/whatsapp-templates). This step is hidden on Messenger flows.
@@ -108,9 +116,15 @@ You need at least one approved template first. See [WhatsApp Templates](/messagi
 
 **When to use it.** Use it to send approved template messages through your connected Messenger account. On Messenger you have [7 days](/messaging/live-chat#on-messenger-7-days) from the customer's last message, and a template can't reopen that window once it closes.
 
-**How to set it up.** Search for and select the Messenger template you want to use, then fill in any variables required by the template.
+**How to set it up.** Search for and select the Messenger template you want to use, then fill in any variables required by the template. A **Preview** below the fields shows how the message will look, including any buttons the template carries.
 
 You must select a template before the flow can be saved.
+
+![Messenger Template settings with the welcome_message button template selected, one body variable set to the contact first name merge field, and a preview showing the greeting with Know More and Click Here buttons](/automation/img/basic/messenger-template-settings.png)
+
+**Example**
+
+![A Start Trigger set to exact match on the keywords hi and hello, connected to a Messenger Template step previewing a greeting with Know More and Click Here buttons](/automation/img/basic/messenger-template.png)
 
 <Note>
 This step only appears on Messenger flows and is hidden on WhatsApp flows. See [Messenger Templates](/messaging/messenger-templates).
@@ -120,9 +134,11 @@ This step only appears on Messenger flows and is hidden on WhatsApp flows. See [
 
 ## Show Typing Indicator
 
-**Show Typing Indicator** — Enable this option to show a **"typing..."** indicator before the message is sent. This helps conversations feel more natural. It's available on all flow steps in this category except **Messenger Template**.
+**Show typing indicator** — Turn this on to briefly show a **"typing..."** bubble before the message is sent. This helps conversations feel more natural. It's available on all flow steps in this category except **Messenger Template**.
 
-The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation.
+The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation — the option's own helper text notes that it requires an inbound trigger.
+
+![The Show typing indicator switch turned on, with helper text explaining it briefly shows the WhatsApp typing bubble before the message sends and requires an inbound trigger](/automation/img/basic/show-typing-indicator.png)
 
 <Note>
 This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan.
@@ -140,6 +156,8 @@ A small clinic wants a flow that greets new patients and routes them:
 4. From `Opening hours`, a **Text Message** with the timings.
 5. From `Speak to reception`, a **Text Message** saying a team member will reply.
 6. From `Book an appointment`, continue into the [Ask](/automation/flow-steps/ask) steps to collect the details.
+
+![The finished clinic flow — a Start Trigger on first message leading to a welcome Text Message, then a Button Message with Book an appointment, Opening hours, and Speak to reception, each connected to an Ask Question or a Text Message](/automation/img/basic/worked-example-clinic-flow.png)
 
 
 
