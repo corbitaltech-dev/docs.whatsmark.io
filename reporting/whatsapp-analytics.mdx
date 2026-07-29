@@ -1,0 +1,85 @@
+---
+title: "WhatsApp Analytics"
+description: "View your Meta charges and message performance."
+icon: "chart-column"
+keywords: ["WhatsMark", "analytics", "WhatsApp cost", "Meta pricing", "template performance", "delivery rate"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+This page shows your **Meta WhatsApp analytics**, including **message charges, messages sent,** and **template performance**.
+
+All data comes directly from **Meta**, so the numbers are the same as Meta's billing records.
+<Figure
+  src="/reporting/img/wp-analytics.png"
+  alt="The WhatsApp Analytics page with an account and date range selector, Amount spent, Cost per paid message and Messages cards, a Cost by category breakdown, and the Cost over time and Messages over time charts"
+  caption="Image shows the WhatsApp Analytics page."
+/>
+
+## Choosing what you see
+
+Use the controls at the top of the page to choose the data you want to view.
+
+- **Account** — Select a connected WhatsApp channel. Each channel has its own analytics.
+- **Date range** — Filter data by **Today, Yesterday, Last 2 Days, Last 7 Days, Last 14 Days, Last 30 Days,** or **Last 90 Days**.
+- **Refresh** — Get the latest data from Meta.
+
+## The three numbers at the top
+
+| Card | What it means |
+| --- | --- |
+| **Amount spent** | Total amount Meta charged during the selected date range. |
+| **Cost per paid message** | Average cost of each **paid** message. |
+| **Messages** | Total messages counted by Meta, including free messages. |
+
+## Cost by category
+
+This section breaks down your Meta charges by message category:
+
+- **Marketing** — Promotional and sales messages.
+- **Utility** — Order updates, reminders, and receipts.
+- **Authentication** — One-time passcodes (OTPs).
+- **Service** — Replies inside the [24-hour window](/getting-started/concepts#two-whatsapp-rules-that-shape-everything) after a customer messages you. **These are free.**
+
+Each one shows what you spent, how many messages it covered, and its share of your bill.
+
+<Note>
+Meta sets these rates, and they differ by country and category. For current rates, see [WhatsApp Platform pricing](https://business.whatsapp.com/products/platform-pricing) from Meta.
+</Note>
+
+## The two charts
+
+- **Cost over time** — Shows how much Meta charged for your billable messages over the selected period.
+- **Messages over time** — Compares the number of **sent** and **delivered** messages over time.
+
+## Template performance
+
+See how each approved WhatsApp [templates](/messaging/whatsapp-templates) performed during the selected date range.
+
+<Figure
+  src="/reporting/img/wp-analytics-template.png"
+  alt="The Template performance table listing templates with sent, delivered, delivery rate, read, read rate and clicked columns, plus a search box and column picker"
+  caption="Image shows the Template performance table."
+/>
+
+| Column | What it means |
+| --- | --- |
+| **Template** | Template name |
+| **Sent** | Number of messages sent |
+| **Delivered** | Number of messages delivered |
+| **Delivery rate** | Percentage of sent messages that were delivered |
+| **Read** | Number of messages opened |
+| **Read rate** | Percentage of delivered messages that were read |
+| **Clicked** | Number of button or link clicks |
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Templates" icon="layout-template" href="/messaging/whatsapp-templates">
+    Create and manage the templates measured here.
+  </Card>
+
+  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
+    Your own workspace numbers, alongside Meta's.
+  </Card>
+</CardGroup>

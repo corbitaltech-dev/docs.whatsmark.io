@@ -143,6 +143,7 @@
             "group": "Reporting",
             "pages": [
               "reporting/dashboard-and-usage",
+              "reporting/whatsapp-analytics",
               "reporting/activity-logs",
               "reporting/notifications"
             ]
