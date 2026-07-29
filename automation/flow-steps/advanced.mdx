@@ -1,37 +1,45 @@
 ---
 title: "Advanced Flow Steps"
-description: "Pause, branch, tag, update the contact, call another system, and chain flows together — the flow steps that give your chatbot logic."
+description: "Control what happens next in your chatbot by adding decisions, delays, actions, and connections to other systems."
 icon: "sliders-horizontal"
 keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow"]
 ---
 
-The **Advanced** tab holds everything that isn't a message to the customer — waiting, deciding, organising, and talking to other systems. Most of these send nothing at all; they work quietly between your messages.
-
+**Advanced** category flow steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, or start another flow. These steps usually don't send a message to the customer.
 ## Waiting
 
 ### Delay
 
-**What it does.** Pauses the flow for a set time before continuing. You set **Hours**, **Minutes** and **Seconds**.
+**What it does.** Pauses the flow for a specified time before moving to the next step.
 
-**When to use it.** To stop three messages arriving in the same second. A short one or two second delay between messages feels far more human.
+**When to use it.** Use it whenever you want to wait before the next step. For example, send a follow-up after a day or remind customers about an abandoned cart after an hour.
 
-**Example.** Send the welcome text, **Delay** 2 seconds, then send the button menu.
+
+-  Hours, Minutes and Seconds all start at 0 set at least one of them to make the step wait.
+
+**Example.** A **Delay** of 24 hours, then a **Text Message**: "Just checking in — did you have any questions about the quote?"
 
 ### Wait Timer
 
-**What it does.** Pauses the flow for a longer stretch before the next step.
+**What it does.** Adds a very short delay before the flow continues. The delay is set in **milliseconds**, and the equivalent time in **seconds** is shown as you type.
 
-**When to use it.** Follow-ups. Wait a day after a quote and check in, or wait an hour after an abandoned cart before the reminder.
+**When to use it.** Use it when you need a very short pause between steps, such as making sure two messages are sent in the correct order. For longer delays, use **Delay** instead.
 
-**Example.** A **Wait Timer** of 24 hours, then a **Text Message**: "Just checking in — did you have any questions about the quote?"
+**Required fields**
+
+- **Wait Duration (ms)** is required, and must be at least 1.
+
+**Example.** Send the welcome text, a **Wait Timer** of 2000 ms, then send the button menu.
 
 ### Wait for Reply
 
-**What it does.** Pauses until the customer sends their next message, saves that message, and continues. Unlike **Delay** and **Wait Timer**, which wait a fixed amount of time, this one waits for the person.
+**What it does.** Waits for the customer's next message, saves it, and then continues the flow. Unlike **Delay**, it waits for a customer reply instead of a set amount of time.
 
-**When to use it.** When you want to capture whatever they say next without sending a prompt or checking the format. If you also want to ask a question and validate the answer, use **Ask Question** instead.
+**When to use it.** Use it when you want to save the customer's next reply without asking a question. If you want to ask a question and validate the answer, use **Ask Question** instead.
 
-**How to set it up.** Set **Store Reply In** to a variable name, such as `user_provided_id`.
+**Required fields**
+
+- **Store Reply In** is required. Use lowercase letters, numbers, and underscores, starting with a letter — for example `user_provided_id`.
 
 ---
 
@@ -39,11 +47,15 @@ The **Advanced** tab holds everything that isn't a message to the customer — w
 
 ### Condition
 
-**What it does.** Splits the flow into two paths — **YES** and **NO** — based on a single check.
+**What it does.** Checks one value and splits the flow into two paths — **YES** if the condition is met, or **NO** if it isn't.
 
-**When to use it.** A simple fork. "Did they say yes?" "Is this a returning customer?"
+**When to use it.** Use it when there are only two possible outcomes. For example, check whether the customer replied **yes**, or whether they are a returning customer.
 
-**How to set it up.** Choose the **Operator** — **Contains**, **Equals**, **Starts with**, **Ends with** or **Regex** — and type the **Value** to check against. In the builder, the green dot on the top right is the **YES** path and the red dot on the bottom right is the **NO** path.
+**How to set it up.** Choose the **Operator** — **Contains**, **Equals**, **Starts with**, **Ends with** or **Regex** — then type the **Value** you want to check against. On the step itself, the green dot on the right is the **YES** path, and the red dot below it is the **NO** path. Connect each dot to the step that should run next.
+
+**Required fields**
+
+- **Operator** and **Value** are both required. Operator defaults to **Contains**.
 
 **Example**
 
@@ -54,11 +66,19 @@ Connect the green **YES** dot to the booking steps, and the red **NO** dot to a 
 
 ### Logic Control
 
-**What it does.** The bigger sibling of **Condition**. Routes down several different paths based on rules, instead of just two.
+**What it does.** Checks a value against a set of rules and sends the flow down a different path for each one. It works like **Condition**, but it isn't limited to two paths.
 
-**When to use it.** When one value can lead to more than two outcomes.
+**When to use it.** Use it when a value can lead to more than two outcomes, such as sending a different reply for each order status.
 
-**How to set it up.** Pick what to check — the **last message**, a **flow variable** you captured earlier, a **contact custom field**, or an **API response value** — then add rules using operators including **Contains**, **Equals**, **Starts with**, **Ends with**, **Regex**, **Is empty**, **Is not empty**, and the number comparisons **&gt;**, **&lt;**, **≥** and **≤**.
+**How to set it up.** First pick what to check: the **last message**, a **flow variable** you saved earlier, a **contact custom field**, or an **API response value**. Then add a rule for each outcome you want, and connect each one to the step that should run next.
+
+The operators are **Contains**, **Equals**, **Starts with**, **Ends with**, **Regex**, **Is empty** and **Is not empty**, plus **&gt;**, **&lt;**, **≥** and **≤** for comparing numbers.
+
+**Required fields**
+
+- You need at least **one rule**.
+- Every rule needs a **field** to check.
+- Every rule needs a **value**, except when the operator is **Is empty** or **Is not empty**.
 
 **Example**
 
@@ -73,9 +93,9 @@ Check the flow variable `party_size`:
 
 ### Update Contact
 
-**What it does.** Writes to the contact's main record — **First Name**, **Last Name**, **Display Name**, **Email**, **Phone**, **Relation Type**, **Status** and **Source**.
+**What it does.** Saves information to the contact's main record. You can update their **First Name**, **Last Name**, **Display Name**, **Email**, **Phone**, **Relation Type**, **Status** and **Source**.
 
-**When to use it.** Right after you've asked for something. Ask for their name, then save it properly so every future message can greet them by it.
+**When to use it.** Use it after you've asked the customer for information, so it's saved to their record permanently. For example, ask for their name, then save it so every future message can greet them by it.
 
 **Example.** After an **Ask Email**, use Update Contact to set **Email** to `{'{{vars.email}}'}`.
 
@@ -83,21 +103,33 @@ Check the flow variable `party_size`:
 
 **What it does.** Sets one of your own [custom fields](/core-setup/custom-fields) on the contact.
 
-**When to use it.** Storing anything specific to your business — a membership number, a preferred branch, a plan type.
+**When to use it.** Use it to store information that's specific to your business, such as a membership number, a preferred branch, customer ID, or vehicle number.
 
 **How to set it up.** Choose the **Custom Field** from the list, then type the **Value**, using **@** to insert a [merge field](/messaging/merge-fields).
 
+**Required fields**
+
+- **Custom Field** and **Value** are both required.
+
 ### Assign Label
 
-**What it does.** Adds a [label](/core-setup/labels) to the contact. You can also create a new label right from the card.
+**What it does.** Adds a [label](/core-setup/labels) to the contact. If the label you need doesn't exist yet, you can create it here without leaving the flow.
 
-**When to use it.** Segmenting people by what they did. Label everyone who asked about pricing as `Hot lead`, then use that label to target a campaign later.
+**When to use it.** Use it to automatically label customers based on their conversation. For example, add the `Hot Lead` label when someone asks about pricing, then send a [campaign](/messaging/campaigns), to everyone with that label.
+
+**Required fields**
+
+- A **Label** must be selected.
 
 ### Assign Group
 
-**What it does.** Adds the contact to a [group](/core-setup/groups). You can create a new group from the card too.
+**What it does.** Adds the contact to a [group](/core-setup/groups). If the group you need doesn't exist yet, you can create it here without leaving the flow.
 
-**When to use it.** Building an audience as people come through your chatbot — a `Newsletter` group, or `Diwali Offer Interested`.
+**When to use it.** Use it to build an audience as people come through your chatbot, such as a `Newsletter` group or a `Diwali Offer Interested` group.
+
+**Required fields**
+
+- A **Group** must be selected.
 
 ---
 
@@ -105,11 +137,16 @@ Check the flow variable `party_size`:
 
 ### API Request
 
-**What it does.** Calls an external service and keeps the response for the rest of this run. Nothing is sent to the customer.
+**What it does.** Gets information from another system, such as your website, CRM, or order system, and makes it available for the rest of the flow. This step doesn't send a message to the customer.
 
-**When to use it.** Looking up an order status in your own system, checking stock, pulling a delivery ETA.
+**When to use it.** Use it when your flow needs information from another system, such as an order status, whether an item is in stock, or a delivery date.
 
-**How to set it up.** Fill in the **URL**, the **Method**, and the **Format** (**JSON** or **Form**). Add **Body Params** and headers as needed. Type **@** in any field to insert a merge field — for example, put the contact's phone number straight into the URL.
+**How to set it up.** Enter the **URL** you want to call, then choose the **Method** and the **Format** (**JSON** or **Form**). Add **Body Params** and headers if the other system needs them. Type **@** in any field to insert a merge field — for example, to put the contact's phone number into the URL.
+
+**Required fields**
+
+- **URL** is the only required field.
+- **Method**, **Format**, **Body Params** and headers are all optional, The default settings work for most API requests, so you only need to change them if your API requires it.
 
 **Example**
 
@@ -119,15 +156,20 @@ Check the flow variable `party_size`:
 
 ### Save Response
 
-**What it does.** Pulls values out of an **API Request** response and turns them into merge fields you can use in later messages.
+**What it does.** Saves information returned by an **API Request**, such as an **order status**, **tracking number**, or **delivery date**, so you can use it in later messages or steps.
 
-**When to use it.** Always right after an **API Request** — on its own, the response isn't usable in a message until you've mapped it.
+**When to use it.** Add this step after an **API Request** to save the information you need. Once saved, you can use it in later messages, conditions, and other flow steps.
 
 **How to set it up.**
 
-1. In the **Source API Request Node** box, pick the API Request step you added earlier in the flow.
-2. Add a mapping: the **Source Path** is the dot-path into the response, such as `data.status`, and the **Variable Name** is what you'll call it later.
-3. In a later message, type **@** and pick your variable.
+1. In the **Source API Request Node** box, choose the API Request step you added earlier in the flow.
+2. Add a mapping. The **Source Path** points to the piece of information you want, written with a dot between each level — for example `data.status`. The **Variable Name** is the name you'll use to insert it later.
+3. In any later message, type **@** and select the saved variable to insert its value.
+
+**Required fields**
+
+- **Source API Request Node** is required.
+- You need at least **one mapping**, and each one needs both a **Source Path** and a **Variable Name**.
 
 **Example**
 
@@ -141,19 +183,43 @@ Map `data.tracking_url` to the variable `tracking_url`, then send:
 
 ### Connect Flow
 
-**What it does.** Hands the conversation over to a different automation flow.
+**What it does.** Continues the conversation in another automation flow.
 
-**When to use it.** Reuse. Build one "Book an appointment" flow and call it from your sales flow, your support flow and your website flow, instead of rebuilding it three times.
+**When to use it.** Use it when the same set of steps is needed in multiple flows. Build it once, then reuse it wherever you need it.
 
-**How to set it up.** Pick the **Target Flow**, then set **On Completion** to either **Resume parent flow** (come back and carry on here) or **End parent flow** (stop here once the other flow finishes).
+**How to set it up.** Choose the **Target Flow**, then set **On Completion** to decide what happens when that flow finishes. **Resume parent flow** comes back and carries on from here, and **End parent flow** stops the conversation there.
+
+**Required fields**
+
+- **Target Flow** is required.
+- **On Completion** has a default, so you only change it if you want the other behaviour.
+
+**Which flows you can choose.** The **Target Flow** list only shows flows you can actually connect to:
+
+- The flow must be **Active**. Drafts and inactive flows don't appear in the list.
+- It must be a **different flow**, because a flow can't connect to itself.
+- It must be on the **same channel type**. A WhatsApp flow can only connect to another WhatsApp flow, and a Messenger flow to another Messenger flow.
+
+If the list is empty, you'll see a message saying there are no other flows available — create and activate a second flow on the same channel type first.
+
+<Note>
+This connects to your **automation flows** — the ones you build here in the flow builder. It isn't for [WhatsApp Flows](/ai-and-more/whatsapp-flows), which are Meta's interactive form screens and are set up separately.
+</Note>
 
 ### Sequence
 
-**What it does.** Sends a series of follow-up messages spaced out over time, each with its own gap set in **Minutes**, **Hours**, **Days** or **Weeks**.
+**What it does.** Sends a series of follow-up messages automatically over a period of time. You set the gap before each message in **Minutes**, **Hours**, **Days** or **Weeks**.
 
-**When to use it.** Nurture and reminder journeys. A three-message onboarding series over a week, or a reminder sequence after someone abandons a cart.
+**When to use it.** Use it when you want to follow up more than once over several days, such as a three-message welcome series across a week, or a set of reminders after someone leaves items in their cart.
 
-**How to set it up.** Give the sequence a name, then add each message with its delay and choose how to send it.
+**How to set it up.** Give the sequence a name, then add each message in turn. For every message, set how long to wait before it's sent and choose how you want to send it.
+
+**Required fields**
+
+- You need at least **one message** in the sequence.
+- Each message needs a **Delay** of at least 1.
+- Each message needs its content — the **message text**, or a selected **template** if you're sending it as one.
+- **Sequence Name** is optional.
 
 **Example**
 
