@@ -1,41 +1,46 @@
 ---
 title: "Integration Flow Steps"
-description: "Send what your chatbot collects straight into Google Sheets, or turn a booking into a Google Calendar event."
+description: "Automatically send information collected by your chatbot to Google Sheets, or create Google Calendar events from bookings."
 icon: "cloud"
 keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "google sheets", "google calendar", "integrations", "automation"]
 ---
 
-The **Integrations** tab connects your chatbot to your Google account, so the details you collect on WhatsApp end up where your team already works. Neither of these steps sends anything to the customer — they work quietly in the background.
+The **Integrations** category flow steps lets your chatbot work with Google services. Automatically save customer information to Google Sheets or create Google Calendar events. These steps run in the background and don't send any message to the customer.
 
 <Note>
-Both steps need a connected Google account. Set one up first in [Google Accounts](/settings/google-accounts). They're also paid features — on the Free Forever plan the tiles appear with a padlock, and clicking one opens an upgrade prompt.
+Both steps need a connected Google account. Set one up first in [Google Accounts](/settings/google-accounts).
 </Note>
 
 ## Google Sheets
 
-**What it does.** Writes a new row to one of your Google Sheets every time the flow reaches this point.
+**What it does.** Adds a new row to a Google Sheet each time the flow reaches this step.
 
-**When to use it.** Keeping a running log of leads, bookings, orders or survey answers that your whole team can see and sort — without anyone copying anything by hand.
+**When to use it.** Use it to automatically save **leads**, **bookings**, **orders**, **survey responses**, or any other customer information in Google Sheets.
 
 **How to set it up.**
 
 <Steps>
-<Step title="Choose the Google Account">
+<Step title="Choose the Google Account (required)">
   Pick a connected account, or click **Connect another account** to add one.
 </Step>
 
-<Step title="Pick the Spreadsheet">
-  Your spreadsheets load automatically. Choose the one you want to write into.
+<Step title="Pick the Spreadsheet (required)">
+  Your spreadsheets load automatically. Choose the one you want to write into, or type a name in the box below the list and click **Create** to make a new one on the spot.
 </Step>
 
 <Step title="Set the Sheet / Tab Name">
-  The tab within that spreadsheet. Defaults to `Sheet1`.
+  Optional. The tab within that spreadsheet — leave it as `Sheet1` unless you keep your data on a differently named tab.
 </Step>
 
-<Step title="Map your columns">
-  Click **Add Column** for each one. Give it a header, then set the value — type **@** to insert a [merge field](/messaging/merge-fields) such as the contact's name or an answer you collected earlier.
+<Step title="Map your Column Values (required)">
+  Click **Add Column** for each one. Give it a header, then set the value — type **@** to insert a [merge field](/messaging/merge-fields) such as the contact's name or an answer you collected earlier. Add at least one column, or the step has nothing to write.
 </Step>
 </Steps>
+
+<Note>
+Fields marked with a red asterisk (*) are required. If any required field is missing, the step is highlighted in red and you won't be able to save the flow until it's completed.
+
+</Note>
 
 **Example**
 
@@ -65,22 +70,30 @@ Put this step at the very end of your flow, after every question has been answer
 **How to set it up.**
 
 <Steps>
-<Step title="Choose the Google Account and Calendar">
-  Pick the connected account, then which of its calendars the event should go into.
+<Step title="Choose the Google Account (required)">
+  Pick the connected account, or click **Connect another account** to add one.
 </Step>
 
-<Step title="Write the event title">
+<Step title="Choose the Calendar">
+  Optional. Pick which of that account's calendars the event should go into, or create a new one by name. Leave it blank and the event goes to your primary calendar.
+</Step>
+
+<Step title="Write the Event Title (required)">
   For example, `Appointment with {'{{contact.first_name}}'}`.
 </Step>
 
-<Step title="Set the date and time">
-  Fill in **Start Date**, **Start Time**, **End Date** and **End Time**. You can type a fixed date, or press **@** to use an answer the customer gave earlier — it's converted into a proper date and time for you.
+<Step title="Set the Start Date (required)">
+  Type a date in any common format — `2026-06-04`, `04/06/2026`, `June 4` — or press **@** to use an answer the customer gave earlier. It's converted into a proper date for you.
 </Step>
 
-<Step title="Add the extra details">
-  **Location**, **Attendee Email** and **Description** are all optional. Use **@** in any of them.
+<Step title="Add the optional details">
+  **Start Time**, **End Date**, **End Time**, **Location**, **Attendee Email** and **Description** are all optional, and **@** works in any of them. Leave **End Time** blank and the event runs for an hour from the start. Fill in **Attendee Email** and the customer is sent a calendar invite.
 </Step>
 </Steps>
+
+<Note>
+Only **Google Account**, **Event Title** and **Start Date** are required — they're the ones marked with a red asterisk in the panel. Everything else can be left empty.
+</Note>
 
 **Example**
 
@@ -93,7 +106,7 @@ A clinic turns a WhatsApp booking into a calendar entry:
 > **Attendee Email:** {'{{contact.email}}'}
 > **Description:** Booked through WhatsApp. Phone: {'{{contact.phone}}'}
 
-The doctor sees it in their calendar, and the patient gets a Google invite by email.
+The doctor sees it in their calendar, and because **Attendee Email** was filled in, the patient gets a Google invite by email too.
 
 ---
 
