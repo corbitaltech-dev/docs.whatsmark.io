@@ -7,6 +7,8 @@ keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "list message", "media mes
 
 The **interactive** category flow steps let you send more than plain text. Share lists, images, videos, audio, documents, locations, contact cards, and emoji reactions to make conversations easier and more engaging.
 
+![Flow Builder with the Interactive tab selected, showing the List Message, Media Message, Location, Contact Card, and Reaction tiles, and a flow connecting a Start Trigger to a List Message whose options lead to a Media Message, a Location, and a Contact Card](/automation/img/interactive/interactive-flow-steps.png)
+
 ## List Message
 
 **What it does.** Sends a message with a button that opens a list of options. Each option can lead to a different step in your flow.
@@ -28,6 +30,8 @@ The **interactive** category flow steps let you send more than plain text. Share
 
 Most of these limits come from WhatsApp, not from WhatsMark.io. See Meta's [Interactive list messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-list-messages) documentation.
 
+![List Message settings with Header, Body Text, Footer, and Button Text fields, and a Sections area containing a section with two items, plus Add Item and Add Section buttons](/automation/img/interactive/list-message-settings.png)
+
 **Example**
 
 A salon lists its services:
@@ -38,6 +42,8 @@ A salon lists its services:
 > **Section — Nails:** Manicure · Pedicure · Gel extensions
 
 Each item leads to an **Ask Question** asking for a preferred date.
+
+![A Start Trigger connected to a List Message step previewing a Book an Appointment menu with a View Services button and a Hair Services section listing Haircut and Hair Colour](/automation/img/interactive/list-message.png)
 
 <Note>
 List Message is a WhatsApp-only step. It's hidden on Messenger flows.
@@ -64,11 +70,15 @@ List Message is a WhatsApp-only step. It's hidden on Messenger flows.
 
 These file types and size limits come from WhatsApp, not from WhatsMark.io. See Meta's [Media](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/media) documentation.
 
+![Media Message settings with a Media Type set to Image, an uploaded file named sale.png showing a New Arrivals catalog preview, and a Caption field describing the product catalog](/automation/img/interactive/media-message-settings.png)
+
 **Example**
 
-> **Type:** Document
-> **File name:** Sunrise-Cafe-Menu.pdf
-> **Caption:** Here's our full menu. Reply **book** whenever you're ready to reserve a table.
+> **Type:** Image
+> **File:** sale.png
+> **Caption:** 🛍️ Here's our latest product catalog. Browse our collection and let us know if you'd like more information about any item.
+
+![A flow connecting a Start Trigger to a List Message and then a Media Message previewing a New Arrivals product catalog image with a caption](/automation/img/interactive/media-message.png)
 
 <Tip>
 Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy than `file_8823.pdf`.
@@ -88,10 +98,14 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 - **Location Name** supports up to 100 characters.
 - **Address** supports up to 200 characters.
 
+![Location settings with a search box, a map showing a dropped pin, latitude and longitude fields, and Location Name and Address fields filled in for Sunrise Cafe](/automation/img/interactive/location-settings.png)
+
 **Example**
 
 > **Location Name:** Sunrise Cafe
 > **Address:** 12 Park Road, Mumbai 400001
+
+![A flow connecting a Start Trigger to a List Message and then a Location step previewing a map pin for the business store with its name and address](/automation/img/interactive/location.png)
 
 ---
 
@@ -109,9 +123,13 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 - **Email** supports up to 320 characters.
 - You can send up to 20 contact cards in one step.
 
+![Contact Card settings with First Name, Last Name, Phone, Email, Company, and Title fields filled in for a StyleHub Support contact, and an Add Another Contact button](/automation/img/interactive/contact-card-settings.png)
+
 **Example**
 
-> Priya Sharma · Sales Manager · Sunrise Cafe · +91 98765 43210
+> StyleHub Support · Customer Support · StyleHub · support@stylehub.com
+
+![A flow connecting a Start Trigger to a List Message and then a Contact Card step previewing a StyleHub Support contact with Message and Save contact buttons](/automation/img/interactive/contact-card.png)
 
 <Note>
 Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
@@ -128,7 +146,9 @@ Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
 **How to set it up.** Pick an emoji from the list. The reaction is automatically added to the customer's most recent message.
 
 - An **emoji** is required. Pick one from the list shown — you can't type your own.
-- **Message ID** is optional. Leave it blank to react to the customer's latest message, or enter a [merge field](/messaging/merge-fields) to react to a specific message.
+- **Message ID** is required. It comes pre-filled with `{{last_message_id}}`, which reacts to the customer's latest message — leave it as is, or replace it with a different [merge field](/messaging/merge-fields) to react to a specific message.
+
+![Reaction settings with a grid of emoji to choose from and a Message ID field noting that leaving it blank reacts to the latest inbound message](/automation/img/interactive/reaction-settings.png)
 
 **Example**
 
@@ -151,11 +171,15 @@ A furniture shop answers a product enquiry:
 5. From `Visit the showroom`, a **Location** with the shop address.
 6. From `Talk to sales`, a **Contact Card** for the sales manager.
 
+![The finished clinic flow — a Start Trigger on first message leading to a welcome Text Message, then a Button Message with Book an appointment, Opening hours, and Speak to reception, each connected to an Ask Question or a Text Message](/automation/img/interactive/worked-example-furniture.png)
+
+
 ## Show Typing Indicator
 
 **Show Typing Indicator** — Available on every flow step in this category except **Reaction**. When enabled, the customer sees a "typing..." indicator before the message is sent, making the conversation feel more natural.
 
-The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation.
+
+![The Show typing indicator switch turned on, with helper text explaining it briefly shows the WhatsApp typing bubble before the message sends and requires an inbound trigger](/automation/img/basic/show-typing-indicator.png)
 
 <Note>
 This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan.
