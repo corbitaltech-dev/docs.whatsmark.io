@@ -7,6 +7,8 @@ keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "ask question", "ask phone
 
 **Ask** category flow steps let you collect information from **customers**, such as their **name**, **phone number**, **email address**, **location**, or **files**. Each step asks a question, validates the response, and saves the answer to the contact record for later use.
 
+![Flow Builder with the Ask tab selected, showing the Ask Question, Ask Phone, Ask Email, Ask Address, Ask Location, Ask Media, and Get Input tiles, and a job application flow connecting a Start Trigger to an Ask Question, an Ask Phone, an Ask Media, and a closing Text Message](/automation/img/ask/ask-flow-steps.png)
+
 ## How every Ask step works
 
 <Steps>
@@ -24,7 +26,7 @@ Enter your question in the Question field. Depending on the step, this field may
 </Step>
 
 <Step title="Write the retry messages">
-  **Validation Error Message** s shown when the customer's answer isn't valid. You can use the default message or write your own. The same question is then asked again.
+  **Validation Error Message** is shown when the customer's answer isn't valid. You can use the default message or write your own. The same question is then asked again.
 </Step>
 </Steps>
 
@@ -48,13 +50,17 @@ In later message steps, type **@** in any message field to insert the saved answ
 - **Attribute Format** sets what a valid answer looks like. It defaults to **Any**, which accepts whatever customer send.
 - **Pattern** is required, but only if you set the Attribute Format to **Regular expression**.
 
+![Ask Question settings with a Question box, a Capture Attribute of booking_date, an Attribute Format of Date, Number of Attempts set to 2, a Validation Error Message, and an Attempts Over Message](/automation/img/ask/ask-question-settings.png)
+
 **Example**
 
-> **Question:** Great! What date would you like to book?
+> **Question:** What date would you like to book?
 > **Attribute Format:** Date
 > **Capture Attribute:** `booking_date`
 > **Number of Attempts:** 2
 > **Validation Error Message:** That doesn't look like a date. Please send it as DD/MM/YYYY.
+
+![A Start Trigger set to exact match on the keywords Book and Schedule, connected to an Ask Question step asking what date the customer would like to book](/automation/img/ask/ask-question.png)
 
 ---
 
@@ -68,10 +74,14 @@ In later message steps, type **@** in any message field to insert the saved answ
 
 - **Question** and **Capture Attribute** are required. The format is already set to Phone for you.
 
+![Ask Phone settings with a Question box reading Please send your phone number, helper text saying it validates as a phone number, a Capture Attribute of callback_number, and the Show typing indicator switch turned off](/automation/img/ask/ask-phone-settings.png)
+
 **Example**
 
-> **Question:** What's the best number to call you on?
+> **Question:** Please send your phone number
 > **Capture Attribute:** `callback_number`
+
+![A Start Trigger set to exact match on the keywords Book and Schedule, connected to an Ask Phone step asking the customer to send their phone number](/automation/img/ask/ask-phone.png)
 
 ---
 
@@ -79,16 +89,20 @@ In later message steps, type **@** in any message field to insert the saved answ
 
 **What it does.** Asks the customer for an email address and checks that it's valid.
 
-**When to use it.** SUse it when you need the customer's email address, such as for sending invoices, booking confirmations, brochures, or newsletters.
+**When to use it.** Use it when you need the customer's email address, such as for sending invoices, booking confirmations, brochures, or newsletters.
 
 **Required fields**
 
 - **Question** and **Capture Attribute** are required. The format is already set to Email for you.
 
+![Ask Email settings with a Question box reading Where should we email your invoice, helper text saying it validates as an email address, a Capture Attribute of email, and the Show typing indicator switch turned off](/automation/img/ask/ask-email-settings.png)
+
 **Example**
 
 > **Question:** Where should we email your invoice?
 > **Capture Attribute:** `email`
+
+![A Start Trigger set to exact match on the keyword menu, connected to an Ask Email step asking where to email the invoice](/automation/img/ask/ask-email.png)
 
 ---
 
@@ -104,10 +118,14 @@ In later message steps, type **@** in any message field to insert the saved answ
 - **Formatted Response Attribute** is optional. Use it if you want to save the formatted address in a separate field.
 - There are no validation or retry options for this step. The customer's response is saved as it is.
 
+![Ask Address settings with a Question Message box asking for the full delivery address including the pincode, a Capture Attribute of delivery_address, an empty Formatted Response Attribute, and the Show typing indicator switch turned off](/automation/img/ask/ask-address-settings.png)
+
 **Example**
 
 > **Question Message:** What's the full delivery address, including the pincode?
 > **Capture Attribute:** `delivery_address`
+
+![A Start Trigger set to the WooCommerce Order shipped event, connected to an Ask Address step asking for the full delivery address including the pincode](/automation/img/ask/ask-address.png)
 
 ---
 
@@ -122,10 +140,14 @@ In later message steps, type **@** in any message field to insert the saved answ
 - **Question Message** and **Capture Attribute** are required.
 - There are no validation or retry options for this step. The customer’s response is saved as it is.
 
+![Ask Location settings with a note explaining that WhatsApp shows a Send location button the contact taps to share their GPS location, a Question Message box, a Capture Attribute of pickup_location, and helper text saying the answer is stored as lat, lng](/automation/img/ask/ask-location-settings.png)
+
 **Example**
 
 > **Question Message:** Please share your location so the driver can find you.
 > **Capture Attribute:** `pickup_location`
+
+![A Start Trigger set to exact match on the keyword location, connected to an Ask Location step asking the customer to share their location so the driver can find them](/automation/img/ask/ask-location.png)
 
 <Note>
 Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
@@ -144,11 +166,15 @@ Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
 - **Media Question** and **Capture Attribute** are required.
 - **Media Type** defaults to **Any**, which accepts any file the customer sends.
 
+![Ask Media settings with a Media Question box asking for a photo of the damaged item, a Capture Attribute of damage_photo, a Media Type of Image, Number of Attempts set to 1, a Validation Error Message, and an Attempts Over Message](/automation/img/ask/ask-media-settings.png)
+
 **Example**
 
 > **Media Question:** Please send a photo of the damaged item so we can process your return.
 > **Media Type:** Image
 > **Capture Attribute:** `damage_photo`
+
+![A Start Trigger set to exact match on the keywords replace and damage, connected to an Ask Media step asking for a photo of the damaged item](/automation/img/ask/ask-media.png)
 
 ---
 
@@ -163,11 +189,15 @@ Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
 - **Question** and **Capture Attribute** are required.
 - **Attribute Format** defaults to **Any**, which accepts whatever they send.
 
+![Get Input settings with a Question box asking how many people the booking is for, a Capture Attribute of party_size, an Attribute Format of Any, Number of Attempts set to 0, and the Show typing indicator switch turned off](/automation/img/ask/get-input-settings.png)
+
 **Example**
 
 > **Question:** How many people is the booking for?
 > **Attribute Format:** Number
 > **Capture Attribute:** `party_size`
+
+![A Start Trigger set to exact match on the keyword book, connected to a Get Input step asking how many people the booking is for](/automation/img/ask/get-input.png)
 
 ---
 
@@ -181,6 +211,8 @@ A restaurant collects a booking:
 4. **Ask Question** (Date) — "Which date?" → `booking_date`
 5. **Ask Phone** — "What number can we call if anything changes?" → `callback_number`
 6. **Text Message** — "Thanks {'{{contact.first_name}}'}! We've noted a table for {'{{vars.party_size}}'} on {'{{vars.booking_date}}'} under {'{{vars.booking_name}}'}. We'll confirm shortly."
+
+![The finished booking flow — a Start Trigger on the keyword book leading to a Button Message with a Book a table button, then an Ask Question for the booking name, a Get Input for the party size, an Ask Question for the date, an Ask Phone for the callback number, and a closing Text Message that confirms the booking using the saved answers as merge fields](/automation/img/ask/worked-example-booking-flow.png)
 
 Add a **Google Sheets** step at the end and every booking lands in a spreadsheet automatically.
 
