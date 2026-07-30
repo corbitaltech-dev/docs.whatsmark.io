@@ -228,11 +228,15 @@ The response is only kept for the rest of that run. Add a **Save Response** step
 - **Source API Request Node** is required.
 - You need at least **one mapping**, and each one needs both a **Source Path** and a **Variable Name**.
 
+![API Request settings with a note explaining the response is kept for this run and a Save Response step is needed to pull values out of it, a URL box containing a merge field, Method set to GET, Format set to JSON, and an empty Headers row with an Add Header button](/automation/img/advance/save-response-settings.png)
+
 **Example**
 
 Map `data.tracking_url` to the variable `tracking_url`, then send:
 
 > Your order is on its way! Track it here: {'{{vars.tracking_url}}'}
+
+![Flow builder example showing a List Message with a Track My Order option, leading to an Ask Question step, an API Request step, a Save Response step mapping the order status, and a Text Message step sending the order status and tracking URL](/automation/img/advance/save-response.png)
 
 ---
 
@@ -251,6 +255,9 @@ Map `data.tracking_url` to the variable `tracking_url`, then send:
 - **Target Flow** is required.
 - **On Completion** has a default, so you only change it if you want the other behaviour.
 
+![Connect Flow settings with a Target Flow dropdown to choose the flow to continue in, and an On Completion dropdown to choose whether the parent flow resumes or ends](/automation/img/advance/connecting-flows-settings.png)
+
+
 **Which flows you can choose.** The **Target Flow** list only shows flows you can actually connect to:
 
 - The flow must be **Active**. Drafts and inactive flows don't appear in the list.
@@ -259,9 +266,7 @@ Map `data.tracking_url` to the variable `tracking_url`, then send:
 
 If the list is empty, you'll see a message saying there are no other flows available — create and activate a second flow on the same channel type first.
 
-<Note>
-This connects to your **automation flows** — the ones you build here in the flow builder. It isn't for [WhatsApp Flows](/ai-and-more/whatsapp-flows), which are Meta's interactive form screens and are set up separately.
-</Note>
+![Flow builder example showing a Button Message with Store Hours and Contact Support options, where Store Hours connects to a Connect Flow step targeting the Store Hours flow](/automation/img/advance/connect-flow-example.png)
 
 ### Sequence
 
@@ -278,11 +283,14 @@ This connects to your **automation flows** — the ones you build here in the fl
 - Each message needs its content — the **message text**, or a selected **template** if you're sending it as one.
 - **Sequence Name** is optional.
 
+![Sequence settings showing a Sequence Name field and Step 1 with a Delay of 1 Minutes, Send as set to Message, and a Message Text box](/automation/img/advance/sequence-settings.png)
+
 **Example**
 
-> **Message 1** — after 1 hour: "Still thinking it over? Here's a 10% code: WELCOME10."
-> **Message 2** — after 1 day: "Your cart is still saved. Need a hand choosing?"
-> **Message 3** — after 3 days: "Last reminder — your code expires tonight."
+> **Step 1** — after 1 day: "🎉 Enjoy 10% off your next order with code SAVE10."
+> **Step 2** — after 3 days: "🔥 Don't miss our latest deals! Shop now and save on your favorites."
+
+![Flow builder example showing a Button Message asking if the contact wants special offers, with a Yes, notify me option leading to two chained Sequence steps](/automation/img/advance/sequence-example.png)
 
 ---
 
@@ -298,6 +306,8 @@ An online shop handles "where is my order?":
    - **Equals** `shipped` → **Text Message** with the tracking link.
    - **Equals** `processing` → **Text Message** saying it ships within 24 hours.
    - **Is empty** → **Assign Label** `Needs human help`, then a message saying the team will reply.
+
+![Flow builder example showing the full order-tracking flow: Start Trigger, Ask Question, API Request, Save Response, Logic Control routing by order status, and two Text Message replies for shipped and not-found orders](/automation/img/advance/worked-example.png)
 
 ## What's next
 
