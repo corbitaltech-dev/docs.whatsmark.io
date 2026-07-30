@@ -37,12 +37,20 @@
       "destination": "/core-setup/ai-prompts"
     },
     {
+      "source": "/ai-and-more/appointments",
+      "destination": "/appointment-and-flow/appointments"
+    },
+    {
+      "source": "/ai-and-more/whatsapp-flows",
+      "destination": "/appointment-and-flow/whatsapp-flows"
+    },
+    {
       "source": "/automation/appointments",
-      "destination": "/ai-and-more/appointments"
+      "destination": "/appointment-and-flow/appointments"
     },
     {
       "source": "/automation/whatsapp-flows",
-      "destination": "/ai-and-more/whatsapp-flows"
+      "destination": "/appointment-and-flow/whatsapp-flows"
     },
     {
       "source": "/automation/message-types/basic",
@@ -135,8 +143,8 @@
           {
             "group": "Appointments & Flows",
             "pages": [
-              "ai-and-more/whatsapp-flows",
-              "ai-and-more/appointments"
+              "appointment-and-flow/whatsapp-flows",
+              "appointment-and-flow/appointments"
             ]
           },
           {
