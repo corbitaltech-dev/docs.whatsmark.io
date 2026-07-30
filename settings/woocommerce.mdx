@@ -176,6 +176,14 @@ Click **Sync contacts** to import the customers already in your store into [Cont
 Only customers **with a phone number** are imported. The rest are skipped.
 
 
+## What you can build
+
+After connecting your store, WooCommerce events such as **new orders, order updates,** and **abandoned carts** can automatically start an automation flow.
+
+If you want a flow to run only for a specific order status, use the **Order Update trigger** and add a [WooCommerce Condition](/automation/flow-steps/integrations#woocommerce-condition) node to check the order status. For example, you can send a message only when an order is marked as **shipped**.
+
+See [WooCommerce triggers](/automation/flow-builder#woocommerce) for the full list and [WooCommerce Condition](/automation/flow-steps/integrations#woocommerce-condition) for the branching step.
+
 ## Your first message must be a template
 
 Every WooCommerce flow starts when something happens in your store, not when a customer messages you. For events like **abandoned carts, new orders, and shipping updates,** the customer usually hasn't contacted you yet, so you can't send a regular WhatsApp message.
@@ -192,29 +200,6 @@ How it works:
 - WhatsMark.io can only send a message after the customer enters their **phone number** during checkout.
 - If the customer don't checkout for the time you set, the cart is marked as **abandoned** and the automation runs.
 - Only one reminder is sent for each abandoned cart.
-
-## Order status mapping
-
-Some WooCommerce automations need to know which order statuses your store uses.
-
-Fill these in on the WhatsMark.io WooCommerce setting:
-
-- **Shipped status** — Enter the status used when an order has been shipped, such as `Completed`.
-- **COD confirmed status** — Enter the status used when a Cash on Delivery (COD) order is confirmed, such as `cod-confirmed`.
-
-  <Figure
-    src="/settings/img/woo-status-mapping.png"
-    alt="The Order status mapping card with Shipped status, COD confirmed status and abandoned cart delay fields"
-    caption="Image shows the Order status mapping card."
-  />
-
-Type the status exactly as WooCommerce stores it: all lowercase, hyphens instead of spaces.
-
-<Warning>
-If you leave a status blank, that automation won't run. For example, if Shipped Status is empty, no shipping messages will be sent.
-</Warning>
-
-Click **Save mapping** when done.
 
 ## Order details in your messages
 

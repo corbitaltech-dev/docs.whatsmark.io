@@ -105,16 +105,19 @@ The Order **Out for Delivery** and **Order Delivered** triggers work only if you
 
 ### WooCommerce
 
-Works exactly like Shopify, for a connected WooCommerce store. It offers four events:
+This flow runs automatically when an order changes in your connected WooCommerce store. Customers don't need to send a message. WhatsMark.io uses the customer's phone number to find the correct contact and start the flow.
+
+Pick one **WooCommerce Event**:
 
 ![Start Trigger settings with Trigger Source set to WooCommerce and a WooCommerce Event dropdown set to Cart abandoned, above a note about the 24-hour messaging window](/automation/img/woocommerce-trigger.png)
 
 | Event | Fires when |
 | --- | --- |
-| **Order placed** | An order is successfully placed. |
-| **Order shipped** | The order has shipped. |
-| **COD order confirmed** | A cash-on-delivery order is confirmed. |
+| **Order create** | A new order is placed. |
+| **Order update** | An order's status changes. |
 | **Cart abandoned** | Someone leaves without completing checkout. |
+
+Order Update runs every time an order status changes. Add a [**WooCommerce Condition**](/automation/flow-steps/integrations#woocommerce-condition) node after the trigger to choose which status changes should continue the flow. For example, you can send a message only when an order is marked as shipped or only for cash-on-delivery orders.
 
 <Warning>
 Shopify and WooCommerce flows start automatically when an event occurs in your store, not when a customer sends you a message. If the customer hasn't messaged you in the last [24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything), start the flow with a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template). This ensures the first message is delivered successfully.
