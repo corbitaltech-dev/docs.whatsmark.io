@@ -5,7 +5,10 @@ icon: "sliders-horizontal"
 keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow"]
 ---
 
-**Advanced** category flow steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, or start another flow. These steps usually don't send a message to the customer.
+**Advanced** category flow steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, or start another flow.
+
+![Flow Builder showing a flow that uses Advanced steps — a Start Trigger on the keywords hi and hello leading to an Ask Question and a Get Input, then a Condition that splits into two paths, each running an Update Contact and an Assign Label before joining a closing Text Message](/automation/img/advance/advanced-flow-steps.png)
+
 ## Waiting
 
 ### Delay
@@ -17,7 +20,11 @@ keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "delay", "condition", "log
 
 -  Hours, Minutes and Seconds all start at 0 set at least one of them to make the step wait.
 
+![Delay settings with a note explaining the flow pauses for a fixed amount of time and then continues on its own, separate Hours, Minutes and Seconds boxes, and a running total below them](/automation/img/advance/delay-settings.png)
+
 **Example.** A **Delay** of 24 hours, then a **Text Message**: "Just checking in — did you have any questions about the quote?"
+
+![A Start Trigger set to exact match on the keywords hi and hello, connected to a WhatsApp Template step, then a Delay step, then a Text Message following up about pricing questions](/automation/img/advance/delay.png)
 
 ### Wait Timer
 
@@ -29,7 +36,11 @@ keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "delay", "condition", "log
 
 - **Wait Duration (ms)** is required, and must be at least 1.
 
+![Wait Timer settings with a note explaining it is a short technical pause measured in milliseconds, a Wait Duration box set to 2000, and the equivalent time shown below it as 2 seconds](/automation/img/advance/wait-timer-settings.png)
+
 **Example.** Send the welcome text, a **Wait Timer** of 2000 ms, then send the button menu.
+
+![A Start Trigger set to exact match on the keywords hi and hello, connected to a welcome Text Message, then a Wait Timer of 2 seconds, then a second Text Message asking how we can help](/automation/img/advance/wait-timer.png)
 
 ### Wait for Reply
 
@@ -40,6 +51,12 @@ keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "delay", "condition", "log
 **Required fields**
 
 - **Store Reply In** is required. Use lowercase letters, numbers, and underscores, starting with a letter — for example `user_provided_id`.
+
+![Wait for Reply settings with a note explaining the flow pauses until the contact sends their next message and then saves it, and a Store Reply In box holding a variable name](/automation/img/advance/wait-for-reply-settings.png)
+
+**Example.** A **Text Message** asking for the order ID, a **Wait for Reply** saving it to `order_id`, then a **Text Message** confirming it back with {'{{vars.order_id}}'}.
+
+![A Start Trigger set to exact match on the keywords hi and hello, connected to a Text Message asking the customer to send their Order ID, then a Wait for Reply step storing it, then a Text Message confirming the received Order ID using a merge field](/automation/img/advance/wait-for-reply.png)
 
 ---
 
@@ -57,12 +74,16 @@ keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "delay", "condition", "log
 
 - **Operator** and **Value** are both required. Operator defaults to **Contains**.
 
+![Condition settings with an Operator set to Equals, a Value of yes, and a note explaining that the YES branch is the green handle at the top right and the NO branch is the red handle at the bottom right](/automation/img/advance/condition-settings.png)
+
 **Example**
 
 > **Operator:** Contains
 > **Value:** yes
 
 Connect the green **YES** dot to the booking steps, and the red **NO** dot to a polite "No problem, we're here whenever you need us."
+
+![A Start Trigger on the keywords hi and hello, connected to a Text Message asking whether the customer would like to book an appointment, then a Wait for Reply, then a Condition whose two branches each lead to a different Text Message — one starting the booking and one saying no problem](/automation/img/advance/condition.png)
 
 ### Logic Control
 
@@ -80,12 +101,18 @@ The operators are **Contains**, **Equals**, **Starts with**, **Ends with**, **Re
 - Every rule needs a **field** to check.
 - Every rule needs a **value**, except when the operator is **Is empty** or **Is not empty**.
 
+Rules are checked from top to bottom and the first one that matches wins. Each rule has its own connection point on the right, in the same order. Below them is a grey **Fallback** point, which runs when none of the rules match — connect it so customers still get a reply when their answer doesn't fit any of your rules.
+
+![Logic Control settings with two rules, each checking the contact's last message with a Contains operator — one for Laptop and one for Mobile — an Add Rule button, and a note explaining that rules match top handles in order and no match goes to the bottom grey Fallback handle](/automation/img/advance/logic-control-settings.png)
+
 **Example**
 
 Check the flow variable `party_size`:
 
 - **≤** 4 → send the standard table confirmation.
 - **&gt;** 4 → send "For larger groups we'll call you to confirm" and tag the contact for follow-up.
+
+![A Start Trigger on the keywords hi and hello, connected to a Text Message asking which product the customer is interested in, then a Wait for Reply, then a Logic Control listing a Laptop rule, a Mobile rule and a Fallback, with the two rules each connected to a different Text Message about that product's stock](/automation/img/advance/logic-control.png)
 
 ---
 
@@ -97,7 +124,13 @@ Check the flow variable `party_size`:
 
 **When to use it.** Use it after you've asked the customer for information, so it's saved to their record permanently. For example, ask for their name, then save it so every future message can greet them by it.
 
+Leave a field blank to keep whatever is already saved. The **Relation Type**, **Status** and **Source** dropdowns each start on **No Change** for the same reason.
+
+![Update Contact settings with First Name, Last Name, Display Name, Email and Phone boxes that each accept a merge field, the Email box filled in, and Relation Type, Status and Source dropdowns all set to No Change](/automation/img/advance/update-contact-settings.png)
+
 **Example.** After an **Ask Email**, use Update Contact to set **Email** to `{'{{vars.email}}'}`.
+
+![A Start Trigger on the keywords hi and hello, connected to an Ask Email step, then an Update Contact step, then a Text Message confirming the email has been saved](/automation/img/advance/update-contact.png)
 
 ### Update Custom Field
 
@@ -111,6 +144,12 @@ Check the flow variable `party_size`:
 
 - **Custom Field** and **Value** are both required.
 
+![Update Custom Field settings with a Custom Field dropdown set to Company Name and a Value box holding a merge field](/automation/img/advance/update-custom-field-settings.png)
+
+**Example.** After an **Ask Question** collecting the company name, set the **Company Name** custom field to `{'{{vars.company_name}}'}`.
+
+![A Start Trigger on the keywords hi and hello, connected to an Ask Question asking for the company name, then an Update Custom Field step set to Company Name, then a Text Message confirming it has been saved](/automation/img/advance/update-custom-field.png)
+
 ### Assign Label
 
 **What it does.** Adds a [label](/core-setup/labels) to the contact. If the label you need doesn't exist yet, you can create it here without leaving the flow.
@@ -121,6 +160,12 @@ Check the flow variable `party_size`:
 
 - A **Label** must be selected.
 
+![Assign Label settings with a Label dropdown set to New customer, and a Create new label box with a Create button below it](/automation/img/advance/assign-label-settings.png)
+
+**Example.** On a **First message** trigger, add the `New customer` label so you can follow up with everyone who has just found you.
+
+![A Start Trigger set to First message, connected to an Assign Label step that adds the New customer label](/automation/img/advance/assign-label.png)
+
 ### Assign Group
 
 **What it does.** Adds the contact to a [group](/core-setup/groups). If the group you need doesn't exist yet, you can create it here without leaving the flow.
@@ -130,6 +175,12 @@ Check the flow variable `party_size`:
 **Required fields**
 
 - A **Group** must be selected.
+
+![Assign Group settings with a Group dropdown set to Sales group, and a Create new group box with a Create button below it](/automation/img/advance/assign-group-settings.png)
+
+**Example.** On a **First message** trigger, add the contact to your `Sales group` so the team can pick the conversation up.
+
+![A Start Trigger set to First message, connected to an Assign Group step that adds the contact to the Sales group](/automation/img/advance/assign-group.png)
 
 ---
 
@@ -148,11 +199,17 @@ Check the flow variable `party_size`:
 - **URL** is the only required field.
 - **Method**, **Format**, **Body Params** and headers are all optional, The default settings work for most API requests, so you only need to change them if your API requires it.
 
+The response is only kept for the rest of that run. Add a **Save Response** step next to pull the values you need out of it.
+
+![API Request settings with a note explaining the response is kept for this run and a Save Response step is needed to pull values out of it, a URL box containing a merge field, Method set to GET, Format set to JSON, and an empty Headers row with an Add Header button](/automation/img/advance/api-request-settings.png)
+
 **Example**
 
 > **URL:** `https://api.example.com/orders/{'{{vars.order_number}}'}`
 > **Method:** GET
 > **Format:** JSON
+
+![A Start Trigger set to First message, connected to a Text Message asking for the order number, then a Wait for Reply storing it, then an API Request step calling the order API with that number in the URL](/automation/img/advance/api-request.png)
 
 ### Save Response
 
