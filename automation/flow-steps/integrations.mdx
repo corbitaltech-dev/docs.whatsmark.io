@@ -37,10 +37,7 @@ Both steps need a connected Google account. Set one up first in [Google Accounts
 </Step>
 </Steps>
 
-<Note>
-Fields marked with a red asterisk (*) are required. If any required field is missing, the step is highlighted in red and you won't be able to save the flow until it's completed.
-
-</Note>
+![Google Sheets settings with a Google Account field required and highlighted in red, a Sheet / Tab Name field set to Sheet1, and a Column Values section prompting you to add at least one column](/automation/img/integrations/google-sheets-settings.png)
 
 **Example**
 
@@ -52,8 +49,6 @@ A restaurant logs every booking taken by the chatbot:
 | Phone | {'{{contact.phone}}'} |
 | Date | {'{{vars.booking_date}}'} |
 | Party size | {'{{vars.party_size}}'} |
-
-Every completed booking becomes a new row, so the front desk can open one sheet each morning and see the day's tables.
 
 <Tip>
 Put this step at the very end of your flow, after every question has been answered. If you place it earlier, the later answers won't exist yet and those cells will be blank.
@@ -91,9 +86,11 @@ Put this step at the very end of your flow, after every question has been answer
 </Step>
 </Steps>
 
-<Note>
-Only **Google Account**, **Event Title** and **Start Date** are required — they're the ones marked with a red asterisk in the panel. Everything else can be left empty.
-</Note>
+<Columns cols={2}>
+  ![Calendar Event settings with Google Account, Event Title, and Start Date fields all required and highlighted in red, and a tip explaining that typing @ inserts a merge field or an earlier Ask Question reply](/automation/img/integrations/calendar-event-settings.png)
+
+  ![Calendar Event settings continued, showing the optional Start Time, End Date, End Time, Location, Attendee Email, and Description fields](/automation/img/integrations/calendar-event-settings-optional.png)
+</Columns>
 
 **Example**
 
@@ -123,6 +120,8 @@ A consultancy books discovery calls end to end:
 7. **Calendar Event** — create the event from those answers.
 8. **Google Sheets** — log the same details as a row for the sales team.
 9. **Text Message** — "You're booked in for {'{{vars.booking_date}}'} at {'{{vars.booking_time}}'}. A calendar invite is on its way to {'{{vars.email}}'}."
+
+![The finished booking flow — a Start Trigger leading through Ask Question, Ask Email, and two more Ask Question steps, into a Google Sheets step, a Calendar Event step, and a final Text Message confirming the booking](/automation/img/integrations/worked-example-booking-flow.png)
 
 ## What's next
 
