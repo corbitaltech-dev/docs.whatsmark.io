@@ -5,7 +5,7 @@ icon: "user-plus"
 keywords: ["WhatsMark", "WhatsMark.io", "register", "sign up", "create account", "create workspace", "OTP verification", "getting started"]
 ---
 
-import { BrowserFrame } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
 Creating your account is the first step to sending WhatsApp messages from WhatsMark.io. It sets
 up your login and your own **workspace** — your private space in the product, at your own web
@@ -19,12 +19,11 @@ address like `acme.whatsmark.io`. It takes a couple of minutes, and you can star
 
 ## Step 1: Pick a plan
 
-<BrowserFrame
-  src="/images/step1-pricing-plans.png"
-  url="whatsmark.io/pricing"
-  alt="The pricing page showing Free, Professional and Reseller plan cards"
-  caption="Start on the pricing page and choose how you want to begin."
-/>
+  <Figure
+    src="/images/step1-pricing-plans.png"
+    alt="The pricing page showing Free, Professional and Reseller plan cards"
+    caption="Start on the pricing page and choose how you want to begin."
+  />
 
 Open the [pricing page](https://whatsmark.io/pricing) and choose how you'd like to start:
 
@@ -45,11 +44,10 @@ sign-up form comes next.
 
 The sign-up form is a short two-part wizard titled **"Create your workspace."**
 
-<BrowserFrame
+<Figure
   src="/images/step2-account-details.png"
-  url="whatsmark.io/register"
-  alt="The account details form: full name, email, password, WhatsApp number and currency"
-  caption="Your account details."
+  alt="Step 1 of the Create your workspace wizard, showing Sign up with Google and Facebook buttons above an Account details form with Full name, Email address, Password, Confirm password, WhatsApp number and Currency fields, and a Continue button"
+  caption="Image shows step 1, your account details."
 />
 
 ### Your details
@@ -73,11 +71,10 @@ The sign-up form is a short two-part wizard titled **"Create your workspace."**
 
 ### Your workspace
 
-<BrowserFrame
-  src="/images/workspace details.png"
-  url="whatsmark.io/register"
-  alt="The workspace details form with a live subdomain preview"
-  caption="Name your workspace and claim its web address."
+<Figure
+  src="/images/step2-workspace-details.png"
+  alt="Step 2 of the Create your workspace wizard, showing a Workspace name field, a Subdomain field with a live preview confirming the address is available, both policy agreement checkboxes ticked, and a Create workspace button"
+  caption="Image shows step 2, naming your workspace and claiming its web address."
 />
 
 - **Workspace name** — your business name, e.g. "Acme Corp". As you type, we suggest a web
@@ -102,11 +99,10 @@ Click **Create workspace**.
 
 ## Step 3: Confirm your WhatsApp number
 
-<BrowserFrame
+<Figure
   src="/images/step3-otp-verification.png"
-  url="whatsmark.io/register"
-  alt="The 6-digit WhatsApp code verification dialog"
-  caption="Enter the code we send to your WhatsApp."
+  alt="The Verify your WhatsApp number dialog, saying a 6-digit code was sent to the number, with six empty code boxes, a Verify and continue button, and a Didn't get a code? Resend link"
+  caption="Image shows the WhatsApp code verification dialog."
 />
 
 To confirm the number is really yours, we send a **6-digit code to your WhatsApp** and a
@@ -117,12 +113,11 @@ To confirm the number is really yours, we send a **6-digit code to your WhatsApp
     It usually arrives on WhatsApp within a few seconds.
   </Step>
   <Step title="Type it in">
-    Enter the six digits. The box submits on its own once the last digit is in — there's no
-    separate button to press.
+    Enter the six digits, then click **Verify & continue**.
   </Step>
   <Step title="Didn't arrive? Resend">
-    Wait about a minute, then tap **Resend**. Only use it once the countdown finishes — repeated
-    taps trigger a longer wait.
+    Wait about a minute, then use the **"Didn't get a code? Resend"** link. Only use it once the
+    countdown finishes — repeated taps trigger a longer wait.
   </Step>
 </Steps>
 
@@ -154,11 +149,10 @@ verification email**, and check your spam folder.
 
 ### If you chose a paid plan
 
-<BrowserFrame
+<Figure
   src="/images/paid-plan.png"
-  url="whatsmark.io/register"
-  alt="The paid-plan checkout screen"
-  caption="Paid plans go through a short checkout before the workspace opens."
+  alt="The Activate Your Workspace checkout screen, with a four-step sidebar for Your Selected Plan, Billing Details, Payment Method and Complete Payment, a plan summary card showing the plan cost, tax and monthly total, a Change my mind button, and a Continue to Billing Details button"
+  caption="Image shows the first step of the paid-plan checkout."
 />
 
 **Free Forever** workspaces open straight to the dashboard. If you picked **Professional**,
