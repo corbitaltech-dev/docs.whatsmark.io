@@ -5,22 +5,23 @@ icon: "shopping-cart"
 keywords: ["WhatsMark", "WooCommerce", "integration", "ecommerce", "WordPress", "abandoned cart"]
 ---
 
-import { BrowserFrame, Figure } from '/snippets/browser-frame.jsx';
+import { Figure } from '/snippets/browser-frame.jsx';
 
-Connect your **WooCommerce** store with WhatsMark.io to automatically sends WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
+Connect your **WooCommerce** store with WhatsMark.io to automatically send WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
 
 Find it under **Settings → WooCommerce**.
 
 <Note>
 **Before you start**
 
+- The WooCommerce integration is available on the **Professional plan**.
 - Configure your checkout to collect the customer's phone number before connecting WooCommerce. See [Make sure you can reach customers](#make-sure-you-can-reach-customers).
 </Note>
 
 ## Step 1 — Create a REST API key
 <Steps>
 <Step title="Open the REST API page">
-  In your WordPress admin pannel, go to **WooCommerce → Settings → Advanced → REST API Keys**.
+  In your WordPress admin panel, go to **WooCommerce → Settings → Advanced → REST API Keys**.
 
   <Figure
     src="/settings/img/woo-rest-api-page.png"
@@ -91,7 +92,7 @@ If you see **Could not verify these credentials against your store,** the error 
 </Step>
 
 <Step title="Upload it to WordPress">
-  In your WordPress admin, go to **Plugins → Add Plugin → Upload Plugin**, choose the zip file that you downaload, and click **Install Now**.
+  In your WordPress admin, go to **Plugins → Add Plugin → Upload Plugin**, choose the zip file you downloaded, and click **Install Now**.
 
   <Figure
     src="/settings/img/woo-upload-plugin.png"
@@ -117,7 +118,7 @@ Once the plugin is active, a **WhatsMark.io** link appears in your WordPress sid
 
 <Steps>
 <Step title="Webhook URL">
-  Go back to **Settings → WooCommerce** in WhatsMark.io and click the copy icon next to **Webhook URL**. Paste it in wordpress.
+  Go back to **Settings → WooCommerce** in WhatsMark.io and click the copy icon next to **Webhook URL**. Paste it into WordPress.
 
   <Figure
     src="/settings/img/woo-webhook-details.png"
@@ -192,25 +193,25 @@ Start every WooCommerce flow with a [**Template Message**](/automation/flow-step
 
 ## How abandoned carts work
 
-An abandoned cart is when a customer adds items to their cart but leaves without completing the purchase. A WhatsApp reminder can encourage them to come back and finish their order. You can send them reminder using an automation flow.
+An abandoned cart is when a customer adds items to their cart but leaves without completing the purchase. A WhatsApp reminder can encourage them to come back and finish their order. You can send them a reminder using an automation flow.
 
 How it works:
 
 - The cart is saved as soon as the customer adds an item.
 - WhatsMark.io can only send a message after the customer enters their **phone number** during checkout.
-- If the customer don't checkout for the time you set, the cart is marked as **abandoned** and the automation runs.
+- If the customer doesn't check out within the time you set, the cart is marked as **abandoned** and the automation runs.
 - Only one reminder is sent for each abandoned cart.
 
 ## Order details in your messages
 
-You can include **order details** in your message. Type `@` and choose a [merge fields](/messaging/merge-fields) from the WooCommerce Order group.
+You can include **order details** in your message. Type `@` and choose a [merge field](/messaging/merge-fields) from the WooCommerce Order group.
 
 ## Disconnecting
 
 Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
 
 <Note>
-Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WhatsMark.io plugin in wordpress. The Webhook URL stays the same.
+Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WhatsMark.io plugin in WordPress. The Webhook URL stays the same.
 </Note>
 
 ## What's next
