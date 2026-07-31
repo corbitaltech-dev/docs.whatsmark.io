@@ -82,6 +82,7 @@
             "group": "Start here",
             "pages": [
               "index",
+              "features",
               "getting-started/concepts",
               "getting-started/free-vs-paid",
               "getting-started/register",
