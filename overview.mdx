@@ -1,18 +1,16 @@
 ---
 title: "API Overview"
-description: "Overview of the WhatsMark public REST API — authentication, scopes, pagination, and how to get access."
+description: "Connect your own software to WhatsMark.io — what the API can do, and how to get your access token."
 icon: "eye"
 keywords: ["WhatsMark", "API", "REST API", "developer", "token", "scopes", "pagination"]
 ---
 
-## What is the WhatsMark API
+## What is the WhatsMark.io API
 
-The WhatsMark REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.whatsmark.io`, separate from your tenant subdomain.
-
-This page is the short version — what the API is, how to get a token, and the conventions every endpoint follows. **Every endpoint is documented in full in this reference**, grouped in the sidebar by module: Auth & Account, Channels, Contacts, Contact Statuses, Contact Sources, Contact Groups, Contact Labels, Templates, Messages, Conversations, and OTP.
+The WhatsMark.io REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.whatsmark.io`, separate from your tenant subdomain.
 
 <Warning>
-  **The API is not available on the Free plan.** REST API access is a **Professional** plan feature — Free-plan workspaces can use the full dashboard, but any request to `api.whatsmark.io` will be rejected until you upgrade. Reseller plans also include API access, with a higher (or unlimited) monthly request quota.
+  API access is a paid feature. Upgrade your plan to start using the WhatsMark.io API.
 </Warning>
 
 ## Getting access
@@ -22,7 +20,7 @@ This page is the short version — what the API is, how to get a token, and the 
     If you're on the Free plan, upgrade from **Billing** in the account menu (click your name at the bottom of the sidebar) first. See [Plans & subscription](/billing/plans-and-subscription).
   </Step>
   <Step title="Create a workspace API token">
-    Go to **Setup → API Keys** and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
+    Go to [Setup → API token](/core-setup/api-keys) and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
   </Step>
   <Step title="Authenticate your requests">
     Every request must include your token as a bearer token:
@@ -32,7 +30,7 @@ This page is the short version — what the API is, how to get a token, and the 
     ```
   </Step>
   <Step title="Call the API">
-    Send requests to `https://api.whatsmark.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working — you'll find it under **Auth & Account** in the sidebar.
+    Send requests to `https://api.whatsmark.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working — you'll find it under [Auth & Account](/api-reference/auth-&-account/ping) in the sidebar.
   </Step>
 </Steps>
 
@@ -93,7 +91,7 @@ If you'd rather browse and test everything from a single interactive Swagger pag
     Use the **Authorize** button on the Swagger UI to add `Authorization: Bearer <token>` and send real requests against your workspace without leaving the browser.
   </Card>
 
-  <Card title="OpenAPI spec" icon="file-json" href="https://api.whatsmark.io/openapi/whatsmark-api-v1.json">
+  <Card title="OpenAPI spec" icon="file-code" href="https://api.whatsmark.io/openapi/whatsmark-api-v1.json">
     Download the raw OAS 3.1 document to generate clients or import it into your own tooling.
   </Card>
 
@@ -107,5 +105,5 @@ If you'd rather browse and test everything from a single interactive Swagger pag
 </CardGroup>
 
 <Info>
-  Already have a Professional plan? Head to **Settings → API Keys** in your workspace to create your first token.
+  Already have a Professional plan? Head to [Settings → API Token](/core-setup/api-keys) in your workspace to create your first token.
 </Info>
