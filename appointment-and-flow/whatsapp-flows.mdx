@@ -98,7 +98,7 @@ The WhatsApp Flows page shows all your flows. Each flow shows its **name**, **ch
 | **Duplicate** | Make a copy of the flow. |
 | **Delete** | Remove a draft flow. |
 
-Appointment booking flows have a few extra actions. See [Appointment booking flows](#appointment-booking-flows).
+Appointment booking flows have a few extra actions — **Customize form**, **Booking settings**, **Booking messages**, and **View bookings**. See [Appointment booking flows](#appointment-booking-flows).
 
 ## Flow statuses
 
@@ -148,12 +148,18 @@ From the flow table `⋮` menu, choose **Submissions** to see everyone who fille
 
 ## Appointment booking flows
 
-Turn on **Enable Live Booking** when you [create a flow](#building-a-flow) to make an appointment booking form. Customers can see available dates and times, book an appointment, reschedule, or cancel it directly in WhatsApp.
+Turn on **Enable Live Booking** when you [create a flow](#building-a-flow) to turn it into a booking form. Customers can book, reschedule, or cancel an appointment right inside WhatsApp.
 
-From a booking flow's `⋮` menu, you can use these two options:
+| Option | What it does |
+| --- | --- |
+| [Customize form](#customize-form) | Edit the form's wording and questions. |
+| [Booking settings](#booking-settings) | Set slot length, capacity, and booking window. |
+| [Booking messages](#booking-messages) | Override the confirmation, cancellation, or reminder message for this form. |
+| [View bookings](#view-bookings) | Jump to this form's bookings on the Appointments page. |
 
-- **Customize form** — Change the text customers see. This covers the **booking screen** (like the date and time labels) and the **confirmation screen** shown after they book (its title and message).
-- **Booking settings** — Set the appointment duration, the number of bookings allowed per time slot, and how far in advance customers can book.
+### Customize form
+
+Change the form's text and questions, then click **Save & sync** to update it on WhatsApp.
 
 <Figure
   src="/appointment-and-flow/img/whatsapp-flows/appointment-form.png"
@@ -161,11 +167,96 @@ From a booking flow's `⋮` menu, you can use these two options:
   caption="Image shows the appointment booking designer with a live preview."
 />
 
-Booked appointments are shown on the [Appointments](/appointment-and-flow/appointments) page.
+**Booking screen**
 
-## Flow limits
+- **Screen title**, **Book button**, **Date label**, **Time label** — your own wording.
+- **Notes field** — on by default for new forms, so customers can add a note. Turn it off, or rename its **Notes label**.
+- **Default service** — auto-tag every booking with one of your [appointment services](/appointment-and-flow/appointments), so customers don't have to pick one. Set to **None** to skip.
 
-Your plan limits how many flows you can create. If you reach the limit, you won't be able to create or copy a new flow until you upgrade your plan or delete a draft flow.
+**Extra fields**
+
+Add up to 3 extra questions. Each one needs a **Field name** (lowercase letters, numbers, and underscores only, starting with a letter — used internally, not shown to the customer), a **Label** (what the customer sees), a **Type** (Text, Text area, Phone, Email, or Number), and whether it's **Required**.
+
+**Screening questions**
+
+Ask a question before the customer can continue in the booking form. Based on the answer, they either continue to book, or see a message instead and can't continue.
+
+<Figure
+  src="/appointment-and-flow/img/whatsapp-flows/screening-questions.png"
+  alt="The Screening questions section with a question, its saved answer name, a list of answers each marked Can book or Cannot book, and the Confirmation screen fields below it"
+  caption="Image shows a screening question set to block existing customers from booking, plus the Confirmation screen fields."
+/>
+
+1. Turn on the switch at the top to use this.
+2. Click **Add question** and type your **Question**, such as "Are you an existing customer?"
+3. Type a short name in **Save answer as** — start with a letter, then use only lowercase letters, numbers, and underscores, such as `customer_status`. You can use it later as a [merge field](/messaging/merge-fields).
+4. Click **Add answer** for each option the customer can pick, such as "Yes" and "No".
+5. For every answer, choose **Can book** or **Cannot book**:
+   - **Can book** — the customer continues to the booking form.
+   - **Cannot book** — a message box appears; write what the customer sees instead, such as "Sorry, only existing customers can book appointments online." Leave it blank to use a default message.
+6. Repeat with **Add question** for as many questions as you need.
+
+<Note>
+If you turn Screening questions on or off, click **Save & sync**, then publish the form again if it's already live.
+</Note>
+
+**Confirmation screen**
+
+Shown right after a customer books. It has a title and a message, plus two buttons — one to reschedule, one to cancel.
+
+- **Screen title** — the top bar text.
+- **Heading** — the message below it, such as "You're booked!"
+- **Reschedule link** — text for the reschedule button, such as "Reschedule." Clicking it opens a new date/time picker; submitting it updates their appointment to the new time.
+- **Cancel link** — text for the cancel button, such as "Cancel appointment." Clicking it cancels the appointment immediately.
+- **Reschedule screen title** — the top bar text on that date/time picker screen.
+
+
+### Booking settings
+
+This is where you decide what time slots customers see and how far ahead they can book.
+
+<Note>
+Your opening hours and holidays are set once, in [Settings → Business Hours](/settings/business-hours) — not here.
+</Note>
+
+<Figure
+  src="/appointment-and-flow/img/whatsapp-flows/booking-settings.png"
+  alt="The Booking settings panel with fields for slot length, capacity per slot, custom time blocks, and the earliest and latest a customer can book"
+  caption="Image shows the Booking settings panel, including custom time blocks."
+/>
+
+- **Slot length (minutes)** — how long one appointment takes. Type `30` and customers see a new time slot every 30 minutes.
+- **Capacity per slot** — how many customers can book the same time. Type `1` if only one customer can book each time slot.
+- **Earliest booking** — how many days from now customers can start booking. `0` lets them book for today.
+- **Latest booking** — how many days from now booking stops. `30` keeps it open for one month.
+- **Custom time blocks** *(optional)* — offer only a few fixed times, like `10:00–11:00 AM`, instead of slots every 30 minutes. Add one, and only your times are shown.
+
+Changes here take effect right away — you don't need to republish the form.
+
+### Booking messages
+
+Your workspace has one global message for each of Confirmation, Cancellation, and Reminder, set under [Appointment settings](/appointment-and-flow/appointments#confirmation-message). Use **Booking messages** here to set a different message just for this one form — it overrides your global setting, only for bookings made through this form.
+
+<Figure
+  src="/appointment-and-flow/img/whatsapp-flows/booking-messages.png"
+  alt="The Booking messages panel with Confirmation, Cancellation, and Reminder sections, each with an override switch and a choice between Approved template and Plain message"
+  caption="Image shows the Booking messages panel with all three overrides turned on."
+/>
+
+You can set three messages here:
+
+- **Confirmation** — sent when someone books or reschedules.
+- **Cancellation** — sent when a booking is cancelled.
+- **Reminder** — sent before the appointment.
+
+For each one:
+
+- Turn on its switch to override the global setting for this form. Leave it off and this form just uses your global message.
+- Pick an approved [template](/messaging/whatsapp-templates), or write your own **Plain message**. Reminder only offers a template.
+
+### View bookings
+
+Opens the [Appointments](/appointment-and-flow/appointments) page, filtered to this form's bookings.
 
 ## What's next
 
