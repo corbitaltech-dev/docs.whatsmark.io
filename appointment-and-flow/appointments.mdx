@@ -73,29 +73,29 @@ First, choose **Send for** — who this message is for:
 Then choose the message itself:
 
 - For a WhatsApp booking, you can pick an approved [template](/messaging/whatsapp-templates) or write your own **Plain message**. In a Plain message, type **@** to insert a [merge field](/messaging/merge-fields), like the contact's name or phone number.
-- For a public booking, you can only use a template.
+- For a booking made through your public web booking link, you can only use a template.
 
 <Note>
 To use a different message for each form, set it up under that form's [Booking messages](/appointment-and-flow/whatsapp-flows#booking-messages).
 </Note>
 
-## Reminders, public booking link, and services
+## Reminders, public booking link, booking defaults, and services
 
 <Figure
   src="/appointment-and-flow/img/appointment/public-booking-link.png"
-  alt="The Reminder, Public booking link, and Services sections of Appointment settings, showing a copyable web booking URL for channel WP 1 and a list of service name tags"
-  caption="Image shows the Public booking link and Services sections of Appointment settings."
+  alt="The Reminder, Public booking link, Booking defaults, and Services sections of Appointment settings, showing a copyable web booking URL for channel WP 1, Slot length and Bookings per slot fields, and a list of service name tags"
+  caption="Image shows the Reminder, Public booking link, Booking defaults, and Services sections of Appointment settings."
 />
 
 **Reminder**
 
-- Pick a [template](/messaging/whatsapp-templates) to send before the appointment, or leave it as None to skip reminders.
-- If the template has a **Flow button**, customers can tap it to reschedule or cancel right in WhatsApp.
+A reminder is a message sent automatically to the customer shortly before their appointment, so they don't forget it.
+
+- Pick a [template](/messaging/whatsapp-templates) to use as the reminder. Leave it as None to not send one.
 
 **Public booking link**
 
 - A link to a web page where customers can book, without using WhatsApp.
-- Uses the same [available-times settings](#setting-your-available-times) as your WhatsApp form.
 - Customers still enter their WhatsApp number, and get their confirmation there.
 
 <Figure
@@ -105,8 +105,15 @@ To use a different message for each form, set it up under that form's [Booking m
 />
 
 <Note>
-Set **Send for** to **Both** or **Public booking link only** in [Confirmation message](#confirmation-message) — otherwise, web bookings won't get a WhatsApp confirmation.
+For customers to get a WhatsApp confirmation after booking on this page, set **Send for** to **Both booking sources** or **Public booking link only** in [Confirmation message](#confirmation-message).
 </Note>
+
+**Booking defaults**
+
+These control the time slots offered on your public booking link.
+
+- **Slot length** — how long each appointment takes, in minutes.
+- **Bookings per slot** — how many customers can book the same time slot.
 
 **Services**
 
