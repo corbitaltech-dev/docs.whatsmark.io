@@ -2,7 +2,7 @@
 title: "Basic Flow Steps"
 description: "Everything you need to send messages to your customers, from simple text messages to interactive buttons and approved WhatsApp or Messenger templates."
 icon: "message-square"
-keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "text message", "button message", "call to action", "WhatsApp template", "Messenger template"]
+keywords: ["WhatsMark", "WhatsMark.io", "flow steps", "text message", "button message", "call to action", "WhatsApp template", "Messenger template", "WhatsApp Flow"]
 ---
 
 The **Basic** category includes the flow steps you'll use most often to send messages to your customers.
@@ -106,6 +106,24 @@ Map `{'{{1}}'}` to the contact's first name and `{'{{2}}'}` to the order number.
 
 <Note>
 You need at least one approved template first. See [WhatsApp Templates](/messaging/whatsapp-templates). This step is hidden on Messenger flows.
+</Note>
+
+---
+
+## WhatsApp Flow
+
+**What it does.** Sends one of your [WhatsApp Flows](/appointment-and-flow/whatsapp-flows) as part of the conversation — the customer clicks a button to open the form right inside WhatsApp.
+
+**When to use it.** Use this to collect structured answers, or let someone book an appointment, from within an automated conversation — for example, after a Button Message option like "Book an appointment."
+
+**How to set it up.** Select the **WhatsApp Flow** to send. You can also add optional **Body Text** and change the **Button Text** shown on the message (defaults to "Open").
+
+Only **Published** flows on the same WhatsApp account as this automation appear in the dropdown. Selecting a flow is required — the flow can't be saved without one.
+
+![WhatsApp Flow settings with a flow selected from the dropdown, optional body text, and a Button Text field showing Open](/automation/img/basic/whatsapp-flow-settings.png)
+
+<Note>
+This step needs an open 24-hour conversation window with the customer, and isn't supported on Messenger flows.
 </Note>
 
 ---
