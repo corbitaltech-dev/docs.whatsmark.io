@@ -1,15 +1,15 @@
 ---
-name: WaMetrix-docs
-description: Authoritative rules for writing and editing any page in the docs.WaMetrix.io Mintlify site — plain-language voice, the WaMetrix.io brand and plan-naming rules, the banned-claims list, honest plan gating, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), screenshot and image alt-text conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
+name: WaMatrix-docs
+description: Authoritative rules for writing and editing any page in the docs.WaMatrix.io Mintlify site — plain-language voice, the WaMatrix.io brand and plan-naming rules, the banned-claims list, honest plan gating, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), screenshot and image alt-text conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
 ---
 
-# WaMetrix.io Documentation
+# WaMatrix.io Documentation
 
-You write the customer-facing docs at `docs.WaMetrix.io`. The audience is a **small-business owner or their staff** — not a developer. Most arrive from the marketing site while deciding whether to buy.
+You write the customer-facing docs at `docs.WaMatrix.io`. The audience is a **small-business owner or their staff** — not a developer. Most arrive from the marketing site while deciding whether to buy.
 
 Two goals, in this order:
 
-1. **Understand** — a visitor grasps what WaMetrix.io does within 15 seconds of landing.
+1. **Understand** — a visitor grasps what WaMatrix.io does within 15 seconds of landing.
 2. **Onboard** — they reach their first sent message without getting stuck or scared off.
 
 Everything below serves those two. When a rule conflicts with elegance, the rule wins — most of them exist because breaking one caused a real problem.
@@ -42,7 +42,7 @@ Two exceptions where a term is unavoidable: **template** and **channel**. Both a
 
 **Don't answer objections the reader doesn't have.** Reassurance like "no coding required", "you don't need a developer", "no technical knowledge needed" *creates* the worry it's trying to remove — a shop owner who never suspected programming was involved now wonders whether it normally is. We don't sell a code-based product, so never raise the subject.
 
-The same trap applies to any "don't worry about X" phrasing. If the reader wouldn't have thought of X unaided, leave it out. Where a genuinely technical capability exists, frame it as something they can *do*, not something they can *avoid*: "Can I connect WaMetrix.io to my own software?" — not "Do I need a developer?"
+The same trap applies to any "don't worry about X" phrasing. If the reader wouldn't have thought of X unaided, leave it out. Where a genuinely technical capability exists, frame it as something they can *do*, not something they can *avoid*: "Can I connect WaMatrix.io to my own software?" — not "Do I need a developer?"
 
 ---
 
@@ -70,8 +70,8 @@ Most readers arrive while deciding whether to trust and buy. These docs are part
 
 ## 2. Brand and plan naming — non-negotiable
 
-- The product is **WaMetrix.io**. Never "WaMetrix" in body prose, headings, descriptions, captions, or `docs.json`'s `name`.
-  - `keywords:` frontmatter is the **one exception** — keep the bare "WaMetrix" there too, because people search both spellings and dropping it costs search traffic.
+- The product is **WaMatrix.io**. Never "WaMatrix" in body prose, headings, descriptions, captions, or `docs.json`'s `name`.
+  - `keywords:` frontmatter is the **one exception** — keep the bare "WaMatrix" there too, because people search both spellings and dropping it costs search traffic.
 - The free plan is the **Free Forever plan**. Not "the Free plan", not "our free tier".
 
 **Banned claims.** These have been explicitly ruled out. Do not reintroduce them, in any wording:
@@ -193,7 +193,7 @@ Images live in a section-local `img/` folder (`settings/img/`, `messaging/img/`,
 title: "Sentence case title"
 description: "One sentence. Appears in search results and social previews — write it to attract, not to summarise."
 icon: "lucide-name"
-keywords: ["WaMetrix", "WaMetrix.io", "…"]
+keywords: ["WaMatrix", "WaMatrix.io", "…"]
 ---
 ```
 
@@ -209,7 +209,7 @@ Phrase it as a source, not a dump — one link at the end of the section:
 
 ```mdx
 <Note>
-  This is a WhatsApp rule, not a WaMetrix.io one. Meta documents it in full under
+  This is a WhatsApp rule, not a WaMatrix.io one. Meta documents it in full under
   [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
 </Note>
 ```
@@ -282,7 +282,7 @@ python3 -c "import json; json.load(open('docs.json')); print('valid')"
 Then confirm by hand:
 
 - [ ] Zero banned words from §1; every retained term defined on first use
-- [ ] "WaMetrix.io" everywhere except `keywords:`
+- [ ] "WaMatrix.io" everywhere except `keywords:`
 - [ ] "Free Forever" — and no expiry claim, no specific limits or prices
 - [ ] Every paid-only feature marked
 - [ ] Every icon is a real Lucide name (they fail **silently** — check the rendered page, not the source)
@@ -297,4 +297,4 @@ Then confirm by hand:
 ## 9. Related skills
 
 - **`docs-competitor-benchmark`** — before writing an onboarding, landing, or comparison page, check how AiSensy, Wati, respond.io, BotSailor and Interakt handle the same thing, and find what we can honestly claim that they can't.
-- **`docs-fact-check`** — verify a claim against the product source at `/media/corbital/web_data/laravel.local/WaMetrix-saas` before publishing it.
+- **`docs-fact-check`** — verify a claim against the product source at `/media/corbital/web_data/laravel.local/WaMatrix-saas` before publishing it.

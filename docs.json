@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "WaMetrix.io",
+  "name": "WaMatrix.io",
   "colors": {
     "primary": "#779812",
     "light": "#C6FE1E",
@@ -320,7 +320,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@WaMetrix.io"
+        "href": "mailto:support@WaMatrix.io"
       }
     ]
   },
@@ -338,8 +338,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/WaMetrix_io",
-      "linkedin": "https://linkedin.com/company/WaMetrixio"
+      "x": "https://x.com/WaMatrix_io",
+      "linkedin": "https://linkedin.com/company/WaMatrixio"
     }
   },
   "icons": {
