@@ -1,6 +1,6 @@
 ---
 name: "docs-grammar-style"
-description: "Proofreading pass for docs.whatsmark.io — grammar, missing/wrong verbs, singular-plural mismatches, subject-verb agreement, and broken-sentence checks, grounded in the real error patterns found in the July 2026 site audit (roughly one to two errors per longer page). Activate on any new or rewritten page before it ships, on a full-site proofreading sweep, or when the user asks to check a page for typos or grammar."
+description: "Proofreading pass for docs.WaMetrix.io — grammar, missing/wrong verbs, singular-plural mismatches, subject-verb agreement, and broken-sentence checks, grounded in the real error patterns found in the July 2026 site audit (roughly one to two errors per longer page). Activate on any new or rewritten page before it ships, on a full-site proofreading sweep, or when the user asks to check a page for typos or grammar."
 ---
 
 # Grammar and style proofreading

@@ -2,12 +2,12 @@
 title: "WooCommerce"
 description: "Connect your WooCommerce store to automatically send WhatsApp messages to your customers."
 icon: "shopping-cart"
-keywords: ["WhatsMark", "WooCommerce", "integration", "ecommerce", "WordPress", "abandoned cart"]
+keywords: ["WaMetrix", "WooCommerce", "integration", "ecommerce", "WordPress", "abandoned cart"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Connect your **WooCommerce** store with WhatsMark.io to automatically send WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
+Connect your **WooCommerce** store with WaMetrix.io to automatically sends WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
 
 Find it under **Settings → WooCommerce**.
 
@@ -35,7 +35,7 @@ Find it under **Settings → WooCommerce**.
 </Step>
 
 <Step title="Set Permissions to Read/Write">
-  Choose **Read/Write**. Read access alone won't work because WhatsMark.io needs to create webhooks.
+  Choose **Read/Write**. Read access alone won't work because WaMetrix.io needs to create webhooks.
 
   <Figure
     src="/settings/img/woo-create-api-key.png"
@@ -57,7 +57,7 @@ Find it under **Settings → WooCommerce**.
 
 ## Step 2 — Connect your store
 
-Now in WhatsMark.io, go to **Settings → WooCommerce** and fill in the fields:
+Now in WaMetrix.io, go to **Settings → WooCommerce** and fill in the fields:
 
 - **Store URL** — your shop's web address, like `https://your-store.com`.
 - **Consumer Key** — starts with `ck_`.
@@ -81,7 +81,7 @@ If you see **Could not verify these credentials against your store,** the error 
 
 <Steps>
 <Step title="Download it">
-  On the WhatsMark.io WooCommerce page, click **Download plugin**. You get a `.zip` file.
+  On the WaMetrix.io WooCommerce page, click **Download plugin**. You get a `.zip` file.
 
   <Figure
     src="/settings/img/woo-plugin-download.png"
@@ -102,23 +102,23 @@ If you see **Could not verify these credentials against your store,** the error 
 </Step>
 
 <Step title="Activate it">
-  Click **Activate Plugin**. It is called **WooCommerce Connector for WhatsMark.io**.
+  Click **Activate Plugin**. It is called **WooCommerce Connector for WaMetrix.io**.
 </Step>
 </Steps>
 
 ## Step 4 — Point the plugin at your workspace
 
-Once the plugin is active, a **WhatsMark.io** link appears in your WordPress sidebar. Click it.
+Once the plugin is active, a **WaMetrix.io** link appears in your WordPress sidebar. Click it.
 
 <Figure
   src="/settings/img/woo-plugin-menu.png"
-  alt="The WordPress admin sidebar with a WhatsMark.io menu link"
-  caption="Image shows the WhatsMark.io link in the WordPress sidebar."
+  alt="The WordPress admin sidebar with a WaMetrix.io menu link"
+  caption="Image shows the WaMetrix.io link in the WordPress sidebar."
 />
 
 <Steps>
 <Step title="Webhook URL">
-  Go back to **Settings → WooCommerce** in WhatsMark.io and click the copy icon next to **Webhook URL**. Paste it into WordPress.
+  Go back to **Settings → WooCommerce** in WaMetrix.io and click the copy icon next to **Webhook URL**. Paste it in wordpress.
 
   <Figure
     src="/settings/img/woo-webhook-details.png"
@@ -128,11 +128,11 @@ Once the plugin is active, a **WhatsMark.io** link appears in your WordPress sid
 </Step>
 
 <Step title="Webhook Secret">
-  Copy the **Webhook Secret** from WhatsMark and paste it here. It verifies that the webhook requests come from your store.
+  Copy the **Webhook Secret** from WaMetrix and paste it here. It verifies that the webhook requests come from your store.
 </Step>
 
 <Step title="Abandoned cart delay (minutes)">
-  An [abandoned cart](#how-abandoned-carts-work) is a shopping cart where a customer adds items but leaves without completing the purchase. This setting controls how long WhatsMark waits before treating the cart as abandoned. The recommended value is 60 minutes.
+  An [abandoned cart](#how-abandoned-carts-work) is a shopping cart where a customer adds items but leaves without completing the purchase. This setting controls how long WaMetrix waits before treating the cart as abandoned. The recommended value is 60 minutes.
 </Step>
 
 <Step title="Click Save Settings">
@@ -141,12 +141,12 @@ Once the plugin is active, a **WhatsMark.io** link appears in your WordPress sid
 </Steps>
 
 <Note>
-The plugin checks in with WhatsMark.io **once a day**, so your WooCommerce page can still say **Plugin not yet connected** for up to 24 hours after you install it. That does not mean the install failed. Abandoned carts start working immediately.
+The plugin checks in with WaMetrix.io **once a day**, so your WooCommerce page can still say **Plugin not yet connected** for up to 24 hours after you install it. That does not mean the install failed. Abandoned carts start working immediately.
 </Note>
 
 ## Make sure you can reach customers
 
-Your WooCommerce checkout must collect the customer's phone number. This allows WhatsMark to create a contact and send abandoned cart, order, and shipping messages to the right customer.
+Your WooCommerce checkout must collect the customer's phone number. This allows WaMetrix to create a contact and send abandoned cart, order, and shipping messages to the right customer.
 
 The simplest way to do that is to require an account at checkout:
 
@@ -198,9 +198,32 @@ An abandoned cart is when a customer adds items to their cart but leaves without
 How it works:
 
 - The cart is saved as soon as the customer adds an item.
-- WhatsMark.io can only send a message after the customer enters their **phone number** during checkout.
-- If the customer doesn't check out within the time you set, the cart is marked as **abandoned** and the automation runs.
+- WaMetrix.io can only send a message after the customer enters their **phone number** during checkout.
+- If the customer don't checkout for the time you set, the cart is marked as **abandoned** and the automation runs.
 - Only one reminder is sent for each abandoned cart.
+
+## Order status mapping
+
+Some WooCommerce automations need to know which order statuses your store uses.
+
+Fill these in on the WaMetrix.io WooCommerce setting:
+
+- **Shipped status** — Enter the status used when an order has been shipped, such as `Completed`.
+- **COD confirmed status** — Enter the status used when a Cash on Delivery (COD) order is confirmed, such as `cod-confirmed`.
+
+  <Figure
+    src="/settings/img/woo-status-mapping.png"
+    alt="The Order status mapping card with Shipped status, COD confirmed status and abandoned cart delay fields"
+    caption="Image shows the Order status mapping card."
+  />
+
+Type the status exactly as WooCommerce stores it: all lowercase, hyphens instead of spaces.
+
+<Warning>
+If you leave a status blank, that automation won't run. For example, if Shipped Status is empty, no shipping messages will be sent.
+</Warning>
+
+Click **Save mapping** when done.
 
 ## Order details in your messages
 
@@ -211,7 +234,7 @@ You can include **order details** in your message. Type `@` and choose a [merge 
 Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
 
 <Note>
-Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WhatsMark.io plugin in WordPress. The Webhook URL stays the same.
+Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WaMetrix.io plugin in wordpress. The Webhook URL stays the same.
 </Note>
 
 ## What's next

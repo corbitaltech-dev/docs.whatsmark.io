@@ -1,6 +1,6 @@
 ---
 name: docs-competitor-benchmark
-description: Method for benchmarking docs.whatsmark.io pages against competing WhatsApp Business platforms — AiSensy, Wati, respond.io, BotSailor, Interakt — to find onboarding patterns worth copying, positioning gaps, and the honest differentiators WhatsMark.io can claim that they cannot. Activate before writing or rewriting a quick start, landing, onboarding, comparison, or feature-overview page; when asked how competitors do something; or when a page reads generic and needs a sharper angle.
+description: Method for benchmarking docs.WaMetrix.io pages against competing WhatsApp Business platforms — AiSensy, Wati, respond.io, BotSailor, Interakt — to find onboarding patterns worth copying, positioning gaps, and the honest differentiators WaMetrix.io can claim that they cannot. Activate before writing or rewriting a quick start, landing, onboarding, comparison, or feature-overview page; when asked how competitors do something; or when a page reads generic and needs a sharper angle.
 ---
 
 # Benchmarking the docs against competitors

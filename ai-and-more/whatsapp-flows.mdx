@@ -1,0 +1,180 @@
+---
+title: "WhatsApp Flows"
+description: "Build **Form** that open inside a WhatsApp chat and collect answers from your customers."
+icon: "workflow"
+keywords: ["WaMetrix", "WhatsApp Flows", "interactive forms", "flow builder", "submissions", "appointment booking"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+A WhatsApp Flow is a form that opens inside a WhatsApp chat. Customers can fill in details, choose options, and submit the form without leaving WhatsApp.
+
+## Building a flow
+
+<Steps>
+<Step title="Create the flow">
+  Click **Create Flow** and fill in the details.
+
+  - **Name** — for your own reference.
+  - **WhatsApp Account** — choose the channel for this flow.
+  - **Enable live booking** — turn this on for [appointment booking](#appointment-booking-flows). Leave it off for a normal form.
+  - **Categories** — Select a flow category, such as Lead Generation or Survey. You cannot create a new category.
+
+  <Figure
+    src="/ai-and-more/img/whatsapp-flows/flow-form.png"
+    alt="The New WhatsApp Flow form with fields for name, WhatsApp account, an Enable live booking toggle, and categories"
+    caption="Image shows the New WhatsApp Flow form."
+  />
+</Step>
+
+<Step title="Design its screens">
+  Click a flow name to open the builder.
+
+  The builder has three sections: the list of **form pages** on the left, the **page editor** in the middle, and a **phone preview** on the right.
+
+  <Figure
+    src="/ai-and-more/img/whatsapp-flows/form-creation.png"
+    alt="The WhatsApp Flow builder with a screens list and field palette on the left, the screen being edited in the middle, and a phone preview on the right"
+    caption="Image shows the flow builder."
+  />
+
+Drag a field to a form page to add it.
+
+  - **Text** — A single-line text field.
+  - **Text Area** — A multi-line text field.
+  - **Phone** — A phone number field.
+  - **Date** — A date picker.
+  - **Dropdown** — Select one option from a list.
+  - **Radio** — Select one option from a few options.
+  - **Checkboxes** — Select one or more option.
+  - **Opt-in** — A checkbox for customer consent.
+
+Each field includes:
+
+  - **Label** — The name shown to the customer, such as *Your name*.
+  - **Name (answer key)** — A unique name used to identify the answer. You can see it later in [submissions](#submissions) and [field mapping](#field-mapping).
+  - **Required** — Turn it on to make the field mandatory.
+
+  Each form page has a button at the bottom. Continue opens the next page, and Submit finishes the form.
+</Step>
+
+<Step title="Publish">
+  Click **Publish** to send the flow to Meta for approval. If Meta returns any issues, the flow will remain in Draft status. Click the flow name to view the errors, fix the issues, and publish the flow again.
+</Step>
+</Steps>
+
+## Start from a ready-made flow
+
+You do not have to build from scratch. Click **Flow Collection** to see ready-made flows you can copy:
+
+<Figure
+  src="/ai-and-more/img/whatsapp-flows/flow-collection.png"
+  alt="Flow Collection dialog showing pre-built WhatsApp Flow templates as cards, each with a description and a Use button"
+  caption="Image shows the Flow Collection dialog."
+/>
+
+Select one and **Use This** copies it into your workspace as a draft you can change and publish.
+
+## The flows list
+
+The WhatsApp Flows page shows all your flows. Each flow shows its **name**, **channel**, **status**, **category**, and an **Active** switch to turn it on or off.
+
+<Figure
+  src="/ai-and-more/img/whatsapp-flows/flow.png"
+  alt="The WhatsApp Flows list with columns for name, channel, status, categories and an active toggle, plus Create Flow, Flow Collection and Sync buttons"
+  caption="Image shows the WhatsApp Flows list."
+/>
+
+
+| Action | What it does |
+| --- | --- |
+| **Flow Builder** | Open the builder to edit the flow.|
+| **View** | View the flow details. |
+| **Edit details** | Change the name, account, or categories. |
+| **Mapping** | Save answers into contact records. See [Field mapping](#field-mapping). |
+| **Submissions** | See who [submitted](#submissions) the flow. |
+| **Publish** | Publish the draft flow. |
+| **Deprecate** | Deprecate a published flow. |
+| **Duplicate** | Make a copy of the flow. |
+| **Delete** | Remove a draft flow. |
+
+Appointment booking flows have a few extra actions. See [Appointment booking flows](#appointment-booking-flows).
+
+## Flow statuses
+
+Every flow shows a status so you know if it is ready to send.
+
+| Status | It means |
+| --- | --- |
+| **Draft** | The flow is not published yet. You can still edit it. |
+| **Published** | The flow is ready to use. |
+| **Deprecated** | The flow is no longer active, but its data is still available. |
+| **Blocked** | Meta has blocked the flow. |
+| **Throttled** | Meta is temporarily limiting the flow because of too many errors. |
+
+## Field mapping
+
+The answers people give in a flow can go straight into your contact records. From the flow table `⋮` menu, choose **Mapping** to set it up.
+
+For each field in the flow, choose what to do with its answer:
+
+- **Skip** — do not save it.
+- **Contact field** — save it to a built-in contact field, like name or email.
+- **Custom field** — save it to one of your [custom fields](/core-setup/custom-fields).
+- **Label** — add a label to the contact.
+
+<Warning>
+Set up mapping before you send the flow. Answers only save to contacts once mapping is done — anything submitted before that is not added automatically.
+</Warning>
+
+## Sending a flow
+
+Once a flow is published, there are two ways to send it to a customer.
+
+- From a [contact's](/contacts/managing-contacts#actions-on-a-single-contact) row, choose **Send flow**.
+- In [live chat](/messaging/live-chat), use the **Send form** button under the message box.
+
+## Submissions
+
+When a customer fill form and submits it, their answers are saved, and a card in the [chat](/messaging/live-chat).
+
+From the flow table `⋮` menu, choose **Submissions** to see everyone who filled it in — their name, phone number, status, and the date. Click a row to read all of their answers, or use **Export** to download the list as a CSV file.
+
+<Figure
+  src="/ai-and-more/img/whatsapp-flows/submission.png"
+  alt="The flow submissions list showing each person's name, phone number, status and date, with an Export button"
+  caption="Image shows a flow's submissions list."
+/>
+
+## Appointment booking flows
+
+Turn on **Enable Live Booking** when you [create a flow](#building-a-flow) to make an appointment booking form. Customers can see available dates and times, book an appointment, reschedule, or cancel it directly in WhatsApp.
+
+From a booking flow's `⋮` menu, you can use these two options:
+
+- **Customize form** — Change the text customers see. This covers the **booking screen** (like the date and time labels) and the **confirmation screen** shown after they book (its title and message).
+- **Booking settings** — Set the appointment duration, the number of bookings allowed per time slot, and how far in advance customers can book.
+
+<Figure
+  src="/ai-and-more/img/whatsapp-flows/appointment-form.png"
+  alt="The appointment booking designer with fields for the booking screen labels and a live phone preview of the booking form"
+  caption="Image shows the appointment booking designer with a live preview."
+/>
+
+Booked appointments are shown on the [Appointments](/ai-and-more/appointments) page.
+
+## Flow limits
+
+Your plan limits how many flows you can create. If you reach the limit, you won't be able to create or copy a new flow until you upgrade your plan or delete a draft flow.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Appointments" icon="calendar-check" href="/ai-and-more/appointments">
+    See where bookings from a live booking flow end up.
+  </Card>
+
+  <Card title="Automation" icon="bot" href="/automation/overview">
+    Send a flow automatically as part of a chatbot conversation.
+  </Card>
+</CardGroup>
