@@ -313,8 +313,8 @@
     ]
   },
   "logo": {
-    "light": "/images/Group6.png",
-    "dark": "/images/image-2.svg"
+    "light": "/images/wamatrix-dark-green.svg",
+    "dark": "/images/wamatrix-green.svg"
   },
   "navbar": {
     "links": [
