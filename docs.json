@@ -200,7 +200,7 @@
       },
       {
         "tab": "Api",
-        "openapi": "/api-collection/WaMetrix-api-v1.json",
+        "openapi": "/api-collection/whatsmark-api-v1.json",
         "pages": [
           "overview",
           {
