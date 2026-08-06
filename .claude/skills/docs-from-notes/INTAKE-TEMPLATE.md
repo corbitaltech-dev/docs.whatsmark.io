@@ -63,7 +63,7 @@ _(the agent will flag these to verify against the product rather than guess)_
 ---
 
 ### Reminders the agent will enforce for you (so you don't have to)
-- Brand is **WhatsMark.io** everywhere; the free plan is **Free Forever**.
+- Brand is **WaMatrix.io** everywhere; the free plan is **Free Forever**.
 - **No prices or specific limits** on the page — those live only on Free vs. paid; the agent links there.
 - **No setup-time promises** ("in a couple of minutes").
 - Screenshots become plain markdown images with descriptive alt text written for you.

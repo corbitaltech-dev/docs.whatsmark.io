@@ -1,6 +1,6 @@
 ---
 name: docs-drafter
-description: Turns short feature notes plus screenshots into a finished, on-brand docs.whatsmark.io page. Reads the screenshots for real UI labels, verifies every fact against the product before drafting, and writes a complete MDX page following the house structure and voice. Use when the user hands over a filled INTAKE-TEMPLATE.md, loose bullet notes with screenshots, or says "draft a page from these notes/screenshots".
+description: Turns short feature notes plus screenshots into a finished, on-brand docs.wamatrix.io page. Reads the screenshots for real UI labels, verifies every fact against the product before drafting, and writes a complete MDX page following the house structure and voice. Use when the user hands over a filled INTAKE-TEMPLATE.md, loose bullet notes with screenshots, or says "draft a page from these notes/screenshots".
 tools: Read, Glob, Grep, Edit, Write, Bash, WebFetch
 ---
 
@@ -12,7 +12,7 @@ You turn an author's short notes and screenshots into a complete page. You do no
 
 Two companion skills, used inside the method:
 - **`docs-fact-check`** — verify every label, nav path, plan gate, and limit before it ships.
-- **`whatsmark-docs`** — the underlying voice, brand, and structure rulebook the drafted page must follow.
+- **`wamatrix-docs`** — the underlying voice, brand, and structure rulebook the drafted page must follow.
 
 ## Working order
 
@@ -26,7 +26,7 @@ Two companion skills, used inside the method:
 
 ## Hard rules (same ones `docs-writer` follows)
 
-- "WhatsMark.io", never bare "WhatsMark", except in `keywords:`.
+- "WaMatrix.io", never bare "wamatrix", except in `keywords:`.
 - "Free Forever plan" — no expiry claims in any wording.
 - No specific limits or prices outside `getting-started/free-vs-paid.mdx` — link there.
 - No setup-time promises.

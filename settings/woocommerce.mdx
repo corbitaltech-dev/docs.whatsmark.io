@@ -7,7 +7,7 @@ keywords: ["WhatsMark", "WooCommerce", "integration", "ecommerce", "WordPress", 
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Connect your **WooCommerce** store with WhatsMark.io to automatically send WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
+Connect your **WooCommerce** store with WaMatrix.io to automatically send WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
 
 Find it under **Settings → WooCommerce**.
 
@@ -35,7 +35,7 @@ Find it under **Settings → WooCommerce**.
 </Step>
 
 <Step title="Set Permissions to Read/Write">
-  Choose **Read/Write**. Read access alone won't work because WhatsMark.io needs to create webhooks.
+  Choose **Read/Write**. Read access alone won't work because WaMatrix.io needs to create webhooks.
 
   <Figure
     src="/settings/img/woo-create-api-key.png"
@@ -57,7 +57,7 @@ Find it under **Settings → WooCommerce**.
 
 ## Step 2 — Connect your store
 
-Now in WhatsMark.io, go to **Settings → WooCommerce** and fill in the fields:
+Now in WaMatrix.io, go to **Settings → WooCommerce** and fill in the fields:
 
 - **Store URL** — your shop's web address, like `https://your-store.com`.
 - **Consumer Key** — starts with `ck_`.
@@ -81,7 +81,7 @@ If you see **Could not verify these credentials against your store,** the error 
 
 <Steps>
 <Step title="Download it">
-  On the WhatsMark.io WooCommerce page, click **Download plugin**. You get a `.zip` file.
+  On the WaMatrix.io WooCommerce page, click **Download plugin**. You get a `.zip` file.
 
   <Figure
     src="/settings/img/woo-plugin-download.png"
@@ -102,23 +102,23 @@ If you see **Could not verify these credentials against your store,** the error 
 </Step>
 
 <Step title="Activate it">
-  Click **Activate Plugin**. It is called **WooCommerce Connector for WhatsMark.io**.
+  Click **Activate Plugin**. It is called **WooCommerce Connector for WaMatrix.io**.
 </Step>
 </Steps>
 
 ## Step 4 — Point the plugin at your workspace
 
-Once the plugin is active, a **WhatsMark.io** link appears in your WordPress sidebar. Click it.
+Once the plugin is active, a **WaMatrix.io** link appears in your WordPress sidebar. Click it.
 
 <Figure
   src="/settings/img/woo-plugin-menu.png"
-  alt="The WordPress admin sidebar with a WhatsMark.io menu link"
-  caption="Image shows the WhatsMark.io link in the WordPress sidebar."
+  alt="The WordPress admin sidebar with a WaMatrix.io menu link"
+  caption="Image shows the WaMatrix.io link in the WordPress sidebar."
 />
 
 <Steps>
 <Step title="Webhook URL">
-  Go back to **Settings → WooCommerce** in WhatsMark.io and click the copy icon next to **Webhook URL**. Paste it into WordPress.
+  Go back to **Settings → WooCommerce** in WaMatrix.io and click the copy icon next to **Webhook URL**. Paste it into WordPress.
 
   <Figure
     src="/settings/img/woo-webhook-details.png"
@@ -141,7 +141,7 @@ Once the plugin is active, a **WhatsMark.io** link appears in your WordPress sid
 </Steps>
 
 <Note>
-The plugin checks in with WhatsMark.io **once a day**, so your WooCommerce page can still say **Plugin not yet connected** for up to 24 hours after you install it. That does not mean the install failed. Abandoned carts start working immediately.
+The plugin checks in with WaMatrix.io **once a day**, so your WooCommerce page can still say **Plugin not yet connected** for up to 24 hours after you install it. That does not mean the install failed. Abandoned carts start working immediately.
 </Note>
 
 ## Make sure you can reach customers
@@ -198,7 +198,7 @@ An abandoned cart is when a customer adds items to their cart but leaves without
 How it works:
 
 - The cart is saved as soon as the customer adds an item.
-- WhatsMark.io can only send a message after the customer enters their **phone number** during checkout.
+- WaMatrix.io can only send a message after the customer enters their **phone number** during checkout.
 - If the customer doesn't check out within the time you set, the cart is marked as **abandoned** and the automation runs.
 - Only one reminder is sent for each abandoned cart.
 
@@ -211,7 +211,7 @@ You can include **order details** in your message. Type `@` and choose a [merge 
 Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
 
 <Note>
-Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WhatsMark.io plugin in WordPress. The Webhook URL stays the same.
+Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WaMatrix.io plugin in WordPress. The Webhook URL stays the same.
 </Note>
 
 ## What's next

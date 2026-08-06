@@ -1,13 +1,13 @@
 ---
 name: "docs-from-notes"
-description: "Turns a short, point-by-point feature description plus screenshots into a complete, on-brand docs.whatsmark.io page. Reads the images to see the real UI (labels, buttons, states), reads the author's terse bullets and instructions, then expands them into a full MDX page that follows the house voice and the proven page structure — hook, what you get, before you start, steps, check, keep going, common questions, where next — with each screenshot placed as a plain markdown image with descriptive alt text, paid features marked, Meta rules cited, and every fact flagged for verification. Expansion means wording, flow, and structure only: it never invents a label, limit, or behaviour that isn't in the notes, the image, or the verified product. Activate when the user provides feature notes and/or screenshots and wants them written up, says 'draft a page from these bullets', or hands over a filled intake template."
+description: "Turns a short, point-by-point feature description plus screenshots into a complete, on-brand docs.wamatrix.io page. Reads the images to see the real UI (labels, buttons, states), reads the author's terse bullets and instructions, then expands them into a full MDX page that follows the house voice and the proven page structure — hook, what you get, before you start, steps, check, keep going, common questions, where next — with each screenshot placed as a plain markdown image with descriptive alt text, paid features marked, Meta rules cited, and every fact flagged for verification. Expansion means wording, flow, and structure only: it never invents a label, limit, or behaviour that isn't in the notes, the image, or the verified product. Activate when the user provides feature notes and/or screenshots and wants them written up, says 'draft a page from these bullets', or hands over a filled intake template."
 ---
 
 # Docs from notes + screenshots
 
 The author gives you a little; you produce a complete page. The input is short bullets and one or more screenshots. The output is a finished MDX page that reads like the rest of the site. **Your job is to expand wording, flow, and structure — never to invent facts.** A label, limit, or behaviour that isn't in the notes, visible in the image, or confirmed in the product does not go on the page.
 
-**Read `whatsmark-docs` first** — it sets the voice, banned words, brand and plan naming, Mintlify mechanics, Meta-citation rules, and the page structure you build to. This skill is the intake-to-draft method on top of it. Verify facts with `docs-fact-check`; check the finished page with `docs-reviewer`.
+**Read `wamatrix-docs` first** — it sets the voice, banned words, brand and plan naming, Mintlify mechanics, Meta-citation rules, and the page structure you build to. This skill is the intake-to-draft method on top of it. Verify facts with `docs-fact-check`; check the finished page with `docs-reviewer`.
 
 ---
 
@@ -40,7 +40,7 @@ Anything you can't verify: draft around it and **flag it to the author**, or lea
 
 ## Step 3 — Choose the structure
 
-Map the notes to the proven pattern (`whatsmark-docs` §4). **Use only the sections that fit** — a small feature page is often just hook → steps → what's next. Don't force all eight.
+Map the notes to the proven pattern (`wamatrix-docs` §4). **Use only the sections that fit** — a small feature page is often just hook → steps → what's next. Don't force all eight.
 
 | Section | Build it from | Skip when |
 | --- | --- | --- |
@@ -53,7 +53,7 @@ Map the notes to the proven pattern (`whatsmark-docs` §4). **Use only the secti
 | **Common questions** (`AccordionGroup`) | the gotchas / "why can't I…" | no known objections |
 | **What's next** (cards) | the related pages, forward only | — |
 
-Momentum rule: "Keep going" and "What's next" point to pages the reader **hasn't** seen yet, never backwards (`whatsmark-docs` §1a).
+Momentum rule: "Keep going" and "What's next" point to pages the reader **hasn't** seen yet, never backwards (`wamatrix-docs` §1a).
 
 ## Step 4 — Write the prose
 
@@ -76,7 +76,7 @@ Expand each bullet into plain, short sentences. Outcomes before mechanics; benef
 title: "Sentence case title"
 description: "One sentence, written to attract, not summarise — it shows in search and social. Plain text, no **bold**."
 icon: "lucide-name"     # Lucide only; they fail silently. message-circle for WhatsApp.
-keywords: ["WhatsMark", "WhatsMark.io", "…"]   # bare WhatsMark allowed here only
+keywords: ["WhatsMark", "WaMatrix.io", "…"]   # bare WhatsMark allowed here only
 ---
 ```
 
@@ -103,7 +103,7 @@ Ask a focused question **only** when a genuine gap blocks the page — an unknow
 title: "Canned replies"
 description: "Save the answers you send every day and drop them into a chat with a shortcut."
 icon: "message-square-quote"
-keywords: ["WhatsMark", "WhatsMark.io", "canned replies", "quick replies", "shortcuts", "live chat"]
+keywords: ["WhatsMark", "WaMatrix.io", "canned replies", "quick replies", "shortcuts", "live chat"]
 ---
 
 Save the replies you type again and again, and drop them into any chat in one click. *(Canned replies need a paid plan.)*

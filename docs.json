@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "WhatsMark.io",
+  "name": "WaMatrix.io",
   "colors": {
     "primary": "#779812",
     "light": "#C6FE1E",
@@ -320,7 +320,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@whatsmark.io"
+        "href": "mailto:support@wamatrix.io"
       }
     ]
   },
@@ -338,8 +338,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/whatsmark_io",
-      "linkedin": "https://linkedin.com/company/whatsmarkio"
+      "x": "https://x.com/wamatrix_io",
+      "linkedin": "https://linkedin.com/company/wamatrixio"
     }
   },
   "icons": {
