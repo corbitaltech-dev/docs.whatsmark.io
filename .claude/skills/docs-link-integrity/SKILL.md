@@ -1,6 +1,6 @@
 ---
 name: "docs-link-integrity"
-description: "Finds and fixes broken links on docs.WaMetrix.io — stale internal paths left behind by a section reorg, dead image references, docs.json validity, and Meta/WhatsApp developer links that return a soft-404 (HTTP 200 with an empty shell) which curl and mint broken-links cannot detect. Activate after any folder rename or navigation reorg, before launch, on a scheduled docs-manager sweep, or when a reader reports a dead link."
+description: "Finds and fixes broken links on docs.whatsmark.io — stale internal paths left behind by a section reorg, dead image references, docs.json validity, and Meta/WhatsApp developer links that return a soft-404 (HTTP 200 with an empty shell) which curl and mint broken-links cannot detect. Activate after any folder rename or navigation reorg, before launch, on a scheduled docs-manager sweep, or when a reader reports a dead link."
 ---
 
 # Link integrity: internal, image, and Meta links
@@ -60,7 +60,7 @@ A duplicate image usually means duplicate documentation (see the information-arc
 python3 -c "import json; json.load(open('docs.json')); print('valid')"
 ```
 
-Run this after *any* edit to `docs.json`, including ones made by another skill — it's the single file most likely to be mid-edit by another writer (`WaMetrix-docs` §7), so a syntax error here breaks the whole site's navigation, not just one page.
+Run this after *any* edit to `docs.json`, including ones made by another skill — it's the single file most likely to be mid-edit by another writer (`whatsmark-docs` §7), so a syntax error here breaks the whole site's navigation, not just one page.
 
 ## §6 — Meta/WhatsApp developer links: the soft-404 trap
 
@@ -76,7 +76,7 @@ WebFetch <url> "Does this page have real documentation content, or is it an empt
 placeholder / page not found? Summarise what it actually covers."
 ```
 
-Prefer the verified link set in `WaMetrix-docs` §6 over anything discovered fresh. If a page links an **older path style** (e.g. `/docs/whatsapp/cloud-api/support/error-codes/`) where the rest of the site uses the newer `/documentation/business-messaging/whatsapp/…` structure, that's a consistency flag even if the old link still resolves — align it once you've confirmed the new URL has equivalent content.
+Prefer the verified link set in `whatsmark-docs` §6 over anything discovered fresh. If a page links an **older path style** (e.g. `/docs/whatsapp/cloud-api/support/error-codes/`) where the rest of the site uses the newer `/documentation/business-messaging/whatsapp/…` structure, that's a consistency flag even if the old link still resolves — align it once you've confirmed the new URL has equivalent content.
 
 If a Meta page can't be confirmed to exist, **state the rule without a link** rather than shipping a URL that might be dead — a missing citation is honest; a soft-404 citation looks authoritative and is silently wrong.
 

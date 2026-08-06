@@ -1,18 +1,16 @@
 ---
 title: "API Overview"
-description: "Connect your own software to WaMetrix.io — what the API can do, and how to get your access token."
+description: "Connect your own software to WhatsMark.io — what the API can do, and how to get your access token."
 icon: "eye"
-keywords: ["WaMetrix", "API", "REST API", "developer", "token", "scopes", "pagination"]
+keywords: ["WhatsMark", "API", "REST API", "developer", "token", "scopes", "pagination"]
 ---
 
-## What is the WaMetrix API
+## What is the WhatsMark.io API
 
-The WaMetrix REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.WaMetrix.io`, separate from your tenant subdomain.
-
-This page is the short version — what the API is, how to get a token, and the conventions every endpoint follows. **Every endpoint is documented in full in this reference**, grouped in the sidebar by module: Auth & Account, Channels, Contacts, Contact Statuses, Contact Sources, Contact Groups, Contact Labels, Templates, Messages, Conversations, and OTP.
+The WhatsMark.io REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.whatsmark.io`, separate from your tenant subdomain.
 
 <Warning>
-  **The API is not available on the Free plan.** REST API access is a **Professional** plan feature — Free-plan workspaces can use the full dashboard, but any request to `api.WaMetrix.io` will be rejected until you upgrade. Reseller plans also include API access, with a higher (or unlimited) monthly request quota.
+  API access is a paid feature. Upgrade your plan to start using the WhatsMark.io API.
 </Warning>
 
 ## Getting access
@@ -32,14 +30,14 @@ This page is the short version — what the API is, how to get a token, and the 
     ```
   </Step>
   <Step title="Call the API">
-    Send requests to `https://api.WaMetrix.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working — you'll find it under **Auth & Account** in the sidebar.
+    Send requests to `https://api.whatsmark.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working — you'll find it under [Auth & Account](/api-reference/auth-&-account/ping) in the sidebar.
   </Step>
 </Steps>
 
 ## Base URL
 
 ```text
-https://api.WaMetrix.io/api/v1
+https://api.whatsmark.io/api/v1
 ```
 
 ## Scopes (abilities)
@@ -86,18 +84,18 @@ Every module is documented endpoint by endpoint in the sidebar under this Api ta
 
 ## Prefer Swagger, or need an OpenAPI spec / Postman collection?
 
-If you'd rather browse and test everything from a single interactive Swagger page, or need the raw spec to generate a client, the same API is also documented at [api.WaMetrix.io/docs](https://api.WaMetrix.io/docs).
+If you'd rather browse and test everything from a single interactive Swagger page, or need the raw spec to generate a client, the same API is also documented at [api.whatsmark.io/docs](https://api.whatsmark.io/docs).
 
 <CardGroup cols={2}>
-  <Card title="Try it out, live" icon="play" href="https://api.WaMetrix.io/docs">
+  <Card title="Try it out, live" icon="play" href="https://api.whatsmark.io/docs">
     Use the **Authorize** button on the Swagger UI to add `Authorization: Bearer <token>` and send real requests against your workspace without leaving the browser.
   </Card>
 
-  <Card title="OpenAPI spec" icon="file-json" href="https://api.WaMetrix.io/openapi/WaMetrix-api-v1.json">
+  <Card title="OpenAPI spec" icon="file-code" href="https://api.whatsmark.io/openapi/whatsmark-api-v1.json">
     Download the raw OAS 3.1 document to generate clients or import it into your own tooling.
   </Card>
 
-  <Card title="Postman collection" icon="download" href="https://api.WaMetrix.io/docs">
+  <Card title="Postman collection" icon="download" href="https://api.whatsmark.io/docs">
     Export every request, with example payloads and responses, ready to import into Postman (button available on the Swagger page).
   </Card>
 

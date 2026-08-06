@@ -1,13 +1,13 @@
 ---
 name: "docs-consistency-lint"
-description: "Site-wide sweep for brand, banned-word, plan-naming, formatting, and time-promise drift on docs.WaMetrix.io — bare 'WaMetrix' outside keywords, 'tenant' instead of 'workspace', 'Free plan' instead of 'Free Forever', developer jargon (WABA, webhook, embedded signup) on customer pages, thin or missing image alt text, Lucide icon typos, Title Case vs sentence case drift, inconsistent UI-label casing, and setup-time promises. Grounded in the July 2026 site audit, where every check here caught a real, repeated instance. Activate for a pre-launch sweep, a scheduled docs-manager run, or 'lint this page/section for brand and formatting issues'."
+description: "Site-wide sweep for brand, banned-word, plan-naming, formatting, and time-promise drift on docs.whatsmark.io — bare 'WhatsMark' outside keywords, 'tenant' instead of 'workspace', 'Free plan' instead of 'Free Forever', developer jargon (WABA, webhook, embedded signup) on customer pages, thin or missing image alt text, Lucide icon typos, Title Case vs sentence case drift, inconsistent UI-label casing, and setup-time promises. Grounded in the July 2026 site audit, where every check here caught a real, repeated instance. Activate for a pre-launch sweep, a scheduled docs-manager run, or 'lint this page/section for brand and formatting issues'."
 ---
 
 # Consistency lint: brand, banned words, formatting, time promises
 
-A mechanical pass over the rules in `WaMetrix-docs` §1, §2, §5, §6. This skill exists because these specific slips were found **repeated across many files**, not once — grep the whole site, don't sample. Every section below is a reproducible check; run the command, don't eyeball it.
+A mechanical pass over the rules in `whatsmark-docs` §1, §2, §5, §6. This skill exists because these specific slips were found **repeated across many files**, not once — grep the whole site, don't sample. Every section below is a reproducible check; run the command, don't eyeball it.
 
-Read `WaMetrix-docs` first if you haven't — this skill only *finds* violations of its rules, it doesn't restate the reasoning behind them.
+Read `whatsmark-docs` first if you haven't — this skill only *finds* violations of its rules, it doesn't restate the reasoning behind them.
 
 ---
 
@@ -26,15 +26,15 @@ grep -rn --include="*.mdx" -E "session message|24-hour customer service window" 
 grep -rln --include="*.mdx" -wE "quota|entitlement|endpoint|payload|webhook" . | grep -v "^overview.mdx" | grep -v "^api/"
 ```
 
-Fix: swap for the house term (`tenant` → `workspace`, etc. — full table in `WaMetrix-docs` §1). This is a pure find-replace; no judgement needed unless the surrounding sentence was built around the banned word (see §3 jargon drift below for that case).
+Fix: swap for the house term (`tenant` → `workspace`, etc. — full table in `whatsmark-docs` §1). This is a pure find-replace; no judgement needed unless the surrounding sentence was built around the banned word (see §3 jargon drift below for that case).
 
-## §2 — Bare "WaMetrix" instead of "WaMetrix.io"
+## §2 — Bare "WhatsMark" instead of "WhatsMark.io"
 
 ```bash
-grep -rnE --include="*.mdx" "WaMetrix[^.]" . | grep -v "keywords"
+grep -rnE --include="*.mdx" "WhatsMark[^.]" . | grep -v "keywords"
 ```
 
-Every hit outside a `keywords:` array should read **WaMetrix.io**. Watch for the regex matching a sentence end (`WaMetrix.` with a period, which is correct) — read the actual match, don't blind-replace.
+Every hit outside a `keywords:` array should read **WhatsMark.io**. Watch for the regex matching a sentence end (`WhatsMark.` with a period, which is correct) — read the actual match, don't blind-replace.
 
 ## §3 — Plan naming and jargon drift
 
@@ -52,7 +52,7 @@ Mechanical fix: `Free plan` / `Free-plan` → `Free Forever plan` / `Free Foreve
 grep -rniE --include="*.mdx" "\bWABA\b|WhatsApp Business Account|embedded signup|webhook subscription" . | grep -v "^overview.mdx"
 ```
 
-A hit here is a **plain-language pass**, not a find-replace — reword the sentence (`WaMetrix-docs` §1, the WABA/embedded-signup/webhook row) and hand it to `docs-writer` rather than auto-fixing. Exception: literal field labels (**WABA ID**, **Access Token**, **App Secret**) are correct *inside a Manual-connection step*, where they're the real UI text — don't flag those.
+A hit here is a **plain-language pass**, not a find-replace — reword the sentence (`whatsmark-docs` §1, the WABA/embedded-signup/webhook row) and hand it to `docs-writer` rather than auto-fixing. Exception: literal field labels (**WABA ID**, **Access Token**, **App Secret**) are correct *inside a Manual-connection step*, where they're the real UI text — don't flag those.
 
 ## §4 — Lucide icon names
 
@@ -63,11 +63,11 @@ grep -rn --include="*.mdx" -E 'icon="(bolt|comments|bullhorn|robot|cart-shopping
 grep -rn "docs.json" -e '"icon"' | grep -E 'bolt|comments|bullhorn|robot|cart-shopping'
 ```
 
-Full known-bad → correct table is in `WaMetrix-docs` §5. After any fix, load the page in `mint dev` and **look** — a correct-looking name can still be wrong if it's not real Lucide, and the source alone won't tell you.
+Full known-bad → correct table is in `whatsmark-docs` §5. After any fix, load the page in `mint dev` and **look** — a correct-looking name can still be wrong if it's not real Lucide, and the source alone won't tell you.
 
 ## §5 — Setup-time promises
 
-Banned everywhere except a factual, non-promissory note (`WaMetrix-docs` §2).
+Banned everywhere except a factual, non-promissory note (`whatsmark-docs` §2).
 
 ```bash
 grep -rniE --include="*.mdx" "in (a |just )?(a couple of|[0-9]+) (minutes|seconds|hours)|set up in (under|less than)|takes only|ready in" .
@@ -80,7 +80,7 @@ Triage each hit:
 
 ## §6 — Image alt text
 
-Bare markdown images are the house standard (`WaMetrix-docs` §5, Screenshots). **`<BrowserFrame>` is retired** — do not flag a bare `![]()` as a defect, and do not convert one into a `BrowserFrame`.
+Bare markdown images are the house standard (`whatsmark-docs` §5, Screenshots). **`<BrowserFrame>` is retired** — do not flag a bare `![]()` as a defect, and do not convert one into a `BrowserFrame`.
 
 What to check instead is the `alt` text, which now carries the entire description on its own:
 
@@ -106,7 +106,7 @@ There's no single grep that finds all instances of this site-wide — it surface
 
 ## §8 — Title Case vs sentence case
 
-The house rule (`WaMetrix-docs` §4) is sentence case for titles and headings. Find the drift:
+The house rule (`whatsmark-docs` §4) is sentence case for titles and headings. Find the drift:
 
 ```bash
 # frontmatter titles that look Title Case (naive heuristic — multiple capitalised words)

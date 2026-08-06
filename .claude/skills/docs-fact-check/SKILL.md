@@ -1,22 +1,22 @@
 ---
 name: docs-fact-check
-description: How to verify a documentation claim against the real WaMetrix.io product before publishing it — locating the feature in the Laravel/Vue source at /media/corbital/web_data/laravel.local/WaMetrix.io, confirming exact UI button and status labels, checking plan gating and limits, and routing to the right feature specialist agent. Activate when writing any factual claim about how the product behaves, when a page mentions a button/screen/limit, when auditing an existing page for accuracy, or when the user asks whether a documented behaviour is real.
+description: How to verify a documentation claim against the real WhatsMark.io product before publishing it — locating the feature in the Laravel/Vue source at /media/corbital/web_data/laravel.local/whatsmark.io, confirming exact UI button and status labels, checking plan gating and limits, and routing to the right feature specialist agent. Activate when writing any factual claim about how the product behaves, when a page mentions a button/screen/limit, when auditing an existing page for accuracy, or when the user asks whether a documented behaviour is real.
 ---
 
 # Fact-checking a docs claim
 
 Every behavioural claim in the docs must be traceable to the product. A page that describes a button that doesn't exist is worse than a missing page — it burns the trust the docs are there to build.
 
-**Product source:** `/media/corbital/web_data/laravel.local/WaMetrix.io` — Laravel + Vue/Inertia (`resources/js/pages`, no `app/Livewire`).
+**Product source:** `/media/corbital/web_data/laravel.local/whatsmark.io` — Laravel + Vue/Inertia (`resources/js/pages`, no `app/Livewire`).
 
-⚠️ **Do not use `/media/corbital/web_data/laravel.local/WaMetrix-saas`.** That is the older Livewire v1 product and does **not** match what the docs describe. Confirm you have the right repo before grepping: the current one has `resources/js/pages` and an empty `app/Livewire`.
+⚠️ **Do not use `/media/corbital/web_data/laravel.local/whatsmark-saas`.** That is the older Livewire v1 product and does **not** match what the docs describe. Confirm you have the right repo before grepping: the current one has `resources/js/pages` and an empty `app/Livewire`.
 
 ---
 
 ## Check `developer-docs/` first
 
 Before grepping the product source, look in
-`/media/corbital/web_data/laravel.local/WaMetrix.io/developer-docs/`. That folder is the
+`/media/corbital/web_data/laravel.local/whatsmark.io/developer-docs/`. That folder is the
 internal feature-behaviour reference — exact UI labels, status strings, navigation paths,
 plan gates and known gaps — and it exists precisely so customer pages are not written by
 re-deriving those facts from code every time.
@@ -53,14 +53,14 @@ implemented, which is exactly the kind of claim that must never reach a customer
 - **Every status value** — `Active`, `PENDING`, `APPROVED`, `Connected`. Case matters; the docs show what the screen shows.
 - **Every navigation path** — "Templates → WhatsApp → Create Template" must match the real sidebar.
 - **Every plan gate** — is this feature really available on Free Forever?
-- **Every limit or price** — and remember these belong only in `getting-started/free-vs-paid.mdx` (see the `WaMetrix-docs` skill).
+- **Every limit or price** — and remember these belong only in `getting-started/free-vs-paid.mdx` (see the `whatsmark-docs` skill).
 
 ## How to check
 
 **UI labels** — grep the Vue pages for the visible string:
 
 ```bash
-cd /media/corbital/web_data/laravel.local/WaMetrix.io
+cd /media/corbital/web_data/laravel.local/whatsmark.io
 grep -rn "Sync Templates" resources/js --include="*.vue" | head
 ```
 
