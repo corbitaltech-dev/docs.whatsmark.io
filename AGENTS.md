@@ -14,9 +14,9 @@
 ## Terminology, style, and content boundaries
 
 The real rules — banned words (e.g. "workspace" not "tenant"), brand and plan naming
-("WaMatrix.io", "Free Forever"), voice, page structure, Meta-citation requirements,
+("WaMetrix.io", "Free Forever"), voice, page structure, Meta-citation requirements,
 and what belongs on a customer page versus the API reference — live in
-**`.claude/skills/WaMatrix-docs/SKILL.md`**. Read that file before writing or
+**`.claude/skills/WaMetrix-docs/SKILL.md`**. Read that file before writing or
 editing any page; it is the single source of truth, not this file.
 
 Related skills for specific tasks: `docs-fact-check` (verify a claim against the

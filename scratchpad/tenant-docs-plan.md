@@ -1,6 +1,6 @@
-# WaMatrix Tenant Docs — Full Plan
+# WaMetrix Tenant Docs — Full Plan
 
-Status check against the live docs repo (`docs.WaMatrix.io`) as of today:
+Status check against the live docs repo (`docs.WaMetrix.io`) as of today:
 
 **Already written:** Introduction (`index.mdx`), Register (`register.mdx`), Login (`log-in.mdx`), Getting Started (`getting-started.mdx`), API Overview (`overview.mdx`).
 
@@ -270,7 +270,7 @@ Profile · Password · Two-Factor Auth · Appearance · Verify Phone · General 
 ### API Access (Developer)
 - Route: `/api-keys`
 - Create named tokens with scopes (contacts/channels/messages/templates/groups/labels/sources/statuses/conversations/OTP/account/usage), regenerate, revoke.
-- Authenticates against `api.WaMatrix.io/api/v1/...`.
+- Authenticates against `api.WaMetrix.io/api/v1/...`.
 - Gates: `api_access` boolean (page visibility), `api_requests` monthly quota.
 - *(Already partly covered by your API Overview page — this would be the "how to manage tokens in the dashboard" companion page, separate from the API reference itself.)*
 

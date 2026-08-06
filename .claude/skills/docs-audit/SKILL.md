@@ -1,17 +1,17 @@
 ---
 name: "docs-audit"
-description: "Full-site health sweep for docs.WaMatrix.io — runs the consistency, grammar, and link-integrity checks across every page, deep-reads a representative sample per section, and produces a severity-ranked report with a suggested order of work. This is the methodology behind the July 2026 audit, generalised into a repeatable process with a fixed report template and severity model. Activate for a pre-launch review, a scheduled full sweep (docs-manager runs this weekly or after any reorg), or when the user asks for a health check / audit of the docs site."
+description: "Full-site health sweep for docs.WaMetrix.io — runs the consistency, grammar, and link-integrity checks across every page, deep-reads a representative sample per section, and produces a severity-ranked report with a suggested order of work. This is the methodology behind the July 2026 audit, generalised into a repeatable process with a fixed report template and severity model. Activate for a pre-launch review, a scheduled full sweep (docs-manager runs this weekly or after any reorg), or when the user asks for a health check / audit of the docs site."
 ---
 
 # Full-site documentation audit
 
-The site-wide health check. It combines the mechanical sweeps (`docs-consistency-lint`, `docs-grammar-style`, `docs-link-integrity`) with a deep, line-by-line read of a representative sample, then reports everything in one severity-ranked document. This is not a new rulebook — every check here defers to `WaMatrix-docs` for the *rule* and to the three checking skills for *how to find violations*; this skill owns the **process and the report shape**.
+The site-wide health check. It combines the mechanical sweeps (`docs-consistency-lint`, `docs-grammar-style`, `docs-link-integrity`) with a deep, line-by-line read of a representative sample, then reports everything in one severity-ranked document. This is not a new rulebook — every check here defers to `WaMetrix-docs` for the *rule* and to the three checking skills for *how to find violations*; this skill owns the **process and the report shape**.
 
 ---
 
 ## 1. How to run it
 
-1. **Read the governance files first**, every time — `AGENTS.md` and `.claude/skills/WaMatrix-docs/SKILL.md` — even if you audited last month; rules change.
+1. **Read the governance files first**, every time — `AGENTS.md` and `.claude/skills/WaMetrix-docs/SKILL.md` — even if you audited last month; rules change.
 2. **Deep-read a representative sample**, not just the pages that changed recently: the flagship page (`index.mdx`), one page from each nav group, and any page flagged as high-traffic or high-risk (first-run onboarding, the primary channel-connection page, the plans page). Read these **in full**, line by line — this is where grammar errors and voice drift surface; a grep sweep alone will miss them.
 3. **Run every mechanical check site-wide** — do not sample these, run them against all `~50` pages:
    - `docs-consistency-lint` (brand, banned words, plan naming, images, icons, casing, time promises)
@@ -41,12 +41,12 @@ Bucket findings by theme (lettered, A/B/C…) the way the July 2026 audit did �
 ## 3. Report template
 
 ```markdown
-# WaMatrix.io Documentation Audit
+# WaMetrix.io Documentation Audit
 
-**Site:** docs.WaMatrix.io (Mintlify)
+**Site:** docs.WaMetrix.io (Mintlify)
 **Date:** <date>
 **Status:** <pre-launch / live / post-reorg, etc.>
-**Audited against:** .claude/skills/WaMatrix-docs/SKILL.md
+**Audited against:** .claude/skills/WaMetrix-docs/SKILL.md
 
 ## 1. How this audit was done
 <governance files read, pages deep-read, sweeps run>
@@ -67,7 +67,7 @@ Bucket findings by theme (lettered, A/B/C…) the way the July 2026 audit did �
 <numbered, cheapest-and-highest-severity first, decisions last>
 
 ## 7. Time-promise check
-<explicit pass over WaMatrix-docs §2's banned time-promise rule — this has its own
+<explicit pass over WaMetrix-docs §2's banned time-promise rule — this has its own
 section because it's easy to miss in a general grep pass and has shipped before>
 ```
 
@@ -75,7 +75,7 @@ section because it's easy to miss in a general grep pass and has shipped before>
 
 Every finding needs a **fix**, but not every fix is something to apply unilaterally. Mirror the split `docs-manager` uses:
 
-- **Mechanical** (banned words, bare `WaMatrix`, `Free plan` naming, bare images, icon typos, dead old-path links) — state the fix directly; these are find-replace, no judgement.
+- **Mechanical** (banned words, bare `WaMetrix`, `Free plan` naming, bare images, icon typos, dead old-path links) — state the fix directly; these are find-replace, no judgement.
 - **Judgement** (jargon-heavy pages needing a voice rewrite, Title Case vs sentence-case as a site convention, which of two duplicate pages is canonical, whether to rename a folder) — state the **options**, not a single prescribed answer, and mark it "needs a decision" in the effort column. An audit that quietly picks the answer for an IA question removes the user's ability to disagree.
 
 ## 5. Common finding categories, from real audits (a checklist, not an exhaustive list)
@@ -87,7 +87,7 @@ Every finding needs a **fix**, but not every fix is something to apply unilatera
 - Grammar and typos — see `docs-grammar-style`.
 - Information architecture — a folder/nav-group name that tells the reader nothing, or two pages documenting the same feature that will drift apart. These are always "needs a decision."
 - Repo hygiene — placeholder governance files, files that must not be published leaking into the build, misspelled asset filenames.
-- Time-promise leakage — see `WaMatrix-docs` §2; check separately, it's easy to under-grep.
+- Time-promise leakage — see `WaMetrix-docs` §2; check separately, it's easy to under-grep.
 
 ## 6. After the audit ships
 

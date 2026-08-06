@@ -1,13 +1,13 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "WaMatrix.io REST API",
+        "title": "WaMetrix.io REST API",
         "version": "1.0.0",
-        "description": "WaMatrix public tenant REST API (v1).\n\n**Base URL:** `https://api.WaMatrix.io`\n\n**Auth:** Every authenticated request sends `Authorization: Bearer <token>`, where the token is a workspace API token created under **Settings → API Keys** in your tenant dashboard.\n\n**Scopes:** Each endpoint's description lists the token ability it requires. Create your token with the matching scopes.\n\n**Pagination:** List endpoints return `{ data, links: { next, prev }, meta }`. Large/append-only collections (contacts, group members, webhooks) use opaque cursor pagination — follow `links.next` until it is `null`. `per_page` is clamped to 5–100.\n\n**Async sends:** Message and OTP sends return `202` and are processed on the queue.\n\n**Error envelope:**\n```json\n{ \"message\": \"...\", \"error_code\": \"...\", \"status\": 4xx }\n```\n\n**Modules:** Auth/Account · Channels · Contacts · Statuses · Sources · Groups · Labels · Templates · Messages · Conversations · OTP."
+        "description": "WaMetrix public tenant REST API (v1).\n\n**Base URL:** `https://api.WaMetrix.io`\n\n**Auth:** Every authenticated request sends `Authorization: Bearer <token>`, where the token is a workspace API token created under **Settings → API Keys** in your tenant dashboard.\n\n**Scopes:** Each endpoint's description lists the token ability it requires. Create your token with the matching scopes.\n\n**Pagination:** List endpoints return `{ data, links: { next, prev }, meta }`. Large/append-only collections (contacts, group members, webhooks) use opaque cursor pagination — follow `links.next` until it is `null`. `per_page` is clamped to 5–100.\n\n**Async sends:** Message and OTP sends return `202` and are processed on the queue.\n\n**Error envelope:**\n```json\n{ \"message\": \"...\", \"error_code\": \"...\", \"status\": 4xx }\n```\n\n**Modules:** Auth/Account · Channels · Contacts · Statuses · Sources · Groups · Labels · Templates · Messages · Conversations · OTP."
     },
     "servers": [
         {
-            "url": "https://api.WaMatrix.io",
+            "url": "https://api.WaMetrix.io",
             "description": "Production"
         }
     ],
@@ -219,11 +219,11 @@
                                     "200 OK": {
                                         "summary": "200 OK",
                                         "value": {
-                                            "message": "Welcome to the WaMatrix.io REST API",
-                                            "name": "WaMatrix.io REST API",
+                                            "message": "Welcome to the WaMetrix.io REST API",
+                                            "name": "WaMetrix.io REST API",
                                             "version": "v1",
                                             "base": "/api/v1",
-                                            "documentation": "https://api.WaMatrix.io/docs"
+                                            "documentation": "https://api.WaMetrix.io/docs"
                                         }
                                     }
                                 }
