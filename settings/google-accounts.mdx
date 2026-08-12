@@ -1,6 +1,6 @@
 ---
 title: "Google Accounts"
-description: "Connect a Google account to use Google Sheets and Google Calendar in your automations and appointments."
+description: "Connect a Google account to use Google Sheets and Google Calendar steps in your automation flows."
 icon: "chrome"
 keywords: ["WhatsMark", "Google accounts", "Google Sheets", "Google Calendar", "OAuth"]
 ---
@@ -9,8 +9,8 @@ import { Figure } from '/snippets/browser-frame.jsx';
 
 Connect your Google account once, and WaMatrix.io can use it in two ways:
 
-- **Google Sheets** — When a customer submits a form or answers a question, an [automation](/automation/overview) can add their details as a new row in a Google Sheet.
-- **Google Calendar** — When a customer books an [appointment](/appointment-and-flow/appointments), it's added to your Google Calendar automatically.
+- **Google Sheets** — when a customer answers a question in an [automation](/automation/overview), the flow can add their details as a new row in a Google Sheet.
+- **Google Calendar** — an automation can create an event in your Google Calendar.
 
 Find it under **Settings → Google Accounts**.
 
@@ -21,7 +21,7 @@ Find it under **Settings → Google Accounts**.
 />
 
 <Note>
-Google integration is a paid feature. See [Free vs. Paid Plans](/getting-started/free-vs-paid) for what your plan includes.
+The Google integration is available on the **Professional plan**.
 </Note>
 
 ## Connecting an account
@@ -32,7 +32,7 @@ Google integration is a paid feature. See [Free vs. Paid Plans](/getting-started
 </Step>
 
 <Step title="Sign in and allow access">
-  Pick the Google account you want to connect and approve the permissions it asks for — access to your Google Sheets and Google Calendar.
+  Pick the Google account you want to connect and approve the permissions it asks for — access to your Google Sheets and Google Calendar, plus read-only access to your Drive file list so you can pick a sheet.
 </Step>
 
 <Step title="Check it worked">
@@ -41,12 +41,12 @@ Google integration is a paid feature. See [Free vs. Paid Plans](/getting-started
 </Steps>
 
 <Note>
-You can connect more than one Google account. You pick which one to use when you build a [flow](/automation/flow-builder) or set up [appointments](/appointment-and-flow/appointments).
+You can connect more than one Google account. You pick which one to use on the Google Sheets or Calendar Event step when you build a [flow](/automation/flow-builder).
 </Note>
 
 ## Disconnecting
 
-Click **Disconnect** next to an account to remove it. You'll be asked to confirm first, since any flow or appointment using that account will stop working.
+Click **Disconnect** next to an account to remove it. You'll be asked to confirm first, since any flow using that account will stop working.
 
 ## What's next
 
@@ -55,7 +55,7 @@ Click **Disconnect** next to an account to remove it. You'll be asked to confirm
     Add a row to a Google Sheet from a flow.
   </Card>
 
-  <Card title="Appointments" icon="calendar-check" href="/appointment-and-flow/appointments">
-    Send bookings into your Google Calendar.
+  <Card title="Integration steps" icon="calendar-check" href="/automation/flow-steps/integrations">
+    Use the Google Sheets and Calendar Event steps in a flow.
   </Card>
 </CardGroup>
