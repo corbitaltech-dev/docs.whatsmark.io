@@ -127,6 +127,7 @@
             "pages": [
               "automation/overview",
               "automation/generate-with-ai",
+              "automation/ai-assistants",
               "automation/flow-builder",
               {
                 "group": "Flow Steps",

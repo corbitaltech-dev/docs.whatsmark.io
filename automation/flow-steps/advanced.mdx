@@ -294,6 +294,38 @@ If the list is empty, you'll see a message saying there are no other flows avail
 
 ---
 
+## AI
+
+### AI Assistant
+
+**What it does.** Lets an [AI assistant](/automation/ai-assistants) answer customer questions using its knowledge base. You can set it to answer one question or continue answering throughout the conversation.
+
+**When to use it.** Use it when customers ask questions your AI assistant can answer from its knowledge, such as prices, opening hours, or delivery details. For example, start a flow when a customer says “hi”, then let the assistant answer their questions.
+
+**How to set it up.** Pick the **Assistant**, then choose a **Mode**:
+
+- **Hand over the conversation** — The assistant replies to each new message until the conversation is handed over to your team. The flow stops after the handover.
+- **Answer one question** — The assistant answers one customer question and then stops. It will not answer another question until the flow is triggered again. This mode has a few more settings:
+  - **Greeting message** — Sent when the assistant starts, so the customer knows it is ready. The message that starts the flow is not treated as the customer's question. Leave it blank to use the default greeting.
+  - **Question** — What the assistant answers:
+    - **The customer's last message** — answers what the customer just typed. Right after the trigger, it sends the **Greeting message** first and waits for their next message instead.
+    - **A saved variable** — answers a value collected earlier in the flow, like an **Ask Question** reply. Reveals **Variable name** — type the variable name only, no `{'{{ }}'}` (for example `order_question`).
+  - **Save answer as** — The variable the assistant's reply is saved to, so later steps can use it. With the default name, use it as `{'{{vars.ai_answer}}'}`.
+  - **Send the answer to the customer** — On by default, so the assistant's reply is sent right away. Turn it off to only save the answer as a variable — useful if a later step in the flow should decide what to send instead.
+  - **Show typing indicator** — Shows the customer that a reply is coming.
+
+**Required fields**
+
+- **Assistant** is required. Only assistants that are **Ready** and switched on (**Active**) appear in the list.
+
+![AI Assistant settings in Answer one question mode, with Store Support Assistant selected, a Greeting message, Question set to The customer's last message, Save answer as ai_answer, and the Send the answer to the customer and Show typing indicator switches turned on](/automation/img/advance/ai-assistant-answer-one.png)
+
+**Example.** A **Start Trigger** on "hi", then an **AI Assistant** set to **Hand over the conversation**. The customer can now ask anything, and the assistant replies until it hands the chat to your team.
+
+![A flow with a Start Trigger set to Exact match: hi, connected to an AI Assistant step that says Hands over the conversation](/automation/img/advance/ai-assistant.png)
+
+---
+
 ## A worked example
 
 An online shop handles "where is my order?":

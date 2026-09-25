@@ -1,0 +1,109 @@
+---
+title: "AI Assistants"
+description: "Automatically give your customers quick, helpful answers on WhatsApp and Messenger using AI trained on your documents and website."
+icon: "bot"
+keywords: ["WhatsMark", "WaMatrix.io", "AI assistant", "knowledge base", "chatbot", "auto reply", "AI"]
+---
+
+Customers ask the same questions every day about prices, opening hours, delivery, and more. Your AI assistant learns from your documents and website and automatically answers these questions for you, anytime. If it doesn't have the answer, it passes the conversation to your team.
+
+![The AI Assistants page, showing a Store Support Assistant with status Ready and Active switched on, an Assistants 1 / 3 meter, and the Create assistant button](/automation/img/ai-assistants-list.png)
+
+## Set up your AI assistant
+
+<Steps>
+<Step title="Create the assistant">
+  Click **AI Assistants** in the sidebar, then select **Create assistant**. Enter the required details:
+
+  ![The New AI assistant form with a required Name field, a required Instructions box with example text, and a What it must never do box](/automation/img/ai-assistant-create.png)
+
+  - **Name** *(required)* — Enter your AI assistant's name, such as "Support Assistant".
+  - **Instructions** *(required)* — Describe what the AI assistant should do and how it should reply to customers. For example: **"You are the support assistant for Acme Store. Be friendly and keep replies short."**
+  - **What it must never do** *(optional)* — Add any topics or things that the AI assistant should avoid or hand over to your team. For example: **"Never discuss refunds."**
+
+  Click **Save**. Your AI assistant is created and opens on its own page, ready for the next step.
+</Step>
+
+<Step title="Train your assistant">
+  The **Knowledge** tab is where you add the information your assistant uses to answer customer questions. You can add information from documents, websites, or text.
+
+  ![The Store Support Assistant page on the Knowledge tab, with Sources, Documents, Tokens used and Replies sent counts, the Active switch, and the Add knowledge box showing Document, Website and Text tabs](/automation/img/ai-assistant-knowledge.png)
+
+  - **Document** — Upload a PDF, DOC, DOCX, TXT, MD, or CSV file. Each file can be up to 25 MB.
+  - **Website** — Enter a webpage address and click **Crawl website**.
+    - The assistant reads that page and other pages linked to it on the same website.
+    - Set **Max pages** to crawl up to 100 pages.
+    - If your website changes regularly, set **Re-crawl every** to update the information automatically after a set number of days.
+  - **Text** — Type or paste information directly into the assistant. Enter a **Title**, add your content, and click **Add text**.
+
+  The assistant starts learning automatically after you add a source. When the process is complete, the source shows **Ready**.
+</Step>
+
+<Step title="Test your assistant in AI Chat">
+  Open the **AI Chat** tab and ask questions your customers usually ask. These test messages are never sent to customers.
+
+  ![The AI Chat tab with two test questions and replies, each marked Answered · 100% with the tokens it used, and a Type a customer question box](/automation/img/ai-assistant-ai-chat.png)
+
+  Each reply shows its status, confidence level, and AI token usage. If the answer is incorrect or missing, update the information on the **Knowledge** tab and try again.
+</Step>
+
+<Step title="Set how your assistant replies and when it hands over or stops">
+  Open the **Behaviour** tab. It has three sections.
+
+  **Role & Rules**
+
+  This section contains the **Instructions** and **What it must never do** settings you added when creating the assistant. You can also use a merge field, such as `{{contact.first_name}}`, to include the customer's name.
+
+  ![The Role & Rules box on the Behaviour tab, with the Instructions and What it must never do boxes filled in](/automation/img/ai-assistant-behaviour-rules.png)
+
+  **Replies**
+
+  Choose how your assistant responds to customers:
+
+  - **Fallback message** — The message sent when the answer is not available in its knowledge.
+  - **Reply footer** — Text added to the end of every reply, such as "Reply HUMAN to talk to our team." Words written in CAPITALS are also used as handoff keywords.
+  - **History turns** — Choose how many previous messages the assistant can read to understand the conversation.
+  - **Max reply length** — Set the maximum length of each reply. 600 is about a short paragraph.
+  - **Creativity** — Control how closely replies follow the information in your knowledge. A lower value keeps replies more consistent. 0.3 is recommended.
+
+  ![The Replies box with a Fallback message, a Reply footer, and History turns, Max reply length and Creativity set to 10, 600 and 0.3](/automation/img/ai-assistant-behaviour-replies.png)
+
+  **Handing over to a human**
+
+  Choose when the assistant should stop answering and pass the conversation to your team:
+
+  - **Handoff keywords** — Add words separated by commas. If a customer sends one of these words, the assistant stops answering and hands over the conversation immediately.
+  - **Hand off on low confidence** — Hand over the conversation when the assistant is not confident enough to answer. **Minimum confidence** sets the required confidence level.
+  - **Unresolved turns before handoff** — Set how many unanswered questions can occur before the conversation is handed over.
+  - **Respect business hours** — Use your [business hours](/settings/business-hours) to control how the assistant responds outside working hours. Choose **Reply as usual**, **Hand off to a human**, or **Stay silent**.
+
+  ![The Handing over to a human box with Handoff keywords, Hand off on low confidence switched on, Minimum confidence 0.55, Unresolved turns before handoff 3, Respect business hours switched on, and the Save behaviour button](/automation/img/ai-assistant-behaviour-handoff.png)
+
+  Click **Save behaviour**.
+</Step>
+
+<Step title="Turn it on">
+  Turn on the **Active** switch at the top of the page. The status changes to **Ready** when your assistant has information it can use to answer questions.
+</Step>
+</Steps>
+
+## Use your AI assistant to answer customers
+
+Your assistant replies to customers through an automation. Open a flow in the Flow Builder and add the [**AI Assistant**](/automation/flow-steps/advanced#ai-assistant) step from the **Advanced** tab.
+
+![A flow with a Start Trigger set to Exact match: hi, connected to an AI Assistant step that says Hands over the conversation](/automation/img/ai-assistant-flow-step.png)
+
+<Check>
+Create the assistant → teach it on **Knowledge** → test in **AI Chat** → set its **Behaviour** → switch on **Active** → add it to an automation.
+</Check>
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Flow Builder" icon="workflow" href="/automation/flow-builder">
+    Build the automation your assistant runs inside.
+  </Card>
+  <Card title="Flow steps" icon="blocks" href="/automation/flow-steps/basic">
+    See every step you can add around the AI Assistant.
+  </Card>
+</CardGroup>
