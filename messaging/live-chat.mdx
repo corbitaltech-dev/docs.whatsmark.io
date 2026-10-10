@@ -1,21 +1,21 @@
 ---
 title: "Live Chat"
-description: "One place to handle all your WhatsApp and Messenger chats with customers."
+description: "One place to handle all your WhatsApp, Messenger and Instagram chats with customers."
 icon: "messages-square"
-keywords: ["WhatsMark", "chat", "live chat", "team inbox", "conversations", "inbox"]
+keywords: ["WhatsMark", "chat", "live chat", "team inbox", "conversations", "inbox", "Instagram DM"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-When a customer messages you on WhatsApp or Messenger, it shows up here instantly, and anyone from your team can reply. Everyone can work from the same screen, so nothing gets missed.
+When a customer messages you on WhatsApp, Messenger or Instagram, it shows up here instantly, and anyone from your team can reply. Everyone can work from the same screen, so nothing gets missed.
 
 <Note>
-  Before you start chat needs at least one **connected WhatsApp or Messenger channel** to work. Without that, the screen stays empty because there are no messages to receive. See [Connecting WhatsApp](/core-setup/channels/whatsapp) to set up.
+  Before you start, connect at least one **WhatsApp, Messenger or Instagram channel**. Without one, the screen stays empty because there are no messages to receive. To set one up, see [Connecting WhatsApp](/core-setup/channels/whatsapp), [Connecting Messenger](/core-setup/channels/messenger) or [Connecting Instagram](/core-setup/channels/instagram).
 </Note>
 
 ## What you see on the chat screen
 
-When you open Chat, the screen is split into four parts:
+To open your chats, click **Inbox** in the main menu. The screen is split into four parts:
 
 1. **Sidebar** — filters to show only the chats you want.
 2. **Chat list** — all your conversations, newest at the top.
@@ -51,6 +51,8 @@ After you pick a contact, one of these happens:
 On **WhatsApp** you cannot send a plain message to start a chat. You have to use an **approved template**, so keep at least one ready template before you try. See [WhatsApp Templates](/messaging/whatsapp-templates) to create one and get it approved. See [Meta's policy](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows) for more details.
 
 On **Messenger** you cannot message first at all, so wait for the customer to message you.
+
+On **Instagram** you cannot message first either. **New chat** only offers WhatsApp and Messenger. Wait for the customer to send you a direct message (DM), which is a private message on Instagram.
 </Warning>
 
 <Figure
@@ -77,9 +79,20 @@ Hover over any message to open its menu:
 Deleting message only removes the message from your screen. The customer still sees it on their phone. You have 2 minutes to restore it.
 </Note>
 
+### Edited messages
+
+Sometimes a message changes after it was sent. You then see the new text with a small **Edited** label next to the time.
+
+- **WhatsApp:** if your business edits a message in the WhatsApp Business app, the new text shows here. When a customer edits their own message, you keep seeing the first version. Meta does not send customer edits to WaMatrix.io.
+- **Instagram:** when a customer edits a message, the new text shows here.
+
+### When a message fails
+
+If a message cannot be sent, a short note in red appears under it. The note says why it failed and, where possible, what to do next.
+
 ## The reply time limit
 
-WhatsApp and Messenger do not let you message a customer any time you want. You can only reply for a set time after they message you. This stops businesses from spamming people.
+WhatsApp, Messenger and Instagram do not let you message a customer any time you want. You can only reply for a set time after they message you. This stops businesses from spamming people.
 
 ### On WhatsApp: 24 hours
 
@@ -89,13 +102,17 @@ When the time runs out, the reply box goes away. In its place you get a **Send t
 
 <Figure
   src="/messaging/img/chat/chat-screen-expired.png"
-  alt="WhatsApp and Messenger do not let you message a customer any time you want."
+  alt="A WhatsApp chat after 24 hours: a notice in place of the reply box says the 24-hour reply window has closed, with a Send template button on the right"
   caption="Image shows the chat when the messaging window has expired."
 />
 
 ### On Messenger: 7 days
 
 On Messenger you get 7 days. After that the reply box closes too. There is no template option here, so you have to wait for the customer to message you again.
+
+### On Instagram: 24 hours
+
+On Instagram you also get 24 hours. When the time runs out, the reply box closes. There is no template to reach them again. You can reply once the customer sends a new message. See [Instagram chats](#instagram-chats) below.
 
 <Note>
 The countdown restarts every time the customer sends you a new message. See [Meta's policy](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows)
@@ -111,20 +128,20 @@ Above the box you get basic formatting: bold, italic, strikethrough, and lists.
 
 <Figure
   src="/messaging/img/chat/chat-composer-annotated.png"
-  alt="The reply box with its formatting bar on top and the nine tool icons below numbered 1 to 9, and the microphone button on the right"
+  alt="The reply box with its formatting bar on top, nine tool icons below numbered 1 to 9, and the microphone button on the right numbered 10"
   caption="Image shows the reply box with its formatting bar and tool icons."
 />
 
 1. **Emoji** — add an emoji.
 2. **Attach** — send an image, video, audio file, or document. This opens your [Media Library](/media/media-library), where you can upload a new file or pick one you have already used.
-3. **Location** — send a location pin.
-4. **Contact card** — send contact details to the customer. You can pick one of your saved contacts, or type in new details by hand. Details you type here are only sent in the message and are not saved to your contacts.
+3. **Location** — send a location pin. (Not on Instagram.)
+4. **Contact card** — send contact details to the customer. (Not on Instagram.) You can pick one of your saved contacts, or type in new details by hand. Details you type here are only sent in the message and are not saved to your contacts.
 5. **Canned reply** — pick a saved reply you use often. You can also type `/` to open this. See [Canned Replies](/core-setup/canned-replies).
 6. **Run a flow** — start an automation in this chat. See [Chatbot Flows](/automation/overview).
 7. **Send form** — send a form the customer can fill in, like a booking form. (WhatsApp only) See [WhatsApp Flows](/appointment-and-flow/whatsapp-flows).
 8. **AI assist** — rewrite or translate your message with AI. See [AI assist](#ai-assist) below.
-9. **Send template** — send an approved template. See [WhatsApp Templates](/messaging/whatsapp-templates) and [Messenger Templates](/messaging/messenger-templates).
-10. **Voice notes** — When the box is empty, the send button turns into a microphone. Click it to record, then send it as a voice note.
+9. **Send template** — send a template. See [WhatsApp Templates](/messaging/whatsapp-templates), [Messenger Templates](/messaging/messenger-templates) and [Instagram Templates](/messaging/instagram-templates).
+10. **Voice notes** — When the box is empty, the send button turns into a microphone. Click it to record, then send it as a voice note. (Not on Instagram.)
 
 
 ## AI assist
@@ -146,6 +163,30 @@ A meter shows how many AI tokens you have left from your plan's limit.
   alt="The AI assist popover showing Quick Actions for improve writing, fix grammar, make formal, make casual and make shorter, a Translate option, your own saved prompts, a monthly AI token meter, and a Manage prompts link"
   caption="Image shows the AI assist popover with its quick actions and token meter."
 />
+
+## Instagram chats
+
+Instagram chats work like your other chats, with a few differences. These are Instagram rules set by Meta, not WaMatrix.io rules. Meta explains them in its [Instagram messaging guide](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api). To connect an account, see [Connecting Instagram](/core-setup/channels/instagram).
+
+- **Reply within 24 hours.** You can reply for 24 hours after the customer's last message. After that, the reply box closes until they write again. There is no template to reopen the chat.
+- **The customer writes first.** You cannot start a new chat on Instagram.
+- **Text length.** One message can hold up to 1,000 bytes of text. Most letters use 1 byte, but an emoji uses 4. A counter under the box shows how many bytes you have used.
+- **Files.** You can send images (PNG, JPEG or GIF, up to 8 MB). You can also send videos (MP4, OGG, AVI, MOV or WebM), audio (AAC, M4A or WAV) and PDF files, up to 25 MB each.
+- **Captions.** Instagram cannot put a file and text in one message. If you add a caption, it arrives as a separate message just after the file.
+- **Not available.** Location, contact card and voice notes are hidden in Instagram chats.
+- **Templates.** **Send template** sends one of your saved Instagram templates. See [Instagram Templates](/messaging/instagram-templates).
+- **Read ticks.** Instagram only tells you when the customer has seen your message. It then shows as read. There is no "delivered" tick on Instagram.
+- **Quoted replies.** **Reply** quotes the message only for accounts connected with **Continue with Facebook**. For other accounts, your answer arrives as a normal message without the quote.
+
+### Special Instagram messages
+
+Some Instagram messages show as a small card in the chat:
+
+- **Mentioned you in their story** — the customer tagged your account in their story.
+- **Replied to your story** — the customer answered one of your stories.
+- **Shared a post** or **Shared a reel** — the customer sent you a post or reel. Click the link on the card to open it.
+
+Instagram stories disappear after a while. When a story is gone, the card says **Story no longer available**.
 
 ## Searching in a chat
 
@@ -206,13 +247,15 @@ Above the chat list:
 
 - **Search** — type a name or number to find a chat.
 - **Sort** — switch between newest and oldest first.
-- **Channel** — show chats from one WhatsApp or Messenger number instead of all of them.
+- **Channel** — show chats from one WhatsApp number, Facebook Page or Instagram account instead of all of them.
+
+If the Inbox opens with one platform already chosen, a filter chip such as **All Instagram** shows at the bottom of the sidebar. Click its **x** to see all your chats again.
 
 ### What you see in the chat list
 
 Every row gives you a quick summary:
 
-- Photo of the customer, with a small icon showing if they used WhatsApp or Messenger.
+- Photo of the customer, with a small icon showing if they used WhatsApp, Messenger or Instagram.
 - Name and their status label.
 - Time of the last message.
 - On the right, a small photo of the team member handling the chat, and the profile photo of the channel it came in on.
@@ -242,6 +285,10 @@ Only owners and admins can assign chats or manage teams. Other actions depend on
 
 Owners and admins see every chat. Everyone else only sees chats assigned to them or sent to their team.
 </Note>
+
+### Stop the AI assistant in a chat
+
+If an AI assistant is answering a customer, a red robot icon with a line through it shows at the top of the chat. Its label is **Stop AI for this chat**. On a phone, find it in the **...** menu. Click it and the assistant stops answering that customer right away. See [AI Assistants](/automation/ai-assistants). *(AI assistants need a paid plan.)*
 
 ## Looking at older chats
 

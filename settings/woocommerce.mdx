@@ -9,7 +9,7 @@ import { Figure } from '/snippets/browser-frame.jsx';
 
 Connect your **WooCommerce** store with WaMatrix.io to automatically send WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
 
-Find it under **Settings → WooCommerce**.
+Find it under **Settings → Integrations → WooCommerce**. **Integrations** is the second tab at the top of Settings.
 
 <Note>
 **Before you start**
@@ -57,7 +57,7 @@ Find it under **Settings → WooCommerce**.
 
 ## Step 2 — Connect your store
 
-Now in WaMatrix.io, go to **Settings → WooCommerce** and fill in the fields:
+Now in WaMatrix.io, go to **Settings → Integrations → WooCommerce**. The **Connect WooCommerce** form shows a short **Before you connect** list. Fill in the fields:
 
 - **Store URL** — your shop's web address, like `https://your-store.com`.
 - **Consumer Key** — starts with `ck_`.
@@ -65,13 +65,13 @@ Now in WaMatrix.io, go to **Settings → WooCommerce** and fill in the fields:
 
 <Figure
   src="/settings/img/woo-connect-form.png"
-  alt="The Connect WooCommerce form with Store URL, Consumer Key and Consumer Secret fields"
+  alt="The Connect WooCommerce form with a numbered Before you connect list and Store URL, Consumer Key and Consumer Secret fields"
   caption="Image shows the Connect WooCommerce form."
 />
 
 Click **Connect WooCommerce**.
 
-Your details are checked right away. If everything is correct, the status changes from **Connecting...** to **Connected** in a few moments.
+WaMatrix.io checks your details right away. If they are correct, the WooCommerce card opens. The status label next to **WooCommerce** changes from **Connecting…** to **Connected** in a few moments.
 
 <Note>
 If you see **Could not verify these credentials against your store,** the error appears under **Consumer Key**, but the problem is often the Store URL. Make sure you're using the correct store address, including `https://`, with nothing after the domain.
@@ -81,11 +81,11 @@ If you see **Could not verify these credentials against your store,** the error 
 
 <Steps>
 <Step title="Download it">
-  On the WaMatrix.io WooCommerce page, click **Download plugin**. You get a `.zip` file.
+  At the bottom of the WooCommerce card in WaMatrix.io, click **Download plugin**. You get a `.zip` file.
 
   <Figure
     src="/settings/img/woo-plugin-download.png"
-    alt="The connected WooCommerce store card with the Download plugin button"
+    alt="The connected WooCommerce card with a Connected status label and the Download plugin and Sync contacts buttons at the bottom"
     caption="Image shows the Download plugin button on the connected store."
   />
 
@@ -118,11 +118,11 @@ Once the plugin is active, a **WaMatrix.io** link appears in your WordPress side
 
 <Steps>
 <Step title="Webhook URL">
-  Go back to **Settings → WooCommerce** in WaMatrix.io and click the copy icon next to **Webhook URL**. Paste it into WordPress.
+  Go back to **Settings → Integrations → WooCommerce** in WaMatrix.io. Click the copy icon next to **Webhook URL**. Paste it into WordPress.
 
   <Figure
     src="/settings/img/woo-webhook-details.png"
-    alt="The Webhook URL and Webhook Secret fields with copy buttons on the WooCommerce settings page"
+    alt="The Webhook URL and Webhook Secret fields, each with a copy button, on the connected WooCommerce card"
     caption="Image shows where to copy the Webhook URL and Webhook Secret."
   />
 </Step>
@@ -141,7 +141,7 @@ Once the plugin is active, a **WaMatrix.io** link appears in your WordPress side
 </Steps>
 
 <Note>
-The plugin checks in with WaMatrix.io **once a day**, so your WooCommerce page can still say **Plugin not yet connected** for up to 24 hours after you install it. That does not mean the install failed. Abandoned carts start working immediately.
+The plugin checks in with WaMatrix.io **once a day**. So the **Plugin** detail on your WooCommerce card can still say **Not connected yet** for up to 24 hours after you install it. That does not mean the install failed. Abandoned carts start working immediately.
 </Note>
 
 ## Make sure you can reach customers
@@ -172,7 +172,7 @@ The simplest way to do that is to require an account at checkout:
 
 ## Bringing in your existing customers
 
-Click **Sync contacts** to import the customers already in your store into [Contacts](/contacts/managing-contacts).
+Click **Sync contacts** at the bottom of the WooCommerce card. This brings the customers already in your store into [Contacts](/contacts/managing-contacts).
 
 Only customers **with a phone number** are imported. The rest are skipped.
 
@@ -208,7 +208,11 @@ You can include **order details** in your message. Type `@` and choose a [merge 
 
 ## Disconnecting
 
-Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+Click **Disconnect** at the top of the WooCommerce card. Then click **Disconnect** again to confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+
+WaMatrix.io also tries to delete the webhooks it added to your store. A webhook is how your store tells WaMatrix.io about new orders. If WaMatrix.io cannot delete them, a message on screen tells you. Then delete them yourself in WordPress, under **WooCommerce → Settings → Advanced → Webhooks**.
+
+If you stop using WaMatrix.io with this store, also deactivate the plugin in WordPress.
 
 <Note>
 Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WaMatrix.io plugin in WordPress. The Webhook URL stays the same.

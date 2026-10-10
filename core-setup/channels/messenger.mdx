@@ -23,13 +23,13 @@ Make sure you have the following ready:
 ## Connecting Messenger
 
 <Steps>
-<Step title="Click Connect">
-  From the **Channels** page, click **Connect** and choose **Messenger** from the platform picker.
-  
+<Step title="Click Connect Messenger">
+  In the main menu, go to **Messenger → Channels**. Click **Connect Messenger**.
+
   <Figure
     src="/core-setup/channels/img/channels-connect.png"
-    alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
-    caption="Image shows the Channels page with the Connect Channel button."
+    alt="Channels page header with the channel count and the connect button at the top right"
+    caption="Image shows the top of the Channels page."
   />
 </Step>
 
@@ -60,8 +60,8 @@ Make sure you have the following ready:
 
 <Figure
   src="/core-setup/channels/img/channels-list-connected.png"
-  alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
-  caption="Image shows the Channels list with connected channels and their Active status."
+  alt="Channels list with a connected channel marked Active, the method used to connect it, and the date it was connected"
+  caption="Image shows the Channels list with a connected channel and its Active status."
 />
 
 <Note>
@@ -73,7 +73,7 @@ Both connection methods can be individually disabled by your plan. If a tab is m
 Open a connected Messenger channel to:
 
 - **Review Page information** fetched from Meta, including Page name, Page ID, category, and connection method.
-- **Check** channel health and **view webhook subscription status**.
+- **Check** channel health and see whether messages are reaching WaMatrix.io.
 - **Disconnect** the Page.
 
 <Figure
@@ -83,14 +83,34 @@ Open a connected Messenger channel to:
 />
 
 <Tip>
-You can connect more than one Facebook Page — manage all of them from the same **Channels** page, alongside your WhatsApp channels.
+You can connect more than one Facebook Page. Messenger has its own **Channels** page in the **Messenger** menu group. All your Pages are listed there.
 </Tip>
+
+## Ice breakers
+
+Ice breakers are short questions a customer can tap to start a chat with your Page. To set them up, click the three dots at the end of a Page's row and choose **Manage ice breakers**. Details: [Ice breakers](/core-setup/channels/ice-breakers).
+
+## Answer comments on your Page
+
+Reply Bots can answer comments on your Page's posts for you. *(Available when your plan includes Reply Bots. See [Free vs. paid](/getting-started/free-vs-paid).)* Details: [Reply Bots](/automation/reply-bots).
+
+<Note>
+Did you connect your Page before Reply Bots were added? Then you may need to connect it again. If so, the Reply Bots page shows a **Reconnect to keep replying** message. To fix it, go to **Messenger → Channels** and click **Connect Messenger**. Use the **Embedded Signup** tab, choose the same Page, and approve every permission Facebook asks for.
+</Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Connecting WhatsApp" icon="whatsapp" href="/core-setup/channels/whatsapp">
     Connect a WhatsApp Business Account the same way.
+  </Card>
+
+  <Card title="Connecting Instagram" icon="instagram" href="/core-setup/channels/instagram">
+    Connect an Instagram account and answer its direct messages in the same inbox. *(Available when your plan includes Instagram.)*
+  </Card>
+
+  <Card title="Reply Bots" icon="reply" href="/automation/reply-bots">
+    Answer comments on your Page's posts automatically. *(Available when your plan includes Reply Bots.)*
   </Card>
 
   <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">

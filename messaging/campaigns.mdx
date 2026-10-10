@@ -1,8 +1,8 @@
 ---
 title: "Campaigns"
-description: "Send a WhatsApp or Messenger message to many contacts at once."
+description: "Send a WhatsApp, Messenger or Instagram message to many contacts at once."
 icon: "megaphone"
-keywords: ["WhatsMark", "campaigns", "broadcast", "message campaign", "template campaign", "audience"]
+keywords: ["WhatsMark", "campaigns", "broadcast", "message campaign", "template campaign", "audience", "Instagram campaign"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
@@ -10,7 +10,7 @@ import { Figure } from '/snippets/browser-frame.jsx';
 A campaign sends the same message to many contacts at once. Use it for an offer, an announcement, or a follow-up to a group of people.
 
 <Note>
-Before you start, **[connected channel](/core-setup/channels/whatsapp)**, add **[contacts](/contacts/managing-contacts)**, and have an approved **[template](/messaging/whatsapp-templates)** if you're creating a template campaign.
+Before you start, connect a channel: [WhatsApp](/core-setup/channels/whatsapp), [Messenger](/core-setup/channels/messenger) or [Instagram](/core-setup/channels/instagram). Add **[contacts](/contacts/managing-contacts)**. For a template campaign, have a template ready: an approved [WhatsApp template](/messaging/whatsapp-templates) or a saved [Instagram template](/messaging/instagram-templates).
 </Note>
 
 
@@ -28,7 +28,15 @@ A message you create yourself using text, images, videos, or buttons. You can se
 
 ## Creating a campaign
 
-Campaigns are built in four steps. A live preview of your message shows on the right as you go.
+Each platform has its own campaigns page.
+
+1. In the main menu, open the platform you want, for example **WhatsApp**. Then click **Campaigns**.
+2. Click **Add Campaign**. A list of your channels opens, such as **Your WhatsApp channels**.
+3. Choose the channel to send from. The campaign form opens with that channel already chosen.
+
+{/* SCREENSHOT: /messaging/img/campaign/campaign-add-channel-list.png — WhatsApp → Campaigns with the Add Campaign button clicked, showing the "Your WhatsApp channels" list */}
+
+The form has four steps. A live preview of your message shows on the right as you go.
 
 <Steps>
 <Step title="Basics">
@@ -40,8 +48,8 @@ Campaigns are built in four steps. A live preview of your message shows on the r
 
   - **Campaign name** — a name only you see, like *Diwali sale 2026*.
   - **Campaign type** — choose **Template** or **Message** (see the two types above).
-  - **Channel** — which of your [channels](/core-setup/channels/whatsapp) to send from.
-  - **Template** — for a template campaign, select the approved [template](/messaging/whatsapp-templates) to send.
+  - **Channel** — the channel you chose is already filled in, for example **WhatsApp channel**. You can pick another channel of the same platform here.
+  - **Template** — for a template campaign, select the [template](/messaging/whatsapp-templates) to send.
 </Step>
 
 <Step title="Audience">
@@ -65,7 +73,7 @@ Campaigns are built in four steps. A live preview of your message shows on the r
     caption="Image shows the content step of the wizard."
   />
 
-  - **Template campaign** — fill in the [template](/messaging/whatsapp-templates)'s variables. If the template has a media header, upload the image or file here.
+  - **Template campaign** — fill in the [template](/messaging/whatsapp-templates)'s variables. If the template has a media header, upload the image or file here. If a **Website URL** button ends in a variable, a field called **Button "*button text*" URL parameter** appears. Type the end part of the link there.
   - **Message campaign** — write a **header** (optional), a **body**, and a **footer** (optional). You can also add up to three reply **buttons**, a single **call-to-action** link, or attach an image, video or document.
 
   Type `@` in any text field to add a [merge field](/messaging/merge-fields) like the contact's name.
@@ -91,7 +99,7 @@ Campaigns are built in four steps. A live preview of your message shows on the r
 
 ## Messenger campaigns
 
-If you have a Messenger channel connected, you can pick it as the channel type in [step 1](#creating-a-campaign).
+To send a Messenger campaign, go to **Messenger → Campaigns** and click **Add Campaign**. The steps are the same as [above](#creating-a-campaign).
 
 Messenger has one important difference: **both** message and template campaigns can only reach contacts who messaged your Facebook Page in the **last 7 days**.
 
@@ -100,6 +108,30 @@ Messenger has one important difference: **both** message and template campaigns 
   alt="The Campaigns list with monthly usage chips for message and template campaigns, All / Template / Message tabs, and a table of campaigns showing name, type, status, channel and progress"
   caption="Image shows the Campaigns list."
 />
+
+## Instagram campaigns
+
+To send an Instagram campaign, go to **Instagram → Campaigns** and click **Add Campaign**. The steps are the same as [above](#creating-a-campaign). *(Available when your plan includes Instagram. See [Free vs. paid](/getting-started/free-vs-paid).)*
+
+You have the same two types:
+
+- **Template Campaign** — one of your saved [Instagram templates](/messaging/instagram-templates), to people who messaged you in the last 24 hours.
+- **Message Campaign** — text, an image, a video or buttons, to people who messaged you in the last 24 hours.
+
+Instagram has stricter rules than WhatsApp. These rules come from Meta, not from WaMatrix.io. See [Instagram has its own rule](/getting-started/concepts#instagram-has-its-own-rule).
+
+- **Who you can reach.** Only people who messaged your Instagram account in the last 24 hours. Instagram does not let you message anyone else.
+- **No spreadsheet upload.** You cannot upload a CSV or Excel sheet. Instagram finds people by their Instagram account, not by phone number.
+- **What you can send.** Text, an image or a video. You can add reply buttons, or one link button. You cannot send documents, and there is no header or footer.
+- **Text length.** Up to 1,000 bytes. Most letters use 1 byte, but an emoji uses 4.
+
+{/* SCREENSHOT: /messaging/img/campaign/campaign-instagram-audience.png — The Audience step for an Instagram campaign, with the notice that Instagram campaigns can only reach people who messaged your Instagram account in the last 24 hours */}
+
+### How Instagram reports results
+
+- **Delivered** means Meta accepted the message. Instagram does not send a separate "delivered" signal.
+- **Read** means the person has seen the message.
+- A campaign takes some time to reach everyone. If a person's 24 hours run out before their message goes out, it is not sent. Their row shows as failed, with a reason such as **This person has not messaged you in the last 24 hours.**
 
 ## Campaign statuses
 
@@ -133,7 +165,7 @@ Below, you can see how many messages were sent, delivered, not received, read, a
 While a campaign is running, you can **Pause**, **Resume**, or **Cancel** it. After it finishes, **Resend Failed** sends the message again only to contacts who did not receive it.
 
 <Note>
-Campaign messages don't show up in [Chat](/messaging/live-chat).
+Campaign messages don't show up in the [Inbox](/messaging/live-chat).
 </Note>
 
 ## Recipients
@@ -152,21 +184,28 @@ Open the **Replied** tab to see all contacts who replied to your campaign. Click
 
 If a message fails, open the campaign's Recipients list to see why it failed for each contact.
 
-| Reason | What it means |
+| What you see | What it means and what to do |
 | --- | --- |
-| **Message undeliverable** | The number is not on WhatsApp, or the person cannot receive your message. |
-| **Not delivered to maintain healthy ecosystem engagement** | WhatsApp is limiting how many marketing messages this person gets right now. Try again later, or send fewer marketing messages. |
-| **24-hour window closed** | The contact last messaged you more than 24 hours ago, so a message campaign cannot reach them. Use a template campaign instead. |
-| **Recipient not in allowed list** | Your number is still in test mode. Finish verifying your WhatsApp account to message anyone. |
-| **Country not allowed** | WhatsApp does not allow messages to that contact's country. There is nothing you can change here. |
+| **This number cannot receive the message.** | The number may not be on WhatsApp. It may use an old WhatsApp version, or the person may not accept messages from your business. Check the number. |
+| **The recipient cannot receive this message.** | The number is not a valid WhatsApp number, or it is your own sending number. Check the number. |
+| **More than 24 hours have passed since this contact last replied…** | A message campaign can only reach people who wrote to you in the last 24 hours. Use a template campaign instead. |
+| **This message type cannot be sent from this phone number.** | Your number cannot send this kind of message. Send a different type, or check your number's status in Meta's WhatsApp Manager. |
+| **The WhatsApp Business account is restricted by Meta.** | Meta has limited your WhatsApp account. Check the account status in Meta's WhatsApp Manager. |
+| **The message was blocked by a billing problem…** | Meta could not charge for the message. Check the payment method in Meta Business Manager. |
+| **Meta is rate limiting this account for spam.** | Meta has slowed down your sending. Send fewer messages and check that your message is wanted. |
+| **Too many messages were sent to this same recipient too quickly.** | Wait a short time, then try again. |
+| **The media attached to this message could not be downloaded.** | Meta could not get your file. Check that the file still exists, then try again. |
+| **The media attached to this message could not be uploaded to WhatsApp.** | Upload the file again, then try again. |
+| **The sending phone number is in maintenance mode…** | Your number cannot send right now. Try again later. |
+| **This person has not messaged you in the last 24 hours.** | Instagram only. Their 24 hours ran out before the message went out. You can reach them again after they message you. |
 
 <Note>
-The table above covers the common reasons. For more details, see [Meta's error codes](https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes/).
+For any other reason, you see Meta's own explanation. Meta lists all reasons on its [error codes](https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes/) page.
 </Note>
 
 ## Campaign limits
 
-Your plan includes a number of **message campaigns** and **template campaigns** each month, counted separately.
+Your plan includes a number of campaigns each month. Message campaigns and template campaigns count toward the same monthly allowance. See [Free vs. paid](/getting-started/free-vs-paid).
 
 ## What's next
 

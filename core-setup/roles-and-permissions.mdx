@@ -7,13 +7,15 @@ keywords: ["WhatsMark", "roles", "permissions", "access", "team", "restrict"]
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-A role is a set of permissions that you assign to team members. Create roles like **Sales Agent**, **Support Agent**, or **Manager**, then assign them to one or more team members. Updating a role automatically updates permissions for everyone using it.
+A role is a set of permissions that you give to team members. Create roles like **Sales Agent**, **Support Agent** or **Manager**. Then give each role to one or more members. When you change a role's permissions, everyone with that role gets the change.
+
+A role also sets the starting **Platform access** for new members. Changing that works differently. See [Platform access](#platform-access) below.
 
 Find it under **Setup → Roles** in the sidebar, or click **Manage Roles** on the Team page.
 
 <Figure
   src="/core-setup/img/role.png"
-  alt="The Roles page listing roles with Name, Members and Created columns, a Create Role button, and a row menu"
+  alt="The Roles page listing roles with Name, Members and Created columns, a button to add a role, and a row menu"
   caption="Image shows the Roles page with every role in your workspace."
 />
 
@@ -22,12 +24,16 @@ The table shows each role's **Name**, how many **Members** hold it, and when it 
 ## Create a role
 
 <Steps>
-<Step title="Click Create Role">
+<Step title="Click Add Role">
   The button sits at the top right. A form opens on the right side of the screen.
 </Step>
 
 <Step title="Name the role">
-  Enter a role name, such as **Support Agent**.
+  In **Role Name**, enter a name such as **Support Agent**.
+</Step>
+
+<Step title="Choose the platforms">
+  In **Platform access**, tick the platforms this role's members can use: WhatsApp, Messenger or Instagram. New members with this role start with these platforms.
 </Step>
 
 <Step title="Check what this role can do">
@@ -35,7 +41,7 @@ The table shows each role's **Name**, how many **Members** hold it, and when it 
 
   <Figure
     src="/core-setup/img/roles-create.png"
-    alt="The Create Role form with a role name field and a list of features with permission checkboxes"
+    alt="The form for a new role with a role name field and a list of features with permission checkboxes"
     caption="Image shows the Create Role form."
   />
 </Step>
@@ -60,16 +66,20 @@ The table below explains the extra permissions available for each feature.
 
 | Feature | Extra permission |
 | --- | --- |
-| **Contacts** | [**Import:**](/contacts/import-export#importing-contacts) imports contacts from a file. [**Initiate chat:**](/contacts/managing-contacts#actions-on-a-single-contact) starts a new chat with a contact. **View own:** members see only the contacts assigned to them. 
+| **Contacts** | [**Import:**](/contacts/import-export#importing-contacts) imports contacts from a file. [**Initiate Chat:**](/contacts/managing-contacts#actions-on-a-single-contact) starts a new chat with a contact. **View Own:** members see only the contacts assigned to them. |
 | **Channels** | [**Connect**](/core-setup/channels/whatsapp#connecting-whatsapp) and [**Disconnect**](/core-setup/channels/messenger#managing-a-connected-page) the channels. |
 | **Team** | [**Invite:**](/core-setup/team-and-roles#invite-them-by-email) sends an email invitation. |
 | **Templates** | [**Load:**](/messaging/whatsapp-templates#adding-a-template) pulls your approved templates in from Meta. |
-| **WhatsApp Flows** | [**Submission view:**](/appointment-and-flow/whatsapp-flows#submissions) members can see customer responses. |
-| **Chat** | Works differently — see [Chat](#chat) below. |
+| **WhatsApp Flows** | [**Submission View:**](/appointment-and-flow/whatsapp-flows#submissions) members can see customer responses. |
+| **Reply Bots** | No extra permissions. It has the usual **View**, **Create**, **Edit** and **Delete**. Your plan must include [Reply Bots](/automation/reply-bots). *(Available when your plan includes Reply Bots. See [Free vs. paid](/getting-started/free-vs-paid).)* |
+| **Message Activity Log** | Only **View** and **Delete**. Members can see the [message activity log](/core-setup/whatsapp-activity-log) and delete entries from it. |
+| **Chat** | Controls what members can do in the **Inbox**. It works differently. See [Chat](#chat) below. |
+
+Some rows show a lock and the words "Not available on your current plan". You can't give those permissions until your plan includes that feature.
 
 ### Chat
 
-Chat has no **View** box. A member reaches the inbox if they hold **any** chat permission at all, or if a conversation has been assigned to them.
+The **Chat** row controls the **Inbox**. It has no **View** box. A member can open the **Inbox** if they have **any** Chat permission, or if a conversation is assigned to them.
 
 - **Send Message** — reply in a conversation. Without it, the inbox is read-only.
 - **Send Template** — send an approved template.
@@ -79,9 +89,18 @@ Chat has no **View** box. A member reaches the inbox if they hold **any** chat p
 - **Delete** — delete a whole conversation.
 - **Delete Message** — delete and restore individual messages.
 
+## Platform access
+
+Each member can work only on the platforms in their **Platform access**. The role gives the starting value.
+
+- When you give someone a role, their platform access is filled in from the role. You can change it for that person.
+- If you change a role's platform access later, only new members get the new value. Members who already have the role keep their own platform access. To change it for them, edit each member on the [Team](/core-setup/team-and-roles#choose-which-platforms-a-member-can-use) page.
+
+A member needs both things to work on something: the permission, and access to its platform. For example, a member with campaign permissions but only Instagram access sees only Instagram campaigns.
+
 ## Admins always have full access
 
-Roles apply only to team members. Team members marked as **Is Admin** always have full access, regardless of the role assigned to them.
+Roles apply only to team members. Team members marked as **Is Admin** always have full access, regardless of the role assigned to them. They can also use every platform.
 
 <Warning>
 A role that members are using cannot be deleted. Move those members to a different role first, then delete it. The **Members** column shows you how many are affected.

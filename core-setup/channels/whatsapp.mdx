@@ -25,13 +25,13 @@ Make sure you have the following ready:
 ## Connecting WhatsApp
 
 <Steps>
-<Step title="Click Connect">
-  From the **Channels** page, click **Connect Channel** and choose **WhatsApp** from the platform picker.
+<Step title="Click Connect WhatsApp">
+  In the main menu, go to **WhatsApp → Channels**. Click **Connect WhatsApp**.
 
   <Figure
     src="/core-setup/channels/img/channels-connect.png"
-    alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
-    caption="Image shows the Channels page with the Connect Channel button."
+    alt="Channels page header with the channel count and the connect button at the top right"
+    caption="Image shows the top of the Channels page."
   />
 </Step>
 
@@ -56,23 +56,33 @@ Make sure you have the following ready:
 </Step>
 
 <Step title="Confirm it's connected">
-  Once connected, the channel appears in your Channels list with an **Active** status, and a webhook subscription is set up automatically so incoming messages reach your workspace.
+  Once connected, the channel appears in your Channels list with an **Active** status. Incoming messages now reach your workspace automatically.
 </Step>
 </Steps>
 
 <Figure
   src="/core-setup/channels/img/channels-list-connected.png"
-  alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
-  caption="Image shows the Channels list with connected channels and their Active status."
+  alt="Channels list with a connected WhatsApp channel marked Active, the method used to connect it, and the date it was connected"
+  caption="Image shows the Channels list with a connected channel and its Active status."
 />
 
 <Note>
 Both connection methods can be individually disabled by your plan. If a tab is missing or disable, that method isn't available on your current plan.
 </Note>
 
+<Note>
+Is the same WhatsApp Business account connected in another workspace? Only one workspace can receive its messages. The newest connection gets them. In the older workspace, the channel shows **Disconnected**. Its templates and flows are kept there. To move the messages back, connect the account again in that workspace.
+</Note>
+
 ## Coexistence mode
 
-If enabled on your plan, you can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Chat history and contacts from the app are imported, and messages stay in sync between the app and WaMatrix.io.
+If enabled on your plan, you can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Messages stay in sync between the app and WaMatrix.io.
+
+Your contacts and chat history from the app are imported only once, when you first connect.
+
+## Ice breakers
+
+Ice breakers are short questions a customer can tap to start a chat with you. To set them up, click the three dots at the end of a channel's row and choose **Manage ice breakers**. If the account has more than one number, you see one item for each number. Each one says **Ice breakers ·** followed by the number. Details: [Ice breakers](/core-setup/channels/ice-breakers).
 
 ## WABA health
 
@@ -113,5 +123,9 @@ Use the **Test** button on a channel to confirm the connection actually works en
 <CardGroup cols={2}>
   <Card title="Connecting Messenger" icon="message-circle" href="/core-setup/channels/messenger">
     Connect a Facebook Page the same way.
+  </Card>
+
+  <Card title="Connecting Instagram" icon="instagram" href="/core-setup/channels/instagram">
+    Connect an Instagram account and answer its direct messages in the same inbox. *(Available when your plan includes Instagram.)*
   </Card>
 </CardGroup>

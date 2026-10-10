@@ -1,11 +1,29 @@
 ---
 title: "Interactive Flow Steps"
-description: "Make your conversations more interactive with messages that customers can click, open, or view directly in WhatsApp."
+description: "Make your conversations more interactive with lists, images, map pins, contact cards and reactions on WhatsApp, Messenger and Instagram."
 icon: "mouse-pointer-click"
-keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "list message", "media message", "location", "contact card", "reaction"]
+keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "list message", "media message", "location", "contact card", "reaction", "Instagram", "Messenger"]
 ---
 
 The **interactive** category flow steps let you send more than plain text. Share lists, images, videos, audio, documents, locations, contact cards, and emoji reactions to make conversations easier and more engaging.
+
+## Which steps work on which platform
+
+Each flow runs on one platform: WhatsApp, Messenger or Instagram. The Flow Builder hides the steps that your flow's platform can't send.
+
+| Step | WhatsApp | Messenger | Instagram |
+|---|---|---|---|
+| List Message | Yes | No | No |
+| Media Message | Yes | Yes | Yes, but no stickers |
+| Location | Yes | Yes | No |
+| Contact Card | Yes | No | No |
+| Reaction | Yes | No | No |
+
+Sometimes a step is already on the canvas, but the flow's platform can't send it. Then the step shows a message, for example:
+
+> List Message is not supported on Instagram and will not be sent. Remove this node.
+
+The **Save** button stays off until you remove that step.
 
 ![Flow Builder with the Interactive tab selected, showing the List Message, Media Message, Location, Contact Card, and Reaction tiles, and a flow connecting a Start Trigger to a List Message whose options lead to a Media Message, a Location, and a Contact Card](/automation/img/interactive/interactive-flow-steps.png)
 
@@ -46,7 +64,7 @@ Each item leads to an **Ask Question** asking for a preferred date.
 ![A Start Trigger connected to a List Message step previewing a Book an Appointment menu with a View Services button and a Hair Services section listing Haircut and Hair Colour](/automation/img/interactive/list-message.png)
 
 <Note>
-List Message is a WhatsApp-only step. It's hidden on Messenger flows.
+List Message works only on WhatsApp flows. It is hidden on Messenger and Instagram flows. On Messenger and Instagram, use a [Button Message](/automation/flow-steps/basic#button-message) for choices instead.
 </Note>
 
 ---
@@ -80,6 +98,8 @@ These file types and size limits come from WhatsApp, not from WaMatrix.io. See M
 
 ![A flow connecting a Start Trigger to a List Message and then a Media Message previewing a New Arrivals product catalog image with a caption](/automation/img/interactive/media-message.png)
 
+**On Instagram.** The **Sticker** type isn't in the list, because Instagram flows can't send stickers. Instagram also can't send a file and text together. So if you add a **Caption**, it is sent as a separate message right after the file.
+
 <Tip>
 Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy than `file_8823.pdf`.
 </Tip>
@@ -107,6 +127,10 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 
 ![A flow connecting a Start Trigger to a List Message and then a Location step previewing a map pin for the business store with its name and address](/automation/img/interactive/location.png)
 
+<Note>
+Location works on WhatsApp and Messenger flows. It is hidden on Instagram flows.
+</Note>
+
 ---
 
 ## Contact Card
@@ -132,7 +156,7 @@ Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy tha
 ![A flow connecting a Start Trigger to a List Message and then a Contact Card step previewing a StyleHub Support contact with Message and Save contact buttons](/automation/img/interactive/contact-card.png)
 
 <Note>
-Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
+Contact Card works only on WhatsApp flows. It is hidden on Messenger and Instagram flows.
 </Note>
 
 ---
@@ -155,7 +179,7 @@ Contact Card is a WhatsApp-only step. It's hidden on Messenger flows.
 After the customer taps `Confirm booking`, add a Reaction with 👍 so they can see it registered straight away, then send the confirmation text.
 
 <Note>
-Reaction is a WhatsApp-only step. It's hidden on Messenger flows.
+Reaction works only on WhatsApp flows. It is hidden on Messenger and Instagram flows.
 </Note>
 
 ---
@@ -171,12 +195,16 @@ A furniture shop answers a product enquiry:
 5. From `Visit the showroom`, a **Location** with the shop address.
 6. From `Talk to sales`, a **Contact Card** for the sales manager.
 
-![The finished clinic flow — a Start Trigger on first message leading to a welcome Text Message, then a Button Message with Book an appointment, Opening hours, and Speak to reception, each connected to an Ask Question or a Text Message](/automation/img/interactive/worked-example-furniture.png)
+This example uses a List Message and a Contact Card, so it works on WhatsApp flows only.
+
+![The finished furniture flow — a Start Trigger on the keywords sofa and couch leading to a List Message of sofa collections, three Media Messages for Recliner, Leather and Fabric sofas, and a Button Message with Visit Showroom and Talk to Sales connected to a Location pin and a Contact Card](/automation/img/interactive/worked-example-furniture.png)
 
 
 ## Show Typing Indicator
 
 **Show Typing Indicator** — Available on every flow step in this category except **Reaction**. When enabled, the customer sees a "typing..." indicator before the message is sent, making the conversation feel more natural.
+
+It works on WhatsApp and Messenger flows. Instagram flows don't send a typing bubble, so the switch doesn't show there.
 
 
 ![The Show typing indicator switch turned on, with helper text explaining it briefly shows the WhatsApp typing bubble before the message sends and requires an inbound trigger](/automation/img/basic/show-typing-indicator.png)

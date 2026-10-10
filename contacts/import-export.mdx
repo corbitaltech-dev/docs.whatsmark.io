@@ -7,13 +7,17 @@ keywords: ["WhatsMark", "contacts", "import", "export", "CSV", "XLSX", "bulk imp
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Have a contact list in Excel or another app? You don't need to add people one at a time — import the whole file from the Contacts page.
+Have a contact list in Excel or another app? You don't need to add people one at a time — import the whole file from **All Contacts** or **WhatsApp → Contacts**.
+
+<Note>
+Import works for WhatsApp contacts only. Messenger and Instagram contacts are added for you when someone messages you.
+</Note>
 
 ## Importing contacts
 
 <Steps>
 <Step title="Upload your file">
-  From Contacts, click **Import Contacts**, then **New Import**, and upload a **CSV or XLSX** file (up to 30 MB).
+  Open **All Contacts** or **WhatsApp → Contacts**. Click **Import Contacts**, then **New Import**, and upload a **CSV or XLSX** file (up to 30 MB).
 
   <Figure
     src="/contacts/img/import-upload.png"
@@ -23,7 +27,7 @@ Have a contact list in Excel or another app? You don't need to add people one at
 
   Not sure how your file should look? Click **Download sample CSV** on this step to get a ready-made example.
 
-  Your file needs a **header row** as the first row, and phone numbers must include the **country code** (for example `+9198******`). Duplicate phone numbers are **skipped** — existing contacts are never overwritten.
+  Your file needs a **header row** as the first row, and phone numbers must include the **country code** (for example `+9198******`). If a number already belongs to one of your contacts, you choose what happens in the last step.
 </Step>
 
 <Step title="Map your columns">
@@ -37,9 +41,16 @@ Have a contact list in Excel or another app? You don't need to add people one at
 </Step>
 
 <Step title="Set Default Values and start the import">
-  On the **Default Values** step, set the **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member**. These values are applied to **every** contact in this file — they cannot come from the file itself. Then choose **Start Import**. The import runs in the background, so large files don't block you from continuing to use the app.
+  On the **Default Values** step, set the **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member**. These values are applied to **every** contact in this file — they cannot come from the file itself.
+
+  **If a phone number already exists** — WaMatrix.io matches contacts by phone number. Choose one option:
+
+  - **Skip the row** (the default) — the existing contact stays as it is. The row is counted as skipped.
+  - **Update the existing contact** — WaMatrix.io updates the contact with the columns you mapped. See [How updates work](#how-updates-work) below.
 
   If your file has more rows than your plan's remaining contact allowance, WaMatrix.io warns you here and imports only what fits. The extra rows are reported as failed.
+
+  Then click **Start Import**. The import runs in the background, so you can keep using the app while it runs.
 
   <Figure
     src="/contacts/img/import-default-values.png"
@@ -53,6 +64,19 @@ Have a contact list in Excel or another app? You don't need to add people one at
 Some defaults are **required** — the WhatsApp channel, type, status, and source must be set before you can start the import.
 </Note>
 
+## How updates work
+
+When you choose **Update the existing contact**, this is what happens to each matching contact:
+
+- The columns you mapped replace the old values.
+- An empty cell never clears a value. The old value stays.
+- Custom fields are merged. Fields that are not in your file keep their old values.
+- The type, status and source you chose on the **Default Values** step replace the old ones. The team member is changed only if you picked one.
+- Groups and labels are added. WaMatrix.io never removes a group or label.
+- An update doesn't use a contact slot from your plan. Only new contacts do.
+
+If the same phone number appears twice in your file, WaMatrix.io uses the first row. It skips the second one.
+
 ## Tracking an import
 
 <Figure
@@ -63,7 +87,7 @@ Some defaults are **required** — the WhatsApp channel, type, status, and sourc
 
 Each import you run is listed with its status and progress. Open one to:
 
-- See how many rows were imported, skipped, and failed.
+- See how many rows were imported, skipped, and failed. If you chose to update existing contacts, you also see an **Updated** count.
 - **Download Failed Rows CSV** — a file listing the rows that failed and why.
 - **Download Original File** — the file you uploaded.
 - **Delete** a single import record, or **bulk-delete** several at once. This only removes the import history entry — contacts already created by that import are not deleted.

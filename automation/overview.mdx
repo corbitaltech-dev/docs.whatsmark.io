@@ -1,17 +1,23 @@
 ---
 title: "Automation"
-description: "Build WhatsApp chatbots with a drag-and-drop flow builder to automate replies, answer common questions, and guide customers through flows."
+description: "Build chatbots for WhatsApp, Messenger and Instagram with a drag-and-drop flow builder. Reply at once, answer common questions and guide customers."
 icon: "bot"
 keywords: ["WhatsMark", "WaMatrix.io", "automation", "chatbot", "flows"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-You can't reply to every WhatsApp message the moment it arrives, but customers still expect a quick response. Automations reply instantly on your behalf, answer common questions, capture leads, and keep flow moving while you're busy or away. Build each flow once using a simple drag-and-drop flow builder, and it runs automatically whenever the selected keyword or event is triggered.
+You can't reply to every message the moment it arrives, but customers still expect a quick response. Automations reply instantly on your behalf, answer common questions, capture leads, and keep flow moving while you're busy or away. Build each flow once using a simple drag-and-drop flow builder, and it runs automatically whenever the selected keyword or event is triggered.
 
+
+Automations work on WhatsApp, Messenger and Instagram. Each platform has its own list of automations.
 
 <Note>
-Before you can add a automation, you need to [connect a WhatsApp channel](/core-setup/channels/whatsapp) to your workspace.
+Before you can add an automation, connect at least one account on that platform: a [WhatsApp number](/core-setup/channels/whatsapp), a [Facebook Page for Messenger](/core-setup/channels/messenger) or an [Instagram account](/core-setup/channels/instagram). *(Instagram is available when your plan includes Instagram. See [Free vs. paid](/getting-started/free-vs-paid).)*
+</Note>
+
+<Note>
+Do you want to reply when someone comments on your post? Or, on Instagram, when someone mentions you or replies to your story? You set that up in [Reply Bots](/automation/reply-bots), not here. A Reply Bot can then start one of your automations. *(Available when your plan includes Reply Bots. See [Free vs. paid](/getting-started/free-vs-paid).)*
 </Note>
 
 ## Three ways to build your flow
@@ -19,38 +25,40 @@ Before you can add a automation, you need to [connect a WhatsApp channel](/core-
 Design the flow in whichever way suits you:
 
 - [**Build it yourself**](#creating-an-automation) — Create a flow and add each step using the drag-and-drop flow builder.
-- [**Start from the Flow Collection**](#flow-collection) — click **Flow Collection** at the top of the Automations page and clone a ready-made flow, then adjust it.
+- [**Start from the Flow Collection**](#flow-collection) — click **Flow Collection** at the top of the automations page and copy a ready-made flow, then change it to suit you.
 - [**Generate with AI**](/automation/generate-with-ai) — inside the Flow Builder, click **Generate with AI** and describe what you want in plain English.
 
 ## Creating an automation
 
 <Steps>
 <Step title="Open Automations">
-  Click **Automations** in the sidebar.
+  In the main menu, open the platform group and click **Automations**. For example, **Instagram → Automations**. The page is called **Instagram Automations** (or **WhatsApp Automations**, **Messenger Automations**).
 </Step>
 
-<Step title="Click Create Flow">
-  The button sits at the top right of the page. A form opens on the right side of the screen.
+<Step title="Click Add Automation">
+  The button sits at the top right of the page. It first shows a list called **Your Instagram channels** (or your WhatsApp or Messenger channels). Choose the account the automation will run on. A form then opens on the right side of the screen, with that account already chosen.
   <Figure
     src="/automation/img/automation-form.png"
-    alt="New Automation form showing fields for name, channels, and description"
-    caption="Image shows the New Automation form."
+    alt="Add Automation form showing fields for name, channels, and description"
+    caption="Image shows the Add Automation form."
   />
-  
+
 </Step>
-
-
 
 <Step title="Fill in the details">
   - **Name** — a clear name, such as **Welcome Flow**.
-  - **Channels** — select the WhatsApp or Messenger accounts where this automation will run.
+  - **Channels** — the accounts where this automation runs. You can add more accounts from the same platform.
   - **Description** — optionally add a short description to help your team understand what this flow does.
 </Step>
 
 <Step title="Save and build">
-  Click **Save**. The flow is created as a **Draft** — open it in the [Flow Builder](/automation/flow-builder) to design the flow, then **Active** it.
+  Click **Save**. The flow is created as a **Draft**. Open it in the [Flow Builder](/automation/flow-builder) to design the flow. Then turn it on.
 </Step>
 </Steps>
+
+<Note>
+An automation belongs to one platform. You can't move it to another platform's accounts later. If you try, you see a message such as "This automation runs on Instagram. Choose Instagram channels." To use the same idea on another platform, add a new automation there.
+</Note>
 
 ## Flow Collection
 
@@ -60,7 +68,7 @@ Design the flow in whichever way suits you:
   caption="Image shows the Flow Collection dialog."
 />
 
-The **Flow Collection** is a set of ready-made flows built by WaMatrix.io. Instead of building from an empty builder, clone one and adjust it to your business. Click **Flow Collection** at the top of the Automations page to open it.
+The **Flow Collection** is a set of ready-made flows built by WaMatrix.io. Instead of building from an empty builder, clone one and adjust it to your business. Click **Flow Collection** at the top of the automations page to open it.
 
 Flows are grouped by category, so you can jump straight to the ones written for your industry:
 
@@ -83,7 +91,7 @@ To use a flow, click **Use This**. You'll be asked which connected channel or ch
 
 <Figure
   src="/automation/img/automations-table.png"
-  alt="Automations page with a Flow Collection button, a Create Flow button, and the All Automations table showing flows with status badges, on/off switches, and a row menu with Flow Builder, Edit, and Delete"
+  alt="Automations page with a Flow Collection button, an Add Automation button, and the All Automations table showing flows with status badges, on/off switches, and a row menu with Flow Builder, Edit, and Delete"
   caption="Image shows the Automations page with the All Automations table and the row actions menu open."
 />
 
@@ -105,7 +113,11 @@ If an incoming message matches the trigger conditions of more than one active fl
     Learn the builder, triggers, and every flow step.
   </Card>
 
+  <Card title="Reply Bots" icon="reply" href="/automation/reply-bots">
+    Reply to comments on Messenger and Instagram, and to mentions and stories on Instagram. *(Available when your plan includes Reply Bots.)*
+  </Card>
+
   <Card title="WhatsApp Flows" icon="layout-panel-top" href="/appointment-and-flow/whatsapp-flows">
-    Send an interactive form from within an automation flow.
+    Send an interactive form from within a WhatsApp automation.
   </Card>
 </CardGroup>

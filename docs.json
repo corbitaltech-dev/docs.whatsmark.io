@@ -84,6 +84,7 @@
               "index",
               "features",
               "getting-started/concepts",
+              "getting-started/find-your-way-around",
               "getting-started/free-vs-paid",
               "getting-started/register",
               "getting-started/log-in"
@@ -101,7 +102,9 @@
             "group": "Channels",
             "pages": [
               "core-setup/channels/whatsapp",
-              "core-setup/channels/messenger"
+              "core-setup/channels/messenger",
+              "core-setup/channels/instagram",
+              "core-setup/channels/ice-breakers"
             ]
           },
           {
@@ -117,6 +120,7 @@
             "pages": [
               "messaging/whatsapp-templates",
               "messaging/messenger-templates",
+              "messaging/instagram-templates",
               "messaging/campaigns",
               "messaging/live-chat",
               "messaging/merge-fields"
@@ -128,6 +132,7 @@
               "automation/overview",
               "automation/generate-with-ai",
               "automation/ai-assistants",
+              "automation/reply-bots",
               "automation/flow-builder",
               {
                 "group": "Flow Steps",
@@ -154,6 +159,7 @@
             "pages": [
               "reporting/dashboard-and-usage",
               "reporting/whatsapp-analytics",
+              "core-setup/whatsapp-activity-log",
               "reporting/activity-logs",
               "reporting/notifications"
             ]
@@ -174,7 +180,6 @@
               "core-setup/groups",
               "core-setup/canned-replies",
               "core-setup/ai-prompts",
-              "core-setup/whatsapp-activity-log",
               "core-setup/custom-fields",
               "core-setup/api-keys"
             ]
@@ -191,8 +196,16 @@
               "settings/google-accounts",
               "settings/inbound-media",
               "settings/opt-out",
-              "settings/shopify",
-              "settings/woocommerce",
+              {
+                "group": "Integrations",
+                "icon": "blocks",
+                "pages": [
+                  "settings/shopify",
+                  "settings/woocommerce",
+                  "settings/facebook-lead-ads",
+                  "settings/indiamart"
+                ]
+              },
               "settings/account-and-danger-zone",
               "settings/profile"
             ]

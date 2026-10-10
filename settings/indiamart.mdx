@@ -1,0 +1,281 @@
+---
+title: "IndiaMART"
+description: "Turn every IndiaMART buyer enquiry into a WhatsApp contact, and reply on WhatsApp as soon as it arrives."
+icon: "building-2"
+keywords: ["WhatsMark", "WaMatrix.io", "IndiaMART", "Lead Manager", "buyer enquiries", "leads", "CRM key", "integration"]
+---
+
+When a buyer sends you an enquiry on IndiaMART, WaMatrix.io adds them to your contacts. An automation can then reply to them on WhatsApp. *(Needs a paid plan.)*
+
+Find it under **Settings → Integrations → IndiaMART**.
+
+<CardGroup cols={2}>
+  <Card title="Enquiries become contacts" icon="contact">
+    The buyer's name, phone number and email go into your contact list.
+  </Card>
+  <Card title="Reply on WhatsApp" icon="message-circle">
+    Start an automation the moment a new enquiry arrives.
+  </Card>
+  <Card title="Nothing gets missed" icon="refresh-cw">
+    A regular check picks up any enquiry that did not arrive on its own.
+  </Card>
+  <Card title="Enquiry details in your messages" icon="file-text">
+    Use the product, subject and message the buyer sent.
+  </Card>
+</CardGroup>
+
+## Two ways enquiries can arrive
+
+You choose this in the **How should leads arrive?** box.
+
+| Option | How it works | What you need |
+| --- | --- | --- |
+| **Push only (webhook)** | IndiaMART sends each enquiry to WaMatrix.io as soon as it comes in. | A link that you paste into IndiaMART |
+| **Pull only (scheduled)** | WaMatrix.io checks IndiaMART for new enquiries on a schedule. | Your IndiaMART CRM key |
+| **Push + Pull (recommended)** | Both. Push is fast. Pull catches anything push missed. | Both of the above |
+
+## Before you start
+
+<AccordionGroup>
+<Accordion title="A paid plan" icon="lock">
+  IndiaMART is not part of the Free Forever plan. If your plan does not include it, the page shows **IndiaMART is not in your current plan** and an **Upgrade Plan** button. See [Free vs. paid](/getting-started/free-vs-paid).
+</Accordion>
+
+<Accordion title="An IndiaMART seller account with Lead Manager" icon="building-2">
+  You set up the connection in IndiaMART's **Lead Manager**.
+</Accordion>
+
+<Accordion title="Your IndiaMART CRM key (for pull)" icon="key-round">
+  The **CRM key** is a code from IndiaMART that lets WaMatrix.io read your enquiries. You find it in IndiaMART under **Lead Manager → Import/Export → CRM key**. You don't need it if you choose **Push only (webhook)**.
+</Accordion>
+
+<Accordion title="Permission to change settings" icon="shield">
+  Only team members whose role lets them edit settings can see the connect form and the buttons. See [Roles and permissions](/core-setup/roles-and-permissions).
+</Accordion>
+
+<Accordion title="A connected WhatsApp number" icon="message-circle">
+  You need this to message your buyers. See [Connect WhatsApp](/core-setup/channels/whatsapp).
+</Accordion>
+</AccordionGroup>
+
+## Step 1: Connect IndiaMART
+
+<Steps>
+<Step title="Open the IndiaMART page">
+  In WaMatrix.io, go to **Settings**, choose the **Integrations** tab, then click **IndiaMART**. You see the **Connect IndiaMART** form with a short **Before you connect** checklist.
+
+  {/* SCREENSHOT: /settings/img/indiamart-connect-form.png — The Connect IndiaMART card with the Before you connect checklist, the How should leads arrive? box set to Push + Pull (recommended), and the CRM key, Registered mobile and Default country code fields, with the Connect button */}
+</Step>
+
+<Step title="Choose how leads should arrive">
+  In **How should leads arrive?**, choose an option. We suggest **Push + Pull (recommended)**.
+</Step>
+
+<Step title="Fill in the form">
+  - **CRM key**: paste your key from IndiaMART. You need it for pull.
+  - **Registered mobile**: the mobile number on your IndiaMART seller account. This is optional.
+  - **Default country code**: added to phone numbers that come in without a country code. It starts as `91`, for India.
+</Step>
+
+<Step title="Click Connect">
+  WaMatrix.io checks your CRM key with IndiaMART before saving it. When it works, you see **IndiaMART connected. Paste the webhook URL into Lead Manager to start receiving leads.**
+</Step>
+</Steps>
+
+If you chose a pull option and left **CRM key** empty, you see **A CRM key is required to pull leads from IndiaMART.** If the key is wrong, the message starts with **IndiaMART rejected this CRM key**.
+
+## Step 2: Paste your link into IndiaMART
+
+Skip this step if you chose **Pull only (scheduled)**.
+
+After you connect, the top card shows a field called **Push webhook URL**. This is your own private link. IndiaMART uses it to send each new enquiry to WaMatrix.io.
+
+<Steps>
+<Step title="Copy the link">
+  Click the copy icon next to **Push webhook URL**.
+
+  {/* SCREENSHOT: /settings/img/indiamart-connected.png — The IndiaMART connection card with the Connected badge, the Mode, Last lead, Last pull and Connected details, the Push webhook URL field with a copy icon, and the View contacts, Fetch leads now and Regenerate URL buttons */}
+</Step>
+
+<Step title="Paste it into IndiaMART">
+  In IndiaMART, go to **Lead Manager → Settings → Push API**. Paste the link and save.
+</Step>
+</Steps>
+
+<Warning>
+Keep this link private. Anyone who has it can add enquiries to your workspace. If it is shared by mistake, click **Regenerate URL**. The old link stops working at once, so paste the new link into IndiaMART straight away.
+</Warning>
+
+## Your connection card
+
+The top card shows a status:
+
+| Status | What it means |
+| --- | --- |
+| **Connected** | New enquiries arrive and become contacts. |
+| **Needs attention** | Enquiries have stopped. See [When the status says Needs attention](#when-the-status-says-needs-attention). |
+
+It also shows:
+
+- **Mode**: **Push + Pull**, **Push only** or **Pull only**.
+- **Last lead**: when the last enquiry came in. Until then, it says **No leads yet**.
+- **Last pull**: when WaMatrix.io last checked IndiaMART.
+- **Connected**: when you connected.
+
+A line under the link tells you how often the scheduled pull runs.
+
+The buttons at the bottom:
+
+- **View contacts** opens your contact list, filtered to these enquiries.
+- **Fetch leads now** checks IndiaMART for new enquiries right away. You see it only when a CRM key is saved.
+- **Regenerate URL** makes a new private link. See the warning above.
+
+## Step 3: Set up new contacts (optional)
+
+The **Contact mapping** card decides how contacts from IndiaMART are set up.
+
+When **Use custom mapping for IndiaMART** is **off**, these contacts get your workspace's usual [Contact Defaults](/settings/contact-configuration).
+
+Turn it **on** to give them their own settings:
+
+- **Type**: **Guest**, **Lead** or **Customer**.
+- **Status** and **Source**: choose from your [statuses](/core-setup/statuses) and [sources](/core-setup/sources).
+- **Assign to**: **Unassigned**, **Round robin**, **Online team member** or **Specific team member**. If you choose **Specific team member**, pick the person in **Team member**.
+- **Labels** and **Groups**: optional.
+
+Click **Save Changes**.
+
+{/* SCREENSHOT: /settings/img/indiamart-contact-mapping.png — The Contact mapping card with the Use custom mapping for IndiaMART switch turned on, the note about fields being applied as a set, and the Type, Status, Source, Assign to, Labels and Groups fields */}
+
+<Note>
+All the fields on this card work together. If you leave one at its default, it does **not** use your workspace setting instead. Fill in each one the way you want it.
+</Note>
+
+<Tip>
+Choose a **Source** here, such as one called IndiaMART. Then you can find all these contacts with one filter, and **View contacts** shows them.
+</Tip>
+
+## How an enquiry becomes a contact
+
+When a new enquiry arrives, WaMatrix.io:
+
+1. Looks for a contact with the same phone number.
+2. If there is none, creates a new contact with the buyer's **name**, **phone number** and **email**.
+3. Starts any automation that uses the **Leads** trigger.
+
+The other details stay with the enquiry. These include the company, city, state, country, subject, message and product. You can use them in your messages.
+
+A few cases work differently:
+
+- **The phone number is already in your contacts.** No new contact is made. The enquiry is added to the existing contact. If that contact has no email yet, the email from IndiaMART is added. An email you already have is never replaced.
+- **The enquiry has no phone number.** The enquiry is kept, but no contact is made. No automation starts.
+- **Your plan's contact limit is full.** The enquiry is kept safely, but no contact is made. A red banner says **leads waiting on your contact limit**. Upgrade your plan, then click **Import waiting leads**. See [Free vs. paid](/getting-started/free-vs-paid) for limits.
+- **The same enquiry arrives by push and by pull.** It is saved only once, and only one contact is made.
+
+<Note>
+Enquiries you bring in with **Import waiting leads** do not start automations. They may be days old, so an instant reply would arrive late.
+</Note>
+
+## Start an automation when an enquiry arrives
+
+<Steps>
+<Step title="Add an automation on a WhatsApp channel">
+  Open **WhatsApp → Automations** and click **Add Automation**. Choose your WhatsApp channel.
+
+  A **channel** is one connected account, such as one WhatsApp number. The reply is sent from this number.
+</Step>
+
+<Step title="Set the Start Trigger">
+  Open the **Start Trigger**. Under **Trigger Source**, choose **Leads**. See [Leads trigger](/automation/flow-builder#leads).
+
+  - **Lead Event**: choose **New lead received**.
+  - **Lead Source**: choose **IndiaMART**. Or keep **Any lead source** to also include [Facebook Lead Ads](/settings/facebook-lead-ads).
+</Step>
+
+<Step title="Start with a template message">
+  Add a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template) step as the first message.
+</Step>
+</Steps>
+
+<Warning>
+Use a **WhatsApp** channel for this automation. A lead trigger cannot start a Messenger conversation. The **Leads** option is not shown on Instagram automations.
+</Warning>
+
+### Your first message must be a template
+
+The buyer has not messaged you on WhatsApp yet. WhatsApp only lets a business message someone first with a **template**. A template is a message format that Meta has approved in advance. This is a WhatsApp rule, not a WaMatrix.io one. Meta explains it in its [templates overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+
+When the buyer replies, you can write back freely for 24 hours. See [Two WhatsApp rules that shape everything](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
+
+### Use the enquiry details in your message
+
+Type `@` in a message box and choose from the **Lead** group. It has fields such as **Lead Name**, **Company**, **City**, **Enquiry Subject** and **Enquiry Message**. They use the contact's most recent enquiry. See [Merge fields](/messaging/merge-fields).
+
+## When the status says Needs attention
+
+**Needs attention** means IndiaMART did not accept your CRM key. A red box on the card shows the reason, for example **IndiaMART rejected the CRM key. Please re-enter it in settings.** While the status shows this, no new enquiries come in, by push or by pull.
+
+{/* SCREENSHOT: /settings/img/indiamart-needs-attention.png — The IndiaMART connection card with the Needs attention badge and a red box that says IndiaMART rejected the CRM key. Please re-enter it in settings. */}
+
+To fix it:
+
+<Steps>
+<Step title="Get your CRM key again">
+  In IndiaMART, go to **Lead Manager → Import/Export → CRM key** and copy it.
+</Step>
+<Step title="Save the new key">
+  On the IndiaMART page in WaMatrix.io, find the **Update connection** card. Paste the key into **CRM key** and click **Save**.
+</Step>
+<Step title="Check for missed enquiries">
+  Click **Fetch leads now** to bring in what came in while the connection was down.
+</Step>
+</Steps>
+
+<Note>
+The red box can also say **IndiaMART rate limit reached. The next scheduled pull will retry.** IndiaMART limits how often its enquiries can be read. You don't need to do anything. The status stays **Connected**, and the next check tries again.
+</Note>
+
+## Change your settings or disconnect
+
+To change the mode or replace your CRM key, use the **Update connection** card. Leave **CRM key** empty to keep the key you saved. Click **Save**.
+
+To disconnect, click **Disconnect** on the connection card. The **Disconnect IndiaMART?** box opens. Click **Disconnect** to confirm.
+
+Contacts already made from past enquiries are kept. Your automations are not deleted. New enquiries stop arriving, and your CRM key is removed. If you connect again later, enter your CRM key again.
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Which option should I choose?">
+  **Push + Pull (recommended)** is the safest. Push brings enquiries in quickly. Pull is a backup that picks up anything push missed.
+</Accordion>
+
+<Accordion title="Do I need the CRM key?">
+  Only for **Pull only (scheduled)** and **Push + Pull (recommended)**. **Push only (webhook)** works without it.
+</Accordion>
+
+<Accordion title="Why don't I see the Fetch leads now button?">
+  It only shows when a CRM key is saved. Add your key in the **Update connection** card, choose a mode that includes pull, and click **Save**.
+</Accordion>
+
+<Accordion title="An enquiry came in, but my automation did not start. Why?">
+  The automation starts only when a contact is made or matched. It does not start when the enquiry has no phone number or your contact limit is full. Also check that the automation uses a WhatsApp channel and is turned on.
+</Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Flow builder" icon="bot" href="/automation/flow-builder">
+    Build the WhatsApp reply your buyers receive.
+  </Card>
+  <Card title="Facebook Lead Ads" icon="megaphone" href="/settings/facebook-lead-ads">
+    Bring in leads from your Facebook and Instagram lead forms too. *(Needs a paid plan.)*
+  </Card>
+  <Card title="Merge fields" icon="at-sign" href="/messaging/merge-fields">
+    Put the buyer's name and enquiry into your messages.
+  </Card>
+  <Card title="Sources" icon="map-pin" href="/core-setup/sources">
+    Tag contacts by where they came from.
+  </Card>
+</CardGroup>

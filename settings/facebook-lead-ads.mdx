@@ -1,0 +1,356 @@
+---
+title: "Facebook Lead Ads"
+description: "Turn every Facebook and Instagram lead form into a WhatsApp contact, and send your first message as soon as the lead arrives."
+icon: "megaphone"
+keywords: ["WhatsMark", "WaMatrix.io", "Facebook Lead Ads", "lead ads", "instant forms", "Instagram lead ads", "leads", "Meta ads", "integration"]
+---
+
+When someone fills in the form on your Facebook lead ad, WaMatrix.io adds them to your contacts. An automation can then send them a WhatsApp message straight away. *(Needs a paid plan.)*
+
+These forms are called **instant forms**. They open inside the ad, so the person never leaves Facebook or Instagram. Meta says that leads from Instagram lead ads also belong to your Facebook Page, so connecting the Page is enough.
+
+Find it under **Settings → Integrations → Facebook Lead Ads**.
+
+<CardGroup cols={2}>
+  <Card title="New leads become contacts" icon="contact">
+    Name, phone number and email go straight into your contact list.
+  </Card>
+  <Card title="Reply on WhatsApp first" icon="message-circle">
+    Start an automation the moment a new lead arrives.
+  </Card>
+  <Card title="Keep every form answer" icon="file-text">
+    Save answers into your own custom fields, or use them in messages.
+  </Card>
+  <Card title="Bring in recent leads" icon="download">
+    Import leads from the last 90 days with one click.
+  </Card>
+</CardGroup>
+
+## Before you start
+
+<AccordionGroup>
+<Accordion title="A paid plan" icon="lock">
+  Facebook Lead Ads is not part of the Free Forever plan. If your plan does not include it, the page shows **Facebook Lead Ads is not in your current plan** and an **Upgrade Plan** button. See [Free vs. paid](/getting-started/free-vs-paid).
+</Accordion>
+
+<Accordion title="A Facebook Page that runs lead ads" icon="megaphone">
+  You must manage the Facebook Page that your lead forms belong to. You can connect one Page at a time.
+</Accordion>
+
+<Accordion title="Your own Facebook app" icon="blocks">
+  WaMatrix.io connects through a Facebook app that **you** create on Meta's developer site. This keeps your leads under your own Meta account. The next section shows how to set it up.
+</Accordion>
+
+<Accordion title="Permission to change settings" icon="shield">
+  Only team members whose role lets them edit settings can see the connect form and the buttons. See [Roles and permissions](/core-setup/roles-and-permissions).
+</Accordion>
+
+<Accordion title="A connected WhatsApp number" icon="message-circle">
+  You need this to message your leads. See [Connect WhatsApp](/core-setup/channels/whatsapp).
+</Accordion>
+</AccordionGroup>
+
+## Step 1: Get your details from Facebook
+
+The connect form has a short **Before you connect** checklist. Here are the same steps, in more detail. You do them on Meta's developer site, not in WaMatrix.io.
+
+<Steps>
+<Step title="Create a Facebook app">
+  Go to [developers.facebook.com/apps](https://developers.facebook.com/apps) and create an app. When Meta asks what the app is for, add the **Capture & manage ad leads** use case.
+
+  You can find the app's **App ID** and **App Secret** in the app's settings. Copy both. The App Secret works like a password, so keep it private.
+</Step>
+
+<Step title="Create a user access token">
+  An **access token** is a long code that lets an app read data for you. It works like a password.
+
+  Open Meta's **Graph API Explorer** (a tool on Meta's developer site). Create a user token with these four permissions:
+
+  - `leads_retrieval`
+  - `pages_read_engagement`
+  - `pages_manage_metadata`
+  - `pages_show_list`
+
+  Then extend the token so it lasts longer. Meta explains this in its guides to the [Graph API Explorer](https://developers.facebook.com/docs/graph-api/guides/explorer) and to [long-lived tokens](https://developers.facebook.com/docs/facebook-login/guides/access-tokens/get-long-lived).
+</Step>
+
+<Step title="Copy your Page's own token">
+  In Graph API Explorer, run `GET me/accounts`. You see a list of the Pages you manage.
+
+  Find your Page in the list. Copy its `access_token` and its `id`. This is your **Page Access Token** and your **Page ID**.
+
+  <Warning>
+  Copy the token listed **for your Page**. Do not copy the user token from the step before. WaMatrix.io checks this, and a user token is refused.
+  </Warning>
+</Step>
+</Steps>
+
+<Note>
+Meta says leads can't be read while an app is in **Development** mode, except by people with a role in that app. To get leads from all your customers, switch your app to **Live**. This is Meta's rule, not ours. See Meta's [lead ads guide](https://developers.facebook.com/docs/marketing-api/guides/lead-ads).
+</Note>
+
+## Step 2: Connect your Page
+
+<Steps>
+<Step title="Open the Facebook Lead Ads page">
+  In WaMatrix.io, go to **Settings**, choose the **Integrations** tab, then click **Facebook Lead Ads**. You see the **Connect Facebook Lead Ads** form.
+
+  {/* SCREENSHOT: /settings/img/facebook-lead-ads-connect-form.png — The Connect Facebook Lead Ads card with the Before you connect checklist, the App ID, App Secret, Page ID, Page Access Token and Default country code fields, and the Connect Page button */}
+</Step>
+
+<Step title="Fill in the form">
+  Paste the details you copied from Facebook:
+
+  - **App ID**
+  - **App Secret**
+  - **Page ID**
+  - **Page Access Token**
+  - **Default country code**: added to phone numbers that people type without a country code. For example, enter `91` for India. This is optional.
+
+  Your App Secret and Page Access Token are stored encrypted. They are never shown again.
+</Step>
+
+<Step title="Click Connect Page">
+  WaMatrix.io checks your token with Facebook. It also sets up the link to your Facebook app for you, so you don't need to change anything else in Meta's settings.
+
+  When it works, you see **Facebook Page connected. New leads will arrive automatically.**
+</Step>
+</Steps>
+
+If something is wrong, a message appears under the field. See [If the connection fails](#if-the-connection-fails).
+
+## Your connection card
+
+After you connect, the top card shows your Page and a status. The status is one of these:
+
+| Status | What it means |
+| --- | --- |
+| **Connected** | New leads arrive and become contacts. |
+| **Needs attention** | Leads have stopped. See [When the status says Needs attention](#when-the-status-says-needs-attention). |
+
+The card also shows the **Page**, **Page ID**, **App ID** and **Last lead**. Until the first lead comes in, **Last lead** says **No leads yet**.
+
+{/* SCREENSHOT: /settings/img/facebook-lead-ads-connected.png — The Facebook Lead Ads connection card with the Connected badge, the Page, Page ID, App ID and Last lead details, the View contacts and Import last 90 days buttons, and Disconnect in the top-right corner */}
+
+Two buttons sit at the bottom of the card:
+
+- **View contacts** opens your contact list, filtered to these leads.
+- **Import last 90 days** brings in older leads. See [Bring in older leads](#bring-in-older-leads).
+
+## Step 3: Choose what to capture
+
+The **Lead capture** card below the connection card controls which leads come in and how they are saved. Change what you need, then click **Save Changes**.
+
+{/* SCREENSHOT: /settings/img/facebook-lead-ads-lead-capture.png — The Lead capture card with the Lead forms list and Refresh forms button, the Field mapping section with a Form question to Contact custom field row, the Default country code field, and the Contact mapping switch */}
+
+<AccordionGroup>
+<Accordion title="Lead forms: which forms to capture">
+  Click **Load forms** to get the list of forms on your Page. Later, the button says **Refresh forms**. Click it after you create a new form on Facebook.
+
+  - **Tick nothing** to capture every form. This includes forms you create later.
+  - **Tick some forms** to capture only those.
+
+  A line under the list tells you what is happening now. For example, **Currently capturing every form on this Page.**
+</Accordion>
+
+<Accordion title="Field mapping: save answers into custom fields">
+  Your form may ask extra questions, like budget or city. You can save each answer into a contact [custom field](/core-setup/custom-fields).
+
+  Click **Add mapping**. On the left, enter the **Question key**. You can pick it from the list once your forms are loaded. On the right, choose the contact custom field.
+
+  If you have no custom fields yet, you see a **Create custom field** button instead.
+
+  Answers you don't map are still kept with the lead. You can use them in messages. See [Use the lead's details in your message](#use-the-leads-details-in-your-message).
+</Accordion>
+
+<Accordion title="Default country code">
+  This is added to phone numbers that were typed without a country code. For example, `91` for India. Numbers that start with `+` are never changed.
+</Accordion>
+
+<Accordion title="Contact mapping: status, source and owner">
+  When this switch is **off**, new contacts get your workspace's usual [Contact Defaults](/settings/contact-configuration).
+
+  Turn it **on** to give these contacts their own settings:
+
+  - **Type**: **Guest**, **Lead** or **Customer**.
+  - **Status** and **Source**: choose from your [statuses](/core-setup/statuses) and [sources](/core-setup/sources).
+  - **Assign to**: **Unassigned**, **Round robin**, **Online team member** or **Specific team member**. If you choose **Specific team member**, pick the person in **Team member**.
+  - **Labels** and **Groups**: optional.
+
+  <Tip>
+  Choose a **Source** here, such as one called Facebook Lead Ads. Then you can find all these contacts with one filter, and **View contacts** shows them.
+  </Tip>
+</Accordion>
+</AccordionGroup>
+
+## How a lead becomes a contact
+
+When someone sends your form, WaMatrix.io:
+
+1. Gets the answers from Facebook.
+2. Looks for a contact with the same phone number.
+3. If there is none, creates a new contact with the person's **name**, **phone number** and **email**.
+4. Copies any answers you mapped into custom fields.
+5. Starts any automation that uses the **Leads** trigger.
+
+A few cases work differently:
+
+- **The phone number is already in your contacts.** No new contact is made. The lead is added to the existing contact. If that contact has no email yet, the email from the form is added. An email you already have is never replaced.
+- **The form has no phone number.** The lead is kept, but no contact is made. No automation starts, because there is no number to message.
+- **Your plan's contact limit is full.** The lead is kept safely, but no contact is made. A red banner says **leads waiting on your contact limit**. Upgrade your plan, then click **Import waiting leads**. See [Free vs. paid](/getting-started/free-vs-paid) for limits.
+
+<Note>
+Leads you bring in with **Import waiting leads** or **Import last 90 days** do not start automations. These leads may be days old, so a "thanks for your enquiry" message would arrive late.
+</Note>
+
+## Start an automation when a lead arrives
+
+Use the **Leads** trigger to send a WhatsApp message to every new lead.
+
+<Steps>
+<Step title="Add an automation on a WhatsApp channel">
+  Open **WhatsApp → Automations** and click **Add Automation**. Choose your WhatsApp channel.
+
+  A **channel** is one connected account, such as one WhatsApp number. The message to the lead is sent from this number.
+</Step>
+
+<Step title="Set the Start Trigger">
+  Open the **Start Trigger**. Under **Trigger Source**, choose **Leads**. See [Leads trigger](/automation/flow-builder#leads).
+
+  - **Lead Event**: choose **New lead received**.
+  - **Lead Source**: choose **Facebook Lead Ads**. Or keep **Any lead source** to also include [IndiaMART](/settings/indiamart) enquiries.
+
+  {/* SCREENSHOT: /settings/img/leads-trigger.png — The Start Trigger settings in the flow builder with Trigger Source set to Leads, Lead Event set to New lead received, and Lead Source set to Facebook Lead Ads */}
+</Step>
+
+<Step title="Start with a template message">
+  Add a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template) step as the first message. See why below.
+</Step>
+</Steps>
+
+<Warning>
+Use a **WhatsApp** channel for this automation. A lead trigger cannot start a Messenger conversation. The **Leads** option is not shown on Instagram automations.
+</Warning>
+
+### Your first message must be a template
+
+A new lead has not messaged you yet. WhatsApp only lets a business message someone first with a **template**. A template is a message format that Meta has approved in advance. This is a WhatsApp rule, not a WaMatrix.io one. Meta explains it in its [templates overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+
+When the lead replies, you can write back freely for 24 hours. See [Two WhatsApp rules that shape everything](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
+
+### Use the lead's details in your message
+
+Type `@` in a message box and choose from the **Lead** group. It has fields such as **Lead Name**, **Lead Phone**, **Lead Email**, **Form Name** and **Lead Source**. They use the contact's most recent lead.
+
+To use a form answer you did not map, type `{{lead.field.question_key}}`. Replace `question_key` with the question key from your form. See [Merge fields](/messaging/merge-fields).
+
+## Bring in older leads
+
+Click **Import last 90 days** on the connection card. WaMatrix.io brings in the leads from your captured forms in the background. Leads you already have are not added twice.
+
+Facebook only lets WaMatrix.io get leads from the last 90 days. Older leads cannot be imported.
+
+## If the connection fails
+
+When you click **Connect Page**, you may see one of these messages:
+
+<AccordionGroup>
+<Accordion title="This is not the Page access token for this Page">
+  You pasted the user token, or a token for a different Page. Run `GET me/accounts` again. Copy the `access_token` listed next to your Page, and check that the **Page ID** matches.
+</Accordion>
+
+<Accordion title="Could not verify this token with Facebook">
+  The token is wrong or has expired. Create a new one and try again.
+</Accordion>
+
+<Accordion title="Facebook did not accept your app's details">
+  The message starts with **Could not set up the lead webhook on your Facebook App**. Check the **App ID** and **App Secret**. Copy them again from your app's settings.
+</Accordion>
+
+<Accordion title="This Facebook Page could not be connected">
+  The Page may already be connected to another workspace. A Page's leads can go to only one workspace. If the Page is yours, contact support.
+</Accordion>
+</AccordionGroup>
+
+## When the status says Needs attention
+
+**Needs attention** means leads have stopped coming in. A red box on the card shows the reason from Facebook. The most common reasons are:
+
+- **Facebook access token is no longer valid. Reconnect the Page.** Facebook no longer accepts the token.
+- **Page access token is missing. Reconnect the Page.**
+- **Facebook refused to send this Page's leads.** Facebook did not allow the connection. The text after this explains why.
+
+{/* SCREENSHOT: /settings/img/facebook-lead-ads-needs-attention.png — The Facebook Lead Ads connection card with the Needs attention badge and a red box that says Facebook access token is no longer valid. Reconnect the Page. */}
+
+To fix it:
+
+<Steps>
+<Step title="Disconnect the Page">
+  Click **Disconnect** on the connection card, then **Disconnect** again to confirm.
+</Step>
+<Step title="Get a new Page Access Token">
+  Follow [Step 1](#step-1-get-your-details-from-facebook) again to create a fresh token.
+</Step>
+<Step title="Connect again">
+  Fill in the form and click **Connect Page**. Your form choices and field mapping come back, because they are saved with the Page.
+</Step>
+<Step title="Catch up on missed leads">
+  Click **Import last 90 days** to bring in leads that arrived while the connection was down. These leads do not start automations.
+</Step>
+</Steps>
+
+<Note>
+The same red box can show other notes, for example after **Import last 90 days**. If some leads could not be added because your contact limit is full, it tells you how many.
+</Note>
+
+## Disconnecting
+
+Click **Disconnect** on the connection card. The **Disconnect this Page?** box opens. Click **Disconnect** to confirm.
+
+Contacts already made from past leads are kept. New leads stop arriving. Your automations are not deleted.
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Does this work with Instagram lead ads?">
+  Yes, when the ad uses an instant form from your connected Facebook Page. Meta says that all leads from a lead ad belong to the Facebook Page, including ads that run on Instagram.
+</Accordion>
+
+<Accordion title="Will this affect my Messenger channel?">
+  No. If the same Page is also connected as a Messenger channel, it keeps working when you connect or disconnect Lead Ads.
+</Accordion>
+
+<Accordion title="Can I connect more than one Page?">
+  You can connect one Page at a time. To change Pages, disconnect the current one first.
+</Accordion>
+
+<Accordion title="Why is my test lead not showing up?">
+  Check these things:
+
+  - The status says **Connected**.
+  - Under **Lead forms**, the form is ticked, or nothing is ticked.
+  - Your Facebook app is **Live**, not in Development mode.
+  - The form asks for a phone number. Leads without one never become contacts.
+</Accordion>
+
+<Accordion title="A lead came in, but my automation did not start. Why?">
+  The automation starts only when a contact is made or matched. It does not start when the lead has no phone number or your contact limit is full. Also check that the automation uses a WhatsApp channel and is turned on.
+</Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Flow builder" icon="bot" href="/automation/flow-builder">
+    Build the WhatsApp reply your new leads receive.
+  </Card>
+  <Card title="IndiaMART" icon="building-2" href="/settings/indiamart">
+    Bring in IndiaMART buyer enquiries the same way. *(Needs a paid plan.)*
+  </Card>
+  <Card title="Custom fields" icon="square" href="/core-setup/custom-fields">
+    Create fields to hold your form answers.
+  </Card>
+  <Card title="Merge fields" icon="at-sign" href="/messaging/merge-fields">
+    Put the lead's name and answers into your messages.
+  </Card>
+</CardGroup>

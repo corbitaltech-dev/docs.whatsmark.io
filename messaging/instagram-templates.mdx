@@ -1,0 +1,218 @@
+---
+title: "Instagram templates"
+description: "Save Instagram messages once, with buttons, cards or files, and send them again from the Inbox, campaigns, flows and Reply Bots."
+icon: "layout-template"
+keywords: ["WhatsMark", "WaMatrix.io", "Instagram templates", "Instagram DM", "quick replies", "buttons", "carousel", "media", "saved messages"]
+---
+
+An Instagram template is a message you save once and send again and again. It can be plain text, or it can have buttons, cards or a file. You use it in the Inbox, in campaigns, in flows and in Reply Bots. *(Available when your plan includes Instagram. See [Free vs. paid](/getting-started/free-vs-paid).)*
+
+Instagram templates are not like [WhatsApp templates](/messaging/whatsapp-templates). Meta does not check or approve them. They are just saved messages, so you can use a template as soon as you save it.
+
+<Note>
+You can send an Instagram template only while you can still reply to the person. Instagram lets a business reply for **24 hours** after the person's last message. After that, you must wait for them to message you again. This is Meta's rule, not a WaMatrix.io one. Meta explains it in the [Instagram messaging guide](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api).
+</Note>
+
+## Before you start
+
+<AccordionGroup>
+  <Accordion title="Connect an Instagram account" icon="instagram">
+    Every template belongs to one Instagram account. If no account is connected, the Templates page shows **Connect an Instagram account first** and a **Connect Instagram** button. See [Connect Instagram](/core-setup/channels/instagram).
+  </Accordion>
+  <Accordion title="Have permission to manage templates" icon="shield">
+    You need permission to see, create, edit or delete templates. The workspace owner sets this in [Roles and permissions](/core-setup/roles-and-permissions).
+  </Accordion>
+</AccordionGroup>
+
+## Create a template
+
+<Steps>
+<Step title="Open Instagram templates">
+  In the sidebar, open **Instagram → Templates**. Then click **Add Template**.
+
+  A list called **Select an Instagram account** opens. Click the account the template is for.
+</Step>
+
+<Step title="Fill in the details">
+  The form has three steps: **Details**, **Content** and **Review**. On the **Details** step, fill in:
+
+  - **Template name**. Only you see this name. Customers don't.
+  - **Instagram account**. The template can be sent from this account only.
+  - **Message type**. Choose **Text**, **Quick replies**, **Buttons**, **Carousel** or **Media**. Each type is explained [below](#message-types).
+
+  {/* SCREENSHOT: /messaging/img/instagram/instagram-template-details.png — The Details step of the New Instagram Template form, with Template name, Instagram account and Message type fields, the three-step list (Details, Content, Review) on the left and the Live Preview on the right */}
+
+  <Warning>
+  You can't change the message type after you save the template. To use a different type, create a new template.
+  </Warning>
+
+  Click **Continue**.
+</Step>
+
+<Step title="Write the content">
+  On the **Content** step, write what the customer receives. What you see here depends on the message type. The **Live Preview** on the right shows how the message looks in Instagram.
+
+  To put a person's name or other details in the message, use variables. See [Variables](#variables).
+
+  Click **Continue**.
+</Step>
+
+<Step title="Check and save">
+  The **Review** step shows the name, account, type and a short summary. Check everything.
+
+  {/* SCREENSHOT: /messaging/img/instagram/instagram-template-review.png — The Review step showing Name, Account and Type in a summary box, the note about the 24-hour rule, and the Create template button */}
+
+  Click **Create template**. When you edit a template later, the button says **Save changes**.
+</Step>
+</Steps>
+
+<Check>
+**Instagram → Templates → Add Template** → choose the account → **Details** → **Content** → **Review** → **Create template**.
+</Check>
+
+## Message types
+
+There are five types. Each one suits a different kind of message.
+
+### Text
+
+A plain message, such as a greeting or an order update.
+
+Write your message in the **Message** box. It can be up to **1,000 bytes** long. A byte is a small unit of size. Most English letters use 1 byte. An emoji can use up to 4 bytes, and letters in some languages, such as Hindi, use more than 1. The counter under the box shows how much you have used.
+
+{/* SCREENSHOT: /messaging/img/instagram/instagram-template-text.png — The Content step for a Text template, with a Message box containing "Hi {{1}}, how can we help you today?", the byte counter and the Add variable button */}
+
+### Quick replies
+
+A message with up to **13** short answers under it. The customer taps one answer instead of typing. The answers disappear after the customer taps one.
+
+Click **Add quick reply** to add an answer. For each answer, fill in:
+
+- **Quick reply**. The text on the answer, up to **20** characters.
+- **When tapped**. What happens when the customer taps it. See [What happens when someone taps](#what-happens-when-someone-taps).
+
+{/* SCREENSHOT: /messaging/img/instagram/instagram-template-quick-replies.png — The Quick replies section with two answers, "Track my order" and "Talk to us", each with a When tapped list, and the counter showing 2 of 13 */}
+
+### Buttons
+
+A message with up to **3** buttons under it. Unlike quick replies, the buttons stay visible after a tap. Click **Add button** to add a button.
+
+- The message text can be up to **640** characters.
+- Each **Button** title can be up to **20** characters.
+- Choose what each button does in **When tapped**.
+
+{/* SCREENSHOT: /messaging/img/instagram/instagram-template-buttons.png — The Buttons section with Button 1 set to Open a website and a Website link field, and Button 2 set to Start a flow with a Flow to start list */}
+
+### Carousel
+
+A row of up to **10** cards. The customer swipes from one card to the next. Use it to show products, offers or services.
+
+Click **Add card** to add a card. Each card has:
+
+- **Image** *(optional)*. Click **Add image** and pick a picture from your [Media Library](/media/media-library).
+- **Title** *(required)*. Up to **80** characters.
+- **Subtitle** *(optional)*. Up to **80** characters.
+- **Card link** *(optional)*. A website link that opens when the customer taps the card's image or title. It must start with **https://**.
+- **Buttons on this card** *(optional)*. Up to **3** buttons. They work the same way as in a [Buttons](#buttons) template.
+
+{/* SCREENSHOT: /messaging/img/instagram/instagram-template-carousel.png — The Carousel cards section showing card 1 with an image, Title "Summer collection", a Subtitle, a Card link and one button, plus the Add card button and the counter 1 of 10 */}
+
+### Media
+
+One file: a picture, a video, a sound clip or a PDF. Choose the **File type**, then upload the file or choose it from your [Media Library](/media/media-library).
+
+| File type | Formats | Largest size |
+| --- | --- | --- |
+| **Image** | PNG, JPEG or GIF | 8 MB |
+| **Video** | MP4, MOV or WebM | 25 MB |
+| **Audio** | AAC, M4A or WAV | 25 MB |
+| **PDF file** | PDF only | 25 MB |
+
+You can also add a **Caption**. This is optional text. Instagram sends it as a separate message, right after the file.
+
+{/* SCREENSHOT: /messaging/img/instagram/instagram-template-media.png — The File section with File type set to Image, an uploaded picture, and the optional Caption box below it */}
+
+<Note>
+The number limits on this page (13 quick replies, 3 buttons, 10 cards, 80 and 20 characters, 1,000 bytes, file sizes) are Instagram's rules, not WaMatrix.io's. Meta lists them in its guides for [quick replies](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api/quick-replies), [buttons](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api/button-template), [carousels](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api/generic-template) and [text and files](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api).
+</Note>
+
+## What happens when someone taps
+
+Each quick reply and each button has a **When tapped** setting. You can choose:
+
+- **Quick reply**. Only the button text is sent, as the customer's reply. If the text matches a keyword in one of your [automations](/automation/overview), that automation answers.
+- **Send a message**. WaMatrix.io replies straight away with a message you write in **Message to send**.
+- **Start a flow**. A flow starts straight away. Pick it in **Flow to start**. Only active flows on this Instagram account are listed.
+- **Open a website**. Opens a web page inside Instagram. Enter it in **Website link**. The link must start with **https://**. This choice is for buttons and carousel buttons only. Quick replies can't open a website.
+
+## Variables
+
+A variable is a blank space in your message that is filled in later. It is written as a number in double curly brackets, such as `{{1}}`. For example, `Hi {{1}}` can become `Hi Priya`.
+
+- Click **Add variable** to add the next variable where your cursor is.
+- Number them in order with no gaps: `{{1}}`, `{{2}}`, `{{3}}`.
+- You can use variables in the message text, the media caption, and the card titles and subtitles.
+
+When your template has variables, a **Sample values** box appears. Type an example for each one, such as a name. The sample is only for the preview. Customers never see it.
+
+You fill in the real values each time you send the template. You can type fixed text or choose a [merge field](/messaging/merge-fields), such as the contact's name.
+
+## Where you can use a template
+
+- **The Inbox.** In a chat, click the **Send template** button in the message box. The **Send Instagram template** window opens. Choose the template, fill in any variables, and send it. See [Inbox](/messaging/live-chat).
+- **Campaigns.** Choose **Template Campaign** and pick the template. Only people who messaged you in the last 24 hours receive it. See [Campaigns](/messaging/campaigns).
+- **Flows.** Add the **Send Template** step to a flow. See [Basic flow steps](/automation/flow-steps/basic).
+- **Reply Bots.** A Reply Bot can send a saved template when someone mentions you in a story or replies to your story. See [Reply Bots](/automation/reply-bots).
+
+For a template with a file or carousel images, you can pick a different file when you send it. The new file is used for that send only.
+
+<Info>
+You can't use a template for a private reply to a comment. When you reply to a comment in a direct message (DM), which is a private message, Instagram allows plain text only.
+</Info>
+
+## Manage your templates
+
+The **Instagram Templates** page lists all your templates. It shows the **Template Name**, **Type**, **Account** and when each one was **Updated**.
+
+{/* SCREENSHOT: /messaging/img/instagram/instagram-templates-list.png — The Instagram Templates page with the Add Template button, a list of templates showing Template Name, Type, Account and Updated, and a row menu open with Edit and Delete */}
+
+- **Filter the list.** Open the filters to show one **Account** or one **Type**. Choose **All accounts** or **All types** to see everything again.
+- **Edit a template.** Open the row menu and click **Edit**. You can change everything except the message type.
+- **Delete a template.** Open the row menu and click **Delete**. Campaigns that use the template lose it. Flows and Reply Bots that send it stop sending it.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Does Meta need to approve my Instagram templates?">
+    No. Meta does not review Instagram templates. You can use a template as soon as you save it.
+  </Accordion>
+  <Accordion title="Can I use a template to message someone after 24 hours?">
+    No. On WhatsApp, an approved template can start a new chat. On Instagram, it can't. Instagram lets you reply only within 24 hours of the person's last message. When they message you again, you can send templates again.
+  </Accordion>
+  <Accordion title="Why can't I save my message? It says the text is too long.">
+    Instagram counts text in bytes, not letters. Emoji and letters in some languages use more than 1 byte each. Shorten the text or remove some emoji. A **Buttons** template also has a 640-character limit for its text.
+  </Accordion>
+  <Accordion title="Why does it say my variables are out of order?">
+    Variables must be numbered `{{1}}`, `{{2}}`, `{{3}}` with no gaps. For example, you can't use `{{1}}` and `{{3}}` without `{{2}}`. Rename them, or use **Add variable** so the numbers are always right.
+  </Accordion>
+  <Accordion title="Why is my flow not in the Start a flow list?">
+    The list shows only active flows that run on this Instagram account. Turn on the flow, or add this account to it, in [Automations](/automation/overview).
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Ice breakers" icon="messages-square" href="/core-setup/channels/ice-breakers">
+    Show ready-made questions when someone opens a new chat with you.
+  </Card>
+  <Card title="Reply Bots" icon="reply" href="/automation/reply-bots">
+    Answer comments, story mentions and story replies on their own.
+  </Card>
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    Send a template to many people at once.
+  </Card>
+  <Card title="Flow builder" icon="zap" href="/automation/flow-builder">
+    Build flows that send your templates for you.
+  </Card>
+</CardGroup>

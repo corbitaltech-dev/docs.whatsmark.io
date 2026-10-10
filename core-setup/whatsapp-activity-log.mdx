@@ -1,18 +1,21 @@
 ---
-title: "WhatsApp Activity Log"
-description: "See the status of every WhatsApp message and any delivery errors."
+title: "Message activity log"
+description: "See every message sent on your behalf on WhatsApp, Messenger and Instagram, and find out why any message failed."
 icon: "list"
-keywords: ["WhatsMark", "WhatsApp", "activity log", "message log", "delivery", "errors"]
+keywords: ["WhatsMark", "WaMatrix.io", "WhatsApp activity log", "message activity log", "Messenger activity log", "Instagram activity log", "WhatsApp", "activity log", "message log", "delivery", "errors"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-This page shows all WhatsApp messages sent from your workspace, whether they were sent from a **[campaign](/messaging/campaigns)**, **[automation](/automation/overview)**, or **[chat](/messaging/live-chat)**. You can use it to check sent messages and see why any message failed.
+This log lists every message sent on your behalf. It covers messages from [campaigns](/messaging/campaigns), [automations](/automation/overview), [Reply Bots](/automation/reply-bots), and replies your team sends from the **[Inbox](/messaging/live-chat)**. Use it to check what was sent and to see why a message failed.
 
-Find it under **Setup → WhatsApp Activity Log**.
+Each platform has its own log. In the menu, open **WhatsApp → Activity Log**, **Messenger → Activity Log** or **Instagram → Activity Log**. The page is called **WhatsApp Activity Log**, **Messenger Activity Log** or **Instagram Activity Log**.
 
+<Note>
+This is not the same as the workspace [Activity Log](/reporting/activity-logs). That page shows what people did in your workspace. This page shows only messages.
+</Note>
 
-## WhatsApp activity log list
+## The list of messages
 
 <Figure
   src="/core-setup/img/whatsapp-activity-log.png"
@@ -20,43 +23,61 @@ Find it under **Setup → WhatsApp Activity Log**.
   caption="Image shows the WhatsApp Activity Log."
 />
 
+Use the **All**, **Success** and **Errors** tabs to choose which messages you see. Click **Filters** to show one **Category** or one **Response** type.
+
 | Column | What it shows |
 | --- | --- |
-| **Category** | Where the message was sent from, such as a campaign, automation, or chat. |
-| **Name** | The campaign, automation, or contact name. |
+| **Category** | What sent the message. See [Categories](#categories) below. |
+| **Name** | The campaign, automation, Reply Bot, team member or contact. It depends on the category. |
 | **Template Name** | The template used, if any. |
-| **Status** | The current message status. |
-| **Error** | The reason the message failed, if any. |
-| **Contact Type** | The recipient type, such as Guest, Lead, or Customer. |
+| **Status** | The latest status of the message. |
+| **Error** | Why the message failed, if it failed. |
+| **Relation Type** | The type of contact who got the message: **Guest**, **Lead** or **Customer**. |
 | **Created** | When the message was sent. |
+
+## Categories
+
+| Category | Where the message came from | The Name column shows |
+| --- | --- | --- |
+| **Campaign** | A campaign. | The campaign name. |
+| **Bot Flow** | A chatbot flow (an automation). | The flow name. |
+| **Inbox Reply** | A reply a team member sent from the **Inbox**. | The team member who replied. |
+| **Initiate Chat** | A new chat you started with a template. WhatsApp and Messenger only. | The contact. |
+| **Reply Bot** | A Reply Bot that answered a comment. Messenger and Instagram only. | The Reply Bot name. |
+| **Message Bot** | Another automatic message that no person sent. | Nothing. |
 
 ## Message statuses
 
 | Status | What it means |
 | --- | --- |
-| **pending** | The message is waiting to be sent. |
-| **accepted** | WhatsApp has accepted the message. |
+| **pending** or **queued** | The message is waiting to be sent. |
+| **accepted** | Meta has accepted the message. |
 | **sent** | The message has been sent. |
-| **delivered** | The message reached the recipient. |
-| **read** | The recipient has opened the message. |
-| **failed** | The message was not sent. Check the Error column to see why. |
+| **delivered** | The message reached the contact. |
+| **read** | The contact opened the message. |
+| **replied** | The contact replied to a campaign message. It shows in the same colour as **read**. |
+| **failed** | The message was not sent. Check the **Error** column to see why. |
 
 ## View message details
 
-Open the `⋮` menu and choose **View** to see more information about the message:
+Open the `⋮` menu and choose **View** to see more about a message.
 
 <Figure
   src="/core-setup/img/whatsapp-activity-log-view.png"
-  alt="The message details dialog with Response and Raw Content tabs, showing the status, response code, response time, wamid, and the response payload returned by WhatsApp"
-  caption="Image shows the message details view with the Response tab open."
+  alt="The message details panel with Response and Raw Content tabs, showing the status, response code, response time, wamid, and the reply data returned by WhatsApp"
+  caption="Image shows the message details with the Response tab open."
 />
 
-- **Response** — Shows the current message status, WhatsApp response code, response time, message ID (WAMID), and the response payload returned by WhatsApp.
-- **Raw Content** — Shows the original request sent to WhatsApp, including the message type, phone number ID, business account ID, request payload, and other message details.
+- **Response** shows the message status, the response code, the response time and the message ID. On WhatsApp the message ID is called **wamid**. On Messenger and Instagram it is called **Message ID**. Below that you see the data Meta sent back.
+- **Raw Content** shows what was sent to Meta. It includes the message type and the account it was sent from. This is the **Phone number ID** on WhatsApp, the **Page ID** on Messenger and the **Account ID** on Instagram. WhatsApp messages also show the **Business acct ID**.
 
-<Note>
-Deleting a campaign or an automation also removes its messages from this log.
-</Note>
+## How long entries stay
+
+- Entries older than 90 days are deleted automatically.
+- Deleting a campaign, an automation or a Reply Bot also removes its messages from this log.
+- You can also delete one entry, several entries, or click **Clear Logs** to remove all of them for that platform.
+
+You only see your own workspace's messages.
 
 ## What's next
 

@@ -15,8 +15,10 @@ Before you can add a template, you need to [connect a WhatsApp channel](/core-se
 
 ## Adding a Template
 
+To open your templates, go to **WhatsApp → Templates** in the main menu. There are two ways to add a template:
+
 - **Sync Templates** – If you've already created templates in your **Meta Business account** and that account is connected to your WhatsApp channel, click **Sync Templates** to import them into WaMatrix.io.
-- **Create Template** – Click [**Create Template**](#creating-a-template) to create a new template directly in WaMatrix.io.
+- **Add Template** – Click [**Add Template**](#creating-a-template) to create a new template directly in WaMatrix.io.
 
 <Note>
 If you have more than one connected channel, clicking **Sync Templates** opens a menu where you can choose **Sync all accounts** or select a specific channel to sync.
@@ -29,7 +31,7 @@ The Template Collection is a set of pre-built templates for common use cases, or
 - **Use Template** – Opens it as an editable draft. Enter a template name, adjust the content as needed, then submit it for approval.
 - **Favourite** (star icon) – Saves it under the **My Favourites** tab for quick access.
 
-If none fit, click [**Create Template**](#creating-a-template) to build one from scratch.
+If none fit, click [**Add Template**](#creating-a-template) to build one from scratch.
 
 <Figure
   src="/messaging/img/template-library.png"
@@ -39,7 +41,7 @@ If none fit, click [**Create Template**](#creating-a-template) to build one from
 
 ## Creating a template
 
-After clicking **Create Template**, choose one of three template types:
+Click **Add Template**. A list opens with the heading "Select a WhatsApp account". Choose the account the template is for. Then choose one of three template types:
 
 - [**Header Template**](#header-template) – For marketing and utility messages like offers, updates, and notifications.
 - [**Carousel Template**](#carousel-template) – For displaying multiple products or a catalog in scrollable cards.
@@ -141,7 +143,7 @@ Follow these steps to build one:
   Add up to 10 buttons to let customers take action. There are four types:
 
   - **Quick Reply** – A tappable button that lets the customer reply instantly with the button's text, instead of typing.
-  - **Website URL** – Opens or redirects to a website link.
+  - **Website URL** – Opens a website link. The link can end with a variable, such as `https://example.com/order/{{1}}`. You fill in its value when you send the template. A campaign, a flow, or a new chat asks you for it.
   - **Phone Number** – Starts a call to the number you set.
   - **Flow (interactive form)** – Opens a [WhatsApp Flow](/appointment-and-flow/whatsapp-flows) form the customer fills in without leaving the chat. Lists the published flows on the selected account.
 
@@ -277,6 +279,8 @@ Use the row menu on any template to:
 - **View Stats** — open the template's analytics panel to see sent, delivered, read, and clicked figures over a chosen date range.
 - **Edit** the template's content and resubmit it. Editing an approved template sends it back to Meta for review — its status returns to **Pending** and it must be approved again before you can use the updated version.
 - **Delete** a template.
+
+Did you delete a template in WhatsApp Manager (Meta's own tool)? WaMatrix.io removes it here too. This often happens straight away, and you get a **Template Deleted** notification. If not, it is removed the next time you click **Sync Templates**.
 
 <Note>
 **View Stats** is available only when analytics is enabled for your WhatsApp Business Account. If analytics is turned off, enable it in **WhatsApp Manager** and try again.

@@ -7,6 +7,8 @@ keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "ask question", "ask phone"
 
 **Ask** category flow steps let you collect information from **customers**, such as their **name**, **phone number**, **email address**, **location**, or **files**. Each step asks a question, validates the response, and saves the answer to the contact record for later use.
 
+These steps work on WhatsApp, Messenger and Instagram flows. The one exception is **Ask Location**, which works on WhatsApp flows only.
+
 ![Flow Builder with the Ask tab selected, showing the Ask Question, Ask Phone, Ask Email, Ask Address, Ask Location, Ask Media, and Get Input tiles, and a job application flow connecting a Start Trigger to an Ask Question, an Ask Phone, an Ask Media, and a closing Text Message](/automation/img/ask/ask-flow-steps.png)
 
 ## How every Ask step works
@@ -150,7 +152,7 @@ In later message steps, type **@** in any message field to insert the saved answ
 ![A Start Trigger set to exact match on the keyword location, connected to an Ask Location step asking the customer to share their location so the driver can find them](/automation/img/ask/ask-location.png)
 
 <Note>
-Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
+Ask Location works only on WhatsApp flows. It is hidden on Messenger and Instagram flows.
 </Note>
 
 ---
@@ -220,7 +222,7 @@ Add a **Google Sheets** step at the end and every booking lands in a spreadsheet
 
 **Show Typing Indicator** — Available on every flow step in this category. When enabled, the customer sees a "typing..." indicator before your question is sent, making the conversation feel more natural.
 
-The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation.
+The typing indicator works on both WhatsApp and Messenger, but only when the customer has already started the conversation. Instagram flows don't send a typing bubble, so the switch doesn't show there.
 
 <Note>
 This is a paid feature. The **Show Typing Indicator** option isn't available on the Free Forever plan.

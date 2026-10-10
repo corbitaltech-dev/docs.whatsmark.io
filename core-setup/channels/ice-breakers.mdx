@@ -1,0 +1,181 @@
+---
+title: "Ice breakers"
+description: "Show up to four ready-made questions when someone opens a new chat with you on WhatsApp, Messenger or Instagram, and answer each tap for you."
+icon: "messages-square"
+keywords: ["WhatsMark", "WaMatrix.io", "ice breakers", "conversation starters", "FAQ", "WhatsApp", "Messenger", "Instagram"]
+---
+
+Ice breakers are ready-made questions, such as "What are your opening hours?". A person sees them when they open a new chat with you. They tap a question instead of typing. WaMatrix.io then answers it for you, with a reply or a flow.
+
+Ice breakers work on WhatsApp, Messenger and Instagram. You set them up for each Instagram account, each Facebook Page, and each WhatsApp number.
+
+{/* SCREENSHOT: /core-setup/channels/img/ice-breakers-sheet.png — The Ice Breakers sheet for one account, with the Sync from Instagram and Add buttons, the "Live on Instagram · updated …" line, and three questions, each with move arrows, a Text reply or flow badge, an on/off switch, and edit and delete icons */}
+
+## What you get
+
+<CardGroup cols={2}>
+  <Card title="Faster first replies" icon="zap">
+    People tap a question instead of typing it.
+  </Card>
+  <Card title="Answers right away" icon="reply">
+    Each question sends your reply or starts a flow at once.
+  </Card>
+  <Card title="The same on every platform" icon="messages-square">
+    Set them up the same way on WhatsApp, Messenger and Instagram.
+  </Card>
+  <Card title="Keep what you already have" icon="download">
+    Bring in questions you already set up on Meta.
+  </Card>
+</CardGroup>
+
+## Before you start
+
+<AccordionGroup>
+  <Accordion title="Connect the channel" icon="link">
+    A channel is a WhatsApp number, Facebook Page or Instagram account that you connect to WaMatrix.io. Connect it first. See [WhatsApp](/core-setup/channels/whatsapp), [Messenger](/core-setup/channels/messenger) or [Instagram](/core-setup/channels/instagram). *(Instagram is available when your plan includes Instagram. See [Free vs. paid](/getting-started/free-vs-paid).)*
+  </Accordion>
+  <Accordion title="Have the right permission" icon="shield">
+    Anyone who can see channels can see ice breakers. Only people who can connect channels can add, change or delete them. The workspace owner sets this in [Roles and permissions](/core-setup/roles-and-permissions).
+  </Accordion>
+  <Accordion title="Build a flow first, if you want one" icon="workflow">
+    To start a flow from a question, the flow must be active and run on the same account or number. See [Flow builder](/automation/flow-builder).
+  </Accordion>
+</AccordionGroup>
+
+## Add an ice breaker
+
+<Steps>
+<Step title="Open the Ice Breakers sheet">
+  In the sidebar, open your platform's group, such as **Instagram**. Click **Channels**. Open the row menu of the account and click **Manage ice breakers**.
+
+  On WhatsApp, ice breakers belong to each phone number. If a WhatsApp account has more than one number, the menu shows one item per number, such as **Ice breakers · +91 98765 43210**. You can also open a WhatsApp account and click the **Ice breakers** button next to a number.
+
+  The **Ice Breakers** sheet opens.
+</Step>
+
+<Step title="Write the question">
+  Click **Add**. The **Add ice breaker** window opens.
+
+  In **Question**, write what a customer might ask, such as "What are your opening hours?". It can be up to **80** characters.
+
+  {/* SCREENSHOT: /core-setup/channels/img/ice-breakers-add.png — The Add ice breaker window with a Question field reading "What are your opening hours?", When someone taps it set to Send a reply, and a Reply box with a character counter */}
+</Step>
+
+<Step title="Choose what happens on a tap">
+  In **When someone taps it**, choose one:
+
+  - **Send a reply**. Write the answer in **Reply**. You can add [merge fields](/messaging/merge-fields), such as the person's name.
+  - **Start a flow**. Pick a flow in **Flow**. The list shows every active flow on this account or number.
+
+  Click **Save**.
+</Step>
+
+<Step title="Wait a few seconds">
+  WaMatrix.io sends your change to the platform about 10 seconds after you save. You see the message **Saved** and "Instagram will show the change in a few seconds." (or WhatsApp or Messenger).
+
+  The line at the top of the sheet shows the status:
+
+  - **Updating Instagram…** while the change is on its way.
+  - **Live on Instagram · updated** with the date and time, when it is done.
+  - **Instagram did not accept the update**, with the reason, if something went wrong. Fix the problem and click **Retry**.
+</Step>
+</Steps>
+
+<Check>
+**Channels** → row menu → **Manage ice breakers** → **Add** → write the **Question** → choose **Send a reply** or **Start a flow** → **Save**.
+</Check>
+
+## Rules for questions
+
+- You can have up to **4** ice breakers on each account or number.
+- Each question can be up to **80** characters.
+- The same account or number can't have the same question twice.
+- On WhatsApp, a question can't contain emoji. WaMatrix.io shows "WhatsApp ice breakers cannot contain emoji." if you try.
+- On Instagram, a reply can be up to **1,000 bytes** long. A byte is a small unit of size. Most English letters use 1 byte, and an emoji can use up to 4.
+
+<Note>
+These limits come from Meta, not from WaMatrix.io. Meta explains them for [WhatsApp](https://developers.facebook.com/docs/whatsapp/cloud-api/phone-numbers/conversational-components), [Messenger](https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api/ice-breakers) and [Instagram](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api/ice-breakers).
+</Note>
+
+## Manage your ice breakers
+
+Each question in the sheet has these controls:
+
+- **Up and down arrows.** Change the order people see the questions in.
+- **On/off switch.** Turn a question off without deleting it. A question that is off shows **Off**.
+- **Edit.** Change the question, the reply or the flow.
+- **Delete.** Remove the question from WaMatrix.io and from the platform.
+
+Under each question, a label shows what it does: **Text reply**, or the name of the flow it starts.
+
+Only questions that are switched on and have a reply or an active flow are shown to people. If a question has neither, you see **Not shown — add a reply or an active flow**.
+
+When a question is turned off or deleted, a tap on it is treated like any other message. Your keyword [automations](/automation/overview) can still answer it.
+
+## Bring in questions you already have
+
+You may have set up ice breakers before, outside WaMatrix.io. To bring them in, click **Sync from Instagram** (or **Sync from WhatsApp**, or **Sync from Messenger**).
+
+- The questions are added to your list. They are switched off.
+- Nothing changes on the platform yet. The old questions stay live for now.
+- For each question, click edit and add a reply or a flow. Then switch it on.
+
+<Warning>
+When you save any change, WaMatrix.io sends its own list to the platform. That list replaces the questions that were there before. If you set up ice breakers somewhere else, click **Sync from Instagram** (or your platform) first, so you don't lose them.
+</Warning>
+
+## Start a flow only from an ice breaker
+
+An ice breaker can start any active flow on the account. Sometimes you want a flow that runs only from an ice breaker, and never from an ordinary message.
+
+On Instagram and Messenger, open the flow's **Start Trigger** and choose the **Reply Bot** trigger source. The trigger then shows "Started by a Reply Bot or ice breaker". This flow never starts on its own from a normal message. See [Flow builder](/automation/flow-builder).
+
+## Things to know on each platform
+
+<AccordionGroup>
+  <Accordion title="WhatsApp" icon="message-circle">
+    People see the questions when they open a new chat with your number. They don't see them when they come from a wa.me link that already has a message typed in.
+
+    On WhatsApp, a tap arrives as a normal message with the question's words. So if someone types the exact question, WaMatrix.io answers it the same way. If the person is already in the middle of a flow, the flow gets their message instead.
+  </Accordion>
+  <Accordion title="Messenger" icon="facebook-messenger">
+    Ice breakers replace your Page's **Get Started** button. The FAQ questions you set in the Page inbox also stop showing while your ice breakers are set.
+  </Accordion>
+  <Accordion title="Instagram" icon="instagram">
+    Meta says Instagram ice breakers don't show on desktop at the moment. People see them in the Instagram app.
+  </Accordion>
+</AccordionGroup>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why can't I click Add?">
+    You already have 4 questions, which is Meta's limit. Delete one first. If the button is missing, you don't have permission to change channels. Ask your workspace owner.
+  </Accordion>
+  <Accordion title="Why don't people see my new question yet?">
+    WaMatrix.io sends the change about 10 seconds after you save. Then the platform shows it. Check the status line at the top of the sheet. If it says the update was not accepted, fix the problem and click **Retry**.
+  </Accordion>
+  <Accordion title="Why is my question marked Not shown?">
+    The question has no reply, or its flow is no longer active. Edit it and add a reply, or turn the flow back on.
+  </Accordion>
+  <Accordion title="Why is my flow not in the list?">
+    The list shows only active flows that run on this account or number. Turn on the flow, or add this account to it, in [Automations](/automation/overview).
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Flow builder" icon="zap" href="/automation/flow-builder">
+    Build the flow that a question starts.
+  </Card>
+  <Card title="Reply Bots" icon="reply" href="/automation/reply-bots">
+    Answer Instagram and Facebook comments and stories on their own.
+  </Card>
+  <Card title="Instagram templates" icon="layout-template" href="/messaging/instagram-templates">
+    Save Instagram messages with buttons, cards or files.
+  </Card>
+  <Card title="Merge fields" icon="braces" href="/messaging/merge-fields">
+    Put the person's name and other details in your replies.
+  </Card>
+</CardGroup>

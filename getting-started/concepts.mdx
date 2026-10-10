@@ -22,28 +22,38 @@ Before you start setting things up, it helps to know a few words that come up ag
 Everything you do in WaMatrix.io happens inside your workspace.
 </Accordion>
 
-<Accordion title="Channel — a WhatsApp number you have connected">
-  **A WhatsApp Business number connected to WaMatrix.io.**
+<Accordion title="Channel — a number or account you have connected">
+  **A number or account connected to WaMatrix.io.**
 
-  This is what sends and receives your messages. Connect more than one if you want — for example, one number for sales and one for support. A Facebook Messenger page can also be a channel.
+  This is what sends and receives your messages. A channel can be:
+
+  - a WhatsApp Business number
+  - a Facebook Page, for Messenger
+  - an Instagram professional account. This is an Instagram account set up as a business or creator account. *(Available when your plan includes Instagram. See [Free vs. paid](/getting-started/free-vs-paid).)*
+
+  You can connect more than one. For example, one number for sales and one for support.
+
+  Each platform has its own group in the menu: **WhatsApp**, **Messenger** and **Instagram**. Each group has its own **Channels** page. You connect accounts for that platform there. See [Find your way around](/getting-started/find-your-way-around).
 
   Nothing can be sent or received until you connect at least one.
 
-  See [Connecting WhatsApp](/core-setup/channels/whatsapp).
+  See [Connecting WhatsApp](/core-setup/channels/whatsapp), [Connecting Messenger](/core-setup/channels/messenger) and [Connecting Instagram](/core-setup/channels/instagram).
 </Accordion>
 
 <Accordion title="Contact — one customer's details">
   **One person you can message.**
 
-  A contact stores their phone number, and anything else you want to save — name, email, city, or your own [custom fields](/core-setup/custom-fields).
+  A WhatsApp contact stores their phone number, and anything else you want to save — name, email, city, or your own [custom fields](/core-setup/custom-fields).
 
-  Add them one by one, or [import your full list](/contacts/import-export) from an Excel or CSV file.
+  Add WhatsApp contacts one by one, or [import your full list](/contacts/import-export) from an Excel or CSV file.
+
+  Messenger and Instagram contacts work differently. WaMatrix.io creates them for you when the person first messages you. They have no phone number. You can't add or import them by hand.
 </Accordion>
 
 <Accordion title="Conversation — one customer's chat">
   **The chat between your business and one customer.**
 
-  It works just like WhatsApp on your phone: every message you both send stays together in one thread. Your team opens and replies to these in [Live Chat](/messaging/live-chat).
+  It works just like WhatsApp on your phone: every message you both send stays together in one thread. Your team opens and replies to these in the [Inbox](/messaging/live-chat).
 
   A contact is the person. A conversation is the chat with that person.
 
@@ -56,6 +66,8 @@ Everything you do in WaMatrix.io happens inside your workspace.
   **A ready-made message that Meta has checked and approved.**
 
   WhatsApp does not allow you to message a new customer in your own words. You must send an approved template first.
+
+  Instagram works differently. See [Instagram has its own rule](#instagram-has-its-own-rule).
 
   One template works for every customer, because you can leave blanks that fill in automatically. Write `Hi {{1}}, your order {{2}} is out for delivery` once, and each person gets their own name and order number.
 
@@ -121,6 +133,20 @@ These rules come from WhatsApp, not from WaMatrix.io. Every tool built on the Wh
 <Tip>
   This is why your first job in WaMatrix.io is getting one template approved. Without it, you cannot start a single conversation.
 </Tip>
+
+## Instagram has its own rule
+
+Instagram does not work like WhatsApp. On Instagram:
+
+- **You can't message someone first.** The person must send a direct message (DM), which is a private message, to your Instagram account. One exception: a [Reply Bot](/automation/reply-bots) can answer a comment on your post with a DM. *(Available when your plan includes Reply Bots.)*
+- **You can reply only within 24 hours of their last message.** Each new message from them gives you a fresh 24 hours.
+- **No template can reopen the chat.** After 24 hours, you must wait for the person to message you again.
+
+[Instagram templates](/messaging/instagram-templates) in WaMatrix.io are saved replies. You can send them only inside the 24 hours. See [Connecting Instagram](/core-setup/channels/instagram). *(Available when your plan includes Instagram. See [Free vs. paid](/getting-started/free-vs-paid).)*
+
+<Note>
+  These limits come from Meta, not from WaMatrix.io. Meta explains them in its [Instagram messaging guide](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api).
+</Note>
 
 ## What WhatsApp charges you
 

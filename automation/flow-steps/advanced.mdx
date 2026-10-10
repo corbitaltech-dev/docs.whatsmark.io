@@ -66,6 +66,8 @@ keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "delay", "condition", "logi
 
 **What it does.** Checks one value and splits the flow into two paths — **YES** if the condition is met, or **NO** if it isn't.
 
+It checks the customer's most recent reply. If the customer hasn't replied yet, it checks the message that started the flow.
+
 **When to use it.** Use it when there are only two possible outcomes. For example, check whether the customer replied **yes**, or whether they are a returning customer.
 
 **How to set it up.** Choose the **Operator** — **Contains**, **Equals**, **Starts with**, **Ends with** or **Regex** — then type the **Value** you want to check against. On the step itself, the green dot on the right is the **YES** path, and the red dot below it is the **NO** path. Connect each dot to the step that should run next.
@@ -92,6 +94,8 @@ Connect the green **YES** dot to the booking steps, and the red **NO** dot to a 
 **When to use it.** Use it when a value can lead to more than two outcomes, such as sending a different reply for each order status.
 
 **How to set it up.** First pick what to check: the **last message**, a **flow variable** you saved earlier, a **contact custom field**, or an **API response value**. Then add a rule for each outcome you want, and connect each one to the step that should run next.
+
+**Contact's last message** is the customer's most recent reply. If the customer hasn't replied yet, it is the message that started the flow.
 
 The operators are **Contains**, **Equals**, **Starts with**, **Ends with**, **Regex**, **Is empty** and **Is not empty**, plus **&gt;**, **&lt;**, **≥** and **≤** for comparing numbers.
 
@@ -262,7 +266,7 @@ Map `data.tracking_url` to the variable `tracking_url`, then send:
 
 - The flow must be **Active**. Drafts and inactive flows don't appear in the list.
 - It must be a **different flow**, because a flow can't connect to itself.
-- It must be on the **same channel type**. A WhatsApp flow can only connect to another WhatsApp flow, and a Messenger flow to another Messenger flow.
+- It must be on the **same channel type**. A WhatsApp flow can only connect to another WhatsApp flow, a Messenger flow to another Messenger flow, and an Instagram flow to another Instagram flow.
 
 If the list is empty, you'll see a message saying there are no other flows available — create and activate a second flow on the same channel type first.
 
@@ -283,6 +287,8 @@ If the list is empty, you'll see a message saying there are no other flows avail
 - Each message needs its content — the **message text**, or a selected **template** if you're sending it as one.
 - **Sequence Name** is optional.
 
+If you send a WhatsApp template and it has a link button that ends in a variable, you also see a **Button "…" URL parameter** field. Fill it in the same way as in the [WhatsApp Template](/automation/flow-steps/basic#whatsapp-template) step.
+
 ![Sequence settings showing a Sequence Name field and Step 1 with a Delay of 1 Minutes, Send as set to Message, and a Message Text box](/automation/img/advance/sequence-settings.png)
 
 **Example**
@@ -291,6 +297,10 @@ If the list is empty, you'll see a message saying there are no other flows avail
 > **Step 2** — after 3 days: "🔥 Don't miss our latest deals! Shop now and save on your favorites."
 
 ![Flow builder example showing a Button Message asking if the contact wants special offers, with a Yes, notify me option leading to two chained Sequence steps](/automation/img/advance/sequence-example.png)
+
+<Note>
+Sequence works on WhatsApp and Messenger flows. It is hidden on Instagram flows.
+</Note>
 
 ---
 

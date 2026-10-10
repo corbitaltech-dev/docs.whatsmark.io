@@ -11,23 +11,38 @@ Manage all your customers and leads in one place. Keeping your contact list orga
 
 
 <Note>
-Before creating contacts, connect at least one WhatsApp or Messenger channel. Without a connected channel, you can't create contacts or send messages. See [Channels](/core-setup/channels/whatsapp) to set up.
+To add a contact by hand, you need at least one connected [WhatsApp number](/core-setup/channels/whatsapp). Messenger and Instagram contacts are added for you when someone sends you a message.
+</Note>
+
+## Where to find your contacts
+
+There are two ways to see your contacts:
+
+- **All Contacts** in the main menu shows every contact, from every platform.
+- **WhatsApp → Contacts**, **Messenger → Contacts** and **Instagram → Contacts** show the contacts from one platform only. The page title tells you which one you are on, for example **Instagram Contacts**.
+
+The **Add Contact** and **Import Contacts** buttons are only on **All Contacts** and **WhatsApp → Contacts**. On Messenger and Instagram, the person must message you first. This is a Meta rule, not a WaMatrix.io one. Meta explains it in the [Instagram messaging guide](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api).
+
+So the Messenger and Instagram contact pages have no add button. Instead, they say: "Contacts appear here automatically when someone messages your Messenger account" (or "your Instagram account").
+
+<Note>
+If a team member can use only some platforms, they see only the contacts from those platforms. You set this for each team member or role. See [Team](/core-setup/team-and-roles).
 </Note>
 
 ## Creating a contact
 
 <Steps>
-<Step title="Open Contacts">
-  Click **Contacts** in the Sidebar menu.
+<Step title="Open your contacts">
+  Click **All Contacts** in the main menu. You can also open **WhatsApp → Contacts**.
 </Step>
 
-<Step title="Click Create Contact">
+<Step title="Click Add Contact">
   The button sits at the top right of the page. A form opens on the right side of the screen.
 
   <Figure
     src="/contacts/img/contact-form.png"
-    alt="New Contact form with Details and Custom Fields tabs, showing fields for first and last name, phone, email, type, assigned to, status, source, WhatsApp channel, display name, groups, and labels"
-    caption="Image shows the New Contact form."
+    alt="Add Contact form with Details and Custom Fields tabs, showing fields for first and last name, phone, email, type, assigned to, status, source, WhatsApp channel, display name, groups, and labels"
+    caption="Image shows the Add Contact form."
   />
 
   Fields marked with a red `*` are required: **First Name**, **Phone**, **Type**, **Status**, **Source**, and **Link to WhatsApp Channel**. The rest are optional.
@@ -84,6 +99,18 @@ Before creating contacts, connect at least one WhatsApp or Messenger channel. Wi
 
 <Note>
 Contacts aren't only created by hand. When a new person messages you first, WaMatrix.io saves them as a contact automatically, with a default status, source, and more. You can choose those defaults in [Contact Configuration](/settings/contact-configuration).
+</Note>
+
+## Contacts from Messenger and Instagram
+
+When someone messages your Facebook Page or [Instagram account](/core-setup/channels/instagram) for the first time, WaMatrix.io saves them as a contact. You don't need to do anything. *(Instagram is available when your plan includes Instagram. See [Free vs. paid](/getting-started/free-vs-paid).)*
+
+- **Instagram contacts** get the source **Instagram** by default. This source is created for you.
+- In the contact's details, the **Message Channels** list shows the Instagram icon and the person's **@username**.
+- Messenger and Instagram don't share the person's phone number. So when you edit one of these contacts, **Phone** is optional.
+
+<Note>
+Some WhatsApp users hide their phone number behind a WhatsApp username. They arrive as a contact with no phone number. You can still reply to them in the chat. But campaigns and **Initiate chat** need a phone number, so you can't reach them that way until WhatsApp shares their number.
 </Note>
 
 ## Fields worth knowing more about
@@ -158,7 +185,7 @@ To turn a contact off without deleting them, use the toggle in the **Active** co
 
 <Figure
   src="/contacts/img/contacts-list-filters.png"
-  alt="Contacts table with the Filters panel open showing Type, Status, Source, Active, Assignee, and Channel dropdowns"
+  alt="Contacts table with the Filters panel open showing Type, Status, Source, Active, Assignee, Platform, and Channel dropdowns"
   caption="Image shows the Contacts table with the Filters panel open."
 />
 
@@ -172,7 +199,8 @@ As your list grows, use these to find the right people quickly:
   - **Source** — where the contact came from.
   - **Active** — show only active or only inactive contacts.
   - **Assignee** — the team member handling the contact.
-  - **Channel** — the WhatsApp or Messenger account the contact is linked to.
+  - **Platform** — WhatsApp, Messenger or Instagram. Shown on **All Contacts** only.
+  - **Channel** — the WhatsApp number the contact is linked to. Shown on **All Contacts** and **WhatsApp → Contacts**.
 
 <Tip>
 Filters also help with bulk work. Filter your list first, then select all matching contacts to update them together. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
