@@ -1,37 +1,39 @@
 ---
 title: "Form Builder"
-description: "Create a form to collect customer details. When a customer submits the form, they are added to your contacts."
+description: "Build a form for enquiries, bookings or sign-ups. Every response becomes a contact, with an instant WhatsApp reply."
 icon: "clipboard-list"
 keywords: ["WhatsMark", "WaMatrix.io", "form builder", "web form", "lead form", "contact form", "embed form", "lead capture", "WhatsApp auto-reply"]
 ---
 
-Use it for enquiries, bookings, or sign-ups. Share the form's link in your Instagram bio, an ad, or an email, or add the form to your own website.
+Build your own form for enquiries, bookings, or sign-ups. Share its link in your Instagram bio, an ad, or an email, or put the form right on your website.
+
+Every response is saved as a contact, so new leads land in WaMatrix.io ready for your team. You can also send each customer a WhatsApp message the moment they submit, while you're still fresh in their mind.
 
 <Note>
-To send WhatsApp replies, connect a WhatsApp channel first. See [Channels](/core-setup/channels/whatsapp).
+To send WhatsApp replies, you need a connected WhatsApp number. In WaMatrix.io, a connected number is called a **channel**. See [Channels](/core-setup/channels/whatsapp) to connect yours.
 </Note>
 
 ## Creating a form
 
 <Steps>
 <Step title="Open Form Builder">
-  Click **Form Builder** in the Sidebar menu.
+  In the sidebar, click **Form Builder**.
 </Step>
 
 <Step title="Click Create Form">
-  It's at the top right. A form opens on the right.
+  It's at the top right. A panel opens on the right.
 
   ![The Create Form panel with the hint Give your form a name. You can add and change fields in the next step, and a required Form name field with the example Free consultation request](/appointment-and-flow/img/form-builder/create-form.png)
 </Step>
 
-<Step title="Enter the form name">
-  Fill in **Form name**, like *Free consultation request*, and click **Create**.
+<Step title="Name your form">
+  Enter a **Form name**, like *Free consultation request*, and click **Create**.
 </Step>
 </Steps>
 
-The form editor opens. Your form already has three fields: **Full name**, **WhatsApp number**, and **Email**. You can publish it as it is, or change it first.
+The form editor opens. Your form already asks for **Full name**, **WhatsApp number**, and **Email**, and each answer is already set to save to the contact. You can publish it as it is, or make it your own first.
 
-The editor has four tabs: **Build**, **Lead mapping**, **Auto-reply**, and **Design and share**. Click **Save** at the top to keep your changes.
+The editor has four tabs: **Build**, **Lead mapping**, **Auto-reply**, and **Design and share**. Click **Save** at the top to keep your changes. If you try to leave with unsaved changes, WaMatrix.io asks before you go.
 
 ## Adding fields
 
@@ -52,121 +54,164 @@ Click a field on the form to change it in **Field settings**:
 - **Required** — customers can't submit without answering it.
 - **Width** — **Full row**, or **Half row** to put two fields side by side.
 - **Options** — the answers to pick from, for Dropdown, Single choice, and Multiple choice.
-- **Show only when** — show this field only when an earlier answer matches. For example, show *Which city?* only when *Delivery needed* is **Yes**.
+- **Show only when** — show the field only when an earlier answer matches. For example, show *Which city?* only when *Delivery needed* is **Yes**. Customers only see the questions that apply to them.
 
-Drag a field to move it. Point to it to see the copy and delete icons.
+To move a field, drag it by its handle. Hover over a field to duplicate or delete it.
 
 ### Steps and preview
 
-Click **+ Step** to break a long form into pages. Customers fill in one page, then move to the next.
+Long form? Click **+ Step** to split it into pages. Customers answer one page at a time, which feels quicker to fill in.
 
-Click **Preview** to see how your form looks to customers.
+Click **Preview** to see the form exactly as customers will.
 
 ## Saving answers to the contact
 
-On the **Lead mapping** tab, choose which contact detail each answer is saved to, like **Full name**, **Email**, **Company**, or **City**. You can also pick one of your [custom fields](/core-setup/custom-fields).
+On the **Lead mapping** tab, choose where each answer is saved on the contact: **Full name**, **Phone (WhatsApp)**, **Email**, or one of your [custom fields](/core-setup/custom-fields).
 
 ![The Lead mapping tab. On the left, Save answers to the contact lists each form field with the contact detail it saves to: Full name to Full name, WhatsApp number to Phone (WhatsApp), Email to Email, Join Date to the custom field Company Join Date, and the rest to Don't save to contact. On the right, Contact mapping has Use custom mapping for this form turned on, with Type set to Customer, Status to Qualified, Source to Website Form, Assign to Round robin, the labels Returning Customer and Wholesale, and a Save Changes button](/appointment-and-flow/img/form-builder/lead-mapping-tab.png)
 
-If you pick **Don't save to contact**, the answer isn't added to the contact, but you can still see it in the form's submissions.
+Pick **Don't save to contact** for answers you only need to read once. They're still kept with the response, so nothing is lost.
 
 <Warning>
-Every contact needs a phone number. Before you publish, set your phone field to **Phone (WhatsApp)**, make it **Required**, and don't hide it with **Show only when**.
+Every contact is identified by their WhatsApp number, so your form needs a phone field that is mapped to **Phone (WhatsApp)**, set to **Required**, and not hidden with **Show only when**. The starter form already has one. If something's missing, WaMatrix.io tells you exactly what to fix when you click **Publish**.
 </Warning>
 
-Already a contact? If the phone number is already saved, the submission is linked to that contact. No duplicate is created.
+**Already a contact?** If the WhatsApp number is already in your contacts, the response is linked to that contact. No duplicate is created, and their existing details stay as they are. WaMatrix.io only fills in an email if the contact didn't have one, and updates any custom fields you've mapped.
 
 ### Contact type, status, and source
 
-New contacts from a form are marked with the source **Website Form**. Their type and status come from [Contact Defaults](/settings/contact-configuration).
+New contacts from a form get their type, status, and source from [Contact Defaults](/settings/contact-configuration), the same as other new contacts.
 
-To set these yourself for one form, go to **Contact mapping** and turn on **Use custom mapping for this form**. Choose the **Type**, **Status**, **Source**, **Assign to**, **Labels**, and **Groups**, then click **Save Changes**.
+To set them for one form, go to **Contact mapping** and turn on **Use custom mapping for this form**. Choose the **Type**, **Status**, **Source**, and **Assign to**, and add **Labels** or **Groups** if you like. Then click **Save Changes**. This panel has its own save button, so the **Save** at the top doesn't save it.
+
+<Tip>
+Pick a **Source** just for this form, and set **Assign to** to **Round robin** to share new leads evenly across your team. You'll always know which leads came from the form, and nobody gets them all.
+</Tip>
 
 ## Sending a WhatsApp reply
 
-Send a ready-made template to customers on WhatsApp as soon as they submit the form. Go to the **Auto-reply** tab and turn on **WhatsApp auto-reply**.
+Thank every customer on WhatsApp the moment they submit. Go to the **Auto-reply** tab and turn on **WhatsApp auto-reply**.
 
 ![The Auto-reply tab with WhatsApp auto-reply turned on, Send from set to a WhatsApp channel, and Template set to video_offer. Under Template content are a video header and three body variables filled with the customer's first name, email and last name, and a note to type @ to insert a contact detail or a form answer. On the right, Reply preview shows the message with its video as the customer will see it in WhatsApp](/appointment-and-flow/img/form-builder/auto-reply-tab.png)
 
+The reply is a **template**: a message format approved by WhatsApp in advance, with blanks for details like the customer's name.
+
 <Steps>
 <Step title="Choose the WhatsApp channel">
-  In **Send from**, pick your WhatsApp channel. Customers get the reply from this channel.
+  In **Send from**, pick the number the reply comes from.
 </Step>
 
 <Step title="Choose the template">
-  In **Template**, pick an approved template.
+  In **Template**, pick one of your approved templates.
 </Step>
 
 <Step title="Fill in the template">
-  Fill in the fields under **Template content**. Type **@** to add the customer's name.
+  Fill in the blanks under **Template content**. Type **@** to insert a contact detail, like the customer's name, or any answer from the form. **Reply preview** shows the message as the customer will see it.
 </Step>
 </Steps>
 
+<Note>
+WhatsApp requires an approved template whenever a business messages first. This is a WhatsApp rule, not a WaMatrix.io one. Meta explains it under [templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+</Note>
+
 ## Design and share
 
-On the **Design and share** tab, choose what customers see:
+On the **Design and share** tab, make the form look and feel like your business:
 
 ![The Design and share tab. On the left, Design has Intro text, a Thank-you message reading Thank you. We will be in touch shortly, an empty Redirect after submit box, Button text set to Submit, a purple Button colour, Default phone country set to India +91, and Spam protection turned on. On the right, Share shows the Public link with copy and open buttons, Allow embedding turned on, and the Embed code with a Copy button](/appointment-and-flow/img/form-builder/design-and-share-tab.png)
 
-- **Intro text** — a short line under the form's name.
-- **Thank-you message** — shown after they submit.
-- **Redirect after submit** — send them to a page on your website instead of the thank-you message.
-- **Button text** and **Button colour** — the submit button.
-- **Default phone country** — the country code the phone field starts with.
-- **Spam protection** — adds a CAPTCHA check, like Google reCAPTCHA, to stop bots and spam submissions.
+- **Intro text** — a short welcome line under the form's name.
+- **Thank-you message** — what customers see after they submit.
+- **Redirect after submit** — send customers to a page on your website instead, like a thank-you or offer page.
+- **Button text** and **Button colour** — match the submit button to your brand.
+- **Default phone country** — the country code the phone field starts with, so most customers don't need to change it.
+- **Spam protection** — shows a CAPTCHA check before submitting, where available. Every form also blocks common spam bots on its own.
 
 ### Sharing your form
 
-Copy the **Public link** and share it anywhere, like your Instagram bio, an ad, or a WhatsApp message.
+Copy the **Public link** and share it anywhere, like your Instagram bio, an ad, or a WhatsApp message. The link works once the form is published.
 
-To show the form on your website, turn on **Allow embedding** and click **Save**. Then copy the **Embed code** and add it to your website.
+To show the form on your website, turn on **Allow embedding** and click **Save**. Then copy the **Embed code** and paste it into your website. The form resizes itself to fit your page.
 
 ## Publishing your form
 
-Click **Publish** at the top of the editor. Your form's link starts working, and customers can fill it in.
+Click **Publish** at the top of the editor. Any unsaved changes are saved first, and your form's link goes live.
 
-To stop taking responses, click **Stop responses**. Anyone who opens the link sees that the form is closed. Click **Receive responses** to open it again.
+Need a break from new responses? Click **Stop responses**. Anyone who opens the link sees that the form is no longer accepting responses. Click **Receive responses** to open it again.
 
-## What you see on the screen
+## Managing your forms
 
-All your forms are listed on the **Form Builder** page:
+All your forms are listed on the **Form Builder** page. The counter at the top shows how many forms you've made and how many your plan includes.
 
 ![The Form Builder page with a Form Builder 6 / 10 counter, a Create Form button, and a table of six forms. Customer Feedback Survey and Test Form are Draft with 0 submissions, Free WhatsApp Consultation Request, Diwali Offer Sign-up and Book a Product Demo are Published, and Job Application – Sales Executive is Closed. Each row shows its Submissions count, Last submission date, Created date, and an actions menu](/appointment-and-flow/img/form-builder/forms-list.png)
 
 - **Name** — the form's name. Click it to edit the form.
 - **Status** — whether customers can fill in the form:
   - **Draft** — not published yet, so the link doesn't work.
-  - **Published** — live, and customers can fill it in.
-  - **Closed** — you stopped responses. The link shows the form is closed.
-- **Submissions** — how many responses the form has received. Click it to see each response.
+  - **Published** — live and taking responses.
+  - **Closed** — you stopped responses. The link shows that the form is closed.
+- **Submissions** — how many responses the form has received. Click it to see them.
 - **Last submission** — the date of the latest response.
 - **Created** — the date you created the form.
 - **Actions** — open the menu at the end of a row:
   - **Edit** — open the form editor.
   - **Submissions** — see every response.
   - **Copy link** — copy the form's link.
-  - **Duplicate** — make a copy as a new draft.
+  - **Duplicate** — make a copy as a new draft, a quick start for a similar form.
   - **Stop responses** or **Receive responses** — close or reopen the form.
-  - **Delete** — remove the form. Its link stops working right away, but the contacts it created are kept.
+  - **Delete** — remove the form. Contacts it created stay in your contacts. Its link stops working right away and its responses can no longer be opened, so download them first if you need them.
 
-## Seeing submissions
+## Seeing responses
 
 To see a form's responses, open the menu at the end of its row and click **Submissions**.
 
 ![The submissions page for Free WhatsApp Consultation Request with CSV and Excel buttons at the top. The table lists each response's Name, Phone, Email, Status and Submitted date. Most show Converted, and Vikram Singh shows Contact Limit Reached](/appointment-and-flow/img/form-builder/submissions.png)
 
-Click **View** in a row's menu to see all the answers. Click **Open chat** to message the customer.
+Each response shows a **Status**:
 
-Click **CSV** or **Excel** at the top to download them all.
+- **Converted** — the customer is saved as a contact.
+- **Contact Limit Reached** — the response is saved, but your plan's contact limit was reached, so no contact was created and no reply was sent.
+
+Click a customer's name, or **View** in the row's menu, to see all their answers, any files they uploaded, and, where available, the page or ad they came from. Then click **Open chat** to reply to them on WhatsApp.
+
+Click **CSV** or **Excel** at the top to download every response.
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Can I use the form on my own website?">
+  Yes. Turn on **Allow embedding** on the **Design and share** tab, save, and paste the **Embed code** into your website. The form fits itself to your page.
+</Accordion>
+
+<Accordion title="What happens if a customer fills in the form twice?">
+  Both responses are kept, and both are linked to the same contact. No duplicate contact is created.
+</Accordion>
+
+<Accordion title="Can I tell which page or ad a customer came from?">
+  Often, yes. Open a response with **View** to see whether the customer used the form link or the form on your website, and, when that information was passed along, the page or ad they came from.
+</Accordion>
+
+<Accordion title="What happens when I reach my contact limit?">
+  Responses are still saved, so you can read and download every answer on the form's **Submissions** page. They show **Contact Limit Reached**, and those customers aren't added as contacts or sent a reply. To keep every new lead flowing in, see [Free vs. paid](/getting-started/free-vs-paid).
+</Accordion>
+</AccordionGroup>
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
-    See how many forms and contacts your plan has left.
+  <Card title="Custom Fields" icon="list-plus" href="/core-setup/custom-fields">
+    Add your own contact details, like budget or city, to save more answers.
   </Card>
 
-  <Card title="WhatsApp Analytics" icon="chart-column" href="/reporting/whatsapp-analytics">
-    Check how your WhatsApp replies are doing.
+  <Card title="Groups" icon="users" href="/core-setup/groups">
+    Put form leads in a group so you can message them together.
+  </Card>
+
+  <Card title="Contact Defaults" icon="user-cog" href="/settings/contact-configuration">
+    Choose the type, status, and source every new contact gets.
+  </Card>
+
+  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
+    See how many forms and contacts your plan has left.
   </Card>
 </CardGroup>
