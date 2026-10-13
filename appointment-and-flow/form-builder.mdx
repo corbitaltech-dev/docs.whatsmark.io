@@ -1,0 +1,180 @@
+---
+title: "Form Builder"
+description: "Create a form to collect customer details. Each person who fills it in becomes a contact, and you can reply to them on WhatsApp right away."
+icon: "clipboard-list"
+keywords: ["WhatsMark", "WaMatrix.io", "form builder", "web form", "lead form", "contact form", "embed form", "lead capture", "WhatsApp auto-reply"]
+---
+
+Use it for enquiries, bookings, or sign-ups. Share the form's link in your Instagram bio, an ad, or an email, or add the form to your own website.
+
+<Note>
+The WhatsApp reply is sent from your WhatsApp channel, so connect one first. See [Channels](/core-setup/channels/whatsapp).
+</Note>
+
+## Creating a form
+
+<Steps>
+<Step title="Open Form Builder">
+  Click **Form Builder** in the Sidebar menu.
+</Step>
+
+<Step title="Click Create Form">
+  It's at the top right. A form opens on the right.
+
+  ![The Create Form panel with the hint Give your form a name. You can add and change fields in the next step, and a required Form name field with the example Free consultation request](/appointment-and-flow/img/form-builder/create-form.png)
+</Step>
+
+<Step title="Enter the form name">
+  Fill in **Form name**, like *Free consultation request*, and click **Create**.
+</Step>
+</Steps>
+
+The form editor opens. Your form already has three fields: **Full name**, **WhatsApp number**, and **Email**. You can publish it as it is, or change it first.
+
+The editor has four tabs: **Build**, **Lead mapping**, **Auto-reply**, and **Design and share**. Click **Save** at the top to keep your changes.
+
+## Adding fields
+
+On the **Build** tab, click a field in **Add a field**, or drag it onto the form.
+
+![The Build tab of the Free WhatsApp Consultation Request form. On the left, Add a field lists Inputs and Choices such as Short text, Phone, Dropdown and Consent. In the middle, two steps named Profile Details and Security with + Step and Preview buttons, and fields for Full name, WhatsApp number, Email and Join Date. On the right, Field settings for Full name shows Label name, Field key, Placeholder, Help text, the Required switch, and Full row or Half row width](/appointment-and-flow/img/form-builder/build-tab.png)
+
+| Group | Fields |
+|---|---|
+| **Inputs** | Short text, Long text, Phone, Email, Number, Date |
+| **Choices** | Dropdown, Single choice, Multiple choice, Consent |
+| **Other** | File upload |
+| **Layout** | Heading, Paragraph, Divider |
+
+Click a field on the form to change it in **Field settings**:
+
+- **Label name** — the question customers see.
+- **Required** — customers can't submit without answering it.
+- **Width** — **Full row**, or **Half row** to put two fields side by side.
+- **Options** — the answers to pick from, for Dropdown, Single choice, and Multiple choice.
+- **Show only when** — show this field only when an earlier answer matches. For example, show *Which city?* only when *Delivery needed* is **Yes**.
+
+Drag a field to move it. Point to it to see the copy and delete icons.
+
+### Steps and preview
+
+Click **+ Step** to break a long form into pages. Customers fill in one page, then move to the next.
+
+Click **Preview** to see how your form looks to customers.
+
+## Saving answers to the contact
+
+On the **Lead mapping** tab, choose which contact detail each answer is saved to, like **Full name**, **Email**, **Company**, or **City**. You can also pick one of your [custom fields](/core-setup/custom-fields).
+
+![The Lead mapping tab. On the left, Save answers to the contact lists each form field with the contact detail it saves to: Full name to Full name, WhatsApp number to Phone (WhatsApp), Email to Email, Join Date to the custom field Company Join Date, and the rest to Don't save to contact. On the right, Contact mapping has Use custom mapping for this form turned on, with Type set to Customer, Status to Qualified, Source to Website Form, Assign to Round robin, the labels Returning Customer and Wholesale, and a Save Changes button](/appointment-and-flow/img/form-builder/lead-mapping-tab.png)
+
+If you pick **Don't save to contact**, the answer isn't added to the contact, but you can still see it in the form's submissions.
+
+<Warning>
+Every contact needs a phone number. Before you publish, set your phone field to **Phone (WhatsApp)**, make it **Required**, and don't hide it with **Show only when**.
+</Warning>
+
+Already a contact? If the phone number is already saved, the submission is linked to that contact. No duplicate is created.
+
+### Contact type, status, and source
+
+New contacts from a form are marked with the source **Website Form**. Their type and status come from [Contact Defaults](/settings/contact-configuration).
+
+To set these yourself for one form, go to **Contact mapping** and turn on **Use custom mapping for this form**. Choose the **Type**, **Status**, **Source**, **Assign to**, **Labels**, and **Groups**, then click **Save Changes**.
+
+## Sending a WhatsApp reply
+
+Send a ready-made template to customers on WhatsApp as soon as they submit the form. Go to the **Auto-reply** tab and turn on **WhatsApp auto-reply**.
+
+![The Auto-reply tab with WhatsApp auto-reply turned on, Send from set to a WhatsApp channel, and Template set to video_offer. Under Template content are a video header and three body variables filled with the customer's first name, email and last name, and a note to type @ to insert a contact detail or a form answer. On the right, Reply preview shows the message with its video as the customer will see it in WhatsApp](/appointment-and-flow/img/form-builder/auto-reply-tab.png)
+
+<Steps>
+<Step title="Choose the WhatsApp channel">
+  In **Send from**, pick your WhatsApp channel. Customers get the reply from this channel.
+</Step>
+
+<Step title="Choose the template">
+  In **Template**, pick an approved template.
+</Step>
+
+<Step title="Fill in the template">
+  Fill in the fields under **Template content**. Type **@** to add the customer's name.
+</Step>
+</Steps>
+
+## Design and share
+
+On the **Design and share** tab, choose what customers see:
+
+![The Design and share tab. On the left, Design has Intro text, a Thank-you message reading Thank you. We will be in touch shortly, an empty Redirect after submit box, Button text set to Submit, a purple Button colour, Default phone country set to India +91, and Spam protection turned on. On the right, Share shows the Public link with copy and open buttons, Allow embedding turned on, and the Embed code with a Copy button](/appointment-and-flow/img/form-builder/design-and-share-tab.png)
+
+- **Intro text** — a short line under the form's name.
+- **Thank-you message** — shown after they submit.
+- **Redirect after submit** — send them to a page on your website instead of the thank-you message.
+- **Button text** and **Button colour** — the submit button.
+- **Default phone country** — the country code the phone field starts with.
+- **Spam protection** — adds a CAPTCHA check, like Google reCAPTCHA, to stop bots and spam submissions.
+
+### Sharing your form
+
+Copy the **Public link** and share it anywhere, like your Instagram bio, an ad, or a WhatsApp message.
+
+To show the form on your website, turn on **Allow embedding** and click **Save**. Then copy the **Embed code** and add it to your website.
+
+## Publishing your form
+
+Click **Publish** at the top of the editor. Your form's link starts working, and customers can fill it in.
+
+To stop taking responses, click **Stop responses**. Anyone who opens the link sees that the form is closed. Click **Receive responses** to open it again.
+
+## What you see on the screen
+
+All your forms are listed on the **Form Builder** page:
+
+![The Form Builder page with a Form Builder 6 / 10 counter, a Create Form button, and a table of six forms. Customer Feedback Survey and Test Form are Draft with 0 submissions, Free WhatsApp Consultation Request, Diwali Offer Sign-up and Book a Product Demo are Published, and Job Application – Sales Executive is Closed. Each row shows its Submissions count, Last submission date, Created date, and an actions menu](/appointment-and-flow/img/form-builder/forms-list.png)
+
+- **Name** — the form's name. Click it to edit the form.
+- **Status** — whether customers can fill in the form:
+  - **Draft** — not published yet, so the link doesn't work.
+  - **Published** — live, and customers can fill it in.
+  - **Closed** — you stopped responses. The link shows the form is closed.
+- **Submissions** — how many responses the form has received. Click it to see each response.
+- **Last submission** — the date of the latest response.
+- **Created** — the date you created the form.
+- **Actions** — open the menu at the end of a row:
+  - **Edit** — open the form editor.
+  - **Submissions** — see every response.
+  - **Copy link** — copy the form's link.
+  - **Duplicate** — make a copy as a new draft.
+  - **Stop responses** or **Receive responses** — close or reopen the form.
+  - **Delete** — remove the form. Its link stops working right away, but the contacts it created are kept.
+
+## Seeing submissions
+
+To see a form's responses, open the menu at the end of its row and click **Submissions**.
+
+![The submissions page for Free WhatsApp Consultation Request with CSV and Excel buttons at the top. The table lists each response's Name, Phone, Email, Status and Submitted date. Most show Converted, and Vikram Singh shows Contact Limit Reached](/appointment-and-flow/img/form-builder/submissions.png)
+
+Click **View** in a row's menu to see all the answers. Click **Open chat** to message the customer.
+
+Click **CSV** or **Excel** at the top to download them all.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Templates" icon="file-text" href="/messaging/whatsapp-templates">
+    Create the template your form sends as a reply.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    Talk to the customers your forms bring in.
+  </Card>
+
+  <Card title="Contacts" icon="contact" href="/contacts/managing-contacts">
+    Find and manage the customers your forms bring in.
+  </Card>
+
+  <Card title="Custom Fields" icon="list-plus" href="/core-setup/custom-fields">
+    Save extra answers to your contacts.
+  </Card>
+</CardGroup>
