@@ -117,6 +117,7 @@
             "pages": [
               "messaging/whatsapp-templates",
               "messaging/messenger-templates",
+              "messaging/qr-codes",
               "messaging/campaigns",
               "messaging/live-chat",
               "messaging/merge-fields"
