@@ -186,6 +186,15 @@
             ]
           },
           {
+            "group": "Integrations",
+            "pages": [
+              "settings/shopify",
+              "settings/woocommerce",
+              "settings/facebook-lead-ads",
+              "settings/indiamart"
+            ]
+          },
+          {
             "group": "Settings",
             "pages": [
               "settings/general",
@@ -197,16 +206,6 @@
               "settings/google-accounts",
               "settings/inbound-media",
               "settings/opt-out",
-              {
-                "group": "Integrations",
-                "icon": "blocks",
-                "pages": [
-                  "settings/shopify",
-                  "settings/woocommerce",
-                  "settings/facebook-lead-ads",
-                  "settings/indiamart"
-                ]
-              },
               "settings/account-and-danger-zone",
               "settings/profile"
             ]

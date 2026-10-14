@@ -15,11 +15,11 @@ When someone says **"hi" → send them a welcome message. Then → show three bu
 
 <Steps>
 <Step title="Open the builder">
-  In the main menu, open **WhatsApp → Automations**, **Messenger → Automations** or **Instagram → Automations**. Click the menu icon at the end of a flow's row, and click **Flow Builder**.
+  In the main menu, open **WhatsApp → Automations**, **Messenger → Automations** or **Instagram → Automations**. Click the three-dot menu (⋮) at the end of the flow's row, then click **Flow Builder**.
 </Step>
 
 <Step title="Set the Start Trigger">
-Every flow starts with a [**Start Trigger**](#the-start-trigger). Click it to choose who can start the flow and what should start it. For example, you can start the flow when someone sends a keyword, when an event happens in your [Shopify](#shopify) or [WooCommerce](#woocommerce) store, when a [new lead](#leads) arrives, or when a [Reply Bot](#flows-started-by-a-reply-bot-or-ice-breaker) starts it.
+Every flow starts with a [**Start Trigger**](#the-start-trigger). Click it to choose who can start the flow and what should start it. For example, a flow can start when someone sends a keyword. It can also start from a [Shopify](#shopify) or [WooCommerce](#woocommerce) order, a [new lead](#leads) or a [Reply Bot](#flows-started-by-a-reply-bot-or-ice-breaker).
 </Step>
 
 <Step title="Add flow steps">
@@ -35,7 +35,7 @@ Click a flow step card to open its settings on the right. Then fill in the detai
 </Step>
 
 <Step title="Save">
-  Click **Save Flow** at the top right. If any required fields are missing, the affected flow steps are highlighted in red, and the Save button stays disabled until you fix it.
+  Click **Save Flow** at the top right. If a required field is empty, that flow step turns red. You can't click **Save Flow** until you fix it.
 </Step>
 </Steps>
 
@@ -50,9 +50,11 @@ Every flow begins here. The Start Trigger decides when your chatbot starts. Open
 - **Shopify** — something happens to an order in your Shopify store. *(Needs a paid plan.)*
 - **WooCommerce** — something happens to an order in your WooCommerce store. *(Needs a paid plan.)*
 - **Leads** — a new lead arrives from Facebook Lead Ads or IndiaMART. *(Needs a paid plan.)*
-- **Reply Bot** — a Reply Bot or an ice breaker starts the flow. Shown on Messenger and Instagram flows only.
+- **Reply Bot** — a Reply Bot or an ice breaker starts the flow. *(Reply Bots need a paid plan.)*
 
-Shopify, WooCommerce and Leads find the person by their phone number. So use them on WhatsApp flows. Instagram flows don't show these three.
+Shopify, WooCommerce and Leads find the person by their phone number, so they work on WhatsApp flows only. Messenger and Instagram flows don't show them. **Reply Bot** shows on Messenger and Instagram flows only.
+
+If an older Messenger flow still uses one of these three, the Start Trigger is marked in red and you can't save the flow. Change the **Trigger Source** to **Message** to fix it.
 
 The rest of the card changes depending on which one you choose. The following sections explain each option.
 
@@ -138,11 +140,11 @@ This flow runs when a new lead arrives from [Facebook Lead Ads](/settings/facebo
 - **Lead Event** — choose **New lead received**.
 - **Lead Source** — choose **Any lead source**, **Facebook Lead Ads** or **IndiaMART**.
 
-A lead with no phone number does not start the flow. Also, a lead that doesn't fit in your contact limit does not start it. Use this trigger on a WhatsApp flow. A lead can't start a Messenger conversation.
+A lead with no phone number does not start the flow. If you have reached your contact limit, a new lead does not start the flow either. This trigger works on WhatsApp flows only.
 
 ### Flows started by a Reply Bot or ice breaker
 
-On Messenger and Instagram, a flow can start from a [Reply Bot](/automation/reply-bots) or an [ice breaker](/core-setup/channels/ice-breakers). A Reply Bot answers comments on your posts. An ice breaker is a ready-made question that people can tap when they start a chat with you. *(Reply Bots are available when your plan includes Reply Bots. See [Free vs. paid](/getting-started/free-vs-paid).)*
+On Messenger and Instagram, a flow can start from a [Reply Bot](/automation/reply-bots) or an [ice breaker](/core-setup/channels/ice-breakers). A Reply Bot answers comments on your posts. On Instagram it can also answer mentions and story replies. An ice breaker is a ready-made question that people can tap when they start a chat with you. *(Reply Bots need a paid plan. See [Free vs. paid](/getting-started/free-vs-paid).)*
 
 To set this up, choose **Reply Bot** as the **Trigger Source**. Then:
 
@@ -152,16 +154,18 @@ To set this up, choose **Reply Bot** as the **Trigger Source**. Then:
 
 {/* SCREENSHOT: /automation/img/reply-bot-trigger.png — Start Trigger settings with Trigger Source set to Reply Bot, showing the Started by list with one Reply Bot */}
 
-**If a comment Reply Bot starts the flow.** The first message goes to the person as a private reply to their comment. Meta allows only one private reply per comment, and you can send more only after the person writes back. This is a Meta rule, not a WaMatrix.io one. See Meta's guide to [private replies](https://developers.facebook.com/docs/instagram-platform/private-replies).
+**If a comment Reply Bot starts the flow.** The first message goes to the person as a private reply to their comment. Meta lets you send only one private message in reply to a comment. You can send more only after the person writes back. This is a Meta rule, not a WaMatrix.io one. Meta explains it for [Instagram](https://developers.facebook.com/documentation/instagram-platform/private-replies) and for [Messenger](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/private-replies).
+
+WaMatrix.io sends this first message as plain text. When a comment Reply Bot uses the flow, the Start Trigger shows a reminder about this.
 
 So the flow must follow two rules:
 
-1. The flow can send only one message before the person replies. It must be a plain **Text Message**, or a question such as **Ask Question**.
+1. The flow can send only one message before the person replies. It must be a **Text Message** or an Ask step, such as **Ask Question**.
 2. After a **Text Message**, add a **Wait for Reply** step before you send anything else. An Ask step already waits for the answer.
 
 Steps that send nothing, such as **Delay**, **Condition** or **Assign Label**, can go anywhere.
 
-If you break a rule, the builder marks the step in red and shows one of these messages:
+If you break a rule, the Flow Builder marks the step in red and shows one of these messages. The words are the same on Messenger and Instagram:
 
 > A comment trigger can only open with one plain-text message — Instagram allows one text reply per comment. Add a Wait for Reply (or ask a question) before this node.
 
@@ -204,7 +208,7 @@ The toolbar at the top right of the page has a few helpers:
 
 ## Steps on each platform
 
-Each flow runs on one platform. Some steps work only on some platforms. The builder hides the steps that your flow's platform can't send. All steps not listed here work on all three platforms.
+Each flow runs on one platform. Some steps work only on some platforms. The Flow Builder hides the steps that your flow's platform can't send. Steps that are not in this table work on all three platforms.
 
 | Step | WhatsApp | Messenger | Instagram |
 | --- | --- | --- | --- |
@@ -216,8 +220,10 @@ Each flow runs on one platform. Some steps work only on some platforms. The buil
 | [**Location**](/automation/flow-steps/interactive#location) | Yes | Yes | No |
 | [**Contact Card**](/automation/flow-steps/interactive#contact-card) | Yes | No | No |
 | [**Reaction**](/automation/flow-steps/interactive#reaction) | Yes | No | No |
+| [**Media Message**](/automation/flow-steps/interactive#media-message) | Yes | Yes | Yes, but no stickers |
 | [**Ask Location**](/automation/flow-steps/ask#ask-location) | Yes | No | No |
 | [**Sequence**](/automation/flow-steps/advanced#sequence) | Yes | Yes | No |
+| [**WooCommerce Condition**](/automation/flow-steps/integrations#woocommerce-condition) | Yes | No | No |
 
 **Send Template** sends one of your saved Messenger or Instagram templates. It used to be called **Messenger Template**.
 
@@ -227,11 +233,11 @@ Each platform limits how long one text message can be:
 
 - **WhatsApp:** 4,096 characters.
 - **Messenger:** 2,000 characters.
-- **Instagram:** 1,000 bytes. Most letters use 1 byte, but emoji and many non-English letters use more. So the real limit can be fewer than 1,000 characters.
+- **Instagram:** up to 1,000 bytes (emojis use more). See [Instagram rules to know](/core-setup/channels/instagram#instagram-rules-to-know).
 
-These are Meta's rules, not WaMatrix.io's. Meta lists them for [WhatsApp text messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages) and [Instagram messages](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api).
+The WhatsApp and Instagram limits are Meta's rules, not WaMatrix.io's. Meta lists them for [WhatsApp text messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages) and [Instagram messages](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
 
-A **Delay** step can't be longer than 23 hours in total. This applies on all platforms.
+A [**Delay**](/automation/flow-steps/advanced#delay) step can wait up to 23 hours.
 
 ## What's next
 
@@ -245,6 +251,6 @@ A **Delay** step can't be longer than 23 hours in total. This applies on all pla
   </Card>
 
   <Card title="Reply Bots" icon="reply" href="/automation/reply-bots">
-    Answer comments on Messenger and Instagram, then start a flow. *(Available when your plan includes Reply Bots.)*
+    Answer comments on Messenger and Instagram, then start a flow. *(Needs a paid plan.)*
   </Card>
 </CardGroup>

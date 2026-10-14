@@ -1,54 +1,72 @@
 ---
 title: "Notifications"
-description: "Stay updated with important workspace notifications."
+description: "Find out when a customer writes, a chat is given to you, or Meta approves a template, without watching the screen."
 icon: "bell"
-keywords: ["WhatsMark", "notifications", "bell", "alerts"]
+keywords: ["WhatsMark", "WaMatrix.io", "notifications", "bell", "alerts"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-The **notification** shows important updates, such as approved templates, completed bulk actions, or account changes. A **red badge** shows how many notifications are unread. Click the **bell icon** to see recent notifications, or click **See all notifications** to view the full list.
+Notifications tell you about important things in your workspace. For example, Meta approved a template, a bulk action finished, or a customer sent you a message.
+
+Click the **bell icon** to see the latest ones. A **red badge** on the bell shows how many you have not read yet. Click **See all notifications** to open the full list.
 
 <Note>
-There is no Notifications link in the sidebar. Open the full page from the bell icon.
+There is no Notifications link in the main menu. Open the full list from the bell icon.
 </Note>
 
-## Notification types
+## What you are told about
 
-- **Templates** — when Meta approves, rejects, pauses, disables or flags a [template](/messaging/whatsapp-templates), when it changes a template's category, or when a template is deleted in WhatsApp Manager.
-- **Chat** — when a customer messages you, a conversation is assigned, or a teammate adds a note. See [Chat notifications](#chat-notifications) below.
-- **Bulk actions** — When a bulk action has finished.
-- **Your account** — When your account is created, activated, suspended, or put on hold.
-- **Offline payments** — When an offline payment is approved or rejected.
+You get notifications such as these:
+
+- **Templates**: Meta approves, rejects, pauses, disables, flags or deletes a [template](/messaging/whatsapp-templates), or changes its category.
+- **Chat**: a customer writes to you, a chat is given to you, or a teammate adds a note. See [Chat notifications](#chat-notifications) below.
+- **Bulk actions**: a bulk action has finished.
+- **Appointments**: a customer books a new appointment.
+- **Your account**: your account is created, activated, suspended or put on hold.
+- **Payments**: an offline payment is approved or rejected.
+
+When a new notification arrives, a small pop-up also shows on your screen.
 
 ## Chat notifications
 
-Chat notifications tell you about activity in the **[Inbox](/messaging/live-chat)**. You see one of these titles:
+Chat notifications tell you about activity in **[Chat](/messaging/live-chat)**. Each one has one of these titles:
 
 | Title | When you get it |
 | --- | --- |
-| **New message from** *name* | A customer messages a conversation that is not assigned to anyone. |
-| *name* **replied** | A customer replies in a conversation assigned to you. |
-| **Conversation assigned to you** | A conversation is assigned to you or to your team inbox. |
-| **New note on** *name* | A teammate adds a note to your conversation. |
+| **New message from** *name* | A customer sends a message in a chat that nobody is assigned to. |
+| *name* **replied** | A customer replies in a chat assigned to you. |
+| **Conversation assigned to you** | A chat is assigned to you, or to a **Team Inbox** you belong to. A Team Inbox is a team, such as Sales, that shares chats. |
+| **New note on** *name* | A teammate adds a note to a chat that is yours. |
 
-- The owner and admins are always told, even when a conversation is assigned to someone else.
-- Other members are told about the conversations assigned to them or to their team inbox.
-- Members only get notifications for platforms they can use. See [Team](/core-setup/team-and-roles#choose-which-platforms-a-member-can-use).
-- An alert shows on any screen, not only in the **Inbox**. For example, you see it while you are on the dashboard.
-- If WaMatrix.io is open in several tabs, you hear the sound once, not once per tab.
+### Who gets them
 
-### Turn on browser notifications and sound
+- If a chat is assigned to people, only those people get its notifications.
+- If nobody is assigned but the chat belongs to a [Team Inbox](/messaging/live-chat#assign-it-to-a-team), the team's members get them.
+- If neither is true, the workspace owner and the admins get them.
+- You are not told about your own actions, such as a note you wrote.
+- You are not told about a chat you have open at that moment.
+- Members only get notifications for the platforms they can use. See [Team](/core-setup/team-and-roles#choose-which-platforms-a-member-can-use).
 
-Each person chooses their own settings. Click your name at the bottom of the sidebar, then **My Profile**. In the **Notifications** card:
+The pop-up for a chat notification shows on every screen except **Chat**. In **Chat**, the new message already shows in your chat list.
 
-- Turn each chat notification on or off.
-- Turn on **Browser notifications** to get alerts on this device even when the site is closed. Your browser asks for permission first. *(Available when your plan includes browser notifications. See [Free vs. paid](/getting-started/free-vs-paid).)*
-- Turn on **Notification sound** to hear a sound when a new chat notification arrives.
+### Choose which chat notifications you get
 
-Your workspace owner can turn a chat notification off for everyone. If they do, you can't turn it back on in your profile.
+Each person chooses their own. Click your name at the bottom of the main menu, then **My Profile**. In the **Notifications** card, turn each of these on or off:
 
-{/* SCREENSHOT: /reporting/img/profile-notification-preferences.png — The Notifications card on the My Profile page, with switches for New message, Reply on my conversation, Assigned to me and Internal note, then Browser notifications and Notification sound */}
+- **New message**
+- **Reply on my conversation**
+- **Assigned to me**
+- **Internal note**
+
+All four are on at first.
+
+{/* SCREENSHOT: /reporting/img/profile-notification-preferences.png — The Notifications card on the My Profile page, showing the four chat switches: New message, Reply on my conversation, Assigned to me and Internal note. Crop the image above the Browser notifications and Notification sound switches; those are not documented. */}
+
+The workspace owner sees two more switches in this card:
+
+- **Daily digest**: a morning summary of the day's appointments. Nothing is sent on days with no bookings.
+- **Product tips & activity reminders**: emails with tips, and reminders when the workspace has not been used for a while.
 
 See [Profile & Sessions](/settings/profile) for your other profile settings.
 
@@ -60,9 +78,9 @@ See [Profile & Sessions](/settings/profile) for your other profile settings.
   caption="Image shows the Notifications page."
 />
 
-On the **Notifications page**, use the `⋮` menu to **Mark as read** or **Delete** a notification. You can also select multiple notifications to perform these actions together.
+On the **Notifications** page, open the three-dot menu (⋮) at the end of a row. Then choose **Mark as read** or **Delete**. To do this for several at once, tick them first.
 
-Use **Filters** to show only read or unread ones, or a single type. The search box looks at the title and message.
+Click **Filters** to show only **Read** or **Unread** notifications, or one **Type**. The search box looks in the title and the message.
 
 ## What's next
 
@@ -72,6 +90,6 @@ Use **Filters** to show only read or unread ones, or a single type. The search b
   </Card>
 
   <Card title="General Settings" icon="settings" href="/settings/general">
-    Workspace name, timezone, and date format.
+    Workspace name, time zone and date format.
   </Card>
 </CardGroup>

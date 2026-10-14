@@ -1,15 +1,15 @@
 ---
 title: "Message activity log"
-description: "See every message sent on your behalf on WhatsApp, Messenger and Instagram, and find out why any message failed."
+description: "See every message WaMatrix.io sent for you on WhatsApp, Messenger and Instagram, and find out why a message failed."
 icon: "list"
 keywords: ["WhatsMark", "WaMatrix.io", "WhatsApp activity log", "message activity log", "Messenger activity log", "Instagram activity log", "WhatsApp", "activity log", "message log", "delivery", "errors"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-This log lists every message sent on your behalf. It covers messages from [campaigns](/messaging/campaigns), [automations](/automation/overview), [Reply Bots](/automation/reply-bots), and replies your team sends from the **[Inbox](/messaging/live-chat)**. Use it to check what was sent and to see why a message failed.
+This log lists every message WaMatrix.io sends for you. It includes messages from [campaigns](/messaging/campaigns), [automations](/automation/overview) and [Reply Bots](/automation/reply-bots), and the replies your team sends from **[Chat](/messaging/live-chat)**. Use it to check what was sent and to see why a message failed.
 
-Each platform has its own log. In the menu, open **WhatsApp → Activity Log**, **Messenger → Activity Log** or **Instagram → Activity Log**. The page is called **WhatsApp Activity Log**, **Messenger Activity Log** or **Instagram Activity Log**.
+Each platform has its own log. In the menu, open **WhatsApp → Activity Log**, **Messenger → Activity Log** or **Instagram → Activity Log**. The page is called **WhatsApp Activity Log**, **Messenger Activity Log** or **Instagram Activity Log**. You see a platform's log only if you can use that platform.
 
 <Note>
 This is not the same as the workspace [Activity Log](/reporting/activity-logs). That page shows what people did in your workspace. This page shows only messages.
@@ -23,13 +23,13 @@ This is not the same as the workspace [Activity Log](/reporting/activity-logs). 
   caption="Image shows the WhatsApp Activity Log."
 />
 
-Use the **All**, **Success** and **Errors** tabs to choose which messages you see. Click **Filters** to show one **Category** or one **Response** type.
+Use the **All**, **Success** and **Errors** tabs to choose which messages you see. Click **Filters** to show one **Category**, or to pick a **Response**: **Success (200)** or **Errors**.
 
 | Column | What it shows |
 | --- | --- |
 | **Category** | What sent the message. See [Categories](#categories) below. |
 | **Name** | The campaign, automation, Reply Bot, team member or contact. It depends on the category. |
-| **Template Name** | The template used, if any. |
+| **Template Name** | The template used, if there was one. |
 | **Status** | The latest status of the message. |
 | **Error** | Why the message failed, if it failed. |
 | **Relation Type** | The type of contact who got the message: **Guest**, **Lead** or **Customer**. |
@@ -40,11 +40,11 @@ Use the **All**, **Success** and **Errors** tabs to choose which messages you se
 | Category | Where the message came from | The Name column shows |
 | --- | --- | --- |
 | **Campaign** | A campaign. | The campaign name. |
-| **Bot Flow** | A chatbot flow (an automation). | The flow name. |
-| **Inbox Reply** | A reply a team member sent from the **Inbox**. | The team member who replied. |
-| **Initiate Chat** | A new chat you started with a template. WhatsApp and Messenger only. | The contact. |
-| **Reply Bot** | A Reply Bot that answered a comment. Messenger and Instagram only. | The Reply Bot name. |
-| **Message Bot** | Another automatic message that no person sent. | Nothing. |
+| **Bot Flow** | An automation (a chatbot flow). | The flow name. |
+| **Inbox Reply** | A reply a team member sent from **Chat**. | The team member who replied. |
+| **Initiate Chat** | A template you sent to one contact to start a chat. WhatsApp and Messenger only. On Messenger, this works only if the person messaged your Page in the last 7 days. | The contact. |
+| **Reply Bot** | A Reply Bot that answered a comment, a mention or a story reply. Messenger and Instagram only. | The Reply Bot name. |
+| **Message Bot** | Any other automatic message, such as the answer to an ice breaker or a message that confirms someone opted in or out. | Nothing. |
 
 ## Message statuses
 
@@ -55,12 +55,12 @@ Use the **All**, **Success** and **Errors** tabs to choose which messages you se
 | **sent** | The message has been sent. |
 | **delivered** | The message reached the contact. |
 | **read** | The contact opened the message. |
-| **replied** | The contact replied to a campaign message. It shows in the same colour as **read**. |
+| **replied** | The contact replied to a campaign message. It has the same colour as **read**. |
 | **failed** | The message was not sent. Check the **Error** column to see why. |
 
 ## View message details
 
-Open the `⋮` menu and choose **View** to see more about a message.
+Open the three-dot menu (⋮) at the end of a row and choose **View**.
 
 <Figure
   src="/core-setup/img/whatsapp-activity-log-view.png"
@@ -68,25 +68,23 @@ Open the `⋮` menu and choose **View** to see more about a message.
   caption="Image shows the message details with the Response tab open."
 />
 
-- **Response** shows the message status, the response code, the response time and the message ID. On WhatsApp the message ID is called **wamid**. On Messenger and Instagram it is called **Message ID**. Below that you see the data Meta sent back.
-- **Raw Content** shows what was sent to Meta. It includes the message type and the account it was sent from. This is the **Phone number ID** on WhatsApp, the **Page ID** on Messenger and the **Account ID** on Instagram. WhatsApp messages also show the **Business acct ID**.
+- **Response** shows the status, the response code, the response time and the message ID. On WhatsApp the message ID is called **wamid**. On Messenger and Instagram it is called **Message ID**. Below that, you see the data Meta sent back.
+- **Raw Content** shows what WaMatrix.io sent to Meta. It includes the message type and the account it was sent from. This is the **Phone number ID** on WhatsApp, the **Page ID** on Messenger and the **Account ID** on Instagram. WhatsApp messages also show the **Business acct ID**.
 
 ## How long entries stay
 
-- Entries older than 90 days are deleted automatically.
-- Deleting a campaign, an automation or a Reply Bot also removes its messages from this log.
-- You can also delete one entry, several entries, or click **Clear Logs** to remove all of them for that platform.
-
-You only see your own workspace's messages.
+- Entries stay for 90 days. After that, WaMatrix.io deletes them automatically.
+- If you delete a campaign, an automation or a Reply Bot, its messages are also removed from this log.
+- You can delete entries yourself. Choose **Delete** from a row's menu, or tick several rows and click **Delete**. To remove every entry for that platform, click **Clear Logs**. Deleting needs the **Delete** permission for **Message Activity Log**.
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Activity Log" icon="history" href="/reporting/activity-logs">
-    See every action taken in your workspace.
+    See what people did in your workspace.
   </Card>
 
   <Card title="Chatbot Flows" icon="zap" href="/automation/overview">
-    Build automations that send messages automatically.
+    Build automations that send messages for you.
   </Card>
 </CardGroup>

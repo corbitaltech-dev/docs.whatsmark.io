@@ -43,7 +43,7 @@ Import works for WhatsApp contacts only. Messenger and Instagram contacts are ad
 <Step title="Set Default Values and start the import">
   On the **Default Values** step, set the **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member**. These values are applied to **every** contact in this file — they cannot come from the file itself.
 
-  **If a phone number already exists** — WaMatrix.io matches contacts by phone number. Choose one option:
+  **If a phone number already exists.** WaMatrix.io matches contacts by phone number. Choose what should happen:
 
   - **Skip the row** (the default) — the existing contact stays as it is. The row is counted as skipped.
   - **Update the existing contact** — WaMatrix.io updates the contact with the columns you mapped. See [How updates work](#how-updates-work) below.
@@ -70,7 +70,7 @@ When you choose **Update the existing contact**, this is what happens to each ma
 
 - The columns you mapped replace the old values.
 - An empty cell never clears a value. The old value stays.
-- Custom fields are merged. Fields that are not in your file keep their old values.
+- Custom fields are combined. Fields that are not in your file keep their old values.
 - The type, status and source you chose on the **Default Values** step replace the old ones. The team member is changed only if you picked one.
 - Groups and labels are added. WaMatrix.io never removes a group or label.
 - An update doesn't use a contact slot from your plan. Only new contacts do.

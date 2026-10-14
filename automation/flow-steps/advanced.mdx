@@ -15,14 +15,14 @@ keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "delay", "condition", "logi
 
 **What it does.** Pauses the flow for a specified time before moving to the next step.
 
-**When to use it.** Use it whenever you want to wait before the next step. For example, send a follow-up after a day or remind customers about an abandoned cart after an hour.
+**When to use it.** Use it whenever you want to wait before the next step. For example, send a follow-up later the same day or remind customers about an abandoned cart after an hour.
 
-
--  Hours, Minutes and Seconds all start at 0 set at least one of them to make the step wait.
+- **Hours**, **Minutes** and **Seconds** all start at 0. Set at least one of them to make the step wait.
+- A Delay can be up to 23 hours in total. To follow up over several days, use a [Sequence](#sequence) on WhatsApp or Messenger.
 
 ![Delay settings with a note explaining the flow pauses for a fixed amount of time and then continues on its own, separate Hours, Minutes and Seconds boxes, and a running total below them](/automation/img/advance/delay-settings.png)
 
-**Example.** A **Delay** of 24 hours, then a **Text Message**: "Just checking in — did you have any questions about the quote?"
+**Example.** A **Delay** of 2 hours, then a **Text Message**: "Just checking in — did you have any questions about the quote?"
 
 ![A Start Trigger set to exact match on the keywords hi and hello, connected to a WhatsApp Template step, then a Delay step, then a Text Message following up about pricing questions](/automation/img/advance/delay.png)
 
@@ -93,7 +93,7 @@ Connect the green **YES** dot to the booking steps, and the red **NO** dot to a 
 
 **When to use it.** Use it when a value can lead to more than two outcomes, such as sending a different reply for each order status.
 
-**How to set it up.** First pick what to check: the **last message**, a **flow variable** you saved earlier, a **contact custom field**, or an **API response value**. Then add a rule for each outcome you want, and connect each one to the step that should run next.
+**How to set it up.** First pick what to check: the **Contact's last message**, a **flow variable** you saved earlier, a **contact custom field**, or an **API response value**. Then add a rule for each outcome you want, and connect each one to the step that should run next.
 
 **Contact's last message** is the customer's most recent reply. If the customer hasn't replied yet, it is the message that started the flow.
 

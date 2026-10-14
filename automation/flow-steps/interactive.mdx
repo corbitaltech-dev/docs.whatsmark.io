@@ -23,7 +23,7 @@ Sometimes a step is already on the canvas, but the flow's platform can't send it
 
 > List Message is not supported on Instagram and will not be sent. Remove this node.
 
-The **Save** button stays off until you remove that step.
+You can't click **Save Flow** until you remove that step.
 
 ![Flow Builder with the Interactive tab selected, showing the List Message, Media Message, Location, Contact Card, and Reaction tiles, and a flow connecting a Start Trigger to a List Message whose options lead to a Media Message, a Location, and a Contact Card](/automation/img/interactive/interactive-flow-steps.png)
 
@@ -86,7 +86,7 @@ List Message works only on WhatsApp flows. It is hidden on Messenger and Instagr
 - **Document** — PDF, Word, Excel, PowerPoint, or plain text, up to 100 MB.
 - **Sticker** — WebP, up to 100 KB still or 500 KB animated.
 
-These file types and size limits come from WhatsApp, not from WaMatrix.io. See Meta's [Media](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/media) documentation.
+This list is for WhatsApp. These file types and size limits come from WhatsApp, not from WaMatrix.io. See Meta's [Media](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/media) documentation.
 
 ![Media Message settings with a Media Type set to Image, an uploaded file named sale.png showing a New Arrivals catalog preview, and a Caption field describing the product catalog](/automation/img/interactive/media-message-settings.png)
 
@@ -98,7 +98,14 @@ These file types and size limits come from WhatsApp, not from WaMatrix.io. See M
 
 ![A flow connecting a Start Trigger to a List Message and then a Media Message previewing a New Arrivals product catalog image with a caption](/automation/img/interactive/media-message.png)
 
-**On Instagram.** The **Sticker** type isn't in the list, because Instagram flows can't send stickers. Instagram also can't send a file and text together. So if you add a **Caption**, it is sent as a separate message right after the file.
+**On Instagram.** The **Sticker** type isn't in the list, because Instagram flows can't send stickers. The files you can upload are also different. WaMatrix.io accepts:
+
+- **Image** — PNG, JPG or GIF, up to 8 MB.
+- **Video** — MP4, MOV or WebM, up to 25 MB.
+- **Audio** — AAC, M4A or WAV, up to 25 MB.
+- **Document** — PDF only, up to 25 MB.
+
+Instagram also can't send a file and text together. So if you add a **Caption**, it is sent as a separate message right after the file.
 
 <Tip>
 Give documents a clear file name. `Menu-2026.pdf` looks far more trustworthy than `file_8823.pdf`.

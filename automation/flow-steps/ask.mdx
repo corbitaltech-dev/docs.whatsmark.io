@@ -20,7 +20,7 @@ Enter your question in the Question field. Depending on the step, this field may
 </Step>
 
 <Step title="Choose where to save the answer">
-  Set the **Capture Attribute** field. This is where the customer's answer will be saved. Give it a meaningful name, such as `preferred_date`. You can save the answer to a [custom fields](/core-setup/custom-fields), or to a flow variable that's only available during the current conversation.
+  Set the **Capture Attribute** field. This is where the customer's answer will be saved. Give it a meaningful name, such as `preferred_date`. You can save the answer to a [custom field](/core-setup/custom-fields), or to a flow variable that's only available during the current conversation.
 </Step>
 
 <Step title="Set the retries">
@@ -49,7 +49,7 @@ In later message steps, type **@** in any message field to insert the saved answ
 **Required fields**
 
 - **Question** and **Capture Attribute** are required.
-- **Attribute Format** sets what a valid answer looks like. It defaults to **Any**, which accepts whatever customer send.
+- **Attribute Format** sets what a valid answer looks like. It defaults to **Any**, which accepts whatever the customer sends.
 - **Pattern** is required, but only if you set the Attribute Format to **Regular expression**.
 
 ![Ask Question settings with a Question box, a Capture Attribute of booking_date, an Attribute Format of Date, Number of Attempts set to 2, a Validation Error Message, and an Attempts Over Message](/automation/img/ask/ask-question-settings.png)
@@ -159,7 +159,7 @@ Ask Location works only on WhatsApp flows. It is hidden on Messenger and Instagr
 
 ## Ask Media
 
-**What it does.** Asks the customer to upload a file. You can choose which file types are allowed, such as  **Image**, **Video**, **Audio**, **Document** or **Sticker** or **Any file**,.
+**What it does.** Asks the customer to upload a file. You choose which type of file to accept: **Any**, **Image**, **Video**, **Audio**, **Document** or **Sticker**.
 
 **When to use it.** Use it when you need customers to send files, **such as photos of damaged items**, **ID documents**, **prescriptions**, **screenshots**, or other **supporting documents**.
 

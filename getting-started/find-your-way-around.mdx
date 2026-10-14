@@ -1,32 +1,33 @@
 ---
 title: "Find your way around"
-description: "A short tour of the WaMatrix.io menu. See where your chats, contacts and each platform's tools live, so you always know where to click."
+description: "A short tour of the WaMatrix.io menu. See where to find your chats, contacts and the tools for each platform."
 icon: "compass"
-keywords: ["WhatsMark", "WaMatrix.io", "menu", "sidebar", "navigation", "inbox", "all contacts", "platform groups", "WhatsApp", "Messenger", "Instagram", "setup"]
+keywords: ["WhatsMark", "WaMatrix.io", "menu", "sidebar", "navigation", "chat", "all contacts", "platform groups", "integrations", "WhatsApp", "Messenger", "Instagram", "setup"]
 ---
 
-The menu on the left of WaMatrix.io has three parts. Things you use every day sit at the top. Each platform, such as WhatsApp, has its own group in the middle. Workspace tools sit at the bottom.
+The menu on the left of WaMatrix.io has three parts. The things you use every day are at the top. Each platform, such as WhatsApp, has its own group in the middle. Workspace tools are at the bottom.
 
 ## The three parts of the menu
 
 1. **Shared items at the top.** These work across every platform.
    - **Dashboard**: a quick look at how your workspace is doing.
-   - **Inbox**: all your chats from every platform, in one place.
+   - **Chat**: all your chats from every platform, in one place.
    - **All Contacts**: every person you can message, from every platform.
-2. **One group per platform.** There is a group for **WhatsApp**, **Messenger** and **Instagram**, if your plan includes them. Each group holds the tools for that platform only.
+2. **One group per platform.** There is a group for **WhatsApp**, **Messenger** and **Instagram**. Each group holds the tools for that platform only. *(Instagram needs a paid plan.)*
 3. **Workspace tools at the bottom.**
-   - **AI Assistants**: AI helpers that learn from your documents and website, then answer customers.
+   - **AI Assistants**: AI helpers that learn from your documents and website, then answer customers. *(Needs a paid plan.)*
    - **Media Library**: the images and files you upload.
-   - **Activity Log**: every action taken in your workspace.
+   - **Activity Log**: changes your team made in the workspace.
+   - **Integrations**: connect Shopify, WooCommerce, Facebook Lead Ads and IndiaMART. *(Needs a paid plan.)*
    - **Settings**: your workspace settings, such as business hours.
 
-The last item is **Setup**. Click it to open a side panel for your team and workspace setup: **Team**, **Roles**, **Statuses**, **Sources**, **Labels**, **Groups**, **Canned Replies**, **AI Prompts**, **Custom Fields** and **API Tokens**.
+The last item is **Setup**. Click it to open a side panel for your team and workspace setup: **Team**, **Roles**, **Statuses**, **Sources**, **Labels**, **Groups**, **Canned Replies**, **AI Prompts**, **Custom Fields**, **API Tokens** and **Changelog**. **Changelog** lists what is new in WaMatrix.io. *(Canned Replies and API Tokens need a paid plan.)*
 
-{/* SCREENSHOT: /getting-started/img/sidebar-platform-groups.png — The full left menu with all groups closed: Dashboard, Inbox and All Contacts at the top; WhatsApp, Messenger and Instagram groups in the middle; AI Assistants, Media Library, Activity Log, Settings and Setup at the bottom */}
+{/* SCREENSHOT: /getting-started/img/sidebar-platform-groups.png — The full left menu with all groups closed: Dashboard, Chat and All Contacts at the top; WhatsApp, Messenger and Instagram groups in the middle; AI Assistants, Media Library, Activity Log, Integrations, Settings and Setup at the bottom */}
 
 ## What is inside each platform group
 
-A **channel** is an account you connect to WaMatrix.io. It can be a WhatsApp number, a Facebook Page for Messenger, or an Instagram account. A **template** is a saved message you can send again and again.
+A **channel** is an account you connect to WaMatrix.io. It can be a WhatsApp number, a Facebook Page for Messenger, or an Instagram account. A **template** is a saved message you can send again and again. On WhatsApp, Meta must approve it first.
 
 Each group shows only the tools that platform supports.
 
@@ -37,17 +38,19 @@ Each group shows only the tools that platform supports.
 | **Templates** | Create and manage saved messages | [Guide](/messaging/whatsapp-templates) | [Guide](/messaging/messenger-templates) | [Guide](/messaging/instagram-templates) |
 | **Campaigns** | Send one message to many people | [Guide](/messaging/campaigns) | [Guide](/messaging/campaigns) | [Guide](/messaging/campaigns) |
 | **Automations** | Build chats that reply on their own | [Guide](/automation/overview) | [Guide](/automation/overview) | [Guide](/automation/overview) |
-| **Reply Bots** | Reply when someone comments on your posts, mentions you or replies to your stories | — | [Guide](/automation/reply-bots) | [Guide](/automation/reply-bots) |
+| **Reply Bots** | Reply when someone comments on your posts, tags you or replies to your stories | — | [Guide](/automation/reply-bots) | [Guide](/automation/reply-bots) |
 | **WhatsApp Flows** | Build forms that open inside WhatsApp | [Guide](/appointment-and-flow/whatsapp-flows) | — | — |
 | **Appointments** | Let customers book a time with you | [Guide](/appointment-and-flow/appointments) | — | — |
 | **Analytics** | See what you sent and what Meta charged | [Guide](/reporting/whatsapp-analytics) | — | — |
-| **Activity Log** | See every message sent on this platform | [Guide](/core-setup/whatsapp-activity-log) | Yes | Yes |
+| **Activity Log** | See every message sent on this platform | [Guide](/core-setup/whatsapp-activity-log) | [Guide](/core-setup/whatsapp-activity-log) | [Guide](/core-setup/whatsapp-activity-log) |
 
-A dash (—) means the item does not appear in that group.
+A dash (—) means the item does not appear in that group. *(Reply Bots and Analytics need a paid plan.)*
 
-### Only one group opens at a time
+There are two items called **Activity Log**. The one at the bottom of the menu shows changes your team made in the workspace. The one inside a platform group shows the messages sent on that platform.
 
-A group opens on its own when you are on one of its pages. The other groups stay closed, so the menu stays short. You can click any group name to open or close it.
+### How the groups open and close
+
+The group for the page you are on opens by itself. The other groups start closed, so the menu stays short. Click a group name to open or close it.
 
 Campaigns, automations and templates each belong to one platform. For example, a campaign you send on WhatsApp is under **WhatsApp → Campaigns**. You will not see it under Messenger.
 
@@ -55,7 +58,14 @@ Campaigns, automations and templates each belong to one platform. For example, a
 
 ## Adding something new
 
-The **Add Campaign**, **Add Automation**, **Add Reply Bot** and **Add Template** buttons first show a list of your channels on that platform. Choose the channel you want to use. The form then opens with that channel already chosen.
+To add something inside a platform group, use the button at the top of the page:
+
+- **Campaigns**: **Create Campaign**
+- **Automations**: **Create Flow**
+- **Reply Bots**: **Add Reply Bot**
+- **Templates**: **Create Template** on WhatsApp, **New Template** on Messenger, and **Add Template** on Instagram
+
+Each of these buttons first shows a list of your channels on that platform. Choose the channel you want to use. The form then opens with that channel already chosen.
 
 If you have not connected a channel on that platform yet, connect one first.
 
@@ -64,17 +74,21 @@ If you have not connected a channel on that platform yet, connect one first.
 - **All Contacts** shows everyone, from every platform.
 - **Contacts** inside a platform group shows only the people from that platform.
 
-You can use **Add Contact** and **Import Contacts** only on **All Contacts** and on **WhatsApp → Contacts**.
+You can use **Create Contact** and **Import Contacts** only on **All Contacts** and on **WhatsApp → Contacts**.
 
-Messenger and Instagram contacts are added for you. A person appears on the list when they message your Page or account. You cannot add them yourself, because Meta lets a business start these chats only after the person reaches out. This is Meta's rule, not ours. Meta explains it in the [Messenger and Instagram messaging policy](https://developers.facebook.com/docs/messenger-platform/policy/policy-overview).
+WaMatrix.io adds Messenger and Instagram contacts for you. A person appears on the list when they message your Page or account, or when a Reply Bot answers their comment. You cannot add them yourself. Meta lets a business message a person on Messenger or Instagram only after that person contacts the business first. This is Meta's rule, not ours. Meta explains it in its [Messenger and Instagram messaging policy](https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy).
 
 ## What you see depends on your plan and your access
 
 ### Your plan
 
-The platform groups you see depend on your plan. See [Free vs. paid](/getting-started/free-vs-paid) for what each plan includes.
+Your plan decides which platform groups and menu items you see. See [Free vs. paid](/getting-started/free-vs-paid) for what each plan includes.
 
-If your plan includes a platform but nothing is connected yet, its group still shows. Pages in that group show the message **No Instagram account connected** (or WhatsApp, or Messenger) and a **Connect Instagram** button. Click the button to go to that platform's Channels page.
+- **A platform your plan doesn't include** has no group in the menu. The exception is a platform where you still have an account connected. Its group stays, so you can still reach your contacts and chats there.
+- **Some paid items show a lock icon.** Click one to read a short note about what it does. On the Free Forever plan, these items show a lock: **AI Assistants**, **Integrations**, **WhatsApp → Analytics** and **Messenger → Reply Bots**.
+- **Some paid items don't appear at all** until your plan includes them, such as **API Tokens** in **Setup**.
+
+If your plan includes a platform but nothing is connected yet, its group still shows. Most pages in that group show the message **No Instagram account connected** (or WhatsApp, or Messenger) and a **Connect Instagram** button. Click the button to go to that platform's **Channels** page.
 
 <Note>
   You see the **Connect** button only if your role is allowed to connect channels. If you don't see it, ask the person who manages your team.
@@ -91,12 +105,12 @@ See [Team and roles](/core-setup/team-and-roles).
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Where did Chat go?" icon="messages-square">
-    It is now called **Inbox**. It holds your chats from every platform you have connected.
+  <Accordion title="Where is the Connect Channel button?" icon="plug">
+    Each platform has its own **Channels** page. Open the platform group, click **Channels**, and use **Connect WhatsApp**, **Connect Messenger** or **Connect Instagram**.
   </Accordion>
 
-  <Accordion title="Where is the Connect Channel button?" icon="plug">
-    Each platform now has its own **Channels** page. Open the platform group, click **Channels**, and use **Connect WhatsApp**, **Connect Messenger** or **Connect Instagram**.
+  <Accordion title="Where are Shopify and the other integrations?" icon="blocks">
+    Click **Integrations** in the main menu. You see one card for each integration: **Shopify**, **WooCommerce**, **Facebook Lead Ads** and **IndiaMART**. Click a card to open its page. *(Integrations need a paid plan.)*
   </Accordion>
 
   <Accordion title="Where did WhatsApp Activity Log go?" icon="scroll-text">
@@ -110,12 +124,12 @@ See [Team and roles](/core-setup/team-and-roles).
   <Accordion title="I don't see Instagram or Messenger in my menu. Why?" icon="eye-off">
     There are two common reasons:
 
-    - Your plan does not include that platform.
+    - Your plan does not include that platform. Instagram needs a paid plan.
     - You are a team member, and your **Platform access** does not include it.
   </Accordion>
 
   <Accordion title="If I change my plan, do I lose a platform's data?" icon="shield">
-    No, not while an account on that platform is still connected. Its group stays in your menu, so you can still open your contacts, chats and channels there.
+    Changing your plan does not delete your data. While an account on that platform is still connected, its group stays in your menu. You can still open your contacts, chats and channels there. If you disconnect every account on a platform your plan no longer includes, its group leaves the menu.
   </Accordion>
 </AccordionGroup>
 
@@ -127,10 +141,10 @@ See [Team and roles](/core-setup/team-and-roles).
   </Card>
 
   <Card title="Connect Instagram" icon="instagram" href="/core-setup/channels/instagram">
-    Reply to Instagram messages from the same Inbox.
+    Reply to Instagram messages from the same **Chat** screen. *(Needs a paid plan.)*
   </Card>
 
-  <Card title="Use the Inbox" icon="messages-square" href="/messaging/live-chat">
+  <Card title="Use Chat" icon="messages-square" href="/messaging/live-chat">
     Read and answer chats from every platform with your team.
   </Card>
 

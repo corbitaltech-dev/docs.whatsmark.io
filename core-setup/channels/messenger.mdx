@@ -1,30 +1,29 @@
 ---
 title: "Connecting Messenger"
-description: "How to connect a Facebook Page to WaMatrix.io via Embedded Signup or manually, to send and receive Messenger conversations."
+description: "Connect your Facebook Page to WaMatrix.io and answer its Messenger messages next to your WhatsApp chats."
 icon: "message-circle"
-keywords: ["WhatsMark", "Messenger", "Facebook Page", "embedded signup", "manual connect"]
+keywords: ["WhatsMark", "WaMatrix.io", "Messenger", "Facebook Page", "embedded signup", "manual connect", "connect Messenger"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Connect a Facebook Page so you can send and receive Messenger conversations through WaMatrix.io, right alongside your WhatsApp channels.
+Connect a Facebook Page so you can answer its Messenger messages in WaMatrix.io, next to your WhatsApp chats. Each Page you connect is called a **channel**. A channel is one connected account that WaMatrix.io sends and receives messages through.
 
 ## Before you connect
 
 <Tip>
-Make sure you have the following ready:
+Have these ready:
 
-- A Facebook account.
-- A Meta Business account — Business Verification is not mandatory to connect, but it is strongly recommended; without it your account stays on limited messaging tiers.
-- A Facebook Page that you manage and want to connect to Messenger.
-- Your Page ID, Page Access Token, Meta App ID, and Meta App Secret (for manual connections only).
+- The Facebook account that manages your Page.
+- The Facebook Page you want to connect.
+- For the **Manual** method only: your Page ID, Page Access Token, Meta App ID and Meta App Secret.
 </Tip>
 
 ## Connecting Messenger
 
 <Steps>
 <Step title="Click Connect Messenger">
-  In the main menu, go to **Messenger → Channels**. Click **Connect Messenger**.
+  In the main menu, open **Messenger → Channels**. Click **Connect Messenger** at the top right.
 
   <Figure
     src="/core-setup/channels/img/channels-connect.png"
@@ -34,27 +33,31 @@ Make sure you have the following ready:
 </Step>
 
 <Step title="Pick a connection method">
-  You'll see two tabs:
+  The **Connect Facebook Page** panel opens. It has two tabs:
 
   <Figure
     src="/core-setup/channels/img/messenger-connect-methods.png"
-    alt="Messenger connect flow showing Embedded Signup and Manual connection options"
-    caption="Image shows the Messenger connect flow with its Embedded Signup and Manual tabs."
+    alt="Messenger connect panel showing Embedded Signup and Manual connection options"
+    caption="Image shows the Connect Facebook Page panel with its Embedded Signup and Manual tabs."
   />
 
-  - **Embedded Signup** — connect with Meta's secure Facebook login flow.
-    - Sign in using your Facebook credentials.
-    - Select the Page you want to connect.
-    - Confirm the requested permissions.
-    - The connection completes automatically and the popup closes when done.
-  - **Manual** — use this for advanced setups with existing Meta credentials.
+  - **Embedded Signup**: Meta's own pop-up window walks you through it. This is the easiest way.
+    - Click **Launch** next to **Continue with Facebook**.
+    - Sign in with the Facebook account that manages the Page.
+    - Choose the Page you want to connect.
+    - Allow the permissions Facebook asks for.
+
+    When you finish, WaMatrix.io creates the channel for you.
+  - **Manual**: use this only if you already have your own Meta app.
     - Enter the **Page ID**.
     - Paste the **Page Access Token**.
-    - Provide the **Meta App ID** and **Meta App Secret**.
+    - Enter the **Meta App ID** and **Meta App Secret**.
+    - Add a **Page Name** if you like. If you leave it empty, WaMatrix.io gets the name from Meta.
+    - Click **Connect Page**.
 </Step>
 
-<Step title="Confirm it's connected">
-  Once connected, the Page appears in your Channels list marked **Active**, and incoming Messenger conversations start reaching your workspace automatically.
+<Step title="Check that it's connected">
+  The Page appears in your Channels list with the status **Active**. New Messenger messages now arrive in [Chat](/messaging/live-chat).
 </Step>
 </Steps>
 
@@ -65,55 +68,59 @@ Make sure you have the following ready:
 />
 
 <Note>
-Both connection methods can be individually disabled by your plan. If a tab is missing or disable, that method isn't available on your current plan.
+If a tab or button shows **Locked**, your plan does not include that method. If it shows **Currently unavailable**, please contact support.
+</Note>
+
+<Note>
+A Facebook Page can be connected to only one WaMatrix.io workspace at a time. If another workspace is using it, you see the message "This Facebook Page is already connected to another account." Disconnect the Page in the other workspace first. If it still does not connect, contact support.
 </Note>
 
 ## Managing a connected Page
 
-Open a connected Messenger channel to:
+You can connect more than one Facebook Page. All of them are listed on **Messenger → Channels**.
 
-- **Review Page information** fetched from Meta, including Page name, Page ID, category, and connection method.
-- **Check** channel health and see whether messages are reaching WaMatrix.io.
-- **Disconnect** the Page.
+To open a Page's account page, click its name, or choose **View account** from the three-dot menu (⋮) at the end of the row. There you can:
+
+- See the **Page information** from Meta: the Page name, category, Page ID, how you connected it, and when.
+- Check that Meta is sending the Page's messages to WaMatrix.io.
+- Click **Disconnect** to remove the Page from WaMatrix.io.
 
 <Figure
   src="/core-setup/channels/img/messenger-view.png"
   alt="Connected Messenger channel list showing Active status and connection method"
-  caption="Image shows a connected Messenger channel's Page information and webhook status."
+  caption="Image shows a connected Messenger channel and its status."
 />
-
-<Tip>
-You can connect more than one Facebook Page. Messenger has its own **Channels** page in the **Messenger** menu group. All your Pages are listed there.
-</Tip>
 
 ## Ice breakers
 
-Ice breakers are short questions a customer can tap to start a chat with your Page. To set them up, click the three dots at the end of a Page's row and choose **Manage ice breakers**. Details: [Ice breakers](/core-setup/channels/ice-breakers).
+Ice breakers are short questions a customer can tap to start a chat with your Page. To set them up, open the three-dot menu (⋮) at the end of the Page's row and choose **Manage ice breakers**. Details: [Ice breakers](/core-setup/channels/ice-breakers).
 
 ## Answer comments on your Page
 
-Reply Bots can answer comments on your Page's posts for you. *(Available when your plan includes Reply Bots. See [Free vs. paid](/getting-started/free-vs-paid).)* Details: [Reply Bots](/automation/reply-bots).
+Reply Bots can answer comments on your Page's posts for you. *(Needs a paid plan. See [Free vs. paid](/getting-started/free-vs-paid).)* Details: [Reply Bots](/automation/reply-bots).
 
 <Note>
-Did you connect your Page before Reply Bots were added? Then you may need to connect it again. If so, the Reply Bots page shows a **Reconnect to keep replying** message. To fix it, go to **Messenger → Channels** and click **Connect Messenger**. Use the **Embedded Signup** tab, choose the same Page, and approve every permission Facebook asks for.
+Sometimes Meta refuses a Reply Bot's reply because the Page connection is missing a permission. Then the Reply Bots page shows **Reconnect to keep replying**. This can happen if you connected the Page before you made a Reply Bot for comments.
+
+To fix it, open **Messenger → Channels** and click **Connect Messenger**. On the **Embedded Signup** tab, choose the same Page. Allow every permission Facebook asks for.
 </Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Connecting WhatsApp" icon="whatsapp" href="/core-setup/channels/whatsapp">
-    Connect a WhatsApp Business Account the same way.
+    Connect your WhatsApp Business account the same way.
   </Card>
 
   <Card title="Connecting Instagram" icon="instagram" href="/core-setup/channels/instagram">
-    Connect an Instagram account and answer its direct messages in the same inbox. *(Available when your plan includes Instagram.)*
+    Connect an Instagram account and answer its direct messages in Chat. *(Needs a paid plan.)*
   </Card>
 
   <Card title="Reply Bots" icon="reply" href="/automation/reply-bots">
-    Answer comments on your Page's posts automatically. *(Available when your plan includes Reply Bots.)*
+    Answer comments on your Page's posts automatically. *(Needs a paid plan.)*
   </Card>
 
   <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
-    Start replying to Messenger conversations from the unified team inbox.
+    Start answering your Messenger messages in Chat.
   </Card>
 </CardGroup>

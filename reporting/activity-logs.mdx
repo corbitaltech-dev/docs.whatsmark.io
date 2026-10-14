@@ -1,15 +1,17 @@
 ---
 title: "Activity Log"
-description: "Track all activity across your workspace and see who performed each action."
+description: "See what happened in your workspace, who did it, and when."
 icon: "history"
-keywords: ["WhatsMark", "activity log", "audit trail", "history", "audit"]
+keywords: ["WhatsMark", "WaMatrix.io", "activity log", "audit trail", "history", "audit"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-The Activity Log shows all activity in your workspace, including what happened, who performed the action, and when it occurred. Use it to review changes and monitor team activity.
+The Activity Log shows what happened in your workspace, who did it, and when. Use it to check changes and to see what your team has done.
 
-## Activity log list
+Open **Activity Log** in the main menu.
+
+## The list of activities
 
 <Figure
   src="/reporting/img/activity-log.png"
@@ -17,40 +19,46 @@ The Activity Log shows all activity in your workspace, including what happened, 
   caption="Image shows the Activity Log."
 />
 
+Use the **All**, **Created**, **Updated** and **Deleted** tabs to choose which entries you see. Click **Filters** to show one **Event**, or only what one person did (**Performed By**).
+
 Each entry has:
 
-- **Description** — Describes the action that was performed, such as "Signed in".
-- **Event** — The type of action, such as **Member Added**.
-- **Performed By** — The user who performed the action. If the action was performed automatically, **System** is shown.
-- **Subject** — The item that was changed, such as a contact or campaign.
-- **When** — When the action happened.
+- **Description**: what was done.
+- **Event**: the type of action, such as **Member Added**.
+- **Performed By**: the person who did it. If WaMatrix.io did it automatically, you see **System**.
+- **Subject**: the item that changed, such as a contact or a campaign.
+- **When**: when it happened.
 
-## Activities that are logged
+## What is logged
 
-You will find entries for things like:
+You find entries for things like:
 
-- [Signing in](/getting-started/log-in) and out, and [password or two-factor](/settings/profile) changes.
-- [Team members](/core-setup/team-and-roles) added, edited or removed, and [role](/core-setup/roles-and-permissions) changes.
-- [Contacts](/contacts/managing-contacts) created, edited, deleted or [merged](/contacts/bulk-actions-and-merge).
-- [Campaigns](/messaging/campaigns), [templates](/messaging/whatsapp-templates) and [channel](/core-setup/channels/whatsapp) changes.
-- [API tokens](/core-setup/api-keys) created, regenerated or revoked.
-- Billing changes, like a new [plan](/billing/plans-and-subscription), an [addon](/billing/addons-and-upgrades), or a paid [invoice](/billing/payments-and-invoices).
+- [Signing in](/getting-started/log-in) and out, and changes to your [password or two-factor security](/settings/profile).
+- [Team members](/core-setup/team-and-roles) added, changed or removed, and [role](/core-setup/roles-and-permissions) changes.
+- [Contacts](/contacts/managing-contacts) created, changed, deleted or [merged](/contacts/bulk-actions-and-merge).
+- Changes to [campaigns](/messaging/campaigns), [templates](/messaging/whatsapp-templates) and [channels](/core-setup/channels/whatsapp).
+- [API tokens](/core-setup/api-keys) created, made again or removed.
+- Billing changes, like a new [plan](/billing/plans-and-subscription), an [add-on](/billing/addons-and-upgrades), or a paid [invoice](/billing/payments-and-invoices).
 - Someone trying to open a page their role does not allow.
 
-<Note>
-Some entries are protected and cannot be deleted — they show a shield instead of a checkbox. Protected entries stay even when you clear the log.
-</Note>
+## How long entries stay
 
-Logs are kept for 30 days. After that, older entries are deleted automatically. You can also delete them yourself at any time.
+WaMatrix.io does not delete these entries by itself. They stay until someone deletes them.
+
+To delete entries, tick them and click **Delete**. To remove everything you can delete, click **Clear Logs**. Deleting needs the **Delete** permission for **Activity Log**.
+
+<Note>
+Some entries are protected, such as records of AI usage and appointment bookings. They show a shield instead of a checkbox. Nobody can delete them, and **Clear Logs** leaves them in place.
+</Note>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Message activity log" icon="list" href="/core-setup/whatsapp-activity-log">
-    See every message sent out on your behalf.
+    See every message WaMatrix.io sent for you.
   </Card>
 
   <Card title="Notifications" icon="bell" href="/reporting/notifications">
-    Get told about important events as they happen.
+    Find out about important events as they happen.
   </Card>
 </CardGroup>

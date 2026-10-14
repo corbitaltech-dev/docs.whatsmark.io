@@ -1,26 +1,25 @@
 ---
 title: "Team"
-description: "Add the people who work in your workspace and decide what they can do."
+description: "Add the people who work with you, and choose what each of them can do and which platforms they can use."
 icon: "users"
-keywords: ["WhatsMark", "team", "members", "invite", "admin", "workspace"]
+keywords: ["WhatsMark", "WaMatrix.io", "team", "members", "invite", "admin", "workspace", "platform access"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-At first you are the only person in your workspace. Add everyone else who works with you from this page.
-
+At first, you are the only person in your workspace. Add the people who work with you on the **Team** page. Open it from **Setup → Team**. *(Adding team members needs a paid plan. See [Free vs. paid](/getting-started/free-vs-paid).)*
 
 ## Adding a team member
 
-Choose one of the following ways to add a team member:
+There are two ways to add someone.
 
 ### Invite them by email
 
-Invite a member by email so they set up their own account. See [Invite Team Members](/core-setup/invitation-acceptance) to see how it works.
+Click **Invite Member**. Enter their email and choose a role. They get an email and set up their own account and password. Details: [Invite Team Members](/core-setup/invitation-acceptance).
 
-### Create Member
+### Create the account yourself
 
-Create the account yourself by entering the team member's details and assigning a [role](/core-setup/roles-and-permissions). They can sign in once the account is created.
+Click **Create Member**. The **Add Member** form opens. You fill in the person's details and choose a [role](/core-setup/roles-and-permissions). They can sign in as soon as you save.
 
 <Figure
   src="/core-setup/img/create-member.png"
@@ -28,72 +27,73 @@ Create the account yourself by entering the team member's details and assigning 
   caption="Image shows the Add Member form."
 />
 
-First their details:
+On the **Member Details** tab:
 
-- **Name** — their full name.
-- **Email** — they sign in with this, and it should be unique.
-- **WhatsApp number** — should also be unique. Each member needs their own number.
-- **Password** and **Confirm Password** — at least 8 characters. Use **Generate** if you would rather not think of one.
+- **Name**: their full name.
+- **Email**: they sign in with this. No two members can use the same email.
+- **WhatsApp number**: no two members can use the same number.
+- **Password** and **Confirm Password**: at least 8 characters. To get a strong password, click **Generate strong password**, then **Use this password**.
 
-Click **Next**. Then turn on **Is Admin**, or choose a [role](/core-setup/roles-and-permissions). After you choose a role, you see the permissions it includes. You also choose the member's **Platform access**. See the next section.
+Click **Next** to open the **Role** tab. Here you either turn on **Is Admin**, or choose a **Role**. When you choose a role, you see the permissions it includes. You also set the member's **Platform access**. See the next section. Then click **Save**.
 
 ## Choose which platforms a member can use
 
 Your workspace can talk to customers on WhatsApp, Messenger and Instagram. The **Platform access** field decides which of these a member can work on. You must fill it in.
 
 - The field appears after you choose a role. The role fills it in for you. You can change it for this member.
+- The list shows only the platforms your workspace has.
 - Tick the platforms the member should use. If you tick all of them, the field shows **All platforms**.
-- When an owner or admin chooses **All platforms**, it also includes any platform your workspace adds later.
+- If you can use every platform yourself and you tick them all, the member also gets any platform your workspace adds later.
 - If nothing is ticked, you see "Select at least one platform." Tick at least one before you save.
 
-The invite form has the same field. See [Invite Team Members](/core-setup/invitation-acceptance).
+When you invite someone by email, the invite form has the same **Platform access** field.
 
-Owners and admins can always use every platform. They don't need this field.
+Admins can always use every platform, so they don't have this field.
 
-{/* SCREENSHOT: /core-setup/img/team-member-platform-access.png — The Role step of the Add Member form, with a role chosen and the Platform access field open, showing WhatsApp, Messenger and Instagram ticked and "All platforms" in the field */}
+{/* SCREENSHOT: /core-setup/img/team-member-platform-access.png — The Role tab of the Add Member form, with a role chosen and the Platform access field open, showing WhatsApp, Messenger and Instagram ticked and "All platforms" in the field */}
 
-To check a member's platforms later, open their details. The **Platforms** row lists them.
+To check a member's platforms later, click their name. The **Platforms** row lists them.
 
 ### What a member sees with fewer platforms
 
 - They don't see the menu group for a platform they can't use.
-- If they open one of its pages, for example from a bookmark, they are moved to a platform they can use. They see the message "You do not have access to that platform."
-- The **Inbox**, lists, counts, notifications and dashboard numbers show only their platforms.
-- If they can't use WhatsApp, they don't see contacts' phone numbers. A phone number belongs to WhatsApp. It stays hidden even when the same contact also messages you on Messenger or Instagram.
-- You can't assign a conversation to someone who can't use that conversation's platform.
+- They may open one of its pages, for example from a bookmark. Then WaMatrix.io takes them to the same page for a platform they can use, or to the dashboard. They see the message "You do not have access to that platform."
+- **Chat**, lists, counts and notifications show only their platforms.
+- If they can't use WhatsApp, they don't see contacts' phone numbers. A phone number is WhatsApp information. So it stays hidden even when the same contact also writes to you on Messenger or Instagram.
+- You can't assign a chat to someone who can't use that chat's platform.
 
 <Note>
-A member who is not an admin can still add or edit team members if their role allows it. They can only give the platforms they can use themselves.
+A member who is not an admin can add or edit team members if their role allows it. They can only give out the platforms they can use themselves.
 </Note>
 
 ## Additional permissions for one member
 
-You can add extra permissions to a single member without making a new [role](/core-setup/roles-and-permissions).
+You can give one member extra permissions without making a new [role](/core-setup/roles-and-permissions).
 
-When adding or editing a team member, you can assign additional permissions that are not included in their [role](/core-setup/roles-and-permissions). These permissions apply only to that team member.
+On the **Role** tab, the permissions list starts with the role's permissions. Tick more boxes to add extra permissions. These extras apply only to this member.
 
-A member needs both the permission and access to the platform. For example, a member with campaign permissions but only Instagram access sees only Instagram campaigns.
+To use a feature, a member needs its permission **and** access to its platform. For example, a member with campaign permissions and only Instagram access sees only Instagram campaigns.
 
 ## Editing and removing members
 
-Click a member's name to open their details, or use the menu at the end of their row. You can change their [role](/core-setup/roles-and-permissions) at any time.
+Click a member's name to see their details. To change them, choose **Edit** from the three-dot menu (⋮) at the end of their row. You can change their [role](/core-setup/roles-and-permissions) at any time.
 
 <Warning>
-When you remove a member, their contacts and chats are not given to anyone else. Give their contacts and chats to another member first.
+When you remove a member, their contacts and chats stay in your workspace. But WaMatrix.io does not give them to another member, so nobody is assigned to them. Give them to another member before you remove the person. You can't undo a removal.
 </Warning>
 
 ## Team member limits
 
-Your plan decides how many members can be in your workspace. Pending invitations also count.
+Your plan decides how many members your workspace can have. Invitations that nobody has accepted yet also count. See [Free vs. paid](/getting-started/free-vs-paid).
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Roles & Permissions" icon="shield-check" href="/core-setup/roles-and-permissions">
-    Build roles that decide what your team can do.
+    Make roles that decide what your team can do.
   </Card>
 
   <Card title="Invite Team Members" icon="user-plus" href="/core-setup/invitation-acceptance">
-    Invite people by email and manage pending invitations.
+    Invite people by email and manage invitations that are still open.
   </Card>
 </CardGroup>

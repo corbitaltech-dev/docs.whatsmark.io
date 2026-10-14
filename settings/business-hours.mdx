@@ -7,7 +7,7 @@ keywords: ["WhatsMark", "business hours", "working hours", "holidays", "closed d
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Go to **Settings → Business Hours** to set when you are open. It is on the **Core Platform** tab of Settings.
+Go to **Settings → Business Hours** to set when you are open.
 
 <Figure
   src="/settings/img/business-hours-form.png"
@@ -18,17 +18,15 @@ Go to **Settings → Business Hours** to set when you are open. It is on the **C
 ## Where your business hours are used
 
 - **Appointments.** Customers can only book [appointments](/appointment-and-flow/appointments) during these hours.
-- **AI Assistants.** An [AI Assistant](/automation/ai-assistants) can check these hours before it answers. Turn on **Respect business hours** in the assistant's **Behaviour** tab. Then choose what it does under **Outside business hours**:
-  - **Reply as usual** — the assistant still answers. It knows you are closed, so it does not promise a fast reply from your team.
+- **AI Assistants.** *(Needs a paid plan.)* An [AI Assistant](/automation/ai-assistants) can check these hours before it answers. Turn on **Respect business hours** in the assistant's **Behaviour** tab. Then choose what it does under **Outside business hours**:
+  - **Reply as usual** — the assistant still answers. WaMatrix.io tells it that you are closed and asks it not to promise a fast reply from your team.
   - **Hand off to a human** — the assistant stops and passes the chat to your team.
   - **Stay silent** — the assistant does not answer.
 
-  This also applies to the [AI Assistant step](/automation/flow-steps/advanced#ai-assistant) in an automation flow. Closed dates count as outside your hours.
-
-The times follow your workspace time zone.
+  The [AI Assistant step](/automation/flow-steps/advanced#ai-assistant) in an automation flow also checks these hours. Closed dates count as outside your hours.
 
 <Note>
-Business hours do not change when campaigns send, or when your team can reply in chat.
+Business hours do not change when campaigns send, or when your team can reply in **Chat**.
 </Note>
 
 ## Weekly hours

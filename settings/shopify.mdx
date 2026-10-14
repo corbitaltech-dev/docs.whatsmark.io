@@ -9,10 +9,10 @@ import { Figure } from '/snippets/browser-frame.jsx';
 
 Connect your Shopify store to automatically send WhatsApp messages when customers **place an order, their order ships, their order is delivered, or they leave without completing a purchase**.
 
-Find it under **Settings → Integrations → Shopify**. **Integrations** is the second tab at the top of Settings.
+Find it under **Integrations → Shopify**. **Integrations** is in the main menu. It opens a page with one card for each tool you can connect.
 
 <Note>
-The Shopify integration is available on the **Professional plan**.
+The Shopify integration is available on the **Professional plan**. If your plan does not include it, the Shopify card says **Not in your plan**.
 </Note>
 
 ## Connecting your store
@@ -20,17 +20,17 @@ The Shopify integration is available on the **Professional plan**.
 Before you connect, make sure your Shopify checkout asks for a phone number. WaMatrix.io can only message a shopper on WhatsApp if it has their number.
 
 <Steps>
-<Step title="Enter your store domain">
-  In the **Store domain** field, enter your Shopify store domain exactly as Shopify gives it. It ends with `.myshopify.com`. For example, `your-store.myshopify.com`.
-
-  <Figure
-    src="/settings/img/connect-shopify.png"
-    alt="The Connect Shopify card with a numbered Before you connect list, a Store domain field and a Connect Shopify button"
-    caption="Image shows the Connect Shopify form."
-  />
+<Step title="Open the Shopify card">
+  Go to **Integrations**. On the **Shopify** card, click **Connect**. The **Connect Shopify** panel opens on the right.
 </Step>
 
-<Step title="Click Connect Shopify">
+<Step title="Enter your store domain">
+  In the **Shop domain** field, enter your Shopify store domain exactly as Shopify gives it. It ends with `.myshopify.com`. For example, `your-store.myshopify.com`.
+
+  {/* SCREENSHOT: /settings/img/connect-shopify-panel.png — The Integrations page with the Connect Shopify panel open on the right, showing the Shop domain field and the Cancel and Continue to Shopify buttons */}
+</Step>
+
+<Step title="Click Continue to Shopify">
   You are taken to Shopify.
 </Step>
 
@@ -45,18 +45,17 @@ Before you connect, make sure your Shopify checkout asks for a phone number. WaM
 </Step>
 
 <Step title="You come back automatically">
-  The Shopify card opens. The status label next to **Shopify** shows **Connecting…**, and then **Connected** a moment later.
-
-  The card also shows your **Store**, when it was **Connected**, and the **Last contact sync**.
+  You land on the **Shopify** page in WaMatrix.io. Your store domain is shown with **Connecting…** under it. After a moment, this changes to **Connected**. If it still says **Connecting…**, refresh the page.
 
   <Figure
     src="/settings/img/shopify-connected.png"
-    alt="The Shopify card with a Connected status label, the Store, Connected and Last contact sync details, a Disconnect button at the top and a Sync contacts button at the bottom"
+    alt="The Shopify Store card with the store domain marked Connected, a Disconnect button on the right, and a Sync contacts row below with its last synced date"
     caption="Image shows a connected Shopify store."
   />
 </Step>
 </Steps>
 
+To open this page again later, go to **Integrations** and click **Manage** on the Shopify card.
 
 ## What you can build
 
@@ -86,19 +85,19 @@ See [Merge fields](/messaging/merge-fields#available-fields) for everything you 
 
 ## Bringing in your existing customers
 
-Click **Sync contacts** at the bottom of the Shopify card. This brings the customers already in your store into [Contacts](/contacts/managing-contacts).
+On the **Shopify** page, click **Sync contacts**. This brings the customers already in your store into [Contacts](/contacts/managing-contacts).
 
 Only customers **with a phone number** are imported. The rest are skipped.
 
 <Figure
   src="/settings/img/shopify-connected.png"
-  alt="The connected Shopify card with the Last contact sync date and the Sync contacts button"
+  alt="The connected Shopify Store card with the Sync contacts row, its last synced date and the Sync contacts button"
   caption="Image shows the Sync contacts button on the connected store."
 />
 
 ## Disconnecting
 
-Click **Disconnect** at the top of the Shopify card. Then click **Disconnect** again to confirm. Shopify events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+Click **Disconnect** next to your store. Then click **Disconnect** again to confirm. Shopify events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
 
 ## What's next
 

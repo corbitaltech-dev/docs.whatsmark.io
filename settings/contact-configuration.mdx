@@ -7,7 +7,7 @@ keywords: ["WhatsMark", "WaMatrix.io", "contacts", "auto-create", "contact defau
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-In **Settings → Contacts**, on the **Core Platform** tab, you decide the default type, status, source, labels, groups, and assignee given to each new contact that's created automatically.
+Go to **Settings → Contacts**. Here you choose the starting type, status, source, labels, groups and assignee for each contact that WaMatrix.io creates for you.
 
 <Figure
   src="/settings/img/contact-configuration-form.png"
@@ -15,9 +15,11 @@ In **Settings → Contacts**, on the **Core Platform** tab, you decide the defau
   caption="Image shows the Global Defaults form on the Settings → Contacts page."
 />
 
+{/* SCREENSHOT: /settings/img/contact-configuration-form.png — RETAKE: the current image still shows "Lifecycle" and a "WhatsApp Channel" field. The form now shows Type, Status, Source, Assign To, Labels and Groups, with no WhatsApp Channel field */}
+
 ## Global Defaults
 
-These apply to every new contact, whichever channel they come from.
+These apply to every new contact, whichever channel they come from. One channel can also have its own defaults. On that platform's **Channels** page, open the three-dot menu (⋮) at the end of the channel's row and choose **Contact defaults**.
 
 - **Type** — what a new contact is called: **Guest**, **Lead** or **Customer**. See [Managing Contacts](/contacts/managing-contacts).
 - **Status** — the [status](/core-setup/statuses) a new contact starts in, like *New*.
@@ -33,19 +35,20 @@ Type, Status, Source and Assign To are all required. You cannot save until each 
 ### Ways to assign
 
 - **Unassigned** — No one is assigned. Any team member can reply to the contact.
-- **Round Robin** — New contacts go to your team members in turn, one after another. The account owner is left out. Deactivated team members are left out too. If the owner is the only user, the contact stays unassigned.
-- **Online Team Member** — Uses the same group of people as Round Robin. The contact goes to a team member who is online now. If nobody is online, it takes turns through the whole group.
+- **Round Robin** — New contacts go to your team members in turn, one after another.
+- **Online Team Member** — The contact goes to a team member who is online now. If nobody is online, it goes to your team members in turn, like Round Robin.
 - **Custom Team Member** — Assigns every new contact to the selected team member. Choose the team member from the list.
 
-Round Robin and Online Team Member only choose people who can see the platform the message came from. For example, a team member without Instagram in their **Platform access** never gets a new Instagram chat. See [Team and roles](/core-setup/team-and-roles).
+Round Robin and Online Team Member only choose people who can use the platform the message came from. For example, a team member without Instagram in their **Platform access** never gets a new Instagram chat. See [Choose which platforms a member can use](/core-setup/team-and-roles#choose-which-platforms-a-member-can-use).
 
 ## Where these defaults are used
 
 A contact is created with these settings whenever a new person reaches you, and not only through chat:
 
-- A message on [WhatsApp](/core-setup/channels/whatsapp), [Messenger](/core-setup/channels/messenger) or [Instagram](/core-setup/channels/instagram).
-- An order from [Shopify](/settings/shopify) or [WooCommerce](/settings/woocommerce).
+- A message on [WhatsApp](/core-setup/channels/whatsapp), [Messenger](/core-setup/channels/messenger) or [Instagram](/core-setup/channels/instagram). *(Instagram needs a paid plan.)*
+- An order from [Shopify](/settings/shopify) or [WooCommerce](/settings/woocommerce). *(Needs a paid plan.)*
 - A booking made through [Appointments](/appointment-and-flow/appointments).
+- A lead from [Facebook Lead Ads](/settings/facebook-lead-ads) or [IndiaMART](/settings/indiamart), unless that lead source has its own defaults. *(Needs a paid plan.)*
 
 ## What's next
 

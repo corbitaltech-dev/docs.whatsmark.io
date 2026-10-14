@@ -1,31 +1,31 @@
 ---
 title: "Roles & Permissions"
-description: "Choose what each team member can do in WaMatrix.io."
+description: "Choose what each team member can see and do in WaMatrix.io, and which platforms they can work on."
 icon: "shield-check"
-keywords: ["WhatsMark", "roles", "permissions", "access", "team", "restrict"]
+keywords: ["WhatsMark", "WaMatrix.io", "roles", "permissions", "access", "team", "restrict", "platform access"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-A role is a set of permissions that you give to team members. Create roles like **Sales Agent**, **Support Agent** or **Manager**. Then give each role to one or more members. When you change a role's permissions, everyone with that role gets the change.
+A role is a set of permissions. Permissions decide what a team member can see and do. Make roles like **Sales Agent**, **Support Agent** or **Manager**. Then give each role to one or more members. When you change a role's permissions, everyone with that role gets the change.
 
-A role also sets the starting **Platform access** for new members. Changing that works differently. See [Platform access](#platform-access) below.
+A role also sets the starting **Platform access** for new members. If you change it later, people who already have the role keep their own platform access. See [Platform access](#platform-access) below.
 
-Find it under **Setup → Roles** in the sidebar, or click **Manage Roles** on the Team page.
+Open **Setup → Roles**, or click **Manage Roles** on the Team page.
 
 <Figure
   src="/core-setup/img/role.png"
-  alt="The Roles page listing roles with Name, Members and Created columns, a button to add a role, and a row menu"
+  alt="The Roles page listing roles with Name, Members and Created columns, a button to create a role, and a row menu"
   caption="Image shows the Roles page with every role in your workspace."
 />
 
-The table shows each role's **Name**, how many **Members** hold it, and when it was **Created**.
+The table shows each role's **Name**, how many **Members** have it, and when it was **Created**.
 
 ## Create a role
 
 <Steps>
-<Step title="Click Add Role">
-  The button sits at the top right. A form opens on the right side of the screen.
+<Step title="Click Create Role">
+  The button is at the top right. The **Create Role** form opens on the right side of the screen.
 </Step>
 
 <Step title="Name the role">
@@ -33,61 +33,61 @@ The table shows each role's **Name**, how many **Members** hold it, and when it 
 </Step>
 
 <Step title="Choose the platforms">
-  In **Platform access**, tick the platforms this role's members can use: WhatsApp, Messenger or Instagram. New members with this role start with these platforms.
+  In **Platform access**, tick the platforms this role's members can use: WhatsApp, Messenger or Instagram. The list shows only the platforms your workspace has. New members with this role start with these platforms.
 </Step>
 
-<Step title="Check what this role can do">
-  Select the permissions for the role.
+<Step title="Choose what this role can do">
+  Under **Permissions**, tick the boxes for each feature.
 
   <Figure
     src="/core-setup/img/roles-create.png"
-    alt="The form for a new role with a role name field and a list of features with permission checkboxes"
+    alt="The Create Role form with a role name field and a list of features with permission checkboxes"
     caption="Image shows the Create Role form."
   />
 </Step>
 
 <Step title="Click Save">
-  The role is ready to assign.
+  The role is ready to give to members.
 </Step>
 </Steps>
 
 ## How the permissions work
 
-Most features offer the same four permissions:
+Most features have the same four permissions:
 
-- **View** — see the page and what's on it.
-- **Create** — add a new record.
-- **Edit** — change an existing record.
-- **Delete** — remove a record.
+- **View**: see the page and what is on it.
+- **Create**: add something new.
+- **Edit**: change something that already exists.
+- **Delete**: remove something.
+
+If you tick any other box for a feature, **View** is ticked for you. A member can't work on a page they can't see.
 
 ### Permissions that work differently
 
-The table below explains the extra permissions available for each feature.
+Some features have extra permissions:
 
 | Feature | Extra permission |
 | --- | --- |
-| **Contacts** | [**Import:**](/contacts/import-export#importing-contacts) imports contacts from a file. [**Initiate Chat:**](/contacts/managing-contacts#actions-on-a-single-contact) starts a new chat with a contact. **View Own:** members see only the contacts assigned to them. |
-| **Channels** | [**Connect**](/core-setup/channels/whatsapp#connecting-whatsapp) and [**Disconnect**](/core-setup/channels/messenger#managing-a-connected-page) the channels. |
-| **Team** | [**Invite:**](/core-setup/team-and-roles#invite-them-by-email) sends an email invitation. |
-| **Templates** | [**Load:**](/messaging/whatsapp-templates#adding-a-template) pulls your approved templates in from Meta. |
-| **WhatsApp Flows** | [**Submission View:**](/appointment-and-flow/whatsapp-flows#submissions) members can see customer responses. |
-| **Reply Bots** | No extra permissions. It has the usual **View**, **Create**, **Edit** and **Delete**. Your plan must include [Reply Bots](/automation/reply-bots). *(Available when your plan includes Reply Bots. See [Free vs. paid](/getting-started/free-vs-paid).)* |
+| **Contacts** | [**Import:**](/contacts/import-export#importing-contacts) add contacts from a file. [**Initiate Chat:**](/contacts/managing-contacts#actions-on-a-single-contact) start a new chat with a contact. **View Own:** see only the contacts assigned to them. |
+| **Channels** | [**Connect**](/core-setup/channels/whatsapp#connecting-whatsapp) and [**Disconnect**](/core-setup/channels/messenger#managing-a-connected-page) channels. Only the workspace owner can connect an [Instagram account](/core-setup/channels/instagram). |
+| **Team** | [**Invite:**](/core-setup/team-and-roles#invite-them-by-email) send an email invitation. |
+| **Templates** | [**Load:**](/messaging/whatsapp-templates#adding-a-template) click **Sync Templates** to bring in your approved WhatsApp templates from Meta. |
+| **WhatsApp Flows** | [**Submission View:**](/appointment-and-flow/whatsapp-flows#submissions) see what customers filled in. |
+| **Reply Bots** | No extra permissions. It has the usual **View**, **Create**, **Edit** and **Delete**. [Reply Bots](/automation/reply-bots) need a paid plan. See [Free vs. paid](/getting-started/free-vs-paid). |
 | **Message Activity Log** | Only **View** and **Delete**. Members can see the [message activity log](/core-setup/whatsapp-activity-log) and delete entries from it. |
-| **Chat** | Controls what members can do in the **Inbox**. It works differently. See [Chat](#chat) below. |
-
-Some rows show a lock and the words "Not available on your current plan". You can't give those permissions until your plan includes that feature.
+| **Chat** | Decides what members can do in **Chat**. It works differently. See [Chat](#chat) below. |
 
 ### Chat
 
-The **Chat** row controls the **Inbox**. It has no **View** box. A member can open the **Inbox** if they have **any** Chat permission, or if a conversation is assigned to them.
+The **Chat** row decides what a member can do in **Chat**. It has no **View** box. A member can open **Chat** if they have **any** Chat permission, or if a chat is assigned to them.
 
-- **Send Message** — reply in a conversation. Without it, the inbox is read-only.
-- **Send Template** — send an approved template.
-- **Run Flow** — start an automation or send a form inside a chat.
-- **Close** — close the conversation they have open.
-- **Clear** — delete every message in a conversation.
-- **Delete** — delete a whole conversation.
-- **Delete Message** — delete and restore individual messages.
+- **Send Message**: reply in a chat. Without it, the member can read but not reply.
+- **Send Template**: send a template.
+- **Run Flow**: start an automation or send a WhatsApp Flow in a chat.
+- **Close**: close the chat they have open.
+- **Clear**: delete every message in a chat.
+- **Delete**: delete a whole chat.
+- **Delete Message**: delete single messages, and bring deleted ones back. *(Bringing a message back needs a paid plan.)*
 
 ## Platform access
 
@@ -96,24 +96,24 @@ Each member can work only on the platforms in their **Platform access**. The rol
 - When you give someone a role, their platform access is filled in from the role. You can change it for that person.
 - If you change a role's platform access later, only new members get the new value. Members who already have the role keep their own platform access. To change it for them, edit each member on the [Team](/core-setup/team-and-roles#choose-which-platforms-a-member-can-use) page.
 
-A member needs both things to work on something: the permission, and access to its platform. For example, a member with campaign permissions but only Instagram access sees only Instagram campaigns.
+To use a feature, a member needs its permission **and** access to its platform. For example, a member with campaign permissions and only Instagram access sees only Instagram campaigns.
 
 ## Admins always have full access
 
-Roles apply only to team members. Team members marked as **Is Admin** always have full access, regardless of the role assigned to them. They can also use every platform.
+Roles apply only to team members. A member with **Is Admin** turned on can do everything, whatever role they have. They can also use every platform.
 
 <Warning>
-A role that members are using cannot be deleted. Move those members to a different role first, then delete it. The **Members** column shows you how many are affected.
+You can't delete a role that members are using. First give those members a different role, then delete it. The **Members** column shows how many people have the role.
 </Warning>
 
 ## What's next
 
 <CardGroup cols={2}>
   <Card title="Team" icon="users" href="/core-setup/team-and-roles">
-    Add members and give them the roles you have made.
+    Add members and give them the roles you made.
   </Card>
 
   <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
-    See how chat permissions play out in the inbox.
+    See how the Chat permissions work when your team replies.
   </Card>
 </CardGroup>

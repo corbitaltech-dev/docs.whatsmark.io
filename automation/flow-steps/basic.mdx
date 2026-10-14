@@ -24,7 +24,7 @@ Sometimes a step is already on the canvas, but the flow's platform can't send it
 
 > WhatsApp Flow is not supported on Instagram and will not be sent. Remove this node.
 
-The **Save** button stays off until you remove that step.
+You can't click **Save Flow** until you remove that step.
 
 ![Flow Builder with the Basic tab selected, showing the Text Message, Button Message, Call To Action, and WhatsApp Template tiles, and a flow connecting a Start Trigger to a Button Message whose three buttons lead to a Call To Action, an Ask Question, a Media Message, and a Text Message](/automation/img/basic/basic-flow-steps.png)
 
@@ -40,11 +40,11 @@ The **Message Text** field is required. The limit depends on the platform:
 
 - **WhatsApp:** up to **4,096 characters**.
 - **Messenger:** up to **2,000 characters**.
-- **Instagram:** up to **1,000 bytes**. A byte is a unit of size. A plain English letter or number counts as 1 byte. An emoji counts as 4 bytes, and a letter in some languages, such as Hindi, counts as 3. So a message with emojis fits fewer characters.
+- **Instagram:** up to **1,000 bytes**. A byte is a unit of size. Most English letters use 1 byte. An emoji uses up to 4 bytes, and letters in some languages, such as Hindi, use 3. So a message with emojis fits fewer letters.
 
 A counter below the field shows how much you've used. On Instagram it counts bytes. If your text is too long, you see: "Instagram messages can be at most 1000 bytes (an emoji counts as 4)."
 
-These limits come from Meta, not from WaMatrix.io. See Meta's [Instagram messaging documentation](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api).
+The WhatsApp and Instagram limits come from Meta, not from WaMatrix.io. See Meta's pages on [WhatsApp text messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages) and [Instagram messages](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
 
 ![Text Message settings on a WhatsApp flow, with a Message Text box containing a greeting that uses the contact first name merge field and a character counter reading 118 of 4096](/automation/img/basic/text-message-settings-whatsapp.png)
 
@@ -64,14 +64,14 @@ These limits come from Meta, not from WaMatrix.io. See Meta's [Instagram messagi
 
 **How to set it up.**
 
-1. Type the message in the **Message** box.
+1. Type the message in the **Message Text** box.
 2. Under **Buttons**, add each button and fill in its **Button Text** — for example, `Yes, continue`.
 3. **Value (payload)** is optional; leave it blank and it defaults to the button text.
 4. Back in the Flow Builder, each button has its own connection point on the right. You must connect each button to the flow step you want the chatbot to run when that button is selected.
 
 The **Message Text** field is required and supports up to **1,024 characters**. You can add up to **3 buttons**, and each Button Text is required and limited to **20 characters**.
 
-**On Instagram.** Your buttons show under the message, as on WhatsApp. If the message text is longer than 640 characters, Instagram can't show them as buttons. They are sent as quick replies instead. Quick replies are small tap options that disappear after the customer taps one. This is an Instagram rule. See Meta's [button template](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api/button-template) documentation.
+**On Instagram.** Your buttons show under the message, as on WhatsApp. If the message text is longer than 640 characters, Instagram can't show them as buttons. They are sent as quick replies instead. Quick replies are small tap options that disappear after the customer taps one. This is an Instagram rule. See Meta's [button template](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/button-template) documentation.
 
 ![Button Message settings with a Message Text box, a Buttons counter reading 3 of 3, and three buttons each with its Button Text and Value payload filled in](/automation/img/basic/button-message-settings.png)
 
@@ -96,7 +96,9 @@ Connect `Book a table` to an [**Ask Question**](/automation/flow-steps/ask#ask-q
 
 The Body Text, Button Text, and Button Link fields are all required. The Body Text supports up to **1,024 characters**, Button Text up to **20 characters**, and the optional Header and Footer up to **60 characters** each.
 
-**On Instagram.** This step works on WhatsApp and Instagram flows. It is hidden on Messenger flows. Instagram has no header or footer, so only the **Body Text** and the button are sent. Instagram also shows at most 640 characters of text above a button, so keep the Body Text short. Longer text is cut off.
+This step works on WhatsApp and Instagram flows. It is hidden on Messenger flows.
+
+**On Instagram.** Instagram has no header or footer, so only the **Body Text** and the button are sent. Meta allows at most 640 characters of text above a button. So WaMatrix.io cuts off any Body Text after 640 characters. Keep it short.
 
 ![Call To Action settings with a Summer Sale header, a Body Text box, a Button Text of Shop now, a Button Link, a footer, and the Show typing indicator switch turned on](/automation/img/basic/call-to-action-settings.png)
 
@@ -121,7 +123,7 @@ The Body Text, Button Text, and Button Link fields are all required. The Body Te
 
 **How to set it up.** Click the step and select your template. If it has [variables](/getting-started/concepts#the-building-blocks), fill in each **Body variable** field — type **@** to insert a [merge field](/messaging/merge-fields) like the contact's name. If the template has a media header, upload the image, video, or document here too.
 
-Some templates have a link button whose web address ends in a variable. For example, a **Track order** button that opens a page for each order. For each button like this, you see a field called **Button "Track order" URL parameter**, with your button's own text in the name. Fill it in with the part that changes, such as the order number. You can type **@** here too.
+Some templates have a link button whose web address ends in a variable. For example, a **Track order** button can open a different page for each order. For each button like this, you see a field called **Button "Track order" URL parameter**, with your button's own text in the name. Fill it in with the part that changes, such as the order number. You can type **@** here too.
 
 You must select a template before the flow can be saved. Length limits come from the template itself, which Meta has already approved.
 
@@ -156,7 +158,7 @@ Only **Published** flows on the same WhatsApp account as this automation appear 
 ![WhatsApp Flow settings with a flow selected from the dropdown, optional body text, and a Button Text field showing Open](/automation/img/basic/whatsapp-flow-settings.png)
 
 <Note>
-This step needs an open 24-hour conversation window with the customer. It works only on WhatsApp flows. It is hidden on Messenger and Instagram flows.
+This step works only if the customer messaged you in the last 24 hours. It works only on WhatsApp flows. It is hidden on Messenger and Instagram flows.
 </Note>
 
 ---

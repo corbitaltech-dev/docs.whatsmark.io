@@ -1,32 +1,34 @@
 ---
 title: "Connecting WhatsApp"
-description: "How to connect a WhatsApp Business Account to WaMatrix.io via Embedded Signup or manually, and manage its health and business profile."
+description: "Connect your WhatsApp Business account to WaMatrix.io through Meta's own pop-up window, then check its health and edit the profile your customers see."
 icon: "whatsapp"
-keywords: ["WhatsMark", "WhatsApp", "WABA", "embedded signup", "coexistence", "business profile"]
+keywords: ["WhatsMark", "WaMatrix.io", "WhatsApp", "WABA", "embedded signup", "coexistence", "business profile", "connect WhatsApp"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Connect a WhatsApp Business Account (WABA) so you can send and receive WhatsApp messages through WaMatrix.io.
+Connect your WhatsApp Business account so you can send and receive WhatsApp messages in WaMatrix.io. Each account you connect is called a **channel**. A channel is one connected account that WaMatrix.io sends and receives messages through.
 
 ## Before you connect
 
 <Tip>
-Make sure you have the following ready:
+Have these ready:
 
 - A Facebook account.
-- A **Meta Business account** — Business Verification is not mandatory to connect, but it is strongly recommended; without it your account stays on limited messaging tiers.
-- One mobile number for WhatsApp that must be either:
-  - **not connected to any WhatsApp account**, or
-  - **already connected to the WhatsApp Business App**
-- Your **WABA ID**, **Access Token**, **Meta App ID**, and **App Secret** (for manual connections only).
+- A Meta Business account.
+- A phone number for WhatsApp. It must be one of these:
+  - **not used on any WhatsApp account yet**, or
+  - **already on the WhatsApp Business app**. You can keep using the app. See [Coexistence mode](#coexistence-mode).
+- For the **Manual** method only: your WhatsApp Business Account ID, access token, Meta App ID and Meta App Secret.
 </Tip>
+
+You don't need to verify your business with Meta to connect. But verifying is one way to raise how many people you can message each day. This daily limit is a WhatsApp rule, not a WaMatrix.io one. Meta explains it under [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
 
 ## Connecting WhatsApp
 
 <Steps>
 <Step title="Click Connect WhatsApp">
-  In the main menu, go to **WhatsApp → Channels**. Click **Connect WhatsApp**.
+  In the main menu, open **WhatsApp → Channels**. Click **Connect WhatsApp** at the top right.
 
   <Figure
     src="/core-setup/channels/img/channels-connect.png"
@@ -36,27 +38,30 @@ Make sure you have the following ready:
 </Step>
 
 <Step title="Pick a connection method">
-  You'll see two tabs:
+  The **Connect a WhatsApp Account** panel opens. It has two tabs:
 
   <Figure
     src="/core-setup/channels/img/whatsapp-connect-methods.png"
-    alt="Connect a WhatsApp Account sheet shown twice: the Embedded Signup tab with a Standard Signup Launch button, and the Manual tab with fields for channel name, Business Account ID, access token, Meta App ID, and App Secret"
-    caption="Image shows the Connect a WhatsApp Account sheet with its Embedded Signup and Manual tabs."
+    alt="Connect a WhatsApp Account panel shown twice: the Embedded Signup tab with a Standard Signup Launch button, and the Manual tab with fields for channel name, Business Account ID, access token, Meta App ID and Meta App Secret"
+    caption="Image shows the Connect a WhatsApp Account panel with its Embedded Signup and Manual tabs."
   />
 
-  - **Embedded Signup** — connect using Meta's secure Embedded Signup flow.
-    - Sign in with your Facebook Business account.
-    - Choose or create a WhatsApp Business Account and number.
-    - Confirm the requested permissions.
-    The setup completes automatically and the popup closes when done.
-  - **Manual** — use this for advanced setups with existing WhatsApp Business API credentials.
-    - Enter the **WABA ID**.
-    - Paste the **Access Token**.
-    - Provide the **Meta App ID** and **App Secret**.
+  - **Embedded Signup**: Meta's own pop-up window walks you through it. This is the easiest way.
+    - Click **Launch** next to **Standard Signup**.
+    - In Meta's window, log in to Facebook and choose your business.
+    - Choose or add your WhatsApp number.
+    - Allow the permissions Meta asks for.
+
+    When you finish, WaMatrix.io creates the channel for you.
+  - **Manual**: use this only if you already have your own Meta app.
+    - Enter a **Channel Name** and your **Business Account ID (WABA ID)**.
+    - Paste your **Access Token**.
+    - Enter your **Meta App ID** and **Meta App Secret**.
+    - Click **Connect**.
 </Step>
 
-<Step title="Confirm it's connected">
-  Once connected, the channel appears in your Channels list with an **Active** status. Incoming messages now reach your workspace automatically.
+<Step title="Check that it's connected">
+  The channel appears in your Channels list with the status **Active**. New WhatsApp messages now arrive in [Chat](/messaging/live-chat).
 </Step>
 </Steps>
 
@@ -67,24 +72,38 @@ Make sure you have the following ready:
 />
 
 <Note>
-Both connection methods can be individually disabled by your plan. If a tab is missing or disable, that method isn't available on your current plan.
+If a tab or button shows **Locked**, your plan does not include that method. If it shows **Currently unavailable**, please contact support.
 </Note>
 
-<Note>
-Is the same WhatsApp Business account connected in another workspace? Only one workspace can receive its messages. The newest connection gets them. In the older workspace, the channel shows **Disconnected**. Its templates and flows are kept there. To move the messages back, connect the account again in that workspace.
-</Note>
+### Is the account already used in another workspace?
+
+A WhatsApp Business account can be used in only one WaMatrix.io workspace. If another workspace already uses it, WaMatrix.io does not connect it. You see a message that asks you to contact support.
+
+To move the account, disconnect it in the other workspace first. Then connect it here. If it still does not connect, contact support.
+
+### If a channel shows Suspended
+
+**Suspended** means WaMatrix.io could not sync the channel with Meta. Open the channel to see the reason. To fix it, choose **Remove** from the three-dot menu (⋮) at the end of the row. Then connect the account again.
 
 ## Coexistence mode
 
-If enabled on your plan, you can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Messages stay in sync between the app and WaMatrix.io.
+You can connect a number that already uses the WhatsApp Business app on your phone. This is called **coexistence mode**. You keep using the app as before. Messages stay in sync between the app and WaMatrix.io.
 
-Your contacts and chat history from the app are imported only once, when you first connect.
+To use it, choose your existing WhatsApp Business app number inside Meta's pop-up window, on the **Embedded Signup** tab.
+
+Your contacts and recent chats from the app are copied into WaMatrix.io once, when you first connect. These contacts count toward your plan's contact limit. See [Free vs. paid](/getting-started/free-vs-paid).
 
 ## Ice breakers
 
-Ice breakers are short questions a customer can tap to start a chat with you. To set them up, click the three dots at the end of a channel's row and choose **Manage ice breakers**. If the account has more than one number, you see one item for each number. Each one says **Ice breakers ·** followed by the number. Details: [Ice breakers](/core-setup/channels/ice-breakers).
+Ice breakers are short questions a customer can tap to start a chat with you. To set them up, open the three-dot menu (⋮) at the end of the channel's row and choose **Manage ice breakers**.
 
-## WABA health
+If the channel has more than one number, the menu shows one item for each number, such as **Ice breakers · +91 98765 43210**. Details: [Ice breakers](/core-setup/channels/ice-breakers).
+
+## The account page
+
+To open a channel's account page, click its name, or choose **View account** from the three-dot menu (⋮).
+
+### WABA Health
 
 <Figure
   src="/core-setup/channels/img/waba-health.png"
@@ -92,31 +111,40 @@ Ice breakers are short questions a customer can tap to start a chat with you. To
   caption="Image shows the WABA Health panel."
 />
 
-Open a connected WhatsApp channel to view:
+The **WABA Health** card shows whether your WhatsApp Business account can send messages. If Meta finds a problem, the card names it. For example: **Payment method required**, **Messaging limited** or **Business not verified**. Click **Fix in Meta Business Manager** to solve it on Meta's site.
 
-- **Quality rating**, review status, and business verification.
-- **Conversation analytics** for the account.
-- Per-number quality, if you have multiple phone numbers under the same WABA.
+The account page also shows:
 
-## Business Profile
+- **Analytics**: how many template messages Meta counted as sent and delivered. Meta's numbers arrive about a day late.
+- One card for each phone number, with its quality rating and messaging limit.
+
+### Business profile
 
 <Figure
   src="/core-setup/channels/img/business-profile.png"
   alt="Phone number card showing the profile photo and number, a GREEN quality badge, messaging throughput and daily limit, and the business name, description, and location"
-  caption="Image shows the phone number and business profile card."
+  caption="Image shows a phone number card with the business profile."
 />
 
-Go to a channel's **Profile** tab to edit the public WhatsApp Business Profile your contacts see: about text, address, description, email, websites, business vertical/category, and profile photo.
+Your business profile is what customers see when they open your details in WhatsApp. To change it, click the pencil button (**Edit profile**) on a phone number card. You can change:
 
-## Test message
+- the **Profile Photo**
+- **About**, a short line under your name
+- **Description**
+- **Address** and **Email**
+- up to two websites
+
+### Send a test message
 
 <Figure
   src="/core-setup/channels/img/send-test-message.png"
-  alt="Send Test Message dialog with a Template picker showing an approved marketing template and a Recipient Phone Number field, opened from the Test button on an active channel"
-  caption="Image shows the Send Test Message dialog with a template picker and recipient number field."
+  alt="Send Test Message panel with a Template picker showing an approved marketing template and a Recipient Phone Number field, opened from the Test button on an active channel"
+  caption="Image shows the Send Test Message panel."
 />
 
-Use the **Test** button on a channel to confirm the connection actually works end-to-end before relying on it. You'll pick an approved **template** and a **recipient number** — so this needs at least one approved template on the account.
+A test message proves the connection works before you rely on it. Click **Test** at the top of the account page. Choose an approved **Template**, enter a **Recipient Phone Number**, and click **Send Message**.
+
+This needs at least one approved template on the account. A **template** is a message format that Meta has checked and approved, with blanks for details like a name. See [WhatsApp Templates](/messaging/whatsapp-templates).
 
 ## What's next
 
@@ -126,6 +154,6 @@ Use the **Test** button on a channel to confirm the connection actually works en
   </Card>
 
   <Card title="Connecting Instagram" icon="instagram" href="/core-setup/channels/instagram">
-    Connect an Instagram account and answer its direct messages in the same inbox. *(Available when your plan includes Instagram.)*
+    Connect an Instagram account and answer its direct messages in Chat. *(Needs a paid plan.)*
   </Card>
 </CardGroup>
