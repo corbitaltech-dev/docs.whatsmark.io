@@ -1,0 +1,161 @@
+---
+title: "QR Codes"
+description: "Turn posters, packaging and ads into WhatsApp chats. Customers scan, tap Send, and the conversation starts."
+icon: "qr-code"
+keywords: ["WhatsMark", "WaMatrix.io", "QR code", "WhatsApp QR code", "short link", "wa.me link", "click to chat"]
+---
+
+Put a QR code on your shop counter, a poster, or a product box. When a customer scans it, WhatsApp opens a chat with your business and a message already typed in, like "Hi, I'd like to see today's offers". They only have to tap Send.
+
+Every code also comes with a short link, so you can share the same chat in your Instagram bio, an ad, or an email. WaMatrix.io counts the chats each code starts, so you can see which poster or ad is bringing customers in.
+
+<Note>
+You need a connected WhatsApp number first. In WaMatrix.io, a connected number is called a **channel**, and each QR code belongs to one channel. See [Channels](/core-setup/channels/whatsapp) to connect yours.
+</Note>
+
+## Creating a QR code
+
+<Steps>
+<Step title="Open QR Codes">
+  In the sidebar, click **QR Codes**.
+</Step>
+
+<Step title="Click Create QR Code">
+  It's at the top right. A panel opens on the right.
+
+  ![The Create QR Code panel with a WhatsApp channel dropdown, a Name field reading Shop Poster with the hint Only your team sees this, and a Pre-filled message box reading Hi, I'd like to see today's offers with a 34/140 character count](/messaging/img/qr-codes/qr-code-create-form.png)
+</Step>
+
+<Step title="Choose the WhatsApp channel">
+  In **WhatsApp channel**, pick the number customers will chat with. This can't be changed later.
+</Step>
+
+<Step title="Name the code">
+  In **Name**, enter something you'll recognise later, like *Shop counter poster*. Only your team sees it.
+</Step>
+
+<Step title="Write the pre-filled message">
+  In **Pre-filled message**, write what customers will send you, in up to 140 characters. Customers can change it before they tap Send.
+</Step>
+
+<Step title="Generate">
+  Click **Generate QR Code**. Your code appears in the list, ready to download or share.
+</Step>
+</Steps>
+
+<Tip>
+Give each code its own message, like *Hi, I saw your shop poster* and *Hi, I found you on Instagram*. You'll know at a glance where every chat came from. Two codes with the same message on the same number can't be told apart, so their chats are counted under only one of them.
+</Tip>
+
+<Note>
+The 140-character limit is a WhatsApp rule, not a WaMatrix.io one. Meta documents it under [QR codes and short links](https://developers.facebook.com/documentation/business-messaging/whatsapp/qr-codes/).
+</Note>
+
+## Managing your QR codes
+
+All your codes are listed on the **QR Codes** page. The counter at the top shows how many codes you've made and how many your plan includes.
+
+![The QR Codes page with a QR codes 8 / 50 counter, Sync from WhatsApp and Create QR Code buttons, a Filters button, and a table of eight codes on one WhatsApp channel. Four show an automation name and keyword in the Automation column, the others show No automation. One has an Imported badge, one has a Keyword removed from the automation warning, and each row shows its Chats Started count and Last Chat At date](/messaging/img/qr-codes/qr-codes-list.png)
+
+- **Name** — the code's name. Click it to edit the code. **Imported** means the code was brought in with **Sync from WhatsApp**.
+- **WhatsApp Channel** — the number customers chat with when they scan.
+- **Automation** — the automation that replies when someone scans, and its keyword. **No automation** means scanning opens a chat with your team.
+- **Chats Started** — how many chats the code has started. A chat counts when a customer sends the pre-filled message as it is.
+- **Last Chat At** — when the most recent chat from this code came in.
+- **Actions** — open the menu at the end of a row:
+  - **Copy link** — copy the short link to share.
+  - **Download SVG (print)** — the sharpest version, for posters, flyers and packaging.
+  - **Download PNG** — an image for your website or social posts.
+  - **Edit** — change the name or the message. The link and the code stay the same, so printed copies keep working.
+  - **Delete** — remove the code from WaMatrix.io and from WhatsApp. Anyone who scans a printed copy sees that the code has expired. This can't be undone.
+
+Want to see when each code was made? Turn on the **Created** column from **Columns** above the table.
+
+New customers who reach you through a code are saved as contacts with the source **WhatsApp QR code**, so you always know where they came from. Their chats arrive in [Live Chat](/messaging/live-chat) like any other.
+
+## Starting an automation from a QR code
+
+Link a QR code to an automation and every scan gets an instant reply, even when your team is busy. For example, if your automation starts on the keyword **OFFER**, the code's message is **OFFER**. A customer scans, taps Send, and the automation answers right away.
+
+<Steps>
+<Step title="Open the automation">
+  Go to **Automations** and open the automation in the builder. Its **Start Trigger** must start on a customer message, for example **On exact match** with a keyword. Save it. See [Flow Builder](/automation/flow-builder#the-start-trigger).
+</Step>
+
+<Step title="Click QR code">
+  The button is at the top of the builder. A panel opens on the right. You can also open it from the **Automations** list: open the menu at the end of the automation's row and click **QR code**.
+
+  ![The QR code panel for Welcome Message Automation, listing two codes for the keywords support and help, each with Copy link and Download buttons. Below, a Create another section has a Keyword dropdown showing help with Trigger: On exact match, and a warning that the automation won't start if the customer changes the message](/messaging/img/qr-codes/automation-qr-code-panel.png)
+</Step>
+
+<Step title="Choose what the code sends">
+  If the automation starts on a keyword, pick it in **Keyword**. With **When message contains**, you can also write a friendlier message that includes the keyword, like *Hi! I'm interested in OFFER*. For other triggers, write the message customers will send.
+
+  If the automation runs on more than one WhatsApp channel, tick the ones you want. You get one code per channel.
+</Step>
+
+<Step title="Generate">
+  Click **Generate QR Code**. If you ticked more than one channel, the button reads **Create 2 QR codes**, and so on. The code appears under **QR codes for this automation**, with **Copy link** and **Download** buttons. It's also listed on the **QR Codes** page, with the automation's name in the **Automation** column.
+</Step>
+</Steps>
+
+### When you change the automation
+
+Your printed codes are protected. If you change the automation's keyword and it now has only one keyword, the code updates itself and keeps the same link, so everything you've already printed keeps working.
+
+If a code can't start its automation any more, it shows a warning on the [QR Codes](#managing-your-qr-codes) page, such as **Automation paused** or **Keyword removed from the automation**. Turn the automation back on or fix its trigger, and the warning clears.
+
+<Warning>
+Pausing or deleting an automation that has QR codes asks you to confirm first. The codes still open a chat with you, but nothing replies automatically. When you delete the automation, you can also choose to delete its codes.
+</Warning>
+
+## Bringing in codes from WhatsApp Manager
+
+Already made QR codes in WhatsApp Manager, Meta's own tool? Click **Sync from WhatsApp** at the top of the page to bring them in. Codes you've deleted there are removed here too.
+
+Synced codes show an **Imported** badge and work like any other code. They arrive with a name like *Imported 7QK2MZXR4PLA1*, so give each one a clear name with **Edit**.
+
+## Finding QR codes
+
+- **Search** — type a code's name or message.
+- **Filters** — narrow the list by **WhatsApp channel** or **Automation**. Pick **Needs attention** to see codes that can't start their automation.
+
+## Common questions
+
+<AccordionGroup>
+<Accordion title="Can I see how many people scanned my code?">
+  WhatsApp doesn't report scans to businesses, to protect its users' privacy. So WaMatrix.io counts the next best thing: the chats each code starts, shown in **Chats Started**. Meta explains this under [QR codes and short links](https://developers.facebook.com/documentation/business-messaging/whatsapp/qr-codes/).
+</Accordion>
+
+<Accordion title="Will printed codes still work if I change the message?">
+  Yes. Editing a code keeps the same link and the same code, so anything you've already printed keeps working with the new message.
+</Accordion>
+
+<Accordion title="What if a customer changes the message before sending?">
+  The chat still reaches you in Live Chat. It just isn't counted in **Chats Started**, and it won't start a keyword automation.
+</Accordion>
+
+<Accordion title="Are QR codes included in the Free Forever plan?">
+  Yes. Paid plans let you keep more codes. See [Free vs. paid](/getting-started/free-vs-paid).
+</Accordion>
+</AccordionGroup>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    Send a message to a group of contacts.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    Reply to the chats your QR codes start.
+  </Card>
+
+  <Card title="Flow Builder" icon="workflow" href="/automation/flow-builder">
+    Build the automation a QR code starts.
+  </Card>
+
+  <Card title="Sources" icon="tag" href="/core-setup/sources">
+    See where your new contacts come from.
+  </Card>
+</CardGroup>

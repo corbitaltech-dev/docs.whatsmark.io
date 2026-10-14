@@ -121,6 +121,7 @@
               "messaging/whatsapp-templates",
               "messaging/messenger-templates",
               "messaging/instagram-templates",
+              "messaging/qr-codes",
               "messaging/campaigns",
               "messaging/live-chat",
               "messaging/merge-fields"
