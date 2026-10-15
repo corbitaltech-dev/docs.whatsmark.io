@@ -109,7 +109,8 @@
             "pages": [
               "contacts/managing-contacts",
               "contacts/import-export",
-              "contacts/bulk-actions-and-merge"
+              "contacts/bulk-actions-and-merge",
+              "contacts/follow-ups"
             ]
           },
           {
