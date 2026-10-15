@@ -147,7 +147,8 @@
             "group": "Appointments & Flows",
             "pages": [
               "appointment-and-flow/whatsapp-flows",
-              "appointment-and-flow/appointments"
+              "appointment-and-flow/appointments",
+              "appointment-and-flow/form-builder"
             ]
           },
           {
