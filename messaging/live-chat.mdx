@@ -77,6 +77,16 @@ Hover over any message to open its menu:
 Deleting message only removes the message from your screen. The customer still sees it on their phone. You have 2 minutes to restore it.
 </Note>
 
+## React to a message
+
+React to a customer's message with an emoji instead of typing a reply. Hover over the message, click the smiley icon, and choose a reaction (👍 ❤️ 😂 😮 😢 🙏). Click **+** to see the full emoji list. Click a reaction again to remove it.
+
+The reaction shows under the message. When a customer reacts to your message, it shows the same way.
+
+<Note>
+Reactions work on WhatsApp only. You can react to messages up to 30 days old, but only for customers whose 24-hour window is open.
+</Note>
+
 ## The reply time limit
 
 WhatsApp and Messenger do not let you message a customer any time you want. You can only reply for a set time after they message you. This stops businesses from spamming people.
@@ -111,20 +121,21 @@ Above the box you get basic formatting: bold, italic, strikethrough, and lists.
 
 <Figure
   src="/messaging/img/chat/chat-composer-annotated.png"
-  alt="The reply box with its formatting bar on top and the nine tool icons below numbered 1 to 9, and the microphone button on the right"
+  alt="The reply box with its formatting bar on top and the ten tool icons below numbered 1 to 10, and the microphone button numbered 11 on the right"
   caption="Image shows the reply box with its formatting bar and tool icons."
 />
 
 1. **Emoji** — add an emoji.
 2. **Attach** — send an image, video, audio file, or document. This opens your [Media Library](/media/media-library), where you can upload a new file or pick one you have already used.
-3. **Location** — send a location pin.
-4. **Contact card** — send contact details to the customer. You can pick one of your saved contacts, or type in new details by hand. Details you type here are only sent in the message and are not saved to your contacts.
-5. **Canned reply** — pick a saved reply you use often. You can also type `/` to open this. See [Canned Replies](/core-setup/canned-replies).
-6. **Run a flow** — start an automation in this chat. See [Chatbot Flows](/automation/overview).
-7. **Send form** — send a form the customer can fill in, like a booking form. (WhatsApp only) See [WhatsApp Flows](/appointment-and-flow/whatsapp-flows).
-8. **AI assist** — rewrite or translate your message with AI. See [AI assist](#ai-assist) below.
-9. **Send template** — send an approved template. See [WhatsApp Templates](/messaging/whatsapp-templates) and [Messenger Templates](/messaging/messenger-templates).
-10. **Voice notes** — When the box is empty, the send button turns into a microphone. Click it to record, then send it as a voice note.
+3. **Sticker** — send a sticker (WhatsApp only). Pick a `.webp` file from your [Media Library](/media/media-library). Keep it under 100 KB, or under 500 KB if it is animated, and use 512 × 512 pixels. Stickers are sent without a caption.
+4. **Location** — send a location pin.
+5. **Contact card** — send contact details to the customer. You can pick one of your saved contacts, or type in new details by hand. Details you type here are only sent in the message and are not saved to your contacts.
+6. **Canned reply** — pick a saved reply you use often. You can also type `/` to open this. See [Canned Replies](/core-setup/canned-replies).
+7. **Run a flow** — start an automation in this chat. See [Automation](/automation/overview).
+8. **Send form** — send a form the customer can fill in, like a booking form. (WhatsApp only) See [WhatsApp Flows](/appointment-and-flow/whatsapp-flows).
+9. **AI assist** — rewrite or translate your message with AI. See [AI assist](#ai-assist) below.
+10. **Send template** — send an approved template. See [WhatsApp Templates](/messaging/whatsapp-templates) and [Messenger Templates](/messaging/messenger-templates).
+11. **Voice notes** — When the box is empty, the send button turns into a microphone. Click it to record, then send it as a voice note.
 
 
 ## AI assist
@@ -146,6 +157,19 @@ A meter shows how many AI tokens you have left from your plan's limit.
   alt="The AI assist popover showing Quick Actions for improve writing, fix grammar, make formal, make casual and make shorter, a Translate option, your own saved prompts, a monthly AI token meter, and a Manage prompts link"
   caption="Image shows the AI assist popover with its quick actions and token meter."
 />
+
+## What the customer sees while you reply
+
+On WhatsApp, the customer's phone can show two small signals while your team works in a chat:
+
+- **Blue ticks** once someone on your team opens their messages.
+- **typing…** while you type a reply.
+
+Both are on by default, and you can turn either off in **Settings → Read Receipts**. They need a paid plan. See [Read receipts](/settings/read-receipts).
+
+## Blocking a customer
+
+If someone keeps sending messages you don't want, open the **⋯** menu at the top of the chat and choose **Block**. They can no longer message that WhatsApp number, and you can't message them until you unblock them. See [Blocked users](/core-setup/channels/blocked-users).
 
 ## Searching in a chat
 
@@ -231,11 +255,12 @@ You can also group people into teams like Sales or Support, and send a chat to t
 
 To create a team, click the **+** next to Team Inbox in the sidebar, give it a name, and pick the members.
 
-### Closing, clearing and deleting
+### Closing, clearing, blocking and deleting
 
 - **Close** — close the chat you have open and go back to the empty screen.
 - **Clear chat** — delete all the messages but keep the chat.
 - **Delete conversation** — remove the whole chat from your inbox.
+- **Block** — stop this customer from messaging your WhatsApp number. See [Blocked users](/core-setup/channels/blocked-users).
 
 <Note>
 Only owners and admins can assign chats or manage teams. Other actions depend on your role — see [Roles & Permissions](/core-setup/roles-and-permissions).
@@ -264,5 +289,13 @@ You never need to refresh the page. New messages, delivery ticks, unread counts 
 
   <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
     Send messages to many contacts at once instead of one conversation at a time.
+  </Card>
+
+  <Card title="Read receipts" icon="check-check" href="/settings/read-receipts">
+    Choose whether customers see blue ticks and a typing bubble while you reply.
+  </Card>
+
+  <Card title="Blocked users" icon="ban" href="/core-setup/channels/blocked-users">
+    Stop a customer from messaging a number, and see everyone you've blocked.
   </Card>
 </CardGroup>
