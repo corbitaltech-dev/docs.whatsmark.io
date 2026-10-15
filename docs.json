@@ -101,7 +101,8 @@
             "group": "Channels",
             "pages": [
               "core-setup/channels/whatsapp",
-              "core-setup/channels/messenger"
+              "core-setup/channels/messenger",
+              "core-setup/channels/blocked-users"
             ]
           },
           {
@@ -193,6 +194,7 @@
               "settings/google-accounts",
               "settings/inbound-media",
               "settings/opt-out",
+              "settings/read-receipts",
               "settings/shopify",
               "settings/woocommerce",
               "settings/account-and-danger-zone",

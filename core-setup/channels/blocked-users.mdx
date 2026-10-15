@@ -1,0 +1,71 @@
+---
+title: "Blocked users"
+description: "Stop a customer from messaging your WhatsApp number, and see everyone you have blocked in the Blocked users list."
+icon: "ban"
+keywords: ["WhatsMark", "WaMatrix.io", "block", "unblock", "blocked users", "spam", "WhatsApp number"]
+---
+
+Block a customer who keeps sending you unwanted messages. Until you unblock them, they can't message your WhatsApp number and you can't message them.
+
+Example: you block a customer on your Sales number. They can no longer message Sales, but they can still message your Support number. To stop that too, block them on Support as well.
+
+## Block a customer
+
+<Steps>
+  <Step title="Open the chat">
+    Go to **Chat** and open the conversation.
+  </Step>
+
+  <Step title="Choose Block">
+    Open the **⋯** menu at the top of the chat and choose **Block**.
+
+    ![The menu at the top of a chat, with Block, Clear chat and Delete conversation options](/core-setup/channels/img/blocked-users-chat-menu.png)
+  </Step>
+
+  <Step title="Confirm">
+    Check the name and number, then click **Block**.
+  </Step>
+</Steps>
+
+The chat now shows **Blocked on this number**. To undo it, choose **Unblock** in the same menu.
+
+<Note>
+  You can only block a customer who sent you a message in the last 24 hours. If their last message is older, you can't block them. This is WhatsApp's rule.
+</Note>
+
+## Block many customers at once
+
+1. On the **Contacts** page, select the customers you want to block.
+2. Click **Bulk Actions**.
+3. In **WhatsApp block**, pick the WhatsApp number and choose **Block**.
+
+Customers who haven't messaged you in the last 24 hours are skipped. To unblock many at once, choose **Unblock** instead. See [Bulk actions and merge](/contacts/bulk-actions-and-merge).
+
+## See who is blocked
+
+1. Go to **Channels** and open a connected number.
+2. Click the **Blocked users** card.
+
+The list shows each blocked customer, the number, the date, and who blocked them. Use **Filters** to see one number, and the action on a row to unblock someone.
+
+![The Blocked users list with a Sync from WhatsApp button and a table showing four customers with their WhatsApp user, number, blocked date, source and who blocked them](/core-setup/channels/img/blocked-users-list.png)
+
+### Blocked outside WaMatrix.io
+
+If you blocked someone in the WhatsApp Business app, they won't show in this list yet. Choose the number in **Filters**, then click **Sync from WhatsApp** to add them.
+
+<Warning>
+  You may not be able to unblock a customer who hasn't messaged you in the last 24 hours. If WhatsApp refuses, the customer stays blocked and you see the reason.
+</Warning>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Opt-out" icon="ban" href="/settings/opt-out">
+    Let customers stop your marketing messages by replying with a word like STOP.
+  </Card>
+
+  <Card title="Read receipts" icon="check-check" href="/settings/read-receipts">
+    Choose whether customers see blue ticks and a typing bubble.
+  </Card>
+</CardGroup>
