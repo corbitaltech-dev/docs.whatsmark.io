@@ -5,9 +5,7 @@ icon: "reply"
 keywords: ["WhatsMark", "WaMatrix.io", "reply bots", "comment to DM", "instagram comments", "auto reply", "private reply", "story mention", "story reply", "facebook comments"]
 ---
 
-People comment on your posts and reply to your stories at any time, day or night. A Reply Bot answers them for you. It can post a reply under the comment, send the person a private message, or start a flow. *(Needs a paid plan. See [Free vs. paid](/getting-started/free-vs-paid).)*
-
-Reply Bots answer comments, mentions and stories. When someone sends you a direct message (DM), which is a private message, your [Automations](/automation/overview) answer it instead.
+People comment on your posts and reply to your stories at any time, day or night. A Reply Bot answers them for you. It can post a reply under the comment, send the person a private message, or start a flow.
 
 ## What a Reply Bot can answer
 
@@ -16,8 +14,8 @@ Each Reply Bot listens for one **Trigger**:
 | Trigger | When it runs | Instagram | Facebook Page |
 |---|---|---|---|
 | **Comment on a post** | Someone comments on one of your posts or reels. | Yes | Yes |
-| **Mention in a comment** | Someone tags your account (@yourname) in a comment on someone else's post. | Yes | No |
-| **Story mention** | Someone tags your account in their story. | Yes | No |
+| **Mention in a comment** | Someone mention your account (@yourname) in a comment on someone else's post. | Yes | No |
+| **Story mention** | Someone mention your account in their story. | Yes | No |
 | **Story reply** | Someone replies to one of your stories. | Yes | No |
 
 A Facebook Page can only use **Comment on a post**. Meta only shares mentions and stories for Instagram accounts, not for Facebook Pages.
@@ -43,8 +41,6 @@ A Facebook Page can only use **Comment on a post**. Meta only shares mentions an
   Go to **Instagram → Reply Bots** or **Messenger → Reply Bots**. Click **Add Reply Bot**, then choose the account from the list (**Your Instagram accounts** or **Your Messenger accounts**).
 
   {/* SCREENSHOT: /automation/img/reply-bots-list.png — The Instagram Reply Bots page with the Add Reply Bot button and the All Reply Bots table (All, Active, Inactive tabs; Name, Trigger, Account, Active, Updated and Actions columns), including one row showing the Waiting for your next post badge */}
-
-  If you see **Reply Bot Limit Reached**, your plan has no room for another Reply Bot. Click **Upgrade Plan**, or delete a Reply Bot you no longer need.
 
   The form has three steps: **Trigger & matching**, **Content** and **Review**. On a wide screen, the **Live Preview** panel on the right shows what people will see.
 </Step>
@@ -132,10 +128,6 @@ Turn on **Only on first interaction** to answer only a person's first comment. T
 
 **Contact types** limits the bot to **Lead**, **Customer** or **Guest** contacts. Leave it empty to answer everyone.
 
-<Note>
-  A person who is not in your contacts yet has no contact type. A bot limited to contact types will not answer them. Leave **Contact types** empty if you want to reach new people. For **Mention in a comment**, always leave it empty, because the person who tags you is not a contact.
-</Note>
-
 ## Choose what it sends
 
 These settings are on the **Content** step.
@@ -144,8 +136,6 @@ These settings are on the **Content** step.
 |---|---|---|
 | **Public reply** | Posted under their comment. Everyone can see it. | **Comment on a post**, **Mention in a comment** |
 | **Direct message** | Sent privately to the person. | **Comment on a post**, **Story mention**, **Story reply** |
-
-For a new bot, **Direct message** is on and **Public reply** is off. For **Mention in a comment**, a public reply is the only option.
 
 <Warning>
   Everyone can read a public reply. Never put private details, such as a phone number or email address, in it.
@@ -165,11 +155,9 @@ For a comment, the direct message is sent as a private reply. Meta allows only o
 
 You can write up to 10 versions of each message. Click **Add another version** to add one. WaMatrix.io picks one version for each comment or story. Sending the exact same words again and again can look like spam, so a few versions help.
 
-Each version can be up to 1,000 bytes ([emojis use more](/core-setup/channels/instagram#instagram-rules-to-know)).
+Each version can be up to 1,000 bytes.
 
 Click **Generate with AI** to have AI rewrite your first message into up to 3 new versions. This uses your monthly AI allowance. See [Free vs. paid](/getting-started/free-vs-paid).
-
-You can add [merge fields](/messaging/merge-fields), such as the person's first name. In a reply to a mention, merge fields stay empty, because that person is not a contact.
 
 ### Ask for a follow or an email (story triggers only)
 
@@ -301,50 +289,6 @@ Facebook Pages need two extra permissions to answer comments. If you connected y
 ### See what your bots sent
 
 Open **Activity Log** in the Instagram or Messenger menu. Messages sent by a Reply Bot show the category **Reply Bot**. If a message failed, the log shows why. See [Message activity log](/core-setup/whatsapp-activity-log).
-
-## If your Reply Bot didn't reply
-
-Check these, in order:
-
-1. The bot is switched on in the **Active** column, and there is no warning icon next to its name.
-2. The page doesn't show **Reconnect to keep replying**.
-3. The comment came from another account. Comments from your own account are ignored.
-4. The comment is less than 7 days old.
-5. The comment matches the bot's **Scope** and **Match mode**. A **My next post** bot that still shows **Waiting for your next post** answers nothing yet.
-6. **Contact types** is empty, or the person is already a contact of that type.
-7. If **Only on first interaction** is on, this is the person's first comment.
-8. Another Reply Bot didn't answer first. Only one bot answers each comment or story. The [Activity Log](/core-setup/whatsapp-activity-log) shows which bot sent the reply.
-9. If the bot starts a flow, the person is not already in the middle of a flow on that account. If they are, the bot doesn't start the flow.
-
-## Common questions
-
-<AccordionGroup>
-  <Accordion title="What is the difference between a Reply Bot and an automation?">
-    A Reply Bot answers comments, mentions and stories. An automation (a flow) answers direct messages, and it can have many steps, such as questions and buttons.
-
-    You can use both together. A Reply Bot can start a flow to carry on the chat. See [Flow Builder](/automation/flow-builder).
-  </Accordion>
-  <Accordion title="Why did my message land in their message requests?">
-    This is an Instagram rule. If the person doesn't follow your account, Instagram puts the private reply in their message requests, not their main inbox.
-  </Accordion>
-  <Accordion title="Can I send more messages after the first private reply?">
-    Yes, after the person writes back. Until then, Meta allows only one private message in reply to their comment. A flow can use a **Wait for Reply** step to continue the chat.
-  </Accordion>
-  <Accordion title="Does everyone who comments become a contact?">
-    No. A person who comments becomes a contact only when a Reply Bot answers their comment. People who tag you in a comment never become contacts.
-
-    People who tag you in their story or reply to your story have sent you a message. So they are added like anyone else who messages you.
-  </Accordion>
-  <Accordion title="What happens to a story reply that no Reply Bot answers?">
-    It arrives in **Chat** like any other message, and your [Automations](/automation/overview) can answer it.
-  </Accordion>
-  <Accordion title="Can I use story triggers on my Facebook Page?">
-    No. Meta only shares mentions and stories for Instagram accounts. A Facebook Page can use **Comment on a post**.
-  </Accordion>
-  <Accordion title="Why did a reply to a mention arrive as a direct message?">
-    Sometimes Instagram delivers a mention as a message instead, mostly for accounts connected with **Continue with Instagram**. The mention then appears in **Chat**, and the bot sends its reply text there as a direct message.
-  </Accordion>
-</AccordionGroup>
 
 ## Where to next
 

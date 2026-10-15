@@ -5,12 +5,12 @@ icon: "layout-template"
 keywords: ["WhatsMark", "WaMatrix.io", "Instagram templates", "Instagram DM", "quick replies", "buttons", "carousel", "media", "saved messages"]
 ---
 
-An Instagram template is a message you save once and send again and again. It can be plain text, or it can have buttons, cards or a file. You use it in Chat, in campaigns, in flows and in Reply Bots. *(Needs a paid plan.)*
+An Instagram template is a message you save once and send again and again. It can be plain text, or it can have buttons, cards or a file. You use it in Chat, in campaigns, in flows and in Reply Bots.
 
 Instagram templates are not like [WhatsApp templates](/messaging/whatsapp-templates). Meta does not check or approve them. They are just saved messages, so you can use a template as soon as you save it.
 
 <Note>
-You can send an Instagram template only while you can still reply to the person. Instagram lets a business reply for **24 hours** after the person's last message. After that, you must wait for them to message you again. This is Meta's rule, not a WaMatrix.io one. Meta explains it in the [Instagram messaging guide](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
+You can send an Instagram template only while **24 hours open window**. After that, you must wait for them to message you again. This is Meta's rule, not a WaMatrix.io one. Meta explains it in the [Instagram messaging guide](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
 </Note>
 
 ## Before you start
@@ -78,7 +78,7 @@ There are five types. Each one suits a different kind of message.
 
 A plain message, such as a greeting or an order update.
 
-Write your message in the **Message** box. It can be up to **1,000 bytes** long. A byte is a unit of text size. Most English letters use 1 byte. An emoji uses up to 4 bytes, and letters in some languages, such as Hindi, use 3. The counter under the box shows how much you have used.
+Write your message in the **Message** box. It can be up to **1,000 bytes** long. Most English letters use 1 byte. An emoji uses up to 4 bytes, and letters in some languages, such as Hindi, use 3. The counter under the box shows how much you have used.
 
 {/* SCREENSHOT: /messaging/img/instagram/instagram-template-text.png — The Content step for a Text template, with a Message box containing "Hi {{1}}, how can we help you today?", the byte counter and the Add variable button */}
 
@@ -128,16 +128,12 @@ One file: a picture, a video, a sound clip or a PDF. Choose the **File type**, t
 | **Audio** | AAC, M4A or WAV | 25 MB |
 | **PDF file** | PDF only | 25 MB |
 
-Meta's guide lists PNG and JPEG for images, but not GIF. Use PNG or JPEG when you can.
-
 You can also add a **Caption**. This is optional text. WaMatrix.io sends it as a separate message, right after the file.
 
 {/* SCREENSHOT: /messaging/img/instagram/instagram-template-media.png — The File section with File type set to Image, an uploaded picture, and the optional Caption box below it */}
 
 <Note>
-Most limits on this page come from Instagram (Meta): 13 quick replies of up to 20 characters, 3 buttons, 640 characters of button text, 10 cards with 80-character titles and subtitles, 1,000 bytes of text, and the file sizes. Meta lists them in its guides for [quick replies](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/quick-replies), [buttons](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/button-template), [carousels](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/generic-template) and [text and files](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
-
-Two limits are WaMatrix.io's own: button titles of up to 20 characters, and links that must start with **https://**.
+Most limits on this page come from Meta. Meta lists them in its guides for [quick replies](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/quick-replies), [buttons](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/button-template), [carousels](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/generic-template) and [text and files](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
 </Note>
 
 ## What happens when someone taps
@@ -183,26 +179,6 @@ The **Instagram Templates** page lists all your templates. It shows the **Templa
 - **Filter the list.** Open the filters to show one **Account** or one **Type**. Choose **All accounts** or **All types** to see everything again.
 - **Edit a template.** Open the three-dot menu (⋮) at the end of the row and click **Edit**. You can change everything except the message type.
 - **Delete a template.** Open the three-dot menu (⋮) and click **Delete**. A campaign that has not sent yet can't send it. Flows and Reply Bots that send it stop sending it.
-
-## Common questions
-
-<AccordionGroup>
-  <Accordion title="Does Meta need to approve my Instagram templates?">
-    No. Meta does not review Instagram templates. You can use a template as soon as you save it.
-  </Accordion>
-  <Accordion title="Can I use a template to message someone after 24 hours?">
-    No. On WhatsApp, an approved template can start a new chat. On Instagram, it can't. Instagram lets you reply only within 24 hours of the person's last message. When they message you again, you can send templates again.
-  </Accordion>
-  <Accordion title="Why can't I save my message? It says the text is too long.">
-    Instagram counts text in bytes, not letters. Emoji and letters in some languages use more than 1 byte each. Shorten the text or remove some emoji. A **Buttons** template also has a 640-character limit for its text.
-  </Accordion>
-  <Accordion title="Why does it say my variables are out of order?">
-    Variables must be numbered `{{1}}`, `{{2}}`, `{{3}}` with no gaps. For example, you can't use `{{1}}` and `{{3}}` without `{{2}}`. Renumber them, or use **Add variable** so the numbers are always right.
-  </Accordion>
-  <Accordion title="Why is my flow not in the Start a flow list?">
-    The list shows only active flows that run on this Instagram account. In [Automations](/automation/overview), turn the flow on. Or open the flow's three-dot menu (⋮), click **Edit**, and add this account under **Channels**.
-  </Accordion>
-</AccordionGroup>
 
 ## What's next
 

@@ -5,7 +5,7 @@ icon: "instagram"
 keywords: ["WhatsMark", "WaMatrix.io", "Instagram", "Instagram DM", "Instagram professional account", "connect Instagram", "Facebook Page", "Instagram Login", "story mentions"]
 ---
 
-Connect your Instagram account to WaMatrix.io and answer your direct messages (DMs) in **Chat**, next to your other conversations. A DM is a private message that someone sends to your Instagram account. *(Needs a paid plan.)*
+Connect your Instagram account to WaMatrix.io and answer your direct messages (DMs) in **Chat**, next to your other conversations.
 
 Each Instagram account you connect is called a **channel**. It counts toward the number of accounts your plan lets you connect.
 
@@ -13,7 +13,7 @@ Each Instagram account you connect is called a **channel**. It counts toward the
 
 <CardGroup cols={2}>
   <Card title="Instagram DMs in Chat" icon="messages-square">
-    Read and answer Instagram messages next to your WhatsApp and Messenger chats.
+    Read and answer Instagram messages.
   </Card>
   <Card title="Story replies and mentions" icon="reply">
     See when someone replies to your story, mentions you in theirs, or shares a post or reel with you.
@@ -32,7 +32,7 @@ Each Instagram account you connect is called a **channel**. It counts toward the
   <Accordion title="A Business or Creator account" icon="briefcase">
     You can connect an Instagram **Business** or **Creator** account. These are called professional accounts.
 
-    You can't connect a personal account. If yours is personal, switch it to a professional account in the Instagram app settings first.
+    You can't connect a personal account. If account is personal, switch it to a professional account in the Instagram app settings first.
   </Accordion>
   <Accordion title="Allow access to messages" icon="toggle-right">
     In the Instagram app, go to **Settings → Messages and story replies → Message controls**. Under **Connected tools**, turn on **Allow access to messages**.
@@ -68,8 +68,6 @@ Each Instagram account you connect is called a **channel**. It counts toward the
     - **Continue with Facebook**: for Instagram accounts linked to a Facebook Page.
     - **Continue with Instagram**: for Instagram accounts without a Facebook Page.
 
-    You only see the choices that your workspace can use. If you see the message **Not set up yet**, Instagram is in your plan, but it is not set up for your workspace yet. Contact support.
-
     {/* SCREENSHOT: /core-setup/channels/img/instagram-connect-sheet.png — The Connect Instagram panel with two cards: Continue with Facebook and Continue with Instagram, each with a Continue button */}
 
   </Step>
@@ -104,20 +102,6 @@ Each Instagram account you connect is called a **channel**. It counts toward the
   **Instagram → Channels → Connect Instagram**, choose Facebook or Instagram, log in, and wait for **Active**.
 </Check>
 
-## If the connection fails
-
-You see the message **Could not connect channel** with a reason. Here is what each reason means.
-
-| Message | What to do |
-| --- | --- |
-| You have reached your channel limit. Please upgrade your plan. | Disconnect an account you no longer use, or upgrade. See [Free vs. paid](/getting-started/free-vs-paid). |
-| The login was cancelled before the account was connected. | Click **Connect Instagram** and try again. Finish the login this time. |
-| The connect link expired or was already used. Please start again. | Click **Connect Instagram** and start again. |
-| Failed to exchange OAuth token with Meta. Please try again. | The login with Meta did not finish. Click **Connect Instagram** and try again. |
-| This Instagram account cannot be connected. Please contact support if you believe this is an error. | The account, or its Facebook Page, is already connected to another WaMatrix.io workspace. If that workspace is yours, disconnect it there first. If not, contact support. |
-| No Instagram professional account was found for that login. | Switch the account to Business or Creator in the Instagram app. If you used Facebook, check that your Instagram account is linked to your Page. Or try **Continue with Instagram**. |
-| Your Facebook Pages could not be loaded. Please try again. | Try again. If it keeps happening, contact support. |
-
 ## What arrives in Chat
 
 Once the account is **Active**, these come into [Chat](/messaging/live-chat):
@@ -135,14 +119,11 @@ Most of these rules come from Instagram (Meta). Where WaMatrix.io adds its own r
 
 - **You can reply for 24 hours.** Instagram lets you reply within 24 hours of the person's last message. After that, you must wait for them to write again. Unlike WhatsApp, no template can restart the chat.
 - **The person must message you first.** You can't start a new chat with someone on Instagram. To reach people who comment on your posts, see [Reply Bots](/automation/reply-bots).
-- **Text can be up to 1,000 bytes.** A byte is a unit of text size. Most English letters use 1 byte. An emoji uses up to 4 bytes, and letters in some languages, such as Hindi, use 3. A longer message is not sent at all. It is not cut short.
 - **Files have size limits.** Meta accepts:
   - images (PNG or JPEG) up to 8 MB
   - videos (MP4, OGG, AVI, MOV or WebM) up to 25 MB
   - audio (AAC, M4A or WAV) up to 25 MB
   - PDF documents up to 25 MB
-
-  WaMatrix.io also lets you choose a GIF image. Meta's guide doesn't list GIF, so use PNG or JPEG when you can.
 
 These next points are how WaMatrix.io handles Instagram chats:
 
@@ -206,12 +187,6 @@ The last card checks that Instagram is sending this account's messages to WaMatr
   If you connected with Facebook, keep your Instagram account linked to that Facebook Page. Your Instagram messages reach WaMatrix.io through that link.
 </Tip>
 
-### Keeping Instagram Login access active
-
-Accounts connected with **Continue with Instagram** have access that lasts for a limited time. WaMatrix.io renews it for you automatically, before it runs out.
-
-If Meta refuses to renew it, the account becomes **Suspended**. The account page shows "Instagram access has expired. Please reconnect the account." To fix it, [reconnect the account](#reconnect-an-account).
-
 ## Reconnect an account
 
 Reconnect when an account is **Suspended**, or when **Access** shows "Expired — reconnect".
@@ -222,46 +197,6 @@ Reconnect when an account is **Suspended**, or when **Access** shows "Expired �
 WaMatrix.io updates the account you already have. Your contacts and chats stay as they are, and it doesn't use another place in your plan.
 
 If you see **Channel Limit Reached** instead, your plan has no free place for the reconnect. Open the three-dot menu (⋮) on the suspended account and click **Remove**. Then connect the account again.
-
-## Common questions
-
-<AccordionGroup>
-  <Accordion title="Can I connect a personal Instagram account?">
-    No. Instagram only allows Business and Creator accounts to be connected. Switch your account to a professional account in the Instagram app settings, then connect it.
-  </Accordion>
-
-  <Accordion title="Which option should I choose?">
-    If your Instagram account is linked to a Facebook Page, choose **Continue with Facebook**. If not, choose **Continue with Instagram**. You don't need a Facebook Page.
-  </Accordion>
-
-  <Accordion title="Does WaMatrix.io see my password?">
-    No. You log in on Meta's own Facebook or Instagram page. WaMatrix.io never sees your password. It only gets the access you allow.
-  </Accordion>
-
-  <Accordion title="Can I switch to the other way of connecting later?">
-    Yes. Click **Connect Instagram**, choose the other option, and log in with the same Instagram account. WaMatrix.io updates the account you already have.
-  </Accordion>
-
-  <Accordion title="Why can't I reply to this person?">
-    More than 24 hours have passed since their last message. This is Instagram's rule. The chat shows a message that the reply window has closed. You can reply again as soon as they send a new message.
-  </Accordion>
-
-  <Accordion title="Can I send the first message to someone?">
-    No. On Instagram, the person must message you first. To reach people who comment on your posts, use [Reply Bots](/automation/reply-bots). *(Needs a paid plan.)*
-  </Accordion>
-
-  <Accordion title="My account has been Pending for a long time. What do I do?">
-    The list updates by itself, so you don't need to reload the page. If it stays on **Pending**, contact support. If it changes to **Suspended**, [reconnect the account](#reconnect-an-account).
-  </Accordion>
-
-  <Accordion title="Can I connect more than one Instagram account?">
-    Yes. Click **Connect Instagram** again for each account. Each one counts toward the number of accounts your plan lets you connect. See [Free vs. paid](/getting-started/free-vs-paid).
-  </Accordion>
-
-  <Accordion title="If I disconnect, do I keep my contacts?">
-    Yes. Your contacts and chat history stay in WaMatrix.io. The account stops receiving Instagram messages, and its place in your plan becomes free again. If you connect the same account later, WaMatrix.io picks it up again.
-  </Accordion>
-</AccordionGroup>
 
 ## What's next
 
