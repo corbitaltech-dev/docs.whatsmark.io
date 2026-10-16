@@ -1,13 +1,19 @@
 ---
 title: "Instagram templates"
-description: "Save Instagram messages once, with buttons, cards or files, and send them again from Chat, campaigns, flows and Reply Bots."
+description: "Create and manage reusable Instagram message templates to streamline customer communication."
 icon: "layout-template"
 keywords: ["WhatsMark", "WaMatrix.io", "Instagram templates", "Instagram DM", "quick replies", "buttons", "carousel", "media", "saved messages"]
 ---
 
-An Instagram template is a message you save once and send again and again. It can be plain text, or it can have buttons, cards or a file. You use it in Chat, in campaigns, in flows and in Reply Bots.
+Templates can include text, buttons, cards, and files, allowing you to deliver consistent messages across Chat, Campaigns, Flows, and Reply Bots.
 
-Instagram templates are not like [WhatsApp templates](/messaging/whatsapp-templates). Meta does not check or approve them. They are just saved messages, so you can use a template as soon as you save it.
+## How Instagram templates work
+
+Save frequently used messages as templates and reuse them whenever needed. Instead of creating the same message repeatedly, select a saved template to simplify communication and improve workflow efficiency.
+
+## No Meta approval required
+
+Unlike [WhatsApp message templates](/messaging/whatsapp-templates), Instagram templates do not require Meta approval. Once saved, they are ready to use across supported WaMatrix.io features.
 
 <Note>
 You can send an Instagram template only while **24 hours open window**. After that, you must wait for them to message you again. This is Meta's rule, not a WaMatrix.io one. Meta explains it in the [Instagram messaging guide](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
@@ -89,7 +95,7 @@ A message with up to **13** short answers under it. The customer taps one answer
 Click **Add quick reply** to add an answer. For each answer, fill in:
 
 - **Quick reply**. The text on the answer, up to **20** characters.
-- **When tapped**. What happens when the customer taps it. See [What happens when someone taps](#what-happens-when-someone-taps).
+- **When tapped**. What happens when the customer taps it. See [What happens when someone taps a button](#what-happens-when-someone-taps-a-button).
 
 {/* SCREENSHOT: /messaging/img/instagram/instagram-template-quick-replies.png — The Quick replies section with two answers, "Track my order" and "Talk to us", each with a When tapped list, and the counter showing 2 of 13 */}
 
@@ -119,7 +125,7 @@ Click **Add card** to add a card. Each card has:
 
 ### Media
 
-One file: a picture, a video, a sound clip or a PDF. Choose the **File type**, then upload the file or choose it from your [Media Library](/media/media-library).
+Upload a single file, such as an image, video, audio clip, or PDF. Select the **File Type**, then upload a file from your device or choose an existing file from your [Media Library](/media/media-library).
 
 | File type | Formats WaMatrix.io accepts | Largest size |
 | --- | --- | --- |
@@ -136,14 +142,14 @@ You can also add a **Caption**. This is optional text. WaMatrix.io sends it as a
 Most limits on this page come from Meta. Meta lists them in its guides for [quick replies](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/quick-replies), [buttons](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/button-template), [carousels](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api/generic-template) and [text and files](https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/messaging-api).
 </Note>
 
-## What happens when someone taps
+## What happens when someone taps a button
 
-Each quick reply and each button has a **When tapped** setting. You can choose:
+Each quick reply and button has a **When tapped** setting that determines what happens when a customer interacts with it. You can choose from the following actions:
 
-- **Quick reply** (the default). Nothing extra happens. The tap sends the button text back to you, as if the customer typed it. If the text matches a keyword in one of your [automations](/automation/overview), that automation answers.
-- **Send a message**. WaMatrix.io replies straight away with a message you write in **Message to send**.
-- **Start a flow**. A flow starts straight away. Pick it in **Flow to start**. Only active flows on this Instagram account are listed.
-- **Open a website**. Opens a web page inside Instagram. Enter it in **Website link**. The link must start with **https://**. This choice is for buttons and carousel buttons only. Quick replies can't open a website.
+- **Quick reply (default):** Sends the selected button text to your inbox as if the customer had typed it. If the text matches a keyword in one of your [automations](/automation/overview), the corresponding automation responds automatically.
+- **Send a message:** Automatically sends a predefined response when the customer taps the button. Enter your message in the **Message to send** field.
+- **Start a flow:** Starts a selected flow as soon as the customer taps the button. Choose the flow from the **Flow to start** list. Only active flows for the connected Instagram account are available.
+- **Open a website:** Opens a web page within Instagram when the customer taps the button. Enter the destination URL in the **Website link** field. The URL must start with `https://`. This action is available for buttons and carousel buttons, but not for quick replies.
 
 ## Variables
 
@@ -159,7 +165,7 @@ You fill in the real values each time you send the template. You can type fixed 
 
 ## Where you can use a template
 
-- **Chat.** In a chat, click the **Send template** button in the message box. The **Send Instagram template** window opens. Choose the template, fill in any variables, and send it. See [Chat](/messaging/live-chat).
+- **Chat.** Click on the **Send template** button in the message box. The **Send Instagram template** window opens. Choose the template, fill in any variables, and send it. See [Chat](/messaging/live-chat).
 - **Campaigns.** Choose **Template Campaign** and pick the template. Only people who messaged you in the last 24 hours receive it. See [Campaigns](/messaging/campaigns).
 - **Flows.** Add the **Send Template** step to a flow. See [Basic flow steps](/automation/flow-steps/basic).
 - **Reply Bots.** A Reply Bot can send a saved template when someone mentions you in a story or replies to your story. See [Reply Bots](/automation/reply-bots). *(Needs a paid plan.)*
