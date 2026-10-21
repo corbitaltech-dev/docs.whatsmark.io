@@ -2,7 +2,7 @@
 title: "Advanced Flow Steps"
 description: "Control what happens next in your chatbot by adding decisions, delays, actions, and connections to other systems."
 icon: "sliders-horizontal"
-keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow"]
+keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "assign to team", "round robin", "sequence", "connect flow"]
 ---
 
 **Advanced** category flow steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, or start another flow.
@@ -181,6 +181,28 @@ Leave a field blank to keep whatever is already saved. The **Relation Type**, **
 **Example.** On a **First message** trigger, add the contact to your `Sales group` so the team can pick the conversation up.
 
 ![A Start Trigger set to First message, connected to an Assign Group step that adds the contact to the Sales group](/automation/img/advance/assign-group.png)
+
+### Assign to Team
+
+**What it does.** Gives the contact and their chat to the next member of a team, in turn. The chat is also put under that team in **Team Inbox**. Only the person who gets the chat is notified, and the chat shows a note such as "Assigned to Priya by Automation".
+
+**When to use it.** Use it when the flow knows which team should help. For example, send people who choose **Sales** in a button menu to your Sales team, and people who choose **Support** to your Support team.
+
+**How to set it up.** Pick one or more teams in **Teams**. Members of all the teams you pick take turns. Someone in more than one team is put under the first team you picked. Teams are the groups you make in **Chat**, under **Team Inbox**. See [Assign it to a team](/messaging/live-chat#assign-it-to-a-team).
+
+**Skip if already assigned** is on at first. It leaves the chat alone if someone is already handling it. Turn it off to always give the chat to the next team member.
+
+If a team has been deleted or has no members, the step does nothing and the flow carries on.
+
+**Required fields**
+
+- At least one team must be selected in **Teams**.
+
+![Assign to Team settings with the Teams box showing Sales (1 member) picked, the hint that members of all selected teams take turns, and the Skip if already assigned switch turned on](/automation/img/advance/assign-team-settings.png)
+
+**Example.** A **Start Trigger** on the keyword `sales` leads to an **Assign to Team** step set to your Sales team, then a **Text Message**: "Thanks! Someone from our sales team will reply shortly."
+
+![A Start Trigger on the keyword sales, connected to an Assign to Team step set to Sales, then a Text Message saying Thanks! Someone from our sales team will reply shortly](/automation/img/advance/assign-team.png)
 
 ---
 

@@ -2,7 +2,7 @@
 title: "Contact Defaults"
 description: "Set the default details applied to new contacts that are created automatically when someone messages you."
 icon: "user-cog"
-keywords: ["WhatsMark", "WaMatrix.io", "contacts", "auto-create", "contact defaults", "assignment"]
+keywords: ["WhatsMark", "WaMatrix.io", "contacts", "auto-create", "contact defaults", "assignment", "round robin", "team groups"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
@@ -11,7 +11,7 @@ In **Settings → Contacts**, you decide the default type, status, source, label
 
 <Figure
   src="/settings/img/contact-configuration-form.png"
-  alt="Global Defaults form showing Type, status, source, assign to, WhatsApp channel, labels, and groups fields"
+  alt="The Global Defaults card with a note about auto-created contacts, then the Type, Status, Source, Assign To, Labels and Groups fields, set to Guest, New, WhatsApp and Unassigned"
   caption="Image shows the Global Defaults form on the Settings → Contacts page."
 />
 
@@ -19,16 +19,17 @@ In **Settings → Contacts**, you decide the default type, status, source, label
 
 These apply to every new contact, whichever channel they come from.
 
+One channel can also have its own defaults. On the **Channels** page, click the ⋮ menu on that channel's row, choose **Contact defaults**, and turn on **Override global defaults**. The fields, including **Team groups**, work the same way there.
+
 - **Type** — what a new contact is called: **Guest**, **Lead** or **Customer**. See [Managing Contacts](/contacts/managing-contacts).
 - **Status** — the [status](/core-setup/statuses) a new contact starts in, like *New*.
 - **Source** — where the contact came from. See [Sources](/core-setup/sources).
 - **Assign To** — who handles the new contact. See [Ways to assign](#ways-to-assign).
-- **WhatsApp Channel** — pick one of your connected WhatsApp channels.
 - **Labels** — optional. Add one or more [labels](/core-setup/labels) to every new contact.
 - **Groups** — optional. Put every new contact into one or more [groups](/core-setup/groups).
 
 <Note>
-Type, Status, Source, Assign To and WhatsApp Channel are all required. You cannot save until each one is filled in.
+Status, Source and Assign To are required. You cannot save until each one is filled in.
 </Note>
 
 ### Ways to assign
@@ -37,6 +38,28 @@ Type, Status, Source, Assign To and WhatsApp Channel are all required. You canno
 - **Round Robin** — New contacts are assigned to team members one by one.
 - **Online Team Member** — Assigns the contact to a team member who is currently online. If no one is online, it assigns the contact to any team member.
 - **Custom Team Member** — Assigns every new contact to the selected team member. Choose the team member from the list.
+
+### Share contacts within a team
+
+When you choose **Round Robin** or **Online Team Member**, a **Team groups** box appears. Use it to share new contacts only among the people in one or more teams, such as Sales. Teams are the groups you make in **Chat**, under **Team Inbox**. See [Assign it to a team](/messaging/live-chat#assign-it-to-a-team).
+
+Each team in the list shows how many members it has, like *Sales (3 members)*.
+
+- Only members of the teams you pick take turns.
+- If you leave **Team groups** empty, everyone in your workspace takes turns, including the owner.
+- If you pick teams, the owner takes turns only if they are in one of those teams.
+- Someone who is in more than one of your teams still gets one turn. Their chats are put under the first team you picked, so pick your main team first.
+- If every team you picked has been deleted, new contacts stay unassigned. WaMatrix.io does not share them with everyone instead.
+
+![The Global Defaults card with Assign To set to Round Robin. Below it, the Team groups box has the Sales (1 member) team picked, with the hint: Only members of the selected teams take turns. With no team selected, all team members take turns. Someone in several teams is filed under the first team you picked](/settings/img/contact-defaults-team-groups.png)
+
+## New chats follow the contact
+
+When a new chat starts, WaMatrix.io gives it to the team member assigned to the contact. If you use **Team groups**, the chat is also put under that person's team, so everyone in the team sees it in **Team Inbox**.
+
+This happens only when the chat is first created. If you later change who a contact is assigned to, their existing chats stay where they are. To move a chat, assign it again in [Chat](/messaging/live-chat#assigning-chats).
+
+If a contact is **Unassigned**, their new chat is unassigned too.
 
 ## Where these defaults are used
 
