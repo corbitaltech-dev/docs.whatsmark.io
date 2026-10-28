@@ -130,7 +130,7 @@ Shopify and WooCommerce triggers are paid features and need a connected store. S
 
 ### WhatsApp Commerce
 
-This flow runs when something happens to an order a customer sent from your [WhatsApp catalog](/commerce/overview). *(Needs a paid plan.)*
+This flow runs when something changes with a customer's order sent from your [WhatsApp catalog](/commerce/overview).
 
 ![Start Trigger settings with Trigger Source set to WhatsApp Commerce and Order Event set to New order, above a note about the 24-hour messaging window](/automation/img/commerce-trigger.png)
 
@@ -138,16 +138,13 @@ Pick one **Order Event**:
 
 | Event | Fires when |
 | --- | --- |
-| **New order** | A customer sends you a cart. |
+| **New order** | A customer sends you an order. |
 | **Order paid** | A payment for the order is confirmed. |
 | **Payment failed** | The customer tried to pay and it didn't go through. |
 | **Order status changed** | The order's status changes, for example to **Shipped**. |
 
-The flow runs only for orders on the WhatsApp numbers you picked for this flow. It runs in that customer's chat.
+**What it's for.** Thank customers for their orders, request payment, or notify them when an order ships. 
 
-**What it's for.** Thank the customer for their order, ask them to pay, or tell them when their order ships. Two flow steps work only with this trigger, because they act on the order that started the flow: [**Request Payment**](/automation/flow-steps/integrations#request-payment) and [**Update Order Status**](/automation/flow-steps/integrations#update-order-status). Use the [**WhatsApp Order**](/messaging/merge-fields#available-fields) merge fields to add the order number or total to a message.
-
-**Example.** On **New order**, send a **Text Message** that thanks the customer, then a **Request Payment** step.
 
 <Warning>
 **Order status changed** also fires when a flow changes the status, or when a paid order moves to **Processing** by itself. A flow that changes the status on this event can start itself, or another flow, again.

@@ -44,7 +44,7 @@ After clicking **Create Template**, choose a template type:
 - [**Header Template**](#header-template) – For marketing and utility messages like offers, updates, and notifications.
 - [**Carousel Template**](#carousel-template) – For displaying multiple products or a catalog in scrollable cards.
 - [**Authentication**](#authentication) – For sending OTP codes for user verification.
-- [**Commerce Template**](#commerce-templates) – For showing products from your catalog. Shown only when your plan includes WhatsApp Catalog.
+- [**Commerce Template**](#commerce-templates) – For products from your catalog, payment requests and order status updates. Shown only when your plan includes WhatsApp Catalog.
 
 <Figure
   src="/messaging/img/template-pick-type.png"
@@ -259,7 +259,7 @@ Follow these steps to build one:
 
 ## Commerce templates
 
-Commerce templates show products from your [catalog](/commerce/catalog). Once Meta approves them, they reach customers even when the customer hasn't messaged you in the last 24 hours. *(Needs a paid plan.)*
+Commerce templates show products from your [catalog](/commerce/catalog), ask for payment, or tell a customer their order status changed. Once Meta approves them, they reach customers even when the customer hasn't messaged you in the last 24 hours. *(Needs a paid plan.)*
 
 Click **Create Template**, choose **Commerce Template**, then click **Continue**.
 
@@ -269,7 +269,7 @@ Fill in:
 
 - **Name**: use lowercase letters, numbers and underscores, such as `summer_catalog`.
 - **WhatsApp account** and **Language**.
-- **Template type**: one of the four types below.
+- **Template type**: one of the six types below.
 - **Header**: only for a **Product list**. Up to 60 characters.
 - **Message Body**: the main text. Click **Add Variable** to add `{{1}}`, `{{2}}` and so on for values you fill in when you send. Use the buttons above the box for bold, italic and strikethrough.
 - **Footer** (optional): not used for a **Product carousel**.
@@ -282,16 +282,27 @@ Fill in:
 | **Single product** | Shows one product, chosen when you send. | **View** |
 | **Product list** | Shows up to 30 products in sections, chosen when you send. | **View items** |
 | **Product carousel** | Shows product cards the customer swipes through, chosen when you send. | None |
+| **Payment request** | Asks the customer to pay for an order. India only. | **Review and Pay** |
+| **Order status** | Tells the customer their order status changed. | None |
 
-All four are in Meta's Marketing category. The preview on the right shows how the message looks in WhatsApp.
+The four product types are in Meta's Marketing category. **Payment request** and **Order status** are in the Utility category. The preview on the right shows how the message looks in WhatsApp.
+
+In **Payment request** and **Order status** templates, WaMatrix.io fills in the variables for you when it sends them:
+
+- `{{1}}` the order number
+- `{{2}}` the total
+- `{{3}}` the customer's name
+- `{{4}}` the order status
 
 Click **Submit for review**. Meta reviews it like any other template.
 
 <Note>
 Commerce templates can't be edited after you submit them. Delete the template and make a new one instead.
+
+**Payment request** and **Order status** templates are sent for one order at a time, so you can't use them in campaigns.
 </Note>
 
-Where they are used: [Send products](/commerce/send-products) in chat and [campaigns with products](/messaging/campaigns#campaigns-with-products).
+Where they are used: [Send products](/commerce/send-products), [campaigns with products](/messaging/campaigns#campaigns-with-products), [asking for payment](/commerce/payments#ask-for-payment) and [order status updates](/commerce/orders#is-the-customer-told).
 
 ## Submitting for approval
 
