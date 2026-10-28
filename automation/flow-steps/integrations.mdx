@@ -5,10 +5,10 @@ icon: "cloud"
 keywords: ["WhatsMark", "WaMatrix.io", "flow steps", "google sheets", "google calendar", "integrations", "automation"]
 ---
 
-The **Integrations** category flow steps lets your chatbot work with Google services. Automatically save customer information to Google Sheets or create Google Calendar events. These steps run in the background and don't send any message to the customer.
+The **Integrations** category flow steps lets your chatbot work with other services. Automatically save customer information to Google Sheets, create Google Calendar events, or work with [WhatsApp orders](#whatsapp-orders).
 
 <Note>
-Both steps need a connected Google account. Set one up first in [Google Accounts](/settings/google-accounts).
+The Google Sheets and Calendar Event steps need a connected Google account. Set one up first in [Google Accounts](/settings/google-accounts).
 </Note>
 
 ## Google Sheets
@@ -145,6 +145,85 @@ This step only works in a flow whose **Start Trigger** is a WooCommerce event. I
 
 On **abandoned cart** events, most order fields are empty — only **Order total** and **Item count** have values, so check one of those.
 </Note>
+
+## WhatsApp orders
+
+These three steps work with your [WhatsApp catalog](/commerce/overview) and the orders customers send from it. *(Needs a paid plan.)*
+
+- They work only in WhatsApp flows.
+- [Generate with AI](/automation/generate-with-ai) does not add them. Add them yourself.
+- **Request Payment** and **Update Order Status** need the [**WhatsApp Commerce**](/automation/flow-builder#whatsapp-commerce) trigger, because they act on the order that started the flow.
+
+### Send Products
+
+**What it does.** Sends products from your catalog to the customer.
+
+**When to use it.** Use it to show products when a customer asks what you sell, or to suggest more products after an order.
+
+**How to set it up.** Choose what to **Send**:
+
+- **Whole catalog**: a **View catalog** button. You can pick one product to show as the picture. This is optional.
+- **One product**: one product card.
+- **Product list**: up to 30 products. Fill in the **Header**, and optionally a **Section title**.
+- **Product carousel**: 2 to 10 product cards.
+
+Then pick the products and write the **Message**.
+
+**Required fields**
+
+- **Send** and at least one product. A carousel needs at least 2.
+- **Message** for a **Product list** or **Product carousel**, and **Header** for a **Product list**.
+
+![Send Products settings with Send set to Whole catalog, School Bag picked as the thumbnail product, an empty optional Message box, and the note that it is delivered only if the customer messaged in the last 24 hours](/automation/img/integrations/send-products-settings.png)
+
+Only products Meta has approved are listed. The step sends only if the customer messaged you in the last 24 hours. It can't use a template.
+
+**Example.** On the keyword `menu`, send a **Product carousel** of your three best sellers with the message "Here are our favourites this week."
+
+### Request Payment
+
+**What it does.** Asks the customer to pay for the order that started the flow.
+
+**When to use it.** Use it right after a new order comes in, or to ask again after a payment fails.
+
+**How to set it up.**
+
+- **How they pay**: **In WhatsApp (India, INR)** or **Payment link (Razorpay)**. See [Get paid](/commerce/payments).
+- **Payable for (minutes)** (optional): how long the customer has to pay. Leave it empty to use your order default.
+- **Message** (optional): the text above the payment button.
+
+**Required fields**
+
+- **How they pay**.
+
+![Request Payment settings with How they pay set to Payment link (Razorpay), an empty Payable for (minutes) box showing Your order default, and an empty optional Message box](/automation/img/integrations/request-payment-settings.png)
+
+You can't use this step with the **Order paid** event, because there is nothing left to pay. Use **New order** or **Payment failed**.
+
+The step sends only if the customer messaged you in the last 24 hours. If the request can't be sent, for example because you have not set up payments, the flow stops at this step.
+
+**Example.** On **New order**, send a **Text Message**: "Thank you for your order!", then a **Request Payment** with **Payment link (Razorpay)**.
+
+### Update Order Status
+
+**What it does.** Moves the order that started the flow to a new status.
+
+**When to use it.** Use it to mark an order as **Completed** after a delay, or to move it along when another step finishes.
+
+**How to set it up.**
+
+- **New status**: **Processing**, **Partially shipped**, **Shipped**, **Completed** or **Canceled**.
+- **Note** (optional): up to 120 characters, such as a tracking number.
+
+**Required fields**
+
+- **New status**.
+
+![Update Order Status settings with New status set to Processing and an empty optional Note box](/automation/img/integrations/update-order-status-settings.png)
+
+The same rules apply as on the [Orders page](/commerce/orders#order-statuses). For example, a paid order can't be canceled. If the customer was asked to pay inside WhatsApp, they are told about the new status on WhatsApp.
+
+**Example.** On **Order paid**, wait 2 days with a **Delay**, then **Update Order Status** to **Shipped**.
 
 ## A worked example
 

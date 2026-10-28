@@ -1,0 +1,110 @@
+---
+title: "Products"
+description: "Add, edit and remove the products in your WhatsApp catalog, and see which ones Meta has approved."
+icon: "package"
+keywords: ["WhatsMark", "WaMatrix.io", "products", "catalog", "SKU", "content ID", "product review", "Meta approval"]
+---
+
+The **Products** page lists every product in the catalogs connected to your WhatsApp accounts. Add and change products here, and they are saved to your catalog in Meta. *(Needs a paid plan.)*
+
+Go to **Commerce → Products**.
+
+<Note>
+Connect a catalog first. Until you do, the page shows **No catalog connected** and a **Go to Channels** button. See [Connect your catalog](/commerce/catalog).
+</Note>
+
+## The product list
+
+![The Products page with Sync now and Add product buttons, the All, In stock and Out of stock tabs, and a table of five products such as Compass box and School Bag, each with a photo, content ID, price, an In stock badge, an Approved badge and the catalog name](/commerce/img/products-page.png)
+
+- Use the **All**, **In stock** and **Out of stock** tabs to filter the list.
+- Search by product name or content ID.
+- If you have more than one catalog, pick one under **All catalogs**.
+
+Each row shows:
+
+- **Product**: the photo, name and the start of the description.
+- **Content ID**: your own code for the product, also called a SKU.
+- **Price**: the sale price, with the normal price crossed out when there is a sale.
+- **Availability**: **In stock**, **Out of stock**, **Preorder**, **Available for order** or **Discontinued**.
+- **WhatsApp**: whether Meta has approved the product. See [Meta checks every product](#meta-checks-every-product).
+- **Catalog**: the catalog it belongs to.
+
+Click **Sync now** to copy the latest products from Meta. This picks up products you added or changed in Meta Commerce Manager.
+
+## Add a product
+
+<Steps>
+<Step title="Click Add product">
+  A form opens on the right.
+
+  ![The product form, here editing Compass box, with the product photo, Name, Description, a greyed-out Content ID (SKU), Availability set to In stock, Price 350.00, Sale price 289.00, and empty Brand and Website link boxes](/commerce/img/product-form.png)
+</Step>
+
+<Step title="Add a photo">
+  Click the **Image** box to pick a photo from your [Media Library](/media/media-library), or drop a file onto it.
+
+  - Use a JPG or PNG file.
+  - Make it at least 500 × 500 pixels.
+  - Keep it at 8 MB or smaller.
+</Step>
+
+<Step title="Fill in the details">
+  - **Name**: what customers see as the product title.
+  - **Description**: a few lines about the product.
+  - **Content ID (SKU)**: your own code for this product, such as `MUG-001`. Use letters, numbers, dots, dashes or underscores. You can't change it later.
+  - **Availability**: starts as **In stock**.
+  - **Price**: in your WhatsApp account's currency.
+  - **Sale price** (optional): a lower price. Leave it empty if there is no sale.
+  - **Brand** (optional): if you leave it empty, your catalog name is used.
+  - **Website link** (optional): a link to the product on your website. It must start with `https://`.
+
+  If you have more than one catalog, choose the **Catalog** first.
+</Step>
+
+<Step title="Click Add product">
+  The product is saved to your catalog in Meta and shows **In review** until Meta checks it.
+</Step>
+</Steps>
+
+## Meta checks every product
+
+Meta reviews every new or changed product before customers can see it on WhatsApp. This is Meta's rule, not ours. It usually takes minutes, and can take up to 24 hours. See [Meta's catalog overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/catalogs-overview/).
+
+The **WhatsApp** column shows where each product stands:
+
+| Badge | What it means | What to do |
+| --- | --- | --- |
+| **In review** | Meta has not checked it yet. You can't send it until it is approved. | Wait. The page updates by itself while the tab is open. |
+| **Approved** | Customers can see it and you can send it. | Nothing. |
+| **Rejected** | Meta does not allow it on WhatsApp. | Open Meta Commerce Manager to see why. Fix the product, then save it again. |
+| **Image failed** | Meta could not download the photo, so it did not check the product. | Edit the product and choose a different photo. |
+
+Only **Approved** products appear when you send products in chat, campaigns or automations.
+
+A banner at the top of the list tells you how many products are not on WhatsApp yet.
+
+<Note>
+Meta rejects products that break its rules, such as some medicines, weapons and adult products. Read [Meta's Commerce Policies](https://www.facebook.com/policies_center/commerce/) before you add a product you are unsure about.
+</Note>
+
+## Change or remove a product
+
+Open the ⋮ menu on a product row:
+
+- **Edit**: change the details and click **Save changes**. Meta checks the product again, so it goes back to **In review**.
+- **Delete**: removes the product from your catalog in Meta. Customers can no longer see or order it. Orders that already have it keep it.
+
+You need the **Manage** permission for **WhatsApp Catalog** to add, change or delete products. See [Roles & Permissions](/core-setup/roles-and-permissions).
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Send products" icon="send" href="/commerce/send-products">
+    Show your approved products to customers.
+  </Card>
+
+  <Card title="Orders" icon="receipt" href="/commerce/orders">
+    See the carts customers send you.
+  </Card>
+</CardGroup>

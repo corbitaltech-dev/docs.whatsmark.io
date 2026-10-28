@@ -1,0 +1,192 @@
+---
+title: "Get paid"
+description: "Connect your own payment account, then ask customers to pay for their WhatsApp orders, check payments and give refunds."
+icon: "credit-card"
+keywords: ["WhatsMark", "WaMatrix.io", "payments", "WhatsApp payments", "payment link", "Razorpay", "PayU", "UPI", "refund", "order defaults"]
+---
+
+Ask customers to pay for their order without leaving WhatsApp. The money goes straight to your own payment account. WaMatrix.io marks the order as paid once the payment is confirmed. *(Needs a paid plan.)*
+
+Set everything up in **Settings → WhatsApp Commerce**.
+
+![The WhatsApp Commerce settings with the Order defaults card set to Physical products, 1440 minutes, tax rate 18 and tax label GST, the Payments inside WhatsApp (India) card with one Razorpay configuration marked Needs testing and Default, and the Payment links (Razorpay) card showing the Webhook URL and a connected Razorpay account](/commerce/img/commerce-settings.png)
+
+## Two ways to get paid
+
+| | Payments inside WhatsApp | Payment links |
+| --- | --- | --- |
+| How the customer pays | In the chat, with UPI, cards or netbanking | They tap **Pay now** and pay on Razorpay's page |
+| Where it works | India only, in Indian rupees (INR) | Any currency your Razorpay account accepts |
+| Your payment account | Razorpay, PayU, BillDesk or Zaakpay | Razorpay |
+| Customer gets status updates on WhatsApp | Yes | No |
+
+You can set up one or both. Payments inside WhatsApp are a Meta service for India. See [Meta's guide to payments in India](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/overview).
+
+## Order defaults
+
+These settings apply to every new order. Change them in the **Order defaults** card, then click **Save defaults**.
+
+- **What you sell**:
+  - **Physical products (shipped)**: WhatsApp asks the customer for a delivery address when they pay.
+  - **Services or digital products (no shipping)**: for bookings, tickets or courses. WhatsApp does not ask for an address.
+- **Payment requests stay open for**: how many minutes the customer has to pay. It starts at 1440 minutes (1 day). Use at least 16 minutes, because Razorpay payment links can't expire sooner.
+- **Tax rate (%)**: added to the order total. Use 0 if you don't charge tax.
+- **Tax label** (optional): the name of the tax, such as GST.
+- **Mark paid orders as processing**: when a payment is confirmed, a **Pending** order moves to **Processing** and the customer is told on WhatsApp. It starts on.
+
+You need the **Manage** permission for **WhatsApp Catalog** to change these.
+
+## Set up payments inside WhatsApp (India)
+
+You do this once for each WhatsApp account.
+
+<Steps>
+<Step title="Accept Meta's Payments terms">
+  In Meta's WhatsApp Manager, open **Payments** and accept the terms for your WhatsApp Business account. You have to accept them for each WhatsApp Business account. Accepting them for another account doesn't count.
+</Step>
+
+<Step title="Add a configuration">
+  In the **Payments inside WhatsApp (India)** card, find your WhatsApp account and click **Add configuration**.
+
+  - **Name**: a short name, such as `store-upi`. Use letters, numbers, `-` and `_`.
+  - **Gateway**: Razorpay, PayU, BillDesk or Zaakpay.
+
+  Click **Create**.
+</Step>
+
+<Step title="Click Connect gateway">
+  A sign-in page for your payment account opens in a new tab. Sign in to link it to WhatsApp. If the link has expired, click **New link**.
+</Step>
+
+<Step title="Test it in WhatsApp Manager">
+  When the status shows **Needs testing**, open WhatsApp Manager → **Payment configurations**, select your configuration and run **Test**. Then come back and click the refresh button next to it.
+</Step>
+
+<Step title="Check it says Active">
+  When it shows **Active**, you can ask for payment inside WhatsApp.
+</Step>
+</Steps>
+
+Each configuration shows one of these:
+
+| Status | Meaning |
+| --- | --- |
+| **Needs connecting** | You have not signed in to your payment account yet. Click **Connect gateway**. |
+| **Needs testing** | Connected, but not tested in WhatsApp Manager yet. |
+| **Active** | Ready to take payments. |
+
+If an account has more than one configuration, click the star to make one the **Default**. Payment requests use the default.
+
+**Check Meta** copies configurations you already made in WhatsApp Manager.
+
+You need the **Manage** permission for **WhatsApp Payments** to add or change configurations.
+
+## Set up payment links (Razorpay)
+
+<Steps>
+<Step title="Copy your Razorpay keys">
+  In your Razorpay Dashboard, copy your **Key ID** and **Key secret**.
+</Step>
+
+<Step title="Add the Webhook URL in Razorpay">
+  The **Payment links (Razorpay)** card shows a **Webhook URL**. This is the address Razorpay uses to tell WaMatrix.io that a customer has paid. Click the copy button next to it.
+
+  In Razorpay Dashboard → **Settings** → **Webhooks**, add this URL. Tick these three events:
+
+  - `payment_link.paid`
+  - `payment_link.cancelled`
+  - `payment_link.expired`
+
+  Set a webhook secret there, and note it down.
+</Step>
+
+<Step title="Connect Razorpay">
+  Back in WaMatrix.io, fill in:
+
+  - **Key ID**: it starts with `rzp_live_` or `rzp_test_`.
+  - **Key secret**.
+  - **Webhook secret**: the same secret you set in Razorpay.
+
+  Click **Connect Razorpay**.
+</Step>
+</Steps>
+
+If you leave out the webhook secret, payments are only picked up when you click **Check payment** on the order.
+
+To change your keys later, click **Update keys**. To stop sending payment links, click **Disconnect**. Links you already sent still record their payments.
+
+## Ask for payment
+
+You can ask for payment from the order details, or from the **Cart received** card in the chat.
+
+<Steps>
+<Step title="Click Request payment">
+  Open the order and click **Request payment**.
+
+  {/* SCREENSHOT: /commerce/img/request-payment.png — The Request payment panel with the order summary, the In WhatsApp and Payment link tabs, the Pay with and Payable for fields, and the Message box */}
+</Step>
+
+<Step title="Choose how they pay">
+  - **In WhatsApp**: pick the configuration under **Pay with**. Only for orders in Indian rupees.
+  - **Payment link**: sends a Razorpay link.
+</Step>
+
+<Step title="Choose how long it stays open">
+  Pick a time under **Payable for**, from 30 minutes to 7 days. It starts at your [order default](#order-defaults). Razorpay links stay open for at least 16 minutes.
+</Step>
+
+<Step title="Add a message and send">
+  Type a **Message** if you want, then click **Send payment request** or **Send payment link**.
+</Step>
+</Steps>
+
+The customer gets one of these in WhatsApp:
+
+- **In WhatsApp**: a **Review and pay** message. They tap it, check the order and pay without leaving the chat.
+- **Payment link**: a **Payment for your order** message with a **Pay now** button and the time the link expires.
+
+If you send a new payment link, the old one stops working.
+
+### When the customer hasn't messaged you in 24 hours
+
+After 24 hours without a message from the customer, WhatsApp only lets you send an approved template.
+
+- **In WhatsApp**: choose your approved **Payment request** template under **Template**. See [Commerce templates](/messaging/whatsapp-templates#commerce-templates).
+- **Payment link**: can't be sent. Ask the customer to message you first, or use **In WhatsApp**.
+
+You need the **Request** permission for **WhatsApp Payments** to ask for payment.
+
+## When is an order marked paid?
+
+Only after the payment is confirmed:
+
+- **In WhatsApp**: WaMatrix.io checks the payment with Meta.
+- **Payment link**: WaMatrix.io checks the payment with Razorpay.
+
+When it is confirmed:
+
+- The order shows **Paid**.
+- A private note is added to the chat, such as "Payment of ₹354.00 received for order …".
+- Everyone in your workspace gets an **Order paid** notification.
+
+If a payment doesn't show up, open the order and click **Check payment**. WaMatrix.io asks Meta or Razorpay again.
+
+## Refund a payment
+
+1. Open the order and click **Refund**.
+2. Enter the **Amount**. It starts at the full amount you can refund. You can refund less.
+3. Add a **Reason** if you want, then click **Refund**.
+
+The money goes back through the payment account the customer paid with. You need the **Refund** permission for **WhatsApp Payments**.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Order automations" icon="bot" href="/automation/flow-builder#whatsapp-commerce">
+    Ask for payment and update orders automatically.
+  </Card>
+
+  <Card title="Commerce templates" icon="file-text" href="/messaging/whatsapp-templates#commerce-templates">
+    Reach customers after the 24-hour window closes.
+  </Card>
+</CardGroup>

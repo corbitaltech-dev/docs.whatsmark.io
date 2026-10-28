@@ -44,11 +44,12 @@ Type **@** in almost any text box to drop in a merge field, such as the contact'
 </Tip>
 
 ## The Start Trigger
-Every flow begins here. The Start Trigger decides when your chatbot starts. Open the **Start Trigger** settings, then choose one of the three Trigger Sources.
+Every flow begins here. The Start Trigger decides when your chatbot starts. Open the **Start Trigger** settings, then choose a Trigger Source.
 
 - **Message** — someone sends you a WhatsApp message.
 - **Shopify** — something happens to an order in your Shopify store.
 - **WooCommerce** — something happens to an order in your WooCommerce store.
+- **WhatsApp Commerce** — something happens to an order a customer sent from your WhatsApp catalog.
 
 The rest of the card changes depending on which one you choose, The following sections explain each option.
 
@@ -127,6 +128,33 @@ Shopify and WooCommerce flows start automatically when an event occurs in your s
 Shopify and WooCommerce triggers are paid features and need a connected store. See [Shopify](/settings/shopify) and [WooCommerce](/settings/woocommerce).
 </Note>
 
+### WhatsApp Commerce
+
+This flow runs when something happens to an order a customer sent from your [WhatsApp catalog](/commerce/overview). *(Needs a paid plan.)*
+
+![Start Trigger settings with Trigger Source set to WhatsApp Commerce and Order Event set to New order, above a note about the 24-hour messaging window](/automation/img/commerce-trigger.png)
+
+Pick one **Order Event**:
+
+| Event | Fires when |
+| --- | --- |
+| **New order** | A customer sends you a cart. |
+| **Order paid** | A payment for the order is confirmed. |
+| **Payment failed** | The customer tried to pay and it didn't go through. |
+| **Order status changed** | The order's status changes, for example to **Shipped**. |
+
+The flow runs only for orders on the WhatsApp numbers you picked for this flow. It runs in that customer's chat.
+
+**What it's for.** Thank the customer for their order, ask them to pay, or tell them when their order ships. Two flow steps work only with this trigger, because they act on the order that started the flow: [**Request Payment**](/automation/flow-steps/integrations#request-payment) and [**Update Order Status**](/automation/flow-steps/integrations#update-order-status). Use the [**WhatsApp Order**](/messaging/merge-fields#available-fields) merge fields to add the order number or total to a message.
+
+**Example.** On **New order**, send a **Text Message** that thanks the customer, then a **Request Payment** step.
+
+<Warning>
+**Order status changed** also fires when a flow changes the status, or when a paid order moves to **Processing** by itself. A flow that changes the status on this event can start itself, or another flow, again.
+</Warning>
+
+If the customer hasn't messaged you in the last 24 hours, start the flow with a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template), as with Shopify and WooCommerce.
+
 ## The five categories
 
 Flow steps are organized into five categories. Each page explains every flow step in that category, what it does, and when to use it.
@@ -149,7 +177,7 @@ Flow steps are organized into five categories. Each page explains every flow ste
   </Card>
 
   <Card title="Integrations" icon="cloud" href="/automation/flow-steps/integrations">
-    Write a row to Google Sheets or create a Google Calendar event.
+    Write a row to Google Sheets, create a Google Calendar event, or work with WhatsApp orders.
   </Card>
 </CardGroup>
 
@@ -165,7 +193,7 @@ The toolbar at the top right of the page has a few helpers:
 <Note>
 Some flow steps are available only on the platform that supports them. If you're building a Messenger flow, WhatsApp-only steps are hidden. If you're building a WhatsApp flow, **Messenger Template** is hidden.
 
-The WhatsApp-only steps are [**List Message**](/automation/flow-steps/interactive#list-message), [**Call To Action**](/automation/flow-steps/basic#call-to-action), [**Contact Card**](/automation/flow-steps/interactive#contact-card), [**Reaction**](/automation/flow-steps/interactive#reaction), [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template), and [**Ask Location**](/automation/flow-steps/ask#ask-location).
+The WhatsApp-only steps are [**List Message**](/automation/flow-steps/interactive#list-message), [**Call To Action**](/automation/flow-steps/basic#call-to-action), [**Contact Card**](/automation/flow-steps/interactive#contact-card), [**Reaction**](/automation/flow-steps/interactive#reaction), [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template), [**Ask Location**](/automation/flow-steps/ask#ask-location), [**Send Products**](/automation/flow-steps/integrations#send-products), [**Request Payment**](/automation/flow-steps/integrations#request-payment) and [**Update Order Status**](/automation/flow-steps/integrations#update-order-status).
 </Note>
 
 ## What's next

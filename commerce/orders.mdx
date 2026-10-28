@@ -1,0 +1,126 @@
+---
+title: "Orders"
+description: "See every cart your customers send on WhatsApp, follow each order from new to completed, and keep the customer updated."
+icon: "receipt"
+keywords: ["WhatsMark", "WaMatrix.io", "orders", "WhatsApp orders", "order status", "cart", "shipped", "cancel order"]
+---
+
+Every time a customer sends you a cart from your catalog in WhatsApp, WaMatrix.io turns it into an order. The **Orders** page lists all of them, so you can see what needs paying and what needs sending. *(Needs a paid plan.)*
+
+Go to **Commerce → Orders**.
+
+<Note>
+An order is created only from a cart the customer sends in WhatsApp. You can't create an order yourself.
+</Note>
+
+## The Orders page
+
+![The Orders page with Orders today 2, Awaiting payment 0, Paid this month ₹1,824.82 and To fulfil 2 at the top, the All, Awaiting payment, Paid, To fulfil, Shipped, Completed and Canceled tabs, and a table of two paid orders with the status Processing](/commerce/img/orders-page.png)
+
+The four numbers at the top:
+
+- **Orders today**: orders that came in today.
+- **Awaiting payment**: orders where you asked for payment and the customer has not paid yet.
+- **Paid this month**: money received this month, after refunds.
+- **To fulfil**: orders you still need to send. These are **Pending**, **Processing** or **Partially shipped**.
+
+Use the tabs to show only some orders: **All**, **Awaiting payment**, **Paid**, **To fulfil**, **Shipped**, **Completed** or **Canceled**.
+
+Click **Filters** to show the orders for one **WhatsApp number**. Search by order number, customer name, phone number or the customer's note.
+
+Each row shows the order number, the customer, the items, the **Total**, the **Payment** status, the order **Status**, and when it was **Placed**.
+
+## Open an order
+
+Click the order number, or choose **View order** from the ⋮ menu.
+
+![The order details panel showing Status Processing, Payment Paid and the total, one item Plastic Water bottle set with subtotal, tax and total, a Payment section with a paid Razorpay payment link and a Refund button, and the Customer section with a Chat button](/commerce/img/order-details.png)
+
+The order details show:
+
+- **Status**, **Payment**, **Total** and **WhatsApp number**.
+- **Items**: each product with its quantity and price, then the **Subtotal**, **Tax**, **Shipping**, **Discount** and **Total**. Lines with zero are hidden.
+- **Payment**: every payment request and payment for this order. From here you can **Request payment**, **Check payment** and **Refund**. See [Get paid](/commerce/payments).
+- **Customer**: who placed it, with a **Chat** button to open their chat.
+- **Delivery**: the customer's note and delivery address, if they gave one.
+
+Click **Open chat** in the ⋮ menu to go straight to the customer's chat.
+
+## Order statuses
+
+Every new order starts as **Pending**. Move it forward as you work on it.
+
+| Status | Meaning |
+| --- | --- |
+| **Pending** | New. You have not started on it yet. |
+| **Processing** | You are getting it ready. |
+| **Partially shipped** | Part of the order is on its way. |
+| **Shipped** | The whole order is on its way. |
+| **Completed** | Done. This can't be changed again. |
+| **Canceled** | Stopped. This can't be changed again. |
+
+To change the status, open the ⋮ menu on the order and pick the new status. The menu only shows the moves that are allowed:
+
+- A **Pending** order can move to any other status.
+- **Processing**, **Partially shipped** and **Shipped** can move between each other, or to **Completed** or **Canceled**. They can't go back to **Pending**.
+- **Completed** and **Canceled** are final.
+- A paid order can't be canceled. Refund the payment first. See [Refund a payment](/commerce/payments#refund-a-payment).
+
+To cancel, choose **Cancel order** and confirm. A canceled order can no longer be paid or shipped.
+
+You need the **Manage** permission for **WhatsApp Orders** to change the status. See [Roles & Permissions](/core-setup/roles-and-permissions).
+
+### Is the customer told?
+
+If you asked the customer to pay inside WhatsApp, they get a WhatsApp message each time you change the status, such as "Your order … has shipped."
+
+- Within 24 hours of their last message, the update is sent as a normal message.
+- After 24 hours, it is sent with your approved **Order status** template. If you don't have one, the customer is not told. See [Commerce templates](/messaging/whatsapp-templates#commerce-templates).
+
+If the customer paid by payment link, or has not paid yet, they are not told. You can message them yourself in [Chat](/messaging/live-chat).
+
+### Paid orders move to Processing
+
+When a payment is confirmed, a **Pending** order moves to **Processing** by itself. You can turn this off with **Mark paid orders as processing** in [Order defaults](/commerce/payments#order-defaults).
+
+## Payment status
+
+The **Payment** column shows one of these:
+
+| Payment status | Meaning |
+| --- | --- |
+| **Unpaid** | You have not asked for payment yet. |
+| **Awaiting payment** | You asked, and the customer has not paid yet. |
+| **Paid** | The payment is confirmed. |
+| **Payment failed** | The customer tried to pay and it didn't go through. You can ask again. |
+| **Partially refunded** | Part of the payment was given back. |
+| **Refunded** | The whole payment was given back. |
+
+## Delete an order
+
+You can delete an order only when it is **Completed** or **Canceled**. Choose **Delete** from the ⋮ menu, then **Delete order**.
+
+- The order, its items and its payment records are removed for good.
+- Any payment link that is still open is canceled.
+- Deleting a paid order does **not** refund the customer. Refund first if you need to.
+
+## Notifications for orders
+
+WaMatrix.io tells you about new orders and payments with the bell at the top of the screen:
+
+- **New order**: a customer sent a cart.
+- **Order paid**: a payment was confirmed.
+
+Everyone in your workspace gets these. Click one to open the order. See [Notifications](/reporting/notifications).
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Get paid" icon="credit-card" href="/commerce/payments">
+    Connect your payment account and ask for payment.
+  </Card>
+
+  <Card title="Order automations" icon="bot" href="/automation/flow-builder#whatsapp-commerce">
+    Send messages and update orders automatically when something happens.
+  </Card>
+</CardGroup>

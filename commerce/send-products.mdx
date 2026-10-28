@@ -1,0 +1,108 @@
+---
+title: "Send products"
+description: "Send one product, a list, a carousel or your whole catalog to customers in chat, campaigns and automations."
+icon: "send"
+keywords: ["WhatsMark", "WaMatrix.io", "send products", "product message", "product list", "carousel", "catalog message", "cart"]
+---
+
+Show your products to customers right in WhatsApp. They open the product, add it to a cart and send the cart to you. You can send products from **Chat**, in a campaign, or from an automation. *(Needs a paid plan.)*
+
+Only products that Meta has **Approved** can be sent. See [Meta checks every product](/commerce/products#meta-checks-every-product).
+
+## Four ways to show products
+
+| Type | What the customer gets | How many products |
+| --- | --- | --- |
+| **Single** | One product card they can open and add to their cart. | 1 |
+| **List** | A list of products in titled sections, such as "Bags" and "Bottles". | Up to 30, in up to 10 sections |
+| **Carousel** | Product cards they swipe through. | 2 to 10 |
+| **Catalog** | A **View catalog** button that opens your whole catalog. | All of them |
+
+These limits are set by WhatsApp. See [Meta's guide to sharing products](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/share-products).
+
+## Send products in Chat
+
+<Steps>
+<Step title="Open the chat">
+  Open a WhatsApp chat on a number that has a catalog connected.
+</Step>
+
+<Step title="Click Send products">
+  Click the shopping bag under the reply box. On a phone, find **Send products** in the menu.
+
+  ![The Send products panel on the List tab, with a section called School essentials holding Compass box, School Bag and Lunch box, the product list with those three ticked, the Header Back to school, a Message, an empty Footer, and the Send button](/commerce/img/chat-send-products.png)
+</Step>
+
+<Step title="Pick the type and the products">
+  Choose **Single**, **List**, **Carousel** or **Catalog**, then tick the products. Search by name or content ID.
+
+  For a **List**, give every section a title. Click **Add section** to add another one, then tick the products for it.
+
+  For a **Catalog**, you can pick one product to show as the picture on the message. This is optional.
+</Step>
+
+<Step title="Write the message">
+  - **Header**: needed for a **List**. Up to 60 characters.
+  - **Message**: the text above the products. Needed for a **List** and a **Carousel**.
+  - **Footer** (optional): a short line at the bottom. Not used for a **Carousel**.
+</Step>
+
+<Step title="Click Send">
+  If **Send** is greyed out, the line next to it tells you what is missing.
+</Step>
+</Steps>
+
+You need the **View** permission for **WhatsApp Catalog** to send products. See [Roles & Permissions](/core-setup/roles-and-permissions).
+
+### When the customer hasn't messaged you in 24 hours
+
+After 24 hours without a message from the customer, WhatsApp only lets you send an approved template. This is WhatsApp's rule, not ours. See [the 24-hour rule](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
+
+In that case the panel asks you to choose an approved product template instead of the four tabs. Pick the template, fill in its values, choose the products, and click **Send**. To make a product template, see [Commerce templates](/messaging/whatsapp-templates#commerce-templates).
+
+## When the customer sends a cart
+
+The customer adds products to a cart in WhatsApp and sends it to you. The cart shows in the chat as a **Cart received** card, and an order is created for you.
+
+![A Cart received card in the chat showing 1 item, Plastic Water bottle set at ₹649.00, the total, the order number with Paid and Processing labels, and a View order button](/commerce/img/chat-cart-received.png)
+
+The card shows:
+
+- Each product with its quantity and price.
+- The customer's note, if they wrote one.
+- The total.
+- The order number, with its payment status and order status.
+- **Request payment**: ask the customer to pay. It shows until the order is paid. See [Get paid](/commerce/payments#ask-for-payment).
+- **View order**: open the order details.
+
+WhatsApp does not tell you while the customer is still filling the cart. You only see the cart when they send it.
+
+### Open orders in the chat
+
+When the customer has orders that are not paid or not finished, a green cart button shows in the chat with a number on it. Click it to see their **Open orders**, then open one to ask for payment or update it.
+
+## Send products in a campaign
+
+Send the same products to many contacts at once.
+
+1. Make an approved product template first. See [Commerce templates](/messaging/whatsapp-templates#commerce-templates).
+2. Create a [template campaign](/messaging/campaigns) and pick that template.
+3. In the content step, choose the products under **Products**. Every contact gets the same products.
+
+For a carousel template, pick exactly as many products as the template has cards.
+
+## Send products from an automation
+
+Add the [**Send Products**](/automation/flow-steps/integrations#send-products) step to a WhatsApp flow. It works like the Chat panel, but only for customers who messaged you in the last 24 hours.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Orders" icon="receipt" href="/commerce/orders">
+    Follow every cart from new to completed.
+  </Card>
+
+  <Card title="Get paid" icon="credit-card" href="/commerce/payments">
+    Ask the customer to pay for their order.
+  </Card>
+</CardGroup>

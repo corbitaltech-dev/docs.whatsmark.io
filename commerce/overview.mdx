@@ -1,0 +1,144 @@
+---
+title: "Sell on WhatsApp"
+description: "Show your products in WhatsApp, take orders from customer carts, and get paid without the customer leaving the chat."
+icon: "store"
+keywords: ["WhatsMark", "WaMatrix.io", "WhatsApp commerce", "catalog", "products", "orders", "payments", "cart", "Razorpay"]
+---
+
+Your customers can see your products, fill a cart and pay, all inside WhatsApp. You see each cart as an order in WaMatrix.io, and you can ask for payment with one click. *(Needs a paid plan.)*
+
+## What the customer sees
+
+1. You send them a product, a list of products, or your whole catalog.
+2. They open it, pick what they want, and send you a cart.
+3. You ask them to pay. They pay in WhatsApp or through a payment link.
+4. You tell them when the order is on its way.
+
+A **catalog** is the list of products you sell, with a photo, name and price for each one. It is stored in Meta, the company behind WhatsApp, and WaMatrix.io shows it to your customers.
+
+## What you get
+
+<CardGroup cols={2}>
+  <Card title="Products in the chat" icon="shopping-bag">
+    Send one product, a list, a carousel of cards, or your whole catalog.
+  </Card>
+
+  <Card title="Carts become orders" icon="receipt">
+    Every cart a customer sends shows up on the **Orders** page.
+  </Card>
+
+  <Card title="Get paid in the chat" icon="credit-card">
+    Ask for payment in WhatsApp or send a payment link. The money goes to your own account.
+  </Card>
+
+  <Card title="Order updates" icon="truck">
+    Change the order status, and the customer can be told on WhatsApp.
+  </Card>
+</CardGroup>
+
+## Before you start
+
+<AccordionGroup>
+  <Accordion title="A connected WhatsApp number" icon="message-circle">
+    Products are sent from a WhatsApp number. Connect one first. See [Connecting WhatsApp](/core-setup/channels/whatsapp).
+  </Accordion>
+
+  <Accordion title="A paid plan" icon="lock">
+    Catalogs, orders and payments are not on the Free Forever plan. When your plan doesn't include them, **Commerce** is not shown in the menu. See [Free vs. paid](/getting-started/free-vs-paid).
+  </Accordion>
+
+  <Accordion title="Access to your catalog in Meta" icon="key-round">
+    WaMatrix.io needs permission to manage catalogs for your WhatsApp account. If it doesn't have it, the **Catalog** card shows an error that tells you what to do. See [Connect your catalog](/commerce/catalog#if-something-goes-wrong).
+  </Accordion>
+
+  <Accordion title="A way to get paid" icon="wallet">
+    You need your own payment account. There are two ways:
+
+    - **Payments inside WhatsApp** work only in India, in Indian rupees (INR). You need a Razorpay, PayU, BillDesk or Zaakpay account.
+    - **Payment links** use your own Razorpay account and work in any currency your Razorpay account accepts.
+
+    You can skip this step if you only want to take orders. See [Get paid](/commerce/payments).
+  </Accordion>
+</AccordionGroup>
+
+## The steps
+
+<Steps>
+<Step title="Connect your catalog">
+  Open your WhatsApp account and create a catalog, or connect one you already have in Meta.
+
+  Details: [Connect your catalog](/commerce/catalog)
+</Step>
+
+<Step title="Add your products">
+  Add each product with a photo, name and price. Meta checks every product before customers can see it.
+
+  Details: [Products](/commerce/products)
+</Step>
+
+<Step title="Send products to customers">
+  Send products from **Chat**, in a campaign, or from an automation.
+
+  Details: [Send products](/commerce/send-products)
+</Step>
+
+<Step title="Handle the orders">
+  Each cart a customer sends becomes an order. Follow it on the **Orders** page and change its status as you go.
+
+  Details: [Orders](/commerce/orders)
+</Step>
+
+<Step title="Get paid">
+  Connect your payment account once, then ask for payment on any order.
+
+  Details: [Get paid](/commerce/payments)
+</Step>
+</Steps>
+
+<Check>
+Connect a catalog → add products → send them → a customer sends a cart → ask for payment → mark the order as shipped.
+</Check>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Where does the money go?" icon="banknote">
+    To your own payment account, such as your Razorpay account. WaMatrix.io does not hold your money.
+  </Accordion>
+
+  <Accordion title="Can a customer order without a cart?" icon="shopping-cart">
+    No. An order is created only when a customer sends a cart from your catalog in WhatsApp. You cannot create an order yourself.
+  </Accordion>
+
+  <Accordion title="Why can't I send a product I just added?" icon="hourglass">
+    Meta checks every new or changed product before it can be sent on WhatsApp. This is Meta's rule, not ours. It usually takes minutes, and can take up to 24 hours. See [Meta's catalog overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/catalogs-overview/).
+  </Accordion>
+
+  <Accordion title="Can I use it on Messenger?" icon="message-square">
+    No. Catalogs, orders and payments work only on WhatsApp.
+  </Accordion>
+
+  <Accordion title="What happens to my orders if I change plan?" icon="shield">
+    Changing your plan does not delete your orders or products. On a plan without catalogs, **Commerce** is hidden from the menu, and new carts stay in the chat as messages.
+  </Accordion>
+</AccordionGroup>
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Connect your catalog" icon="store" href="/commerce/catalog">
+    Create a catalog or connect the one you have.
+  </Card>
+
+  <Card title="Products" icon="package" href="/commerce/products">
+    Add products and see which ones Meta has approved.
+  </Card>
+
+  <Card title="Send products" icon="send" href="/commerce/send-products">
+    Show products to customers in chat, campaigns and automations.
+  </Card>
+
+  <Card title="Get paid" icon="credit-card" href="/commerce/payments">
+    Connect your payment account and ask for payment.
+  </Card>
+</CardGroup>

@@ -42,6 +42,12 @@ In any text box that supports merge fields, type `@`. A list opens — pick a fi
 <Accordion title="WooCommerce order fields">
   Available when you have connected a [WooCommerce](/settings/woocommerce) store. They use the contact's most recent order or cart: Order Number, Order Date, Order Total, Order Status, Currency, Currency Symbol, Payment Method, Items Summary, Tracking Number, Tracking URL, and Cart Recovery Link.
 </Accordion>
+
+<Accordion title="WhatsApp Order fields">
+  For orders customers send from your [WhatsApp catalog](/commerce/overview): Order ID, Order Status, Previous Status, Status Note, Payment Status, Order Total, Items Summary, and Item Count.
+
+  In a flow that starts with the [**WhatsApp Commerce**](/automation/flow-builder#whatsapp-commerce) trigger, they show the order that started the flow. In the flow builder, they only appear in the list for those flows. Everywhere else, they show the contact's latest WhatsApp order. **Previous Status** only has a value in flows that start on **Order status changed**.
+</Accordion>
 </AccordionGroup>
 
 ## Appointment and flow fields

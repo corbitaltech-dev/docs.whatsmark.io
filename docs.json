@@ -126,6 +126,17 @@
             ]
           },
           {
+            "group": "Commerce",
+            "pages": [
+              "commerce/overview",
+              "commerce/catalog",
+              "commerce/products",
+              "commerce/send-products",
+              "commerce/orders",
+              "commerce/payments"
+            ]
+          },
+          {
             "group": "Automation",
             "pages": [
               "automation/overview",

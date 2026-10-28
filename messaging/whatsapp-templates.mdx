@@ -39,11 +39,12 @@ If none fit, click [**Create Template**](#creating-a-template) to build one from
 
 ## Creating a template
 
-After clicking **Create Template**, choose one of three template types:
+After clicking **Create Template**, choose a template type:
 
 - [**Header Template**](#header-template) – For marketing and utility messages like offers, updates, and notifications.
 - [**Carousel Template**](#carousel-template) – For displaying multiple products or a catalog in scrollable cards.
 - [**Authentication**](#authentication) – For sending OTP codes for user verification.
+- [**Commerce Template**](#commerce-templates) – For products from your catalog, payment requests and order status updates. Shown only when your plan includes WhatsApp Catalog.
 
 <Figure
   src="/messaging/img/template-pick-type.png"
@@ -255,6 +256,54 @@ Follow these steps to build one:
   Once a template is submitted, its **name**, **language**, and **category** can no longer be changed. You can still edit the content and resubmit, or delete it and start over.
   </Warning>
 
+
+## Commerce templates
+
+Commerce templates show products from your [catalog](/commerce/catalog), ask for payment, or tell a customer their order status changed. Once Meta approves them, they reach customers even when the customer hasn't messaged you in the last 24 hours. *(Needs a paid plan.)*
+
+Click **Create Template**, choose **Commerce Template**, then click **Continue**.
+
+![The New commerce template form with the six types Catalog, Single product, Product list, Product carousel, Payment request and Order status, Catalog selected, the WhatsApp account, Name back_to_school, Language, Message, Footer and Button text fields, and a Preview with a View catalog button](/messaging/img/commerce-template-form.png)
+
+Pick a type:
+
+| Type | What it does | Meta category |
+| --- | --- | --- |
+| **Catalog** | Opens your whole catalog. Button: **View catalog**. | Marketing |
+| **Single product** | Shows one product, chosen when you send. Button: **View**. | Marketing |
+| **Product list** | Shows up to 30 products in sections, chosen when you send. Button: **View items**. | Marketing |
+| **Product carousel** | Shows product cards the customer swipes through, chosen when you send. | Marketing |
+| **Payment request** | Asks the customer to pay for an order. India only. Button: **Review and Pay**. | Utility |
+| **Order status** | Tells the customer their order status changed. | Utility |
+
+Then fill in:
+
+- **WhatsApp account** and **Name**. Use lowercase letters, numbers and underscores, such as `summer_catalog`.
+- **Language**.
+- **Header**: only for a **Product list**. Up to 60 characters.
+- **Message**: the main text.
+- **Footer** (optional): not used for a **Product carousel**.
+- **Button text** (optional): change the button label for **Catalog**, **Single product** and **Product list**.
+- **Number of products**: only for a **Product carousel**, from 2 to 10. Every time you send it, you must pick exactly this many products.
+
+In **Payment request** and **Order status** templates, these values are filled in for you:
+
+- `{{1}}` the order number
+- `{{2}}` the total
+- `{{3}}` the customer's name
+- `{{4}}` the order status (**Order status** only)
+
+In the other types, use `{{1}}`, `{{2}}` and so on for values you fill in when you send.
+
+Click **Submit for review**. Meta reviews it like any other template.
+
+<Note>
+Commerce templates can't be edited after you submit them. Delete the template and make a new one instead.
+
+**Payment request** and **Order status** templates are sent for one order at a time, so you can't use them in campaigns.
+</Note>
+
+Where they are used: [Send products](/commerce/send-products), [Get paid](/commerce/payments#ask-for-payment) and [order status updates](/commerce/orders#is-the-customer-told).
 
 ## Submitting for approval
 

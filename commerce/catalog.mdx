@@ -1,0 +1,114 @@
+---
+title: "Connect your catalog"
+description: "Create a product catalog for your WhatsApp account, or connect the one you already have in Meta."
+icon: "store"
+keywords: ["WhatsMark", "WaMatrix.io", "catalog", "Meta catalog", "Commerce Manager", "shopping cart", "storefront", "sync"]
+---
+
+A **catalog** is the list of products you sell on WhatsApp. It is stored in Meta, and WaMatrix.io keeps a copy so you can send products and see orders. You connect it on the WhatsApp account page. *(Needs a paid plan.)*
+
+## Open the Catalog card
+
+1. Go to **Channels**.
+2. Click the ⋮ menu on your WhatsApp channel, then click **View account**.
+3. Find the **Catalog** card on the right.
+
+{/* SCREENSHOT: /commerce/img/catalog-card-empty.png — The Catalog card before a catalog is connected, with the Create catalog, Check Meta and Connect by ID buttons */}
+
+You need the **Manage** permission for **WhatsApp Catalog** to use the buttons on this card. With only **View**, you can see the card but not change it. See [Roles & Permissions](/core-setup/roles-and-permissions).
+
+## One catalog for each WhatsApp account
+
+A WhatsApp account can have only one catalog. If the account has more than one number, all its numbers share the same catalog. This is Meta's rule, not ours. See [Meta's guide to uploading products](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/upload-inventory).
+
+## Connect a catalog
+
+Pick the way that fits you.
+
+<AccordionGroup>
+  <Accordion title="You don't have a catalog yet: Create catalog" icon="plus">
+    1. Click **Create catalog**.
+    2. Type a **Catalog name**, such as the name of your shop.
+    3. Click **Create**.
+
+    The catalog is created in Meta and connected to this WhatsApp account. It starts empty. Add your products next. See [Products](/commerce/products).
+  </Accordion>
+
+  <Accordion title="Your catalog is already connected in Meta: Check Meta" icon="refresh-cw">
+    If you already connected a catalog to this WhatsApp account in Meta, click **Check Meta**. WaMatrix.io finds it, connects it, and copies its products.
+
+    **Check Meta** also picks up changes you made in Meta. If you removed the catalog in Meta, it is removed here too, together with its products.
+  </Accordion>
+
+  <Accordion title="You know the catalog ID: Connect by ID" icon="hash">
+    1. Open Meta Commerce Manager and copy your catalog ID. It is a long number.
+    2. Click **Connect by ID**.
+    3. Paste it in **Catalog ID** and click **Connect**.
+
+    Your products start copying across right away.
+  </Accordion>
+</AccordionGroup>
+
+## After you connect
+
+![The Catalog card for a connected catalog called E-com shop, with a green Connected label, Products 5 and Last synced 2 hours ago, the Manage products and Sync now buttons, and under Shopping on each number the Shopping cart switch turned on and the Storefront switch turned off](/commerce/img/catalog-card-connected.png)
+
+The card shows:
+
+- The catalog name and its ID, with a green **Connected** label.
+- **Products**: how many products are in the catalog.
+- **Last synced**: when WaMatrix.io last copied the products from Meta.
+
+And these buttons:
+
+- **Manage products** opens the [Products](/commerce/products) page.
+- **Sync now** copies the latest products from Meta right away.
+- The red unlink button disconnects the catalog. See [Disconnect a catalog](#disconnect-a-catalog).
+
+WaMatrix.io also copies your products from Meta once a day. If you change a product in Meta Commerce Manager, click **Sync now** to see the change straight away.
+
+### Your currency
+
+Prices use the currency of your WhatsApp Business account in Meta. You can't pick a different currency for a product.
+
+## Choose what customers see on each number
+
+Under **Shopping on each number** there are two switches for every number:
+
+| Switch | What it does | Starts as |
+| --- | --- | --- |
+| **Shopping cart** | Customers can add products to a cart and send it to you as an order. | On |
+| **Storefront** | Shows a shop icon in the chat and on your WhatsApp business profile. | Off |
+
+Turn off **Shopping cart** if you only want to show products, without taking orders on that number.
+
+## Disconnect a catalog
+
+Click the red unlink button, then click **Disconnect**.
+
+- Orders you already received are kept.
+- Your products stay in Meta. Only the connection to this WhatsApp account is removed.
+- Product messages stop working until you connect a catalog again.
+
+## If something goes wrong
+
+| What you see | What to do |
+| --- | --- |
+| "This WhatsApp connection has no catalog permission…" | WaMatrix.io is not allowed to manage your catalog. Reconnect your WhatsApp number and choose **Signup with Catalog** if you see it. Or, in Meta Business Settings, give the system user access to manage catalogs. To create a catalog from WaMatrix.io, it also needs access to manage the business. |
+| "The WhatsApp access token has expired…" | Reconnect this WhatsApp account, then try again. |
+| "Meta could not find that catalog…" | Check the catalog ID in Commerce Manager. The catalog must belong to the same business as your WhatsApp account. |
+| "This WhatsApp account already has a catalog…" | Disconnect the current catalog first. A WhatsApp account can have only one. |
+| "Meta is limiting requests right now…" | Wait a few minutes and try again. |
+| A red message under the card after a sync | The last product copy failed. Click **Sync now** to try again. |
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Products" icon="package" href="/commerce/products">
+    Add your products and see which ones Meta has approved.
+  </Card>
+
+  <Card title="Send products" icon="send" href="/commerce/send-products">
+    Send products to customers in chat.
+  </Card>
+</CardGroup>
