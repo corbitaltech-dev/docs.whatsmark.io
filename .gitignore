@@ -1,1 +1,3 @@
 docs.wamatrix.io.code-workspace
+# Screenshot skill settings (holds a password)
+.env.screenshots
