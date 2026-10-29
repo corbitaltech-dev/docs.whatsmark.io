@@ -2,7 +2,7 @@
 title: "Products"
 description: "Add, edit and remove the products in your WhatsApp catalog, and see which ones Meta has approved."
 icon: "package"
-keywords: ["WhatsMark", "WaMatrix.io", "products", "catalog", "SKU", "content ID", "product review", "Meta approval", "Shopify", "import from Shopify"]
+keywords: ["WhatsMark", "WaMatrix.io", "products", "catalog", "SKU", "content ID", "product review", "Meta approval", "Shopify", "WooCommerce", "import from Shopify", "import from WooCommerce"]
 ---
 
 The **Products** page lists every product in the catalogs connected to your WhatsApp accounts. Add and change products here, and they are saved to your catalog in Meta.
@@ -67,13 +67,15 @@ Click **Sync now** to copy the latest products from Meta. This picks up products
 </Step>
 </Steps>
 
-## Import products from Shopify
+## Import products from your online store
 
-If your [Shopify store is connected](/settings/shopify), you can add its products to your WhatsApp catalog instead of typing them in. Changes you make in Shopify then reach WhatsApp by themselves. *(Needs a paid plan.)*
+If your [Shopify](/settings/shopify) or [WooCommerce](/settings/woocommerce) store is connected, you can add its products to your WhatsApp catalog instead of typing them in. Changes you make in your store then reach WhatsApp by themselves.
 
 <Steps>
-<Step title="Click Import from Shopify">
-  The button is next to **Add product**. It shows only when a Shopify store is connected.
+<Step title="Open the import panel">
+  Next to **Add product**, click **Import from Shopify** or **Import from WooCommerce**. If both stores are connected, click **Import**, then choose **From Shopify** or **From WooCommerce**.
+
+  The button shows only when a store is connected.
 
   ![The Import from Shopify panel with the connected store, a Search Shopify products box, and two Shopify products, Classmate note books ticked and Ping long pen box not ticked, each with a photo and price, above the Close and Add 1 to WhatsApp buttons](/commerce/img/shopify-import.png)
 </Step>
@@ -95,20 +97,26 @@ Each product in the list shows where it stands:
 | **On WhatsApp** | Added to your catalog. |
 | **Not added** | It could not be added. Point at the label to see why. |
 
-### How Shopify products work in WhatsApp
+### How store products work in WhatsApp
 
 - **Each option is its own product.** A T-shirt with three sizes becomes three WhatsApp products.
-- **Shopify changes follow.** When you change a product's name, price, photo or description in Shopify, WhatsApp is updated. When you delete it in Shopify, it is removed from WhatsApp. Click **Re-sync** to update all your Shopify products right away.
+- **Store changes follow.** When you change a product's name, price, photo or description in your store, WhatsApp is updated. When you delete it in your store, it is removed from WhatsApp. Click **Re-sync** in the import panel to update all your store products right away.
 - **Stock is not copied.** Products are added as **In stock**. Change **Availability** here when something runs out.
-- **Your edits are kept.** You can edit a Shopify product on this page like any other. Whatever you change stays as you set it. Shopify only updates the details you have not changed, and **Re-sync** never undoes your edits.
-- **The currency must match.** Your Shopify store and your WhatsApp account must use the same currency. Prices are never converted. If they don't match, you can't add products.
+- **Your edits are kept.** You can edit a store product on this page like any other. Whatever you change stays as you set it. Your store only updates the details you have not changed, and **Re-sync** never undoes your edits.
+- **The currency must match.** Your store and your WhatsApp account must use the same currency. Prices are never converted. If they don't match, you can't add products.
 - **Products need a price and a photo.** An option without a price or a photo is skipped, and the reason shows next to the product in the list.
 
-Products from Shopify have a small green **S** on their photo in the product list.
+Some WooCommerce products can't be added:
 
-To stop selling a Shopify product on WhatsApp, click the bin next to it in **Import from Shopify**. The whole product, with every option, leaves your catalog.
+- **Grouped products**, because they can't be bought in a WhatsApp cart. Add the products inside the group instead.
+- **External (affiliate) products**, because they are sold on another website.
+- Products or options that are not published in WooCommerce.
 
-If you disconnect your Shopify store, the products stay in your WhatsApp catalog as normal products that you can edit.
+Products from a store have a small green letter on their photo in the product list: **S** for Shopify and **W** for WooCommerce.
+
+To stop selling a store product on WhatsApp, click the bin next to it in the import panel. The whole product, with every option, leaves your catalog.
+
+If you disconnect your store, the products stay in your WhatsApp catalog as normal products that you can edit.
 
 ## Meta checks every product
 
@@ -136,7 +144,7 @@ Meta rejects products that break its rules, such as some medicines, weapons and 
 Open the ⋮ menu on a product row:
 
 - **Edit**: change the details and click **Save changes**. Meta checks the product again, so it goes back to **In review**.
-- **Delete**: removes the product from your catalog in Meta. Customers can no longer see or order it. Orders that already have it keep it. For a product from Shopify, every option of that Shopify product is removed, and it stops updating.
+- **Delete**: removes the product from your catalog in Meta. Customers can no longer see or order it. Orders that already have it keep it. For a product from Shopify or WooCommerce, every option of that store product is removed, and it stops updating.
 
 You need the **Manage** permission for **WhatsApp Catalog** to add, change or delete products. See [Roles & Permissions](/core-setup/roles-and-permissions).
 

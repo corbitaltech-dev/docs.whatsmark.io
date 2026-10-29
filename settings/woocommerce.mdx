@@ -206,9 +206,19 @@ How it works:
 
 You can include **order details** in your message. Type `@` and choose a [merge field](/messaging/merge-fields) from the WooCommerce Order group.
 
+## Sell your WooCommerce products on WhatsApp
+
+If you also have a [WhatsApp catalog](/commerce/catalog), you can add your WooCommerce products to it. Go to **Commerce → Products** and click **Import from WooCommerce**. See [Import products from your online store](/commerce/products#import-products-from-your-online-store).
+
+Once you have added products, this page shows how many WooCommerce products are in your WhatsApp catalog.
+
+<Warning>
+If you see **Product updates are not reaching WhatsApp**, your store did not accept the update messages WaMatrix.io needs. A security plugin on your WordPress site often blocks them. Your products are still in WhatsApp, but changes you make in WooCommerce are only copied when you click **Re-sync** in **Import from WooCommerce**.
+</Warning>
+
 ## Disconnecting
 
-Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again. WooCommerce products you added to your WhatsApp catalog stay there as normal products, but they no longer update from WooCommerce.
 
 <Note>
 Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WaMatrix.io plugin in WordPress. The Webhook URL stays the same.
